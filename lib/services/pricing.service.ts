@@ -47,17 +47,18 @@ export class PricingService {
         );
 
         if (rule) {
+          const ruleData = rule as any;
           let calcAmount = 0;
 
-          if (rule.adjustmentType === "FIXED_DEDUCTION") {
-            calcAmount = -Math.abs(rule.adjustmentValue);
+          if (ruleData.adjustmentType === "FIXED_DEDUCTION") {
+            calcAmount = -Math.abs(ruleData.adjustmentValue);
             totalDeductions += Math.abs(calcAmount);
-          } else if (rule.adjustmentType === "PERCENTAGE_DEDUCTION") {
-            const pDeduct = (basePrice * Math.abs(rule.adjustmentValue)) / 100;
+          } else if (ruleData.adjustmentType === "PERCENTAGE_DEDUCTION") {
+            const pDeduct = (basePrice * Math.abs(ruleData.adjustmentValue)) / 100;
             calcAmount = -Math.round(pDeduct);
             totalDeductions += Math.abs(calcAmount);
-          } else if (rule.adjustmentType === "FIXED_BONUS") {
-            calcAmount = Math.abs(rule.adjustmentValue);
+          } else if (ruleData.adjustmentType === "FIXED_BONUS") {
+            calcAmount = Math.abs(ruleData.adjustmentValue);
             totalBonuses += calcAmount;
           }
 
