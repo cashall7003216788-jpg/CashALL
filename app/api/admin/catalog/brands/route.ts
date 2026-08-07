@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
     const category = searchParams.get("category");
 
     const brands = await db.brand.findMany({
-      where: category ? { category } : undefined,
+      where: category ? ({ category } as any) : undefined,
       orderBy: { sortOrder: "asc" },
       include: {
         _count: {

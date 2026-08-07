@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
     const brands = await db.brand.findMany({
       where: {
         active: true,
-        ...(category ? { category: { equals: category, mode: "insensitive" } } : {}),
+        ...(category ? ({ category: { equals: category, mode: "insensitive" } } as any) : {}),
       },
       orderBy: { sortOrder: "asc" },
       select: {
