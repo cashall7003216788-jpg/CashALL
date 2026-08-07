@@ -125,7 +125,7 @@ async function runTests() {
 
     const payout = await payoutServiceInstance.processPayout({
       orderId: testOrder.id,
-      amount: testOrder.finalPrice || quote.estimatedPrice,
+      amount: testOrder.finalPrice,
       paymentMethod: "UPI",
       upiId: "testbuyer@oksbi",
     });

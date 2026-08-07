@@ -6,7 +6,9 @@ import { AppError } from "@/lib/utils/AppError";
 import { z } from "zod";
 
 const registerTokenSchema = z.object({
-  token: z.string().min(1, "FCM token is required"),
+  token: z.string({
+    required_error: "FCM token is required",
+  }),
   deviceType: z.string().optional(),
 });
 
@@ -17,7 +19,7 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   const validation = registerTokenSchema.safeParse(body);
 
   if (!validation.success) {
-    throw new AppError((validation.error as any).issues?.[0]?.message || "Validation error", 400);
+    throw new AppError(validation.error.errors[0].message, 400);
   }
 
   const { token, deviceType } = validation.data;

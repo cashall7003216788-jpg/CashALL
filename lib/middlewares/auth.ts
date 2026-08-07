@@ -17,7 +17,7 @@ export async function verifyAuthToken(req: NextRequest): Promise<DecodedUser> {
 
   const token = authHeader.split(" ")[1];
   try {
-    const decodedToken = await (firebaseAdmin as any).auth().verifyIdToken(token);
+    const decodedToken = await firebaseAdmin.auth().verifyIdToken(token);
     return {
       uid: decodedToken.uid,
       phone: decodedToken.phone_number,

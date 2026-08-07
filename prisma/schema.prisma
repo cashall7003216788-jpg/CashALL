@@ -73,13 +73,12 @@ model User {
   updatedAt   DateTime  @updatedAt
   deletedAt   DateTime?
 
-  addresses          Address[]
-  orders             Order[]
-  customerDevices    CustomerDevice[]
-  tickets            SupportTicket[]
-  logs               ActivityLog[]
+  addresses       Address[]
+  orders          Order[]
+  customerDevices CustomerDevice[]
+  tickets         SupportTicket[]
+  logs            ActivityLog[]
   notificationTokens UserNotificationToken[]
-  offerCalculations  OfferCalculation[]
 
   @@index([phone])
   @@index([email])
@@ -128,7 +127,6 @@ model Brand {
   name      String
   slug      String    @unique
   logoUrl   String?
-  category  String    @default("MOBILE") // MOBILE, LAPTOP, TABLET, SMARTWATCH, CONSOLE, ACCESSORY
   active    Boolean   @default(true)
   sortOrder Int       @default(0)
   createdAt DateTime  @default(now())
@@ -138,38 +136,26 @@ model Brand {
   models DeviceModel[]
 
   @@index([slug])
-  @@index([category])
 }
 
 model DeviceModel {
-  id            String    @id @default(uuid()) @db.Uuid
-  brandId       String    @db.Uuid
-  questionSetId String?   @db.Uuid
-  name          String
-  slug          String    @unique
-  category      String    @default("MOBILE")
-  imageUrl      String?
-  releaseYear   Int?
-  basePrice     Float?
-  description   String?
-  popular       Boolean   @default(false)
-  active        Boolean   @default(true)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  deletedAt     DateTime?
+  id          String    @id @default(uuid()) @db.Uuid
+  brandId     String    @db.Uuid
+  name        String
+  slug        String    @unique
+  imageUrl    String?
+  releaseYear Int?
+  popular     Boolean   @default(false)
+  active      Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
 
-  brand        Brand              @relation(fields: [brandId], references: [id], onDelete: Cascade)
-  questionSet  QuestionSet?       @relation(fields: [questionSetId], references: [id], onDelete: SetNull)
-  variants     DeviceVariant[]
-  colorVariants ColorVariant[]
-  images       DeviceImage[]
-  pricingRules PricingRule[]
-  calculations OfferCalculation[]
+  brand    Brand           @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  variants DeviceVariant[]
 
   @@index([brandId])
-  @@index([questionSetId])
   @@index([slug])
-  @@index([category])
 }
 
 model DeviceVariant {
@@ -179,90 +165,47 @@ model DeviceVariant {
   storage    String
   basePrice  Float
   active     Boolean   @default(true)
-  sortOrder  Int       @default(0)
   createdAt  DateTime  @default(now())
   updatedAt  DateTime  @updatedAt
   deletedAt  DateTime?
 
-  model          DeviceModel        @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  model          DeviceModel     @relation(fields: [modelId], references: [id], onDelete: Cascade)
   quotes         Quote[]
   pricingRules   PricingRule[]
   colorVariants  ColorVariant[]
-  calculations   OfferCalculation[]
 
   @@index([modelId])
 }
 
 model ColorVariant {
   id        String    @id @default(uuid()) @db.Uuid
-  modelId   String?   @db.Uuid
-  variantId String?   @db.Uuid
+  variantId String    @db.Uuid
   colorName String
   hexCode   String?
-  imageUrl  String?
   active    Boolean   @default(true)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   deletedAt DateTime?
 
-  model   DeviceModel?   @relation(fields: [modelId], references: [id], onDelete: Cascade)
-  variant DeviceVariant? @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  variant DeviceVariant @relation(fields: [variantId], references: [id], onDelete: Cascade)
 
-  @@index([modelId])
   @@index([variantId])
 }
 
-model DeviceImage {
+model ConditionQuestion {
   id        String    @id @default(uuid()) @db.Uuid
-  modelId   String    @db.Uuid
-  imageUrl  String
-  isPrimary Boolean   @default(false)
-  caption   String?
+  title     String
+  subtitle  String?
+  group     String    // BASIC, SCREEN, BODY, FUNCTIONAL, REPAIR, ACCESSORIES
+  type      String    @default("SINGLE") // SINGLE, MULTIPLE
   sortOrder Int       @default(0)
+  active    Boolean   @default(true)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   deletedAt DateTime?
 
-  model DeviceModel @relation(fields: [modelId], references: [id], onDelete: Cascade)
-
-  @@index([modelId])
-}
-
-model QuestionSet {
-  id             String    @id @default(uuid()) @db.Uuid
-  name           String
-  description    String?
-  deviceCategory String    @default("MOBILE") // MOBILE, LAPTOP, TABLET, SMARTWATCH, CONSOLE, ACCESSORY
-  active         Boolean   @default(true)
-  sortOrder      Int       @default(0)
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
-  deletedAt      DateTime?
-
-  questions ConditionQuestion[]
-  models    DeviceModel[]
-}
-
-model ConditionQuestion {
-  id            String    @id @default(uuid()) @db.Uuid
-  questionSetId String?   @db.Uuid
-  title         String
-  subtitle      String?
-  group         String    // BASIC, SCREEN, BODY, FUNCTIONAL, REPAIR, ACCESSORIES
-  type          String    @default("SINGLE") // SINGLE, MULTIPLE, BOOLEAN, DROPDOWN, IMAGE_UPLOAD
-  sortOrder     Int       @default(0)
-  isRequired    Boolean   @default(true)
-  active        Boolean   @default(true)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  deletedAt     DateTime?
-
-  questionSet  QuestionSet?      @relation(fields: [questionSetId], references: [id], onDelete: SetNull)
   options      ConditionOption[]
   pricingRules PricingRule[]
-
-  @@index([questionSetId])
-  @@index([group])
 }
 
 model ConditionOption {
@@ -272,7 +215,6 @@ model ConditionOption {
   description String?
   iconName    String?
   sortOrder   Int       @default(0)
-  active      Boolean   @default(true)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   deletedAt   DateTime?
@@ -285,71 +227,23 @@ model ConditionOption {
 
 model PricingRule {
   id              String    @id @default(uuid()) @db.Uuid
-  modelId         String?   @db.Uuid
   variantId       String?   @db.Uuid
   questionId      String    @db.Uuid
   optionId        String    @db.Uuid
-  ruleType        String    // PERCENTAGE_INCREASE, PERCENTAGE_DECREASE, FIXED_INCREASE, FIXED_DECREASE, BONUS, PENALTY, NO_CHANGE
+  adjustmentType  String    // FIXED_DEDUCTION, PERCENTAGE_DEDUCTION, FIXED_BONUS
   adjustmentValue Float
-  minValue        Float?
-  maxValue        Float?
-  priority        Int       @default(0)
   active          Boolean   @default(true)
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
   deletedAt       DateTime?
 
-  model       DeviceModel?       @relation(fields: [modelId], references: [id], onDelete: Cascade)
-  variant     DeviceVariant?     @relation(fields: [variantId], references: [id], onDelete: Cascade)
-  question    ConditionQuestion  @relation(fields: [questionId], references: [id], onDelete: Cascade)
-  option      ConditionOption    @relation(fields: [optionId], references: [id], onDelete: Cascade)
-  historyLogs PricingHistory[]
+  variant  DeviceVariant?    @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  question ConditionQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  option   ConditionOption   @relation(fields: [optionId], references: [id], onDelete: Cascade)
 
-  @@index([modelId])
   @@index([variantId])
   @@index([questionId])
   @@index([optionId])
-}
-
-model PricingHistory {
-  id        String   @id @default(uuid()) @db.Uuid
-  ruleId    String   @db.Uuid
-  oldType   String?
-  oldValue  Float?
-  newType   String
-  newValue  Float
-  changedBy String?
-  reason    String?
-  createdAt DateTime @default(now())
-
-  rule PricingRule @relation(fields: [ruleId], references: [id], onDelete: Cascade)
-
-  @@index([ruleId])
-}
-
-model OfferCalculation {
-  id                   String   @id @default(uuid()) @db.Uuid
-  quoteNumber          String   @unique
-  modelId              String   @db.Uuid
-  variantId            String?  @db.Uuid
-  userId               String?  @db.Uuid
-  basePrice            Float
-  selectedAnswersJson  String   @db.Text
-  rulesAppliedJson     String   @db.Text
-  fixedAdjustments     Float
-  percentageAdjustments Float
-  finalOffer           Float
-  adminRuleVersion     String   @default("v1.0")
-  calculatedAt         DateTime @default(now())
-
-  model   DeviceModel    @relation(fields: [modelId], references: [id], onDelete: Cascade)
-  variant DeviceVariant? @relation(fields: [variantId], references: [id], onDelete: SetNull)
-  user    User?          @relation(fields: [userId], references: [id], onDelete: SetNull)
-
-  @@index([quoteNumber])
-  @@index([modelId])
-  @@index([variantId])
-  @@index([userId])
 }
 
 model Quote {

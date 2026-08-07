@@ -57,7 +57,7 @@ export class AuthService {
             EmailService.sendEmail(
               user.email,
               "Welcome to CashALL! 👋",
-              EmailService.compileWelcomeTemplate(user.name || "Customer")
+              EmailService.compileWelcomeTemplate(user.name)
             ).catch((err) => logger.error("Failed to send welcome email:", err));
           }
         }

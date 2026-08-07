@@ -3,8 +3,6 @@ import { apiWrapper } from "@/lib/utils/api-wrapper";
 import { verifyAuthToken, requireRole } from "@/lib/middlewares/auth";
 import { prisma } from "@/lib/db";
 
-export const dynamic = "force-dynamic";
-
 export const GET = apiWrapper(async (req: NextRequest) => {
   const decodedUser = await verifyAuthToken(req);
   requireRole(["ADMIN", "SUPER_ADMIN"], decodedUser.role);

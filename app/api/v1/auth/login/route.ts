@@ -10,13 +10,13 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   const result = loginSchema.safeParse(body);
   
   if (!result.success) {
-    throw new AppError((result.error as any).issues?.[0]?.message || "Invalid input", 400);
+    throw new AppError(result.error.errors[0].message, 400);
   }
 
   const { idToken, name } = result.data;
   
   try {
-    const decodedToken = await (firebaseAdmin as any).auth().verifyIdToken(idToken);
+    const decodedToken = await firebaseAdmin.auth().verifyIdToken(idToken);
     const phone = decodedToken.phone_number;
     
     if (!phone) {

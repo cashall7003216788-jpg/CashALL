@@ -11,7 +11,7 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   if (body.idToken) {
     const { firebaseAdmin } = await import("@/lib/services/firebase");
     try {
-      const decodedToken = await (firebaseAdmin as any).auth().verifyIdToken(body.idToken);
+      const decodedToken = await firebaseAdmin.auth().verifyIdToken(body.idToken);
       if (!decodedToken.email) {
         throw new AppError("Firebase token does not contain an email.", 400);
       }
@@ -39,7 +39,7 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   // 2. Direct email authentication mode (checks role and password configuration)
   const result = adminLoginSchema.safeParse(body);
   if (!result.success) {
-    throw new AppError((result.error as any).issues?.[0]?.message || "Invalid input", 400);
+    throw new AppError(result.error.errors[0].message, 400);
   }
 
   const { email, password } = result.data;

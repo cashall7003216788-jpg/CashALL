@@ -1,7 +1,9 @@
 import { z } from "zod";
 
 export const loginSchema = z.object({
-  idToken: z.string().min(1, "Firebase idToken is required"),
+  idToken: z.string({
+    required_error: "Firebase idToken is required",
+  }),
   name: z.string().optional(),
 });
 

@@ -22,19 +22,15 @@ async function main() {
   await prisma.pickup.deleteMany({});
   await prisma.order.deleteMany({});
   await prisma.quote.deleteMany({});
-  await prisma.offerCalculation.deleteMany({});
-  await prisma.pricingHistory.deleteMany({});
+  await prisma.user.deleteMany({});
+  await prisma.partner.deleteMany({});
   await prisma.pricingRule.deleteMany({});
   await prisma.conditionOption.deleteMany({});
   await prisma.conditionQuestion.deleteMany({});
-  await prisma.questionSet.deleteMany({});
-  await prisma.deviceImage.deleteMany({});
   await prisma.colorVariant.deleteMany({});
   await prisma.deviceVariant.deleteMany({});
   await prisma.deviceModel.deleteMany({});
   await prisma.brand.deleteMany({});
-  await prisma.user.deleteMany({});
-  await prisma.partner.deleteMany({});
   await prisma.category.deleteMany({});
   await prisma.serviceArea.deleteMany({});
   await prisma.fAQ.deleteMany({});
@@ -50,41 +46,26 @@ async function main() {
     data: { name: "Laptop", slug: "laptop", sortOrder: 2, active: true },
   });
 
-  // 3. Create Default Question Set
-  const defaultQuestionSet = await prisma.questionSet.create({
-    data: {
-      id: "550e8400-e29b-41d4-a716-446655440000",
-      name: "Standard Mobile Questionnaire",
-      description: "Default Cashify-style device condition evaluation set",
-      deviceCategory: "MOBILE",
-      active: true,
-      sortOrder: 1,
-    },
-  });
-
-  // 4. Create Brands
+  // 3. Create Brands
   const apple = await prisma.brand.create({
-    data: { id: "550e8400-e29b-41d4-a716-446655440001", name: "Apple", slug: "apple", category: "MOBILE", sortOrder: 1, active: true },
+    data: { id: "550e8400-e29b-41d4-a716-446655440001", name: "Apple", slug: "apple", sortOrder: 1, active: true },
   });
   const samsung = await prisma.brand.create({
-    data: { id: "550e8400-e29b-41d4-a716-446655440002", name: "Samsung", slug: "samsung", category: "MOBILE", sortOrder: 2, active: true },
+    data: { id: "550e8400-e29b-41d4-a716-446655440002", name: "Samsung", slug: "samsung", sortOrder: 2, active: true },
   });
   const oneplus = await prisma.brand.create({
-    data: { id: "550e8400-e29b-41d4-a716-446655440003", name: "OnePlus", slug: "oneplus", category: "MOBILE", sortOrder: 3, active: true },
+    data: { id: "550e8400-e29b-41d4-a716-446655440003", name: "OnePlus", slug: "oneplus", sortOrder: 3, active: true },
   });
 
-  // 5. Create Models
+  // 4. Create Models
   const iphone15 = await prisma.deviceModel.create({
     data: {
       id: "550e8400-e29b-41d4-a716-446655440011",
       brandId: apple.id,
-      questionSetId: defaultQuestionSet.id,
       name: "iPhone 15",
       slug: "iphone-15",
-      category: "MOBILE",
       imageUrl: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80",
       releaseYear: 2023,
-      basePrice: 32000,
       popular: true,
       active: true,
     },
@@ -94,13 +75,10 @@ async function main() {
     data: {
       id: "550e8400-e29b-41d4-a716-446655440012",
       brandId: apple.id,
-      questionSetId: defaultQuestionSet.id,
       name: "iPhone 15 Pro",
       slug: "iphone-15-pro",
-      category: "MOBILE",
       imageUrl: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80",
       releaseYear: 2023,
-      basePrice: 48000,
       popular: true,
       active: true,
     },
@@ -110,19 +88,16 @@ async function main() {
     data: {
       id: "550e8400-e29b-41d4-a716-446655440013",
       brandId: samsung.id,
-      questionSetId: defaultQuestionSet.id,
       name: "Galaxy S24",
       slug: "galaxy-s24",
-      category: "MOBILE",
       imageUrl: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80",
       releaseYear: 2024,
-      basePrice: 34000,
       popular: true,
       active: true,
     },
   });
 
-  // 6. Create Device Variants
+  // 5. Create Device Variants
   await prisma.deviceVariant.create({
     data: { id: "550e8400-e29b-41d4-a716-446655440021", modelId: iphone15.id, storage: "128 GB", basePrice: 32000, active: true },
   });
@@ -136,12 +111,11 @@ async function main() {
     data: { id: "550e8400-e29b-41d4-a716-446655440024", modelId: s24.id, storage: "256 GB", basePrice: 34000, active: true },
   });
 
-  // 7. Create Questions and Options
+  // 6. Create Questions and Options
   // Q1: Power
   const qPower = await prisma.conditionQuestion.create({
     data: {
       id: "550e8400-e29b-41d4-a716-446655440031",
-      questionSetId: defaultQuestionSet.id,
       title: "Does your phone switch on?",
       subtitle: "Turn on the phone screen and check basic power function",
       group: "BASIC",
@@ -161,7 +135,6 @@ async function main() {
   const qScreen = await prisma.conditionQuestion.create({
     data: {
       id: "550e8400-e29b-41d4-a716-446655440032",
-      questionSetId: defaultQuestionSet.id,
       title: "What is the physical condition of the screen?",
       subtitle: "Check under clear light for scratches, cracks or display tint",
       group: "SCREEN",
@@ -187,7 +160,6 @@ async function main() {
   const qBody = await prisma.conditionQuestion.create({
     data: {
       id: "550e8400-e29b-41d4-a716-446655440033",
-      questionSetId: defaultQuestionSet.id,
       title: "What is the condition of the body / side frame?",
       subtitle: "Inspect side edges, back glass, camera bump and corners",
       group: "BODY",
@@ -213,7 +185,6 @@ async function main() {
   const qFunctional = await prisma.conditionQuestion.create({
     data: {
       id: "550e8400-e29b-41d4-a716-446655440034",
-      questionSetId: defaultQuestionSet.id,
       title: "Are there any functional issues?",
       subtitle: "Select all features that are broken or malfunctioning",
       group: "FUNCTIONAL",
@@ -236,7 +207,6 @@ async function main() {
   const qAccessories = await prisma.conditionQuestion.create({
     data: {
       id: "550e8400-e29b-41d4-a716-446655440035",
-      questionSetId: defaultQuestionSet.id,
       title: "Which original accessories do you have?",
       subtitle: "Having original box and charger increases your phone's value",
       group: "ACCESSORIES",
@@ -258,24 +228,24 @@ async function main() {
     data: { id: "550e8400-e29b-41d4-a716-446655440057", questionId: qAccessories.id, label: "Device Only", description: "No box or charger included", iconName: "Smartphone", sortOrder: 4 },
   });
 
-  // 8. Create Pricing Rules
+  // 7. Create Pricing Rules
   const rules = [
-    { questionId: qPower.id, optionId: oPowerNo.id, ruleType: "PERCENTAGE_DECREASE", adjustmentValue: 50 },
-    { questionId: qScreen.id, optionId: oScreenFlawless.id, ruleType: "BONUS", adjustmentValue: 500 },
-    { questionId: qScreen.id, optionId: oScreenMinor.id, ruleType: "FIXED_DECREASE", adjustmentValue: 1200 },
-    { questionId: qScreen.id, optionId: oScreenHeavy.id, ruleType: "FIXED_DECREASE", adjustmentValue: 2800 },
-    { questionId: qScreen.id, optionId: oScreenCracked.id, ruleType: "FIXED_DECREASE", adjustmentValue: 5500 },
-    { questionId: qBody.id, optionId: oBodyFlawless.id, ruleType: "BONUS", adjustmentValue: 300 },
-    { questionId: qBody.id, optionId: oBodyMinor.id, ruleType: "FIXED_DECREASE", adjustmentValue: 800 },
-    { questionId: qBody.id, optionId: oBodyDents.id, ruleType: "FIXED_DECREASE", adjustmentValue: 1800 },
-    { questionId: qBody.id, optionId: oBodyDamaged.id, ruleType: "FIXED_DECREASE", adjustmentValue: 3500 },
-    { questionId: qFunctional.id, optionId: oFuncNone.id, ruleType: "NO_CHANGE", adjustmentValue: 0 },
-    { questionId: qFunctional.id, optionId: oFuncMinor.id, ruleType: "FIXED_DECREASE", adjustmentValue: 1500 },
-    { questionId: qFunctional.id, optionId: oFuncMajor.id, ruleType: "FIXED_DECREASE", adjustmentValue: 3800 },
-    { questionId: qAccessories.id, optionId: oAccAll.id, ruleType: "BONUS", adjustmentValue: 600 },
-    { questionId: qAccessories.id, optionId: oAccBox.id, ruleType: "BONUS", adjustmentValue: 300 },
-    { questionId: qAccessories.id, optionId: oAccCharger.id, ruleType: "BONUS", adjustmentValue: 200 },
-    { questionId: qAccessories.id, optionId: oAccNone.id, ruleType: "FIXED_DECREASE", adjustmentValue: 500 },
+    { questionId: qPower.id, optionId: oPowerNo.id, adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 50 },
+    { questionId: qScreen.id, optionId: oScreenFlawless.id, adjustmentType: "FIXED_BONUS", adjustmentValue: 500 },
+    { questionId: qScreen.id, optionId: oScreenMinor.id, adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 1200 },
+    { questionId: qScreen.id, optionId: oScreenHeavy.id, adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 2800 },
+    { questionId: qScreen.id, optionId: oScreenCracked.id, adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 5500 },
+    { questionId: qBody.id, optionId: oBodyFlawless.id, adjustmentType: "FIXED_BONUS", adjustmentValue: 300 },
+    { questionId: qBody.id, optionId: oBodyMinor.id, adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 800 },
+    { questionId: qBody.id, optionId: oBodyDents.id, adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 1800 },
+    { questionId: qBody.id, optionId: oBodyDamaged.id, adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 3500 },
+    { questionId: qFunctional.id, optionId: oFuncNone.id, adjustmentType: "FIXED_BONUS", adjustmentValue: 0 },
+    { questionId: qFunctional.id, optionId: oFuncMinor.id, adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 1500 },
+    { questionId: qFunctional.id, optionId: oFuncMajor.id, adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 3800 },
+    { questionId: qAccessories.id, optionId: oAccAll.id, adjustmentType: "FIXED_BONUS", adjustmentValue: 600 },
+    { questionId: qAccessories.id, optionId: oAccBox.id, adjustmentType: "FIXED_BONUS", adjustmentValue: 300 },
+    { questionId: qAccessories.id, optionId: oAccCharger.id, adjustmentType: "FIXED_BONUS", adjustmentValue: 200 },
+    { questionId: qAccessories.id, optionId: oAccNone.id, adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 500 },
   ];
 
   for (const rule of rules) {

@@ -10,7 +10,9 @@ import { logger } from "@/lib/utils/logger";
 import { z } from "zod";
 
 const createOrderSchema = z.object({
-  quoteId: z.string().min(1, "quoteId is required"),
+  quoteId: z.string({
+    required_error: "quoteId is required",
+  }),
   fullName: z.string().min(1, "Name is required"),
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
   house: z.string().min(1, "House details are required"),
@@ -31,7 +33,7 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   const validation = createOrderSchema.safeParse(body);
 
   if (!validation.success) {
-    throw new AppError((validation.error as any).issues?.[0]?.message || "Validation error", 400);
+    throw new AppError(validation.error.errors[0].message, 400);
   }
 
   const data = validation.data;
