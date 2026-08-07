@@ -8,7 +8,7 @@ import { z } from "zod";
 
 const processPayoutSchema = z.object({
   paymentMethod: z.enum(["BANK_TRANSFER", "UPI"], {
-    required_error: "paymentMethod is required",
+    message: "paymentMethod is required",
   }),
   bankName: z.string().optional(),
   accountNumber: z.string().optional(),
@@ -26,7 +26,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   const validation = processPayoutSchema.safeParse(body);
 
   if (!validation.success) {
-    throw new AppError(validation.error.errors[0].message, 400);
+    throw new AppError(validation.error.issues[0].message, 400);
   }
 
   const data = validation.data;
@@ -45,13 +45,13 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     throw new AppError("Order not found.", 404);
   }
 
-  if (order.status !== "ACCEPTED" && order.status !== "INSPECTION_COMPLETED") {
+  if (order.status !== "ACCEPTED") {
     throw new AppError("Order is not ready for payment. Inspection must be completed first.", 400);
   }
 
   const payoutResult = await payoutServiceInstance.processPayout({
     orderId: order.id,
-    amount: order.finalPrice,
+    amount: order.finalPrice || 0,
     paymentMethod: data.paymentMethod,
     bankName: data.bankName,
     accountNumber: data.accountNumber,

@@ -9,9 +9,7 @@ import { logger } from "@/lib/utils/logger";
 import { z } from "zod";
 
 const calculateQuoteSchema = z.object({
-  variantId: z.string({
-    required_error: "variantId is required",
-  }),
+  variantId: z.string().min(1, "variantId is required"),
   answers: z.array(
     z.object({
       questionId: z.string(),
@@ -28,7 +26,7 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   const validation = calculateQuoteSchema.safeParse(body);
 
   if (!validation.success) {
-    throw new AppError(validation.error.errors[0].message, 400);
+    throw new AppError(validation.error.issues[0].message, 400);
   }
 
   const { variantId, answers } = validation.data;

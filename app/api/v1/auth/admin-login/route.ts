@@ -39,7 +39,7 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   // 2. Direct email authentication mode (checks role and password configuration)
   const result = adminLoginSchema.safeParse(body);
   if (!result.success) {
-    throw new AppError(result.error.errors[0].message, 400);
+    throw new AppError(result.error.issues[0].message, 400);
   }
 
   const { email, password } = result.data;

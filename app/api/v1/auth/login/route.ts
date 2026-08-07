@@ -10,7 +10,7 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   const result = loginSchema.safeParse(body);
   
   if (!result.success) {
-    throw new AppError(result.error.errors[0].message, 400);
+    throw new AppError(result.error.issues[0].message, 400);
   }
 
   const { idToken, name } = result.data;

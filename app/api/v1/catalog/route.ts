@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { apiWrapper } from "@/lib/utils/api-wrapper";
 import { prisma } from "@/lib/db";
 
+export const dynamic = "force-dynamic";
+
 export const GET = apiWrapper(async (req: NextRequest) => {
   const { searchParams } = new URL(req.url);
   const brandSlug = searchParams.get("brand");

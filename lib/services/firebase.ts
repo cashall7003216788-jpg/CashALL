@@ -1,13 +1,15 @@
-import * as admin from "firebase-admin";
+import { initializeApp, getApps, getApp } from "firebase-admin/app";
+import { getAuth } from "firebase-admin/auth";
 
-if (!admin.apps.length) {
-  try {
-    admin.initializeApp({
+const app = getApps().length > 0
+  ? getApp()
+  : initializeApp({
       projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
     });
-  } catch (error: any) {
-    console.error("Firebase Admin initialization error:", error);
-  }
-}
 
-export const firebaseAdmin = admin;
+export const auth = getAuth(app);
+export const firebaseAdmin = {
+  auth: () => getAuth(app),
+  apps: getApps(),
+};
+

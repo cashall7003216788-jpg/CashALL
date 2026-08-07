@@ -8,9 +8,7 @@ import { NotificationHelper } from "@/lib/services/notification.helper";
 import { z } from "zod";
 
 const assignPickupSchema = z.object({
-  partnerId: z.string({
-    required_error: "partnerId is required",
-  }),
+  partnerId: z.string().min(1, "partnerId is required"),
   pickupDate: z.string().min(1, "Pickup date is required"),
   pickupTimeSlot: z.string().min(1, "Time slot is required"),
 });
@@ -24,7 +22,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   const validation = assignPickupSchema.safeParse(body);
 
   if (!validation.success) {
-    throw new AppError(validation.error.errors[0].message, 400);
+    throw new AppError(validation.error.issues[0].message, 400);
   }
 
   const { partnerId, pickupDate, pickupTimeSlot } = validation.data;

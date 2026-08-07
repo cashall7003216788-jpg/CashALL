@@ -57,7 +57,7 @@ export const GET = apiWrapper(async (req: NextRequest) => {
   // 3. Conversion and orders overview
   const ordersCount = await prisma.order.count({ where: { deletedAt: null } });
   const completedOrdersCount = await prisma.order.count({
-    where: { status: "PAYMENT_PROCESSED", deletedAt: null },
+    where: { status: "COMPLETED", deletedAt: null },
   });
   const cancelledOrdersCount = await prisma.order.count({
     where: { status: "DECLINED", deletedAt: null },

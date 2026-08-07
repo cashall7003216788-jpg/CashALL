@@ -30,7 +30,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   const validation = logQcReportSchema.safeParse(body);
 
   if (!validation.success) {
-    throw new AppError(validation.error.errors[0].message, 400);
+    throw new AppError(validation.error.issues[0].message, 400);
   }
 
   const { answers, imei, inspectorNotes } = validation.data;
@@ -63,32 +63,34 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     await tx.qcReport.create({
       data: {
         orderId: order.id,
-        inspectedAnswersJson: JSON.stringify(answers),
-        passed: true,
+        inspectorName: decodedUser.email || "Inspector",
+        imeiNumber: imei,
+        declaredAnswersJson: order.quote.selectedAnswersJson,
+        physicalAnswersJson: JSON.stringify(answers),
+        revisedPrice,
+        priceDifferenceReason: inspectorNotes || (isPriceDifferent ? "Doorstep physical inspection mismatch." : null),
+        status: isPriceDifferent ? "PENDING_APPROVAL" : "APPROVED",
         inspectedAt: new Date(),
-        inspectorNotes: inspectorNotes || null,
       },
     });
 
     // 2. Create IMEI Record
-    await tx.iMEIRecord.create({
+    await tx.imei.create({
       data: {
         orderId: order.id,
         code: imei,
-        status: "CLEAN",
+        status: "VERIFIED",
       },
     });
 
     // 3. Handle revised pricing offer
     if (isPriceDifferent) {
-      const offerNumber = `OF${Math.floor(10000 + Math.random() * 90000)}`;
       await tx.offer.create({
         data: {
-          offerNumber,
           orderId: order.id,
           originalPrice,
           revisedPrice,
-          reason: "Doorstep physical inspection mismatch.",
+          priceDifferenceReason: inspectorNotes || "Doorstep physical inspection mismatch.",
           status: "PENDING",
         },
       });
@@ -96,14 +98,14 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
       return tx.order.update({
         where: { id: order.id },
         data: {
-          status: "REVISED_OFFER_MADE",
+          status: "FINAL_OFFER_PENDING",
         },
       });
     } else {
       return tx.order.update({
         where: { id: order.id },
         data: {
-          status: "INSPECTION_COMPLETED",
+          status: "ACCEPTED",
           finalPrice: originalPrice,
         },
       });

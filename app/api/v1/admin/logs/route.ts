@@ -9,7 +9,6 @@ export const GET = apiWrapper(async (req: NextRequest) => {
 
   const [adminLogs, activityLogs] = await Promise.all([
     prisma.adminLog.findMany({
-      include: { adminUser: true },
       orderBy: { createdAt: "desc" },
       take: 50,
     }),
