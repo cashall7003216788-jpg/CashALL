@@ -96,32 +96,58 @@ export default function QuoteResultPage() {
     setAuthModalOpen(true);
   };
 
-  const handleSendOtp = (e: React.FormEvent) => {
+  const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
     if (phoneNumber.length < 10) return;
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const res = await fetch("/api/v1/auth/otp/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone: phoneNumber }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setOtpSent(true);
+      } else {
+        alert(data.error || "Failed to send OTP. Please try again.");
+      }
+    } catch (err) {
       setOtpSent(true);
-    }, 600);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleVerifyOtp = (e: React.FormEvent) => {
+  const handleVerifyOtp = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      const userObj = {
-        id: `u-${Date.now()}`,
-        name: customerName || "Phone Seller",
-        phone: phoneNumber,
-      };
-      if (typeof window !== "undefined") {
-        localStorage.setItem("cashall_user", JSON.stringify(userObj));
+    try {
+      const res = await fetch("/api/v1/auth/otp/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone: phoneNumber, code: otpCode }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        const userObj = {
+          id: `u-${Date.now()}`,
+          name: customerName || "Phone Seller",
+          phone: phoneNumber,
+        };
+        if (typeof window !== "undefined") {
+          localStorage.setItem("cashall_user", JSON.stringify(userObj));
+        }
+        setAuthModalOpen(false);
+        router.push(`/checkout/pickup?quoteId=${quote.id}`);
+      } else {
+        alert(data.error || "Invalid OTP code. Please check and try again.");
       }
-      setAuthModalOpen(false);
-      router.push(`/checkout/pickup?quoteId=${quote.id}`);
-    }, 600);
+    } catch (err) {
+      alert("Verification failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -314,7 +340,7 @@ export default function QuoteResultPage() {
           <form onSubmit={handleVerifyOtp} className="space-y-4">
             <div className="bg-green-50 p-3 rounded-xl border border-green-200 text-xs text-green-800 flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-              <span>Demo OTP sent to +91 {phoneNumber}. <strong>Use code: 123456</strong></span>
+              <span>Verification OTP sent to <strong>+91 {phoneNumber}</strong>. Enter the 6-digit code.</span>
             </div>
 
             <div>

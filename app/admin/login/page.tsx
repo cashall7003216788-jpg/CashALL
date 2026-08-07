@@ -40,13 +40,13 @@ export default function AdminLoginPage() {
         
         {/* LOGO */}
         <div className="text-center space-y-3">
-          <div className="relative h-12 w-44 mx-auto">
+          <div className="flex justify-center items-center py-2">
             <Image
               src="/logo.png"
               alt="CashALL Logo"
-              width={180}
-              height={50}
-              className="object-contain mx-auto"
+              width={160}
+              height={44}
+              className="h-10 w-auto object-contain mx-auto"
             />
           </div>
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider">

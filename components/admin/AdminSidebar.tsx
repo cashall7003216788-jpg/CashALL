@@ -43,11 +43,11 @@ export function AdminSidebar() {
     <aside className="w-64 bg-brand-black text-gray-300 border-r border-neutral-800 flex flex-col justify-between shrink-0 min-h-screen">
       <div>
         {/* LOGO */}
-        <div className="p-6 border-b border-neutral-800 flex items-center justify-between">
-          <Link href="/admin" className="relative h-9 w-36 block">
-            <Image src="/logo.png" alt="CashALL Logo" width={140} height={40} className="object-contain" priority />
+        <div className="p-4 border-b border-neutral-800 flex items-center justify-between gap-2">
+          <Link href="/admin" className="flex items-center">
+            <Image src="/logo.png" alt="CashALL Logo" width={130} height={36} className="h-8 w-auto object-contain" priority />
           </Link>
-          <span className="bg-brand-yellow/20 text-brand-yellow text-[9px] font-extrabold px-1.5 py-0.5 rounded">
+          <span className="bg-brand-yellow/20 text-brand-yellow text-[9px] font-extrabold px-2 py-0.5 rounded shrink-0">
             ADMIN
           </span>
         </div>
