@@ -1,0 +1,271 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  phone     String   @unique
+  name      String?
+  email     String?
+  role      String   @default("CUSTOMER") // CUSTOMER, ADMIN, PARTNER
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  addresses Address[]
+  orders    Order[]
+}
+
+model Address {
+  id        String   @id @default(uuid())
+  userId    String
+  fullName  String
+  phone     String
+  house     String
+  street    String
+  area      String
+  landmark  String?
+  city      String
+  state     String
+  pincode   String
+  createdAt DateTime @default(now())
+
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orders Order[]
+}
+
+model Category {
+  id        String   @id @default(uuid())
+  name      String
+  slug      String   @unique
+  active    Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model Brand {
+  id        String   @id @default(uuid())
+  name      String
+  slug      String   @unique
+  logoUrl   String?
+  active    Boolean  @default(true)
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+
+  models DeviceModel[]
+}
+
+model DeviceModel {
+  id          String   @id @default(uuid())
+  brandId     String
+  name        String
+  slug        String   @unique
+  imageUrl    String?
+  releaseYear Int?
+  popular     Boolean  @default(false)
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  brand    Brand           @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  variants DeviceVariant[]
+}
+
+model DeviceVariant {
+  id        String   @id @default(uuid())
+  modelId   String
+  ram       String?
+  storage   String
+  basePrice Float
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  model  DeviceModel   @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  quotes Quote[]
+  rules  PricingRule[]
+}
+
+model ConditionQuestion {
+  id        String   @id @default(uuid())
+  title     String
+  subtitle  String?
+  group     String   // BASIC, SCREEN, BODY, FUNCTIONAL, REPAIR, ACCESSORIES
+  type      String   @default("SINGLE") // SINGLE, MULTIPLE
+  sortOrder Int      @default(0)
+  active    Boolean  @default(true)
+
+  options ConditionOption[]
+  rules   PricingRule[]
+}
+
+model ConditionOption {
+  id          String  @id @default(uuid())
+  questionId  String
+  label       String
+  description String?
+  iconName    String?
+  sortOrder   Int     @default(0)
+
+  question ConditionQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  rules    PricingRule[]
+}
+
+model PricingRule {
+  id              String  @id @default(uuid())
+  variantId       String?
+  questionId      String
+  optionId        String
+  adjustmentType  String  // FIXED_DEDUCTION, PERCENTAGE_DEDUCTION, FIXED_BONUS
+  adjustmentValue Float
+  active          Boolean @default(true)
+
+  variant  DeviceVariant?    @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  question ConditionQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  option   ConditionOption   @relation(fields: [optionId], references: [id], onDelete: Cascade)
+}
+
+model Quote {
+  id                   String   @id @default(uuid())
+  quoteNumber          String   @unique
+  variantId            String
+  selectedAnswersJson String   // JSON string of user selected options
+  basePrice            Float
+  totalDeductions      Float
+  estimatedPrice       Float
+  breakdownJson        String   // JSON string of itemized deductions
+  expiresAt            DateTime
+  status               String   @default("ACTIVE") // ACTIVE, ORDERED, EXPIRED
+  createdAt            DateTime @default(now())
+
+  variant DeviceVariant @relation(fields: [variantId], references: [id])
+  orders  Order[]
+}
+
+model Order {
+  id              String   @id @default(uuid())
+  orderNumber     String   @unique
+  quoteId         String
+  userId          String
+  addressId       String?
+  pickupDate      String
+  pickupTimeSlot  String
+  status          String   @default("PICKUP_SCHEDULED")
+  // QUOTE_CREATED, PICKUP_SCHEDULED, PARTNER_ASSIGNED, PARTNER_ON_THE_WAY, INSPECTION_STARTED, FINAL_OFFER_PENDING, ACCEPTED, DECLINED, PAYMENT_PROCESSING, PAID, COMPLETED, CANCELLED
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  quote       Quote        @relation(fields: [quoteId], references: [id])
+  user        User         @relation(fields: [userId], references: [id])
+  address     Address?     @relation(fields: [addressId], references: [id])
+  pickups     Pickup[]
+  inspections Inspection[]
+  payments    Payment[]
+}
+
+model Pickup {
+  id         String    @id @default(uuid())
+  orderId    String
+  partnerId  String?
+  date       String
+  timeSlot   String
+  status     String    @default("SCHEDULED") // SCHEDULED, ASSIGNED, ON_THE_WAY, ARRIVED, COMPLETED, CANCELLED
+  notes      String?
+  assignedAt DateTime?
+  createdAt  DateTime  @default(now())
+
+  order   Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  partner Partner? @relation(fields: [partnerId], references: [id])
+}
+
+model Inspection {
+  id                    String    @id @default(uuid())
+  orderId               String
+  partnerId             String?
+  imeiNumber            String?
+  declaredAnswersJson   String
+  physicalAnswersJson   String
+  revisedPrice          Float
+  priceDifferenceReason String?
+  status                String    @default("PENDING_APPROVAL") // PENDING_APPROVAL, ACCEPTED, DECLINED
+  photoUrlsJson         String?
+  inspectedAt           DateTime  @default(now())
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model Payment {
+  id             String    @id @default(uuid())
+  orderId        String
+  amount         Float
+  method         String    @default("UPI") // UPI, BANK_TRANSFER
+  status         String    @default("PENDING") // PENDING, PROCESSING, PAID, FAILED
+  transactionRef String?
+  paidAt         DateTime?
+  createdAt      DateTime  @default(now())
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model ServiceArea {
+  id              String   @id @default(uuid())
+  pincode         String   @unique
+  city            String
+  state           String
+  active          Boolean  @default(true)
+  pickupAvailable Boolean  @default(true)
+  createdAt       DateTime @default(now())
+}
+
+model Partner {
+  id           String   @id @default(uuid())
+  name         String
+  phone        String   @unique
+  email        String
+  businessName String?
+  city         String
+  status       String   @default("ACTIVE") // PENDING, ACTIVE, SUSPENDED
+  rating       Float    @default(4.9)
+  createdAt    DateTime @default(now())
+
+  pickups Pickup[]
+}
+
+model PartnerApplication {
+  id             String   @id @default(uuid())
+  name           String
+  phone          String
+  email          String
+  businessName   String
+  city           String
+  state          String
+  pincodesServed String
+  experience     String?
+  status         String   @default("PENDING") // PENDING, APPROVED, REJECTED
+  createdAt      DateTime @default(now())
+}
+
+model BulkLead {
+  id          String   @id @default(uuid())
+  name        String
+  company     String
+  phone       String
+  email       String
+  city        String
+  deviceCount String
+  deviceTypes String
+  message     String?
+  status      String   @default("NEW") // NEW, IN_TOUCH, CLOSED
+  createdAt   DateTime @default(now())
+}
+
+model FAQ {
+  id        String  @id @default(uuid())
+  question  String
+  answer    String
+  category  String  @default("GENERAL")
+  sortOrder Int     @default(0)
+  active    Boolean @default(true)
+}
