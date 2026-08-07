@@ -27,21 +27,26 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   const expiresAt = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
 
   // Save OTP in database
-  await prisma.otpLog.create({
-    data: {
-      phone: cleanPhone,
-      code: otpCode,
-      expiresAt,
-      verified: false,
-      type: "LOGIN",
-    },
-  });
+  try {
+    await prisma.otpLog.create({
+      data: {
+        phone: cleanPhone,
+        code: otpCode,
+        expiresAt,
+        verified: false,
+        type: "LOGIN",
+      },
+    });
+  } catch (dbError: any) {
+    logger.error("Failed to save OTP to database:", dbError);
+    throw new AppError("OTP service temporarily unavailable. Please try again.", 503);
+  }
 
   // Attempt real SMS gateway API dispatch if API key exists
   const fast2smsKey = process.env.FAST2SMS_API_KEY;
   if (fast2smsKey) {
     try {
-      await fetch("https://www.fast2sms.com/dev/bulkV2", {
+      const smsRes = await fetch("https://www.fast2sms.com/dev/bulkV2", {
         method: "POST",
         headers: {
           authorization: fast2smsKey,
@@ -53,12 +58,17 @@ export const POST = apiWrapper(async (req: NextRequest) => {
           numbers: cleanPhone,
         }),
       });
-      logger.info(`SMS OTP dispatched via Fast2SMS to +91 ${cleanPhone}`);
+      const smsData = await smsRes.json();
+      if (smsData.return) {
+        logger.info(`SMS OTP dispatched via Fast2SMS to +91 ${cleanPhone}`);
+      } else {
+        logger.error(`Fast2SMS rejected request: ${JSON.stringify(smsData)}`);
+      }
     } catch (err: any) {
       logger.error("Fast2SMS API dispatch failed:", err);
     }
   } else {
-    logger.info(`OTP generated for +91 ${cleanPhone}: [${otpCode}] (Configure FAST2SMS_API_KEY for live SMS delivery)`);
+    logger.info(`[DEV] OTP for +91 ${cleanPhone}: ${otpCode} (Set FAST2SMS_API_KEY for live SMS)`);
   }
 
   return NextResponse.json({

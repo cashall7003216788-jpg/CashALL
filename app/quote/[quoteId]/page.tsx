@@ -110,7 +110,8 @@ export default function QuoteResultPage() {
       if (data.success) {
         setOtpSent(true);
       } else {
-        alert(data.error || "Failed to send OTP. Please try again.");
+        const errMsg = data.error || "Failed to send OTP. Please try again.";
+        alert(errMsg);
       }
     } catch (err) {
       setOtpSent(true);
@@ -141,7 +142,8 @@ export default function QuoteResultPage() {
         setAuthModalOpen(false);
         router.push(`/checkout/pickup?quoteId=${quote.id}`);
       } else {
-        alert(data.error || "Invalid OTP code. Please check and try again.");
+        const errMsg = data.error || "Invalid OTP code. Please check and try again.";
+        alert(errMsg);
       }
     } catch (err) {
       alert("Verification failed. Please try again.");

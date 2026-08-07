@@ -23,10 +23,7 @@ export function apiWrapper(handler: ApiHandler) {
         return NextResponse.json(
           {
             success: false,
-            error: {
-              message: error.message,
-              statusCode: error.statusCode,
-            },
+            error: error.message,
           },
           { status: error.statusCode }
         );
@@ -37,10 +34,7 @@ export function apiWrapper(handler: ApiHandler) {
       return NextResponse.json(
         {
           success: false,
-          error: {
-            message: isProduction ? "Internal Server Error" : error.message,
-            statusCode: 500,
-          },
+          error: isProduction ? "Internal Server Error" : error.message,
         },
         { status: 500 }
       );

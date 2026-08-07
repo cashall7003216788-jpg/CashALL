@@ -1,17 +1,31 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Menu, X, User, ChevronDown, Headphones } from "lucide-react";
+import { MapPin, Menu, X, User, ChevronDown, Headphones, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { DeviceChoiceModal } from "@/components/common/DeviceChoiceModal";
+import { CustomerAuthModal } from "@/components/common/CustomerAuthModal";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState("New Delhi");
   const [locationDropdownOpen, setLocationDropdownOpen] = useState(false);
   const [deviceChoiceOpen, setDeviceChoiceOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [user, setUser] = useState<{ name: string; phone: string } | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const u = localStorage.getItem("cashall_user");
+      if (u) {
+        try {
+          setUser(JSON.parse(u));
+        } catch (e) {}
+      }
+    }
+  }, [authModalOpen]);
 
   const cities = ["New Delhi", "Mumbai", "Bengaluru", "Kolkata", "Chennai", "Hyderabad", "Pune", "Ahmedabad"];
 
@@ -98,7 +112,22 @@ export function Header() {
             </nav>
 
             {/* RIGHT ACTION BUTTONS */}
-            <div className="hidden sm:flex items-center space-x-4">
+            <div className="hidden sm:flex items-center space-x-3">
+              {user ? (
+                <Link href="/account" className="flex items-center gap-1.5 text-xs font-semibold text-brand-yellow hover:text-white px-3 py-2 rounded-lg bg-neutral-900 border border-neutral-800 transition-colors">
+                  <User className="w-4 h-4 text-brand-yellow" />
+                  <span>{user.name || "My Orders"}</span>
+                </Link>
+              ) : (
+                <button
+                  onClick={() => setAuthModalOpen(true)}
+                  className="flex items-center gap-1.5 text-xs font-bold text-gray-200 hover:text-brand-yellow px-3 py-2 rounded-lg hover:bg-neutral-800/80 border border-neutral-800 transition-colors"
+                >
+                  <LogIn className="w-4 h-4 text-brand-yellow" />
+                  <span>Customer Login</span>
+                </button>
+              )}
+
               <Link href="/account" className="flex items-center gap-1.5 text-xs font-semibold text-gray-300 hover:text-white px-3 py-2 rounded-lg hover:bg-neutral-800/60 transition-colors">
                 <User className="w-4 h-4 text-brand-yellow" />
                 <span>My Orders</span>
@@ -154,9 +183,20 @@ export function Header() {
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
+                setAuthModalOpen(true);
+              }}
+              className="block w-full text-left py-2 text-base font-bold text-brand-yellow flex items-center gap-2"
+            >
+              <LogIn className="w-4 h-4" />
+              <span>Customer Login / Sign In</span>
+            </button>
+
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
                 setDeviceChoiceOpen(true);
               }}
-              className="block w-full text-left py-2 text-base font-bold text-brand-yellow"
+              className="block w-full text-left py-2 text-base font-bold text-white hover:text-brand-yellow"
             >
               Sell Device (Phone or Laptop)
             </button>
@@ -225,6 +265,12 @@ export function Header() {
       <DeviceChoiceModal
         isOpen={deviceChoiceOpen}
         onClose={() => setDeviceChoiceOpen(false)}
+      />
+
+      {/* CUSTOMER AUTHENTICATION & LOGIN MODAL */}
+      <CustomerAuthModal
+        isOpen={authModalOpen}
+        onClose={() => setAuthModalOpen(false)}
       />
     </>
   );
