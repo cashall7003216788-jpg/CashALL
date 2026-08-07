@@ -15,7 +15,7 @@ export async function GET(
 
     const fullModel = model as any;
 
-    // If model has no assigned questionSetId, fallback to default active QuestionSet for its category
+    // If model has no assigned questionSetId, fallback to active QuestionSet for category or any active set
     let questionSet = fullModel.questionSet;
     if (!questionSet) {
       questionSet = await db.questionSet.findFirst({
@@ -23,6 +23,24 @@ export async function GET(
           active: true,
           deviceCategory: { equals: fullModel.category || "MOBILE", mode: "insensitive" },
         },
+        include: {
+          questions: {
+            where: { active: true },
+            orderBy: { sortOrder: "asc" },
+            include: {
+              options: {
+                where: { active: true },
+                orderBy: { sortOrder: "asc" },
+              },
+            },
+          },
+        },
+      });
+    }
+
+    if (!questionSet) {
+      questionSet = await db.questionSet.findFirst({
+        where: { active: true },
         include: {
           questions: {
             where: { active: true },
