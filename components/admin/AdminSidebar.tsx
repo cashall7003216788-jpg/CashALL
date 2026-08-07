@@ -31,6 +31,7 @@ export function AdminSidebar() {
   const navItems = [
     { label: "Dashboard Overview", href: "/admin", icon: LayoutDashboard },
     { label: "Device Catalog", href: "/admin/catalog", icon: Smartphone },
+    { label: "Questionnaires & Sets", href: "/admin/questionnaires", icon: FileText },
     { label: "Pricing Rules Matrix", href: "/admin/pricing", icon: Calculator },
     { label: "Quotes Repository", href: "/admin/quotes", icon: FileText },
     { label: "Order Management", href: "/admin/orders", icon: ShoppingBag },

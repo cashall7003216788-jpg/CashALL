@@ -1,23 +1,33 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, ArrowRight, Smartphone, Sparkles } from "lucide-react";
-import { INITIAL_MODELS, INITIAL_BRANDS } from "@/lib/store";
 
 export function DeviceSearch() {
   const [query, setQuery] = useState("");
   const [focused, setFocused] = useState(false);
+  const [searchResults, setSearchResults] = useState<any[]>([]);
 
-  const filteredResults = useMemo(() => {
-    if (!query.trim()) return [];
-    const q = query.toLowerCase().trim();
-    return INITIAL_MODELS.filter((m) => {
-      const brand = INITIAL_BRANDS.find((b) => b.id === m.brandId);
-      const fullName = `${brand?.name || ""} ${m.name}`.toLowerCase();
-      return fullName.includes(q) || m.name.toLowerCase().includes(q);
-    }).slice(0, 6);
+  useEffect(() => {
+    if (!query.trim()) {
+      setSearchResults([]);
+      return;
+    }
+
+    const timer = setTimeout(async () => {
+      try {
+        const res = await fetch(`/api/catalog/models?search=${encodeURIComponent(query.trim())}`).then((r) => r.json());
+        if (res.success && res.data) {
+          setSearchResults(res.data.slice(0, 6));
+        }
+      } catch (e) {
+        console.error("Search error:", e);
+      }
+    }, 200);
+
+    return () => clearTimeout(timer);
   }, [query]);
 
   return (
@@ -47,47 +57,44 @@ export function DeviceSearch() {
         {/* AUTOCOMPLETE DROPDOWN */}
         {focused && query.trim().length > 0 && (
           <div className="absolute top-full left-0 right-0 mt-3 bg-white rounded-2xl shadow-2xl border border-brand-border overflow-hidden z-50 animate-fadeIn">
-            {filteredResults.length > 0 ? (
+            {searchResults.length > 0 ? (
               <div className="divide-y divide-gray-100">
                 <div className="px-4 py-2 bg-brand-bg text-[11px] font-bold uppercase tracking-wider text-gray-400">
-                  Select Your Exact Phone Model
+                  Select Your Device Model
                 </div>
-                {filteredResults.map((item) => {
-                  const brand = INITIAL_BRANDS.find((b) => b.id === item.brandId);
-                  return (
-                    <Link
-                      key={item.id}
-                      href={`/sell/mobile/${brand?.slug}/${item.slug}`}
-                      className="flex items-center justify-between px-5 py-3.5 hover:bg-brand-yellow/10 transition-colors group"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center p-1 border border-gray-100 group-hover:border-brand-yellow/50">
-                          {item.imageUrl ? (
-                            <Image
-                              src={item.imageUrl}
-                              alt={item.name}
-                              width={32}
-                              height={32}
-                              className="object-contain max-h-8"
-                            />
-                          ) : (
-                            <Smartphone className="w-5 h-5 text-gray-400" />
-                          )}
-                        </div>
-                        <div>
-                          <div className="text-sm font-bold text-brand-black group-hover:text-black">
-                            {brand?.name} {item.name}
-                          </div>
-                          <div className="text-[11px] text-brand-muted">Released {item.releaseYear}</div>
-                        </div>
+                {searchResults.map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`/sell/mobile/${item.brand?.slug || "apple"}/${item.slug}`}
+                    className="flex items-center justify-between px-5 py-3.5 hover:bg-brand-yellow/10 transition-colors group"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center p-1 border border-gray-100 group-hover:border-brand-yellow/50">
+                        {item.imageUrl ? (
+                          <Image
+                            src={item.imageUrl}
+                            alt={item.name}
+                            width={32}
+                            height={32}
+                            className="object-contain max-h-8"
+                          />
+                        ) : (
+                          <Smartphone className="w-5 h-5 text-gray-400" />
+                        )}
                       </div>
-                      <div className="flex items-center gap-1 text-xs font-extrabold text-brand-black group-hover:translate-x-1 transition-transform">
-                        <span>Get Price</span>
-                        <ArrowRight className="w-3.5 h-3.5 text-brand-black" />
+                      <div>
+                        <div className="text-sm font-bold text-brand-black group-hover:text-black">
+                          {item.brand?.name} {item.name}
+                        </div>
+                        <div className="text-[11px] text-brand-muted">Released {item.releaseYear || 2024}</div>
                       </div>
-                    </Link>
-                  );
-                })}
+                    </div>
+                    <div className="flex items-center gap-1 text-xs font-extrabold text-brand-black group-hover:translate-x-1 transition-transform">
+                      <span>Get Valuation</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-brand-black" />
+                    </div>
+                  </Link>
+                ))}
               </div>
             ) : (
               <div className="p-8 text-center">
@@ -112,7 +119,7 @@ export function DeviceSearch() {
       {/* POPULAR SEARCH QUICK TAGS */}
       <div className="flex flex-wrap items-center justify-center gap-2 mt-3 text-xs text-gray-400">
         <span className="font-semibold text-gray-500">Popular:</span>
-        {["iPhone 15", "iPhone 16 Pro Max", "Galaxy S24 Ultra", "OnePlus 12", "Pixel 8 Pro"].map((tag) => (
+        {["iPhone 15", "iPhone 15 Pro", "Galaxy S24"].map((tag) => (
           <button
             key={tag}
             onClick={() => setQuery(tag)}
