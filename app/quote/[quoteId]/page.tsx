@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
@@ -25,7 +25,15 @@ import {
   Smartphone,
   Phone,
   CheckCircle2,
+  Lock,
+  RefreshCw,
 } from "lucide-react";
+import {
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
+  ConfirmationResult,
+} from "firebase/auth";
+import { firebaseClientAuth } from "@/lib/firebase-client";
 
 export default function QuoteResultPage() {
   const params = useParams();
@@ -39,6 +47,28 @@ export default function QuoteResultPage() {
   const [otpCode, setOtpCode] = useState("");
   const [customerName, setCustomerName] = useState("");
   const [loading, setLoading] = useState(false);
+  const [otpError, setOtpError] = useState("");
+  const [countdown, setCountdown] = useState(0);
+  const confirmationRef = useRef<ConfirmationResult | null>(null);
+  const recaptchaVerifierRef = useRef<RecaptchaVerifier | null>(null);
+
+  // Countdown for resend
+  useEffect(() => {
+    if (countdown <= 0) return;
+    const t = setTimeout(() => setCountdown((c) => c - 1), 1000);
+    return () => clearTimeout(t);
+  }, [countdown]);
+
+  const setupRecaptcha = () => {
+    if (recaptchaVerifierRef.current) return recaptchaVerifierRef.current;
+    const verifier = new RecaptchaVerifier(
+      firebaseClientAuth,
+      "quote-recaptcha-container",
+      { size: "invisible" }
+    );
+    recaptchaVerifierRef.current = verifier;
+    return verifier;
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -98,23 +128,32 @@ export default function QuoteResultPage() {
 
   const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (phoneNumber.length < 10) return;
+    const clean = phoneNumber.replace(/\D/g, "");
+    if (clean.length < 10) return;
     setLoading(true);
+    setOtpError("");
     try {
-      const res = await fetch("/api/v1/auth/otp/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone: phoneNumber }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setOtpSent(true);
-      } else {
-        const errMsg = data.error || "Failed to send OTP. Please try again.";
-        alert(errMsg);
-      }
-    } catch (err) {
+      const verifier = setupRecaptcha();
+      const confirmation = await signInWithPhoneNumber(
+        firebaseClientAuth,
+        `+91${clean}`,
+        verifier
+      );
+      confirmationRef.current = confirmation;
       setOtpSent(true);
+      setCountdown(30);
+    } catch (err: any) {
+      if (recaptchaVerifierRef.current) {
+        try { recaptchaVerifierRef.current.clear(); } catch (e) {}
+        recaptchaVerifierRef.current = null;
+      }
+      if (err.code === "auth/too-many-requests") {
+        setOtpError("Too many attempts. Please wait a few minutes.");
+      } else if (err.code === "auth/invalid-phone-number") {
+        setOtpError("Invalid phone number. Please re-enter.");
+      } else {
+        setOtpError("Failed to send OTP via Firebase. Please try again.");
+      }
     } finally {
       setLoading(false);
     }
@@ -122,33 +161,48 @@ export default function QuoteResultPage() {
 
   const handleVerifyOtp = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!confirmationRef.current || otpCode.length !== 6) return;
     setLoading(true);
+    setOtpError("");
     try {
-      const res = await fetch("/api/v1/auth/otp/verify", {
+      const result = await confirmationRef.current.confirm(otpCode);
+      const idToken = await result.user.getIdToken();
+      // Log to backend for audit
+      await fetch("/api/v1/auth/otp/verify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone: phoneNumber, code: otpCode }),
+        body: JSON.stringify({ idToken }),
       });
-      const data = await res.json();
-      if (data.success) {
-        const userObj = {
-          id: `u-${Date.now()}`,
-          name: customerName || "Phone Seller",
-          phone: phoneNumber,
-        };
-        if (typeof window !== "undefined") {
-          localStorage.setItem("cashall_user", JSON.stringify(userObj));
-        }
-        setAuthModalOpen(false);
-        router.push(`/checkout/pickup?quoteId=${quote.id}`);
-      } else {
-        const errMsg = data.error || "Invalid OTP code. Please check and try again.";
-        alert(errMsg);
+      const userObj = {
+        id: result.user.uid,
+        name: customerName || "Phone Seller",
+        phone: phoneNumber.replace(/\D/g, ""),
+      };
+      if (typeof window !== "undefined") {
+        localStorage.setItem("cashall_user", JSON.stringify(userObj));
       }
-    } catch (err) {
-      alert("Verification failed. Please try again.");
+      setAuthModalOpen(false);
+      router.push(`/checkout/pickup?quoteId=${quote.id}`);
+    } catch (err: any) {
+      if (err.code === "auth/invalid-verification-code") {
+        setOtpError("Incorrect OTP code. Please check and try again.");
+      } else if (err.code === "auth/code-expired") {
+        setOtpError("OTP expired. Please request a new one.");
+      } else {
+        setOtpError("Verification failed. Please try again.");
+      }
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleResendOtp = () => {
+    setOtpSent(false);
+    setOtpCode("");
+    setOtpError("");
+    if (recaptchaVerifierRef.current) {
+      try { recaptchaVerifierRef.current.clear(); } catch (e) {}
+      recaptchaVerifierRef.current = null;
     }
   };
 
@@ -287,12 +341,21 @@ export default function QuoteResultPage() {
         </div>
       </main>
 
+      {/* Firebase invisible reCAPTCHA (required by Firebase Phone Auth) */}
+      <div id="quote-recaptcha-container" />
+
       {/* PHONE / OTP VERIFICATION MODAL */}
       <Modal
         isOpen={authModalOpen}
         onClose={() => setAuthModalOpen(false)}
         title={otpSent ? "Verify OTP Code" : "Verify Phone Number"}
       >
+        {otpError && (
+          <div className="bg-red-50 border border-red-200 text-red-700 text-xs p-3 rounded-xl mb-3">
+            {otpError}
+          </div>
+        )}
+
         {!otpSent ? (
           <form onSubmit={handleSendOtp} className="space-y-4">
             <p className="text-xs text-brand-muted">
@@ -327,6 +390,11 @@ export default function QuoteResultPage() {
               </div>
             </div>
 
+            <div className="flex items-center gap-2 text-xs text-gray-500 bg-gray-50 px-3 py-2 rounded-lg">
+              <ShieldCheck className="w-3.5 h-3.5 text-yellow-500" />
+              <span>Secured by Firebase Phone Authentication</span>
+            </div>
+
             <Button
               type="submit"
               variant="primary"
@@ -342,7 +410,7 @@ export default function QuoteResultPage() {
           <form onSubmit={handleVerifyOtp} className="space-y-4">
             <div className="bg-green-50 p-3 rounded-xl border border-green-200 text-xs text-green-800 flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-              <span>Verification OTP sent to <strong>+91 {phoneNumber}</strong>. Enter the 6-digit code.</span>
+              <span>OTP sent to <strong>+91 {phoneNumber}</strong> via Firebase SMS</span>
             </div>
 
             <div>
@@ -350,10 +418,11 @@ export default function QuoteResultPage() {
               <input
                 type="text"
                 value={otpCode}
-                onChange={(e) => setOtpCode(e.target.value)}
+                onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, ""))}
                 maxLength={6}
                 placeholder="123456"
                 required
+                autoFocus
                 className="w-full px-3 py-2.5 text-center text-lg font-bold tracking-widest bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow"
               />
             </div>
@@ -363,11 +432,26 @@ export default function QuoteResultPage() {
               variant="primary"
               size="md"
               fullWidth
-              disabled={loading}
+              disabled={loading || otpCode.length < 6}
               className="font-bold text-xs"
             >
               {loading ? "Verifying..." : "Verify & Proceed to Pickup"}
             </Button>
+
+            <div className="text-center">
+              {countdown > 0 ? (
+                <p className="text-xs text-gray-400">Resend in <span className="font-bold text-gray-600">{countdown}s</span></p>
+              ) : (
+                <button
+                  type="button"
+                  onClick={handleResendOtp}
+                  className="text-xs text-yellow-600 font-bold hover:underline flex items-center gap-1 mx-auto"
+                >
+                  <RefreshCw className="w-3 h-3" />
+                  Resend OTP
+                </button>
+              )}
+            </div>
           </form>
         )}
       </Modal>
