@@ -110,8 +110,13 @@ export function CustomerAuthModal({
         setError("Too many attempts. Please wait a few minutes and try again.");
       } else if (err.code === "auth/quota-exceeded") {
         setError("SMS quota exceeded. Please try again later.");
+      } else if (err.code === "auth/operation-not-allowed") {
+        setError("Phone sign-in is not enabled. Please contact support.");
+      } else if (err.code === "auth/captcha-check-failed" || err.code === "auth/network-request-failed") {
+        setError("Network error. Please check your connection and try again.");
       } else {
-        setError("Failed to send OTP. Please try again.");
+        console.error("Firebase OTP error:", err.code, err.message);
+        setError("Could not send OTP. Please try again or contact support.");
       }
     } finally {
       setLoading(false);

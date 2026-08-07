@@ -148,11 +148,18 @@ export default function QuoteResultPage() {
         recaptchaVerifierRef.current = null;
       }
       if (err.code === "auth/too-many-requests") {
-        setOtpError("Too many attempts. Please wait a few minutes.");
+        setOtpError("Too many OTP requests. Please wait a few minutes and try again.");
       } else if (err.code === "auth/invalid-phone-number") {
-        setOtpError("Invalid phone number. Please re-enter.");
+        setOtpError("Invalid phone number. Please check and re-enter.");
+      } else if (err.code === "auth/operation-not-allowed") {
+        setOtpError("Phone sign-in is not enabled. Please contact support.");
+      } else if (err.code === "auth/captcha-check-failed" || err.code === "auth/network-request-failed") {
+        setOtpError("Network error. Please check your connection and try again.");
+      } else if (err.code === "auth/quota-exceeded") {
+        setOtpError("SMS quota exceeded. Please try again after some time.");
       } else {
-        setOtpError("Failed to send OTP via Firebase. Please try again.");
+        console.error("Firebase OTP error:", err.code, err.message);
+        setOtpError("Could not send OTP. Please try again or contact support.");
       }
     } finally {
       setLoading(false);
