@@ -162,10 +162,10 @@ export default function LaptopVariantSelectionPage() {
               <div className="md:col-span-7 space-y-6">
                 <div className="border-b border-gray-100 pb-4">
                   <h2 className="text-lg font-extrabold text-brand-black">
-                    Cashify Resale Price
+                    CashALL Resale Valuation
                   </h2>
                   <p className="text-xs text-brand-muted mt-0.5">
-                    Live price sourced from Cashify for this model
+                    Real-time estimated valuation for this model
                   </p>
                 </div>
 
@@ -191,7 +191,7 @@ export default function LaptopVariantSelectionPage() {
                               {variant.ram && variant.ram !== "Standard" ? `${variant.ram} · ${variant.storage}` : model?.name}
                             </div>
                             <div className="text-[11px] text-brand-muted">
-                              Cashify Get Upto: ₹{variant.basePrice.toLocaleString("en-IN")}
+                              Get Upto: ₹{variant.basePrice.toLocaleString("en-IN")}
                             </div>
                           </div>
                         </div>
@@ -205,7 +205,7 @@ export default function LaptopVariantSelectionPage() {
 
                 <div className="pt-4 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div>
-                    <div className="text-xs text-brand-muted">Cashify Base Valuation</div>
+                    <div className="text-xs text-brand-muted">CashALL Base Valuation</div>
                     <div className="text-2xl font-black text-brand-black font-price">
                       ₹{selectedVariant.basePrice.toLocaleString("en-IN")}
                     </div>
