@@ -194,7 +194,7 @@ export const INITIAL_MODELS: DeviceModelData[] = [
   // Nothing
   { id: "m-nothing-2", brandId: "b-nothing", brandSlug: "nothing", name: "Nothing Phone (2)", slug: "nothing-phone-2", imageUrl: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80", releaseYear: 2023, popular: true, active: true, contactForPrice: false , category: "MOBILE" },
 
-  // ── LAPTOP MODELS (from Cashify scraper) ───────────────────────────────────
+  // ── LAPTOP MODELS ───────────────────────────────────
   { id: "m-xiaomi-mi-notebook", brandId: "b-xiaomi", brandSlug: "xiaomi", name: "Mi Notebook", slug: "mi-notebook", imageUrl: "", releaseYear: 2024, popular: false, active: true, contactForPrice: false , category: "LAPTOP" },
   { id: "m-xiaomi-mi-air-series", brandId: "b-xiaomi", brandSlug: "xiaomi", name: "Mi Air Series", slug: "mi-air-series", imageUrl: "", releaseYear: 2024, popular: false, active: true, contactForPrice: false , category: "LAPTOP" },
   { id: "m-xiaomi-mi-pro-series", brandId: "b-xiaomi", brandSlug: "xiaomi", name: "Mi Pro Series", slug: "mi-pro-series", imageUrl: "", releaseYear: 2024, popular: false, active: true, contactForPrice: false , category: "LAPTOP" },
@@ -516,7 +516,7 @@ export const INITIAL_VARIANTS: DeviceVariantData[] = [
   { id: "v-ip15p-128", modelId: "m-iphone-15-pro", storage: "128 GB", basePrice: 48000, active: true },
   { id: "v-ip15p-256", modelId: "m-iphone-15-pro", storage: "256 GB", basePrice: 55000, active: true },
 
-  // ── LAPTOP VARIANTS (from Cashify scraper) ──────────────────────────────────
+  // ── LAPTOP VARIANTS ──────────────────────────────────
   { id: "v-xiaomi-mi-notebook", modelId: "m-xiaomi-mi-notebook", ram: "Standard", storage: "Standard", basePrice: 16030, active: true },
   { id: "v-xiaomi-mi-air-series", modelId: "m-xiaomi-mi-air-series", ram: "Standard", storage: "Standard", basePrice: 9100, active: true },
   { id: "v-xiaomi-mi-pro-series", modelId: "m-xiaomi-mi-pro-series", ram: "Standard", storage: "Standard", basePrice: 12470, active: true },
