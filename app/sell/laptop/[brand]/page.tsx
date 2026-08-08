@@ -6,8 +6,8 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { INITIAL_BRANDS, INITIAL_MODELS } from "@/lib/store";
-import { Search, ChevronRight, Laptop, Sparkles } from "lucide-react";
+import { INITIAL_BRANDS, INITIAL_MODELS, INITIAL_VARIANTS } from "@/lib/store";
+import { Search, ChevronRight, Laptop, Sparkles, PhoneCall } from "lucide-react";
 
 export default function LaptopModelSelectionPage() {
   const params = useParams();
@@ -15,7 +15,7 @@ export default function LaptopModelSelectionPage() {
   const [search, setSearch] = useState("");
 
   const brand = INITIAL_BRANDS.find((b) => b.slug === brandSlug) || INITIAL_BRANDS[0];
-  const brandModels = INITIAL_MODELS.filter((m) => m.brandId === brand.id);
+  const brandModels = INITIAL_MODELS.filter((m) => m.brandId === brand.id && m.category === "LAPTOP");
   const filteredModels = brandModels.filter((m) =>
     m.name.toLowerCase().includes(search.toLowerCase().trim())
   );
@@ -62,36 +62,56 @@ export default function LaptopModelSelectionPage() {
 
           {/* MODELS GRID */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {filteredModels.map((model) => (
-              <Link
-                key={model.id}
-                href={`/sell/laptop/${brand.slug}/${model.slug}`}
-                className="bg-white rounded-2xl p-6 border border-brand-border hover:border-brand-yellow hover:shadow-premium transition-all duration-200 text-center group flex flex-col justify-between"
-              >
-                <div className="w-full aspect-video bg-gray-50 rounded-xl mb-4 flex items-center justify-center p-4 border border-gray-100 group-hover:border-brand-yellow/30 relative">
-                  {model.imageUrl ? (
-                    <Image
-                      src={model.imageUrl}
-                      alt={model.name}
-                      width={200}
-                      height={130}
-                      className="object-contain max-h-32 group-hover:scale-105 transition-transform"
-                    />
-                  ) : (
-                    <Laptop className="w-12 h-12 text-gray-400" />
+            {filteredModels.map((model) => {
+              const variant = INITIAL_VARIANTS.find((v) => v.modelId === model.id);
+              const isContactPrice = model.contactForPrice === true;
+              return (
+                <Link
+                  key={model.id}
+                  href={`/sell/laptop/${brand.slug}/${model.slug}`}
+                  className="bg-white rounded-2xl p-6 border border-brand-border hover:border-brand-yellow hover:shadow-premium transition-all duration-200 text-center group flex flex-col justify-between relative overflow-hidden"
+                >
+                  {isContactPrice && (
+                    <div className="absolute top-3 right-3 flex items-center gap-1 bg-orange-100 text-orange-700 text-[10px] font-bold px-2 py-1 rounded-full">
+                      <PhoneCall className="w-3 h-3" />
+                      Get Exact Value
+                    </div>
                   )}
-                </div>
 
-                <div>
-                  <h3 className="text-base font-extrabold text-brand-black group-hover:text-black">
-                    {model.name}
-                  </h3>
-                  <p className="text-xs text-brand-muted mt-1 font-medium">
-                    Released {model.releaseYear}
-                  </p>
-                </div>
-              </Link>
-            ))}
+                  <div className="w-full aspect-video bg-gray-50 rounded-xl mb-4 flex items-center justify-center p-4 border border-gray-100 group-hover:border-brand-yellow/30">
+                    {model.imageUrl ? (
+                      <Image
+                        src={model.imageUrl}
+                        alt={model.name}
+                        width={200}
+                        height={130}
+                        className="object-contain max-h-32 group-hover:scale-105 transition-transform"
+                      />
+                    ) : (
+                      <Laptop className="w-12 h-12 text-gray-400" />
+                    )}
+                  </div>
+
+                  <div>
+                    <h3 className="text-base font-extrabold text-brand-black group-hover:text-black">
+                      {model.name}
+                    </h3>
+                    {isContactPrice ? (
+                      <p className="text-xs text-orange-600 mt-1 font-semibold">Price on request</p>
+                    ) : variant ? (
+                      <p className="text-xs text-brand-muted mt-1 font-medium">
+                        Get upto{" "}
+                        <span className="font-bold text-brand-black">
+                          &#8377;{variant.basePrice.toLocaleString("en-IN")}
+                        </span>
+                      </p>
+                    ) : (
+                      <p className="text-xs text-brand-muted mt-1 font-medium">Released {model.releaseYear}</p>
+                    )}
+                  </div>
+                </Link>
+              );
+            })}
           </div>
 
           {filteredModels.length === 0 && (

@@ -43,3 +43,8 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# scraper debug
+page_debug.html
+cashify_debug.py
+scraper_log.txt

@@ -57,7 +57,7 @@ export function DeviceSearch() {
                   return (
                     <Link
                       key={item.id}
-                      href={`/sell/mobile/${brand?.slug}/${item.slug}`}
+                      href={item.category === "LAPTOP" ? `/sell/laptop/${brand?.slug}/${item.slug}` : `/sell/mobile/${brand?.slug}/${item.slug}`}
                       className="flex items-center justify-between px-5 py-3.5 hover:bg-brand-yellow/10 transition-colors group"
                     >
                       <div className="flex items-center gap-3">
