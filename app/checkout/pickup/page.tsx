@@ -25,9 +25,9 @@ function PickupCheckoutContent() {
   const quoteId = searchParams.get("quoteId") || "quote-demo";
 
   const [quote, setQuote] = useState<QuoteData | null>(null);
-  const [pincode, setPincode] = useState("110001");
+  const [pincode, setPincode] = useState("700001");
   const [serviceStatus, setServiceStatus] = useState<"IDLE" | "AVAILABLE" | "UNAVAILABLE">("AVAILABLE");
-  const [selectedCity, setSelectedCity] = useState("New Delhi");
+  const [selectedState, setSelectedState] = useState("West Bengal");
 
   // Address fields
   const [fullName, setFullName] = useState("");
@@ -70,10 +70,10 @@ function PickupCheckoutContent() {
     const match = INITIAL_SERVICE_AREAS.find((s) => s.pincode === pincode.trim() && s.active);
     if (match) {
       setServiceStatus("AVAILABLE");
-      setSelectedCity(match.city);
+      setSelectedState(match.state);
     } else if (pincode.length === 6) {
       setServiceStatus("AVAILABLE");
-      setSelectedCity("New Delhi");
+      setSelectedState("West Bengal");
     } else {
       setServiceStatus("UNAVAILABLE");
     }
@@ -94,7 +94,7 @@ function PickupCheckoutContent() {
       customerName: fullName || "Phone Seller",
       customerPhone: phone || "+91 9876543210",
       pincode,
-      addressSummary: `${house}, ${street}, ${area}, ${landmark ? landmark + ", " : ""}${selectedCity} - ${pincode}`,
+      addressSummary: `${house}, ${street}, ${area}, ${landmark ? landmark + ", " : ""}${selectedState} - ${pincode}`,
       pickupDate,
       pickupTimeSlot: pickupSlot,
       status: "PICKUP_SCHEDULED",
@@ -170,7 +170,7 @@ function PickupCheckoutContent() {
                 {serviceStatus === "AVAILABLE" && (
                   <div className="bg-green-50 p-3 rounded-xl border border-green-200 text-xs text-green-800 flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                    <span>Fast Doorstep Pickup is <strong>Available</strong> in {selectedCity} ({pincode}).</span>
+                    <span>Fast Doorstep Pickup is <strong>Available</strong> in {selectedState} ({pincode}).</span>
                   </div>
                 )}
 

@@ -86,11 +86,6 @@ export function Footer() {
                   Sell Laptop
                 </Link>
               </li>
-              <li>
-                <Link href="/bulk-sell" className="hover:text-brand-yellow transition-colors">
-                  Bulk / Corporate Sell
-                </Link>
-              </li>
             </ul>
           </div>
 

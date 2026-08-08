@@ -361,15 +361,15 @@ export const INITIAL_PRICING_RULES: PricingRuleData[] = [
   { id: "r-a-none", questionId: "q-accessories", optionId: "o-a-none", adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 500 },
 ];
 
+export const AVAILABLE_STATES = ["West Bengal", "Uttar Pradesh", "Jharkhand"];
+
 export const INITIAL_SERVICE_AREAS: ServiceAreaData[] = [
-  { id: "sa-1", pincode: "110001", city: "New Delhi", state: "Delhi", active: true, pickupAvailable: true },
-  { id: "sa-2", pincode: "400001", city: "Mumbai", state: "Maharashtra", active: true, pickupAvailable: true },
-  { id: "sa-3", pincode: "560001", city: "Bengaluru", state: "Karnataka", active: true, pickupAvailable: true },
-  { id: "sa-4", pincode: "700001", city: "Kolkata", state: "West Bengal", active: true, pickupAvailable: true },
-  { id: "sa-5", pincode: "600001", city: "Chennai", state: "Tamil Nadu", active: true, pickupAvailable: true },
-  { id: "sa-6", pincode: "500001", city: "Hyderabad", state: "Telangana", active: true, pickupAvailable: true },
-  { id: "sa-7", pincode: "380001", city: "Ahmedabad", state: "Gujarat", active: true, pickupAvailable: true },
-  { id: "sa-8", pincode: "411001", city: "Pune", state: "Maharashtra", active: true, pickupAvailable: true },
+  { id: "sa-1", pincode: "700001", city: "Kolkata", state: "West Bengal", active: true, pickupAvailable: true },
+  { id: "sa-2", pincode: "226001", city: "Lucknow", state: "Uttar Pradesh", active: true, pickupAvailable: true },
+  { id: "sa-3", pincode: "834001", city: "Ranchi", state: "Jharkhand", active: true, pickupAvailable: true },
+  { id: "sa-4", pincode: "711101", city: "Howrah", state: "West Bengal", active: true, pickupAvailable: true },
+  { id: "sa-5", pincode: "208001", city: "Kanpur", state: "Uttar Pradesh", active: true, pickupAvailable: true },
+  { id: "sa-6", pincode: "831001", city: "Jamshedpur", state: "Jharkhand", active: true, pickupAvailable: true },
 ];
 
 export const INITIAL_FAQS: FAQData[] = [
@@ -406,8 +406,8 @@ export const INITIAL_FAQS: FAQData[] = [
 ];
 
 export const INITIAL_PARTNERS: PartnerData[] = [
-  { id: "part-1", name: "Rahul Sharma", phone: "+91 9876543210", email: "rahul@cashallpartners.in", businessName: "Express Logistics NCR", city: "New Delhi", status: "ACTIVE", rating: 4.9, completedPickups: 142 },
-  { id: "part-2", name: "Vikram Patil", phone: "+91 9812345678", email: "vikram@cashallpartners.in", businessName: "Apex Courier Services", city: "Mumbai", status: "ACTIVE", rating: 4.8, completedPickups: 98 },
+  { id: "part-1", name: "Rahul Sharma", phone: "+91 9876543210", email: "rahul@cashallpartners.in", businessName: "Express Logistics East", city: "Kolkata", status: "ACTIVE", rating: 4.9, completedPickups: 142 },
+  { id: "part-2", name: "Vikram Kumar", phone: "+91 9812345678", email: "vikram@cashallpartners.in", businessName: "Apex Courier Services", city: "Lucknow", status: "ACTIVE", rating: 4.8, completedPickups: 98 },
 ];
 
 // DEMO SAMPLE ORDERS
@@ -419,7 +419,7 @@ export const INITIAL_ORDERS: OrderData[] = [
     userId: "u-sample-1",
     customerName: "Ananya Roy",
     customerPhone: "+91 9876501234",
-    pincode: "110001",
+    pincode: "700001",
     pickupDate: "Tomorrow",
     pickupTimeSlot: "10 AM - 1 PM",
     status: "PICKUP_SCHEDULED",

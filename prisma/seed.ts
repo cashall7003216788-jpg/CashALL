@@ -256,10 +256,9 @@ async function main() {
 
   // 8. Create Service Areas
   const pincodes = [
-    { pincode: "110001", city: "New Delhi", state: "Delhi" },
-    { pincode: "400001", city: "Mumbai", state: "Maharashtra" },
-    { pincode: "560001", city: "Bengaluru", state: "Karnataka" },
     { pincode: "700001", city: "Kolkata", state: "West Bengal" },
+    { pincode: "226001", city: "Lucknow", state: "Uttar Pradesh" },
+    { pincode: "834001", city: "Ranchi", state: "Jharkhand" },
   ];
   for (const p of pincodes) {
     await prisma.serviceArea.create({ data: p });
@@ -281,8 +280,8 @@ async function main() {
       name: "Rahul Sharma",
       phone: "+91 9876543210",
       email: "rahul@cashallpartners.in",
-      businessName: "Express Logistics NCR",
-      city: "New Delhi",
+      businessName: "Express Logistics East",
+      city: "Kolkata",
       status: "ACTIVE",
     },
   });

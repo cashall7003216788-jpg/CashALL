@@ -7,63 +7,58 @@ export const GET = apiWrapper(async (req: NextRequest) => {
   const decodedUser = await verifyAuthToken(req);
   requireRole(["ADMIN", "SUPER_ADMIN"], decodedUser.role);
 
-  // Group status counts
-  const orderCounts = await prisma.order.groupBy({
-    by: ["status"],
-    _count: { id: true },
-  });
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
 
-  const statusStats = orderCounts.reduce((acc, current) => {
-    acc[current.status] = current._count.id;
-    return acc;
-  }, {} as Record<string, number>);
-
-  // Total Revenue
-  const revenueAgg = await prisma.payment.aggregate({
-    where: { status: "PAID" },
-    _sum: { amount: true },
-  });
-  const totalRevenue = revenueAgg._sum.amount || 0;
-
-  // Customers count
-  const totalCustomers = await prisma.user.count({
-    where: { role: "CUSTOMER", deletedAt: null },
-  });
-
-  // Open support tickets count
-  const openTickets = await prisma.supportTicket.count({
-    where: { status: "OPEN" },
-  });
-
-  // Recent orders list
-  const recentOrders = await prisma.order.findMany({
-    where: { deletedAt: null },
-    include: {
-      user: true,
-      quote: {
-        include: {
-          variant: {
-            include: {
-              model: true,
-            },
-          },
-        },
+  // Real counts from DB
+  const [
+    todayQuotes,
+    todayOrders,
+    pickupsToday,
+    pendingInspections,
+    pendingPayments,
+    completedSales,
+    recentOrdersRaw,
+  ] = await Promise.all([
+    prisma.quote.count({ where: { createdAt: { gte: today }, deletedAt: null } }),
+    prisma.order.count({ where: { createdAt: { gte: today }, deletedAt: null } }),
+    prisma.order.count({ where: { pickupDate: today.toISOString().split("T")[0], deletedAt: null } }),
+    prisma.order.count({ where: { status: "INSPECTION_STARTED", deletedAt: null } }),
+    prisma.payment.count({ where: { status: "PENDING" } }),
+    prisma.order.count({ where: { status: "COMPLETED", deletedAt: null } }),
+    prisma.order.findMany({
+      where: { deletedAt: null },
+      include: {
+        user: { select: { name: true, phone: true } },
+        quote: { include: { variant: { include: { model: true } } } },
       },
-    },
-    orderBy: { createdAt: "desc" },
-    take: 5,
-  });
+      orderBy: { createdAt: "desc" },
+      take: 10,
+    }),
+  ]);
+
+  const recentOrders = recentOrdersRaw.map((ord) => ({
+    id: ord.id,
+    orderNumber: ord.orderNumber,
+    customerName: ord.user?.name || "—",
+    customerPhone: ord.user?.phone || "—",
+    pickupDate: ord.pickupDate,
+    pickupTimeSlot: ord.pickupTimeSlot,
+    estimatedPrice: ord.quote?.estimatedPrice ?? 0,
+    revisedPrice: ord.finalPrice ?? null,
+    status: ord.status,
+  }));
 
   return NextResponse.json({
     success: true,
-    data: {
-      metrics: {
-        totalRevenue,
-        totalCustomers,
-        openTickets,
-        statusStats,
-      },
-      recentOrders,
+    stats: {
+      todayQuotes,
+      todayOrders,
+      pickupsToday,
+      pendingInspections,
+      pendingPayments,
+      completedSales,
     },
+    recentOrders,
   });
 });

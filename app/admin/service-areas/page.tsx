@@ -21,7 +21,7 @@ export default function AdminServiceAreasPage() {
       id: `sa-${Date.now()}`,
       pincode: newPincode,
       city: newCity,
-      state: newState || "Delhi",
+      state: newState || "West Bengal",
       active: true,
       pickupAvailable: true,
     };
@@ -41,7 +41,7 @@ export default function AdminServiceAreasPage() {
             Service Area PIN Code Management
           </h1>
           <p className="text-xs text-brand-muted mt-0.5">
-            Configure active serviceability PIN codes and doorstep pickup availability across Indian cities
+            Configure active serviceability PIN codes and doorstep pickup availability across active states (West Bengal, Uttar Pradesh, Jharkhand)
           </p>
         </div>
 
@@ -53,7 +53,7 @@ export default function AdminServiceAreasPage() {
               value={newPincode}
               onChange={(e) => setNewPincode(e.target.value.replace(/\D/g, ""))}
               maxLength={6}
-              placeholder="PIN Code (e.g. 110001)"
+              placeholder="PIN Code (e.g. 700001)"
               required
               className="px-3.5 py-2 text-xs font-bold bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow"
             />
@@ -61,7 +61,7 @@ export default function AdminServiceAreasPage() {
               type="text"
               value={newCity}
               onChange={(e) => setNewCity(e.target.value)}
-              placeholder="City (e.g. New Delhi)"
+              placeholder="City (e.g. Kolkata)"
               required
               className="px-3.5 py-2 text-xs font-bold bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow"
             />
@@ -69,7 +69,7 @@ export default function AdminServiceAreasPage() {
               type="text"
               value={newState}
               onChange={(e) => setNewState(e.target.value)}
-              placeholder="State (e.g. Delhi)"
+              placeholder="State (e.g. West Bengal)"
               className="px-3.5 py-2 text-xs font-bold bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow"
             />
           </div>

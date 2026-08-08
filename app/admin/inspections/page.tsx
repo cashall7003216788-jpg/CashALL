@@ -14,11 +14,11 @@ function AdminInspectionsContent() {
   const orderIdParam = searchParams.get("orderId") || "CA10482";
 
   const [order, setOrder] = useState<OrderData | null>(null);
-  const [imei, setImei] = useState("864502049182371");
-  const [screenFinding, setScreenFinding] = useState("Heavy Screen Scratches");
+  const [imei, setImei] = useState("");
+  const [screenFinding, setScreenFinding] = useState("Flawless Screen");
   const [bodyFinding, setBodyFinding] = useState("Flawless Body");
-  const [revisedPrice, setRevisedPrice] = useState(29800);
-  const [reason, setReason] = useState("Heavy screen hairline scratches identified under microscope inspection");
+  const [revisedPrice, setRevisedPrice] = useState(0);
+  const [reason, setReason] = useState("");
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {

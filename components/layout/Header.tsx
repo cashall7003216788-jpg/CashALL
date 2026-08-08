@@ -10,7 +10,7 @@ import { CustomerAuthModal } from "@/components/common/CustomerAuthModal";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedCity, setSelectedCity] = useState("New Delhi");
+  const [selectedState, setSelectedState] = useState("West Bengal");
   const [locationDropdownOpen, setLocationDropdownOpen] = useState(false);
   const [deviceChoiceOpen, setDeviceChoiceOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -27,7 +27,7 @@ export function Header() {
     }
   }, [authModalOpen]);
 
-  const cities = ["New Delhi", "Mumbai", "Bengaluru", "Kolkata", "Chennai", "Hyderabad", "Pune", "Ahmedabad"];
+  const states = ["West Bengal", "Uttar Pradesh", "Jharkhand"];
 
   return (
     <>
@@ -57,27 +57,27 @@ export function Header() {
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-dark/80 border border-neutral-800 text-xs font-medium text-gray-300 hover:text-white hover:border-brand-yellow/50 transition-colors"
                 >
                   <MapPin className="w-3.5 h-3.5 text-brand-yellow" />
-                  <span>{selectedCity}</span>
+                  <span>{selectedState}</span>
                   <ChevronDown className="w-3 h-3 text-gray-400" />
                 </button>
 
                 {locationDropdownOpen && (
                   <div className="absolute top-full left-0 mt-2 w-48 bg-brand-dark border border-neutral-800 rounded-xl shadow-xl py-2 z-50 animate-fadeIn">
                     <div className="px-3 py-1 text-[11px] font-semibold text-gray-400 uppercase tracking-wider">
-                      Select Your City
+                      Select Your State
                     </div>
-                    {cities.map((city) => (
+                    {states.map((st) => (
                       <button
-                        key={city}
+                        key={st}
                         onClick={() => {
-                          setSelectedCity(city);
+                          setSelectedState(st);
                           setLocationDropdownOpen(false);
                         }}
                         className={`w-full text-left px-3 py-2 text-xs hover:bg-neutral-800 transition-colors ${
-                          selectedCity === city ? "text-brand-yellow font-bold" : "text-gray-300"
+                          selectedState === st ? "text-brand-yellow font-bold" : "text-gray-300"
                         }`}
                       >
-                        {city}
+                        {st}
                       </button>
                     ))}
                   </div>
@@ -98,9 +98,6 @@ export function Header() {
               </Link>
               <Link href="/#how-it-works" className="hover:text-brand-yellow transition-colors">
                 How It Works
-              </Link>
-              <Link href="/bulk-sell" className="hover:text-brand-yellow transition-colors">
-                Bulk Sell
               </Link>
               <Link href="/faq" className="hover:text-brand-yellow transition-colors">
                 FAQ
@@ -168,14 +165,14 @@ export function Header() {
           <div className="sm:hidden bg-brand-black border-b border-neutral-800 px-4 pt-3 pb-6 space-y-3 animate-fadeIn">
             <div className="flex items-center gap-2 pb-2 border-b border-neutral-800">
               <MapPin className="w-4 h-4 text-brand-yellow" />
-              <span className="text-xs text-gray-400">Location:</span>
+              <span className="text-xs text-gray-400">State:</span>
               <select
-                value={selectedCity}
-                onChange={(e) => setSelectedCity(e.target.value)}
+                value={selectedState}
+                onChange={(e) => setSelectedState(e.target.value)}
                 className="bg-neutral-800 text-white text-xs rounded px-2 py-1 focus:outline-none"
               >
-                {cities.map((city) => (
-                  <option key={city} value={city}>{city}</option>
+                {states.map((st) => (
+                  <option key={st} value={st}>{st}</option>
                 ))}
               </select>
             </div>
@@ -228,13 +225,6 @@ export function Header() {
               className="block py-2 text-base font-medium text-gray-300 hover:text-brand-yellow"
             >
               How It Works
-            </Link>
-            <Link
-              href="/bulk-sell"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-base font-medium text-gray-300 hover:text-brand-yellow"
-            >
-              Bulk Sell
             </Link>
             <Link
               href="/faq"
