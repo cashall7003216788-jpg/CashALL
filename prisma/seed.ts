@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { INITIAL_BRANDS, INITIAL_MODELS, INITIAL_VARIANTS } from "../lib/store";
 
 const prisma = new PrismaClient();
 
@@ -47,69 +48,51 @@ async function main() {
   });
 
   // 3. Create Brands
-  const apple = await prisma.brand.create({
-    data: { id: "550e8400-e29b-41d4-a716-446655440001", name: "Apple", slug: "apple", sortOrder: 1, active: true },
-  });
-  const samsung = await prisma.brand.create({
-    data: { id: "550e8400-e29b-41d4-a716-446655440002", name: "Samsung", slug: "samsung", sortOrder: 2, active: true },
-  });
-  const oneplus = await prisma.brand.create({
-    data: { id: "550e8400-e29b-41d4-a716-446655440003", name: "OnePlus", slug: "oneplus", sortOrder: 3, active: true },
-  });
+  console.log(`Seeding ${INITIAL_BRANDS.length} brands...`);
+  for (const b of INITIAL_BRANDS) {
+    await prisma.brand.create({
+      data: {
+        id: b.id,
+        name: b.name,
+        slug: b.slug,
+        logoUrl: b.logoUrl,
+        sortOrder: b.sortOrder,
+        active: b.active,
+      },
+    });
+  }
 
   // 4. Create Models
-  const iphone15 = await prisma.deviceModel.create({
-    data: {
-      id: "550e8400-e29b-41d4-a716-446655440011",
-      brandId: apple.id,
-      name: "iPhone 15",
-      slug: "iphone-15",
-      imageUrl: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80",
-      releaseYear: 2023,
-      popular: true,
-      active: true,
-    },
-  });
-
-  const iphone15pro = await prisma.deviceModel.create({
-    data: {
-      id: "550e8400-e29b-41d4-a716-446655440012",
-      brandId: apple.id,
-      name: "iPhone 15 Pro",
-      slug: "iphone-15-pro",
-      imageUrl: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80",
-      releaseYear: 2023,
-      popular: true,
-      active: true,
-    },
-  });
-
-  const s24 = await prisma.deviceModel.create({
-    data: {
-      id: "550e8400-e29b-41d4-a716-446655440013",
-      brandId: samsung.id,
-      name: "Galaxy S24",
-      slug: "galaxy-s24",
-      imageUrl: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80",
-      releaseYear: 2024,
-      popular: true,
-      active: true,
-    },
-  });
+  console.log(`Seeding ${INITIAL_MODELS.length} models...`);
+  for (const m of INITIAL_MODELS) {
+    await prisma.deviceModel.create({
+      data: {
+        id: m.id,
+        brandId: m.brandId,
+        name: m.name,
+        slug: m.slug,
+        imageUrl: m.imageUrl,
+        releaseYear: m.releaseYear,
+        popular: m.popular,
+        active: m.active,
+      },
+    });
+  }
 
   // 5. Create Device Variants
-  await prisma.deviceVariant.create({
-    data: { id: "550e8400-e29b-41d4-a716-446655440021", modelId: iphone15.id, storage: "128 GB", basePrice: 32000, active: true },
-  });
-  await prisma.deviceVariant.create({
-    data: { id: "550e8400-e29b-41d4-a716-446655440022", modelId: iphone15.id, storage: "256 GB", basePrice: 38000, active: true },
-  });
-  await prisma.deviceVariant.create({
-    data: { id: "550e8400-e29b-41d4-a716-446655440023", modelId: iphone15pro.id, storage: "128 GB", basePrice: 48000, active: true },
-  });
-  await prisma.deviceVariant.create({
-    data: { id: "550e8400-e29b-41d4-a716-446655440024", modelId: s24.id, storage: "256 GB", basePrice: 34000, active: true },
-  });
+  console.log(`Seeding ${INITIAL_VARIANTS.length} variants...`);
+  for (const v of INITIAL_VARIANTS) {
+    await prisma.deviceVariant.create({
+      data: {
+        id: v.id,
+        modelId: v.modelId,
+        ram: v.ram || null,
+        storage: v.storage,
+        basePrice: v.basePrice,
+        active: v.active,
+      },
+    });
+  }
 
   // 6. Create Questions and Options
   // Q1: Power
