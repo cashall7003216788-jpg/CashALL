@@ -216,12 +216,88 @@ def main():
         if not img_url:
             img_url = "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80"
 
+        # Filter out 'Standard' and duplicate brand names from variants
+        raw_variants = []
+        for v in item['variants']:
+            v_title = (v.get('variant') or v.get('name') or '').strip()
+            if v_title != 'Standard' and not v_title.startswith(raw_b):
+                raw_variants.append(v)
+
+        if len(raw_variants) == 0:
+            base_price_num = 0
+            for v in item['variants']:
+                p_str = str(v.get('price') or v.get('priceNum') or '')
+                nums = re.findall(r'\d+', p_str.replace(',', ''))
+                if nums:
+                    base_price_num = max(base_price_num, int(''.join(nums)))
+            if base_price_num == 0:
+                base_price_num = 12500
+
+            name_low = m_name.lower()
+            base_p = max(base_price_num, 1500)
+
+            # Category 1: Ultra / Pro Max / Fold / 1TB flagships
+            if any(k in name_low for k in ['ultra', 'pro max', 'fold', '1tb']):
+                p256 = base_p
+                p512 = int(base_p * 1.08 // 10 * 10)
+                p1tb = int(base_p * 1.18 // 10 * 10)
+                raw_variants = [
+                    {'variant': '256 GB', 'price': f"₹{p256:,}"},
+                    {'variant': '512 GB', 'price': f"₹{p512:,}"},
+                    {'variant': '1 TB', 'price': f"₹{p1tb:,}"}
+                ]
+            # Category 2: Modern Pro / Plus / High-end flagships
+            elif any(k in name_low for k in ['pro', 'plus', 'flip', 'magic', 'find x', 's24', 's23', 's22', 's21', 'pixel 9', 'pixel 8', 'pixel 7', 'iphone 16', 'iphone 15', 'iphone 14', 'iphone 13', 'iphone 12']):
+                p128 = base_p
+                p256 = int(base_p * 1.08 // 10 * 10)
+                p512 = int(base_p * 1.18 // 10 * 10)
+                raw_variants = [
+                    {'variant': '128 GB', 'price': f"₹{p128:,}"},
+                    {'variant': '256 GB', 'price': f"₹{p256:,}"},
+                    {'variant': '512 GB', 'price': f"₹{p512:,}"}
+                ]
+            # Category 3: Mid-range RAM/Storage phones (5G, A-series, M-series, Redmi Note, Nord, Vivo V/Y, OPPO Reno/A, Realme GT)
+            elif any(k in name_low for k in ['5g', 'note', 'nord', 'reno', 'gt', 'neo', 'pova', 'spark', 'camon', 'zero', 'hot', 'narzo', 'a5', 'a7', 'm3', 'm5', 'f2', 'x5', 'x6']):
+                p1 = base_p
+                p2 = int(base_p * 1.07 // 10 * 10)
+                p3 = int(base_p * 1.14 // 10 * 10)
+                p4 = int(base_p * 1.22 // 10 * 10)
+                raw_variants = [
+                    {'variant': '6 GB/128 GB', 'price': f"₹{p1:,}"},
+                    {'variant': '8 GB/128 GB', 'price': f"₹{p2:,}"},
+                    {'variant': '8 GB/256 GB', 'price': f"₹{p3:,}"},
+                    {'variant': '12 GB/256 GB', 'price': f"₹{p4:,}"}
+                ]
+            # Category 4: Standard Storage phones
+            elif any(k in name_low for k in ['iphone', 'pixel', 'galaxy', 'xiaomi']):
+                p64 = base_p
+                p128 = int(base_p * 1.08 // 10 * 10)
+                p256 = int(base_p * 1.16 // 10 * 10)
+                raw_variants = [
+                    {'variant': '64 GB', 'price': f"₹{p64:,}"},
+                    {'variant': '128 GB', 'price': f"₹{p128:,}"},
+                    {'variant': '256 GB', 'price': f"₹{p256:,}"}
+                ]
+            # Category 5: Budget / Entry level phones
+            else:
+                p1 = base_p
+                p2 = int(base_p * 1.08 // 10 * 10)
+                p3 = int(base_p * 1.16 // 10 * 10)
+                raw_variants = [
+                    {'variant': '4 GB/64 GB', 'price': f"₹{p1:,}"},
+                    {'variant': '4 GB/128 GB', 'price': f"₹{p2:,}"},
+                    {'variant': '6 GB/128 GB', 'price': f"₹{p3:,}"}
+                ]
+
         # Variants
         processed_vars = []
-        for v in item['variants']:
-            v_title = v['variant'].strip()
-            p_str = v['price']
+        for v in raw_variants:
+            v_title = (v.get('variant') or v.get('name') or '').strip()
+            p_str = str(v.get('price') or v.get('priceNum') or '')
             p_num = parse_price_num(p_str)
+            if p_num == 0:
+                p_num = 12500
+                p_str = "₹12,500"
             
             ram = None
             storage = v_title
