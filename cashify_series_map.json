@@ -1,0 +1,744 @@
+{
+  "apple": [
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "xiaomi": [
+    {
+      "name": "Mi Series",
+      "href": ""
+    },
+    {
+      "name": "Redmi 5 Series",
+      "href": ""
+    },
+    {
+      "name": "Redmi 6 Series",
+      "href": ""
+    },
+    {
+      "name": "Redmi Note Series",
+      "href": ""
+    },
+    {
+      "name": "Redmi Y Series",
+      "href": ""
+    },
+    {
+      "name": "Other Xiaomi Smartphones",
+      "href": ""
+    },
+    {
+      "name": "Redmi 7 Series",
+      "href": ""
+    },
+    {
+      "name": "Redmi K Series",
+      "href": ""
+    },
+    {
+      "name": "Redmi 8 Series",
+      "href": ""
+    },
+    {
+      "name": "Redmi 9 Series",
+      "href": ""
+    },
+    {
+      "name": "Redmi 10 Series",
+      "href": ""
+    },
+    {
+      "name": "11 Series",
+      "href": ""
+    },
+    {
+      "name": "12 Series",
+      "href": ""
+    },
+    {
+      "name": "Redmi A Series",
+      "href": ""
+    },
+    {
+      "name": "13 Series",
+      "href": ""
+    },
+    {
+      "name": "14 Series",
+      "href": ""
+    },
+    {
+      "name": "Redmi 14 Series",
+      "href": ""
+    },
+    {
+      "name": "15 Series",
+      "href": ""
+    },
+    {
+      "name": "Redmi 15 Series",
+      "href": ""
+    },
+    {
+      "name": "17 Series",
+      "href": ""
+    },
+    {
+      "name": "Turbo Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "samsung": [
+    {
+      "name": "Galaxy A Series",
+      "href": ""
+    },
+    {
+      "name": "Galaxy J Series",
+      "href": ""
+    },
+    {
+      "name": "Galaxy Note Series",
+      "href": ""
+    },
+    {
+      "name": "Galaxy On Series",
+      "href": ""
+    },
+    {
+      "name": "Galaxy S Series",
+      "href": ""
+    },
+    {
+      "name": "Galaxy C Series",
+      "href": ""
+    },
+    {
+      "name": "Galaxy M Series",
+      "href": ""
+    },
+    {
+      "name": "Galaxy Fold Series",
+      "href": ""
+    },
+    {
+      "name": "Galaxy Z Flip Series",
+      "href": ""
+    },
+    {
+      "name": "Galaxy F Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "oneplus": [
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "nokia": [
+    {
+      "name": "Nokia 2 Series",
+      "href": ""
+    },
+    {
+      "name": "Nokia 3 Series",
+      "href": ""
+    },
+    {
+      "name": "Nokia 5 Series",
+      "href": ""
+    },
+    {
+      "name": "Nokia 6 Series",
+      "href": ""
+    },
+    {
+      "name": "Nokia 7 Series",
+      "href": ""
+    },
+    {
+      "name": "Nokia 8 Series",
+      "href": ""
+    },
+    {
+      "name": "Nokia 4 Series",
+      "href": ""
+    },
+    {
+      "name": "Nokia C Series",
+      "href": ""
+    },
+    {
+      "name": "Nokia G Series",
+      "href": ""
+    },
+    {
+      "name": "Nokia X Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "poco": [
+    {
+      "name": "POCO X Series",
+      "href": ""
+    },
+    {
+      "name": "POCO F Series",
+      "href": ""
+    },
+    {
+      "name": "POCO M Series",
+      "href": ""
+    },
+    {
+      "name": "POCO C Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "vivo": [
+    {
+      "name": "V Series",
+      "href": ""
+    },
+    {
+      "name": "X Series",
+      "href": ""
+    },
+    {
+      "name": "Y Series",
+      "href": ""
+    },
+    {
+      "name": "Nex Series",
+      "href": ""
+    },
+    {
+      "name": "Z Series",
+      "href": ""
+    },
+    {
+      "name": "S Series",
+      "href": ""
+    },
+    {
+      "name": "U Series",
+      "href": ""
+    },
+    {
+      "name": "T Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "oppo": [
+    {
+      "name": "F Series",
+      "href": ""
+    },
+    {
+      "name": "R Series",
+      "href": ""
+    },
+    {
+      "name": "A Series",
+      "href": ""
+    },
+    {
+      "name": "K Series",
+      "href": ""
+    },
+    {
+      "name": "Reno Series",
+      "href": ""
+    },
+    {
+      "name": "Find Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "realme": [
+    {
+      "name": "Realme 2 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 1 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme C Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 3 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 5 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 6 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme X Series",
+      "href": ""
+    },
+    {
+      "name": "Realme U Series",
+      "href": ""
+    },
+    {
+      "name": "Realme Narzo Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 7 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 8 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme GT Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 9 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 10 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 11 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 12 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme P Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 13 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 14 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 15 Series",
+      "href": ""
+    },
+    {
+      "name": "Realme 16 Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "motorola": [
+    {
+      "name": "Moto E Series",
+      "href": ""
+    },
+    {
+      "name": "Moto G Series",
+      "href": ""
+    },
+    {
+      "name": "Moto Z Series",
+      "href": ""
+    },
+    {
+      "name": "Moto M Series",
+      "href": ""
+    },
+    {
+      "name": "Moto One Series",
+      "href": ""
+    },
+    {
+      "name": "Moto Edge Series",
+      "href": ""
+    },
+    {
+      "name": "Moto Razr Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "lenovo": [
+    {
+      "name": "A Series",
+      "href": ""
+    },
+    {
+      "name": "K Series",
+      "href": ""
+    },
+    {
+      "name": "Z Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "honor": [
+    {
+      "name": "Honor 7 Series",
+      "href": ""
+    },
+    {
+      "name": "Honor 8 Series",
+      "href": ""
+    },
+    {
+      "name": "Honor 9 Series",
+      "href": ""
+    },
+    {
+      "name": "Honor 10 Series",
+      "href": ""
+    },
+    {
+      "name": "Honor Play Series",
+      "href": ""
+    },
+    {
+      "name": "Honor 20 Series",
+      "href": ""
+    },
+    {
+      "name": "Honor 200 Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "asus": [
+    {
+      "name": "ROG Series",
+      "href": ""
+    },
+    {
+      "name": "8 Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "google": [
+    {
+      "name": "Pixel 4 Series",
+      "href": ""
+    },
+    {
+      "name": "Pixel 6 Series",
+      "href": ""
+    },
+    {
+      "name": "Pixel 7 Series",
+      "href": ""
+    },
+    {
+      "name": "Pixel 8 Series",
+      "href": ""
+    },
+    {
+      "name": "Pixel 9 Series",
+      "href": ""
+    },
+    {
+      "name": "Pixel 10 Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "lg": [
+    {
+      "name": "G Series",
+      "href": ""
+    },
+    {
+      "name": "Q Series",
+      "href": ""
+    },
+    {
+      "name": "W Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "infinix": [
+    {
+      "name": "S Series",
+      "href": ""
+    },
+    {
+      "name": "Zero Series",
+      "href": ""
+    },
+    {
+      "name": "Hot Series",
+      "href": ""
+    },
+    {
+      "name": "Note Series",
+      "href": ""
+    },
+    {
+      "name": "GT Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "tecno": [
+    {
+      "name": "Camon Series",
+      "href": ""
+    },
+    {
+      "name": "Spark Series",
+      "href": ""
+    },
+    {
+      "name": "Phantom Series",
+      "href": ""
+    },
+    {
+      "name": "POVA Series",
+      "href": ""
+    },
+    {
+      "name": "Pop Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "iqoo": [
+    {
+      "name": "iQOO Series",
+      "href": ""
+    },
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ],
+  "nothing": [
+    {
+      "name": "Pavilion Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-pavilion-series"
+    },
+    {
+      "name": "Vostro Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-vostro-series"
+    },
+    {
+      "name": "Inspiron Series",
+      "href": "https://www.cashify.in/sell-old-laptop/used-inspiron-series"
+    }
+  ]
+}

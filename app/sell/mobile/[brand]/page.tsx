@@ -7,21 +7,30 @@ import { useParams } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { INITIAL_BRANDS, INITIAL_MODELS } from "@/lib/store";
-import { Search, ChevronRight, Smartphone, Sparkles } from "lucide-react";
+import { getSeriesForBrand, filterModelsBySeries } from "@/lib/series-data";
+import { Search, ChevronRight, Smartphone, Sparkles, Layers } from "lucide-react";
 
 export default function ModelSelectionPage() {
   const params = useParams();
   const brandSlug = (params?.brand as string) || "apple";
   const [search, setSearch] = useState("");
+  const [selectedSeriesId, setSelectedSeriesId] = useState<string | null>(null);
 
   const brand = INITIAL_BRANDS.find((b) => b.slug === brandSlug) || INITIAL_BRANDS[0];
 
   const brandModels = INITIAL_MODELS.filter((m) => m.brandId === brand.id && m.category === "MOBILE").sort((a, b) =>
     a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" })
   );
-  const filteredModels = brandModels.filter((m) =>
-    m.name.toLowerCase().includes(search.toLowerCase().trim())
-  );
+
+  const availableSeries = getSeriesForBrand(brand.slug);
+  const activeSeries = availableSeries.find((s) => s.id === selectedSeriesId) || null;
+
+  let filteredModels = filterModelsBySeries(brandModels, activeSeries);
+  if (search.trim()) {
+    filteredModels = filteredModels.filter((m) =>
+      m.name.toLowerCase().includes(search.toLowerCase().trim())
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg text-brand-black">
@@ -62,6 +71,51 @@ export default function ModelSelectionPage() {
               className="w-full pl-12 pr-4 py-3 text-sm font-medium bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow shadow-subtleCard"
             />
           </div>
+
+          {/* SELECT SERIES SECTION */}
+          {availableSeries.length > 0 && (
+            <div className="mb-10 bg-white p-5 rounded-2xl border border-brand-border shadow-subtleCard">
+              <div className="flex items-center justify-between mb-3">
+                <h2 className="text-sm font-extrabold text-brand-black flex items-center gap-2">
+                  <Layers className="w-4 h-4 text-brand-yellow" />
+                  <span>Select Series</span>
+                </h2>
+                {selectedSeriesId && (
+                  <button
+                    onClick={() => setSelectedSeriesId(null)}
+                    className="text-xs font-semibold text-brand-muted hover:text-brand-black underline"
+                  >
+                    Clear Filter
+                  </button>
+                )}
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  onClick={() => setSelectedSeriesId(null)}
+                  className={`px-4 py-2 text-xs font-bold rounded-xl transition-all border ${
+                    selectedSeriesId === null
+                      ? "bg-brand-yellow text-brand-black border-brand-yellow shadow-sm"
+                      : "bg-brand-bg text-gray-700 border-gray-200 hover:border-brand-yellow hover:bg-white"
+                  }`}
+                >
+                  All Series
+                </button>
+                {availableSeries.map((s) => (
+                  <button
+                    key={s.id}
+                    onClick={() => setSelectedSeriesId(selectedSeriesId === s.id ? null : s.id)}
+                    className={`px-4 py-2 text-xs font-bold rounded-xl transition-all border ${
+                      selectedSeriesId === s.id
+                        ? "bg-brand-yellow text-brand-black border-brand-yellow shadow-sm"
+                        : "bg-brand-bg text-gray-700 border-gray-200 hover:border-brand-yellow hover:bg-white"
+                    }`}
+                  >
+                    {s.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* MODELS GRID */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
