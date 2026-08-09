@@ -243,7 +243,7 @@ export function CustomerAuthModal({
                 type="text"
                 value={customerName}
                 onChange={(e) => setCustomerName(e.target.value)}
-                placeholder="e.g. Rahul Sharma"
+                placeholder="Enter your name"
                 className="w-full px-3.5 py-2.5 text-sm bg-white rounded-xl border border-gray-200 focus:outline-none focus:border-yellow-400"
               />
             </div>

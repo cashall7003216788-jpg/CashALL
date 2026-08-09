@@ -7,7 +7,7 @@ import { useParams } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
-import { OrderData, INITIAL_VARIANTS, INITIAL_MODELS, INITIAL_BRANDS } from "@/lib/store";
+import { OrderData, INITIAL_VARIANTS, INITIAL_MODELS, INITIAL_BRANDS, INITIAL_ORDERS } from "@/lib/store";
 import { CheckCircle2, Calendar, MapPin, Smartphone, ArrowRight, ShieldCheck, Copy, Check } from "lucide-react";
 
 export default function OrderConfirmationPage() {
@@ -29,27 +29,35 @@ export default function OrderConfirmationPage() {
         }
       }
 
-      // Demo fallback order
-      setOrder({
-        id: "ord-demo",
-        orderNumber: orderId,
-        quoteId: "quote-demo",
-        userId: "u-demo",
-        customerName: "Ananya Roy",
-        customerPhone: "+91 9876501234",
-        pincode: "110001",
-        addressSummary: "Flat 402, Sunshine Heights, MG Road, Connaught Place, New Delhi - 110001",
-        pickupDate: "Tomorrow",
-        pickupTimeSlot: "10 AM - 1 PM",
-        status: "PICKUP_SCHEDULED",
-        revisedPrice: 31400,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      });
+      if (INITIAL_ORDERS.length > 0) {
+        setOrder(INITIAL_ORDERS[0]);
+      } else {
+        setOrder(null);
+      }
     }
   }, [orderId]);
 
-  if (!order) return null;
+  if (!order) {
+    return (
+      <div className="min-h-screen flex flex-col bg-brand-bg text-brand-black">
+        <Header />
+        <main className="flex-grow py-16 flex items-center justify-center">
+          <div className="max-w-md w-full mx-auto px-4 text-center space-y-6 bg-white rounded-3xl p-8 border border-brand-border shadow-premium">
+            <h1 className="text-xl font-black text-brand-black">Order Confirmation Not Available</h1>
+            <p className="text-xs text-brand-muted leading-relaxed">
+              No active order found for <strong className="text-brand-black">#{orderId}</strong>.
+            </p>
+            <Link href="/account">
+              <Button variant="primary" size="md" fullWidth className="font-extrabold shadow-yellowGlow">
+                Go to My Account
+              </Button>
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   const handleCopyOrderId = () => {
     navigator.clipboard.writeText(order.orderNumber);

@@ -9,7 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Modal } from "@/components/ui/Modal";
-import { OrderData, INITIAL_VARIANTS, INITIAL_MODELS, INITIAL_BRANDS } from "@/lib/store";
+import { OrderData, INITIAL_VARIANTS, INITIAL_MODELS, INITIAL_BRANDS, INITIAL_ORDERS } from "@/lib/store";
 import {
   CheckCircle2,
   Clock,
@@ -52,33 +52,45 @@ export default function OrderTrackingPage() {
         }
       }
 
-      // Fallback demo order
-      setOrder({
-        id: "ord-demo",
-        orderNumber: orderId,
-        quoteId: "quote-demo",
-        userId: "u-demo",
-        customerName: "Ananya Roy",
-        customerPhone: "+91 9876501234",
-        pincode: "110001",
-        addressSummary: "Flat 402, Sunshine Heights, MG Road, Connaught Place, New Delhi",
-        pickupDate: "Tomorrow",
-        pickupTimeSlot: "10 AM - 1 PM",
-        status: "FINAL_OFFER_PENDING", // Demo state to test price revision acceptance
-        assignedPartnerName: "Rahul Sharma (CashALL Executive)",
-        revisedPrice: 29800,
-        priceDifferenceReason: "Heavy screen hairline scratches identified during microscope light inspection",
-        declaredConditionSummary: "Declared: Minor Screen Scratches (-₹1,200)",
-        inspectedConditionSummary: "Inspected: Heavy Screen Scratches (-₹2,800)",
-        imeiNumber: "864502******482",
-        paymentStatus: "PENDING",
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      });
+      if (INITIAL_ORDERS.length > 0) {
+        setOrder(INITIAL_ORDERS[0]);
+      } else {
+        setOrder(null);
+      }
     }
   }, [orderId]);
 
-  if (!order) return null;
+  if (!order) {
+    return (
+      <div className="min-h-screen flex flex-col bg-brand-bg text-brand-black">
+        <Header />
+        <main className="flex-grow py-16 flex items-center justify-center">
+          <div className="max-w-md w-full mx-auto px-4 text-center space-y-6 bg-white rounded-3xl p-8 border border-brand-border shadow-premium">
+            <div className="w-16 h-16 bg-brand-yellow/20 rounded-2xl flex items-center justify-center mx-auto text-brand-black">
+              <Search className="w-8 h-8" />
+            </div>
+            <h1 className="text-xl font-black text-brand-black">Order Not Found</h1>
+            <p className="text-xs text-brand-muted leading-relaxed">
+              We couldn&apos;t find an order matching <strong className="text-brand-black">#{orderId}</strong>. Please check your order number or log in to view your orders.
+            </p>
+            <div className="pt-2 flex flex-col gap-3">
+              <Link href="/account">
+                <Button variant="primary" size="md" fullWidth className="font-extrabold shadow-yellowGlow">
+                  Go to My Account
+                </Button>
+              </Link>
+              <Link href="/sell/mobile">
+                <Button variant="secondary" size="md" fullWidth className="font-bold">
+                  Sell a Mobile Phone
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   const steps = [
     { key: "QUOTE_CREATED", label: "Quote Created", desc: "Online estimate generated" },

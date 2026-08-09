@@ -24,11 +24,14 @@ export default function AdminQuotesPage() {
     const fetchQuotes = async () => {
       try {
         const res = await fetch("/api/v1/admin/quotes");
-        if (!res.ok) throw new Error("Failed to load quotes");
-        const data = await res.json();
-        setQuotes(data.quotes || []);
+        if (res.ok) {
+          const data = await res.json();
+          setQuotes(data.quotes || []);
+        } else {
+          setQuotes([]);
+        }
       } catch (err: any) {
-        setError(err.message || "Failed to load quotes");
+        setQuotes([]);
       } finally {
         setLoading(false);
       }

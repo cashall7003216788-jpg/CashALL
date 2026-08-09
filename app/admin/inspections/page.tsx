@@ -23,7 +23,10 @@ function AdminInspectionsContent() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const stored = localStorage.getItem(`cashall_order_${orderIdParam}`) || localStorage.getItem("cashall_latest_order");
+      const stored = orderIdParam
+        ? localStorage.getItem(`cashall_order_${orderIdParam}`)
+        : localStorage.getItem("cashall_latest_order");
+
       if (stored) {
         try {
           const parsed = JSON.parse(stored);
@@ -35,7 +38,11 @@ function AdminInspectionsContent() {
         }
       }
 
-      setOrder(INITIAL_ORDERS[0]);
+      if (INITIAL_ORDERS.length > 0) {
+        setOrder(INITIAL_ORDERS[0]);
+      } else {
+        setOrder(null);
+      }
     }
   }, [orderIdParam]);
 
@@ -48,8 +55,8 @@ function AdminInspectionsContent() {
       imeiNumber: imei,
       revisedPrice,
       priceDifferenceReason: reason,
-      declaredConditionSummary: "Declared: Minor Screen Scratches (-₹1,200)",
-      inspectedConditionSummary: `Inspected: ${screenFinding}`,
+      declaredConditionSummary: order.declaredConditionSummary || "Declared: Standard Assessment",
+      inspectedConditionSummary: `Inspected: ${screenFinding}, ${bodyFinding}`,
       status: "FINAL_OFFER_PENDING",
       updatedAt: new Date().toISOString(),
     };
@@ -64,7 +71,42 @@ function AdminInspectionsContent() {
     setTimeout(() => setSaved(false), 3000);
   };
 
-  if (!order) return null;
+  if (!order) {
+    return (
+      <div className="min-h-screen bg-brand-bg flex">
+        <AdminSidebar />
+
+        <main className="flex-grow p-8 overflow-y-auto space-y-8">
+          <div>
+            <h1 className="text-2xl font-black text-brand-black">
+              Physical Inspection & Price Revision Entry
+            </h1>
+            <p className="text-xs text-brand-muted mt-0.5">
+              Record IMEI, physical condition findings, and submit revised final offers to customers
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl p-12 border border-brand-border shadow-subtleCard text-center space-y-4 max-w-xl mx-auto my-12">
+            <div className="w-16 h-16 bg-brand-yellow/20 rounded-2xl flex items-center justify-center mx-auto text-brand-black">
+              <ClipboardCheck className="w-8 h-8" />
+            </div>
+            <h2 className="text-lg font-black text-brand-black">No Active Order Selected for Inspection</h2>
+            <p className="text-xs text-brand-muted leading-relaxed">
+              Select an active customer selling order from the Order Management repository to enter physical doorstep inspection findings and issue price revisions.
+            </p>
+            <Button
+              onClick={() => router.push("/admin/orders")}
+              variant="primary"
+              size="md"
+              className="font-extrabold shadow-yellowGlow mt-2"
+            >
+              Go to Order Operations Repository
+            </Button>
+          </div>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-brand-bg flex">

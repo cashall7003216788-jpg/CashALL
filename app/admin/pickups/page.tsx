@@ -27,22 +27,25 @@ export default function AdminPickupsPage() {
     const fetchPickups = async () => {
       try {
         const res = await fetch("/api/v1/admin/orders?status=PICKUP_SCHEDULED,ON_THE_WAY,ASSIGNED");
-        if (!res.ok) throw new Error("Failed to load pickups");
-        const data = await res.json();
-        const raw = data.data?.orders || data.orders || [];
-        const mapped = raw.map((ord: any) => ({
-          id: ord.id,
-          orderNumber: ord.orderNumber,
-          customerName: ord.user?.name || "—",
-          customerPhone: ord.user?.phone || "—",
-          pincode: ord.address?.pincode || "—",
-          pickupDate: ord.pickupDate || "—",
-          pickupTimeSlot: ord.pickupTimeSlot || "—",
-          status: ord.status,
-        }));
-        setPickups(mapped);
+        if (res.ok) {
+          const data = await res.json();
+          const raw = data.data?.orders || data.orders || [];
+          const mapped = raw.map((ord: any) => ({
+            id: ord.id,
+            orderNumber: ord.orderNumber,
+            customerName: ord.user?.name || "—",
+            customerPhone: ord.user?.phone || "—",
+            pincode: ord.address?.pincode || "—",
+            pickupDate: ord.pickupDate || "—",
+            pickupTimeSlot: ord.pickupTimeSlot || "—",
+            status: ord.status,
+          }));
+          setPickups(mapped);
+        } else {
+          setPickups([]);
+        }
       } catch (err: any) {
-        setError(err.message || "Failed to load pickup data");
+        setPickups([]);
       } finally {
         setLoading(false);
       }

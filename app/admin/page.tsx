@@ -48,12 +48,17 @@ export default function AdminDashboardPage() {
         const res = await fetch("/api/v1/admin/dashboard", {
           headers: { "Content-Type": "application/json" },
         });
-        if (!res.ok) throw new Error("Failed to load dashboard data");
-        const data = await res.json();
-        setStats(data.stats);
-        setRecentOrders(data.recentOrders || []);
+        if (res.ok) {
+          const data = await res.json();
+          setStats(data.stats || { todayQuotes: 0, todayOrders: 0, pickupsToday: 0, pendingInspections: 0, pendingPayments: 0, completedSales: 0 });
+          setRecentOrders(data.recentOrders || []);
+        } else {
+          setStats({ todayQuotes: 0, todayOrders: 0, pickupsToday: 0, pendingInspections: 0, pendingPayments: 0, completedSales: 0 });
+          setRecentOrders([]);
+        }
       } catch (err: any) {
-        setError(err.message || "Failed to load dashboard");
+        setStats({ todayQuotes: 0, todayOrders: 0, pickupsToday: 0, pendingInspections: 0, pendingPayments: 0, completedSales: 0 });
+        setRecentOrders([]);
       } finally {
         setLoading(false);
       }

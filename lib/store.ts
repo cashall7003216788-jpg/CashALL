@@ -5287,28 +5287,34 @@ export const INITIAL_FAQS: FAQData[] = [
   },
 ];
 
-export const INITIAL_PARTNERS: PartnerData[] = [
-  { id: "part-1", name: "Rahul Sharma", phone: "+91 9876543210", email: "rahul@cashallpartners.in", businessName: "Express Logistics East", city: "Kolkata", status: "ACTIVE", rating: 4.9, completedPickups: 142 },
-  { id: "part-2", name: "Vikram Kumar", phone: "+91 9812345678", email: "vikram@cashallpartners.in", businessName: "Apex Courier Services", city: "Lucknow", status: "ACTIVE", rating: 4.8, completedPickups: 98 },
-];
+const ENABLE_SAMPLE_DATA = process.env.NEXT_PUBLIC_ENABLE_SAMPLE_DATA === "true";
+
+export const INITIAL_PARTNERS: PartnerData[] = ENABLE_SAMPLE_DATA
+  ? [
+      { id: "part-1", name: "Rahul Sharma", phone: "+91 9876543210", email: "rahul@cashallpartners.in", businessName: "Express Logistics East", city: "Kolkata", status: "ACTIVE", rating: 4.9, completedPickups: 142 },
+      { id: "part-2", name: "Vikram Kumar", phone: "+91 9812345678", email: "vikram@cashallpartners.in", businessName: "Apex Courier Services", city: "Lucknow", status: "ACTIVE", rating: 4.8, completedPickups: 98 },
+    ]
+  : [];
 
 // DEMO SAMPLE ORDERS
-export const INITIAL_ORDERS: OrderData[] = [
-  {
-    id: "ord-sample-1",
-    orderNumber: "CA10482",
-    quoteId: "q-sample-1",
-    userId: "u-sample-1",
-    customerName: "Ananya Roy",
-    customerPhone: "+91 9876501234",
-    pincode: "700001",
-    pickupDate: "Tomorrow",
-    pickupTimeSlot: "10 AM - 1 PM",
-    status: "PICKUP_SCHEDULED",
-    assignedPartnerId: "part-1",
-    assignedPartnerName: "Rahul Sharma",
-    declaredConditionSummary: "Turns ON | Minor Screen Scratches | Flawless Body | Box + Charger",
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-  },
-];
+export const INITIAL_ORDERS: OrderData[] = ENABLE_SAMPLE_DATA
+  ? [
+      {
+        id: "ord-sample-1",
+        orderNumber: "CA10482",
+        quoteId: "q-sample-1",
+        userId: "u-sample-1",
+        customerName: "Ananya Roy",
+        customerPhone: "+91 9876501234",
+        pincode: "700001",
+        pickupDate: "Tomorrow",
+        pickupTimeSlot: "10 AM - 1 PM",
+        status: "PICKUP_SCHEDULED",
+        assignedPartnerId: "part-1",
+        assignedPartnerName: "Rahul Sharma",
+        declaredConditionSummary: "Turns ON | Minor Screen Scratches | Flawless Body | Box + Charger",
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      },
+    ]
+  : [];

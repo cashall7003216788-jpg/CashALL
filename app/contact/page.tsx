@@ -56,7 +56,7 @@ export default function ContactPage() {
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         required
                         className="w-full px-3 py-2 text-xs bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow"
-                        placeholder="Ananya Roy"
+                        placeholder="Enter your name"
                       />
                     </div>
 

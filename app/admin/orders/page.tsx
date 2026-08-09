@@ -28,24 +28,27 @@ export default function AdminOrdersPage() {
     const fetchOrders = async () => {
       try {
         const res = await fetch("/api/v1/admin/orders");
-        if (!res.ok) throw new Error("Failed to load orders");
-        const json = await res.json();
-        const raw = json.data?.orders || json.orders || [];
-        const mapped = raw.map((ord: any) => ({
-          id: ord.id,
-          orderNumber: ord.orderNumber,
-          customerName: ord.user?.name || "—",
-          customerPhone: ord.user?.phone || "—",
-          pincode: ord.address?.pincode || "—",
-          pickupDate: ord.pickupDate || "—",
-          pickupTimeSlot: ord.pickupTimeSlot || "—",
-          estimatedPrice: ord.quote?.estimatedPrice ?? 0,
-          revisedPrice: ord.finalPrice ?? null,
-          status: ord.status,
-        }));
-        setOrders(mapped);
+        if (res.ok) {
+          const json = await res.json();
+          const raw = json.data?.orders || json.orders || [];
+          const mapped = raw.map((ord: any) => ({
+            id: ord.id,
+            orderNumber: ord.orderNumber,
+            customerName: ord.user?.name || "—",
+            customerPhone: ord.user?.phone || "—",
+            pincode: ord.address?.pincode || "—",
+            pickupDate: ord.pickupDate || "—",
+            pickupTimeSlot: ord.pickupTimeSlot || "—",
+            estimatedPrice: ord.quote?.estimatedPrice ?? 0,
+            revisedPrice: ord.finalPrice ?? null,
+            status: ord.status,
+          }));
+          setOrders(mapped);
+        } else {
+          setOrders([]);
+        }
       } catch (err: any) {
-        setError(err.message || "Failed to load orders");
+        setOrders([]);
       } finally {
         setLoading(false);
       }
