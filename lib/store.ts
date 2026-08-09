@@ -53,7 +53,7 @@ export interface PricingRuleData {
   id: string;
   questionId: string;
   optionId: string;
-  adjustmentType: "FIXED_DEDUCTION" | "PERCENTAGE_DEDUCTION" | "FIXED_BONUS";
+  adjustmentType: "FIXED_DEDUCTION" | "PERCENTAGE_DEDUCTION" | "FIXED_BONUS" | "PERCENTAGE_BONUS";
   adjustmentValue: number;
 }
 
@@ -5216,31 +5216,31 @@ export const INITIAL_QUESTIONS: QuestionData[] = [
 ];
 
 export const INITIAL_PRICING_RULES: PricingRuleData[] = [
-  // Power
+  // Power (Step 1)
   { id: "r-p-no", questionId: "q-power", optionId: "o-p-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 50 },
 
-  // Screen
-  { id: "r-s-flawless", questionId: "q-screen", optionId: "o-s-flawless", adjustmentType: "FIXED_BONUS", adjustmentValue: 500 },
-  { id: "r-s-minor", questionId: "q-screen", optionId: "o-s-minor", adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 1200 },
-  { id: "r-s-heavy", questionId: "q-screen", optionId: "o-s-heavy", adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 2800 },
-  { id: "r-s-cracked", questionId: "q-screen", optionId: "o-s-cracked", adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 5500 },
+  // Screen Condition (Step 2)
+  { id: "r-s-flawless", questionId: "q-screen", optionId: "o-s-flawless", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 0 },
+  { id: "r-s-minor", questionId: "q-screen", optionId: "o-s-minor", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 5 },
+  { id: "r-s-heavy", questionId: "q-screen", optionId: "o-s-heavy", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 12 },
+  { id: "r-s-cracked", questionId: "q-screen", optionId: "o-s-cracked", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 25 },
 
-  // Body
-  { id: "r-b-excellent", questionId: "q-body", optionId: "o-b-excellent", adjustmentType: "FIXED_BONUS", adjustmentValue: 300 },
-  { id: "r-b-minor", questionId: "q-body", optionId: "o-b-minor", adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 800 },
-  { id: "r-b-dents", questionId: "q-body", optionId: "o-b-dents", adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 1800 },
-  { id: "r-b-damaged", questionId: "q-body", optionId: "o-b-damaged", adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 3500 },
+  // Body Wear (Step 3)
+  { id: "r-b-excellent", questionId: "q-body", optionId: "o-b-excellent", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 0 },
+  { id: "r-b-minor", questionId: "q-body", optionId: "o-b-minor", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 3 },
+  { id: "r-b-dents", questionId: "q-body", optionId: "o-b-dents", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 8 },
+  { id: "r-b-damaged", questionId: "q-body", optionId: "o-b-damaged", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 18 },
 
-  // Functional
-  { id: "r-f-none", questionId: "q-functional", optionId: "o-f-none", adjustmentType: "FIXED_BONUS", adjustmentValue: 0 },
-  { id: "r-f-minor", questionId: "q-functional", optionId: "o-f-minor", adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 1500 },
-  { id: "r-f-major", questionId: "q-functional", optionId: "o-f-major", adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 3800 },
+  // Functional Defects (Step 4)
+  { id: "r-f-none", questionId: "q-functional", optionId: "o-f-none", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 0 },
+  { id: "r-f-minor", questionId: "q-functional", optionId: "o-f-minor", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 6 },
+  { id: "r-f-major", questionId: "q-functional", optionId: "o-f-major", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 15 },
 
-  // Accessories
-  { id: "r-a-all", questionId: "q-accessories", optionId: "o-a-all", adjustmentType: "FIXED_BONUS", adjustmentValue: 600 },
-  { id: "r-a-box", questionId: "q-accessories", optionId: "o-a-box", adjustmentType: "FIXED_BONUS", adjustmentValue: 300 },
-  { id: "r-a-charger", questionId: "q-accessories", optionId: "o-a-charger", adjustmentType: "FIXED_BONUS", adjustmentValue: 200 },
-  { id: "r-a-none", questionId: "q-accessories", optionId: "o-a-none", adjustmentType: "FIXED_DEDUCTION", adjustmentValue: 500 },
+  // Accessories & Warranty (Step 5)
+  { id: "r-a-all", questionId: "q-accessories", optionId: "o-a-all", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 0 },
+  { id: "r-a-box", questionId: "q-accessories", optionId: "o-a-box", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 2 },
+  { id: "r-a-charger", questionId: "q-accessories", optionId: "o-a-charger", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 3 },
+  { id: "r-a-none", questionId: "q-accessories", optionId: "o-a-none", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 5 },
 ];
 
 export const AVAILABLE_STATES = ["West Bengal", "Uttar Pradesh", "Jharkhand"];

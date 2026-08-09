@@ -85,35 +85,39 @@ export default function ConditionAssessmentPage() {
       : [...array, item];
   };
 
-  // CALCULATE DYNAMIC ESTIMATED PRICE
+  // CALCULATE DYNAMIC ESTIMATED PRICE (Percentage-based)
   const calculateEstimatedPrice = () => {
-    let price = variant.basePrice;
+    const baseP = variant.basePrice;
+    let totalDeductionPct = 0;
 
-    // Step 1 Deductions
-    if (callsWorking === false) price -= 2500;
-    if (touchWorking === false) price -= 4500;
-    if (screenOriginal === false) price -= 3000;
+    // Step 1 Percentage Deductions
+    if (callsWorking === false) totalDeductionPct += 12;
+    if (touchWorking === false) totalDeductionPct += 20;
+    if (screenOriginal === false) totalDeductionPct += 15;
 
-    // Step 2 Deductions
-    if (selectedMajorDefects.includes("screen_broken")) price -= 4000;
-    if (selectedMajorDefects.includes("screen_lines")) price -= 3500;
-    if (selectedMajorDefects.includes("panel_missing")) price -= 2000;
+    // Step 2 Major Defect Percentage Deductions
+    if (selectedMajorDefects.includes("screen_broken")) totalDeductionPct += 25;
+    if (selectedMajorDefects.includes("screen_lines")) totalDeductionPct += 18;
+    if (selectedMajorDefects.includes("panel_missing")) totalDeductionPct += 10;
 
-    // Step 3 Deductions
-    if (scratchLevel === "more_than_2") price -= 1500;
-    if (scratchLevel === "1_2_scratches") price -= 600;
+    // Step 3 Scratches & Dents Percentage Deductions
+    if (scratchLevel === "more_than_2") totalDeductionPct += 12;
+    if (scratchLevel === "1_2_scratches") totalDeductionPct += 5;
 
-    if (dentLevel === "major_dents") price -= 2200;
-    if (dentLevel === "1_2_dents") price -= 900;
+    if (dentLevel === "major_dents") totalDeductionPct += 18;
+    if (dentLevel === "1_2_dents") totalDeductionPct += 8;
 
-    // Step 4 Deductions
-    price -= selectedFunctionalIssues.length * 900;
+    // Step 4 Functional Issues (4% per issue)
+    totalDeductionPct += selectedFunctionalIssues.length * 4;
 
-    // Step 5 Bonuses
-    if (selectedAccessories.includes("charger")) price += 400;
-    if (selectedAccessories.includes("box")) price += 500;
+    // Step 5 Accessories Deductions (Missing charger: -3%, Missing box: -2%)
+    if (!selectedAccessories.includes("charger")) totalDeductionPct += 3;
+    if (!selectedAccessories.includes("box")) totalDeductionPct += 2;
 
-    return Math.max(price, 1500);
+    const totalDeductionAmount = Math.round((baseP * totalDeductionPct) / 100);
+    const finalPrice = Math.max(Math.round(baseP * 0.15), baseP - totalDeductionAmount);
+
+    return finalPrice;
   };
 
   const currentPrice = calculateEstimatedPrice();
