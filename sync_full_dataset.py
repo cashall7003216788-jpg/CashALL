@@ -229,22 +229,20 @@ def main():
 
     print("Saved dataset.json and dataset.js successfully!")
 
-    # Read original store.ts
-    with open(STORE_TS, 'r', encoding='utf-8') as f:
-        store_code = f.read()
+    # Read pristine store.ts from git HEAD or disk
+    import subprocess
+    try:
+        store_code = subprocess.check_output(['git', 'show', 'HEAD:lib/store.ts'], text=True, encoding='utf-8')
+    except Exception:
+        with open(STORE_TS, 'r', encoding='utf-8') as f:
+            store_code = f.read()
 
     models_start = store_code.find("export const INITIAL_MODELS")
     variants_start = store_code.find("export const INITIAL_VARIANTS")
     questions_start = store_code.find("export const INITIAL_QUESTIONS")
 
-    models_block = store_code[models_start:variants_start]
-    variants_block = store_code[variants_start:questions_start]
-
-    models_lines = models_block.splitlines()
-    laptop_m_lines = [l.strip() for l in models_lines if any(k in l for k in ['"category": "LAPTOP"', "'category': 'LAPTOP'", 'm-dell-', 'm-hp-', 'm-acer-', 'm-microsof-', 'm-msi-', 'm-avita-', 'm-otherlap-'])]
-
-    variants_lines = variants_block.splitlines()
-    laptop_v_lines = [l.strip() for l in variants_lines if any(k in l for k in ['v-dell-', 'v-hp-', 'v-lenovo-yoga', 'v-lenovo-thinkpad', 'v-lenovo-ideapad', 'v-lenovo-legion', 'v-lenovo-loq', 'v-acer-', 'v-microsof-', 'v-msi-', 'v-avita-', 'v-otherlap-'])]
+    laptop_m_lines = [l.strip() for l in store_code.splitlines() if (l.strip().startswith('{ id: "m-') or l.strip().startswith('{ "id": "m-')) and 'LAPTOP' in l]
+    laptop_v_lines = [l.strip() for l in store_code.splitlines() if (l.strip().startswith('{ id: "v-') or l.strip().startswith('{ "id": "v-')) and any(k in l for k in ['v-dell', 'v-hp', 'v-acer', 'v-microsof', 'v-msi', 'v-avita', 'v-other'])]
 
     print(f"Extracted {len(laptop_m_lines)} laptop models from store.ts.")
     print(f"Extracted {len(laptop_v_lines)} laptop variants from store.ts.")
@@ -322,13 +320,16 @@ def main():
     for lv_line in laptop_v_lines:
         vars_ts += "  " + lv_line.rstrip(',') + ",\n"
     vars_ts += "];\n\n"
-
     all_v_parts = ", ".join([f"...{vcn}" for vcn in v_chunk_names] + ["...LAPTOP_VARIANTS"])
     vars_ts += f"export const INITIAL_VARIANTS: DeviceVariantData[] = [{all_v_parts}];\n\n"
 
-    prefix_clean = re.sub(r'export const INITIAL_BRANDS: BrandData\[\] = \[[\s\S]*?\];\s*', '', prefix_code)
+    brands_pos = store_code.find("export const INITIAL_BRANDS")
+    questions_pos = store_code.find("export const INITIAL_QUESTIONS")
 
-    new_store_code = prefix_clean + brands_ts + models_ts + vars_ts + suffix_code
+    head_code = store_code[:brands_pos]
+    tail_code = store_code[questions_pos:]
+
+    new_store_code = head_code + brands_ts + models_ts + vars_ts + tail_code
 
     with open(STORE_TS, 'w', encoding='utf-8') as f:
         f.write(new_store_code)

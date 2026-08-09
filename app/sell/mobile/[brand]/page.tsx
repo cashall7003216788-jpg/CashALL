@@ -89,12 +89,9 @@ export default function ModelSelectionPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-extrabold text-brand-black group-hover:text-black line-clamp-1">
+                  <h3 className="text-xs sm:text-sm font-extrabold text-brand-black group-hover:text-black leading-snug line-clamp-2 min-h-[2.5rem] flex items-center justify-center text-center">
                     {model.name}
                   </h3>
-                  <p className="text-[11px] text-brand-muted mt-0.5 font-medium">
-                    Released {model.releaseYear}
-                  </p>
                 </div>
               </Link>
             ))}

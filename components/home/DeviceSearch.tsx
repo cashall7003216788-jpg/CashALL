@@ -76,9 +76,8 @@ export function DeviceSearch() {
                         </div>
                         <div>
                           <div className="text-sm font-bold text-brand-black group-hover:text-black">
-                            {brand?.name} {item.name}
+                            {item.name.toLowerCase().startsWith((brand?.name || "").toLowerCase()) ? item.name : `${brand?.name} ${item.name}`}
                           </div>
-                          <div className="text-[11px] text-brand-muted">Released {item.releaseYear}</div>
                         </div>
                       </div>
                       <div className="flex items-center gap-1 text-xs font-extrabold text-brand-black group-hover:translate-x-1 transition-transform">

@@ -105,9 +105,7 @@ export default function LaptopModelSelectionPage() {
                           &#8377;{variant.basePrice.toLocaleString("en-IN")}
                         </span>
                       </p>
-                    ) : (
-                      <p className="text-xs text-brand-muted mt-1 font-medium">Released {model.releaseYear}</p>
-                    )}
+                    ) : null}
                   </div>
                 </Link>
               );
