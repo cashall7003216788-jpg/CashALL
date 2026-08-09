@@ -36,6 +36,32 @@ def clean_slug(s):
     s = re.sub(r'[\s_]+', '-', s)
     return s.strip('-')
 
+def clean_model_title(name):
+    name = re.sub(r'\s*\(\d+\s*GB[^\)]*\)', '', name, flags=re.I)
+    name = re.sub(r'\s*\b(201[5-9]|202[0-9])\b', '', name)
+    name = re.sub(r'\s+', ' ', name).strip()
+    return name
+
+def natural_sort_key(item):
+    name = item['model']
+    brand = item['brand']
+    order_map = {
+        'x': 9.5, 'xr': 9.6, 'xs': 9.7,
+        'air': 16.5,
+    }
+    tokens = []
+    for token in re.split(r'(\d+|\b[A-Za-z]+\b)', name):
+        t_low = token.lower().strip()
+        if not t_low:
+            continue
+        if token.isdigit():
+            tokens.append((0, float(int(token))))
+        elif t_low in order_map:
+            tokens.append((0, float(order_map[t_low])))
+        else:
+            tokens.append((1, t_low))
+    return (brand, tokens)
+
 def parse_price_num(price_str):
     num_str = re.sub(r'[^\d]', '', price_str)
     return int(num_str) if num_str else 0
@@ -94,7 +120,28 @@ def main():
             'variants': c_variants
         })
 
-    print(f"Parsed {len(models_raw)} mobile models from dataset.txt!")
+    # Deduplicate model titles & sort in ascending order
+    merged_models = {}
+    for item in models_raw:
+        b = item['brand']
+        c_m = clean_model_title(item['model'])
+        key = (b, c_m)
+        if key not in merged_models:
+            merged_models[key] = {
+                'brand': b,
+                'model': c_m,
+                'variants': []
+            }
+        seen_vars = set(v['variant'] for v in merged_models[key]['variants'])
+        for v in item['variants']:
+            if v['variant'] not in seen_vars:
+                seen_vars.add(v['variant'])
+                merged_models[key]['variants'].append(v)
+
+    models_raw = list(merged_models.values())
+    models_raw.sort(key=natural_sort_key)
+
+    print(f"Parsed & ascending sorted {len(models_raw)} unique mobile models from dataset.txt!")
 
     brand_map = {
         'APPLE': ('Apple', 'apple'),

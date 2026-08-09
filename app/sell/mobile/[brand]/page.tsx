@@ -16,7 +16,9 @@ export default function ModelSelectionPage() {
 
   const brand = INITIAL_BRANDS.find((b) => b.slug === brandSlug) || INITIAL_BRANDS[0];
 
-  const brandModels = INITIAL_MODELS.filter((m) => m.brandId === brand.id && m.category === "MOBILE");
+  const brandModels = INITIAL_MODELS.filter((m) => m.brandId === brand.id && m.category === "MOBILE").sort((a, b) =>
+    a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" })
+  );
   const filteredModels = brandModels.filter((m) =>
     m.name.toLowerCase().includes(search.toLowerCase().trim())
   );
