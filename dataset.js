@@ -1772,7 +1772,7 @@ const MOBILE_DATASET = [
     "model": "Apple iPhone Air",
     "slug": "apple-iphone-air",
     "minPrice": 45000,
-    "maxPrice": 52200,
+    "maxPrice": 45900,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/32e3bec8-29f9.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/2e7cdc22-5a5f.jpg?w=200",
     "variants": [
@@ -1793,9 +1793,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b948,600",
-        "priceNum": 48600,
-        "basePrice": 48600,
+        "price": "\u20b945,450",
+        "priceNum": 45450,
+        "basePrice": 45450,
         "active": true
       },
       {
@@ -1804,9 +1804,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b952,200",
-        "priceNum": 52200,
-        "basePrice": 52200,
+        "price": "\u20b945,900",
+        "priceNum": 45900,
+        "basePrice": 45900,
         "active": true
       }
     ]
@@ -2210,7 +2210,7 @@ const MOBILE_DATASET = [
     "model": "Asus 8z",
     "slug": "asus-8z",
     "minPrice": 7330,
-    "maxPrice": 8500,
+    "maxPrice": 7930,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8fdda506-94b0.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2231,9 +2231,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b97,910",
-        "priceNum": 7910,
-        "basePrice": 7910,
+        "price": "\u20b97,630",
+        "priceNum": 7630,
+        "basePrice": 7630,
         "active": true
       },
       {
@@ -2242,9 +2242,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b98,500",
-        "priceNum": 8500,
-        "basePrice": 8500,
+        "price": "\u20b97,930",
+        "priceNum": 7930,
+        "basePrice": 7930,
         "active": true
       }
     ]
@@ -2256,7 +2256,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 4A",
     "slug": "google-pixel-4a",
     "minPrice": 4320,
-    "maxPrice": 5010,
+    "maxPrice": 5220,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b89385aa-bb0e.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2277,9 +2277,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b94,660",
-        "priceNum": 4660,
-        "basePrice": 4660,
+        "price": "\u20b94,770",
+        "priceNum": 4770,
+        "basePrice": 4770,
         "active": true
       },
       {
@@ -2288,9 +2288,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b95,010",
-        "priceNum": 5010,
-        "basePrice": 5010,
+        "price": "\u20b95,220",
+        "priceNum": 5220,
+        "basePrice": 5220,
         "active": true
       }
     ]
@@ -2302,7 +2302,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 6a",
     "slug": "google-pixel-6a",
     "minPrice": 10560,
-    "maxPrice": 12240,
+    "maxPrice": 11460,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/aa4db01f-994a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2323,9 +2323,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b911,400",
-        "priceNum": 11400,
-        "basePrice": 11400,
+        "price": "\u20b911,010",
+        "priceNum": 11010,
+        "basePrice": 11010,
         "active": true
       },
       {
@@ -2334,9 +2334,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b912,240",
-        "priceNum": 12240,
-        "basePrice": 12240,
+        "price": "\u20b911,460",
+        "priceNum": 11460,
+        "basePrice": 11460,
         "active": true
       }
     ]
@@ -2348,7 +2348,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 7",
     "slug": "google-pixel-7",
     "minPrice": 15050,
-    "maxPrice": 17750,
+    "maxPrice": 16010,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4df3e3e1-a727.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2369,9 +2369,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b916,250",
-        "priceNum": 16250,
-        "basePrice": 16250,
+        "price": "\u20b915,530",
+        "priceNum": 15530,
+        "basePrice": 15530,
         "active": true
       },
       {
@@ -2380,9 +2380,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b917,750",
-        "priceNum": 17750,
-        "basePrice": 17750,
+        "price": "\u20b916,010",
+        "priceNum": 16010,
+        "basePrice": 16010,
         "active": true
       }
     ]
@@ -2394,7 +2394,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 7a",
     "slug": "google-pixel-7a",
     "minPrice": 18330,
-    "maxPrice": 21620,
+    "maxPrice": 19290,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f685402b-1779.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2415,9 +2415,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b919,790",
-        "priceNum": 19790,
-        "basePrice": 19790,
+        "price": "\u20b918,810",
+        "priceNum": 18810,
+        "basePrice": 18810,
         "active": true
       },
       {
@@ -2426,9 +2426,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b921,620",
-        "priceNum": 21620,
-        "basePrice": 21620,
+        "price": "\u20b919,290",
+        "priceNum": 19290,
+        "basePrice": 19290,
         "active": true
       }
     ]
@@ -2440,7 +2440,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 7 Pro",
     "slug": "google-pixel-7-pro",
     "minPrice": 19360,
-    "maxPrice": 22840,
+    "maxPrice": 20320,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2eddf76a-259d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2461,9 +2461,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b920,900",
-        "priceNum": 20900,
-        "basePrice": 20900,
+        "price": "\u20b919,840",
+        "priceNum": 19840,
+        "basePrice": 19840,
         "active": true
       },
       {
@@ -2472,9 +2472,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b922,840",
-        "priceNum": 22840,
-        "basePrice": 22840,
+        "price": "\u20b920,320",
+        "priceNum": 20320,
+        "basePrice": 20320,
         "active": true
       }
     ]
@@ -2602,7 +2602,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 9",
     "slug": "google-pixel-9",
     "minPrice": 37920,
-    "maxPrice": 44740,
+    "maxPrice": 38880,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/81a733de-1c38.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2623,9 +2623,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b940,950",
-        "priceNum": 40950,
-        "basePrice": 40950,
+        "price": "\u20b938,400",
+        "priceNum": 38400,
+        "basePrice": 38400,
         "active": true
       },
       {
@@ -2634,9 +2634,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b944,740",
-        "priceNum": 44740,
-        "basePrice": 44740,
+        "price": "\u20b938,880",
+        "priceNum": 38880,
+        "basePrice": 38880,
         "active": true
       }
     ]
@@ -2648,7 +2648,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 9a",
     "slug": "google-pixel-9a",
     "minPrice": 28090,
-    "maxPrice": 33140,
+    "maxPrice": 29050,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1ae6e9cd-17aa.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2669,9 +2669,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b930,330",
-        "priceNum": 30330,
-        "basePrice": 30330,
+        "price": "\u20b928,570",
+        "priceNum": 28570,
+        "basePrice": 28570,
         "active": true
       },
       {
@@ -2680,9 +2680,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b933,140",
-        "priceNum": 33140,
-        "basePrice": 33140,
+        "price": "\u20b929,050",
+        "priceNum": 29050,
+        "basePrice": 29050,
         "active": true
       }
     ]
@@ -2694,7 +2694,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 9 Pro",
     "slug": "google-pixel-9-pro",
     "minPrice": 50110,
-    "maxPrice": 59120,
+    "maxPrice": 51070,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0e3992a1-b89f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2715,9 +2715,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b954,110",
-        "priceNum": 54110,
-        "basePrice": 54110,
+        "price": "\u20b950,590",
+        "priceNum": 50590,
+        "basePrice": 50590,
         "active": true
       },
       {
@@ -2726,9 +2726,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b959,120",
-        "priceNum": 59120,
-        "basePrice": 59120,
+        "price": "\u20b951,070",
+        "priceNum": 51070,
+        "basePrice": 51070,
         "active": true
       }
     ]
@@ -2740,7 +2740,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 9 Pro Fold",
     "slug": "google-pixel-9-pro-fold",
     "minPrice": 68160,
-    "maxPrice": 80420,
+    "maxPrice": 68740,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e0dc6226-3ec0.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2761,9 +2761,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b973,610",
-        "priceNum": 73610,
-        "basePrice": 73610,
+        "price": "\u20b968,640",
+        "priceNum": 68640,
+        "basePrice": 68640,
         "active": true
       },
       {
@@ -2772,9 +2772,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b980,420",
-        "priceNum": 80420,
-        "basePrice": 80420,
+        "price": "\u20b968,740",
+        "priceNum": 68740,
+        "basePrice": 68740,
         "active": true
       }
     ]
@@ -2821,7 +2821,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 10",
     "slug": "google-pixel-10",
     "minPrice": 46700,
-    "maxPrice": 54170,
+    "maxPrice": 47600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ea3fd555-69a4.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2842,9 +2842,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b950,430",
-        "priceNum": 50430,
-        "basePrice": 50430,
+        "price": "\u20b947,150",
+        "priceNum": 47150,
+        "basePrice": 47150,
         "active": true
       },
       {
@@ -2853,9 +2853,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b954,170",
-        "priceNum": 54170,
-        "basePrice": 54170,
+        "price": "\u20b947,600",
+        "priceNum": 47600,
+        "basePrice": 47600,
         "active": true
       }
     ]
@@ -2867,7 +2867,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 10 Pro",
     "slug": "google-pixel-10-pro",
     "minPrice": 64900,
-    "maxPrice": 76580,
+    "maxPrice": 65860,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1d4d98ed-89b0.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2888,9 +2888,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b970,090",
-        "priceNum": 70090,
-        "basePrice": 70090,
+        "price": "\u20b965,380",
+        "priceNum": 65380,
+        "basePrice": 65380,
         "active": true
       },
       {
@@ -2899,9 +2899,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b976,580",
-        "priceNum": 76580,
-        "basePrice": 76580,
+        "price": "\u20b965,860",
+        "priceNum": 65860,
+        "basePrice": 65860,
         "active": true
       }
     ]
@@ -2913,7 +2913,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 10 Pro Fold",
     "slug": "google-pixel-10-pro-fold",
     "minPrice": 97000,
-    "maxPrice": 114460,
+    "maxPrice": 97580,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9c00f3f1-db81.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2934,9 +2934,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b9104,760",
-        "priceNum": 104760,
-        "basePrice": 104760,
+        "price": "\u20b997,480",
+        "priceNum": 97480,
+        "basePrice": 97480,
         "active": true
       },
       {
@@ -2945,9 +2945,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b9114,460",
-        "priceNum": 114460,
-        "basePrice": 114460,
+        "price": "\u20b997,580",
+        "priceNum": 97580,
+        "basePrice": 97580,
         "active": true
       }
     ]
@@ -2959,7 +2959,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 10 Pro XL",
     "slug": "google-pixel-10-pro-xl",
     "minPrice": 71200,
-    "maxPrice": 84010,
+    "maxPrice": 72160,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d24ded37-f3b2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/e29a9970-137b.jpg?w=200",
     "variants": [
@@ -2980,9 +2980,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b976,890",
-        "priceNum": 76890,
-        "basePrice": 76890,
+        "price": "\u20b971,680",
+        "priceNum": 71680,
+        "basePrice": 71680,
         "active": true
       },
       {
@@ -2991,9 +2991,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b984,010",
-        "priceNum": 84010,
-        "basePrice": 84010,
+        "price": "\u20b972,160",
+        "priceNum": 72160,
+        "basePrice": 72160,
         "active": true
       }
     ]
@@ -3040,7 +3040,7 @@ const MOBILE_DATASET = [
     "model": "Honor 7A",
     "slug": "honor-7a",
     "minPrice": 1640,
-    "maxPrice": 1900,
+    "maxPrice": 2240,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-2yrwrypd-cwmd.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ee48df80-a6e5.jpg?w=200",
     "variants": [
@@ -3061,9 +3061,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,770",
-        "priceNum": 1770,
-        "basePrice": 1770,
+        "price": "\u20b91,940",
+        "priceNum": 1940,
+        "basePrice": 1940,
         "active": true
       },
       {
@@ -3072,9 +3072,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b91,900",
-        "priceNum": 1900,
-        "basePrice": 1900,
+        "price": "\u20b92,240",
+        "priceNum": 2240,
+        "basePrice": 2240,
         "active": true
       }
     ]
@@ -3167,7 +3167,7 @@ const MOBILE_DATASET = [
     "model": "Honor 9X Pro",
     "slug": "honor-9x-pro",
     "minPrice": 3160,
-    "maxPrice": 3720,
+    "maxPrice": 4120,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0bfdc475-98e9.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ee48df80-a6e5.jpg?w=200",
     "variants": [
@@ -3188,9 +3188,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b93,410",
-        "priceNum": 3410,
-        "basePrice": 3410,
+        "price": "\u20b93,640",
+        "priceNum": 3640,
+        "basePrice": 3640,
         "active": true
       },
       {
@@ -3199,9 +3199,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b93,720",
-        "priceNum": 3720,
-        "basePrice": 3720,
+        "price": "\u20b94,120",
+        "priceNum": 4120,
+        "basePrice": 4120,
         "active": true
       }
     ]
@@ -3213,7 +3213,7 @@ const MOBILE_DATASET = [
     "model": "Honor 9A",
     "slug": "honor-9a",
     "minPrice": 2080,
-    "maxPrice": 2410,
+    "maxPrice": 2680,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a59a43db-f494.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ee48df80-a6e5.jpg?w=200",
     "variants": [
@@ -3234,9 +3234,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,240",
-        "priceNum": 2240,
-        "basePrice": 2240,
+        "price": "\u20b92,380",
+        "priceNum": 2380,
+        "basePrice": 2380,
         "active": true
       },
       {
@@ -3245,9 +3245,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,410",
-        "priceNum": 2410,
-        "basePrice": 2410,
+        "price": "\u20b92,680",
+        "priceNum": 2680,
+        "basePrice": 2680,
         "active": true
       }
     ]
@@ -3340,7 +3340,7 @@ const MOBILE_DATASET = [
     "model": "Honor 10",
     "slug": "honor-10",
     "minPrice": 2520,
-    "maxPrice": 2920,
+    "maxPrice": 3120,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b81dd1d1-ca07.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ee48df80-a6e5.jpg?w=200",
     "variants": [
@@ -3361,9 +3361,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,720",
-        "priceNum": 2720,
-        "basePrice": 2720,
+        "price": "\u20b92,820",
+        "priceNum": 2820,
+        "basePrice": 2820,
         "active": true
       },
       {
@@ -3372,9 +3372,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,920",
-        "priceNum": 2920,
-        "basePrice": 2920,
+        "price": "\u20b93,120",
+        "priceNum": 3120,
+        "basePrice": 3120,
         "active": true
       }
     ]
@@ -3386,7 +3386,7 @@ const MOBILE_DATASET = [
     "model": "Honor 20",
     "slug": "honor-20",
     "minPrice": 2750,
-    "maxPrice": 3190,
+    "maxPrice": 3350,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-omlbwnlk-2fyd.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ee48df80-a6e5.jpg?w=200",
     "variants": [
@@ -3407,9 +3407,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,970",
-        "priceNum": 2970,
-        "basePrice": 2970,
+        "price": "\u20b93,050",
+        "priceNum": 3050,
+        "basePrice": 3050,
         "active": true
       },
       {
@@ -3418,9 +3418,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,190",
-        "priceNum": 3190,
-        "basePrice": 3190,
+        "price": "\u20b93,350",
+        "priceNum": 3350,
+        "basePrice": 3350,
         "active": true
       }
     ]
@@ -3432,7 +3432,7 @@ const MOBILE_DATASET = [
     "model": "Honor 20i",
     "slug": "honor-20i",
     "minPrice": 2480,
-    "maxPrice": 2870,
+    "maxPrice": 3080,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-emgjn514-ijqg.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ee48df80-a6e5.jpg?w=200",
     "variants": [
@@ -3453,9 +3453,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,670",
-        "priceNum": 2670,
-        "basePrice": 2670,
+        "price": "\u20b92,780",
+        "priceNum": 2780,
+        "basePrice": 2780,
         "active": true
       },
       {
@@ -3464,9 +3464,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,870",
-        "priceNum": 2870,
-        "basePrice": 2870,
+        "price": "\u20b93,080",
+        "priceNum": 3080,
+        "basePrice": 3080,
         "active": true
       }
     ]
@@ -3513,7 +3513,7 @@ const MOBILE_DATASET = [
     "model": "Honor 200 Lite 5G",
     "slug": "honor-200-lite-5g",
     "minPrice": 8120,
-    "maxPrice": 9900,
+    "maxPrice": 9220,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/cdcbe6cb-9a67.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ee48df80-a6e5.jpg?w=200",
     "variants": [
@@ -3534,9 +3534,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b98,680",
-        "priceNum": 8680,
-        "basePrice": 8680,
+        "price": "\u20b98,470",
+        "priceNum": 8470,
+        "basePrice": 8470,
         "active": true
       },
       {
@@ -3545,9 +3545,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b99,250",
-        "priceNum": 9250,
-        "basePrice": 9250,
+        "price": "\u20b98,820",
+        "priceNum": 8820,
+        "basePrice": 8820,
         "active": true
       },
       {
@@ -3556,9 +3556,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b99,900",
-        "priceNum": 9900,
-        "basePrice": 9900,
+        "price": "\u20b99,220",
+        "priceNum": 9220,
+        "basePrice": 9220,
         "active": true
       }
     ]
@@ -3570,7 +3570,7 @@ const MOBILE_DATASET = [
     "model": "Honor 200 Pro 5G",
     "slug": "honor-200-pro-5g",
     "minPrice": 21020,
-    "maxPrice": 24800,
+    "maxPrice": 21980,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/24dabaac-3ca2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ee48df80-a6e5.jpg?w=200",
     "variants": [
@@ -3591,9 +3591,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b922,700",
-        "priceNum": 22700,
-        "basePrice": 22700,
+        "price": "\u20b921,500",
+        "priceNum": 21500,
+        "basePrice": 21500,
         "active": true
       },
       {
@@ -3602,9 +3602,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b924,800",
-        "priceNum": 24800,
-        "basePrice": 24800,
+        "price": "\u20b921,980",
+        "priceNum": 21980,
+        "basePrice": 21980,
         "active": true
       }
     ]
@@ -3651,7 +3651,7 @@ const MOBILE_DATASET = [
     "model": "Lenovo Z6 Pro",
     "slug": "lenovo-z6-pro",
     "minPrice": 5260,
-    "maxPrice": 6200,
+    "maxPrice": 6220,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1d00319c-1c79.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ee48df80-a6e5.jpg?w=200",
     "variants": [
@@ -3672,9 +3672,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b95,680",
-        "priceNum": 5680,
-        "basePrice": 5680,
+        "price": "\u20b95,740",
+        "priceNum": 5740,
+        "basePrice": 5740,
         "active": true
       },
       {
@@ -3683,9 +3683,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b96,200",
-        "priceNum": 6200,
-        "basePrice": 6200,
+        "price": "\u20b96,220",
+        "priceNum": 6220,
+        "basePrice": 6220,
         "active": true
       }
     ]
@@ -3697,7 +3697,7 @@ const MOBILE_DATASET = [
     "model": "Infinix GT 10 Pro",
     "slug": "infinix-gt-10-pro",
     "minPrice": 9560,
-    "maxPrice": 11280,
+    "maxPrice": 10520,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d870e0db-1be3.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -3718,9 +3718,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b910,320",
-        "priceNum": 10320,
-        "basePrice": 10320,
+        "price": "\u20b910,040",
+        "priceNum": 10040,
+        "basePrice": 10040,
         "active": true
       },
       {
@@ -3729,9 +3729,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b911,280",
-        "priceNum": 11280,
-        "basePrice": 11280,
+        "price": "\u20b910,520",
+        "priceNum": 10520,
+        "basePrice": 10520,
         "active": true
       }
     ]
@@ -3778,7 +3778,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Hot 7 Pro",
     "slug": "infinix-hot-7-pro",
     "minPrice": 2040,
-    "maxPrice": 2400,
+    "maxPrice": 3000,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-7q83hagt-ncje.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -3799,9 +3799,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,200",
-        "priceNum": 2200,
-        "basePrice": 2200,
+        "price": "\u20b92,520",
+        "priceNum": 2520,
+        "basePrice": 2520,
         "active": true
       },
       {
@@ -3810,9 +3810,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,400",
-        "priceNum": 2400,
-        "basePrice": 2400,
+        "price": "\u20b93,000",
+        "priceNum": 3000,
+        "basePrice": 3000,
         "active": true
       }
     ]
@@ -3824,7 +3824,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Hot 8",
     "slug": "infinix-hot-8",
     "minPrice": 2380,
-    "maxPrice": 2900,
+    "maxPrice": 3480,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3a8360b4-cc3a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -3845,9 +3845,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b92,540",
-        "priceNum": 2540,
-        "basePrice": 2540,
+        "price": "\u20b92,730",
+        "priceNum": 2730,
+        "basePrice": 2730,
         "active": true
       },
       {
@@ -3856,9 +3856,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b92,710",
-        "priceNum": 2710,
-        "basePrice": 2710,
+        "price": "\u20b93,080",
+        "priceNum": 3080,
+        "basePrice": 3080,
         "active": true
       },
       {
@@ -3867,9 +3867,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b92,900",
-        "priceNum": 2900,
-        "basePrice": 2900,
+        "price": "\u20b93,480",
+        "priceNum": 3480,
+        "basePrice": 3480,
         "active": true
       }
     ]
@@ -3881,7 +3881,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Hot 9",
     "slug": "infinix-hot-9",
     "minPrice": 2600,
-    "maxPrice": 3170,
+    "maxPrice": 3700,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c4066800-dd4a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -3902,9 +3902,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b92,780",
-        "priceNum": 2780,
-        "basePrice": 2780,
+        "price": "\u20b92,950",
+        "priceNum": 2950,
+        "basePrice": 2950,
         "active": true
       },
       {
@@ -3913,9 +3913,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b92,960",
-        "priceNum": 2960,
-        "basePrice": 2960,
+        "price": "\u20b93,300",
+        "priceNum": 3300,
+        "basePrice": 3300,
         "active": true
       },
       {
@@ -3924,9 +3924,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b93,170",
-        "priceNum": 3170,
-        "basePrice": 3170,
+        "price": "\u20b93,700",
+        "priceNum": 3700,
+        "basePrice": 3700,
         "active": true
       }
     ]
@@ -3938,7 +3938,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Hot 9 Pro",
     "slug": "infinix-hot-9-pro",
     "minPrice": 2820,
-    "maxPrice": 3320,
+    "maxPrice": 3780,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/07c8934b-636c.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -3959,9 +3959,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b93,040",
-        "priceNum": 3040,
-        "basePrice": 3040,
+        "price": "\u20b93,300",
+        "priceNum": 3300,
+        "basePrice": 3300,
         "active": true
       },
       {
@@ -3970,9 +3970,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b93,320",
-        "priceNum": 3320,
-        "basePrice": 3320,
+        "price": "\u20b93,780",
+        "priceNum": 3780,
+        "basePrice": 3780,
         "active": true
       }
     ]
@@ -4089,7 +4089,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Hot 11",
     "slug": "infinix-hot-11",
     "minPrice": 2930,
-    "maxPrice": 3570,
+    "maxPrice": 4030,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1209a3c-bc24.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -4110,9 +4110,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b93,130",
-        "priceNum": 3130,
-        "basePrice": 3130,
+        "price": "\u20b93,280",
+        "priceNum": 3280,
+        "basePrice": 3280,
         "active": true
       },
       {
@@ -4121,9 +4121,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b93,340",
-        "priceNum": 3340,
-        "basePrice": 3340,
+        "price": "\u20b93,630",
+        "priceNum": 3630,
+        "basePrice": 3630,
         "active": true
       },
       {
@@ -4132,9 +4132,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b93,570",
-        "priceNum": 3570,
-        "basePrice": 3570,
+        "price": "\u20b94,030",
+        "priceNum": 4030,
+        "basePrice": 4030,
         "active": true
       }
     ]
@@ -4181,7 +4181,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Hot 12",
     "slug": "infinix-hot-12",
     "minPrice": 3260,
-    "maxPrice": 3970,
+    "maxPrice": 4360,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/da2fbbf1-a100.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -4202,9 +4202,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b93,480",
-        "priceNum": 3480,
-        "basePrice": 3480,
+        "price": "\u20b93,610",
+        "priceNum": 3610,
+        "basePrice": 3610,
         "active": true
       },
       {
@@ -4213,9 +4213,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b93,710",
-        "priceNum": 3710,
-        "basePrice": 3710,
+        "price": "\u20b93,960",
+        "priceNum": 3960,
+        "basePrice": 3960,
         "active": true
       },
       {
@@ -4224,9 +4224,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b93,970",
-        "priceNum": 3970,
-        "basePrice": 3970,
+        "price": "\u20b94,360",
+        "priceNum": 4360,
+        "basePrice": 4360,
         "active": true
       }
     ]
@@ -4238,7 +4238,7 @@ const MOBILE_DATASET = [
     "model": "Infinix HOT 12 Play",
     "slug": "infinix-hot-12-play",
     "minPrice": 3500,
-    "maxPrice": 4270,
+    "maxPrice": 4600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/74fd76a2-6a77.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -4259,9 +4259,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b93,740",
-        "priceNum": 3740,
-        "basePrice": 3740,
+        "price": "\u20b93,850",
+        "priceNum": 3850,
+        "basePrice": 3850,
         "active": true
       },
       {
@@ -4270,9 +4270,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b93,980",
-        "priceNum": 3980,
-        "basePrice": 3980,
+        "price": "\u20b94,200",
+        "priceNum": 4200,
+        "basePrice": 4200,
         "active": true
       },
       {
@@ -4281,9 +4281,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b94,270",
-        "priceNum": 4270,
-        "basePrice": 4270,
+        "price": "\u20b94,600",
+        "priceNum": 4600,
+        "basePrice": 4600,
         "active": true
       }
     ]
@@ -4365,7 +4365,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Hot 20 Play",
     "slug": "infinix-hot-20-play",
     "minPrice": 2890,
-    "maxPrice": 3520,
+    "maxPrice": 3990,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/26d90af3-59f5.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -4386,9 +4386,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b93,090",
-        "priceNum": 3090,
-        "basePrice": 3090,
+        "price": "\u20b93,240",
+        "priceNum": 3240,
+        "basePrice": 3240,
         "active": true
       },
       {
@@ -4397,9 +4397,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b93,290",
-        "priceNum": 3290,
-        "basePrice": 3290,
+        "price": "\u20b93,590",
+        "priceNum": 3590,
+        "basePrice": 3590,
         "active": true
       },
       {
@@ -4408,9 +4408,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b93,520",
-        "priceNum": 3520,
-        "basePrice": 3520,
+        "price": "\u20b93,990",
+        "priceNum": 3990,
+        "basePrice": 3990,
         "active": true
       }
     ]
@@ -4492,7 +4492,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Hot 40i",
     "slug": "infinix-hot-40i",
     "minPrice": 4120,
-    "maxPrice": 5020,
+    "maxPrice": 5220,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4c6ec67a-a6b3.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -4513,9 +4513,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b94,400",
-        "priceNum": 4400,
-        "basePrice": 4400,
+        "price": "\u20b94,470",
+        "priceNum": 4470,
+        "basePrice": 4470,
         "active": true
       },
       {
@@ -4524,9 +4524,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b94,690",
-        "priceNum": 4690,
-        "basePrice": 4690,
+        "price": "\u20b94,820",
+        "priceNum": 4820,
+        "basePrice": 4820,
         "active": true
       },
       {
@@ -4535,9 +4535,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b95,020",
-        "priceNum": 5020,
-        "basePrice": 5020,
+        "price": "\u20b95,220",
+        "priceNum": 5220,
+        "basePrice": 5220,
         "active": true
       }
     ]
@@ -4584,7 +4584,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Hot 60 5G Plus",
     "slug": "infinix-hot-60-5g-plus",
     "minPrice": 7010,
-    "maxPrice": 8270,
+    "maxPrice": 7970,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/495cb1af-2200.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -4605,9 +4605,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b97,570",
-        "priceNum": 7570,
-        "basePrice": 7570,
+        "price": "\u20b97,490",
+        "priceNum": 7490,
+        "basePrice": 7490,
         "active": true
       },
       {
@@ -4616,9 +4616,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b98,270",
-        "priceNum": 8270,
-        "basePrice": 8270,
+        "price": "\u20b97,970",
+        "priceNum": 7970,
+        "basePrice": 7970,
         "active": true
       }
     ]
@@ -4630,7 +4630,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Hot 60i 5G",
     "slug": "infinix-hot-60i-5g",
     "minPrice": 6090,
-    "maxPrice": 7420,
+    "maxPrice": 7190,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d3b794f5-9634.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -4651,9 +4651,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b96,510",
-        "priceNum": 6510,
-        "basePrice": 6510,
+        "price": "\u20b96,440",
+        "priceNum": 6440,
+        "basePrice": 6440,
         "active": true
       },
       {
@@ -4662,9 +4662,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b96,940",
-        "priceNum": 6940,
-        "basePrice": 6940,
+        "price": "\u20b96,790",
+        "priceNum": 6790,
+        "basePrice": 6790,
         "active": true
       },
       {
@@ -4673,9 +4673,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b97,420",
-        "priceNum": 7420,
-        "basePrice": 7420,
+        "price": "\u20b97,190",
+        "priceNum": 7190,
+        "basePrice": 7190,
         "active": true
       }
     ]
@@ -4687,7 +4687,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Note 7",
     "slug": "infinix-note-7",
     "minPrice": 2790,
-    "maxPrice": 3400,
+    "maxPrice": 3890,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/aef9799c-b2ef.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -4708,9 +4708,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b92,980",
-        "priceNum": 2980,
-        "basePrice": 2980,
+        "price": "\u20b93,140",
+        "priceNum": 3140,
+        "basePrice": 3140,
         "active": true
       },
       {
@@ -4719,9 +4719,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b93,180",
-        "priceNum": 3180,
-        "basePrice": 3180,
+        "price": "\u20b93,490",
+        "priceNum": 3490,
+        "basePrice": 3490,
         "active": true
       },
       {
@@ -4730,9 +4730,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b93,400",
-        "priceNum": 3400,
-        "basePrice": 3400,
+        "price": "\u20b93,890",
+        "priceNum": 3890,
+        "basePrice": 3890,
         "active": true
       }
     ]
@@ -4779,7 +4779,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Note 10 Pro",
     "slug": "infinix-note-10-pro",
     "minPrice": 4210,
-    "maxPrice": 4960,
+    "maxPrice": 5170,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c9b55ad9-49c2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -4800,9 +4800,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b94,540",
-        "priceNum": 4540,
-        "basePrice": 4540,
+        "price": "\u20b94,690",
+        "priceNum": 4690,
+        "basePrice": 4690,
         "active": true
       },
       {
@@ -4811,9 +4811,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b94,960",
-        "priceNum": 4960,
-        "basePrice": 4960,
+        "price": "\u20b95,170",
+        "priceNum": 5170,
+        "basePrice": 5170,
         "active": true
       }
     ]
@@ -4895,7 +4895,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Note 11s Free Fire Edition",
     "slug": "infinix-note-11s-free-fire-edition",
     "minPrice": 3900,
-    "maxPrice": 4750,
+    "maxPrice": 5000,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3cef186c-1330.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -4916,9 +4916,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b94,170",
-        "priceNum": 4170,
-        "basePrice": 4170,
+        "price": "\u20b94,250",
+        "priceNum": 4250,
+        "basePrice": 4250,
         "active": true
       },
       {
@@ -4927,9 +4927,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b94,440",
-        "priceNum": 4440,
-        "basePrice": 4440,
+        "price": "\u20b94,600",
+        "priceNum": 4600,
+        "basePrice": 4600,
         "active": true
       },
       {
@@ -4938,9 +4938,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b94,750",
-        "priceNum": 4750,
-        "basePrice": 4750,
+        "price": "\u20b95,000",
+        "priceNum": 5000,
+        "basePrice": 5000,
         "active": true
       }
     ]
@@ -4987,7 +4987,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Note 12 5G",
     "slug": "infinix-note-12-5g",
     "minPrice": 4200,
-    "maxPrice": 5120,
+    "maxPrice": 5300,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d96cb49f-93b7.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5008,9 +5008,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b94,490",
-        "priceNum": 4490,
-        "basePrice": 4490,
+        "price": "\u20b94,550",
+        "priceNum": 4550,
+        "basePrice": 4550,
         "active": true
       },
       {
@@ -5019,9 +5019,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b94,780",
-        "priceNum": 4780,
-        "basePrice": 4780,
+        "price": "\u20b94,900",
+        "priceNum": 4900,
+        "basePrice": 4900,
         "active": true
       },
       {
@@ -5030,9 +5030,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b95,120",
-        "priceNum": 5120,
-        "basePrice": 5120,
+        "price": "\u20b95,300",
+        "priceNum": 5300,
+        "basePrice": 5300,
         "active": true
       }
     ]
@@ -5044,7 +5044,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Note 12i",
     "slug": "infinix-note-12i",
     "minPrice": 2890,
-    "maxPrice": 3520,
+    "maxPrice": 3990,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f681c3e0-e428.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5065,9 +5065,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b93,090",
-        "priceNum": 3090,
-        "basePrice": 3090,
+        "price": "\u20b93,240",
+        "priceNum": 3240,
+        "basePrice": 3240,
         "active": true
       },
       {
@@ -5076,9 +5076,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b93,290",
-        "priceNum": 3290,
-        "basePrice": 3290,
+        "price": "\u20b93,590",
+        "priceNum": 3590,
+        "basePrice": 3590,
         "active": true
       },
       {
@@ -5087,9 +5087,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b93,520",
-        "priceNum": 3520,
-        "basePrice": 3520,
+        "price": "\u20b93,990",
+        "priceNum": 3990,
+        "basePrice": 3990,
         "active": true
       }
     ]
@@ -5101,7 +5101,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Note 12 Pro 4G",
     "slug": "infinix-note-12-pro-4g",
     "minPrice": 4820,
-    "maxPrice": 5680,
+    "maxPrice": 5780,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ac896790-53ed.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5122,9 +5122,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b95,200",
-        "priceNum": 5200,
-        "basePrice": 5200,
+        "price": "\u20b95,300",
+        "priceNum": 5300,
+        "basePrice": 5300,
         "active": true
       },
       {
@@ -5133,9 +5133,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b95,680",
-        "priceNum": 5680,
-        "basePrice": 5680,
+        "price": "\u20b95,780",
+        "priceNum": 5780,
+        "basePrice": 5780,
         "active": true
       }
     ]
@@ -5147,7 +5147,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Note 12 Pro 5G",
     "slug": "infinix-note-12-pro-5g",
     "minPrice": 5900,
-    "maxPrice": 6960,
+    "maxPrice": 6860,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5c94c509-2a9f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5168,9 +5168,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b96,370",
-        "priceNum": 6370,
-        "basePrice": 6370,
+        "price": "\u20b96,380",
+        "priceNum": 6380,
+        "basePrice": 6380,
         "active": true
       },
       {
@@ -5179,9 +5179,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b96,960",
-        "priceNum": 6960,
-        "basePrice": 6960,
+        "price": "\u20b96,860",
+        "priceNum": 6860,
+        "basePrice": 6860,
         "active": true
       }
     ]
@@ -5193,7 +5193,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Note 12 Turbo",
     "slug": "infinix-note-12-turbo",
     "minPrice": 3790,
-    "maxPrice": 4620,
+    "maxPrice": 4890,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f81e86af-1198.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5214,9 +5214,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b94,050",
-        "priceNum": 4050,
-        "basePrice": 4050,
+        "price": "\u20b94,140",
+        "priceNum": 4140,
+        "basePrice": 4140,
         "active": true
       },
       {
@@ -5225,9 +5225,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b94,320",
-        "priceNum": 4320,
-        "basePrice": 4320,
+        "price": "\u20b94,490",
+        "priceNum": 4490,
+        "basePrice": 4490,
         "active": true
       },
       {
@@ -5236,9 +5236,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b94,620",
-        "priceNum": 4620,
-        "basePrice": 4620,
+        "price": "\u20b94,890",
+        "priceNum": 4890,
+        "basePrice": 4890,
         "active": true
       }
     ]
@@ -5285,7 +5285,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Note 40 5G",
     "slug": "infinix-note-40-5g",
     "minPrice": 6860,
-    "maxPrice": 8360,
+    "maxPrice": 7960,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ae79bcb1-41a5.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5306,9 +5306,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b97,340",
-        "priceNum": 7340,
-        "basePrice": 7340,
+        "price": "\u20b97,210",
+        "priceNum": 7210,
+        "basePrice": 7210,
         "active": true
       },
       {
@@ -5317,9 +5317,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b97,820",
-        "priceNum": 7820,
-        "basePrice": 7820,
+        "price": "\u20b97,560",
+        "priceNum": 7560,
+        "basePrice": 7560,
         "active": true
       },
       {
@@ -5328,9 +5328,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b98,360",
-        "priceNum": 8360,
-        "basePrice": 8360,
+        "price": "\u20b97,960",
+        "priceNum": 7960,
+        "basePrice": 7960,
         "active": true
       }
     ]
@@ -5377,7 +5377,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Note 40 Pro 5G",
     "slug": "infinix-note-40-pro-5g",
     "minPrice": 9350,
-    "maxPrice": 11030,
+    "maxPrice": 10310,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a523b04c-e887.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5398,9 +5398,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b910,090",
-        "priceNum": 10090,
-        "basePrice": 10090,
+        "price": "\u20b99,830",
+        "priceNum": 9830,
+        "basePrice": 9830,
         "active": true
       },
       {
@@ -5409,9 +5409,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b911,030",
-        "priceNum": 11030,
-        "basePrice": 11030,
+        "price": "\u20b910,310",
+        "priceNum": 10310,
+        "basePrice": 10310,
         "active": true
       }
     ]
@@ -5423,7 +5423,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Note 40 Pro Plus 5G",
     "slug": "infinix-note-40-pro-plus-5g",
     "minPrice": 9700,
-    "maxPrice": 11440,
+    "maxPrice": 10660,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a66db04b-9647.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5444,9 +5444,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b910,470",
-        "priceNum": 10470,
-        "basePrice": 10470,
+        "price": "\u20b910,180",
+        "priceNum": 10180,
+        "basePrice": 10180,
         "active": true
       },
       {
@@ -5455,9 +5455,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b911,440",
-        "priceNum": 11440,
-        "basePrice": 11440,
+        "price": "\u20b910,660",
+        "priceNum": 10660,
+        "basePrice": 10660,
         "active": true
       }
     ]
@@ -5504,7 +5504,7 @@ const MOBILE_DATASET = [
     "model": "Infinix S5",
     "slug": "infinix-s5",
     "minPrice": 1990,
-    "maxPrice": 2300,
+    "maxPrice": 2590,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/715f2180-07d6.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5525,9 +5525,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,140",
-        "priceNum": 2140,
-        "basePrice": 2140,
+        "price": "\u20b92,290",
+        "priceNum": 2290,
+        "basePrice": 2290,
         "active": true
       },
       {
@@ -5536,9 +5536,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,300",
-        "priceNum": 2300,
-        "basePrice": 2300,
+        "price": "\u20b92,590",
+        "priceNum": 2590,
+        "basePrice": 2590,
         "active": true
       }
     ]
@@ -5550,7 +5550,7 @@ const MOBILE_DATASET = [
     "model": "Infinix S5 Pro",
     "slug": "infinix-s5-pro",
     "minPrice": 2560,
-    "maxPrice": 3020,
+    "maxPrice": 3520,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a15c8991-4600.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5571,9 +5571,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,760",
-        "priceNum": 2760,
-        "basePrice": 2760,
+        "price": "\u20b93,040",
+        "priceNum": 3040,
+        "basePrice": 3040,
         "active": true
       },
       {
@@ -5582,9 +5582,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b93,020",
-        "priceNum": 3020,
-        "basePrice": 3020,
+        "price": "\u20b93,520",
+        "priceNum": 3520,
+        "basePrice": 3520,
         "active": true
       }
     ]
@@ -5596,7 +5596,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Smart 4 Plus",
     "slug": "infinix-smart-4-plus",
     "minPrice": 2150,
-    "maxPrice": 2530,
+    "maxPrice": 3110,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c04fa6c3-ec58.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5617,9 +5617,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,320",
-        "priceNum": 2320,
-        "basePrice": 2320,
+        "price": "\u20b92,630",
+        "priceNum": 2630,
+        "basePrice": 2630,
         "active": true
       },
       {
@@ -5628,9 +5628,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,530",
-        "priceNum": 2530,
-        "basePrice": 2530,
+        "price": "\u20b93,110",
+        "priceNum": 3110,
+        "basePrice": 3110,
         "active": true
       }
     ]
@@ -5642,7 +5642,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Smart 5",
     "slug": "infinix-smart-5",
     "minPrice": 2130,
-    "maxPrice": 2470,
+    "maxPrice": 2730,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0255285d-5b11.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5663,9 +5663,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,300",
-        "priceNum": 2300,
-        "basePrice": 2300,
+        "price": "\u20b92,430",
+        "priceNum": 2430,
+        "basePrice": 2430,
         "active": true
       },
       {
@@ -5674,9 +5674,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,470",
-        "priceNum": 2470,
-        "basePrice": 2470,
+        "price": "\u20b92,730",
+        "priceNum": 2730,
+        "basePrice": 2730,
         "active": true
       }
     ]
@@ -5688,7 +5688,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Smart 6",
     "slug": "infinix-smart-6",
     "minPrice": 2360,
-    "maxPrice": 2730,
+    "maxPrice": 2960,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a3668014-2bac.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5709,9 +5709,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,540",
-        "priceNum": 2540,
-        "basePrice": 2540,
+        "price": "\u20b92,660",
+        "priceNum": 2660,
+        "basePrice": 2660,
         "active": true
       },
       {
@@ -5720,9 +5720,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,730",
-        "priceNum": 2730,
-        "basePrice": 2730,
+        "price": "\u20b92,960",
+        "priceNum": 2960,
+        "basePrice": 2960,
         "active": true
       }
     ]
@@ -5734,7 +5734,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Smart 6 HD",
     "slug": "infinix-smart-6-hd",
     "minPrice": 2080,
-    "maxPrice": 2410,
+    "maxPrice": 2680,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4255f403-cbc1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5755,9 +5755,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,240",
-        "priceNum": 2240,
-        "basePrice": 2240,
+        "price": "\u20b92,380",
+        "priceNum": 2380,
+        "basePrice": 2380,
         "active": true
       },
       {
@@ -5766,9 +5766,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,410",
-        "priceNum": 2410,
-        "basePrice": 2410,
+        "price": "\u20b92,680",
+        "priceNum": 2680,
+        "basePrice": 2680,
         "active": true
       }
     ]
@@ -5780,7 +5780,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Smart 6 Plus",
     "slug": "infinix-smart-6-plus",
     "minPrice": 2390,
-    "maxPrice": 2820,
+    "maxPrice": 3350,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/443d9df2-fe69.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5801,9 +5801,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,580",
-        "priceNum": 2580,
-        "basePrice": 2580,
+        "price": "\u20b92,870",
+        "priceNum": 2870,
+        "basePrice": 2870,
         "active": true
       },
       {
@@ -5812,9 +5812,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,820",
-        "priceNum": 2820,
-        "basePrice": 2820,
+        "price": "\u20b93,350",
+        "priceNum": 3350,
+        "basePrice": 3350,
         "active": true
       }
     ]
@@ -5861,7 +5861,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Smart 7 HD",
     "slug": "infinix-smart-7-hd",
     "minPrice": 1850,
-    "maxPrice": 2140,
+    "maxPrice": 2450,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/391bccc6-b7f6.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5882,9 +5882,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,990",
-        "priceNum": 1990,
-        "basePrice": 1990,
+        "price": "\u20b92,150",
+        "priceNum": 2150,
+        "basePrice": 2150,
         "active": true
       },
       {
@@ -5893,9 +5893,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,140",
-        "priceNum": 2140,
-        "basePrice": 2140,
+        "price": "\u20b92,450",
+        "priceNum": 2450,
+        "basePrice": 2450,
         "active": true
       }
     ]
@@ -5907,7 +5907,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Smart 8",
     "slug": "infinix-smart-8",
     "minPrice": 3030,
-    "maxPrice": 3510,
+    "maxPrice": 3630,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/39a0c943-2c90.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5928,9 +5928,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,270",
-        "priceNum": 3270,
-        "basePrice": 3270,
+        "price": "\u20b93,330",
+        "priceNum": 3330,
+        "basePrice": 3330,
         "active": true
       },
       {
@@ -5939,9 +5939,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,510",
-        "priceNum": 3510,
-        "basePrice": 3510,
+        "price": "\u20b93,630",
+        "priceNum": 3630,
+        "basePrice": 3630,
         "active": true
       }
     ]
@@ -5953,7 +5953,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Smart 8 HD",
     "slug": "infinix-smart-8-hd",
     "minPrice": 2850,
-    "maxPrice": 3300,
+    "maxPrice": 3450,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ae3ec625-d3c3.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -5974,9 +5974,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,070",
-        "priceNum": 3070,
-        "basePrice": 3070,
+        "price": "\u20b93,150",
+        "priceNum": 3150,
+        "basePrice": 3150,
         "active": true
       },
       {
@@ -5985,9 +5985,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,300",
-        "priceNum": 3300,
-        "basePrice": 3300,
+        "price": "\u20b93,450",
+        "priceNum": 3450,
+        "basePrice": 3450,
         "active": true
       }
     ]
@@ -5999,7 +5999,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Smart 9 HD",
     "slug": "infinix-smart-9-hd",
     "minPrice": 4120,
-    "maxPrice": 4770,
+    "maxPrice": 4720,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3fbcfa9b-e737.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -6020,9 +6020,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,440",
-        "priceNum": 4440,
-        "basePrice": 4440,
+        "price": "\u20b94,420",
+        "priceNum": 4420,
+        "basePrice": 4420,
         "active": true
       },
       {
@@ -6031,9 +6031,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,770",
-        "priceNum": 4770,
-        "basePrice": 4770,
+        "price": "\u20b94,720",
+        "priceNum": 4720,
+        "basePrice": 4720,
         "active": true
       }
     ]
@@ -6045,7 +6045,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Smart HD",
     "slug": "infinix-smart-hd",
     "minPrice": 1780,
-    "maxPrice": 2060,
+    "maxPrice": 2380,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9f72e987-cc07.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -6066,9 +6066,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,920",
-        "priceNum": 1920,
-        "basePrice": 1920,
+        "price": "\u20b92,080",
+        "priceNum": 2080,
+        "basePrice": 2080,
         "active": true
       },
       {
@@ -6077,9 +6077,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,060",
-        "priceNum": 2060,
-        "basePrice": 2060,
+        "price": "\u20b92,380",
+        "priceNum": 2380,
+        "basePrice": 2380,
         "active": true
       }
     ]
@@ -6091,7 +6091,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Zero 5G",
     "slug": "infinix-zero-5g",
     "minPrice": 5420,
-    "maxPrice": 6610,
+    "maxPrice": 6520,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/fc2ea216-ce88.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -6112,9 +6112,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b95,790",
-        "priceNum": 5790,
-        "basePrice": 5790,
+        "price": "\u20b95,770",
+        "priceNum": 5770,
+        "basePrice": 5770,
         "active": true
       },
       {
@@ -6123,9 +6123,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b96,170",
-        "priceNum": 6170,
-        "basePrice": 6170,
+        "price": "\u20b96,120",
+        "priceNum": 6120,
+        "basePrice": 6120,
         "active": true
       },
       {
@@ -6134,9 +6134,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b96,610",
-        "priceNum": 6610,
-        "basePrice": 6610,
+        "price": "\u20b96,520",
+        "priceNum": 6520,
+        "basePrice": 6520,
         "active": true
       }
     ]
@@ -6148,7 +6148,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Zero 5G Turbo",
     "slug": "infinix-zero-5g-turbo",
     "minPrice": 5940,
-    "maxPrice": 7240,
+    "maxPrice": 7040,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-wtgtcmoo-llo9.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -6169,9 +6169,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b96,350",
-        "priceNum": 6350,
-        "basePrice": 6350,
+        "price": "\u20b96,290",
+        "priceNum": 6290,
+        "basePrice": 6290,
         "active": true
       },
       {
@@ -6180,9 +6180,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b96,770",
-        "priceNum": 6770,
-        "basePrice": 6770,
+        "price": "\u20b96,640",
+        "priceNum": 6640,
+        "basePrice": 6640,
         "active": true
       },
       {
@@ -6191,9 +6191,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b97,240",
-        "priceNum": 7240,
-        "basePrice": 7240,
+        "price": "\u20b97,040",
+        "priceNum": 7040,
+        "basePrice": 7040,
         "active": true
       }
     ]
@@ -6205,7 +6205,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Zero 5 Pro",
     "slug": "infinix-zero-5-pro",
     "minPrice": 2240,
-    "maxPrice": 2640,
+    "maxPrice": 3200,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-wtgtcmoo-llo9.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -6226,9 +6226,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,410",
-        "priceNum": 2410,
-        "basePrice": 2410,
+        "price": "\u20b92,720",
+        "priceNum": 2720,
+        "basePrice": 2720,
         "active": true
       },
       {
@@ -6237,9 +6237,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,640",
-        "priceNum": 2640,
-        "basePrice": 2640,
+        "price": "\u20b93,200",
+        "priceNum": 3200,
+        "basePrice": 3200,
         "active": true
       }
     ]
@@ -6251,7 +6251,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Zero 8i",
     "slug": "infinix-zero-8i",
     "minPrice": 3930,
-    "maxPrice": 4790,
+    "maxPrice": 5030,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/873c068e-b207.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -6272,9 +6272,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b94,200",
-        "priceNum": 4200,
-        "basePrice": 4200,
+        "price": "\u20b94,280",
+        "priceNum": 4280,
+        "basePrice": 4280,
         "active": true
       },
       {
@@ -6283,9 +6283,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b94,480",
-        "priceNum": 4480,
-        "basePrice": 4480,
+        "price": "\u20b94,630",
+        "priceNum": 4630,
+        "basePrice": 4630,
         "active": true
       },
       {
@@ -6294,9 +6294,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b94,790",
-        "priceNum": 4790,
-        "basePrice": 4790,
+        "price": "\u20b95,030",
+        "priceNum": 5030,
+        "basePrice": 5030,
         "active": true
       }
     ]
@@ -6308,7 +6308,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Zero 20",
     "slug": "infinix-zero-20",
     "minPrice": 4490,
-    "maxPrice": 5470,
+    "maxPrice": 5590,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/6d67af8e-ff0e.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -6329,9 +6329,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b94,800",
-        "priceNum": 4800,
-        "basePrice": 4800,
+        "price": "\u20b94,840",
+        "priceNum": 4840,
+        "basePrice": 4840,
         "active": true
       },
       {
@@ -6340,9 +6340,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b95,110",
-        "priceNum": 5110,
-        "basePrice": 5110,
+        "price": "\u20b95,190",
+        "priceNum": 5190,
+        "basePrice": 5190,
         "active": true
       },
       {
@@ -6351,9 +6351,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b95,470",
-        "priceNum": 5470,
-        "basePrice": 5470,
+        "price": "\u20b95,590",
+        "priceNum": 5590,
+        "basePrice": 5590,
         "active": true
       }
     ]
@@ -6400,7 +6400,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Zero Flip 5G",
     "slug": "infinix-zero-flip-5g",
     "minPrice": 19110,
-    "maxPrice": 22540,
+    "maxPrice": 20070,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a5b999a9-7ff2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -6421,9 +6421,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b920,630",
-        "priceNum": 20630,
-        "basePrice": 20630,
+        "price": "\u20b919,590",
+        "priceNum": 19590,
+        "basePrice": 19590,
         "active": true
       },
       {
@@ -6432,9 +6432,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b922,540",
-        "priceNum": 22540,
-        "basePrice": 22540,
+        "price": "\u20b920,070",
+        "priceNum": 20070,
+        "basePrice": 20070,
         "active": true
       }
     ]
@@ -6446,7 +6446,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Zero Ultra",
     "slug": "infinix-zero-ultra",
     "minPrice": 8540,
-    "maxPrice": 10070,
+    "maxPrice": 9120,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/41af0e6b-4d61.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -6467,9 +6467,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b99,220",
-        "priceNum": 9220,
-        "basePrice": 9220,
+        "price": "\u20b99,020",
+        "priceNum": 9020,
+        "basePrice": 9020,
         "active": true
       },
       {
@@ -6478,9 +6478,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b910,070",
-        "priceNum": 10070,
-        "basePrice": 10070,
+        "price": "\u20b99,120",
+        "priceNum": 9120,
+        "basePrice": 9120,
         "active": true
       }
     ]
@@ -6492,7 +6492,7 @@ const MOBILE_DATASET = [
     "model": "LG Q60",
     "slug": "lg-q60",
     "minPrice": 2710,
-    "maxPrice": 3140,
+    "maxPrice": 3310,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3a1df72f-5dc5.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/81729b28-c1e0.jpg?w=200",
     "variants": [
@@ -6513,9 +6513,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,920",
-        "priceNum": 2920,
-        "basePrice": 2920,
+        "price": "\u20b93,010",
+        "priceNum": 3010,
+        "basePrice": 3010,
         "active": true
       },
       {
@@ -6524,9 +6524,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,140",
-        "priceNum": 3140,
-        "basePrice": 3140,
+        "price": "\u20b93,310",
+        "priceNum": 3310,
+        "basePrice": 3310,
         "active": true
       }
     ]
@@ -6573,7 +6573,7 @@ const MOBILE_DATASET = [
     "model": "iQOO 3 5G",
     "slug": "iqoo-3-5g",
     "minPrice": 7270,
-    "maxPrice": 8860,
+    "maxPrice": 8370,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b876019f-00a9.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0c83a152-bf6d.jpg?w=200",
     "variants": [
@@ -6594,9 +6594,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b97,770",
-        "priceNum": 7770,
-        "basePrice": 7770,
+        "price": "\u20b97,620",
+        "priceNum": 7620,
+        "basePrice": 7620,
         "active": true
       },
       {
@@ -6605,9 +6605,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b98,280",
-        "priceNum": 8280,
-        "basePrice": 8280,
+        "price": "\u20b97,970",
+        "priceNum": 7970,
+        "basePrice": 7970,
         "active": true
       },
       {
@@ -6616,9 +6616,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b98,860",
-        "priceNum": 8860,
-        "basePrice": 8860,
+        "price": "\u20b98,370",
+        "priceNum": 8370,
+        "basePrice": 8370,
         "active": true
       }
     ]
@@ -7002,7 +7002,7 @@ const MOBILE_DATASET = [
     "model": "iQOO 15R",
     "slug": "iqoo-15r",
     "minPrice": 31500,
-    "maxPrice": 36540,
+    "maxPrice": 32100,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d06cf3c3-194c.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0c83a152-bf6d.jpg?w=200",
     "variants": [
@@ -7023,9 +7023,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b934,020",
-        "priceNum": 34020,
-        "basePrice": 34020,
+        "price": "\u20b931,800",
+        "priceNum": 31800,
+        "basePrice": 31800,
         "active": true
       },
       {
@@ -7034,9 +7034,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b936,540",
-        "priceNum": 36540,
-        "basePrice": 36540,
+        "price": "\u20b932,100",
+        "priceNum": 32100,
+        "basePrice": 32100,
         "active": true
       }
     ]
@@ -7048,7 +7048,7 @@ const MOBILE_DATASET = [
     "model": "iQOO Neo 6 5G",
     "slug": "iqoo-neo-6-5g",
     "minPrice": 10910,
-    "maxPrice": 13310,
+    "maxPrice": 12010,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/fb086c75-72d7.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0c83a152-bf6d.jpg?w=200",
     "variants": [
@@ -7069,9 +7069,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b911,670",
-        "priceNum": 11670,
-        "basePrice": 11670,
+        "price": "\u20b911,260",
+        "priceNum": 11260,
+        "basePrice": 11260,
         "active": true
       },
       {
@@ -7080,9 +7080,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b912,430",
-        "priceNum": 12430,
-        "basePrice": 12430,
+        "price": "\u20b911,610",
+        "priceNum": 11610,
+        "basePrice": 11610,
         "active": true
       },
       {
@@ -7091,9 +7091,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b913,310",
-        "priceNum": 13310,
-        "basePrice": 13310,
+        "price": "\u20b912,010",
+        "priceNum": 12010,
+        "basePrice": 12010,
         "active": true
       }
     ]
@@ -7105,7 +7105,7 @@ const MOBILE_DATASET = [
     "model": "iQOO Neo 7 5G",
     "slug": "iqoo-neo-7-5g",
     "minPrice": 11240,
-    "maxPrice": 13710,
+    "maxPrice": 12340,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f2ce64fd-2a0c.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0c83a152-bf6d.jpg?w=200",
     "variants": [
@@ -7126,9 +7126,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b912,020",
-        "priceNum": 12020,
-        "basePrice": 12020,
+        "price": "\u20b911,590",
+        "priceNum": 11590,
+        "basePrice": 11590,
         "active": true
       },
       {
@@ -7137,9 +7137,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b912,810",
-        "priceNum": 12810,
-        "basePrice": 12810,
+        "price": "\u20b911,940",
+        "priceNum": 11940,
+        "basePrice": 11940,
         "active": true
       },
       {
@@ -7148,9 +7148,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b913,710",
-        "priceNum": 13710,
-        "basePrice": 13710,
+        "price": "\u20b912,340",
+        "priceNum": 12340,
+        "basePrice": 12340,
         "active": true
       }
     ]
@@ -7427,7 +7427,7 @@ const MOBILE_DATASET = [
     "model": "iQOO Z6",
     "slug": "iqoo-z6",
     "minPrice": 5530,
-    "maxPrice": 6410,
+    "maxPrice": 6130,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0e4cb2ce-b363.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0c83a152-bf6d.jpg?w=200",
     "variants": [
@@ -7448,9 +7448,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,970",
-        "priceNum": 5970,
-        "basePrice": 5970,
+        "price": "\u20b95,830",
+        "priceNum": 5830,
+        "basePrice": 5830,
         "active": true
       },
       {
@@ -7459,9 +7459,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,410",
-        "priceNum": 6410,
-        "basePrice": 6410,
+        "price": "\u20b96,130",
+        "priceNum": 6130,
+        "basePrice": 6130,
         "active": true
       }
     ]
@@ -8143,7 +8143,7 @@ const MOBILE_DATASET = [
     "model": "Lenovo A6 Note",
     "slug": "lenovo-a6-note",
     "minPrice": 1500,
-    "maxPrice": 1830,
+    "maxPrice": 2600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/86a13920-ee80.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/a2f7c00e-6c61.jpg?w=200",
     "variants": [
@@ -8164,9 +8164,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b91,600",
-        "priceNum": 1600,
-        "basePrice": 1600,
+        "price": "\u20b91,850",
+        "priceNum": 1850,
+        "basePrice": 1850,
         "active": true
       },
       {
@@ -8175,9 +8175,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b91,700",
-        "priceNum": 1700,
-        "basePrice": 1700,
+        "price": "\u20b92,200",
+        "priceNum": 2200,
+        "basePrice": 2200,
         "active": true
       },
       {
@@ -8186,9 +8186,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b91,830",
-        "priceNum": 1830,
-        "basePrice": 1830,
+        "price": "\u20b92,600",
+        "priceNum": 2600,
+        "basePrice": 2600,
         "active": true
       }
     ]
@@ -8200,7 +8200,7 @@ const MOBILE_DATASET = [
     "model": "Lenovo K9 Note",
     "slug": "lenovo-k9-note",
     "minPrice": 1500,
-    "maxPrice": 1830,
+    "maxPrice": 2600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a6a1d6f6-c47a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/a2f7c00e-6c61.jpg?w=200",
     "variants": [
@@ -8221,9 +8221,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b91,600",
-        "priceNum": 1600,
-        "basePrice": 1600,
+        "price": "\u20b91,850",
+        "priceNum": 1850,
+        "basePrice": 1850,
         "active": true
       },
       {
@@ -8232,9 +8232,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b91,700",
-        "priceNum": 1700,
-        "basePrice": 1700,
+        "price": "\u20b92,200",
+        "priceNum": 2200,
+        "basePrice": 2200,
         "active": true
       },
       {
@@ -8243,9 +8243,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b91,830",
-        "priceNum": 1830,
-        "basePrice": 1830,
+        "price": "\u20b92,600",
+        "priceNum": 2600,
+        "basePrice": 2600,
         "active": true
       }
     ]
@@ -8292,7 +8292,7 @@ const MOBILE_DATASET = [
     "model": "Lenovo K10 Plus",
     "slug": "lenovo-k10-plus",
     "minPrice": 1940,
-    "maxPrice": 2280,
+    "maxPrice": 2900,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/809568c7-75ba.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/a2f7c00e-6c61.jpg?w=200",
     "variants": [
@@ -8313,9 +8313,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,090",
-        "priceNum": 2090,
-        "basePrice": 2090,
+        "price": "\u20b92,420",
+        "priceNum": 2420,
+        "basePrice": 2420,
         "active": true
       },
       {
@@ -8324,9 +8324,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,280",
-        "priceNum": 2280,
-        "basePrice": 2280,
+        "price": "\u20b92,900",
+        "priceNum": 2900,
+        "basePrice": 2900,
         "active": true
       }
     ]
@@ -8338,7 +8338,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G85 5G",
     "slug": "motorola-moto-g85-5g",
     "minPrice": 12630,
-    "maxPrice": 15400,
+    "maxPrice": 13730,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/fdaad04e-9d1c.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/a2f7c00e-6c61.jpg?w=200",
     "variants": [
@@ -8359,9 +8359,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b913,510",
-        "priceNum": 13510,
-        "basePrice": 13510,
+        "price": "\u20b912,980",
+        "priceNum": 12980,
+        "basePrice": 12980,
         "active": true
       },
       {
@@ -8370,9 +8370,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b914,390",
-        "priceNum": 14390,
-        "basePrice": 14390,
+        "price": "\u20b913,330",
+        "priceNum": 13330,
+        "basePrice": 13330,
         "active": true
       },
       {
@@ -8381,9 +8381,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b915,400",
-        "priceNum": 15400,
-        "basePrice": 15400,
+        "price": "\u20b913,730",
+        "priceNum": 13730,
+        "basePrice": 13730,
         "active": true
       }
     ]
@@ -8395,7 +8395,7 @@ const MOBILE_DATASET = [
     "model": "Google Pixel 10a",
     "slug": "google-pixel-10a",
     "minPrice": 33700,
-    "maxPrice": 39090,
+    "maxPrice": 34600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ababae8a-fd80.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/99464522-83b6.jpg?w=200",
     "variants": [
@@ -8416,9 +8416,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b936,390",
-        "priceNum": 36390,
-        "basePrice": 36390,
+        "price": "\u20b934,150",
+        "priceNum": 34150,
+        "basePrice": 34150,
         "active": true
       },
       {
@@ -8427,9 +8427,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b939,090",
-        "priceNum": 39090,
-        "basePrice": 39090,
+        "price": "\u20b934,600",
+        "priceNum": 34600,
+        "basePrice": 34600,
         "active": true
       }
     ]
@@ -8441,7 +8441,7 @@ const MOBILE_DATASET = [
     "model": "LG G8X ThinQ",
     "slug": "lg-g8x-thinq",
     "minPrice": 4540,
-    "maxPrice": 5260,
+    "maxPrice": 5140,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e4d08779-a853.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/99464522-83b6.jpg?w=200",
     "variants": [
@@ -8462,9 +8462,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,900",
-        "priceNum": 4900,
-        "basePrice": 4900,
+        "price": "\u20b94,840",
+        "priceNum": 4840,
+        "basePrice": 4840,
         "active": true
       },
       {
@@ -8473,9 +8473,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,260",
-        "priceNum": 5260,
-        "basePrice": 5260,
+        "price": "\u20b95,140",
+        "priceNum": 5140,
+        "basePrice": 5140,
         "active": true
       }
     ]
@@ -8487,7 +8487,7 @@ const MOBILE_DATASET = [
     "model": "LG G8S ThinQ",
     "slug": "lg-g8s-thinq",
     "minPrice": 4370,
-    "maxPrice": 5060,
+    "maxPrice": 4970,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/124bb620-cb9d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/99464522-83b6.jpg?w=200",
     "variants": [
@@ -8508,9 +8508,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,710",
-        "priceNum": 4710,
-        "basePrice": 4710,
+        "price": "\u20b94,670",
+        "priceNum": 4670,
+        "basePrice": 4670,
         "active": true
       },
       {
@@ -8519,9 +8519,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,060",
-        "priceNum": 5060,
-        "basePrice": 5060,
+        "price": "\u20b94,970",
+        "priceNum": 4970,
+        "basePrice": 4970,
         "active": true
       }
     ]
@@ -8533,7 +8533,7 @@ const MOBILE_DATASET = [
     "model": "LG W10",
     "slug": "lg-w10",
     "minPrice": 2190,
-    "maxPrice": 2540,
+    "maxPrice": 2790,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-f3dwgr16-9syu.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/99464522-83b6.jpg?w=200",
     "variants": [
@@ -8554,9 +8554,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,360",
-        "priceNum": 2360,
-        "basePrice": 2360,
+        "price": "\u20b92,490",
+        "priceNum": 2490,
+        "basePrice": 2490,
         "active": true
       },
       {
@@ -8565,9 +8565,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,540",
-        "priceNum": 2540,
-        "basePrice": 2540,
+        "price": "\u20b92,790",
+        "priceNum": 2790,
+        "basePrice": 2790,
         "active": true
       }
     ]
@@ -8579,7 +8579,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto E6s",
     "slug": "motorola-moto-e6s",
     "minPrice": 2080,
-    "maxPrice": 2410,
+    "maxPrice": 2680,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d5c6b2ef-8476.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -8600,9 +8600,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,240",
-        "priceNum": 2240,
-        "basePrice": 2240,
+        "price": "\u20b92,380",
+        "priceNum": 2380,
+        "basePrice": 2380,
         "active": true
       },
       {
@@ -8611,9 +8611,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,410",
-        "priceNum": 2410,
-        "basePrice": 2410,
+        "price": "\u20b92,680",
+        "priceNum": 2680,
+        "basePrice": 2680,
         "active": true
       }
     ]
@@ -8625,7 +8625,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto E7 Plus",
     "slug": "motorola-moto-e7-plus",
     "minPrice": 2730,
-    "maxPrice": 3220,
+    "maxPrice": 3690,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/546ea7e6-20d3.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -8646,9 +8646,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,940",
-        "priceNum": 2940,
-        "basePrice": 2940,
+        "price": "\u20b93,210",
+        "priceNum": 3210,
+        "basePrice": 3210,
         "active": true
       },
       {
@@ -8657,9 +8657,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b93,220",
-        "priceNum": 3220,
-        "basePrice": 3220,
+        "price": "\u20b93,690",
+        "priceNum": 3690,
+        "basePrice": 3690,
         "active": true
       }
     ]
@@ -8752,7 +8752,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto e22s",
     "slug": "motorola-moto-e22s",
     "minPrice": 3200,
-    "maxPrice": 3710,
+    "maxPrice": 3800,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/95434757-a07b.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -8773,9 +8773,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,450",
-        "priceNum": 3450,
-        "basePrice": 3450,
+        "price": "\u20b93,500",
+        "priceNum": 3500,
+        "basePrice": 3500,
         "active": true
       },
       {
@@ -8784,9 +8784,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,710",
-        "priceNum": 3710,
-        "basePrice": 3710,
+        "price": "\u20b93,800",
+        "priceNum": 3800,
+        "basePrice": 3800,
         "active": true
       }
     ]
@@ -8798,7 +8798,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto e32",
     "slug": "motorola-moto-e32",
     "minPrice": 3220,
-    "maxPrice": 3730,
+    "maxPrice": 3820,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/bc141c8e-a738.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -8819,9 +8819,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,470",
-        "priceNum": 3470,
-        "basePrice": 3470,
+        "price": "\u20b93,520",
+        "priceNum": 3520,
+        "basePrice": 3520,
         "active": true
       },
       {
@@ -8830,9 +8830,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,730",
-        "priceNum": 3730,
-        "basePrice": 3730,
+        "price": "\u20b93,820",
+        "priceNum": 3820,
+        "basePrice": 3820,
         "active": true
       }
     ]
@@ -8879,7 +8879,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto E40",
     "slug": "motorola-moto-e40",
     "minPrice": 3670,
-    "maxPrice": 4250,
+    "maxPrice": 4270,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/101b2ff6-9efa.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -8900,9 +8900,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,960",
-        "priceNum": 3960,
-        "basePrice": 3960,
+        "price": "\u20b93,970",
+        "priceNum": 3970,
+        "basePrice": 3970,
         "active": true
       },
       {
@@ -8911,9 +8911,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,250",
-        "priceNum": 4250,
-        "basePrice": 4250,
+        "price": "\u20b94,270",
+        "priceNum": 4270,
+        "basePrice": 4270,
         "active": true
       }
     ]
@@ -8925,7 +8925,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 20",
     "slug": "motorola-moto-edge-20",
     "minPrice": 7010,
-    "maxPrice": 8130,
+    "maxPrice": 7610,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/6f031fc2-1dfb.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -8946,9 +8946,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b97,570",
-        "priceNum": 7570,
-        "basePrice": 7570,
+        "price": "\u20b97,310",
+        "priceNum": 7310,
+        "basePrice": 7310,
         "active": true
       },
       {
@@ -8957,9 +8957,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b98,130",
-        "priceNum": 8130,
-        "basePrice": 8130,
+        "price": "\u20b97,610",
+        "priceNum": 7610,
+        "basePrice": 7610,
         "active": true
       }
     ]
@@ -9006,7 +9006,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 20 Pro",
     "slug": "motorola-moto-edge-20-pro",
     "minPrice": 7950,
-    "maxPrice": 9380,
+    "maxPrice": 8910,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/907e97b0-910a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9027,9 +9027,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b98,580",
-        "priceNum": 8580,
-        "basePrice": 8580,
+        "price": "\u20b98,430",
+        "priceNum": 8430,
+        "basePrice": 8430,
         "active": true
       },
       {
@@ -9038,9 +9038,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b99,380",
-        "priceNum": 9380,
-        "basePrice": 9380,
+        "price": "\u20b98,910",
+        "priceNum": 8910,
+        "basePrice": 8910,
         "active": true
       }
     ]
@@ -9087,7 +9087,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 30 Fusion",
     "slug": "motorola-moto-edge-30-fusion",
     "minPrice": 10150,
-    "maxPrice": 11770,
+    "maxPrice": 10750,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/81fd09a9-f756.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9108,9 +9108,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b910,960",
-        "priceNum": 10960,
-        "basePrice": 10960,
+        "price": "\u20b910,450",
+        "priceNum": 10450,
+        "basePrice": 10450,
         "active": true
       },
       {
@@ -9119,9 +9119,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b911,770",
-        "priceNum": 11770,
-        "basePrice": 11770,
+        "price": "\u20b910,750",
+        "priceNum": 10750,
+        "basePrice": 10750,
         "active": true
       }
     ]
@@ -9133,7 +9133,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 30 Pro",
     "slug": "motorola-moto-edge-30-pro",
     "minPrice": 9160,
-    "maxPrice": 10800,
+    "maxPrice": 10120,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8a38dfda-709d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9154,9 +9154,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b99,890",
-        "priceNum": 9890,
-        "basePrice": 9890,
+        "price": "\u20b99,640",
+        "priceNum": 9640,
+        "basePrice": 9640,
         "active": true
       },
       {
@@ -9165,9 +9165,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b910,800",
-        "priceNum": 10800,
-        "basePrice": 10800,
+        "price": "\u20b910,120",
+        "priceNum": 10120,
+        "basePrice": 10120,
         "active": true
       }
     ]
@@ -9179,7 +9179,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 30 Ultra",
     "slug": "motorola-moto-edge-30-ultra",
     "minPrice": 12500,
-    "maxPrice": 14750,
+    "maxPrice": 13080,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/39675157-cf94.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9200,9 +9200,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b913,500",
-        "priceNum": 13500,
-        "basePrice": 13500,
+        "price": "\u20b912,980",
+        "priceNum": 12980,
+        "basePrice": 12980,
         "active": true
       },
       {
@@ -9211,9 +9211,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b914,750",
-        "priceNum": 14750,
-        "basePrice": 14750,
+        "price": "\u20b913,080",
+        "priceNum": 13080,
+        "basePrice": 13080,
         "active": true
       }
     ]
@@ -9225,7 +9225,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 40",
     "slug": "motorola-moto-edge-40",
     "minPrice": 15310,
-    "maxPrice": 17750,
+    "maxPrice": 15910,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8a900756-d7e6.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9246,9 +9246,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b916,530",
-        "priceNum": 16530,
-        "basePrice": 16530,
+        "price": "\u20b915,610",
+        "priceNum": 15610,
+        "basePrice": 15610,
         "active": true
       },
       {
@@ -9257,9 +9257,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b917,750",
-        "priceNum": 17750,
-        "basePrice": 17750,
+        "price": "\u20b915,910",
+        "priceNum": 15910,
+        "basePrice": 15910,
         "active": true
       }
     ]
@@ -9306,7 +9306,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 50",
     "slug": "motorola-moto-edge-50",
     "minPrice": 15810,
-    "maxPrice": 18330,
+    "maxPrice": 16410,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/51a349d2-28ab.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9327,9 +9327,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b917,070",
-        "priceNum": 17070,
-        "basePrice": 17070,
+        "price": "\u20b916,110",
+        "priceNum": 16110,
+        "basePrice": 16110,
         "active": true
       },
       {
@@ -9338,9 +9338,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b918,330",
-        "priceNum": 18330,
-        "basePrice": 18330,
+        "price": "\u20b916,410",
+        "priceNum": 16410,
+        "basePrice": 16410,
         "active": true
       }
     ]
@@ -9387,7 +9387,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 50 Neo",
     "slug": "motorola-moto-edge-50-neo",
     "minPrice": 15500,
-    "maxPrice": 18910,
+    "maxPrice": 16600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0a2eb131-da90.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9408,9 +9408,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b916,580",
-        "priceNum": 16580,
-        "basePrice": 16580,
+        "price": "\u20b915,850",
+        "priceNum": 15850,
+        "basePrice": 15850,
         "active": true
       },
       {
@@ -9419,9 +9419,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b917,670",
-        "priceNum": 17670,
-        "basePrice": 17670,
+        "price": "\u20b916,200",
+        "priceNum": 16200,
+        "basePrice": 16200,
         "active": true
       },
       {
@@ -9430,9 +9430,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b918,910",
-        "priceNum": 18910,
-        "basePrice": 18910,
+        "price": "\u20b916,600",
+        "priceNum": 16600,
+        "basePrice": 16600,
         "active": true
       }
     ]
@@ -9444,7 +9444,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 50 Pro",
     "slug": "motorola-moto-edge-50-pro",
     "minPrice": 17590,
-    "maxPrice": 20750,
+    "maxPrice": 18550,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a458c2a9-693c.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9465,9 +9465,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b918,990",
-        "priceNum": 18990,
-        "basePrice": 18990,
+        "price": "\u20b918,070",
+        "priceNum": 18070,
+        "basePrice": 18070,
         "active": true
       },
       {
@@ -9476,9 +9476,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b920,750",
-        "priceNum": 20750,
-        "basePrice": 20750,
+        "price": "\u20b918,550",
+        "priceNum": 18550,
+        "basePrice": 18550,
         "active": true
       }
     ]
@@ -9490,7 +9490,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 50 Ultra",
     "slug": "motorola-moto-edge-50-ultra",
     "minPrice": 25680,
-    "maxPrice": 30300,
+    "maxPrice": 26260,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/6b81840f-daf0.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9511,9 +9511,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b927,730",
-        "priceNum": 27730,
-        "basePrice": 27730,
+        "price": "\u20b926,160",
+        "priceNum": 26160,
+        "basePrice": 26160,
         "active": true
       },
       {
@@ -9522,9 +9522,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b930,300",
-        "priceNum": 30300,
-        "basePrice": 30300,
+        "price": "\u20b926,260",
+        "priceNum": 26260,
+        "basePrice": 26260,
         "active": true
       }
     ]
@@ -9536,7 +9536,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 60",
     "slug": "motorola-moto-edge-60",
     "minPrice": 17200,
-    "maxPrice": 19950,
+    "maxPrice": 17800,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/da673a8b-0433.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9557,9 +9557,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b918,570",
-        "priceNum": 18570,
-        "basePrice": 18570,
+        "price": "\u20b917,500",
+        "priceNum": 17500,
+        "basePrice": 17500,
         "active": true
       },
       {
@@ -9568,9 +9568,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b919,950",
-        "priceNum": 19950,
-        "basePrice": 19950,
+        "price": "\u20b917,800",
+        "priceNum": 17800,
+        "basePrice": 17800,
         "active": true
       }
     ]
@@ -9628,7 +9628,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 60 Pro",
     "slug": "motorola-moto-edge-60-pro",
     "minPrice": 21710,
-    "maxPrice": 25610,
+    "maxPrice": 22670,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e3d735d0-832d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9649,9 +9649,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b923,440",
-        "priceNum": 23440,
-        "basePrice": 23440,
+        "price": "\u20b922,190",
+        "priceNum": 22190,
+        "basePrice": 22190,
         "active": true
       },
       {
@@ -9660,9 +9660,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b925,610",
-        "priceNum": 25610,
-        "basePrice": 25610,
+        "price": "\u20b922,670",
+        "priceNum": 22670,
+        "basePrice": 22670,
         "active": true
       }
     ]
@@ -9674,7 +9674,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 60 Stylus",
     "slug": "motorola-moto-edge-60-stylus",
     "minPrice": 15570,
-    "maxPrice": 18060,
+    "maxPrice": 16170,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9621ebbf-134b.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9695,9 +9695,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b916,810",
-        "priceNum": 16810,
-        "basePrice": 16810,
+        "price": "\u20b915,870",
+        "priceNum": 15870,
+        "basePrice": 15870,
         "active": true
       },
       {
@@ -9706,9 +9706,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b918,060",
-        "priceNum": 18060,
-        "basePrice": 18060,
+        "price": "\u20b916,170",
+        "priceNum": 16170,
+        "basePrice": 16170,
         "active": true
       }
     ]
@@ -9720,7 +9720,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 70",
     "slug": "motorola-moto-edge-70",
     "minPrice": 19000,
-    "maxPrice": 22040,
+    "maxPrice": 19600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0122701f-9b25.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9741,9 +9741,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b920,520",
-        "priceNum": 20520,
-        "basePrice": 20520,
+        "price": "\u20b919,300",
+        "priceNum": 19300,
+        "basePrice": 19300,
         "active": true
       },
       {
@@ -9752,9 +9752,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b922,040",
-        "priceNum": 22040,
-        "basePrice": 22040,
+        "price": "\u20b919,600",
+        "priceNum": 19600,
+        "basePrice": 19600,
         "active": true
       }
     ]
@@ -9836,7 +9836,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge 70 Pro Plus 5G",
     "slug": "motorola-moto-edge-70-pro-plus-5g",
     "minPrice": 31500,
-    "maxPrice": 37170,
+    "maxPrice": 32460,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f15bbaa8-f321.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9857,9 +9857,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b934,020",
-        "priceNum": 34020,
-        "basePrice": 34020,
+        "price": "\u20b931,980",
+        "priceNum": 31980,
+        "basePrice": 31980,
         "active": true
       },
       {
@@ -9868,9 +9868,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b937,170",
-        "priceNum": 37170,
-        "basePrice": 37170,
+        "price": "\u20b932,460",
+        "priceNum": 32460,
+        "basePrice": 32460,
         "active": true
       }
     ]
@@ -9882,7 +9882,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Edge Plus",
     "slug": "motorola-moto-edge-plus",
     "minPrice": 7950,
-    "maxPrice": 9380,
+    "maxPrice": 8910,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7fa27adf-e620.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9903,9 +9903,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b98,580",
-        "priceNum": 8580,
-        "basePrice": 8580,
+        "price": "\u20b98,430",
+        "priceNum": 8430,
+        "basePrice": 8430,
         "active": true
       },
       {
@@ -9914,9 +9914,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b99,380",
-        "priceNum": 9380,
-        "basePrice": 9380,
+        "price": "\u20b98,910",
+        "priceNum": 8910,
+        "basePrice": 8910,
         "active": true
       }
     ]
@@ -9963,7 +9963,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G04s",
     "slug": "motorola-moto-g04s",
     "minPrice": 3920,
-    "maxPrice": 4540,
+    "maxPrice": 4520,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/38604777-4deb.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -9984,9 +9984,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,230",
-        "priceNum": 4230,
-        "basePrice": 4230,
+        "price": "\u20b94,220",
+        "priceNum": 4220,
+        "basePrice": 4220,
         "active": true
       },
       {
@@ -9995,9 +9995,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,540",
-        "priceNum": 4540,
-        "basePrice": 4540,
+        "price": "\u20b94,520",
+        "priceNum": 4520,
+        "basePrice": 4520,
         "active": true
       }
     ]
@@ -10009,7 +10009,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G05",
     "slug": "motorola-moto-g05",
     "minPrice": 5150,
-    "maxPrice": 5970,
+    "maxPrice": 5750,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5a3bd008-9fe6.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -10030,9 +10030,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,560",
-        "priceNum": 5560,
-        "basePrice": 5560,
+        "price": "\u20b95,450",
+        "priceNum": 5450,
+        "basePrice": 5450,
         "active": true
       },
       {
@@ -10041,9 +10041,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,970",
-        "priceNum": 5970,
-        "basePrice": 5970,
+        "price": "\u20b95,750",
+        "priceNum": 5750,
+        "basePrice": 5750,
         "active": true
       }
     ]
@@ -10055,7 +10055,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G 5G",
     "slug": "motorola-moto-g-5g",
     "minPrice": 4960,
-    "maxPrice": 6050,
+    "maxPrice": 6060,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a086cf77-08a1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -10076,9 +10076,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b95,300",
-        "priceNum": 5300,
-        "basePrice": 5300,
+        "price": "\u20b95,310",
+        "priceNum": 5310,
+        "basePrice": 5310,
         "active": true
       },
       {
@@ -10087,9 +10087,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b95,650",
-        "priceNum": 5650,
-        "basePrice": 5650,
+        "price": "\u20b95,660",
+        "priceNum": 5660,
+        "basePrice": 5660,
         "active": true
       },
       {
@@ -10098,9 +10098,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b96,050",
-        "priceNum": 6050,
-        "basePrice": 6050,
+        "price": "\u20b96,060",
+        "priceNum": 6060,
+        "basePrice": 6060,
         "active": true
       }
     ]
@@ -10147,7 +10147,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G6 Plus",
     "slug": "motorola-moto-g6-plus",
     "minPrice": 1970,
-    "maxPrice": 2320,
+    "maxPrice": 2930,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-7v8tuma3-jgep.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -10168,9 +10168,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,120",
-        "priceNum": 2120,
-        "basePrice": 2120,
+        "price": "\u20b92,450",
+        "priceNum": 2450,
+        "basePrice": 2450,
         "active": true
       },
       {
@@ -10179,9 +10179,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,320",
-        "priceNum": 2320,
-        "basePrice": 2320,
+        "price": "\u20b92,930",
+        "priceNum": 2930,
+        "basePrice": 2930,
         "active": true
       }
     ]
@@ -10193,7 +10193,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G06 Power",
     "slug": "motorola-moto-g06-power",
     "minPrice": 5310,
-    "maxPrice": 6150,
+    "maxPrice": 5910,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/657f3ce6-da6b.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -10214,9 +10214,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,730",
-        "priceNum": 5730,
-        "basePrice": 5730,
+        "price": "\u20b95,610",
+        "priceNum": 5610,
+        "basePrice": 5610,
         "active": true
       },
       {
@@ -10225,9 +10225,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,150",
-        "priceNum": 6150,
-        "basePrice": 6150,
+        "price": "\u20b95,910",
+        "priceNum": 5910,
+        "basePrice": 5910,
         "active": true
       }
     ]
@@ -10239,7 +10239,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G7",
     "slug": "motorola-moto-g7",
     "minPrice": 1740,
-    "maxPrice": 2010,
+    "maxPrice": 2340,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-axin0ewh-fq65.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -10260,9 +10260,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,870",
-        "priceNum": 1870,
-        "basePrice": 1870,
+        "price": "\u20b92,040",
+        "priceNum": 2040,
+        "basePrice": 2040,
         "active": true
       },
       {
@@ -10271,9 +10271,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,010",
-        "priceNum": 2010,
-        "basePrice": 2010,
+        "price": "\u20b92,340",
+        "priceNum": 2340,
+        "basePrice": 2340,
         "active": true
       }
     ]
@@ -10285,7 +10285,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G7 Power",
     "slug": "motorola-moto-g7-power",
     "minPrice": 1970,
-    "maxPrice": 2280,
+    "maxPrice": 2570,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-lgltuxmt-pgmm.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -10306,9 +10306,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,120",
-        "priceNum": 2120,
-        "basePrice": 2120,
+        "price": "\u20b92,270",
+        "priceNum": 2270,
+        "basePrice": 2270,
         "active": true
       },
       {
@@ -10317,9 +10317,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,280",
-        "priceNum": 2280,
-        "basePrice": 2280,
+        "price": "\u20b92,570",
+        "priceNum": 2570,
+        "basePrice": 2570,
         "active": true
       }
     ]
@@ -10331,7 +10331,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G8 Plus",
     "slug": "motorola-moto-g8-plus",
     "minPrice": 2760,
-    "maxPrice": 3250,
+    "maxPrice": 3720,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/32df8080-b860.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -10352,9 +10352,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,980",
-        "priceNum": 2980,
-        "basePrice": 2980,
+        "price": "\u20b93,240",
+        "priceNum": 3240,
+        "basePrice": 3240,
         "active": true
       },
       {
@@ -10363,9 +10363,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b93,250",
-        "priceNum": 3250,
-        "basePrice": 3250,
+        "price": "\u20b93,720",
+        "priceNum": 3720,
+        "basePrice": 3720,
         "active": true
       }
     ]
@@ -10377,7 +10377,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G8 Power Lite",
     "slug": "motorola-moto-g8-power-lite",
     "minPrice": 2690,
-    "maxPrice": 3120,
+    "maxPrice": 3290,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7d43236b-a324.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -10398,9 +10398,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,900",
-        "priceNum": 2900,
-        "basePrice": 2900,
+        "price": "\u20b92,990",
+        "priceNum": 2990,
+        "basePrice": 2990,
         "active": true
       },
       {
@@ -10409,9 +10409,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,120",
-        "priceNum": 3120,
-        "basePrice": 3120,
+        "price": "\u20b93,290",
+        "priceNum": 3290,
+        "basePrice": 3290,
         "active": true
       }
     ]
@@ -10423,7 +10423,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G9",
     "slug": "motorola-moto-g9",
     "minPrice": 2760,
-    "maxPrice": 3200,
+    "maxPrice": 3360,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/67a91fde-229d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -10444,9 +10444,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,980",
-        "priceNum": 2980,
-        "basePrice": 2980,
+        "price": "\u20b93,060",
+        "priceNum": 3060,
+        "basePrice": 3060,
         "active": true
       },
       {
@@ -10455,9 +10455,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,200",
-        "priceNum": 3200,
-        "basePrice": 3200,
+        "price": "\u20b93,360",
+        "priceNum": 3360,
+        "basePrice": 3360,
         "active": true
       }
     ]
@@ -10469,7 +10469,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G9 Power",
     "slug": "motorola-moto-g9-power",
     "minPrice": 2840,
-    "maxPrice": 3290,
+    "maxPrice": 3440,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/59b16e84-31db.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -10490,9 +10490,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,060",
-        "priceNum": 3060,
-        "basePrice": 3060,
+        "price": "\u20b93,140",
+        "priceNum": 3140,
+        "basePrice": 3140,
         "active": true
       },
       {
@@ -10501,9 +10501,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,290",
-        "priceNum": 3290,
-        "basePrice": 3290,
+        "price": "\u20b93,440",
+        "priceNum": 3440,
+        "basePrice": 3440,
         "active": true
       }
     ]
@@ -10515,7 +10515,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G10 Power",
     "slug": "motorola-moto-g10-power",
     "minPrice": 3030,
-    "maxPrice": 3510,
+    "maxPrice": 3630,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/971b6f7e-03dd.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -10536,9 +10536,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,270",
-        "priceNum": 3270,
-        "basePrice": 3270,
+        "price": "\u20b93,330",
+        "priceNum": 3330,
+        "basePrice": 3330,
         "active": true
       },
       {
@@ -10547,9 +10547,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,510",
-        "priceNum": 3510,
-        "basePrice": 3510,
+        "price": "\u20b93,630",
+        "priceNum": 3630,
+        "basePrice": 3630,
         "active": true
       }
     ]
@@ -10596,7 +10596,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G14",
     "slug": "motorola-moto-g14",
     "minPrice": 4740,
-    "maxPrice": 5490,
+    "maxPrice": 5340,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a3954b94-81df.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -10617,9 +10617,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,110",
-        "priceNum": 5110,
-        "basePrice": 5110,
+        "price": "\u20b95,040",
+        "priceNum": 5040,
+        "basePrice": 5040,
         "active": true
       },
       {
@@ -10628,9 +10628,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,490",
-        "priceNum": 5490,
-        "basePrice": 5490,
+        "price": "\u20b95,340",
+        "priceNum": 5340,
+        "basePrice": 5340,
         "active": true
       }
     ]
@@ -10723,7 +10723,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G30",
     "slug": "motorola-moto-g30",
     "minPrice": 3180,
-    "maxPrice": 3680,
+    "maxPrice": 3780,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7c8489cb-104e.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -10744,9 +10744,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,430",
-        "priceNum": 3430,
-        "basePrice": 3430,
+        "price": "\u20b93,480",
+        "priceNum": 3480,
+        "basePrice": 3480,
         "active": true
       },
       {
@@ -10755,9 +10755,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,680",
-        "priceNum": 3680,
-        "basePrice": 3680,
+        "price": "\u20b93,780",
+        "priceNum": 3780,
+        "basePrice": 3780,
         "active": true
       }
     ]
@@ -10979,7 +10979,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G42",
     "slug": "motorola-moto-g42",
     "minPrice": 3520,
-    "maxPrice": 4080,
+    "maxPrice": 4120,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7515d476-ec8b.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11000,9 +11000,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,800",
-        "priceNum": 3800,
-        "basePrice": 3800,
+        "price": "\u20b93,820",
+        "priceNum": 3820,
+        "basePrice": 3820,
         "active": true
       },
       {
@@ -11011,9 +11011,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,080",
-        "priceNum": 4080,
-        "basePrice": 4080,
+        "price": "\u20b94,120",
+        "priceNum": 4120,
+        "basePrice": 4120,
         "active": true
       }
     ]
@@ -11060,7 +11060,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G51 5G",
     "slug": "motorola-moto-g51-5g",
     "minPrice": 5340,
-    "maxPrice": 6510,
+    "maxPrice": 6440,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/eb7eeecc-f8b5.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11081,9 +11081,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b95,710",
-        "priceNum": 5710,
-        "basePrice": 5710,
+        "price": "\u20b95,690",
+        "priceNum": 5690,
+        "basePrice": 5690,
         "active": true
       },
       {
@@ -11092,9 +11092,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b96,080",
-        "priceNum": 6080,
-        "basePrice": 6080,
+        "price": "\u20b96,040",
+        "priceNum": 6040,
+        "basePrice": 6040,
         "active": true
       },
       {
@@ -11103,9 +11103,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b96,510",
-        "priceNum": 6510,
-        "basePrice": 6510,
+        "price": "\u20b96,440",
+        "priceNum": 6440,
+        "basePrice": 6440,
         "active": true
       }
     ]
@@ -11187,7 +11187,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G57 Power 5G",
     "slug": "motorola-moto-g57-power-5g",
     "minPrice": 9120,
-    "maxPrice": 11120,
+    "maxPrice": 10220,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/790fd4ce-9ea6.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11208,9 +11208,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b99,750",
-        "priceNum": 9750,
-        "basePrice": 9750,
+        "price": "\u20b99,470",
+        "priceNum": 9470,
+        "basePrice": 9470,
         "active": true
       },
       {
@@ -11219,9 +11219,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b910,390",
-        "priceNum": 10390,
-        "basePrice": 10390,
+        "price": "\u20b99,820",
+        "priceNum": 9820,
+        "basePrice": 9820,
         "active": true
       },
       {
@@ -11230,9 +11230,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b911,120",
-        "priceNum": 11120,
-        "basePrice": 11120,
+        "price": "\u20b910,220",
+        "priceNum": 10220,
+        "basePrice": 10220,
         "active": true
       }
     ]
@@ -11244,7 +11244,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G60",
     "slug": "motorola-moto-g60",
     "minPrice": 5520,
-    "maxPrice": 6400,
+    "maxPrice": 6120,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b09f6aae-880c.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11265,9 +11265,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,960",
-        "priceNum": 5960,
-        "basePrice": 5960,
+        "price": "\u20b95,820",
+        "priceNum": 5820,
+        "basePrice": 5820,
         "active": true
       },
       {
@@ -11276,9 +11276,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,400",
-        "priceNum": 6400,
-        "basePrice": 6400,
+        "price": "\u20b96,120",
+        "priceNum": 6120,
+        "basePrice": 6120,
         "active": true
       }
     ]
@@ -11395,7 +11395,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G71 5G",
     "slug": "motorola-moto-g71-5g",
     "minPrice": 6920,
-    "maxPrice": 8440,
+    "maxPrice": 8020,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8a73e14b-2390.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11416,9 +11416,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b97,400",
-        "priceNum": 7400,
-        "basePrice": 7400,
+        "price": "\u20b97,270",
+        "priceNum": 7270,
+        "basePrice": 7270,
         "active": true
       },
       {
@@ -11427,9 +11427,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b97,880",
-        "priceNum": 7880,
-        "basePrice": 7880,
+        "price": "\u20b97,620",
+        "priceNum": 7620,
+        "basePrice": 7620,
         "active": true
       },
       {
@@ -11438,9 +11438,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b98,440",
-        "priceNum": 8440,
-        "basePrice": 8440,
+        "price": "\u20b98,020",
+        "priceNum": 8020,
+        "basePrice": 8020,
         "active": true
       }
     ]
@@ -11452,7 +11452,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G72",
     "slug": "motorola-moto-g72",
     "minPrice": 5000,
-    "maxPrice": 5800,
+    "maxPrice": 5600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/72728b7a-1b37.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11473,9 +11473,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,400",
-        "priceNum": 5400,
-        "basePrice": 5400,
+        "price": "\u20b95,300",
+        "priceNum": 5300,
+        "basePrice": 5300,
         "active": true
       },
       {
@@ -11484,9 +11484,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,800",
-        "priceNum": 5800,
-        "basePrice": 5800,
+        "price": "\u20b95,600",
+        "priceNum": 5600,
+        "basePrice": 5600,
         "active": true
       }
     ]
@@ -11498,7 +11498,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G73 5G",
     "slug": "motorola-moto-g73-5g",
     "minPrice": 7820,
-    "maxPrice": 9540,
+    "maxPrice": 8920,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c375fcfb-9d57.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11519,9 +11519,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b98,360",
-        "priceNum": 8360,
-        "basePrice": 8360,
+        "price": "\u20b98,170",
+        "priceNum": 8170,
+        "basePrice": 8170,
         "active": true
       },
       {
@@ -11530,9 +11530,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b98,910",
-        "priceNum": 8910,
-        "basePrice": 8910,
+        "price": "\u20b98,520",
+        "priceNum": 8520,
+        "basePrice": 8520,
         "active": true
       },
       {
@@ -11541,9 +11541,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b99,540",
-        "priceNum": 9540,
-        "basePrice": 9540,
+        "price": "\u20b98,920",
+        "priceNum": 8920,
+        "basePrice": 8920,
         "active": true
       }
     ]
@@ -11590,7 +11590,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G84 5G",
     "slug": "motorola-moto-g84-5g",
     "minPrice": 11940,
-    "maxPrice": 14560,
+    "maxPrice": 13040,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/952d33f8-250e.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11611,9 +11611,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b912,770",
-        "priceNum": 12770,
-        "basePrice": 12770,
+        "price": "\u20b912,290",
+        "priceNum": 12290,
+        "basePrice": 12290,
         "active": true
       },
       {
@@ -11622,9 +11622,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b913,610",
-        "priceNum": 13610,
-        "basePrice": 13610,
+        "price": "\u20b912,640",
+        "priceNum": 12640,
+        "basePrice": 12640,
         "active": true
       },
       {
@@ -11633,9 +11633,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b914,560",
-        "priceNum": 14560,
-        "basePrice": 14560,
+        "price": "\u20b913,040",
+        "priceNum": 13040,
+        "basePrice": 13040,
         "active": true
       }
     ]
@@ -11682,7 +11682,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto G86 Power 5G",
     "slug": "motorola-moto-g86-power-5g",
     "minPrice": 11960,
-    "maxPrice": 14590,
+    "maxPrice": 13060,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/254b25c1-dbe5.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11703,9 +11703,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b912,790",
-        "priceNum": 12790,
-        "basePrice": 12790,
+        "price": "\u20b912,310",
+        "priceNum": 12310,
+        "basePrice": 12310,
         "active": true
       },
       {
@@ -11714,9 +11714,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b913,630",
-        "priceNum": 13630,
-        "basePrice": 13630,
+        "price": "\u20b912,660",
+        "priceNum": 12660,
+        "basePrice": 12660,
         "active": true
       },
       {
@@ -11725,9 +11725,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b914,590",
-        "priceNum": 14590,
-        "basePrice": 14590,
+        "price": "\u20b913,060",
+        "priceNum": 13060,
+        "basePrice": 13060,
         "active": true
       }
     ]
@@ -11774,7 +11774,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto One",
     "slug": "motorola-moto-one",
     "minPrice": 1970,
-    "maxPrice": 2280,
+    "maxPrice": 2570,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-1ha09hhc-rhvy.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11795,9 +11795,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,120",
-        "priceNum": 2120,
-        "basePrice": 2120,
+        "price": "\u20b92,270",
+        "priceNum": 2270,
+        "basePrice": 2270,
         "active": true
       },
       {
@@ -11806,9 +11806,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,280",
-        "priceNum": 2280,
-        "basePrice": 2280,
+        "price": "\u20b92,570",
+        "priceNum": 2570,
+        "basePrice": 2570,
         "active": true
       }
     ]
@@ -11820,7 +11820,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Razr",
     "slug": "motorola-moto-razr",
     "minPrice": 9660,
-    "maxPrice": 11200,
+    "maxPrice": 10260,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8ac4b2d5-0e6a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11841,9 +11841,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b910,430",
-        "priceNum": 10430,
-        "basePrice": 10430,
+        "price": "\u20b99,960",
+        "priceNum": 9960,
+        "basePrice": 9960,
         "active": true
       },
       {
@@ -11852,9 +11852,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b911,200",
-        "priceNum": 11200,
-        "basePrice": 11200,
+        "price": "\u20b910,260",
+        "priceNum": 10260,
+        "basePrice": 10260,
         "active": true
       }
     ]
@@ -11866,7 +11866,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Razr 5G",
     "slug": "motorola-moto-razr-5g",
     "minPrice": 12870,
-    "maxPrice": 15700,
+    "maxPrice": 13970,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/dc5fccf7-2ad5.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11887,9 +11887,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b913,770",
-        "priceNum": 13770,
-        "basePrice": 13770,
+        "price": "\u20b913,220",
+        "priceNum": 13220,
+        "basePrice": 13220,
         "active": true
       },
       {
@@ -11898,9 +11898,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b914,670",
-        "priceNum": 14670,
-        "basePrice": 14670,
+        "price": "\u20b913,570",
+        "priceNum": 13570,
+        "basePrice": 13570,
         "active": true
       },
       {
@@ -11909,9 +11909,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b915,700",
-        "priceNum": 15700,
-        "basePrice": 15700,
+        "price": "\u20b913,970",
+        "priceNum": 13970,
+        "basePrice": 13970,
         "active": true
       }
     ]
@@ -11923,7 +11923,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Razr 40 Ultra",
     "slug": "motorola-moto-razr-40-ultra",
     "minPrice": 22930,
-    "maxPrice": 27050,
+    "maxPrice": 23510,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a117f01a-ee71.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11944,9 +11944,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b924,760",
-        "priceNum": 24760,
-        "basePrice": 24760,
+        "price": "\u20b923,410",
+        "priceNum": 23410,
+        "basePrice": 23410,
         "active": true
       },
       {
@@ -11955,9 +11955,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b927,050",
-        "priceNum": 27050,
-        "basePrice": 27050,
+        "price": "\u20b923,510",
+        "priceNum": 23510,
+        "basePrice": 23510,
         "active": true
       }
     ]
@@ -11969,7 +11969,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Razr 50",
     "slug": "motorola-moto-razr-50",
     "minPrice": 23840,
-    "maxPrice": 27650,
+    "maxPrice": 24440,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/376b667f-01b2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -11990,9 +11990,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b925,740",
-        "priceNum": 25740,
-        "basePrice": 25740,
+        "price": "\u20b924,140",
+        "priceNum": 24140,
+        "basePrice": 24140,
         "active": true
       },
       {
@@ -12001,9 +12001,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b927,650",
-        "priceNum": 27650,
-        "basePrice": 27650,
+        "price": "\u20b924,440",
+        "priceNum": 24440,
+        "basePrice": 24440,
         "active": true
       }
     ]
@@ -12015,7 +12015,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Razr 50 Ultra",
     "slug": "motorola-moto-razr-50-ultra",
     "minPrice": 32380,
-    "maxPrice": 38200,
+    "maxPrice": 32960,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4b808d3b-d6cc.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -12036,9 +12036,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b934,970",
-        "priceNum": 34970,
-        "basePrice": 34970,
+        "price": "\u20b932,860",
+        "priceNum": 32860,
+        "basePrice": 32860,
         "active": true
       },
       {
@@ -12047,9 +12047,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b938,200",
-        "priceNum": 38200,
-        "basePrice": 38200,
+        "price": "\u20b932,960",
+        "priceNum": 32960,
+        "basePrice": 32960,
         "active": true
       }
     ]
@@ -12061,7 +12061,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Razr 60",
     "slug": "motorola-moto-razr-60",
     "minPrice": 27230,
-    "maxPrice": 31580,
+    "maxPrice": 27830,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8031d8d2-f1fb.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -12082,9 +12082,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b929,400",
-        "priceNum": 29400,
-        "basePrice": 29400,
+        "price": "\u20b927,530",
+        "priceNum": 27530,
+        "basePrice": 27530,
         "active": true
       },
       {
@@ -12093,9 +12093,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b931,580",
-        "priceNum": 31580,
-        "basePrice": 31580,
+        "price": "\u20b927,830",
+        "priceNum": 27830,
+        "basePrice": 27830,
         "active": true
       }
     ]
@@ -12107,7 +12107,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Razr 60 Ultra",
     "slug": "motorola-moto-razr-60-ultra",
     "minPrice": 46740,
-    "maxPrice": 55150,
+    "maxPrice": 47320,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a3a140e6-7a7a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -12128,9 +12128,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b950,470",
-        "priceNum": 50470,
-        "basePrice": 50470,
+        "price": "\u20b947,220",
+        "priceNum": 47220,
+        "basePrice": 47220,
         "active": true
       },
       {
@@ -12139,9 +12139,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b955,150",
-        "priceNum": 55150,
-        "basePrice": 55150,
+        "price": "\u20b947,320",
+        "priceNum": 47320,
+        "basePrice": 47320,
         "active": true
       }
     ]
@@ -12199,7 +12199,7 @@ const MOBILE_DATASET = [
     "model": "Motorola Moto Z2 Force",
     "slug": "motorola-moto-z2-force",
     "minPrice": 1670,
-    "maxPrice": 1930,
+    "maxPrice": 2270,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-ncqgpdto-bnck.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -12220,9 +12220,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,800",
-        "priceNum": 1800,
-        "basePrice": 1800,
+        "price": "\u20b91,970",
+        "priceNum": 1970,
+        "basePrice": 1970,
         "active": true
       },
       {
@@ -12231,9 +12231,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b91,930",
-        "priceNum": 1930,
-        "basePrice": 1930,
+        "price": "\u20b92,270",
+        "priceNum": 2270,
+        "basePrice": 2270,
         "active": true
       }
     ]
@@ -12245,7 +12245,7 @@ const MOBILE_DATASET = [
     "model": "Motorola One Action",
     "slug": "motorola-one-action",
     "minPrice": 2540,
-    "maxPrice": 2940,
+    "maxPrice": 3140,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1468a7d4-ea35.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -12266,9 +12266,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,740",
-        "priceNum": 2740,
-        "basePrice": 2740,
+        "price": "\u20b92,840",
+        "priceNum": 2840,
+        "basePrice": 2840,
         "active": true
       },
       {
@@ -12277,9 +12277,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,940",
-        "priceNum": 2940,
-        "basePrice": 2940,
+        "price": "\u20b93,140",
+        "priceNum": 3140,
+        "basePrice": 3140,
         "active": true
       }
     ]
@@ -12291,7 +12291,7 @@ const MOBILE_DATASET = [
     "model": "Motorola One Fusion Plus",
     "slug": "motorola-one-fusion-plus",
     "minPrice": 4600,
-    "maxPrice": 5420,
+    "maxPrice": 5560,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5980d4be-7db4.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -12312,9 +12312,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b94,960",
-        "priceNum": 4960,
-        "basePrice": 4960,
+        "price": "\u20b95,080",
+        "priceNum": 5080,
+        "basePrice": 5080,
         "active": true
       },
       {
@@ -12323,9 +12323,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b95,420",
-        "priceNum": 5420,
-        "basePrice": 5420,
+        "price": "\u20b95,560",
+        "priceNum": 5560,
+        "basePrice": 5560,
         "active": true
       }
     ]
@@ -12337,7 +12337,7 @@ const MOBILE_DATASET = [
     "model": "Motorola One Macro",
     "slug": "motorola-one-macro",
     "minPrice": 2040,
-    "maxPrice": 2360,
+    "maxPrice": 2640,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/857f430a-ada9.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -12358,9 +12358,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,200",
-        "priceNum": 2200,
-        "basePrice": 2200,
+        "price": "\u20b92,340",
+        "priceNum": 2340,
+        "basePrice": 2340,
         "active": true
       },
       {
@@ -12369,9 +12369,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,360",
-        "priceNum": 2360,
-        "basePrice": 2360,
+        "price": "\u20b92,640",
+        "priceNum": 2640,
+        "basePrice": 2640,
         "active": true
       }
     ]
@@ -12383,7 +12383,7 @@ const MOBILE_DATASET = [
     "model": "Motorola One Power",
     "slug": "motorola-one-power",
     "minPrice": 2200,
-    "maxPrice": 2550,
+    "maxPrice": 2800,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-lzveatdg-ccjo.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -12404,9 +12404,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,370",
-        "priceNum": 2370,
-        "basePrice": 2370,
+        "price": "\u20b92,500",
+        "priceNum": 2500,
+        "basePrice": 2500,
         "active": true
       },
       {
@@ -12415,9 +12415,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,550",
-        "priceNum": 2550,
-        "basePrice": 2550,
+        "price": "\u20b92,800",
+        "priceNum": 2800,
+        "basePrice": 2800,
         "active": true
       }
     ]
@@ -12429,7 +12429,7 @@ const MOBILE_DATASET = [
     "model": "Motorola One Vision",
     "slug": "motorola-one-vision",
     "minPrice": 2200,
-    "maxPrice": 2550,
+    "maxPrice": 2800,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/036c406d-7231.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1dcd7fda-0141.jpg?w=200",
     "variants": [
@@ -12450,9 +12450,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,370",
-        "priceNum": 2370,
-        "basePrice": 2370,
+        "price": "\u20b92,500",
+        "priceNum": 2500,
+        "basePrice": 2500,
         "active": true
       },
       {
@@ -12461,9 +12461,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,550",
-        "priceNum": 2550,
-        "basePrice": 2550,
+        "price": "\u20b92,800",
+        "priceNum": 2800,
+        "basePrice": 2800,
         "active": true
       }
     ]
@@ -12545,7 +12545,7 @@ const MOBILE_DATASET = [
     "model": "Nokia 2.4",
     "slug": "nokia-24",
     "minPrice": 2300,
-    "maxPrice": 2660,
+    "maxPrice": 2900,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5cce4a65-0739.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -12566,9 +12566,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,480",
-        "priceNum": 2480,
-        "basePrice": 2480,
+        "price": "\u20b92,600",
+        "priceNum": 2600,
+        "basePrice": 2600,
         "active": true
       },
       {
@@ -12577,9 +12577,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,660",
-        "priceNum": 2660,
-        "basePrice": 2660,
+        "price": "\u20b92,900",
+        "priceNum": 2900,
+        "basePrice": 2900,
         "active": true
       }
     ]
@@ -12626,7 +12626,7 @@ const MOBILE_DATASET = [
     "model": "Nokia 3.4",
     "slug": "nokia-34",
     "minPrice": 2380,
-    "maxPrice": 2760,
+    "maxPrice": 2980,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/dec83d9f-d935.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -12647,9 +12647,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,570",
-        "priceNum": 2570,
-        "basePrice": 2570,
+        "price": "\u20b92,680",
+        "priceNum": 2680,
+        "basePrice": 2680,
         "active": true
       },
       {
@@ -12658,9 +12658,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,760",
-        "priceNum": 2760,
-        "basePrice": 2760,
+        "price": "\u20b92,980",
+        "priceNum": 2980,
+        "basePrice": 2980,
         "active": true
       }
     ]
@@ -12672,7 +12672,7 @@ const MOBILE_DATASET = [
     "model": "Nokia 4.2",
     "slug": "nokia-42",
     "minPrice": 1670,
-    "maxPrice": 1930,
+    "maxPrice": 2270,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-zs12twsr-twkh.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -12693,9 +12693,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,800",
-        "priceNum": 1800,
-        "basePrice": 1800,
+        "price": "\u20b91,970",
+        "priceNum": 1970,
+        "basePrice": 1970,
         "active": true
       },
       {
@@ -12704,9 +12704,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b91,930",
-        "priceNum": 1930,
-        "basePrice": 1930,
+        "price": "\u20b92,270",
+        "priceNum": 2270,
+        "basePrice": 2270,
         "active": true
       }
     ]
@@ -12869,7 +12869,7 @@ const MOBILE_DATASET = [
     "model": "Nokia 6.2",
     "slug": "nokia-62",
     "minPrice": 2190,
-    "maxPrice": 2540,
+    "maxPrice": 2790,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/59879242-c3ab.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -12890,9 +12890,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,360",
-        "priceNum": 2360,
-        "basePrice": 2360,
+        "price": "\u20b92,490",
+        "priceNum": 2490,
+        "basePrice": 2490,
         "active": true
       },
       {
@@ -12901,9 +12901,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,540",
-        "priceNum": 2540,
-        "basePrice": 2540,
+        "price": "\u20b92,790",
+        "priceNum": 2790,
+        "basePrice": 2790,
         "active": true
       }
     ]
@@ -12915,7 +12915,7 @@ const MOBILE_DATASET = [
     "model": "Nokia 7.1",
     "slug": "nokia-71",
     "minPrice": 2010,
-    "maxPrice": 2330,
+    "maxPrice": 2610,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-bypgczsl-7eqk.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -12936,9 +12936,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,170",
-        "priceNum": 2170,
-        "basePrice": 2170,
+        "price": "\u20b92,310",
+        "priceNum": 2310,
+        "basePrice": 2310,
         "active": true
       },
       {
@@ -12947,9 +12947,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,330",
-        "priceNum": 2330,
-        "basePrice": 2330,
+        "price": "\u20b92,610",
+        "priceNum": 2610,
+        "basePrice": 2610,
         "active": true
       }
     ]
@@ -12996,7 +12996,7 @@ const MOBILE_DATASET = [
     "model": "Nokia 7 Plus",
     "slug": "nokia-7-plus",
     "minPrice": 2150,
-    "maxPrice": 2530,
+    "maxPrice": 3110,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-svp8rp0l-vucx.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -13017,9 +13017,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,320",
-        "priceNum": 2320,
-        "basePrice": 2320,
+        "price": "\u20b92,630",
+        "priceNum": 2630,
+        "basePrice": 2630,
         "active": true
       },
       {
@@ -13028,9 +13028,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,530",
-        "priceNum": 2530,
-        "basePrice": 2530,
+        "price": "\u20b93,110",
+        "priceNum": 3110,
+        "basePrice": 3110,
         "active": true
       }
     ]
@@ -13077,7 +13077,7 @@ const MOBILE_DATASET = [
     "model": "Nokia 8 Sirocco",
     "slug": "nokia-8-sirocco",
     "minPrice": 3710,
-    "maxPrice": 4300,
+    "maxPrice": 4310,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-1n9bh7yt-cqy1.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -13098,9 +13098,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,000",
-        "priceNum": 4000,
-        "basePrice": 4000,
+        "price": "\u20b94,010",
+        "priceNum": 4010,
+        "basePrice": 4010,
         "active": true
       },
       {
@@ -13109,9 +13109,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,300",
-        "priceNum": 4300,
-        "basePrice": 4300,
+        "price": "\u20b94,310",
+        "priceNum": 4310,
+        "basePrice": 4310,
         "active": true
       }
     ]
@@ -13123,7 +13123,7 @@ const MOBILE_DATASET = [
     "model": "Nokia X30 5G",
     "slug": "nokia-x30-5g",
     "minPrice": 7790,
-    "maxPrice": 9500,
+    "maxPrice": 8890,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/64df7f37-5090.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -13144,9 +13144,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b98,330",
-        "priceNum": 8330,
-        "basePrice": 8330,
+        "price": "\u20b98,140",
+        "priceNum": 8140,
+        "basePrice": 8140,
         "active": true
       },
       {
@@ -13155,9 +13155,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b98,880",
-        "priceNum": 8880,
-        "basePrice": 8880,
+        "price": "\u20b98,490",
+        "priceNum": 8490,
+        "basePrice": 8490,
         "active": true
       },
       {
@@ -13166,9 +13166,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b99,500",
-        "priceNum": 9500,
-        "basePrice": 9500,
+        "price": "\u20b98,890",
+        "priceNum": 8890,
+        "basePrice": 8890,
         "active": true
       }
     ]
@@ -13180,7 +13180,7 @@ const MOBILE_DATASET = [
     "model": "Nokia XR20",
     "slug": "nokia-xr20",
     "minPrice": 6940,
-    "maxPrice": 8050,
+    "maxPrice": 7540,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4b7cb910-a163.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -13201,9 +13201,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b97,490",
-        "priceNum": 7490,
-        "basePrice": 7490,
+        "price": "\u20b97,240",
+        "priceNum": 7240,
+        "basePrice": 7240,
         "active": true
       },
       {
@@ -13212,9 +13212,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b98,050",
-        "priceNum": 8050,
-        "basePrice": 8050,
+        "price": "\u20b97,540",
+        "priceNum": 7540,
+        "basePrice": 7540,
         "active": true
       }
     ]
@@ -13261,7 +13261,7 @@ const MOBILE_DATASET = [
     "model": "Nokia C12",
     "slug": "nokia-c12",
     "minPrice": 2010,
-    "maxPrice": 2330,
+    "maxPrice": 2610,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/eb1913ac-e56a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -13282,9 +13282,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,170",
-        "priceNum": 2170,
-        "basePrice": 2170,
+        "price": "\u20b92,310",
+        "priceNum": 2310,
+        "basePrice": 2310,
         "active": true
       },
       {
@@ -13293,9 +13293,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,330",
-        "priceNum": 2330,
-        "basePrice": 2330,
+        "price": "\u20b92,610",
+        "priceNum": 2610,
+        "basePrice": 2610,
         "active": true
       }
     ]
@@ -13585,7 +13585,7 @@ const MOBILE_DATASET = [
     "model": "Nokia G10",
     "slug": "nokia-g10",
     "minPrice": 2510,
-    "maxPrice": 2910,
+    "maxPrice": 3110,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/10907689-d4e2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -13606,9 +13606,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,710",
-        "priceNum": 2710,
-        "basePrice": 2710,
+        "price": "\u20b92,810",
+        "priceNum": 2810,
+        "basePrice": 2810,
         "active": true
       },
       {
@@ -13617,9 +13617,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,910",
-        "priceNum": 2910,
-        "basePrice": 2910,
+        "price": "\u20b93,110",
+        "priceNum": 3110,
+        "basePrice": 3110,
         "active": true
       }
     ]
@@ -13631,7 +13631,7 @@ const MOBILE_DATASET = [
     "model": "Nokia G20",
     "slug": "nokia-g20",
     "minPrice": 2710,
-    "maxPrice": 3140,
+    "maxPrice": 3310,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/93f798b8-6403.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -13652,9 +13652,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,920",
-        "priceNum": 2920,
-        "basePrice": 2920,
+        "price": "\u20b93,010",
+        "priceNum": 3010,
+        "basePrice": 3010,
         "active": true
       },
       {
@@ -13663,9 +13663,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,140",
-        "priceNum": 3140,
-        "basePrice": 3140,
+        "price": "\u20b93,310",
+        "priceNum": 3310,
+        "basePrice": 3310,
         "active": true
       }
     ]
@@ -13758,7 +13758,7 @@ const MOBILE_DATASET = [
     "model": "Nokia G60 5G",
     "slug": "nokia-g60-5g",
     "minPrice": 6310,
-    "maxPrice": 7690,
+    "maxPrice": 7410,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ea4eff17-1b21.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -13779,9 +13779,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b96,750",
-        "priceNum": 6750,
-        "basePrice": 6750,
+        "price": "\u20b96,660",
+        "priceNum": 6660,
+        "basePrice": 6660,
         "active": true
       },
       {
@@ -13790,9 +13790,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b97,190",
-        "priceNum": 7190,
-        "basePrice": 7190,
+        "price": "\u20b97,010",
+        "priceNum": 7010,
+        "basePrice": 7010,
         "active": true
       },
       {
@@ -13801,9 +13801,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b97,690",
-        "priceNum": 7690,
-        "basePrice": 7690,
+        "price": "\u20b97,410",
+        "priceNum": 7410,
+        "basePrice": 7410,
         "active": true
       }
     ]
@@ -13815,7 +13815,7 @@ const MOBILE_DATASET = [
     "model": "OnePlus Nord CE 2 Lite 5G",
     "slug": "oneplus-nord-ce-2-lite-5g",
     "minPrice": 7990,
-    "maxPrice": 9420,
+    "maxPrice": 8950,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5c8ef3e4-f6f0.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/c94b79b6-4ff3.jpg?w=200",
     "variants": [
@@ -13836,9 +13836,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b98,620",
-        "priceNum": 8620,
-        "basePrice": 8620,
+        "price": "\u20b98,470",
+        "priceNum": 8470,
+        "basePrice": 8470,
         "active": true
       },
       {
@@ -13847,9 +13847,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b99,420",
-        "priceNum": 9420,
-        "basePrice": 9420,
+        "price": "\u20b98,950",
+        "priceNum": 8950,
+        "basePrice": 8950,
         "active": true
       }
     ]
@@ -14417,7 +14417,7 @@ const MOBILE_DATASET = [
     "model": "OnePlus 3",
     "slug": "oneplus-3",
     "minPrice": 1700,
-    "maxPrice": 2000,
+    "maxPrice": 2660,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-oikvzbxv-n194.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/dfb6c340-010f.jpg?w=200",
     "variants": [
@@ -14438,9 +14438,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b91,830",
-        "priceNum": 1830,
-        "basePrice": 1830,
+        "price": "\u20b92,180",
+        "priceNum": 2180,
+        "basePrice": 2180,
         "active": true
       },
       {
@@ -14449,9 +14449,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,000",
-        "priceNum": 2000,
-        "basePrice": 2000,
+        "price": "\u20b92,660",
+        "priceNum": 2660,
+        "basePrice": 2660,
         "active": true
       }
     ]
@@ -14660,7 +14660,7 @@ const MOBILE_DATASET = [
     "model": "OnePlus 6T McLaren",
     "slug": "oneplus-6t-mclaren",
     "minPrice": 5790,
-    "maxPrice": 6830,
+    "maxPrice": 6750,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-pxjflrwa-cimr.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/dfb6c340-010f.jpg?w=200",
     "variants": [
@@ -14681,9 +14681,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b96,250",
-        "priceNum": 6250,
-        "basePrice": 6250,
+        "price": "\u20b96,270",
+        "priceNum": 6270,
+        "basePrice": 6270,
         "active": true
       },
       {
@@ -14692,9 +14692,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b96,830",
-        "priceNum": 6830,
-        "basePrice": 6830,
+        "price": "\u20b96,750",
+        "priceNum": 6750,
+        "basePrice": 6750,
         "active": true
       }
     ]
@@ -14857,7 +14857,7 @@ const MOBILE_DATASET = [
     "model": "OnePlus 7T Pro McLaren Edition",
     "slug": "oneplus-7t-pro-mclaren-edition",
     "minPrice": 9090,
-    "maxPrice": 10720,
+    "maxPrice": 10050,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0fa3eebe-57f9.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/dfb6c340-010f.jpg?w=200",
     "variants": [
@@ -14878,9 +14878,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b99,810",
-        "priceNum": 9810,
-        "basePrice": 9810,
+        "price": "\u20b99,570",
+        "priceNum": 9570,
+        "basePrice": 9570,
         "active": true
       },
       {
@@ -14889,9 +14889,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b910,720",
-        "priceNum": 10720,
-        "basePrice": 10720,
+        "price": "\u20b910,050",
+        "priceNum": 10050,
+        "basePrice": 10050,
         "active": true
       }
     ]
@@ -15264,7 +15264,7 @@ const MOBILE_DATASET = [
     "model": "Oneplus 11 5G Marble Edition",
     "slug": "oneplus-11-5g-marble-edition",
     "minPrice": 26630,
-    "maxPrice": 31420,
+    "maxPrice": 27590,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/561c20bd-ab38.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/dfb6c340-010f.jpg?w=200",
     "variants": [
@@ -15285,9 +15285,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b928,760",
-        "priceNum": 28760,
-        "basePrice": 28760,
+        "price": "\u20b927,110",
+        "priceNum": 27110,
+        "basePrice": 27110,
         "active": true
       },
       {
@@ -15296,9 +15296,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b931,420",
-        "priceNum": 31420,
-        "basePrice": 31420,
+        "price": "\u20b927,590",
+        "priceNum": 27590,
+        "basePrice": 27590,
         "active": true
       }
     ]
@@ -16074,7 +16074,7 @@ const MOBILE_DATASET = [
     "model": "OnePlus Nord CE4 5G",
     "slug": "oneplus-nord-ce4-5g",
     "minPrice": 14640,
-    "maxPrice": 17270,
+    "maxPrice": 15600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4ae1d8fb-7621.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/dfb6c340-010f.jpg?w=200",
     "variants": [
@@ -16095,9 +16095,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b915,810",
-        "priceNum": 15810,
-        "basePrice": 15810,
+        "price": "\u20b915,120",
+        "priceNum": 15120,
+        "basePrice": 15120,
         "active": true
       },
       {
@@ -16106,9 +16106,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b917,270",
-        "priceNum": 17270,
-        "basePrice": 17270,
+        "price": "\u20b915,600",
+        "priceNum": 15600,
+        "basePrice": 15600,
         "active": true
       }
     ]
@@ -16120,7 +16120,7 @@ const MOBILE_DATASET = [
     "model": "OnePlus Nord CE4 Lite 5G",
     "slug": "oneplus-nord-ce4-lite-5g",
     "minPrice": 13540,
-    "maxPrice": 15970,
+    "maxPrice": 14500,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9cf8c38e-bb55.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/dfb6c340-010f.jpg?w=200",
     "variants": [
@@ -16141,9 +16141,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b914,620",
-        "priceNum": 14620,
-        "basePrice": 14620,
+        "price": "\u20b914,020",
+        "priceNum": 14020,
+        "basePrice": 14020,
         "active": true
       },
       {
@@ -16152,9 +16152,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b915,970",
-        "priceNum": 15970,
-        "basePrice": 15970,
+        "price": "\u20b914,500",
+        "priceNum": 14500,
+        "basePrice": 14500,
         "active": true
       }
     ]
@@ -16166,7 +16166,7 @@ const MOBILE_DATASET = [
     "model": "OnePlus Nord CE 5",
     "slug": "oneplus-nord-ce-5",
     "minPrice": 17800,
-    "maxPrice": 21000,
+    "maxPrice": 18760,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8dd1d309-2698.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/dfb6c340-010f.jpg?w=200",
     "variants": [
@@ -16187,9 +16187,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b919,220",
-        "priceNum": 19220,
-        "basePrice": 19220,
+        "price": "\u20b918,280",
+        "priceNum": 18280,
+        "basePrice": 18280,
         "active": true
       },
       {
@@ -16198,9 +16198,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b921,000",
-        "priceNum": 21000,
-        "basePrice": 21000,
+        "price": "\u20b918,760",
+        "priceNum": 18760,
+        "basePrice": 18760,
         "active": true
       }
     ]
@@ -16258,7 +16258,7 @@ const MOBILE_DATASET = [
     "model": "Oneplus Open",
     "slug": "oneplus-open",
     "minPrice": 53350,
-    "maxPrice": 62950,
+    "maxPrice": 54310,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d4d91de5-5673.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/dfb6c340-010f.jpg?w=200",
     "variants": [
@@ -16279,9 +16279,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b957,610",
-        "priceNum": 57610,
-        "basePrice": 57610,
+        "price": "\u20b953,830",
+        "priceNum": 53830,
+        "basePrice": 53830,
         "active": true
       },
       {
@@ -16290,9 +16290,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b962,950",
-        "priceNum": 62950,
-        "basePrice": 62950,
+        "price": "\u20b954,310",
+        "priceNum": 54310,
+        "basePrice": 54310,
         "active": true
       }
     ]
@@ -16304,7 +16304,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy S24 Ultra 5G",
     "slug": "samsung-galaxy-s24-ultra-5g",
     "minPrice": 63140,
-    "maxPrice": 74500,
+    "maxPrice": 63720,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a69ef28f-fe68.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/dfb6c340-010f.jpg?w=200",
     "variants": [
@@ -16325,9 +16325,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b968,190",
-        "priceNum": 68190,
-        "basePrice": 68190,
+        "price": "\u20b963,620",
+        "priceNum": 63620,
+        "basePrice": 63620,
         "active": true
       },
       {
@@ -16336,9 +16336,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b974,500",
-        "priceNum": 74500,
-        "basePrice": 74500,
+        "price": "\u20b963,720",
+        "priceNum": 63720,
+        "basePrice": 63720,
         "active": true
       }
     ]
@@ -16350,7 +16350,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A1K",
     "slug": "oppo-a1k",
     "minPrice": 2320,
-    "maxPrice": 2690,
+    "maxPrice": 2920,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/61efaab9-f91f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -16371,9 +16371,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,500",
-        "priceNum": 2500,
-        "basePrice": 2500,
+        "price": "\u20b92,620",
+        "priceNum": 2620,
+        "basePrice": 2620,
         "active": true
       },
       {
@@ -16382,9 +16382,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,690",
-        "priceNum": 2690,
-        "basePrice": 2690,
+        "price": "\u20b92,920",
+        "priceNum": 2920,
+        "basePrice": 2920,
         "active": true
       }
     ]
@@ -16396,7 +16396,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A3 5G",
     "slug": "oppo-a3-5g",
     "minPrice": 10240,
-    "maxPrice": 12490,
+    "maxPrice": 11340,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/19a4de9b-8601.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -16417,9 +16417,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b910,950",
-        "priceNum": 10950,
-        "basePrice": 10950,
+        "price": "\u20b910,590",
+        "priceNum": 10590,
+        "basePrice": 10590,
         "active": true
       },
       {
@@ -16428,9 +16428,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b911,670",
-        "priceNum": 11670,
-        "basePrice": 11670,
+        "price": "\u20b910,940",
+        "priceNum": 10940,
+        "basePrice": 10940,
         "active": true
       },
       {
@@ -16439,9 +16439,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b912,490",
-        "priceNum": 12490,
-        "basePrice": 12490,
+        "price": "\u20b911,340",
+        "priceNum": 11340,
+        "basePrice": 11340,
         "active": true
       }
     ]
@@ -16453,7 +16453,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A3x",
     "slug": "oppo-a3x",
     "minPrice": 4900,
-    "maxPrice": 5680,
+    "maxPrice": 5500,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/da1cd7ee-84ec.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -16474,9 +16474,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,290",
-        "priceNum": 5290,
-        "basePrice": 5290,
+        "price": "\u20b95,200",
+        "priceNum": 5200,
+        "basePrice": 5200,
         "active": true
       },
       {
@@ -16485,9 +16485,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,680",
-        "priceNum": 5680,
-        "basePrice": 5680,
+        "price": "\u20b95,500",
+        "priceNum": 5500,
+        "basePrice": 5500,
         "active": true
       }
     ]
@@ -17123,7 +17123,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A11K",
     "slug": "oppo-a11k",
     "minPrice": 2540,
-    "maxPrice": 2940,
+    "maxPrice": 3140,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c30ac2cb-78c5.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -17144,9 +17144,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,740",
-        "priceNum": 2740,
-        "basePrice": 2740,
+        "price": "\u20b92,840",
+        "priceNum": 2840,
+        "basePrice": 2840,
         "active": true
       },
       {
@@ -17155,9 +17155,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,940",
-        "priceNum": 2940,
-        "basePrice": 2940,
+        "price": "\u20b93,140",
+        "priceNum": 3140,
+        "basePrice": 3140,
         "active": true
       }
     ]
@@ -17274,7 +17274,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A16",
     "slug": "oppo-a16",
     "minPrice": 4580,
-    "maxPrice": 5310,
+    "maxPrice": 5180,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f10e8114-e9d3.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -17295,9 +17295,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,940",
-        "priceNum": 4940,
-        "basePrice": 4940,
+        "price": "\u20b94,880",
+        "priceNum": 4880,
+        "basePrice": 4880,
         "active": true
       },
       {
@@ -17306,9 +17306,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,310",
-        "priceNum": 5310,
-        "basePrice": 5310,
+        "price": "\u20b95,180",
+        "priceNum": 5180,
+        "basePrice": 5180,
         "active": true
       }
     ]
@@ -17390,7 +17390,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A17",
     "slug": "oppo-a17",
     "minPrice": 3980,
-    "maxPrice": 4610,
+    "maxPrice": 4580,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ec72505f-30e5.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -17411,9 +17411,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,290",
-        "priceNum": 4290,
-        "basePrice": 4290,
+        "price": "\u20b94,280",
+        "priceNum": 4280,
+        "basePrice": 4280,
         "active": true
       },
       {
@@ -17422,9 +17422,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,610",
-        "priceNum": 4610,
-        "basePrice": 4610,
+        "price": "\u20b94,580",
+        "priceNum": 4580,
+        "basePrice": 4580,
         "active": true
       }
     ]
@@ -17436,7 +17436,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A17K",
     "slug": "oppo-a17k",
     "minPrice": 3640,
-    "maxPrice": 4220,
+    "maxPrice": 4240,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ade56edb-43d7.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -17457,9 +17457,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,930",
-        "priceNum": 3930,
-        "basePrice": 3930,
+        "price": "\u20b93,940",
+        "priceNum": 3940,
+        "basePrice": 3940,
         "active": true
       },
       {
@@ -17468,9 +17468,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,220",
-        "priceNum": 4220,
-        "basePrice": 4220,
+        "price": "\u20b94,240",
+        "priceNum": 4240,
+        "basePrice": 4240,
         "active": true
       }
     ]
@@ -17552,7 +17552,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A33",
     "slug": "oppo-a33",
     "minPrice": 3140,
-    "maxPrice": 3640,
+    "maxPrice": 3740,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4a8b962c-cc60.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -17573,9 +17573,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,390",
-        "priceNum": 3390,
-        "basePrice": 3390,
+        "price": "\u20b93,440",
+        "priceNum": 3440,
+        "basePrice": 3440,
         "active": true
       },
       {
@@ -17584,9 +17584,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,640",
-        "priceNum": 3640,
-        "basePrice": 3640,
+        "price": "\u20b93,740",
+        "priceNum": 3740,
+        "basePrice": 3740,
         "active": true
       }
     ]
@@ -17598,7 +17598,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A38",
     "slug": "oppo-a38",
     "minPrice": 6160,
-    "maxPrice": 7140,
+    "maxPrice": 6760,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/358ba638-e8f4.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -17619,9 +17619,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b96,650",
-        "priceNum": 6650,
-        "basePrice": 6650,
+        "price": "\u20b96,460",
+        "priceNum": 6460,
+        "basePrice": 6460,
         "active": true
       },
       {
@@ -17630,9 +17630,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b97,140",
-        "priceNum": 7140,
-        "basePrice": 7140,
+        "price": "\u20b96,760",
+        "priceNum": 6760,
+        "basePrice": 6760,
         "active": true
       }
     ]
@@ -17852,7 +17852,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A57",
     "slug": "oppo-a57",
     "minPrice": 1510,
-    "maxPrice": 1840,
+    "maxPrice": 2610,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/585bb899ea1bc.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -17873,9 +17873,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b91,610",
-        "priceNum": 1610,
-        "basePrice": 1610,
+        "price": "\u20b91,860",
+        "priceNum": 1860,
+        "basePrice": 1860,
         "active": true
       },
       {
@@ -17884,9 +17884,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b91,720",
-        "priceNum": 1720,
-        "basePrice": 1720,
+        "price": "\u20b92,210",
+        "priceNum": 2210,
+        "basePrice": 2210,
         "active": true
       },
       {
@@ -17895,9 +17895,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b91,840",
-        "priceNum": 1840,
-        "basePrice": 1840,
+        "price": "\u20b92,610",
+        "priceNum": 2610,
+        "basePrice": 2610,
         "active": true
       }
     ]
@@ -17909,7 +17909,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A58",
     "slug": "oppo-a58",
     "minPrice": 6810,
-    "maxPrice": 8300,
+    "maxPrice": 7910,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2c5c54e3-69b7.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -17930,9 +17930,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b97,280",
-        "priceNum": 7280,
-        "basePrice": 7280,
+        "price": "\u20b97,160",
+        "priceNum": 7160,
+        "basePrice": 7160,
         "active": true
       },
       {
@@ -17941,9 +17941,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b97,760",
-        "priceNum": 7760,
-        "basePrice": 7760,
+        "price": "\u20b97,510",
+        "priceNum": 7510,
+        "basePrice": 7510,
         "active": true
       },
       {
@@ -17952,9 +17952,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b98,300",
-        "priceNum": 8300,
-        "basePrice": 8300,
+        "price": "\u20b97,910",
+        "priceNum": 7910,
+        "basePrice": 7910,
         "active": true
       }
     ]
@@ -18001,7 +18001,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A71",
     "slug": "oppo-a71",
     "minPrice": 1500,
-    "maxPrice": 1830,
+    "maxPrice": 2600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/bffd621f-52b6.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -18022,9 +18022,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b91,600",
-        "priceNum": 1600,
-        "basePrice": 1600,
+        "price": "\u20b91,850",
+        "priceNum": 1850,
+        "basePrice": 1850,
         "active": true
       },
       {
@@ -18033,9 +18033,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b91,700",
-        "priceNum": 1700,
-        "basePrice": 1700,
+        "price": "\u20b92,200",
+        "priceNum": 2200,
+        "basePrice": 2200,
         "active": true
       },
       {
@@ -18044,9 +18044,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b91,830",
-        "priceNum": 1830,
-        "basePrice": 1830,
+        "price": "\u20b92,600",
+        "priceNum": 2600,
+        "basePrice": 2600,
         "active": true
       }
     ]
@@ -18058,7 +18058,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A74 5G",
     "slug": "oppo-a74-5g",
     "minPrice": 8020,
-    "maxPrice": 9780,
+    "maxPrice": 9120,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3868afce-0b8e.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -18079,9 +18079,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b98,580",
-        "priceNum": 8580,
-        "basePrice": 8580,
+        "price": "\u20b98,370",
+        "priceNum": 8370,
+        "basePrice": 8370,
         "active": true
       },
       {
@@ -18090,9 +18090,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b99,140",
-        "priceNum": 9140,
-        "basePrice": 9140,
+        "price": "\u20b98,720",
+        "priceNum": 8720,
+        "basePrice": 8720,
         "active": true
       },
       {
@@ -18101,9 +18101,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b99,780",
-        "priceNum": 9780,
-        "basePrice": 9780,
+        "price": "\u20b99,120",
+        "priceNum": 9120,
+        "basePrice": 9120,
         "active": true
       }
     ]
@@ -18115,7 +18115,7 @@ const MOBILE_DATASET = [
     "model": "Oppo A76",
     "slug": "oppo-a76",
     "minPrice": 5310,
-    "maxPrice": 6470,
+    "maxPrice": 6410,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/911be56c-3562.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -18136,9 +18136,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b95,680",
-        "priceNum": 5680,
-        "basePrice": 5680,
+        "price": "\u20b95,660",
+        "priceNum": 5660,
+        "basePrice": 5660,
         "active": true
       },
       {
@@ -18147,9 +18147,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b96,050",
-        "priceNum": 6050,
-        "basePrice": 6050,
+        "price": "\u20b96,010",
+        "priceNum": 6010,
+        "basePrice": 6010,
         "active": true
       },
       {
@@ -18158,9 +18158,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b96,470",
-        "priceNum": 6470,
-        "basePrice": 6470,
+        "price": "\u20b96,410",
+        "priceNum": 6410,
+        "basePrice": 6410,
         "active": true
       }
     ]
@@ -18207,7 +18207,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A77s",
     "slug": "oppo-a77s",
     "minPrice": 5520,
-    "maxPrice": 6730,
+    "maxPrice": 6620,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/bbdf2cca-ed59.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -18228,9 +18228,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b95,900",
-        "priceNum": 5900,
-        "basePrice": 5900,
+        "price": "\u20b95,870",
+        "priceNum": 5870,
+        "basePrice": 5870,
         "active": true
       },
       {
@@ -18239,9 +18239,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b96,290",
-        "priceNum": 6290,
-        "basePrice": 6290,
+        "price": "\u20b96,220",
+        "priceNum": 6220,
+        "basePrice": 6220,
         "active": true
       },
       {
@@ -18250,9 +18250,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b96,730",
-        "priceNum": 6730,
-        "basePrice": 6730,
+        "price": "\u20b96,620",
+        "priceNum": 6620,
+        "basePrice": 6620,
         "active": true
       }
     ]
@@ -18264,7 +18264,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A78",
     "slug": "oppo-a78",
     "minPrice": 8100,
-    "maxPrice": 9880,
+    "maxPrice": 9200,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2f12fa74-84c2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -18285,9 +18285,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b98,660",
-        "priceNum": 8660,
-        "basePrice": 8660,
+        "price": "\u20b98,450",
+        "priceNum": 8450,
+        "basePrice": 8450,
         "active": true
       },
       {
@@ -18296,9 +18296,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b99,230",
-        "priceNum": 9230,
-        "basePrice": 9230,
+        "price": "\u20b98,800",
+        "priceNum": 8800,
+        "basePrice": 8800,
         "active": true
       },
       {
@@ -18307,9 +18307,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b99,880",
-        "priceNum": 9880,
-        "basePrice": 9880,
+        "price": "\u20b99,200",
+        "priceNum": 9200,
+        "basePrice": 9200,
         "active": true
       }
     ]
@@ -18321,7 +18321,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A78 5G",
     "slug": "oppo-a78-5g",
     "minPrice": 10610,
-    "maxPrice": 12940,
+    "maxPrice": 11710,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0352750d-b4a0.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -18342,9 +18342,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b911,350",
-        "priceNum": 11350,
-        "basePrice": 11350,
+        "price": "\u20b910,960",
+        "priceNum": 10960,
+        "basePrice": 10960,
         "active": true
       },
       {
@@ -18353,9 +18353,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b912,090",
-        "priceNum": 12090,
-        "basePrice": 12090,
+        "price": "\u20b911,310",
+        "priceNum": 11310,
+        "basePrice": 11310,
         "active": true
       },
       {
@@ -18364,9 +18364,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b912,940",
-        "priceNum": 12940,
-        "basePrice": 12940,
+        "price": "\u20b911,710",
+        "priceNum": 11710,
+        "basePrice": 11710,
         "active": true
       }
     ]
@@ -18378,7 +18378,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A79 5G",
     "slug": "oppo-a79-5g",
     "minPrice": 10560,
-    "maxPrice": 12880,
+    "maxPrice": 11660,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/bc93b3ee-8613.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -18399,9 +18399,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b911,290",
-        "priceNum": 11290,
-        "basePrice": 11290,
+        "price": "\u20b910,910",
+        "priceNum": 10910,
+        "basePrice": 10910,
         "active": true
       },
       {
@@ -18410,9 +18410,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b912,030",
-        "priceNum": 12030,
-        "basePrice": 12030,
+        "price": "\u20b911,260",
+        "priceNum": 11260,
+        "basePrice": 11260,
         "active": true
       },
       {
@@ -18421,9 +18421,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b912,880",
-        "priceNum": 12880,
-        "basePrice": 12880,
+        "price": "\u20b911,660",
+        "priceNum": 11660,
+        "basePrice": 11660,
         "active": true
       }
     ]
@@ -18481,7 +18481,7 @@ const MOBILE_DATASET = [
     "model": "OPPO A96",
     "slug": "oppo-a96",
     "minPrice": 5510,
-    "maxPrice": 6390,
+    "maxPrice": 6110,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ad9569ca-d8f3.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -18502,9 +18502,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,950",
-        "priceNum": 5950,
-        "basePrice": 5950,
+        "price": "\u20b95,810",
+        "priceNum": 5810,
+        "basePrice": 5810,
         "active": true
       },
       {
@@ -18513,9 +18513,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,390",
-        "priceNum": 6390,
-        "basePrice": 6390,
+        "price": "\u20b96,110",
+        "priceNum": 6110,
+        "basePrice": 6110,
         "active": true
       }
     ]
@@ -18527,7 +18527,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F1 Plus",
     "slug": "oppo-f1-plus",
     "minPrice": 1500,
-    "maxPrice": 1770,
+    "maxPrice": 2460,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9c3bfdbd-3c3b.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -18548,9 +18548,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b91,620",
-        "priceNum": 1620,
-        "basePrice": 1620,
+        "price": "\u20b91,980",
+        "priceNum": 1980,
+        "basePrice": 1980,
         "active": true
       },
       {
@@ -18559,9 +18559,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b91,770",
-        "priceNum": 1770,
-        "basePrice": 1770,
+        "price": "\u20b92,460",
+        "priceNum": 2460,
+        "basePrice": 2460,
         "active": true
       }
     ]
@@ -18608,7 +18608,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F3",
     "slug": "oppo-f3",
     "minPrice": 1500,
-    "maxPrice": 1730,
+    "maxPrice": 2100,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/bda7813b-643a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -18629,9 +18629,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,620",
-        "priceNum": 1620,
-        "basePrice": 1620,
+        "price": "\u20b91,800",
+        "priceNum": 1800,
+        "basePrice": 1800,
         "active": true
       },
       {
@@ -18640,9 +18640,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b91,730",
-        "priceNum": 1730,
-        "basePrice": 1730,
+        "price": "\u20b92,100",
+        "priceNum": 2100,
+        "basePrice": 2100,
         "active": true
       }
     ]
@@ -18724,7 +18724,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F5 Youth",
     "slug": "oppo-f5-youth",
     "minPrice": 1700,
-    "maxPrice": 1970,
+    "maxPrice": 2300,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/bf35c2d6-a3e1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -18745,9 +18745,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,830",
-        "priceNum": 1830,
-        "basePrice": 1830,
+        "price": "\u20b92,000",
+        "priceNum": 2000,
+        "basePrice": 2000,
         "active": true
       },
       {
@@ -18756,9 +18756,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b91,970",
-        "priceNum": 1970,
-        "basePrice": 1970,
+        "price": "\u20b92,300",
+        "priceNum": 2300,
+        "basePrice": 2300,
         "active": true
       }
     ]
@@ -18805,7 +18805,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F9",
     "slug": "oppo-f9",
     "minPrice": 2640,
-    "maxPrice": 3060,
+    "maxPrice": 3240,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/30bb2f4c-2e7a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -18826,9 +18826,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,850",
-        "priceNum": 2850,
-        "basePrice": 2850,
+        "price": "\u20b92,940",
+        "priceNum": 2940,
+        "basePrice": 2940,
         "active": true
       },
       {
@@ -18837,9 +18837,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,060",
-        "priceNum": 3060,
-        "basePrice": 3060,
+        "price": "\u20b93,240",
+        "priceNum": 3240,
+        "basePrice": 3240,
         "active": true
       }
     ]
@@ -18956,7 +18956,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F11 Pro Avenger Edition",
     "slug": "oppo-f11-pro-avenger-edition",
     "minPrice": 4390,
-    "maxPrice": 5180,
+    "maxPrice": 5350,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f91feb24-cdb4.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -18977,9 +18977,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b94,740",
-        "priceNum": 4740,
-        "basePrice": 4740,
+        "price": "\u20b94,870",
+        "priceNum": 4870,
+        "basePrice": 4870,
         "active": true
       },
       {
@@ -18988,9 +18988,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b95,180",
-        "priceNum": 5180,
-        "basePrice": 5180,
+        "price": "\u20b95,350",
+        "priceNum": 5350,
+        "basePrice": 5350,
         "active": true
       }
     ]
@@ -19072,7 +19072,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F17 Pro",
     "slug": "oppo-f17-pro",
     "minPrice": 5670,
-    "maxPrice": 6690,
+    "maxPrice": 6630,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2428c05f-fde4.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -19093,9 +19093,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b96,120",
-        "priceNum": 6120,
-        "basePrice": 6120,
+        "price": "\u20b96,150",
+        "priceNum": 6150,
+        "basePrice": 6150,
         "active": true
       },
       {
@@ -19104,9 +19104,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b96,690",
-        "priceNum": 6690,
-        "basePrice": 6690,
+        "price": "\u20b96,630",
+        "priceNum": 6630,
+        "basePrice": 6630,
         "active": true
       }
     ]
@@ -19118,7 +19118,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F19",
     "slug": "oppo-f19",
     "minPrice": 5760,
-    "maxPrice": 6680,
+    "maxPrice": 6360,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/44c35f5b-5f3a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -19139,9 +19139,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b96,220",
-        "priceNum": 6220,
-        "basePrice": 6220,
+        "price": "\u20b96,060",
+        "priceNum": 6060,
+        "basePrice": 6060,
         "active": true
       },
       {
@@ -19150,9 +19150,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,680",
-        "priceNum": 6680,
-        "basePrice": 6680,
+        "price": "\u20b96,360",
+        "priceNum": 6360,
+        "basePrice": 6360,
         "active": true
       }
     ]
@@ -19199,7 +19199,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F19 Pro Plus 5G",
     "slug": "oppo-f19-pro-plus-5g",
     "minPrice": 7800,
-    "maxPrice": 9200,
+    "maxPrice": 8760,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7ca9a1ae-6f33.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -19220,9 +19220,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b98,420",
-        "priceNum": 8420,
-        "basePrice": 8420,
+        "price": "\u20b98,280",
+        "priceNum": 8280,
+        "basePrice": 8280,
         "active": true
       },
       {
@@ -19231,9 +19231,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b99,200",
-        "priceNum": 9200,
-        "basePrice": 9200,
+        "price": "\u20b98,760",
+        "priceNum": 8760,
+        "basePrice": 8760,
         "active": true
       }
     ]
@@ -19245,7 +19245,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F19s",
     "slug": "oppo-f19s",
     "minPrice": 5150,
-    "maxPrice": 5970,
+    "maxPrice": 5750,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4cb9c27a-aa18.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -19266,9 +19266,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,560",
-        "priceNum": 5560,
-        "basePrice": 5560,
+        "price": "\u20b95,450",
+        "priceNum": 5450,
+        "basePrice": 5450,
         "active": true
       },
       {
@@ -19277,9 +19277,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,970",
-        "priceNum": 5970,
-        "basePrice": 5970,
+        "price": "\u20b95,750",
+        "priceNum": 5750,
+        "basePrice": 5750,
         "active": true
       }
     ]
@@ -19291,7 +19291,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F21 Pro",
     "slug": "oppo-f21-pro",
     "minPrice": 6850,
-    "maxPrice": 8080,
+    "maxPrice": 7810,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d6cbefaa-bc27.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -19312,9 +19312,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b97,390",
-        "priceNum": 7390,
-        "basePrice": 7390,
+        "price": "\u20b97,330",
+        "priceNum": 7330,
+        "basePrice": 7330,
         "active": true
       },
       {
@@ -19323,9 +19323,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b98,080",
-        "priceNum": 8080,
-        "basePrice": 8080,
+        "price": "\u20b97,810",
+        "priceNum": 7810,
+        "basePrice": 7810,
         "active": true
       }
     ]
@@ -19337,7 +19337,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F21 Pro 5G",
     "slug": "oppo-f21-pro-5g",
     "minPrice": 8150,
-    "maxPrice": 9610,
+    "maxPrice": 9110,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/67518714-d9cd.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -19358,9 +19358,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b98,800",
-        "priceNum": 8800,
-        "basePrice": 8800,
+        "price": "\u20b98,630",
+        "priceNum": 8630,
+        "basePrice": 8630,
         "active": true
       },
       {
@@ -19369,9 +19369,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b99,610",
-        "priceNum": 9610,
-        "basePrice": 9610,
+        "price": "\u20b99,110",
+        "priceNum": 9110,
+        "basePrice": 9110,
         "active": true
       }
     ]
@@ -19383,7 +19383,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F21s Pro",
     "slug": "oppo-f21s-pro",
     "minPrice": 6480,
-    "maxPrice": 7640,
+    "maxPrice": 7440,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/87f7ae2e-9e52.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -19404,9 +19404,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b96,990",
-        "priceNum": 6990,
-        "basePrice": 6990,
+        "price": "\u20b96,960",
+        "priceNum": 6960,
+        "basePrice": 6960,
         "active": true
       },
       {
@@ -19415,9 +19415,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b97,640",
-        "priceNum": 7640,
-        "basePrice": 7640,
+        "price": "\u20b97,440",
+        "priceNum": 7440,
+        "basePrice": 7440,
         "active": true
       }
     ]
@@ -19429,7 +19429,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F21s Pro 5G",
     "slug": "oppo-f21s-pro-5g",
     "minPrice": 8070,
-    "maxPrice": 9520,
+    "maxPrice": 9030,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5d5104c0-1fc8.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -19450,9 +19450,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b98,710",
-        "priceNum": 8710,
-        "basePrice": 8710,
+        "price": "\u20b98,550",
+        "priceNum": 8550,
+        "basePrice": 8550,
         "active": true
       },
       {
@@ -19461,9 +19461,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b99,520",
-        "priceNum": 9520,
-        "basePrice": 9520,
+        "price": "\u20b99,030",
+        "priceNum": 9030,
+        "basePrice": 9030,
         "active": true
       }
     ]
@@ -19475,7 +19475,7 @@ const MOBILE_DATASET = [
     "model": "OPPO F23 5G",
     "slug": "oppo-f23-5g",
     "minPrice": 12380,
-    "maxPrice": 15100,
+    "maxPrice": 13480,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/28a6a7ec-136f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -19496,9 +19496,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b913,240",
-        "priceNum": 13240,
-        "basePrice": 13240,
+        "price": "\u20b912,730",
+        "priceNum": 12730,
+        "basePrice": 12730,
         "active": true
       },
       {
@@ -19507,9 +19507,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b914,110",
-        "priceNum": 14110,
-        "basePrice": 14110,
+        "price": "\u20b913,080",
+        "priceNum": 13080,
+        "basePrice": 13080,
         "active": true
       },
       {
@@ -19518,9 +19518,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b915,100",
-        "priceNum": 15100,
-        "basePrice": 15100,
+        "price": "\u20b913,480",
+        "priceNum": 13480,
+        "basePrice": 13480,
         "active": true
       }
     ]
@@ -19915,7 +19915,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Find X",
     "slug": "oppo-find-x",
     "minPrice": 6970,
-    "maxPrice": 8220,
+    "maxPrice": 7930,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d1a5e88b-ffe1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -19936,9 +19936,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b97,520",
-        "priceNum": 7520,
-        "basePrice": 7520,
+        "price": "\u20b97,450",
+        "priceNum": 7450,
+        "basePrice": 7450,
         "active": true
       },
       {
@@ -19947,9 +19947,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b98,220",
-        "priceNum": 8220,
-        "basePrice": 8220,
+        "price": "\u20b97,930",
+        "priceNum": 7930,
+        "basePrice": 7930,
         "active": true
       }
     ]
@@ -19961,7 +19961,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Find X2",
     "slug": "oppo-find-x2",
     "minPrice": 11100,
-    "maxPrice": 13090,
+    "maxPrice": 12060,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/65e75ff9-048c.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -19982,9 +19982,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b911,980",
-        "priceNum": 11980,
-        "basePrice": 11980,
+        "price": "\u20b911,580",
+        "priceNum": 11580,
+        "basePrice": 11580,
         "active": true
       },
       {
@@ -19993,9 +19993,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b913,090",
-        "priceNum": 13090,
-        "basePrice": 13090,
+        "price": "\u20b912,060",
+        "priceNum": 12060,
+        "basePrice": 12060,
         "active": true
       }
     ]
@@ -20042,7 +20042,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Find X8 Pro 5G",
     "slug": "oppo-find-x8-pro-5g",
     "minPrice": 46060,
-    "maxPrice": 54350,
+    "maxPrice": 47020,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ba07da68-d143.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -20063,9 +20063,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b949,740",
-        "priceNum": 49740,
-        "basePrice": 49740,
+        "price": "\u20b946,540",
+        "priceNum": 46540,
+        "basePrice": 46540,
         "active": true
       },
       {
@@ -20074,9 +20074,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b954,350",
-        "priceNum": 54350,
-        "basePrice": 54350,
+        "price": "\u20b947,020",
+        "priceNum": 47020,
+        "basePrice": 47020,
         "active": true
       }
     ]
@@ -20123,7 +20123,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Find X9 Pro",
     "slug": "oppo-find-x9-pro",
     "minPrice": 62500,
-    "maxPrice": 73750,
+    "maxPrice": 63460,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7ba65de0-9d3d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -20144,9 +20144,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b967,500",
-        "priceNum": 67500,
-        "basePrice": 67500,
+        "price": "\u20b962,980",
+        "priceNum": 62980,
+        "basePrice": 62980,
         "active": true
       },
       {
@@ -20155,9 +20155,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b973,750",
-        "priceNum": 73750,
-        "basePrice": 73750,
+        "price": "\u20b963,460",
+        "priceNum": 63460,
+        "basePrice": 63460,
         "active": true
       }
     ]
@@ -20204,7 +20204,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Find X9 Ultra",
     "slug": "oppo-find-x9-ultra",
     "minPrice": 80000,
-    "maxPrice": 94400,
+    "maxPrice": 80580,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5e52e604-d494.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -20225,9 +20225,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b986,400",
-        "priceNum": 86400,
-        "basePrice": 86400,
+        "price": "\u20b980,480",
+        "priceNum": 80480,
+        "basePrice": 80480,
         "active": true
       },
       {
@@ -20236,9 +20236,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b994,400",
-        "priceNum": 94400,
-        "basePrice": 94400,
+        "price": "\u20b980,580",
+        "priceNum": 80580,
+        "basePrice": 80580,
         "active": true
       }
     ]
@@ -20250,7 +20250,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Find N2 Flip 5G",
     "slug": "oppo-find-n2-flip-5g",
     "minPrice": 18480,
-    "maxPrice": 21800,
+    "maxPrice": 19440,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4b8d3c18-af5d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -20271,9 +20271,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b919,950",
-        "priceNum": 19950,
-        "basePrice": 19950,
+        "price": "\u20b918,960",
+        "priceNum": 18960,
+        "basePrice": 18960,
         "active": true
       },
       {
@@ -20282,9 +20282,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b921,800",
-        "priceNum": 21800,
-        "basePrice": 21800,
+        "price": "\u20b919,440",
+        "priceNum": 19440,
+        "basePrice": 19440,
         "active": true
       }
     ]
@@ -20296,7 +20296,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Find N3 Flip 5G",
     "slug": "oppo-find-n3-flip-5g",
     "minPrice": 24210,
-    "maxPrice": 28560,
+    "maxPrice": 25170,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3828779e-3395.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -20317,9 +20317,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b926,140",
-        "priceNum": 26140,
-        "basePrice": 26140,
+        "price": "\u20b924,690",
+        "priceNum": 24690,
+        "basePrice": 24690,
         "active": true
       },
       {
@@ -20328,9 +20328,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b928,560",
-        "priceNum": 28560,
-        "basePrice": 28560,
+        "price": "\u20b925,170",
+        "priceNum": 25170,
+        "basePrice": 25170,
         "active": true
       }
     ]
@@ -20342,7 +20342,7 @@ const MOBILE_DATASET = [
     "model": "OPPO K1",
     "slug": "oppo-k1",
     "minPrice": 3030,
-    "maxPrice": 3510,
+    "maxPrice": 3630,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b8b44156-c0de.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -20363,9 +20363,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,270",
-        "priceNum": 3270,
-        "basePrice": 3270,
+        "price": "\u20b93,330",
+        "priceNum": 3330,
+        "basePrice": 3330,
         "active": true
       },
       {
@@ -20374,9 +20374,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,510",
-        "priceNum": 3510,
-        "basePrice": 3510,
+        "price": "\u20b93,630",
+        "priceNum": 3630,
+        "basePrice": 3630,
         "active": true
       }
     ]
@@ -20388,7 +20388,7 @@ const MOBILE_DATASET = [
     "model": "OPPO K3",
     "slug": "oppo-k3",
     "minPrice": 4170,
-    "maxPrice": 4830,
+    "maxPrice": 4770,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-lepaq3jl-bkaa.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -20409,9 +20409,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,500",
-        "priceNum": 4500,
-        "basePrice": 4500,
+        "price": "\u20b94,470",
+        "priceNum": 4470,
+        "basePrice": 4470,
         "active": true
       },
       {
@@ -20420,9 +20420,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,830",
-        "priceNum": 4830,
-        "basePrice": 4830,
+        "price": "\u20b94,770",
+        "priceNum": 4770,
+        "basePrice": 4770,
         "active": true
       }
     ]
@@ -20782,7 +20782,7 @@ const MOBILE_DATASET = [
     "model": "OPPO R11",
     "slug": "oppo-r11",
     "minPrice": 2270,
-    "maxPrice": 2630,
+    "maxPrice": 2870,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/59d5fb0b9176f.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -20803,9 +20803,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,450",
-        "priceNum": 2450,
-        "basePrice": 2450,
+        "price": "\u20b92,570",
+        "priceNum": 2570,
+        "basePrice": 2570,
         "active": true
       },
       {
@@ -20814,9 +20814,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,630",
-        "priceNum": 2630,
-        "basePrice": 2630,
+        "price": "\u20b92,870",
+        "priceNum": 2870,
+        "basePrice": 2870,
         "active": true
       }
     ]
@@ -20828,7 +20828,7 @@ const MOBILE_DATASET = [
     "model": "OPPO R17",
     "slug": "oppo-r17",
     "minPrice": 4170,
-    "maxPrice": 4830,
+    "maxPrice": 4770,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/bdc0056d-87ef.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -20849,9 +20849,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,500",
-        "priceNum": 4500,
-        "basePrice": 4500,
+        "price": "\u20b94,470",
+        "priceNum": 4470,
+        "basePrice": 4470,
         "active": true
       },
       {
@@ -20860,9 +20860,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,830",
-        "priceNum": 4830,
-        "basePrice": 4830,
+        "price": "\u20b94,770",
+        "priceNum": 4770,
+        "basePrice": 4770,
         "active": true
       }
     ]
@@ -20874,7 +20874,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno",
     "slug": "oppo-reno",
     "minPrice": 4920,
-    "maxPrice": 6000,
+    "maxPrice": 6020,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5d925f01-e518.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -20895,9 +20895,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b95,260",
-        "priceNum": 5260,
-        "basePrice": 5260,
+        "price": "\u20b95,270",
+        "priceNum": 5270,
+        "basePrice": 5270,
         "active": true
       },
       {
@@ -20906,9 +20906,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b95,600",
-        "priceNum": 5600,
-        "basePrice": 5600,
+        "price": "\u20b95,620",
+        "priceNum": 5620,
+        "basePrice": 5620,
         "active": true
       },
       {
@@ -20917,9 +20917,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b96,000",
-        "priceNum": 6000,
-        "basePrice": 6000,
+        "price": "\u20b96,020",
+        "priceNum": 6020,
+        "basePrice": 6020,
         "active": true
       }
     ]
@@ -20931,7 +20931,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno 2",
     "slug": "oppo-reno-2",
     "minPrice": 5910,
-    "maxPrice": 7210,
+    "maxPrice": 7010,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/22b06981-13b9.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -20952,9 +20952,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b96,320",
-        "priceNum": 6320,
-        "basePrice": 6320,
+        "price": "\u20b96,260",
+        "priceNum": 6260,
+        "basePrice": 6260,
         "active": true
       },
       {
@@ -20963,9 +20963,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b96,730",
-        "priceNum": 6730,
-        "basePrice": 6730,
+        "price": "\u20b96,610",
+        "priceNum": 6610,
+        "basePrice": 6610,
         "active": true
       },
       {
@@ -20974,9 +20974,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b97,210",
-        "priceNum": 7210,
-        "basePrice": 7210,
+        "price": "\u20b97,010",
+        "priceNum": 7010,
+        "basePrice": 7010,
         "active": true
       }
     ]
@@ -21023,7 +21023,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno 2Z",
     "slug": "oppo-reno-2z",
     "minPrice": 6170,
-    "maxPrice": 7520,
+    "maxPrice": 7270,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d90c682e-f2d8.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21044,9 +21044,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b96,600",
-        "priceNum": 6600,
-        "basePrice": 6600,
+        "price": "\u20b96,520",
+        "priceNum": 6520,
+        "basePrice": 6520,
         "active": true
       },
       {
@@ -21055,9 +21055,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b97,030",
-        "priceNum": 7030,
-        "basePrice": 7030,
+        "price": "\u20b96,870",
+        "priceNum": 6870,
+        "basePrice": 6870,
         "active": true
       },
       {
@@ -21066,9 +21066,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b97,520",
-        "priceNum": 7520,
-        "basePrice": 7520,
+        "price": "\u20b97,270",
+        "priceNum": 7270,
+        "basePrice": 7270,
         "active": true
       }
     ]
@@ -21115,7 +21115,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno4 Pro",
     "slug": "oppo-reno4-pro",
     "minPrice": 6890,
-    "maxPrice": 8130,
+    "maxPrice": 7850,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/89140228-1b48.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21136,9 +21136,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b97,440",
-        "priceNum": 7440,
-        "basePrice": 7440,
+        "price": "\u20b97,370",
+        "priceNum": 7370,
+        "basePrice": 7370,
         "active": true
       },
       {
@@ -21147,9 +21147,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b98,130",
-        "priceNum": 8130,
-        "basePrice": 8130,
+        "price": "\u20b97,850",
+        "priceNum": 7850,
+        "basePrice": 7850,
         "active": true
       }
     ]
@@ -21161,7 +21161,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno5 Pro 5G",
     "slug": "oppo-reno5-pro-5g",
     "minPrice": 9250,
-    "maxPrice": 10910,
+    "maxPrice": 10210,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7a1ebdc3-53b5.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21182,9 +21182,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b99,990",
-        "priceNum": 9990,
-        "basePrice": 9990,
+        "price": "\u20b99,730",
+        "priceNum": 9730,
+        "basePrice": 9730,
         "active": true
       },
       {
@@ -21193,9 +21193,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b910,910",
-        "priceNum": 10910,
-        "basePrice": 10910,
+        "price": "\u20b910,210",
+        "priceNum": 10210,
+        "basePrice": 10210,
         "active": true
       }
     ]
@@ -21207,7 +21207,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno6 5G",
     "slug": "oppo-reno6-5g",
     "minPrice": 8410,
-    "maxPrice": 10260,
+    "maxPrice": 9510,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1b330d1f-b600.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21228,9 +21228,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b98,990",
-        "priceNum": 8990,
-        "basePrice": 8990,
+        "price": "\u20b98,760",
+        "priceNum": 8760,
+        "basePrice": 8760,
         "active": true
       },
       {
@@ -21239,9 +21239,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b99,580",
-        "priceNum": 9580,
-        "basePrice": 9580,
+        "price": "\u20b99,110",
+        "priceNum": 9110,
+        "basePrice": 9110,
         "active": true
       },
       {
@@ -21250,9 +21250,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b910,260",
-        "priceNum": 10260,
-        "basePrice": 10260,
+        "price": "\u20b99,510",
+        "priceNum": 9510,
+        "basePrice": 9510,
         "active": true
       }
     ]
@@ -21264,7 +21264,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno6 Pro 5G",
     "slug": "oppo-reno6-pro-5g",
     "minPrice": 9770,
-    "maxPrice": 11520,
+    "maxPrice": 10730,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/11910bce-59f7.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21285,9 +21285,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b910,550",
-        "priceNum": 10550,
-        "basePrice": 10550,
+        "price": "\u20b910,250",
+        "priceNum": 10250,
+        "basePrice": 10250,
         "active": true
       },
       {
@@ -21296,9 +21296,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b911,520",
-        "priceNum": 11520,
-        "basePrice": 11520,
+        "price": "\u20b910,730",
+        "priceNum": 10730,
+        "basePrice": 10730,
         "active": true
       }
     ]
@@ -21310,7 +21310,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno7 5G",
     "slug": "oppo-reno7-5g",
     "minPrice": 9010,
-    "maxPrice": 10990,
+    "maxPrice": 10110,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9ea8b822-ea08.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21331,9 +21331,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b99,640",
-        "priceNum": 9640,
-        "basePrice": 9640,
+        "price": "\u20b99,360",
+        "priceNum": 9360,
+        "basePrice": 9360,
         "active": true
       },
       {
@@ -21342,9 +21342,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b910,270",
-        "priceNum": 10270,
-        "basePrice": 10270,
+        "price": "\u20b99,710",
+        "priceNum": 9710,
+        "basePrice": 9710,
         "active": true
       },
       {
@@ -21353,9 +21353,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b910,990",
-        "priceNum": 10990,
-        "basePrice": 10990,
+        "price": "\u20b910,110",
+        "priceNum": 10110,
+        "basePrice": 10110,
         "active": true
       }
     ]
@@ -21367,7 +21367,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno7 Pro 5G",
     "slug": "oppo-reno7-pro-5g",
     "minPrice": 10750,
-    "maxPrice": 12680,
+    "maxPrice": 11710,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/bf430917-a372.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21388,9 +21388,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b911,610",
-        "priceNum": 11610,
-        "basePrice": 11610,
+        "price": "\u20b911,230",
+        "priceNum": 11230,
+        "basePrice": 11230,
         "active": true
       },
       {
@@ -21399,9 +21399,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b912,680",
-        "priceNum": 12680,
-        "basePrice": 12680,
+        "price": "\u20b911,710",
+        "priceNum": 11710,
+        "basePrice": 11710,
         "active": true
       }
     ]
@@ -21413,7 +21413,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno8 5G",
     "slug": "oppo-reno8-5g",
     "minPrice": 9760,
-    "maxPrice": 11900,
+    "maxPrice": 10860,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3ba91686-30fc.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21434,9 +21434,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b910,440",
-        "priceNum": 10440,
-        "basePrice": 10440,
+        "price": "\u20b910,110",
+        "priceNum": 10110,
+        "basePrice": 10110,
         "active": true
       },
       {
@@ -21445,9 +21445,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b911,120",
-        "priceNum": 11120,
-        "basePrice": 11120,
+        "price": "\u20b910,460",
+        "priceNum": 10460,
+        "basePrice": 10460,
         "active": true
       },
       {
@@ -21456,9 +21456,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b911,900",
-        "priceNum": 11900,
-        "basePrice": 11900,
+        "price": "\u20b910,860",
+        "priceNum": 10860,
+        "basePrice": 10860,
         "active": true
       }
     ]
@@ -21470,7 +21470,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno8 Pro 5G",
     "slug": "oppo-reno8-pro-5g",
     "minPrice": 10980,
-    "maxPrice": 12950,
+    "maxPrice": 11940,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e36eb712-468f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21491,9 +21491,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b911,850",
-        "priceNum": 11850,
-        "basePrice": 11850,
+        "price": "\u20b911,460",
+        "priceNum": 11460,
+        "basePrice": 11460,
         "active": true
       },
       {
@@ -21502,9 +21502,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b912,950",
-        "priceNum": 12950,
-        "basePrice": 12950,
+        "price": "\u20b911,940",
+        "priceNum": 11940,
+        "basePrice": 11940,
         "active": true
       }
     ]
@@ -21516,7 +21516,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno8T 5G",
     "slug": "oppo-reno8t-5g",
     "minPrice": 11700,
-    "maxPrice": 14270,
+    "maxPrice": 12800,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/efd1d356-0dba.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21537,9 +21537,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b912,510",
-        "priceNum": 12510,
-        "basePrice": 12510,
+        "price": "\u20b912,050",
+        "priceNum": 12050,
+        "basePrice": 12050,
         "active": true
       },
       {
@@ -21548,9 +21548,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b913,330",
-        "priceNum": 13330,
-        "basePrice": 13330,
+        "price": "\u20b912,400",
+        "priceNum": 12400,
+        "basePrice": 12400,
         "active": true
       },
       {
@@ -21559,9 +21559,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b914,270",
-        "priceNum": 14270,
-        "basePrice": 14270,
+        "price": "\u20b912,800",
+        "priceNum": 12800,
+        "basePrice": 12800,
         "active": true
       }
     ]
@@ -21573,7 +21573,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno10 5G",
     "slug": "oppo-reno10-5g",
     "minPrice": 16550,
-    "maxPrice": 20190,
+    "maxPrice": 17650,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/950a9106-a31b.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21594,9 +21594,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b917,700",
-        "priceNum": 17700,
-        "basePrice": 17700,
+        "price": "\u20b916,900",
+        "priceNum": 16900,
+        "basePrice": 16900,
         "active": true
       },
       {
@@ -21605,9 +21605,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b918,860",
-        "priceNum": 18860,
-        "basePrice": 18860,
+        "price": "\u20b917,250",
+        "priceNum": 17250,
+        "basePrice": 17250,
         "active": true
       },
       {
@@ -21616,9 +21616,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b920,190",
-        "priceNum": 20190,
-        "basePrice": 20190,
+        "price": "\u20b917,650",
+        "priceNum": 17650,
+        "basePrice": 17650,
         "active": true
       }
     ]
@@ -21630,7 +21630,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno 10x Zoom",
     "slug": "oppo-reno-10x-zoom",
     "minPrice": 5490,
-    "maxPrice": 6690,
+    "maxPrice": 6590,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-6ato68nn-2ilc.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21651,9 +21651,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b95,870",
-        "priceNum": 5870,
-        "basePrice": 5870,
+        "price": "\u20b95,840",
+        "priceNum": 5840,
+        "basePrice": 5840,
         "active": true
       },
       {
@@ -21662,9 +21662,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b96,250",
-        "priceNum": 6250,
-        "basePrice": 6250,
+        "price": "\u20b96,190",
+        "priceNum": 6190,
+        "basePrice": 6190,
         "active": true
       },
       {
@@ -21673,9 +21673,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b96,690",
-        "priceNum": 6690,
-        "basePrice": 6690,
+        "price": "\u20b96,590",
+        "priceNum": 6590,
+        "basePrice": 6590,
         "active": true
       }
     ]
@@ -21687,7 +21687,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno10 Pro 5G",
     "slug": "oppo-reno10-pro-5g",
     "minPrice": 19190,
-    "maxPrice": 22640,
+    "maxPrice": 20150,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/acf669c4-06f5.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21708,9 +21708,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b920,720",
-        "priceNum": 20720,
-        "basePrice": 20720,
+        "price": "\u20b919,670",
+        "priceNum": 19670,
+        "basePrice": 19670,
         "active": true
       },
       {
@@ -21719,9 +21719,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b922,640",
-        "priceNum": 22640,
-        "basePrice": 22640,
+        "price": "\u20b920,150",
+        "priceNum": 20150,
+        "basePrice": 20150,
         "active": true
       }
     ]
@@ -21733,7 +21733,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno10 Pro Plus 5G",
     "slug": "oppo-reno10-pro-plus-5g",
     "minPrice": 20290,
-    "maxPrice": 23940,
+    "maxPrice": 21250,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/13dea435-e1e4.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21754,9 +21754,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b921,910",
-        "priceNum": 21910,
-        "basePrice": 21910,
+        "price": "\u20b920,770",
+        "priceNum": 20770,
+        "basePrice": 20770,
         "active": true
       },
       {
@@ -21765,9 +21765,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b923,940",
-        "priceNum": 23940,
-        "basePrice": 23940,
+        "price": "\u20b921,250",
+        "priceNum": 21250,
+        "basePrice": 21250,
         "active": true
       }
     ]
@@ -21814,7 +21814,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno11 Pro 5G",
     "slug": "oppo-reno11-pro-5g",
     "minPrice": 19400,
-    "maxPrice": 22890,
+    "maxPrice": 20360,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/dc2d8e61-3979.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21835,9 +21835,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b920,950",
-        "priceNum": 20950,
-        "basePrice": 20950,
+        "price": "\u20b919,880",
+        "priceNum": 19880,
+        "basePrice": 19880,
         "active": true
       },
       {
@@ -21846,9 +21846,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b922,890",
-        "priceNum": 22890,
-        "basePrice": 22890,
+        "price": "\u20b920,360",
+        "priceNum": 20360,
+        "basePrice": 20360,
         "active": true
       }
     ]
@@ -21860,7 +21860,7 @@ const MOBILE_DATASET = [
     "model": "OPPO Reno12 5G",
     "slug": "oppo-reno12-5g",
     "minPrice": 17540,
-    "maxPrice": 21390,
+    "maxPrice": 18640,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/667a5961-c98f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -21881,9 +21881,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b918,760",
-        "priceNum": 18760,
-        "basePrice": 18760,
+        "price": "\u20b917,890",
+        "priceNum": 17890,
+        "basePrice": 17890,
         "active": true
       },
       {
@@ -21892,9 +21892,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b919,990",
-        "priceNum": 19990,
-        "basePrice": 19990,
+        "price": "\u20b918,240",
+        "priceNum": 18240,
+        "basePrice": 18240,
         "active": true
       },
       {
@@ -21903,9 +21903,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b921,390",
-        "priceNum": 21390,
-        "basePrice": 21390,
+        "price": "\u20b918,640",
+        "priceNum": 18640,
+        "basePrice": 18640,
         "active": true
       }
     ]
@@ -22278,7 +22278,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y05",
     "slug": "vivo-y05",
     "minPrice": 8500,
-    "maxPrice": 9860,
+    "maxPrice": 9100,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0d49eb70-3982.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/ac5c9a7b-76b5.jpg?w=200",
     "variants": [
@@ -22299,9 +22299,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b99,180",
-        "priceNum": 9180,
-        "basePrice": 9180,
+        "price": "\u20b98,800",
+        "priceNum": 8800,
+        "basePrice": 8800,
         "active": true
       },
       {
@@ -22310,9 +22310,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b99,860",
-        "priceNum": 9860,
-        "basePrice": 9860,
+        "price": "\u20b99,100",
+        "priceNum": 9100,
+        "basePrice": 9100,
         "active": true
       }
     ]
@@ -22324,7 +22324,7 @@ const MOBILE_DATASET = [
     "model": "Nokia G11 Plus",
     "slug": "nokia-g11-plus",
     "minPrice": 2600,
-    "maxPrice": 3060,
+    "maxPrice": 3560,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/af3e77c2-6626.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/8ef49258-00a8.jpg?w=200",
     "variants": [
@@ -22345,9 +22345,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,800",
-        "priceNum": 2800,
-        "basePrice": 2800,
+        "price": "\u20b93,080",
+        "priceNum": 3080,
+        "basePrice": 3080,
         "active": true
       },
       {
@@ -22356,9 +22356,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b93,060",
-        "priceNum": 3060,
-        "basePrice": 3060,
+        "price": "\u20b93,560",
+        "priceNum": 3560,
+        "basePrice": 3560,
         "active": true
       }
     ]
@@ -23149,7 +23149,7 @@ const MOBILE_DATASET = [
     "model": "POCO C85x",
     "slug": "poco-c85x",
     "minPrice": 8200,
-    "maxPrice": 9510,
+    "maxPrice": 8800,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a519de72-542a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/8ef49258-00a8.jpg?w=200",
     "variants": [
@@ -23170,9 +23170,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b98,850",
-        "priceNum": 8850,
-        "basePrice": 8850,
+        "price": "\u20b98,500",
+        "priceNum": 8500,
+        "basePrice": 8500,
         "active": true
       },
       {
@@ -23181,9 +23181,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b99,510",
-        "priceNum": 9510,
-        "basePrice": 9510,
+        "price": "\u20b98,800",
+        "priceNum": 8800,
+        "basePrice": 8800,
         "active": true
       }
     ]
@@ -23484,7 +23484,7 @@ const MOBILE_DATASET = [
     "model": "POCO M2 Reloaded",
     "slug": "poco-m2-reloaded",
     "minPrice": 3030,
-    "maxPrice": 3510,
+    "maxPrice": 3630,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c72b789c-f793.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/8ef49258-00a8.jpg?w=200",
     "variants": [
@@ -23505,9 +23505,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,270",
-        "priceNum": 3270,
-        "basePrice": 3270,
+        "price": "\u20b93,330",
+        "priceNum": 3330,
+        "basePrice": 3330,
         "active": true
       },
       {
@@ -23516,9 +23516,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,510",
-        "priceNum": 3510,
-        "basePrice": 3510,
+        "price": "\u20b93,630",
+        "priceNum": 3630,
+        "basePrice": 3630,
         "active": true
       }
     ]
@@ -25242,7 +25242,7 @@ const MOBILE_DATASET = [
     "model": "Realme X",
     "slug": "realme-x",
     "minPrice": 5090,
-    "maxPrice": 5900,
+    "maxPrice": 5690,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-hmjib1l9-m8b9.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0124cc45-3a6c.jpg?w=200",
     "variants": [
@@ -25263,9 +25263,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,490",
-        "priceNum": 5490,
-        "basePrice": 5490,
+        "price": "\u20b95,390",
+        "priceNum": 5390,
+        "basePrice": 5390,
         "active": true
       },
       {
@@ -25274,9 +25274,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,900",
-        "priceNum": 5900,
-        "basePrice": 5900,
+        "price": "\u20b95,690",
+        "priceNum": 5690,
+        "basePrice": 5690,
         "active": true
       }
     ]
@@ -25472,7 +25472,7 @@ const MOBILE_DATASET = [
     "model": "Realme X7",
     "slug": "realme-x7",
     "minPrice": 7360,
-    "maxPrice": 8530,
+    "maxPrice": 7960,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/560d4b50-9bf1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0124cc45-3a6c.jpg?w=200",
     "variants": [
@@ -25493,9 +25493,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b97,940",
-        "priceNum": 7940,
-        "basePrice": 7940,
+        "price": "\u20b97,660",
+        "priceNum": 7660,
+        "basePrice": 7660,
         "active": true
       },
       {
@@ -25504,9 +25504,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b98,530",
-        "priceNum": 8530,
-        "basePrice": 8530,
+        "price": "\u20b97,960",
+        "priceNum": 7960,
+        "basePrice": 7960,
         "active": true
       }
     ]
@@ -25553,7 +25553,7 @@ const MOBILE_DATASET = [
     "model": "Realme X7 Pro",
     "slug": "realme-x7-pro",
     "minPrice": 7760,
-    "maxPrice": 9150,
+    "maxPrice": 8720,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/20fc3de7-47bd.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0124cc45-3a6c.jpg?w=200",
     "variants": [
@@ -25574,9 +25574,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b98,380",
-        "priceNum": 8380,
-        "basePrice": 8380,
+        "price": "\u20b98,240",
+        "priceNum": 8240,
+        "basePrice": 8240,
         "active": true
       },
       {
@@ -25585,9 +25585,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b99,150",
-        "priceNum": 9150,
-        "basePrice": 9150,
+        "price": "\u20b98,720",
+        "priceNum": 8720,
+        "basePrice": 8720,
         "active": true
       }
     ]
@@ -26109,7 +26109,7 @@ const MOBILE_DATASET = [
     "model": "Realme C20",
     "slug": "realme-c20",
     "minPrice": 2680,
-    "maxPrice": 3100,
+    "maxPrice": 3280,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b573cc7b-5e84.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0124cc45-3a6c.jpg?w=200",
     "variants": [
@@ -26130,9 +26130,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,890",
-        "priceNum": 2890,
-        "basePrice": 2890,
+        "price": "\u20b92,980",
+        "priceNum": 2980,
+        "basePrice": 2980,
         "active": true
       },
       {
@@ -26141,9 +26141,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,100",
-        "priceNum": 3100,
-        "basePrice": 3100,
+        "price": "\u20b93,280",
+        "priceNum": 3280,
+        "basePrice": 3280,
         "active": true
       }
     ]
@@ -26630,7 +26630,7 @@ const MOBILE_DATASET = [
     "model": "Realme GT 2",
     "slug": "realme-gt-2",
     "minPrice": 9470,
-    "maxPrice": 11550,
+    "maxPrice": 10570,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b8b3a91a-60fc.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0124cc45-3a6c.jpg?w=200",
     "variants": [
@@ -26651,9 +26651,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b910,130",
-        "priceNum": 10130,
-        "basePrice": 10130,
+        "price": "\u20b99,820",
+        "priceNum": 9820,
+        "basePrice": 9820,
         "active": true
       },
       {
@@ -26662,9 +26662,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b910,790",
-        "priceNum": 10790,
-        "basePrice": 10790,
+        "price": "\u20b910,170",
+        "priceNum": 10170,
+        "basePrice": 10170,
         "active": true
       },
       {
@@ -26673,9 +26673,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b911,550",
-        "priceNum": 11550,
-        "basePrice": 11550,
+        "price": "\u20b910,570",
+        "priceNum": 10570,
+        "basePrice": 10570,
         "active": true
       }
     ]
@@ -26757,7 +26757,7 @@ const MOBILE_DATASET = [
     "model": "Realme GT Master Edition",
     "slug": "realme-gt-master-edition",
     "minPrice": 8290,
-    "maxPrice": 10110,
+    "maxPrice": 9390,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2a33453e-2d3a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0124cc45-3a6c.jpg?w=200",
     "variants": [
@@ -26778,9 +26778,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b98,870",
-        "priceNum": 8870,
-        "basePrice": 8870,
+        "price": "\u20b98,640",
+        "priceNum": 8640,
+        "basePrice": 8640,
         "active": true
       },
       {
@@ -26789,9 +26789,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b99,450",
-        "priceNum": 9450,
-        "basePrice": 9450,
+        "price": "\u20b98,990",
+        "priceNum": 8990,
+        "basePrice": 8990,
         "active": true
       },
       {
@@ -26800,9 +26800,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b910,110",
-        "priceNum": 10110,
-        "basePrice": 10110,
+        "price": "\u20b99,390",
+        "priceNum": 9390,
+        "basePrice": 9390,
         "active": true
       }
     ]
@@ -26814,7 +26814,7 @@ const MOBILE_DATASET = [
     "model": "Realme GT Neo 2",
     "slug": "realme-gt-neo-2",
     "minPrice": 8930,
-    "maxPrice": 10890,
+    "maxPrice": 10030,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3ac4a9e7-0c57.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0124cc45-3a6c.jpg?w=200",
     "variants": [
@@ -26835,9 +26835,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b99,550",
-        "priceNum": 9550,
-        "basePrice": 9550,
+        "price": "\u20b99,280",
+        "priceNum": 9280,
+        "basePrice": 9280,
         "active": true
       },
       {
@@ -26846,9 +26846,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b910,180",
-        "priceNum": 10180,
-        "basePrice": 10180,
+        "price": "\u20b99,630",
+        "priceNum": 9630,
+        "basePrice": 9630,
         "active": true
       },
       {
@@ -26857,9 +26857,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b910,890",
-        "priceNum": 10890,
-        "basePrice": 10890,
+        "price": "\u20b910,030",
+        "priceNum": 10030,
+        "basePrice": 10030,
         "active": true
       }
     ]
@@ -26871,7 +26871,7 @@ const MOBILE_DATASET = [
     "model": "Realme GT Neo 3",
     "slug": "realme-gt-neo-3",
     "minPrice": 9470,
-    "maxPrice": 11550,
+    "maxPrice": 10570,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5c53b325-cd16.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0124cc45-3a6c.jpg?w=200",
     "variants": [
@@ -26892,9 +26892,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b910,130",
-        "priceNum": 10130,
-        "basePrice": 10130,
+        "price": "\u20b99,820",
+        "priceNum": 9820,
+        "basePrice": 9820,
         "active": true
       },
       {
@@ -26903,9 +26903,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b910,790",
-        "priceNum": 10790,
-        "basePrice": 10790,
+        "price": "\u20b910,170",
+        "priceNum": 10170,
+        "basePrice": 10170,
         "active": true
       },
       {
@@ -26914,9 +26914,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b911,550",
-        "priceNum": 11550,
-        "basePrice": 11550,
+        "price": "\u20b910,570",
+        "priceNum": 10570,
+        "basePrice": 10570,
         "active": true
       }
     ]
@@ -26928,7 +26928,7 @@ const MOBILE_DATASET = [
     "model": "Realme GT NEO 3 150W",
     "slug": "realme-gt-neo-3-150w",
     "minPrice": 10740,
-    "maxPrice": 13100,
+    "maxPrice": 11840,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d212ac22-485f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0124cc45-3a6c.jpg?w=200",
     "variants": [
@@ -26949,9 +26949,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b911,490",
-        "priceNum": 11490,
-        "basePrice": 11490,
+        "price": "\u20b911,090",
+        "priceNum": 11090,
+        "basePrice": 11090,
         "active": true
       },
       {
@@ -26960,9 +26960,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b912,240",
-        "priceNum": 12240,
-        "basePrice": 12240,
+        "price": "\u20b911,440",
+        "priceNum": 11440,
+        "basePrice": 11440,
         "active": true
       },
       {
@@ -26971,9 +26971,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b913,100",
-        "priceNum": 13100,
-        "basePrice": 13100,
+        "price": "\u20b911,840",
+        "priceNum": 11840,
+        "basePrice": 11840,
         "active": true
       }
     ]
@@ -26985,7 +26985,7 @@ const MOBILE_DATASET = [
     "model": "Realme GT Neo 3T",
     "slug": "realme-gt-neo-3t",
     "minPrice": 8770,
-    "maxPrice": 10690,
+    "maxPrice": 9870,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d2c26923-e58d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0124cc45-3a6c.jpg?w=200",
     "variants": [
@@ -27006,9 +27006,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b99,380",
-        "priceNum": 9380,
-        "basePrice": 9380,
+        "price": "\u20b99,120",
+        "priceNum": 9120,
+        "basePrice": 9120,
         "active": true
       },
       {
@@ -27017,9 +27017,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b99,990",
-        "priceNum": 9990,
-        "basePrice": 9990,
+        "price": "\u20b99,470",
+        "priceNum": 9470,
+        "basePrice": 9470,
         "active": true
       },
       {
@@ -27028,9 +27028,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b910,690",
-        "priceNum": 10690,
-        "basePrice": 10690,
+        "price": "\u20b99,870",
+        "priceNum": 9870,
+        "basePrice": 9870,
         "active": true
       }
     ]
@@ -27042,7 +27042,7 @@ const MOBILE_DATASET = [
     "model": "Realme Narzo 10",
     "slug": "realme-narzo-10",
     "minPrice": 4010,
-    "maxPrice": 4890,
+    "maxPrice": 5110,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7729af81-2e70.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/0124cc45-3a6c.jpg?w=200",
     "variants": [
@@ -27063,9 +27063,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b94,290",
-        "priceNum": 4290,
-        "basePrice": 4290,
+        "price": "\u20b94,360",
+        "priceNum": 4360,
+        "basePrice": 4360,
         "active": true
       },
       {
@@ -27074,9 +27074,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b94,570",
-        "priceNum": 4570,
-        "basePrice": 4570,
+        "price": "\u20b94,710",
+        "priceNum": 4710,
+        "basePrice": 4710,
         "active": true
       },
       {
@@ -27085,9 +27085,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b94,890",
-        "priceNum": 4890,
-        "basePrice": 4890,
+        "price": "\u20b95,110",
+        "priceNum": 5110,
+        "basePrice": 5110,
         "active": true
       }
     ]
@@ -27935,7 +27935,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy A03 Core",
     "slug": "samsung-galaxy-a03-core",
     "minPrice": 2230,
-    "maxPrice": 2580,
+    "maxPrice": 3130,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a27b520c-8064.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -27956,9 +27956,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b92,400",
-        "priceNum": 2400,
-        "basePrice": 2400,
+        "price": "\u20b92,680",
+        "priceNum": 2680,
+        "basePrice": 2680,
         "active": true
       },
       {
@@ -27967,9 +27967,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,580",
-        "priceNum": 2580,
-        "basePrice": 2580,
+        "price": "\u20b93,130",
+        "priceNum": 3130,
+        "basePrice": 3130,
         "active": true
       }
     ]
@@ -28097,7 +28097,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy A5",
     "slug": "samsung-galaxy-a5",
     "minPrice": 1500,
-    "maxPrice": 1830,
+    "maxPrice": 2600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -28118,9 +28118,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b91,600",
-        "priceNum": 1600,
-        "basePrice": 1600,
+        "price": "\u20b91,850",
+        "priceNum": 1850,
+        "basePrice": 1850,
         "active": true
       },
       {
@@ -28129,9 +28129,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b91,700",
-        "priceNum": 1700,
-        "basePrice": 1700,
+        "price": "\u20b92,200",
+        "priceNum": 2200,
+        "basePrice": 2200,
         "active": true
       },
       {
@@ -28140,9 +28140,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b91,830",
-        "priceNum": 1830,
-        "basePrice": 1830,
+        "price": "\u20b92,600",
+        "priceNum": 2600,
+        "basePrice": 2600,
         "active": true
       }
     ]
@@ -28386,7 +28386,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy A07",
     "slug": "samsung-galaxy-a07",
     "minPrice": 5700,
-    "maxPrice": 6610,
+    "maxPrice": 6600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/597bd346-e8fe.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -28418,9 +28418,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b96,610",
-        "priceNum": 6610,
-        "basePrice": 6610,
+        "price": "\u20b96,600",
+        "priceNum": 6600,
+        "basePrice": 6600,
         "active": true
       }
     ]
@@ -28513,7 +28513,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy A8 Plus",
     "slug": "samsung-galaxy-a8-plus",
     "minPrice": 2300,
-    "maxPrice": 2710,
+    "maxPrice": 3260,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-a2xlurma-srkb.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -28534,9 +28534,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,480",
-        "priceNum": 2480,
-        "basePrice": 2480,
+        "price": "\u20b92,780",
+        "priceNum": 2780,
+        "basePrice": 2780,
         "active": true
       },
       {
@@ -28545,9 +28545,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,710",
-        "priceNum": 2710,
-        "basePrice": 2710,
+        "price": "\u20b93,260",
+        "priceNum": 3260,
+        "basePrice": 3260,
         "active": true
       }
     ]
@@ -28559,7 +28559,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy A8 Star",
     "slug": "samsung-galaxy-a8-star",
     "minPrice": 1780,
-    "maxPrice": 2060,
+    "maxPrice": 2680,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-x0ddozpv-4e1v.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -28580,9 +28580,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b91,920",
-        "priceNum": 1920,
-        "basePrice": 1920,
+        "price": "\u20b92,230",
+        "priceNum": 2230,
+        "basePrice": 2230,
         "active": true
       },
       {
@@ -28591,9 +28591,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,060",
-        "priceNum": 2060,
-        "basePrice": 2060,
+        "price": "\u20b92,680",
+        "priceNum": 2680,
+        "basePrice": 2680,
         "active": true
       }
     ]
@@ -28640,7 +28640,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy A9 Pro",
     "slug": "samsung-galaxy-a9-pro",
     "minPrice": 1500,
-    "maxPrice": 1770,
+    "maxPrice": 2460,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-v6tjck3y-tsn4.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -28661,9 +28661,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b91,620",
-        "priceNum": 1620,
-        "basePrice": 1620,
+        "price": "\u20b91,980",
+        "priceNum": 1980,
+        "basePrice": 1980,
         "active": true
       },
       {
@@ -28672,9 +28672,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b91,770",
-        "priceNum": 1770,
-        "basePrice": 1770,
+        "price": "\u20b92,460",
+        "priceNum": 2460,
+        "basePrice": 2460,
         "active": true
       }
     ]
@@ -28686,7 +28686,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy A10",
     "slug": "samsung-galaxy-a10",
     "minPrice": 1960,
-    "maxPrice": 2270,
+    "maxPrice": 2860,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-euww0wvm-bohg.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -28707,9 +28707,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b92,110",
-        "priceNum": 2110,
-        "basePrice": 2110,
+        "price": "\u20b92,410",
+        "priceNum": 2410,
+        "basePrice": 2410,
         "active": true
       },
       {
@@ -28718,9 +28718,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,270",
-        "priceNum": 2270,
-        "basePrice": 2270,
+        "price": "\u20b92,860",
+        "priceNum": 2860,
+        "basePrice": 2860,
         "active": true
       }
     ]
@@ -29089,7 +29089,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy A20",
     "slug": "samsung-galaxy-a20",
     "minPrice": 2610,
-    "maxPrice": 3020,
+    "maxPrice": 3510,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-xgiq7w1j-bkh5.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -29110,9 +29110,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b92,810",
-        "priceNum": 2810,
-        "basePrice": 2810,
+        "price": "\u20b93,060",
+        "priceNum": 3060,
+        "basePrice": 3060,
         "active": true
       },
       {
@@ -29121,9 +29121,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b93,020",
-        "priceNum": 3020,
-        "basePrice": 3020,
+        "price": "\u20b93,510",
+        "priceNum": 3510,
+        "basePrice": 3510,
         "active": true
       }
     ]
@@ -29448,7 +29448,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy A30",
     "slug": "samsung-galaxy-a30",
     "minPrice": 2800,
-    "maxPrice": 3240,
+    "maxPrice": 3700,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-nvshmulp-fokr.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -29469,9 +29469,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b93,020",
-        "priceNum": 3020,
-        "basePrice": 3020,
+        "price": "\u20b93,250",
+        "priceNum": 3250,
+        "basePrice": 3250,
         "active": true
       },
       {
@@ -29480,9 +29480,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b93,240",
-        "priceNum": 3240,
-        "basePrice": 3240,
+        "price": "\u20b93,700",
+        "priceNum": 3700,
+        "basePrice": 3700,
         "active": true
       }
     ]
@@ -29529,7 +29529,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy A31",
     "slug": "samsung-galaxy-a31",
     "minPrice": 3880,
-    "maxPrice": 4500,
+    "maxPrice": 4780,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/dc769f49-7a1e.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -29550,9 +29550,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b94,190",
-        "priceNum": 4190,
-        "basePrice": 4190,
+        "price": "\u20b94,330",
+        "priceNum": 4330,
+        "basePrice": 4330,
         "active": true
       },
       {
@@ -29561,9 +29561,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b94,500",
-        "priceNum": 4500,
-        "basePrice": 4500,
+        "price": "\u20b94,780",
+        "priceNum": 4780,
+        "basePrice": 4780,
         "active": true
       }
     ]
@@ -30212,7 +30212,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy A70",
     "slug": "samsung-galaxy-a70",
     "minPrice": 3990,
-    "maxPrice": 4860,
+    "maxPrice": 5090,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-4i6ufzxi-huna.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -30233,9 +30233,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b94,260",
-        "priceNum": 4260,
-        "basePrice": 4260,
+        "price": "\u20b94,340",
+        "priceNum": 4340,
+        "basePrice": 4340,
         "active": true
       },
       {
@@ -30244,9 +30244,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b94,540",
-        "priceNum": 4540,
-        "basePrice": 4540,
+        "price": "\u20b94,690",
+        "priceNum": 4690,
+        "basePrice": 4690,
         "active": true
       },
       {
@@ -30255,9 +30255,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b94,860",
-        "priceNum": 4860,
-        "basePrice": 4860,
+        "price": "\u20b95,090",
+        "priceNum": 5090,
+        "basePrice": 5090,
         "active": true
       }
     ]
@@ -30409,7 +30409,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy A80",
     "slug": "samsung-galaxy-a80",
     "minPrice": 5040,
-    "maxPrice": 5840,
+    "maxPrice": 5940,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-8mbiuxku-e6mj.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -30430,9 +30430,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b95,440",
-        "priceNum": 5440,
-        "basePrice": 5440,
+        "price": "\u20b95,490",
+        "priceNum": 5490,
+        "basePrice": 5490,
         "active": true
       },
       {
@@ -30441,9 +30441,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b95,840",
-        "priceNum": 5840,
-        "basePrice": 5840,
+        "price": "\u20b95,940",
+        "priceNum": 5940,
+        "basePrice": 5940,
         "active": true
       }
     ]
@@ -30455,7 +30455,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy C5 Pro",
     "slug": "samsung-galaxy-c5-pro",
     "minPrice": 2040,
-    "maxPrice": 2400,
+    "maxPrice": 3000,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-bwm5k1av-g0ll.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -30476,9 +30476,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,200",
-        "priceNum": 2200,
-        "basePrice": 2200,
+        "price": "\u20b92,520",
+        "priceNum": 2520,
+        "basePrice": 2520,
         "active": true
       },
       {
@@ -30487,9 +30487,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,400",
-        "priceNum": 2400,
-        "basePrice": 2400,
+        "price": "\u20b93,000",
+        "priceNum": 3000,
+        "basePrice": 3000,
         "active": true
       }
     ]
@@ -30501,7 +30501,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy C7 Pro",
     "slug": "samsung-galaxy-c7-pro",
     "minPrice": 2110,
-    "maxPrice": 2480,
+    "maxPrice": 3070,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-7urmxbu1-x6ss.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -30522,9 +30522,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,270",
-        "priceNum": 2270,
-        "basePrice": 2270,
+        "price": "\u20b92,590",
+        "priceNum": 2590,
+        "basePrice": 2590,
         "active": true
       },
       {
@@ -30533,9 +30533,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,480",
-        "priceNum": 2480,
-        "basePrice": 2480,
+        "price": "\u20b93,070",
+        "priceNum": 3070,
+        "basePrice": 3070,
         "active": true
       }
     ]
@@ -30547,7 +30547,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy C9 Pro",
     "slug": "samsung-galaxy-c9-pro",
     "minPrice": 2150,
-    "maxPrice": 2530,
+    "maxPrice": 3110,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-gbcet3mi-ahab.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -30568,9 +30568,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,320",
-        "priceNum": 2320,
-        "basePrice": 2320,
+        "price": "\u20b92,630",
+        "priceNum": 2630,
+        "basePrice": 2630,
         "active": true
       },
       {
@@ -30579,9 +30579,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,530",
-        "priceNum": 2530,
-        "basePrice": 2530,
+        "price": "\u20b93,110",
+        "priceNum": 3110,
+        "basePrice": 3110,
         "active": true
       }
     ]
@@ -30628,7 +30628,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy F04",
     "slug": "samsung-galaxy-f04",
     "minPrice": 2910,
-    "maxPrice": 3370,
+    "maxPrice": 3810,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5e8ac5b0-fd40.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -30649,9 +30649,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b93,140",
-        "priceNum": 3140,
-        "basePrice": 3140,
+        "price": "\u20b93,360",
+        "priceNum": 3360,
+        "basePrice": 3360,
         "active": true
       },
       {
@@ -30660,9 +30660,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b93,370",
-        "priceNum": 3370,
-        "basePrice": 3370,
+        "price": "\u20b93,810",
+        "priceNum": 3810,
+        "basePrice": 3810,
         "active": true
       }
     ]
@@ -30674,7 +30674,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy F05",
     "slug": "samsung-galaxy-f05",
     "minPrice": 4190,
-    "maxPrice": 4860,
+    "maxPrice": 5090,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7225c234-46a2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -30695,9 +30695,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b94,520",
-        "priceNum": 4520,
-        "basePrice": 4520,
+        "price": "\u20b94,640",
+        "priceNum": 4640,
+        "basePrice": 4640,
         "active": true
       },
       {
@@ -30706,9 +30706,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b94,860",
-        "priceNum": 4860,
-        "basePrice": 4860,
+        "price": "\u20b95,090",
+        "priceNum": 5090,
+        "basePrice": 5090,
         "active": true
       }
     ]
@@ -30766,7 +30766,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy F07",
     "slug": "samsung-galaxy-f07",
     "minPrice": 5310,
-    "maxPrice": 6150,
+    "maxPrice": 6210,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7b050182-0d85.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -30787,9 +30787,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b95,730",
-        "priceNum": 5730,
-        "basePrice": 5730,
+        "price": "\u20b95,760",
+        "priceNum": 5760,
+        "basePrice": 5760,
         "active": true
       },
       {
@@ -30798,9 +30798,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b96,150",
-        "priceNum": 6150,
-        "basePrice": 6150,
+        "price": "\u20b96,210",
+        "priceNum": 6210,
+        "basePrice": 6210,
         "active": true
       }
     ]
@@ -30882,7 +30882,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy F14",
     "slug": "samsung-galaxy-f14",
     "minPrice": 4920,
-    "maxPrice": 5700,
+    "maxPrice": 5820,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/535f8271-187f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -30903,9 +30903,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b95,310",
-        "priceNum": 5310,
-        "basePrice": 5310,
+        "price": "\u20b95,370",
+        "priceNum": 5370,
+        "basePrice": 5370,
         "active": true
       },
       {
@@ -30914,9 +30914,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b95,700",
-        "priceNum": 5700,
-        "basePrice": 5700,
+        "price": "\u20b95,820",
+        "priceNum": 5820,
+        "basePrice": 5820,
         "active": true
       }
     ]
@@ -31311,7 +31311,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy F54 5G",
     "slug": "samsung-galaxy-f54-5g",
     "minPrice": 10820,
-    "maxPrice": 13200,
+    "maxPrice": 11920,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5b6e3bad-512b.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -31332,9 +31332,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b911,570",
-        "priceNum": 11570,
-        "basePrice": 11570,
+        "price": "\u20b911,170",
+        "priceNum": 11170,
+        "basePrice": 11170,
         "active": true
       },
       {
@@ -31343,9 +31343,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b912,330",
-        "priceNum": 12330,
-        "basePrice": 12330,
+        "price": "\u20b911,520",
+        "priceNum": 11520,
+        "basePrice": 11520,
         "active": true
       },
       {
@@ -31354,9 +31354,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b913,200",
-        "priceNum": 13200,
-        "basePrice": 13200,
+        "price": "\u20b911,920",
+        "priceNum": 11920,
+        "basePrice": 11920,
         "active": true
       }
     ]
@@ -31519,7 +31519,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Fold",
     "slug": "samsung-galaxy-fold",
     "minPrice": 12990,
-    "maxPrice": 15320,
+    "maxPrice": 13570,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/69c8d02f-fe64.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -31540,9 +31540,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b914,020",
-        "priceNum": 14020,
-        "basePrice": 14020,
+        "price": "\u20b913,470",
+        "priceNum": 13470,
+        "basePrice": 13470,
         "active": true
       },
       {
@@ -31551,9 +31551,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b915,320",
-        "priceNum": 15320,
-        "basePrice": 15320,
+        "price": "\u20b913,570",
+        "priceNum": 13570,
+        "basePrice": 13570,
         "active": true
       }
     ]
@@ -31600,7 +31600,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy J6 Plus",
     "slug": "samsung-galaxy-j6-plus",
     "minPrice": 1890,
-    "maxPrice": 2230,
+    "maxPrice": 2850,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-rcd0rnhc-labj.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -31621,9 +31621,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,040",
-        "priceNum": 2040,
-        "basePrice": 2040,
+        "price": "\u20b92,370",
+        "priceNum": 2370,
+        "basePrice": 2370,
         "active": true
       },
       {
@@ -31632,9 +31632,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,230",
-        "priceNum": 2230,
-        "basePrice": 2230,
+        "price": "\u20b92,850",
+        "priceNum": 2850,
+        "basePrice": 2850,
         "active": true
       }
     ]
@@ -31646,7 +31646,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy J7 Duo",
     "slug": "samsung-galaxy-j7-duo",
     "minPrice": 1500,
-    "maxPrice": 1730,
+    "maxPrice": 2400,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-90cid7xe-eqez.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -31667,9 +31667,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b91,620",
-        "priceNum": 1620,
-        "basePrice": 1620,
+        "price": "\u20b91,950",
+        "priceNum": 1950,
+        "basePrice": 1950,
         "active": true
       },
       {
@@ -31678,9 +31678,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b91,730",
-        "priceNum": 1730,
-        "basePrice": 1730,
+        "price": "\u20b92,400",
+        "priceNum": 2400,
+        "basePrice": 2400,
         "active": true
       }
     ]
@@ -31692,7 +31692,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy J7 Max",
     "slug": "samsung-galaxy-j7-max",
     "minPrice": 1500,
-    "maxPrice": 1730,
+    "maxPrice": 2400,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-ehtaxabf-bewm.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -31713,9 +31713,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b91,620",
-        "priceNum": 1620,
-        "basePrice": 1620,
+        "price": "\u20b91,950",
+        "priceNum": 1950,
+        "basePrice": 1950,
         "active": true
       },
       {
@@ -31724,9 +31724,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b91,730",
-        "priceNum": 1730,
-        "basePrice": 1730,
+        "price": "\u20b92,400",
+        "priceNum": 2400,
+        "basePrice": 2400,
         "active": true
       }
     ]
@@ -31808,7 +31808,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy J8",
     "slug": "samsung-galaxy-j8",
     "minPrice": 2340,
-    "maxPrice": 2710,
+    "maxPrice": 3240,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-pcy3wifl-v95y.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -31829,9 +31829,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b92,520",
-        "priceNum": 2520,
-        "basePrice": 2520,
+        "price": "\u20b92,790",
+        "priceNum": 2790,
+        "basePrice": 2790,
         "active": true
       },
       {
@@ -31840,9 +31840,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,710",
-        "priceNum": 2710,
-        "basePrice": 2710,
+        "price": "\u20b93,240",
+        "priceNum": 3240,
+        "basePrice": 3240,
         "active": true
       }
     ]
@@ -31854,7 +31854,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy M01",
     "slug": "samsung-galaxy-m01",
     "minPrice": 2310,
-    "maxPrice": 2670,
+    "maxPrice": 3210,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c3abaf96-2834.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -31875,9 +31875,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b92,490",
-        "priceNum": 2490,
-        "basePrice": 2490,
+        "price": "\u20b92,760",
+        "priceNum": 2760,
+        "basePrice": 2760,
         "active": true
       },
       {
@@ -31886,9 +31886,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,670",
-        "priceNum": 2670,
-        "basePrice": 2670,
+        "price": "\u20b93,210",
+        "priceNum": 3210,
+        "basePrice": 3210,
         "active": true
       }
     ]
@@ -31935,7 +31935,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy M01s",
     "slug": "samsung-galaxy-m01s",
     "minPrice": 2150,
-    "maxPrice": 2490,
+    "maxPrice": 3050,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b0f521dd-326f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -31956,9 +31956,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b92,320",
-        "priceNum": 2320,
-        "basePrice": 2320,
+        "price": "\u20b92,600",
+        "priceNum": 2600,
+        "basePrice": 2600,
         "active": true
       },
       {
@@ -31967,9 +31967,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,490",
-        "priceNum": 2490,
-        "basePrice": 2490,
+        "price": "\u20b93,050",
+        "priceNum": 3050,
+        "basePrice": 3050,
         "active": true
       }
     ]
@@ -32086,7 +32086,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy M05",
     "slug": "samsung-galaxy-m05",
     "minPrice": 4890,
-    "maxPrice": 5670,
+    "maxPrice": 5790,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c73f153e-aae8.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -32107,9 +32107,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b95,280",
-        "priceNum": 5280,
-        "basePrice": 5280,
+        "price": "\u20b95,340",
+        "priceNum": 5340,
+        "basePrice": 5340,
         "active": true
       },
       {
@@ -32118,9 +32118,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b95,670",
-        "priceNum": 5670,
-        "basePrice": 5670,
+        "price": "\u20b95,790",
+        "priceNum": 5790,
+        "basePrice": 5790,
         "active": true
       }
     ]
@@ -32178,7 +32178,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy M07",
     "slug": "samsung-galaxy-m07",
     "minPrice": 5050,
-    "maxPrice": 5850,
+    "maxPrice": 5950,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -32199,9 +32199,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b95,450",
-        "priceNum": 5450,
-        "basePrice": 5450,
+        "price": "\u20b95,500",
+        "priceNum": 5500,
+        "basePrice": 5500,
         "active": true
       },
       {
@@ -32210,9 +32210,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b95,850",
-        "priceNum": 5850,
-        "basePrice": 5850,
+        "price": "\u20b95,950",
+        "priceNum": 5950,
+        "basePrice": 5950,
         "active": true
       }
     ]
@@ -32224,7 +32224,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy M10s",
     "slug": "samsung-galaxy-m10s",
     "minPrice": 2230,
-    "maxPrice": 2580,
+    "maxPrice": 3130,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/6eb73068-383d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -32245,9 +32245,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b92,400",
-        "priceNum": 2400,
-        "basePrice": 2400,
+        "price": "\u20b92,680",
+        "priceNum": 2680,
+        "basePrice": 2680,
         "active": true
       },
       {
@@ -32256,9 +32256,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,580",
-        "priceNum": 2580,
-        "basePrice": 2580,
+        "price": "\u20b93,130",
+        "priceNum": 3130,
+        "basePrice": 3130,
         "active": true
       }
     ]
@@ -33255,7 +33255,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy M40",
     "slug": "samsung-galaxy-m40",
     "minPrice": 3230,
-    "maxPrice": 3740,
+    "maxPrice": 4130,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5fda1742-7e9b.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -33276,9 +33276,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b93,480",
-        "priceNum": 3480,
-        "basePrice": 3480,
+        "price": "\u20b93,680",
+        "priceNum": 3680,
+        "basePrice": 3680,
         "active": true
       },
       {
@@ -33287,9 +33287,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b93,740",
-        "priceNum": 3740,
-        "basePrice": 3740,
+        "price": "\u20b94,130",
+        "priceNum": 4130,
+        "basePrice": 4130,
         "active": true
       }
     ]
@@ -33557,7 +33557,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Note 8",
     "slug": "samsung-galaxy-note-8",
     "minPrice": 4900,
-    "maxPrice": 5970,
+    "maxPrice": 6000,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/aaf0d54f-a55e.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -33578,9 +33578,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b95,240",
-        "priceNum": 5240,
-        "basePrice": 5240,
+        "price": "\u20b95,250",
+        "priceNum": 5250,
+        "basePrice": 5250,
         "active": true
       },
       {
@@ -33589,9 +33589,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b95,580",
-        "priceNum": 5580,
-        "basePrice": 5580,
+        "price": "\u20b95,600",
+        "priceNum": 5600,
+        "basePrice": 5600,
         "active": true
       },
       {
@@ -33600,9 +33600,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b95,970",
-        "priceNum": 5970,
-        "basePrice": 5970,
+        "price": "\u20b96,000",
+        "priceNum": 6000,
+        "basePrice": 6000,
         "active": true
       }
     ]
@@ -33614,7 +33614,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Note 9",
     "slug": "samsung-galaxy-note-9",
     "minPrice": 6030,
-    "maxPrice": 7350,
+    "maxPrice": 7130,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0b60bfe2-658a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -33635,9 +33635,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b96,450",
-        "priceNum": 6450,
-        "basePrice": 6450,
+        "price": "\u20b96,380",
+        "priceNum": 6380,
+        "basePrice": 6380,
         "active": true
       },
       {
@@ -33646,9 +33646,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b96,870",
-        "priceNum": 6870,
-        "basePrice": 6870,
+        "price": "\u20b96,730",
+        "priceNum": 6730,
+        "basePrice": 6730,
         "active": true
       },
       {
@@ -33657,9 +33657,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b97,350",
-        "priceNum": 7350,
-        "basePrice": 7350,
+        "price": "\u20b97,130",
+        "priceNum": 7130,
+        "basePrice": 7130,
         "active": true
       }
     ]
@@ -33671,7 +33671,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Note 10",
     "slug": "samsung-galaxy-note-10",
     "minPrice": 9020,
-    "maxPrice": 11000,
+    "maxPrice": 10120,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ac7e38ff-a6b8.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -33692,9 +33692,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b99,650",
-        "priceNum": 9650,
-        "basePrice": 9650,
+        "price": "\u20b99,370",
+        "priceNum": 9370,
+        "basePrice": 9370,
         "active": true
       },
       {
@@ -33703,9 +33703,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b910,280",
-        "priceNum": 10280,
-        "basePrice": 10280,
+        "price": "\u20b99,720",
+        "priceNum": 9720,
+        "basePrice": 9720,
         "active": true
       },
       {
@@ -33714,9 +33714,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b911,000",
-        "priceNum": 11000,
-        "basePrice": 11000,
+        "price": "\u20b910,120",
+        "priceNum": 10120,
+        "basePrice": 10120,
         "active": true
       }
     ]
@@ -33798,7 +33798,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Note 10 Plus 5G",
     "slug": "samsung-galaxy-note-10-plus-5g",
     "minPrice": 10910,
-    "maxPrice": 12870,
+    "maxPrice": 11870,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d1fd232f-ae16.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -33819,9 +33819,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b911,780",
-        "priceNum": 11780,
-        "basePrice": 11780,
+        "price": "\u20b911,390",
+        "priceNum": 11390,
+        "basePrice": 11390,
         "active": true
       },
       {
@@ -33830,9 +33830,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b912,870",
-        "priceNum": 12870,
-        "basePrice": 12870,
+        "price": "\u20b911,870",
+        "priceNum": 11870,
+        "basePrice": 11870,
         "active": true
       }
     ]
@@ -33844,7 +33844,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Note 20",
     "slug": "samsung-galaxy-note-20",
     "minPrice": 9080,
-    "maxPrice": 11070,
+    "maxPrice": 10180,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8bde54d8-8b50.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -33865,9 +33865,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b99,710",
-        "priceNum": 9710,
-        "basePrice": 9710,
+        "price": "\u20b99,430",
+        "priceNum": 9430,
+        "basePrice": 9430,
         "active": true
       },
       {
@@ -33876,9 +33876,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b910,350",
-        "priceNum": 10350,
-        "basePrice": 10350,
+        "price": "\u20b99,780",
+        "priceNum": 9780,
+        "basePrice": 9780,
         "active": true
       },
       {
@@ -33887,9 +33887,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b911,070",
-        "priceNum": 11070,
-        "basePrice": 11070,
+        "price": "\u20b910,180",
+        "priceNum": 10180,
+        "basePrice": 10180,
         "active": true
       }
     ]
@@ -33901,7 +33901,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Note 20 Ultra 5G",
     "slug": "samsung-galaxy-note-20-ultra-5g",
     "minPrice": 14090,
-    "maxPrice": 16620,
+    "maxPrice": 14670,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8d98092a-42a1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -33922,9 +33922,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b915,210",
-        "priceNum": 15210,
-        "basePrice": 15210,
+        "price": "\u20b914,570",
+        "priceNum": 14570,
+        "basePrice": 14570,
         "active": true
       },
       {
@@ -33933,9 +33933,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b916,620",
-        "priceNum": 16620,
-        "basePrice": 16620,
+        "price": "\u20b914,670",
+        "priceNum": 14670,
+        "basePrice": 14670,
         "active": true
       }
     ]
@@ -33947,7 +33947,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy On6",
     "slug": "samsung-galaxy-on6",
     "minPrice": 1500,
-    "maxPrice": 1730,
+    "maxPrice": 2400,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-i08wrl5l-rbxr.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -33968,9 +33968,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b91,620",
-        "priceNum": 1620,
-        "basePrice": 1620,
+        "price": "\u20b91,950",
+        "priceNum": 1950,
+        "basePrice": 1950,
         "active": true
       },
       {
@@ -33979,9 +33979,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b91,730",
-        "priceNum": 1730,
-        "basePrice": 1730,
+        "price": "\u20b92,400",
+        "priceNum": 2400,
+        "basePrice": 2400,
         "active": true
       }
     ]
@@ -34028,7 +34028,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy On8 ()",
     "slug": "samsung-galaxy-on8",
     "minPrice": 1780,
-    "maxPrice": 2060,
+    "maxPrice": 2680,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -34049,9 +34049,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b91,920",
-        "priceNum": 1920,
-        "basePrice": 1920,
+        "price": "\u20b92,230",
+        "priceNum": 2230,
+        "basePrice": 2230,
         "active": true
       },
       {
@@ -34060,9 +34060,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,060",
-        "priceNum": 2060,
-        "basePrice": 2060,
+        "price": "\u20b92,680",
+        "priceNum": 2680,
+        "basePrice": 2680,
         "active": true
       }
     ]
@@ -34074,7 +34074,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy On Max",
     "slug": "samsung-galaxy-on-max",
     "minPrice": 1520,
-    "maxPrice": 1760,
+    "maxPrice": 2420,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-iies4kbz-5hbd.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -34095,9 +34095,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b91,640",
-        "priceNum": 1640,
-        "basePrice": 1640,
+        "price": "\u20b91,970",
+        "priceNum": 1970,
+        "basePrice": 1970,
         "active": true
       },
       {
@@ -34106,9 +34106,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b91,760",
-        "priceNum": 1760,
-        "basePrice": 1760,
+        "price": "\u20b92,420",
+        "priceNum": 2420,
+        "basePrice": 2420,
         "active": true
       }
     ]
@@ -34120,7 +34120,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy S8",
     "slug": "samsung-galaxy-s8",
     "minPrice": 3520,
-    "maxPrice": 4080,
+    "maxPrice": 4420,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-im7ohvek-alsj.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -34141,9 +34141,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b93,800",
-        "priceNum": 3800,
-        "basePrice": 3800,
+        "price": "\u20b93,970",
+        "priceNum": 3970,
+        "basePrice": 3970,
         "active": true
       },
       {
@@ -34152,9 +34152,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b94,080",
-        "priceNum": 4080,
-        "basePrice": 4080,
+        "price": "\u20b94,420",
+        "priceNum": 4420,
+        "basePrice": 4420,
         "active": true
       }
     ]
@@ -34247,7 +34247,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy S9 Plus",
     "slug": "samsung-galaxy-s9-plus",
     "minPrice": 4970,
-    "maxPrice": 5860,
+    "maxPrice": 5930,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-1v5pedwr-bwsn.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -34268,9 +34268,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b95,360",
-        "priceNum": 5360,
-        "basePrice": 5360,
+        "price": "\u20b95,450",
+        "priceNum": 5450,
+        "basePrice": 5450,
         "active": true
       },
       {
@@ -34279,9 +34279,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b95,860",
-        "priceNum": 5860,
-        "basePrice": 5860,
+        "price": "\u20b95,930",
+        "priceNum": 5930,
+        "basePrice": 5930,
         "active": true
       }
     ]
@@ -34328,7 +34328,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy S10e",
     "slug": "samsung-galaxy-s10e",
     "minPrice": 5900,
-    "maxPrice": 6840,
+    "maxPrice": 6800,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-zsxpbhpp-fsyb.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -34349,9 +34349,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b96,370",
-        "priceNum": 6370,
-        "basePrice": 6370,
+        "price": "\u20b96,350",
+        "priceNum": 6350,
+        "basePrice": 6350,
         "active": true
       },
       {
@@ -34360,9 +34360,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b96,840",
-        "priceNum": 6840,
-        "basePrice": 6840,
+        "price": "\u20b96,800",
+        "priceNum": 6800,
+        "basePrice": 6800,
         "active": true
       }
     ]
@@ -34455,7 +34455,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy S20",
     "slug": "samsung-galaxy-s20",
     "minPrice": 9190,
-    "maxPrice": 10660,
+    "maxPrice": 10090,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/18ea8537-93b4.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -34476,9 +34476,9 @@ const MOBILE_DATASET = [
         "name": "128 GB",
         "ram": null,
         "storage": "128 GB",
-        "price": "\u20b99,920",
-        "priceNum": 9920,
-        "basePrice": 9920,
+        "price": "\u20b99,640",
+        "priceNum": 9640,
+        "basePrice": 9640,
         "active": true
       },
       {
@@ -34487,9 +34487,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b910,660",
-        "priceNum": 10660,
-        "basePrice": 10660,
+        "price": "\u20b910,090",
+        "priceNum": 10090,
+        "basePrice": 10090,
         "active": true
       }
     ]
@@ -34536,7 +34536,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy S20 FE 5G",
     "slug": "samsung-galaxy-s20-fe-5g",
     "minPrice": 8930,
-    "maxPrice": 10890,
+    "maxPrice": 10030,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/36b00c81-72f1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -34557,9 +34557,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b99,550",
-        "priceNum": 9550,
-        "basePrice": 9550,
+        "price": "\u20b99,280",
+        "priceNum": 9280,
+        "basePrice": 9280,
         "active": true
       },
       {
@@ -34568,9 +34568,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b910,180",
-        "priceNum": 10180,
-        "basePrice": 10180,
+        "price": "\u20b99,630",
+        "priceNum": 9630,
+        "basePrice": 9630,
         "active": true
       },
       {
@@ -34579,9 +34579,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b910,890",
-        "priceNum": 10890,
-        "basePrice": 10890,
+        "price": "\u20b910,030",
+        "priceNum": 10030,
+        "basePrice": 10030,
         "active": true
       }
     ]
@@ -34593,7 +34593,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy S20 Plus",
     "slug": "samsung-galaxy-s20-plus",
     "minPrice": 10530,
-    "maxPrice": 12420,
+    "maxPrice": 11490,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7f255404-2e4a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -34614,9 +34614,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b911,370",
-        "priceNum": 11370,
-        "basePrice": 11370,
+        "price": "\u20b911,010",
+        "priceNum": 11010,
+        "basePrice": 11010,
         "active": true
       },
       {
@@ -34625,9 +34625,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b912,420",
-        "priceNum": 12420,
-        "basePrice": 12420,
+        "price": "\u20b911,490",
+        "priceNum": 11490,
+        "basePrice": 11490,
         "active": true
       }
     ]
@@ -34639,7 +34639,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy S20 Ultra",
     "slug": "samsung-galaxy-s20-ultra",
     "minPrice": 13200,
-    "maxPrice": 15570,
+    "maxPrice": 13780,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/cd0ed3a4-c5f2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -34660,9 +34660,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b914,250",
-        "priceNum": 14250,
-        "basePrice": 14250,
+        "price": "\u20b913,680",
+        "priceNum": 13680,
+        "basePrice": 13680,
         "active": true
       },
       {
@@ -34671,9 +34671,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b915,570",
-        "priceNum": 15570,
-        "basePrice": 15570,
+        "price": "\u20b913,780",
+        "priceNum": 13780,
+        "basePrice": 13780,
         "active": true
       }
     ]
@@ -34685,7 +34685,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy S20 Ultra 5G",
     "slug": "samsung-galaxy-s20-ultra-5g",
     "minPrice": 14190,
-    "maxPrice": 16740,
+    "maxPrice": 14770,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b7001490-299d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -34706,9 +34706,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b915,320",
-        "priceNum": 15320,
-        "basePrice": 15320,
+        "price": "\u20b914,670",
+        "priceNum": 14670,
+        "basePrice": 14670,
         "active": true
       },
       {
@@ -34717,9 +34717,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b916,740",
-        "priceNum": 16740,
-        "basePrice": 16740,
+        "price": "\u20b914,770",
+        "priceNum": 14770,
+        "basePrice": 14770,
         "active": true
       }
     ]
@@ -35624,7 +35624,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Z Flip",
     "slug": "samsung-galaxy-z-flip",
     "minPrice": 8840,
-    "maxPrice": 10430,
+    "maxPrice": 9800,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/65fee484-f42f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -35645,9 +35645,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b99,540",
-        "priceNum": 9540,
-        "basePrice": 9540,
+        "price": "\u20b99,320",
+        "priceNum": 9320,
+        "basePrice": 9320,
         "active": true
       },
       {
@@ -35656,9 +35656,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b910,430",
-        "priceNum": 10430,
-        "basePrice": 10430,
+        "price": "\u20b99,800",
+        "priceNum": 9800,
+        "basePrice": 9800,
         "active": true
       }
     ]
@@ -35705,7 +35705,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Z Flip4",
     "slug": "samsung-galaxy-z-flip4",
     "minPrice": 14590,
-    "maxPrice": 17210,
+    "maxPrice": 15550,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2f2274e9-b21f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -35726,9 +35726,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b915,750",
-        "priceNum": 15750,
-        "basePrice": 15750,
+        "price": "\u20b915,070",
+        "priceNum": 15070,
+        "basePrice": 15070,
         "active": true
       },
       {
@@ -35737,9 +35737,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b917,210",
-        "priceNum": 17210,
-        "basePrice": 17210,
+        "price": "\u20b915,550",
+        "priceNum": 15550,
+        "basePrice": 15550,
         "active": true
       }
     ]
@@ -35751,7 +35751,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Z Flip5",
     "slug": "samsung-galaxy-z-flip5",
     "minPrice": 29130,
-    "maxPrice": 34370,
+    "maxPrice": 30090,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/182d8b60-47e0.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -35772,9 +35772,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b931,460",
-        "priceNum": 31460,
-        "basePrice": 31460,
+        "price": "\u20b929,610",
+        "priceNum": 29610,
+        "basePrice": 29610,
         "active": true
       },
       {
@@ -35783,9 +35783,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b934,370",
-        "priceNum": 34370,
-        "basePrice": 34370,
+        "price": "\u20b930,090",
+        "priceNum": 30090,
+        "basePrice": 30090,
         "active": true
       }
     ]
@@ -35797,7 +35797,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Z Flip6 5G",
     "slug": "samsung-galaxy-z-flip6-5g",
     "minPrice": 41400,
-    "maxPrice": 48850,
+    "maxPrice": 42360,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/49733b41-913f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -35818,9 +35818,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b944,710",
-        "priceNum": 44710,
-        "basePrice": 44710,
+        "price": "\u20b941,880",
+        "priceNum": 41880,
+        "basePrice": 41880,
         "active": true
       },
       {
@@ -35829,9 +35829,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b948,850",
-        "priceNum": 48850,
-        "basePrice": 48850,
+        "price": "\u20b942,360",
+        "priceNum": 42360,
+        "basePrice": 42360,
         "active": true
       }
     ]
@@ -35878,7 +35878,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Z Flip7 FE 5G",
     "slug": "samsung-galaxy-z-flip7-fe-5g",
     "minPrice": 50800,
-    "maxPrice": 59940,
+    "maxPrice": 51760,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2db446da-f5cf.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -35899,9 +35899,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b954,860",
-        "priceNum": 54860,
-        "basePrice": 54860,
+        "price": "\u20b951,280",
+        "priceNum": 51280,
+        "basePrice": 51280,
         "active": true
       },
       {
@@ -35910,9 +35910,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b959,940",
-        "priceNum": 59940,
-        "basePrice": 59940,
+        "price": "\u20b951,760",
+        "priceNum": 51760,
+        "basePrice": 51760,
         "active": true
       }
     ]
@@ -35924,7 +35924,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Z Fold2 5G",
     "slug": "samsung-galaxy-z-fold2-5g",
     "minPrice": 17440,
-    "maxPrice": 20570,
+    "maxPrice": 18020,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e374620f-cd0a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -35945,9 +35945,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b918,830",
-        "priceNum": 18830,
-        "basePrice": 18830,
+        "price": "\u20b917,920",
+        "priceNum": 17920,
+        "basePrice": 17920,
         "active": true
       },
       {
@@ -35956,9 +35956,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b920,570",
-        "priceNum": 20570,
-        "basePrice": 20570,
+        "price": "\u20b918,020",
+        "priceNum": 18020,
+        "basePrice": 18020,
         "active": true
       }
     ]
@@ -36005,7 +36005,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Z Fold4",
     "slug": "samsung-galaxy-z-fold4",
     "minPrice": 28010,
-    "maxPrice": 33050,
+    "maxPrice": 28590,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d7481d54-7021.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -36026,9 +36026,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b930,250",
-        "priceNum": 30250,
-        "basePrice": 30250,
+        "price": "\u20b928,490",
+        "priceNum": 28490,
+        "basePrice": 28490,
         "active": true
       },
       {
@@ -36037,9 +36037,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b933,050",
-        "priceNum": 33050,
-        "basePrice": 33050,
+        "price": "\u20b928,590",
+        "priceNum": 28590,
+        "basePrice": 28590,
         "active": true
       }
     ]
@@ -36051,7 +36051,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Z Fold5",
     "slug": "samsung-galaxy-z-fold5",
     "minPrice": 53000,
-    "maxPrice": 62540,
+    "maxPrice": 53580,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/57426a66-b6ae.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -36072,9 +36072,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b957,240",
-        "priceNum": 57240,
-        "basePrice": 57240,
+        "price": "\u20b953,480",
+        "priceNum": 53480,
+        "basePrice": 53480,
         "active": true
       },
       {
@@ -36083,9 +36083,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b962,540",
-        "priceNum": 62540,
-        "basePrice": 62540,
+        "price": "\u20b953,580",
+        "priceNum": 53580,
+        "basePrice": 53580,
         "active": true
       }
     ]
@@ -36097,7 +36097,7 @@ const MOBILE_DATASET = [
     "model": "Samsung Galaxy Z Fold6 5G",
     "slug": "samsung-galaxy-z-fold6-5g",
     "minPrice": 69160,
-    "maxPrice": 81600,
+    "maxPrice": 69740,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ee2e06c0-1243.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/406a512d-e8dd.jpg?w=200",
     "variants": [
@@ -36118,9 +36118,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b974,690",
-        "priceNum": 74690,
-        "basePrice": 74690,
+        "price": "\u20b969,640",
+        "priceNum": 69640,
+        "basePrice": 69640,
         "active": true
       },
       {
@@ -36129,9 +36129,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b981,600",
-        "priceNum": 81600,
-        "basePrice": 81600,
+        "price": "\u20b969,740",
+        "priceNum": 69740,
+        "basePrice": 69740,
         "active": true
       }
     ]
@@ -36270,7 +36270,7 @@ const MOBILE_DATASET = [
     "model": "Infinix Smart 10",
     "slug": "infinix-smart-10",
     "minPrice": 4120,
-    "maxPrice": 4770,
+    "maxPrice": 4720,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c3a854be-94a8.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -36291,9 +36291,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,440",
-        "priceNum": 4440,
-        "basePrice": 4440,
+        "price": "\u20b94,420",
+        "priceNum": 4420,
+        "basePrice": 4420,
         "active": true
       },
       {
@@ -36302,9 +36302,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,770",
-        "priceNum": 4770,
-        "basePrice": 4770,
+        "price": "\u20b94,720",
+        "priceNum": 4720,
+        "basePrice": 4720,
         "active": true
       }
     ]
@@ -36351,7 +36351,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Camon 15",
     "slug": "tecno-camon-15",
     "minPrice": 2410,
-    "maxPrice": 2940,
+    "maxPrice": 3510,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8fc49ad4-e671.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -36372,9 +36372,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b92,570",
-        "priceNum": 2570,
-        "basePrice": 2570,
+        "price": "\u20b92,760",
+        "priceNum": 2760,
+        "basePrice": 2760,
         "active": true
       },
       {
@@ -36383,9 +36383,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b92,740",
-        "priceNum": 2740,
-        "basePrice": 2740,
+        "price": "\u20b93,110",
+        "priceNum": 3110,
+        "basePrice": 3110,
         "active": true
       },
       {
@@ -36394,9 +36394,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b92,940",
-        "priceNum": 2940,
-        "basePrice": 2940,
+        "price": "\u20b93,510",
+        "priceNum": 3510,
+        "basePrice": 3510,
         "active": true
       }
     ]
@@ -36408,7 +36408,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Camon 15 Pro",
     "slug": "tecno-camon-15-pro",
     "minPrice": 3280,
-    "maxPrice": 3870,
+    "maxPrice": 4240,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1290c578-cce3.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -36429,9 +36429,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b93,540",
-        "priceNum": 3540,
-        "basePrice": 3540,
+        "price": "\u20b93,760",
+        "priceNum": 3760,
+        "basePrice": 3760,
         "active": true
       },
       {
@@ -36440,9 +36440,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b93,870",
-        "priceNum": 3870,
-        "basePrice": 3870,
+        "price": "\u20b94,240",
+        "priceNum": 4240,
+        "basePrice": 4240,
         "active": true
       }
     ]
@@ -36454,7 +36454,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Camon 16",
     "slug": "tecno-camon-16",
     "minPrice": 2670,
-    "maxPrice": 3250,
+    "maxPrice": 3770,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b9f6db53-6cf2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -36475,9 +36475,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b92,850",
-        "priceNum": 2850,
-        "basePrice": 2850,
+        "price": "\u20b93,020",
+        "priceNum": 3020,
+        "basePrice": 3020,
         "active": true
       },
       {
@@ -36486,9 +36486,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b93,040",
-        "priceNum": 3040,
-        "basePrice": 3040,
+        "price": "\u20b93,370",
+        "priceNum": 3370,
+        "basePrice": 3370,
         "active": true
       },
       {
@@ -36497,9 +36497,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b93,250",
-        "priceNum": 3250,
-        "basePrice": 3250,
+        "price": "\u20b93,770",
+        "priceNum": 3770,
+        "basePrice": 3770,
         "active": true
       }
     ]
@@ -36511,7 +36511,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Camon 16 Premier",
     "slug": "tecno-camon-16-premier",
     "minPrice": 3850,
-    "maxPrice": 4690,
+    "maxPrice": 4950,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1da110d6-d704.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -36532,9 +36532,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b94,110",
-        "priceNum": 4110,
-        "basePrice": 4110,
+        "price": "\u20b94,200",
+        "priceNum": 4200,
+        "basePrice": 4200,
         "active": true
       },
       {
@@ -36543,9 +36543,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b94,380",
-        "priceNum": 4380,
-        "basePrice": 4380,
+        "price": "\u20b94,550",
+        "priceNum": 4550,
+        "basePrice": 4550,
         "active": true
       },
       {
@@ -36554,9 +36554,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b94,690",
-        "priceNum": 4690,
-        "basePrice": 4690,
+        "price": "\u20b94,950",
+        "priceNum": 4950,
+        "basePrice": 4950,
         "active": true
       }
     ]
@@ -36568,7 +36568,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Camon 17",
     "slug": "tecno-camon-17",
     "minPrice": 3360,
-    "maxPrice": 4090,
+    "maxPrice": 4460,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e4e7755c-4eee.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -36589,9 +36589,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b93,590",
-        "priceNum": 3590,
-        "basePrice": 3590,
+        "price": "\u20b93,710",
+        "priceNum": 3710,
+        "basePrice": 3710,
         "active": true
       },
       {
@@ -36600,9 +36600,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b93,830",
-        "priceNum": 3830,
-        "basePrice": 3830,
+        "price": "\u20b94,060",
+        "priceNum": 4060,
+        "basePrice": 4060,
         "active": true
       },
       {
@@ -36611,9 +36611,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b94,090",
-        "priceNum": 4090,
-        "basePrice": 4090,
+        "price": "\u20b94,460",
+        "priceNum": 4460,
+        "basePrice": 4460,
         "active": true
       }
     ]
@@ -36649,7 +36649,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Camon 18",
     "slug": "tecno-camon-18",
     "minPrice": 3410,
-    "maxPrice": 4160,
+    "maxPrice": 4510,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a5fe6ae2-a71d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -36670,9 +36670,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b93,640",
-        "priceNum": 3640,
-        "basePrice": 3640,
+        "price": "\u20b93,760",
+        "priceNum": 3760,
+        "basePrice": 3760,
         "active": true
       },
       {
@@ -36681,9 +36681,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b93,880",
-        "priceNum": 3880,
-        "basePrice": 3880,
+        "price": "\u20b94,110",
+        "priceNum": 4110,
+        "basePrice": 4110,
         "active": true
       },
       {
@@ -36692,9 +36692,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b94,160",
-        "priceNum": 4160,
-        "basePrice": 4160,
+        "price": "\u20b94,510",
+        "priceNum": 4510,
+        "basePrice": 4510,
         "active": true
       }
     ]
@@ -36706,7 +36706,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Camon 19",
     "slug": "tecno-camon-19",
     "minPrice": 3650,
-    "maxPrice": 4450,
+    "maxPrice": 4750,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/tecno-camon-19-6-gb-128-gb.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -36727,9 +36727,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b93,900",
-        "priceNum": 3900,
-        "basePrice": 3900,
+        "price": "\u20b94,000",
+        "priceNum": 4000,
+        "basePrice": 4000,
         "active": true
       },
       {
@@ -36738,9 +36738,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b94,160",
-        "priceNum": 4160,
-        "basePrice": 4160,
+        "price": "\u20b94,350",
+        "priceNum": 4350,
+        "basePrice": 4350,
         "active": true
       },
       {
@@ -36749,9 +36749,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b94,450",
-        "priceNum": 4450,
-        "basePrice": 4450,
+        "price": "\u20b94,750",
+        "priceNum": 4750,
+        "basePrice": 4750,
         "active": true
       }
     ]
@@ -36763,7 +36763,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Camon 19 Neo",
     "slug": "tecno-camon-19-neo",
     "minPrice": 3520,
-    "maxPrice": 4290,
+    "maxPrice": 4620,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/fe6f00dd-4c1d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -36784,9 +36784,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b93,760",
-        "priceNum": 3760,
-        "basePrice": 3760,
+        "price": "\u20b93,870",
+        "priceNum": 3870,
+        "basePrice": 3870,
         "active": true
       },
       {
@@ -36795,9 +36795,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b94,010",
-        "priceNum": 4010,
-        "basePrice": 4010,
+        "price": "\u20b94,220",
+        "priceNum": 4220,
+        "basePrice": 4220,
         "active": true
       },
       {
@@ -36806,9 +36806,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b94,290",
-        "priceNum": 4290,
-        "basePrice": 4290,
+        "price": "\u20b94,620",
+        "priceNum": 4620,
+        "basePrice": 4620,
         "active": true
       }
     ]
@@ -36855,7 +36855,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Camon 20",
     "slug": "tecno-camon-20",
     "minPrice": 6850,
-    "maxPrice": 8350,
+    "maxPrice": 7950,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/783697e6-354b.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -36876,9 +36876,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b97,320",
-        "priceNum": 7320,
-        "basePrice": 7320,
+        "price": "\u20b97,200",
+        "priceNum": 7200,
+        "basePrice": 7200,
         "active": true
       },
       {
@@ -36887,9 +36887,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b97,800",
-        "priceNum": 7800,
-        "basePrice": 7800,
+        "price": "\u20b97,550",
+        "priceNum": 7550,
+        "basePrice": 7550,
         "active": true
       },
       {
@@ -36898,9 +36898,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b98,350",
-        "priceNum": 8350,
-        "basePrice": 8350,
+        "price": "\u20b97,950",
+        "priceNum": 7950,
+        "basePrice": 7950,
         "active": true
       }
     ]
@@ -36982,7 +36982,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Camon 20s Pro 5G",
     "slug": "tecno-camon-20s-pro-5g",
     "minPrice": 8820,
-    "maxPrice": 10400,
+    "maxPrice": 9780,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/52fb0df1-2778.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37003,9 +37003,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b99,520",
-        "priceNum": 9520,
-        "basePrice": 9520,
+        "price": "\u20b99,300",
+        "priceNum": 9300,
+        "basePrice": 9300,
         "active": true
       },
       {
@@ -37014,9 +37014,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b910,400",
-        "priceNum": 10400,
-        "basePrice": 10400,
+        "price": "\u20b99,780",
+        "priceNum": 9780,
+        "basePrice": 9780,
         "active": true
       }
     ]
@@ -37028,7 +37028,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Camon 30 5G",
     "slug": "tecno-camon-30-5g",
     "minPrice": 12400,
-    "maxPrice": 15120,
+    "maxPrice": 13500,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e0547339-cebf.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37049,9 +37049,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b913,260",
-        "priceNum": 13260,
-        "basePrice": 13260,
+        "price": "\u20b912,750",
+        "priceNum": 12750,
+        "basePrice": 12750,
         "active": true
       },
       {
@@ -37060,9 +37060,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b914,130",
-        "priceNum": 14130,
-        "basePrice": 14130,
+        "price": "\u20b913,100",
+        "priceNum": 13100,
+        "basePrice": 13100,
         "active": true
       },
       {
@@ -37071,9 +37071,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b915,120",
-        "priceNum": 15120,
-        "basePrice": 15120,
+        "price": "\u20b913,500",
+        "priceNum": 13500,
+        "basePrice": 13500,
         "active": true
       }
     ]
@@ -37085,7 +37085,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Camon 30 Premier 5G",
     "slug": "tecno-camon-30-premier-5g",
     "minPrice": 14500,
-    "maxPrice": 17690,
+    "maxPrice": 15600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ad28bc17-d264.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37106,9 +37106,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b915,510",
-        "priceNum": 15510,
-        "basePrice": 15510,
+        "price": "\u20b914,850",
+        "priceNum": 14850,
+        "basePrice": 14850,
         "active": true
       },
       {
@@ -37117,9 +37117,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b916,530",
-        "priceNum": 16530,
-        "basePrice": 16530,
+        "price": "\u20b915,200",
+        "priceNum": 15200,
+        "basePrice": 15200,
         "active": true
       },
       {
@@ -37128,9 +37128,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b917,690",
-        "priceNum": 17690,
-        "basePrice": 17690,
+        "price": "\u20b915,600",
+        "priceNum": 15600,
+        "basePrice": 15600,
         "active": true
       }
     ]
@@ -37142,7 +37142,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Phantom X",
     "slug": "tecno-phantom-x",
     "minPrice": 5230,
-    "maxPrice": 6060,
+    "maxPrice": 5830,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/88201347-6413.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37163,9 +37163,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,640",
-        "priceNum": 5640,
-        "basePrice": 5640,
+        "price": "\u20b95,530",
+        "priceNum": 5530,
+        "basePrice": 5530,
         "active": true
       },
       {
@@ -37174,9 +37174,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,060",
-        "priceNum": 6060,
-        "basePrice": 6060,
+        "price": "\u20b95,830",
+        "priceNum": 5830,
+        "basePrice": 5830,
         "active": true
       }
     ]
@@ -37188,7 +37188,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Phantom X2 5G",
     "slug": "tecno-phantom-x2-5g",
     "minPrice": 12500,
-    "maxPrice": 15250,
+    "maxPrice": 13600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/67c2092e-69b1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37209,9 +37209,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b913,370",
-        "priceNum": 13370,
-        "basePrice": 13370,
+        "price": "\u20b912,850",
+        "priceNum": 12850,
+        "basePrice": 12850,
         "active": true
       },
       {
@@ -37220,9 +37220,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b914,240",
-        "priceNum": 14240,
-        "basePrice": 14240,
+        "price": "\u20b913,200",
+        "priceNum": 13200,
+        "basePrice": 13200,
         "active": true
       },
       {
@@ -37231,9 +37231,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b915,250",
-        "priceNum": 15250,
-        "basePrice": 15250,
+        "price": "\u20b913,600",
+        "priceNum": 13600,
+        "basePrice": 13600,
         "active": true
       }
     ]
@@ -37245,7 +37245,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Phantom X2 Pro 5G",
     "slug": "tecno-phantom-x2-pro-5g",
     "minPrice": 14200,
-    "maxPrice": 16750,
+    "maxPrice": 15160,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/200ca8fb-1fca.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37266,9 +37266,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b915,330",
-        "priceNum": 15330,
-        "basePrice": 15330,
+        "price": "\u20b914,680",
+        "priceNum": 14680,
+        "basePrice": 14680,
         "active": true
       },
       {
@@ -37277,9 +37277,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b916,750",
-        "priceNum": 16750,
-        "basePrice": 16750,
+        "price": "\u20b915,160",
+        "priceNum": 15160,
+        "basePrice": 15160,
         "active": true
       }
     ]
@@ -37291,7 +37291,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Phantom V Flip2 5G",
     "slug": "tecno-phantom-v-flip2-5g",
     "minPrice": 15300,
-    "maxPrice": 18050,
+    "maxPrice": 16260,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/09b62a48-b549.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37312,9 +37312,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b916,520",
-        "priceNum": 16520,
-        "basePrice": 16520,
+        "price": "\u20b915,780",
+        "priceNum": 15780,
+        "basePrice": 15780,
         "active": true
       },
       {
@@ -37323,9 +37323,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b918,050",
-        "priceNum": 18050,
-        "basePrice": 18050,
+        "price": "\u20b916,260",
+        "priceNum": 16260,
+        "basePrice": 16260,
         "active": true
       }
     ]
@@ -37337,7 +37337,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Phantom V Flip 5G",
     "slug": "tecno-phantom-v-flip-5g",
     "minPrice": 13100,
-    "maxPrice": 15450,
+    "maxPrice": 14060,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d3d14075-fdf4.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37358,9 +37358,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b914,140",
-        "priceNum": 14140,
-        "basePrice": 14140,
+        "price": "\u20b913,580",
+        "priceNum": 13580,
+        "basePrice": 13580,
         "active": true
       },
       {
@@ -37369,9 +37369,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b915,450",
-        "priceNum": 15450,
-        "basePrice": 15450,
+        "price": "\u20b914,060",
+        "priceNum": 14060,
+        "basePrice": 14060,
         "active": true
       }
     ]
@@ -37383,7 +37383,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Phantom V Fold2 5G",
     "slug": "tecno-phantom-v-fold2-5g",
     "minPrice": 30000,
-    "maxPrice": 35400,
+    "maxPrice": 30580,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/6c564755-f42e.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37404,9 +37404,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b932,400",
-        "priceNum": 32400,
-        "basePrice": 32400,
+        "price": "\u20b930,480",
+        "priceNum": 30480,
+        "basePrice": 30480,
         "active": true
       },
       {
@@ -37415,9 +37415,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b935,400",
-        "priceNum": 35400,
-        "basePrice": 35400,
+        "price": "\u20b930,580",
+        "priceNum": 30580,
+        "basePrice": 30580,
         "active": true
       }
     ]
@@ -37464,7 +37464,7 @@ const MOBILE_DATASET = [
     "model": "Tecno POP X",
     "slug": "tecno-pop-x",
     "minPrice": 5350,
-    "maxPrice": 6200,
+    "maxPrice": 5950,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c8ee3070-9bf9.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37485,9 +37485,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,770",
-        "priceNum": 5770,
-        "basePrice": 5770,
+        "price": "\u20b95,650",
+        "priceNum": 5650,
+        "basePrice": 5650,
         "active": true
       },
       {
@@ -37496,9 +37496,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,200",
-        "priceNum": 6200,
-        "basePrice": 6200,
+        "price": "\u20b95,950",
+        "priceNum": 5950,
+        "basePrice": 5950,
         "active": true
       }
     ]
@@ -37615,7 +37615,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Pova 4",
     "slug": "tecno-pova-4",
     "minPrice": 3780,
-    "maxPrice": 4610,
+    "maxPrice": 4880,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/64839fcd-25ea.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37636,9 +37636,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b94,040",
-        "priceNum": 4040,
-        "basePrice": 4040,
+        "price": "\u20b94,130",
+        "priceNum": 4130,
+        "basePrice": 4130,
         "active": true
       },
       {
@@ -37647,9 +37647,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b94,300",
-        "priceNum": 4300,
-        "basePrice": 4300,
+        "price": "\u20b94,480",
+        "priceNum": 4480,
+        "basePrice": 4480,
         "active": true
       },
       {
@@ -37658,9 +37658,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b94,610",
-        "priceNum": 4610,
-        "basePrice": 4610,
+        "price": "\u20b94,880",
+        "priceNum": 4880,
+        "basePrice": 4880,
         "active": true
       }
     ]
@@ -37672,7 +37672,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Pova 5G",
     "slug": "tecno-pova-5g",
     "minPrice": 4660,
-    "maxPrice": 5680,
+    "maxPrice": 5760,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f331c716-54a9.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37693,9 +37693,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b94,980",
-        "priceNum": 4980,
-        "basePrice": 4980,
+        "price": "\u20b95,010",
+        "priceNum": 5010,
+        "basePrice": 5010,
         "active": true
       },
       {
@@ -37704,9 +37704,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b95,310",
-        "priceNum": 5310,
-        "basePrice": 5310,
+        "price": "\u20b95,360",
+        "priceNum": 5360,
+        "basePrice": 5360,
         "active": true
       },
       {
@@ -37715,9 +37715,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b95,680",
-        "priceNum": 5680,
-        "basePrice": 5680,
+        "price": "\u20b95,760",
+        "priceNum": 5760,
+        "basePrice": 5760,
         "active": true
       }
     ]
@@ -37799,7 +37799,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Pova 6 Pro 5G",
     "slug": "tecno-pova-6-pro-5g",
     "minPrice": 7700,
-    "maxPrice": 9080,
+    "maxPrice": 8660,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0498bf67-688d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37820,9 +37820,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b98,310",
-        "priceNum": 8310,
-        "basePrice": 8310,
+        "price": "\u20b98,180",
+        "priceNum": 8180,
+        "basePrice": 8180,
         "active": true
       },
       {
@@ -37831,9 +37831,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b99,080",
-        "priceNum": 9080,
-        "basePrice": 9080,
+        "price": "\u20b98,660",
+        "priceNum": 8660,
+        "basePrice": 8660,
         "active": true
       }
     ]
@@ -37961,7 +37961,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Pova Neo",
     "slug": "tecno-pova-neo",
     "minPrice": 2950,
-    "maxPrice": 3590,
+    "maxPrice": 4050,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/512cadab-b5be.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -37982,9 +37982,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b93,150",
-        "priceNum": 3150,
-        "basePrice": 3150,
+        "price": "\u20b93,300",
+        "priceNum": 3300,
+        "basePrice": 3300,
         "active": true
       },
       {
@@ -37993,9 +37993,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b93,360",
-        "priceNum": 3360,
-        "basePrice": 3360,
+        "price": "\u20b93,650",
+        "priceNum": 3650,
+        "basePrice": 3650,
         "active": true
       },
       {
@@ -38004,9 +38004,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b93,590",
-        "priceNum": 3590,
-        "basePrice": 3590,
+        "price": "\u20b94,050",
+        "priceNum": 4050,
+        "basePrice": 4050,
         "active": true
       }
     ]
@@ -38018,7 +38018,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Pova Slim 5G",
     "slug": "tecno-pova-slim-5g",
     "minPrice": 11530,
-    "maxPrice": 14060,
+    "maxPrice": 12630,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a7ce28e5-abba.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -38039,9 +38039,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b912,330",
-        "priceNum": 12330,
-        "basePrice": 12330,
+        "price": "\u20b911,880",
+        "priceNum": 11880,
+        "basePrice": 11880,
         "active": true
       },
       {
@@ -38050,9 +38050,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b913,140",
-        "priceNum": 13140,
-        "basePrice": 13140,
+        "price": "\u20b912,230",
+        "priceNum": 12230,
+        "basePrice": 12230,
         "active": true
       },
       {
@@ -38061,9 +38061,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b914,060",
-        "priceNum": 14060,
-        "basePrice": 14060,
+        "price": "\u20b912,630",
+        "priceNum": 12630,
+        "basePrice": 12630,
         "active": true
       }
     ]
@@ -38110,7 +38110,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Spark 5",
     "slug": "tecno-spark-5",
     "minPrice": 1930,
-    "maxPrice": 2350,
+    "maxPrice": 3030,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9939e69f-014d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -38131,9 +38131,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b92,060",
-        "priceNum": 2060,
-        "basePrice": 2060,
+        "price": "\u20b92,280",
+        "priceNum": 2280,
+        "basePrice": 2280,
         "active": true
       },
       {
@@ -38142,9 +38142,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b92,200",
-        "priceNum": 2200,
-        "basePrice": 2200,
+        "price": "\u20b92,630",
+        "priceNum": 2630,
+        "basePrice": 2630,
         "active": true
       },
       {
@@ -38153,9 +38153,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b92,350",
-        "priceNum": 2350,
-        "basePrice": 2350,
+        "price": "\u20b93,030",
+        "priceNum": 3030,
+        "basePrice": 3030,
         "active": true
       }
     ]
@@ -38167,7 +38167,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Spark 5 Pro",
     "slug": "tecno-spark-5-pro",
     "minPrice": 2390,
-    "maxPrice": 2820,
+    "maxPrice": 3350,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c87d3412-31a8.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -38188,9 +38188,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,580",
-        "priceNum": 2580,
-        "basePrice": 2580,
+        "price": "\u20b92,870",
+        "priceNum": 2870,
+        "basePrice": 2870,
         "active": true
       },
       {
@@ -38199,9 +38199,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,820",
-        "priceNum": 2820,
-        "basePrice": 2820,
+        "price": "\u20b93,350",
+        "priceNum": 3350,
+        "basePrice": 3350,
         "active": true
       }
     ]
@@ -38259,7 +38259,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Spark 7P",
     "slug": "tecno-spark-7p",
     "minPrice": 2720,
-    "maxPrice": 3310,
+    "maxPrice": 3820,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/65be7cc3-8979.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -38280,9 +38280,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b92,910",
-        "priceNum": 2910,
-        "basePrice": 2910,
+        "price": "\u20b93,070",
+        "priceNum": 3070,
+        "basePrice": 3070,
         "active": true
       },
       {
@@ -38291,9 +38291,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b93,100",
-        "priceNum": 3100,
-        "basePrice": 3100,
+        "price": "\u20b93,420",
+        "priceNum": 3420,
+        "basePrice": 3420,
         "active": true
       },
       {
@@ -38302,9 +38302,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b93,310",
-        "priceNum": 3310,
-        "basePrice": 3310,
+        "price": "\u20b93,820",
+        "priceNum": 3820,
+        "basePrice": 3820,
         "active": true
       }
     ]
@@ -38351,7 +38351,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Spark 8",
     "slug": "tecno-spark-8",
     "minPrice": 2200,
-    "maxPrice": 2680,
+    "maxPrice": 3300,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f2912cba-97ff.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -38372,9 +38372,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b92,350",
-        "priceNum": 2350,
-        "basePrice": 2350,
+        "price": "\u20b92,550",
+        "priceNum": 2550,
+        "basePrice": 2550,
         "active": true
       },
       {
@@ -38383,9 +38383,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b92,500",
-        "priceNum": 2500,
-        "basePrice": 2500,
+        "price": "\u20b92,900",
+        "priceNum": 2900,
+        "basePrice": 2900,
         "active": true
       },
       {
@@ -38394,9 +38394,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b92,680",
-        "priceNum": 2680,
-        "basePrice": 2680,
+        "price": "\u20b93,300",
+        "priceNum": 3300,
+        "basePrice": 3300,
         "active": true
       }
     ]
@@ -38432,7 +38432,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Spark 8P",
     "slug": "tecno-spark-8p",
     "minPrice": 2820,
-    "maxPrice": 3440,
+    "maxPrice": 3920,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/34d625f2-ee7a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -38453,9 +38453,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b93,010",
-        "priceNum": 3010,
-        "basePrice": 3010,
+        "price": "\u20b93,170",
+        "priceNum": 3170,
+        "basePrice": 3170,
         "active": true
       },
       {
@@ -38464,9 +38464,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b93,210",
-        "priceNum": 3210,
-        "basePrice": 3210,
+        "price": "\u20b93,520",
+        "priceNum": 3520,
+        "basePrice": 3520,
         "active": true
       },
       {
@@ -38475,9 +38475,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b93,440",
-        "priceNum": 3440,
-        "basePrice": 3440,
+        "price": "\u20b93,920",
+        "priceNum": 3920,
+        "basePrice": 3920,
         "active": true
       }
     ]
@@ -38489,7 +38489,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Spark 8 Pro",
     "slug": "tecno-spark-8-pro",
     "minPrice": 2900,
-    "maxPrice": 3420,
+    "maxPrice": 3860,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/46dc8eb4-67f0.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -38510,9 +38510,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b93,130",
-        "priceNum": 3130,
-        "basePrice": 3130,
+        "price": "\u20b93,380",
+        "priceNum": 3380,
+        "basePrice": 3380,
         "active": true
       },
       {
@@ -38521,9 +38521,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b93,420",
-        "priceNum": 3420,
-        "basePrice": 3420,
+        "price": "\u20b93,860",
+        "priceNum": 3860,
+        "basePrice": 3860,
         "active": true
       }
     ]
@@ -38535,7 +38535,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Spark 8T",
     "slug": "tecno-spark-8t",
     "minPrice": 2730,
-    "maxPrice": 3330,
+    "maxPrice": 3830,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b1241c21-16a5.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -38556,9 +38556,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b92,920",
-        "priceNum": 2920,
-        "basePrice": 2920,
+        "price": "\u20b93,080",
+        "priceNum": 3080,
+        "basePrice": 3080,
         "active": true
       },
       {
@@ -38567,9 +38567,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b93,110",
-        "priceNum": 3110,
-        "basePrice": 3110,
+        "price": "\u20b93,430",
+        "priceNum": 3430,
+        "basePrice": 3430,
         "active": true
       },
       {
@@ -38578,9 +38578,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b93,330",
-        "priceNum": 3330,
-        "basePrice": 3330,
+        "price": "\u20b93,830",
+        "priceNum": 3830,
+        "basePrice": 3830,
         "active": true
       }
     ]
@@ -38743,7 +38743,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Spark Go",
     "slug": "tecno-spark-go",
     "minPrice": 3720,
-    "maxPrice": 4530,
+    "maxPrice": 4820,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/cc9139ab-fda1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -38764,9 +38764,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b93,980",
-        "priceNum": 3980,
-        "basePrice": 3980,
+        "price": "\u20b94,070",
+        "priceNum": 4070,
+        "basePrice": 4070,
         "active": true
       },
       {
@@ -38775,9 +38775,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b94,240",
-        "priceNum": 4240,
-        "basePrice": 4240,
+        "price": "\u20b94,420",
+        "priceNum": 4420,
+        "basePrice": 4420,
         "active": true
       },
       {
@@ -38786,9 +38786,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b94,530",
-        "priceNum": 4530,
-        "basePrice": 4530,
+        "price": "\u20b94,820",
+        "priceNum": 4820,
+        "basePrice": 4820,
         "active": true
       }
     ]
@@ -38800,7 +38800,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Spark GO 3",
     "slug": "tecno-spark-go-3",
     "minPrice": 5880,
-    "maxPrice": 7170,
+    "maxPrice": 6980,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8456de35-44e8.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -38821,9 +38821,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b96,290",
-        "priceNum": 6290,
-        "basePrice": 6290,
+        "price": "\u20b96,230",
+        "priceNum": 6230,
+        "basePrice": 6230,
         "active": true
       },
       {
@@ -38832,9 +38832,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b96,700",
-        "priceNum": 6700,
-        "basePrice": 6700,
+        "price": "\u20b96,580",
+        "priceNum": 6580,
+        "basePrice": 6580,
         "active": true
       },
       {
@@ -38843,9 +38843,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b97,170",
-        "priceNum": 7170,
-        "basePrice": 7170,
+        "price": "\u20b96,980",
+        "priceNum": 6980,
+        "basePrice": 6980,
         "active": true
       }
     ]
@@ -38857,7 +38857,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Spark Go 5G",
     "slug": "tecno-spark-go-5g",
     "minPrice": 5620,
-    "maxPrice": 6850,
+    "maxPrice": 6720,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/90daca0b-ddc0.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -38878,9 +38878,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b96,010",
-        "priceNum": 6010,
-        "basePrice": 6010,
+        "price": "\u20b95,970",
+        "priceNum": 5970,
+        "basePrice": 5970,
         "active": true
       },
       {
@@ -38889,9 +38889,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b96,400",
-        "priceNum": 6400,
-        "basePrice": 6400,
+        "price": "\u20b96,320",
+        "priceNum": 6320,
+        "basePrice": 6320,
         "active": true
       },
       {
@@ -38900,9 +38900,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b96,850",
-        "priceNum": 6850,
-        "basePrice": 6850,
+        "price": "\u20b96,720",
+        "priceNum": 6720,
+        "basePrice": 6720,
         "active": true
       }
     ]
@@ -38914,7 +38914,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Spark Power 2",
     "slug": "tecno-spark-power-2",
     "minPrice": 2270,
-    "maxPrice": 2760,
+    "maxPrice": 3370,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/669f956b-f32f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -38935,9 +38935,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b92,420",
-        "priceNum": 2420,
-        "basePrice": 2420,
+        "price": "\u20b92,620",
+        "priceNum": 2620,
+        "basePrice": 2620,
         "active": true
       },
       {
@@ -38946,9 +38946,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b92,580",
-        "priceNum": 2580,
-        "basePrice": 2580,
+        "price": "\u20b92,970",
+        "priceNum": 2970,
+        "basePrice": 2970,
         "active": true
       },
       {
@@ -38957,9 +38957,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b92,760",
-        "priceNum": 2760,
-        "basePrice": 2760,
+        "price": "\u20b93,370",
+        "priceNum": 3370,
+        "basePrice": 3370,
         "active": true
       }
     ]
@@ -38971,7 +38971,7 @@ const MOBILE_DATASET = [
     "model": "Tecno Spark Power 2 Air",
     "slug": "tecno-spark-power-2-air",
     "minPrice": 2110,
-    "maxPrice": 2570,
+    "maxPrice": 3210,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/16a81d0d-ef7d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/1f11e3b6-79ef.jpg?w=200",
     "variants": [
@@ -38992,9 +38992,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b92,250",
-        "priceNum": 2250,
-        "basePrice": 2250,
+        "price": "\u20b92,460",
+        "priceNum": 2460,
+        "basePrice": 2460,
         "active": true
       },
       {
@@ -39003,9 +39003,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b92,400",
-        "priceNum": 2400,
-        "basePrice": 2400,
+        "price": "\u20b92,810",
+        "priceNum": 2810,
+        "basePrice": 2810,
         "active": true
       },
       {
@@ -39014,9 +39014,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b92,570",
-        "priceNum": 2570,
-        "basePrice": 2570,
+        "price": "\u20b93,210",
+        "priceNum": 3210,
+        "basePrice": 3210,
         "active": true
       }
     ]
@@ -39098,7 +39098,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X9s",
     "slug": "vivo-x9s",
     "minPrice": 2330,
-    "maxPrice": 2700,
+    "maxPrice": 2930,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-4qq59kcr-otic.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -39119,9 +39119,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,510",
-        "priceNum": 2510,
-        "basePrice": 2510,
+        "price": "\u20b92,630",
+        "priceNum": 2630,
+        "basePrice": 2630,
         "active": true
       },
       {
@@ -39130,9 +39130,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,700",
-        "priceNum": 2700,
-        "basePrice": 2700,
+        "price": "\u20b92,930",
+        "priceNum": 2930,
+        "basePrice": 2930,
         "active": true
       }
     ]
@@ -39144,7 +39144,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X9s Plus",
     "slug": "vivo-x9s-plus",
     "minPrice": 2550,
-    "maxPrice": 3000,
+    "maxPrice": 3510,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-qdebytb6-91ki.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -39165,9 +39165,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,750",
-        "priceNum": 2750,
-        "basePrice": 2750,
+        "price": "\u20b93,030",
+        "priceNum": 3030,
+        "basePrice": 3030,
         "active": true
       },
       {
@@ -39176,9 +39176,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b93,000",
-        "priceNum": 3000,
-        "basePrice": 3000,
+        "price": "\u20b93,510",
+        "priceNum": 3510,
+        "basePrice": 3510,
         "active": true
       }
     ]
@@ -39190,7 +39190,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X21",
     "slug": "vivo-x21",
     "minPrice": 3640,
-    "maxPrice": 4220,
+    "maxPrice": 4240,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-yjvkkyl5-knaz.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -39211,9 +39211,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,930",
-        "priceNum": 3930,
-        "basePrice": 3930,
+        "price": "\u20b93,940",
+        "priceNum": 3940,
+        "basePrice": 3940,
         "active": true
       },
       {
@@ -39222,9 +39222,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,220",
-        "priceNum": 4220,
-        "basePrice": 4220,
+        "price": "\u20b94,240",
+        "priceNum": 4240,
+        "basePrice": 4240,
         "active": true
       }
     ]
@@ -39271,7 +39271,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X50 Pro",
     "slug": "vivo-x50-pro",
     "minPrice": 9130,
-    "maxPrice": 10770,
+    "maxPrice": 10090,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c3d045df-6914.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -39292,9 +39292,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b99,860",
-        "priceNum": 9860,
-        "basePrice": 9860,
+        "price": "\u20b99,610",
+        "priceNum": 9610,
+        "basePrice": 9610,
         "active": true
       },
       {
@@ -39303,9 +39303,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b910,770",
-        "priceNum": 10770,
-        "basePrice": 10770,
+        "price": "\u20b910,090",
+        "priceNum": 10090,
+        "basePrice": 10090,
         "active": true
       }
     ]
@@ -39352,7 +39352,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X60 Pro",
     "slug": "vivo-x60-pro",
     "minPrice": 11920,
-    "maxPrice": 14060,
+    "maxPrice": 12880,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/23fc399e-d40c.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -39373,9 +39373,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b912,870",
-        "priceNum": 12870,
-        "basePrice": 12870,
+        "price": "\u20b912,400",
+        "priceNum": 12400,
+        "basePrice": 12400,
         "active": true
       },
       {
@@ -39384,9 +39384,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b914,060",
-        "priceNum": 14060,
-        "basePrice": 14060,
+        "price": "\u20b912,880",
+        "priceNum": 12880,
+        "basePrice": 12880,
         "active": true
       }
     ]
@@ -39398,7 +39398,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X60 Pro Plus",
     "slug": "vivo-x60-pro-plus",
     "minPrice": 13310,
-    "maxPrice": 15700,
+    "maxPrice": 14270,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e9346e7b-eb02.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -39419,9 +39419,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b914,370",
-        "priceNum": 14370,
-        "basePrice": 14370,
+        "price": "\u20b913,790",
+        "priceNum": 13790,
+        "basePrice": 13790,
         "active": true
       },
       {
@@ -39430,9 +39430,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b915,700",
-        "priceNum": 15700,
-        "basePrice": 15700,
+        "price": "\u20b914,270",
+        "priceNum": 14270,
+        "basePrice": 14270,
         "active": true
       }
     ]
@@ -39490,7 +39490,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X70 Pro Plus",
     "slug": "vivo-x70-pro-plus",
     "minPrice": 17760,
-    "maxPrice": 20950,
+    "maxPrice": 18720,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7af7148b-3ee7.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -39511,9 +39511,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b919,180",
-        "priceNum": 19180,
-        "basePrice": 19180,
+        "price": "\u20b918,240",
+        "priceNum": 18240,
+        "basePrice": 18240,
         "active": true
       },
       {
@@ -39522,9 +39522,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b920,950",
-        "priceNum": 20950,
-        "basePrice": 20950,
+        "price": "\u20b918,720",
+        "priceNum": 18720,
+        "basePrice": 18720,
         "active": true
       }
     ]
@@ -39571,7 +39571,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X80 Pro",
     "slug": "vivo-x80-pro",
     "minPrice": 20330,
-    "maxPrice": 23980,
+    "maxPrice": 21290,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/03b8ba87-6957.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -39592,9 +39592,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b921,950",
-        "priceNum": 21950,
-        "basePrice": 21950,
+        "price": "\u20b920,810",
+        "priceNum": 20810,
+        "basePrice": 20810,
         "active": true
       },
       {
@@ -39603,9 +39603,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b923,980",
-        "priceNum": 23980,
-        "basePrice": 23980,
+        "price": "\u20b921,290",
+        "priceNum": 21290,
+        "basePrice": 21290,
         "active": true
       }
     ]
@@ -39617,7 +39617,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X90",
     "slug": "vivo-x90",
     "minPrice": 23800,
-    "maxPrice": 27600,
+    "maxPrice": 24400,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f6c77ea1-e0fe.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -39638,9 +39638,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b925,700",
-        "priceNum": 25700,
-        "basePrice": 25700,
+        "price": "\u20b924,100",
+        "priceNum": 24100,
+        "basePrice": 24100,
         "active": true
       },
       {
@@ -39649,9 +39649,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b927,600",
-        "priceNum": 27600,
-        "basePrice": 27600,
+        "price": "\u20b924,400",
+        "priceNum": 24400,
+        "basePrice": 24400,
         "active": true
       }
     ]
@@ -39663,7 +39663,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X90 Pro",
     "slug": "vivo-x90-pro",
     "minPrice": 28660,
-    "maxPrice": 33810,
+    "maxPrice": 29620,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/adf2a842-cde9.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -39684,9 +39684,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b930,950",
-        "priceNum": 30950,
-        "basePrice": 30950,
+        "price": "\u20b929,140",
+        "priceNum": 29140,
+        "basePrice": 29140,
         "active": true
       },
       {
@@ -39695,9 +39695,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b933,810",
-        "priceNum": 33810,
-        "basePrice": 33810,
+        "price": "\u20b929,620",
+        "priceNum": 29620,
+        "basePrice": 29620,
         "active": true
       }
     ]
@@ -39744,7 +39744,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X100 Pro",
     "slug": "vivo-x100-pro",
     "minPrice": 32830,
-    "maxPrice": 38730,
+    "maxPrice": 33790,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ba8eee96-61e8.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -39765,9 +39765,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b935,450",
-        "priceNum": 35450,
-        "basePrice": 35450,
+        "price": "\u20b933,310",
+        "priceNum": 33310,
+        "basePrice": 33310,
         "active": true
       },
       {
@@ -39776,9 +39776,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b938,730",
-        "priceNum": 38730,
-        "basePrice": 38730,
+        "price": "\u20b933,790",
+        "priceNum": 33790,
+        "basePrice": 33790,
         "active": true
       }
     ]
@@ -39860,7 +39860,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X200 Pro",
     "slug": "vivo-x200-pro",
     "minPrice": 48500,
-    "maxPrice": 57230,
+    "maxPrice": 49460,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3f12aac3-5fb6.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -39881,9 +39881,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b952,380",
-        "priceNum": 52380,
-        "basePrice": 52380,
+        "price": "\u20b948,980",
+        "priceNum": 48980,
+        "basePrice": 48980,
         "active": true
       },
       {
@@ -39892,9 +39892,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b957,230",
-        "priceNum": 57230,
-        "basePrice": 57230,
+        "price": "\u20b949,460",
+        "priceNum": 49460,
+        "basePrice": 49460,
         "active": true
       }
     ]
@@ -40022,7 +40022,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X300 Pro",
     "slug": "vivo-x300-pro",
     "minPrice": 62500,
-    "maxPrice": 73750,
+    "maxPrice": 63460,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/59aafe32-2f2f.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -40043,9 +40043,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b967,500",
-        "priceNum": 67500,
-        "basePrice": 67500,
+        "price": "\u20b962,980",
+        "priceNum": 62980,
+        "basePrice": 62980,
         "active": true
       },
       {
@@ -40054,9 +40054,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b973,750",
-        "priceNum": 73750,
-        "basePrice": 73750,
+        "price": "\u20b963,460",
+        "priceNum": 63460,
+        "basePrice": 63460,
         "active": true
       }
     ]
@@ -40068,7 +40068,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X300 Ultra",
     "slug": "vivo-x300-ultra",
     "minPrice": 79000,
-    "maxPrice": 93220,
+    "maxPrice": 79580,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7531b42e-2b26.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -40089,9 +40089,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b985,320",
-        "priceNum": 85320,
-        "basePrice": 85320,
+        "price": "\u20b979,480",
+        "priceNum": 79480,
+        "basePrice": 79480,
         "active": true
       },
       {
@@ -40100,9 +40100,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b993,220",
-        "priceNum": 93220,
-        "basePrice": 93220,
+        "price": "\u20b979,580",
+        "priceNum": 79580,
+        "basePrice": 79580,
         "active": true
       }
     ]
@@ -40114,7 +40114,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X Fold 3 Pro",
     "slug": "vivo-x-fold-3-pro",
     "minPrice": 60070,
-    "maxPrice": 70880,
+    "maxPrice": 60650,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0fa31b79-3b19.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -40135,9 +40135,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b964,870",
-        "priceNum": 64870,
-        "basePrice": 64870,
+        "price": "\u20b960,550",
+        "priceNum": 60550,
+        "basePrice": 60550,
         "active": true
       },
       {
@@ -40146,9 +40146,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b970,880",
-        "priceNum": 70880,
-        "basePrice": 70880,
+        "price": "\u20b960,650",
+        "priceNum": 60650,
+        "basePrice": 60650,
         "active": true
       }
     ]
@@ -40160,7 +40160,7 @@ const MOBILE_DATASET = [
     "model": "Vivo X Fold 5",
     "slug": "vivo-x-fold-5",
     "minPrice": 79800,
-    "maxPrice": 94160,
+    "maxPrice": 80380,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5f069251-031e.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -40181,9 +40181,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b986,180",
-        "priceNum": 86180,
-        "basePrice": 86180,
+        "price": "\u20b980,280",
+        "priceNum": 80280,
+        "basePrice": 80280,
         "active": true
       },
       {
@@ -40192,9 +40192,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b994,160",
-        "priceNum": 94160,
-        "basePrice": 94160,
+        "price": "\u20b980,380",
+        "priceNum": 80380,
+        "basePrice": 80380,
         "active": true
       }
     ]
@@ -40206,7 +40206,7 @@ const MOBILE_DATASET = [
     "model": "Vivo NEX",
     "slug": "vivo-nex",
     "minPrice": 4570,
-    "maxPrice": 5300,
+    "maxPrice": 5170,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-9ssl2gqv-n1zp.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -40227,9 +40227,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,930",
-        "priceNum": 4930,
-        "basePrice": 4930,
+        "price": "\u20b94,870",
+        "priceNum": 4870,
+        "basePrice": 4870,
         "active": true
       },
       {
@@ -40238,9 +40238,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,300",
-        "priceNum": 5300,
-        "basePrice": 5300,
+        "price": "\u20b95,170",
+        "priceNum": 5170,
+        "basePrice": 5170,
         "active": true
       }
     ]
@@ -40252,7 +40252,7 @@ const MOBILE_DATASET = [
     "model": "Vivo S1",
     "slug": "vivo-s1",
     "minPrice": 4200,
-    "maxPrice": 4870,
+    "maxPrice": 4800,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/64688022-c353.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -40273,9 +40273,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,530",
-        "priceNum": 4530,
-        "basePrice": 4530,
+        "price": "\u20b94,500",
+        "priceNum": 4500,
+        "basePrice": 4500,
         "active": true
       },
       {
@@ -40284,9 +40284,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,870",
-        "priceNum": 4870,
-        "basePrice": 4870,
+        "price": "\u20b94,800",
+        "priceNum": 4800,
+        "basePrice": 4800,
         "active": true
       }
     ]
@@ -40298,7 +40298,7 @@ const MOBILE_DATASET = [
     "model": "Vivo S1 Pro",
     "slug": "vivo-s1-pro",
     "minPrice": 4880,
-    "maxPrice": 5750,
+    "maxPrice": 5840,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4b2231d5-1084.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -40319,9 +40319,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b95,270",
-        "priceNum": 5270,
-        "basePrice": 5270,
+        "price": "\u20b95,360",
+        "priceNum": 5360,
+        "basePrice": 5360,
         "active": true
       },
       {
@@ -40330,9 +40330,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b95,750",
-        "priceNum": 5750,
-        "basePrice": 5750,
+        "price": "\u20b95,840",
+        "priceNum": 5840,
+        "basePrice": 5840,
         "active": true
       }
     ]
@@ -40344,7 +40344,7 @@ const MOBILE_DATASET = [
     "model": "Vivo T1",
     "slug": "vivo-t1",
     "minPrice": 5360,
-    "maxPrice": 6210,
+    "maxPrice": 5960,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f4b49f8b-f87b.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -40365,9 +40365,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,780",
-        "priceNum": 5780,
-        "basePrice": 5780,
+        "price": "\u20b95,660",
+        "priceNum": 5660,
+        "basePrice": 5660,
         "active": true
       },
       {
@@ -40376,9 +40376,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,210",
-        "priceNum": 6210,
-        "basePrice": 6210,
+        "price": "\u20b95,960",
+        "priceNum": 5960,
+        "basePrice": 5960,
         "active": true
       }
     ]
@@ -40436,7 +40436,7 @@ const MOBILE_DATASET = [
     "model": "Vivo T1x",
     "slug": "vivo-t1x",
     "minPrice": 4530,
-    "maxPrice": 5250,
+    "maxPrice": 5130,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/74b38842-5793.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -40457,9 +40457,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,890",
-        "priceNum": 4890,
-        "basePrice": 4890,
+        "price": "\u20b94,830",
+        "priceNum": 4830,
+        "basePrice": 4830,
         "active": true
       },
       {
@@ -40468,9 +40468,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,250",
-        "priceNum": 5250,
-        "basePrice": 5250,
+        "price": "\u20b95,130",
+        "priceNum": 5130,
+        "basePrice": 5130,
         "active": true
       }
     ]
@@ -41255,7 +41255,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V5",
     "slug": "vivo-v5",
     "minPrice": 1560,
-    "maxPrice": 1800,
+    "maxPrice": 2160,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-nzr3ynoe-ydzd.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -41276,9 +41276,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,680",
-        "priceNum": 1680,
-        "basePrice": 1680,
+        "price": "\u20b91,860",
+        "priceNum": 1860,
+        "basePrice": 1860,
         "active": true
       },
       {
@@ -41287,9 +41287,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b91,800",
-        "priceNum": 1800,
-        "basePrice": 1800,
+        "price": "\u20b92,160",
+        "priceNum": 2160,
+        "basePrice": 2160,
         "active": true
       }
     ]
@@ -41336,7 +41336,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V7",
     "slug": "vivo-v7",
     "minPrice": 2150,
-    "maxPrice": 2490,
+    "maxPrice": 2750,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-e1c1q4yk-zewu.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -41357,9 +41357,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,320",
-        "priceNum": 2320,
-        "basePrice": 2320,
+        "price": "\u20b92,450",
+        "priceNum": 2450,
+        "basePrice": 2450,
         "active": true
       },
       {
@@ -41368,9 +41368,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,490",
-        "priceNum": 2490,
-        "basePrice": 2490,
+        "price": "\u20b92,750",
+        "priceNum": 2750,
+        "basePrice": 2750,
         "active": true
       }
     ]
@@ -41382,7 +41382,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V7 Plus",
     "slug": "vivo-v7-plus",
     "minPrice": 2230,
-    "maxPrice": 2630,
+    "maxPrice": 3190,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-jmysvd34-nvsw.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -41403,9 +41403,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,400",
-        "priceNum": 2400,
-        "basePrice": 2400,
+        "price": "\u20b92,710",
+        "priceNum": 2710,
+        "basePrice": 2710,
         "active": true
       },
       {
@@ -41414,9 +41414,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b92,630",
-        "priceNum": 2630,
-        "basePrice": 2630,
+        "price": "\u20b93,190",
+        "priceNum": 3190,
+        "basePrice": 3190,
         "active": true
       }
     ]
@@ -41428,7 +41428,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V9",
     "slug": "vivo-v9",
     "minPrice": 2830,
-    "maxPrice": 3280,
+    "maxPrice": 3430,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-oyfuthc1-tmyn.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -41449,9 +41449,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,050",
-        "priceNum": 3050,
-        "basePrice": 3050,
+        "price": "\u20b93,130",
+        "priceNum": 3130,
+        "basePrice": 3130,
         "active": true
       },
       {
@@ -41460,9 +41460,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,280",
-        "priceNum": 3280,
-        "basePrice": 3280,
+        "price": "\u20b93,430",
+        "priceNum": 3430,
+        "basePrice": 3430,
         "active": true
       }
     ]
@@ -41509,7 +41509,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V9 Youth",
     "slug": "vivo-v9-youth",
     "minPrice": 2230,
-    "maxPrice": 2580,
+    "maxPrice": 2830,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-rk3tdmhe-mf2u.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -41530,9 +41530,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,400",
-        "priceNum": 2400,
-        "basePrice": 2400,
+        "price": "\u20b92,530",
+        "priceNum": 2530,
+        "basePrice": 2530,
         "active": true
       },
       {
@@ -41541,9 +41541,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,580",
-        "priceNum": 2580,
-        "basePrice": 2580,
+        "price": "\u20b92,830",
+        "priceNum": 2830,
+        "basePrice": 2830,
         "active": true
       }
     ]
@@ -41555,7 +41555,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V11",
     "slug": "vivo-v11",
     "minPrice": 3460,
-    "maxPrice": 4010,
+    "maxPrice": 4060,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-nuhjcjp6-qf4s.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -41576,9 +41576,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,730",
-        "priceNum": 3730,
-        "basePrice": 3730,
+        "price": "\u20b93,760",
+        "priceNum": 3760,
+        "basePrice": 3760,
         "active": true
       },
       {
@@ -41587,9 +41587,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,010",
-        "priceNum": 4010,
-        "basePrice": 4010,
+        "price": "\u20b94,060",
+        "priceNum": 4060,
+        "basePrice": 4060,
         "active": true
       }
     ]
@@ -41601,7 +41601,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V11 Pro",
     "slug": "vivo-v11-pro",
     "minPrice": 3920,
-    "maxPrice": 4620,
+    "maxPrice": 4880,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-occhlr3b-qezs.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -41622,9 +41622,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b94,230",
-        "priceNum": 4230,
-        "basePrice": 4230,
+        "price": "\u20b94,400",
+        "priceNum": 4400,
+        "basePrice": 4400,
         "active": true
       },
       {
@@ -41633,9 +41633,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b94,620",
-        "priceNum": 4620,
-        "basePrice": 4620,
+        "price": "\u20b94,880",
+        "priceNum": 4880,
+        "basePrice": 4880,
         "active": true
       }
     ]
@@ -41647,7 +41647,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V15",
     "slug": "vivo-v15",
     "minPrice": 4370,
-    "maxPrice": 5060,
+    "maxPrice": 4970,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/cf7fd450-f15a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -41668,9 +41668,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,710",
-        "priceNum": 4710,
-        "basePrice": 4710,
+        "price": "\u20b94,670",
+        "priceNum": 4670,
+        "basePrice": 4670,
         "active": true
       },
       {
@@ -41679,9 +41679,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,060",
-        "priceNum": 5060,
-        "basePrice": 5060,
+        "price": "\u20b94,970",
+        "priceNum": 4970,
+        "basePrice": 4970,
         "active": true
       }
     ]
@@ -41728,7 +41728,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V17",
     "slug": "vivo-v17",
     "minPrice": 5830,
-    "maxPrice": 6760,
+    "maxPrice": 6430,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7a8e00e3-e7d1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -41749,9 +41749,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b96,290",
-        "priceNum": 6290,
-        "basePrice": 6290,
+        "price": "\u20b96,130",
+        "priceNum": 6130,
+        "basePrice": 6130,
         "active": true
       },
       {
@@ -41760,9 +41760,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,760",
-        "priceNum": 6760,
-        "basePrice": 6760,
+        "price": "\u20b96,430",
+        "priceNum": 6430,
+        "basePrice": 6430,
         "active": true
       }
     ]
@@ -41774,7 +41774,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V17 Pro",
     "slug": "vivo-v17-pro",
     "minPrice": 5950,
-    "maxPrice": 7020,
+    "maxPrice": 6910,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c512dd2e-5423.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -41795,9 +41795,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b96,420",
-        "priceNum": 6420,
-        "basePrice": 6420,
+        "price": "\u20b96,430",
+        "priceNum": 6430,
+        "basePrice": 6430,
         "active": true
       },
       {
@@ -41806,9 +41806,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b97,020",
-        "priceNum": 7020,
-        "basePrice": 7020,
+        "price": "\u20b96,910",
+        "priceNum": 6910,
+        "basePrice": 6910,
         "active": true
       }
     ]
@@ -41912,7 +41912,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V20 Pro",
     "slug": "vivo-v20-pro",
     "minPrice": 8180,
-    "maxPrice": 9650,
+    "maxPrice": 9140,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/69882714-3a53.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -41933,9 +41933,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b98,830",
-        "priceNum": 8830,
-        "basePrice": 8830,
+        "price": "\u20b98,660",
+        "priceNum": 8660,
+        "basePrice": 8660,
         "active": true
       },
       {
@@ -41944,9 +41944,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b99,650",
-        "priceNum": 9650,
-        "basePrice": 9650,
+        "price": "\u20b99,140",
+        "priceNum": 9140,
+        "basePrice": 9140,
         "active": true
       }
     ]
@@ -41958,7 +41958,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V20 SE",
     "slug": "vivo-v20-se",
     "minPrice": 5880,
-    "maxPrice": 6820,
+    "maxPrice": 6480,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ff834d08-e2cd.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -41979,9 +41979,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b96,350",
-        "priceNum": 6350,
-        "basePrice": 6350,
+        "price": "\u20b96,180",
+        "priceNum": 6180,
+        "basePrice": 6180,
         "active": true
       },
       {
@@ -41990,9 +41990,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,820",
-        "priceNum": 6820,
-        "basePrice": 6820,
+        "price": "\u20b96,480",
+        "priceNum": 6480,
+        "basePrice": 6480,
         "active": true
       }
     ]
@@ -42039,7 +42039,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V21e 5G",
     "slug": "vivo-v21e-5g",
     "minPrice": 7570,
-    "maxPrice": 9230,
+    "maxPrice": 8670,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/71538dee-cabc.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -42060,9 +42060,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b98,090",
-        "priceNum": 8090,
-        "basePrice": 8090,
+        "price": "\u20b97,920",
+        "priceNum": 7920,
+        "basePrice": 7920,
         "active": true
       },
       {
@@ -42071,9 +42071,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b98,620",
-        "priceNum": 8620,
-        "basePrice": 8620,
+        "price": "\u20b98,270",
+        "priceNum": 8270,
+        "basePrice": 8270,
         "active": true
       },
       {
@@ -42082,9 +42082,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b99,230",
-        "priceNum": 9230,
-        "basePrice": 9230,
+        "price": "\u20b98,670",
+        "priceNum": 8670,
+        "basePrice": 8670,
         "active": true
       }
     ]
@@ -42131,7 +42131,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V23e 5G",
     "slug": "vivo-v23e-5g",
     "minPrice": 8790,
-    "maxPrice": 10720,
+    "maxPrice": 9890,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0e7d0ce2-7493.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -42152,9 +42152,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b99,400",
-        "priceNum": 9400,
-        "basePrice": 9400,
+        "price": "\u20b99,140",
+        "priceNum": 9140,
+        "basePrice": 9140,
         "active": true
       },
       {
@@ -42163,9 +42163,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b910,020",
-        "priceNum": 10020,
-        "basePrice": 10020,
+        "price": "\u20b99,490",
+        "priceNum": 9490,
+        "basePrice": 9490,
         "active": true
       },
       {
@@ -42174,9 +42174,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b910,720",
-        "priceNum": 10720,
-        "basePrice": 10720,
+        "price": "\u20b99,890",
+        "priceNum": 9890,
+        "basePrice": 9890,
         "active": true
       }
     ]
@@ -42188,7 +42188,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V23 Pro",
     "slug": "vivo-v23-pro",
     "minPrice": 10610,
-    "maxPrice": 12510,
+    "maxPrice": 11570,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0258b2de-2836.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -42209,9 +42209,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b911,450",
-        "priceNum": 11450,
-        "basePrice": 11450,
+        "price": "\u20b911,090",
+        "priceNum": 11090,
+        "basePrice": 11090,
         "active": true
       },
       {
@@ -42220,9 +42220,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b912,510",
-        "priceNum": 12510,
-        "basePrice": 12510,
+        "price": "\u20b911,570",
+        "priceNum": 11570,
+        "basePrice": 11570,
         "active": true
       }
     ]
@@ -42803,7 +42803,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V50 Elite",
     "slug": "vivo-v50-elite",
     "minPrice": 18500,
-    "maxPrice": 21460,
+    "maxPrice": 19100,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b2ff04f6-e98e.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -42824,9 +42824,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b919,980",
-        "priceNum": 19980,
-        "basePrice": 19980,
+        "price": "\u20b918,800",
+        "priceNum": 18800,
+        "basePrice": 18800,
         "active": true
       },
       {
@@ -42835,9 +42835,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b921,460",
-        "priceNum": 21460,
-        "basePrice": 21460,
+        "price": "\u20b919,100",
+        "priceNum": 19100,
+        "basePrice": 19100,
         "active": true
       }
     ]
@@ -42987,7 +42987,7 @@ const MOBILE_DATASET = [
     "model": "Vivo V70 Elite",
     "slug": "vivo-v70-elite",
     "minPrice": 35500,
-    "maxPrice": 41180,
+    "maxPrice": 36100,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8f6436e3-7eb9.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -43008,9 +43008,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b938,340",
-        "priceNum": 38340,
-        "basePrice": 38340,
+        "price": "\u20b935,800",
+        "priceNum": 35800,
+        "basePrice": 35800,
         "active": true
       },
       {
@@ -43019,9 +43019,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b941,180",
-        "priceNum": 41180,
-        "basePrice": 41180,
+        "price": "\u20b936,100",
+        "priceNum": 36100,
+        "basePrice": 36100,
         "active": true
       }
     ]
@@ -43079,7 +43079,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y01",
     "slug": "vivo-y01",
     "minPrice": 2730,
-    "maxPrice": 3160,
+    "maxPrice": 3330,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/16106722-ccd1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -43100,9 +43100,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,940",
-        "priceNum": 2940,
-        "basePrice": 2940,
+        "price": "\u20b93,030",
+        "priceNum": 3030,
+        "basePrice": 3030,
         "active": true
       },
       {
@@ -43111,9 +43111,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,160",
-        "priceNum": 3160,
-        "basePrice": 3160,
+        "price": "\u20b93,330",
+        "priceNum": 3330,
+        "basePrice": 3330,
         "active": true
       }
     ]
@@ -43125,7 +43125,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y01a",
     "slug": "vivo-y01a",
     "minPrice": 2610,
-    "maxPrice": 3020,
+    "maxPrice": 3210,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e088f13f-b567.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -43146,9 +43146,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,810",
-        "priceNum": 2810,
-        "basePrice": 2810,
+        "price": "\u20b92,910",
+        "priceNum": 2910,
+        "basePrice": 2910,
         "active": true
       },
       {
@@ -43157,9 +43157,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,020",
-        "priceNum": 3020,
-        "basePrice": 3020,
+        "price": "\u20b93,210",
+        "priceNum": 3210,
+        "basePrice": 3210,
         "active": true
       }
     ]
@@ -43206,7 +43206,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y02",
     "slug": "vivo-y02",
     "minPrice": 3000,
-    "maxPrice": 3470,
+    "maxPrice": 3600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7a2366bb-8148.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -43227,9 +43227,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,240",
-        "priceNum": 3240,
-        "basePrice": 3240,
+        "price": "\u20b93,300",
+        "priceNum": 3300,
+        "basePrice": 3300,
         "active": true
       },
       {
@@ -43238,9 +43238,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,470",
-        "priceNum": 3470,
-        "basePrice": 3470,
+        "price": "\u20b93,600",
+        "priceNum": 3600,
+        "basePrice": 3600,
         "active": true
       }
     ]
@@ -43252,7 +43252,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y02T",
     "slug": "vivo-y02t",
     "minPrice": 4710,
-    "maxPrice": 5460,
+    "maxPrice": 5310,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/193cf848-2341.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -43273,9 +43273,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,080",
-        "priceNum": 5080,
-        "basePrice": 5080,
+        "price": "\u20b95,010",
+        "priceNum": 5010,
+        "basePrice": 5010,
         "active": true
       },
       {
@@ -43284,9 +43284,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,460",
-        "priceNum": 5460,
-        "basePrice": 5460,
+        "price": "\u20b95,310",
+        "priceNum": 5310,
+        "basePrice": 5310,
         "active": true
       }
     ]
@@ -43298,7 +43298,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y3s",
     "slug": "vivo-y3s",
     "minPrice": 2820,
-    "maxPrice": 3270,
+    "maxPrice": 3420,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/53cc523b-7c08.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -43319,9 +43319,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,040",
-        "priceNum": 3040,
-        "basePrice": 3040,
+        "price": "\u20b93,120",
+        "priceNum": 3120,
+        "basePrice": 3120,
         "active": true
       },
       {
@@ -43330,9 +43330,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,270",
-        "priceNum": 3270,
-        "basePrice": 3270,
+        "price": "\u20b93,420",
+        "priceNum": 3420,
+        "basePrice": 3420,
         "active": true
       }
     ]
@@ -43344,7 +43344,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y11",
     "slug": "vivo-y11",
     "minPrice": 2880,
-    "maxPrice": 3340,
+    "maxPrice": 3480,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/55fcacab-13a8.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -43365,9 +43365,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,110",
-        "priceNum": 3110,
-        "basePrice": 3110,
+        "price": "\u20b93,180",
+        "priceNum": 3180,
+        "basePrice": 3180,
         "active": true
       },
       {
@@ -43376,9 +43376,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,340",
-        "priceNum": 3340,
-        "basePrice": 3340,
+        "price": "\u20b93,480",
+        "priceNum": 3480,
+        "basePrice": 3480,
         "active": true
       }
     ]
@@ -43587,7 +43587,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y15s",
     "slug": "vivo-y15s",
     "minPrice": 3090,
-    "maxPrice": 3580,
+    "maxPrice": 3690,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/80f1a5fd-cb4b.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -43608,9 +43608,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,330",
-        "priceNum": 3330,
-        "basePrice": 3330,
+        "price": "\u20b93,390",
+        "priceNum": 3390,
+        "basePrice": 3390,
         "active": true
       },
       {
@@ -43619,9 +43619,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,580",
-        "priceNum": 3580,
-        "basePrice": 3580,
+        "price": "\u20b93,690",
+        "priceNum": 3690,
+        "basePrice": 3690,
         "active": true
       }
     ]
@@ -43690,7 +43690,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y17",
     "slug": "vivo-y17",
     "minPrice": 4790,
-    "maxPrice": 5550,
+    "maxPrice": 5390,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-gscao0iy-kuvl.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -43711,9 +43711,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,170",
-        "priceNum": 5170,
-        "basePrice": 5170,
+        "price": "\u20b95,090",
+        "priceNum": 5090,
+        "basePrice": 5090,
         "active": true
       },
       {
@@ -43722,9 +43722,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,550",
-        "priceNum": 5550,
-        "basePrice": 5550,
+        "price": "\u20b95,390",
+        "priceNum": 5390,
+        "basePrice": 5390,
         "active": true
       }
     ]
@@ -43806,7 +43806,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y18e",
     "slug": "vivo-y18e",
     "minPrice": 5070,
-    "maxPrice": 5880,
+    "maxPrice": 5670,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1c791dfb-66c2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -43827,9 +43827,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,470",
-        "priceNum": 5470,
-        "basePrice": 5470,
+        "price": "\u20b95,370",
+        "priceNum": 5370,
+        "basePrice": 5370,
         "active": true
       },
       {
@@ -43838,9 +43838,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,880",
-        "priceNum": 5880,
-        "basePrice": 5880,
+        "price": "\u20b95,670",
+        "priceNum": 5670,
+        "basePrice": 5670,
         "active": true
       }
     ]
@@ -43852,7 +43852,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y18i",
     "slug": "vivo-y18i",
     "minPrice": 4970,
-    "maxPrice": 5760,
+    "maxPrice": 5570,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8ff0d2eb-1b00.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -43873,9 +43873,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,360",
-        "priceNum": 5360,
-        "basePrice": 5360,
+        "price": "\u20b95,270",
+        "priceNum": 5270,
+        "basePrice": 5270,
         "active": true
       },
       {
@@ -43884,9 +43884,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,760",
-        "priceNum": 5760,
-        "basePrice": 5760,
+        "price": "\u20b95,570",
+        "priceNum": 5570,
+        "basePrice": 5570,
         "active": true
       }
     ]
@@ -43898,7 +43898,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y18T",
     "slug": "vivo-y18t",
     "minPrice": 5280,
-    "maxPrice": 6120,
+    "maxPrice": 5880,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ff96ef62-4bf2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -43919,9 +43919,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,700",
-        "priceNum": 5700,
-        "basePrice": 5700,
+        "price": "\u20b95,580",
+        "priceNum": 5580,
+        "basePrice": 5580,
         "active": true
       },
       {
@@ -43930,9 +43930,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,120",
-        "priceNum": 6120,
-        "basePrice": 6120,
+        "price": "\u20b95,880",
+        "priceNum": 5880,
+        "basePrice": 5880,
         "active": true
       }
     ]
@@ -43944,7 +43944,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y19",
     "slug": "vivo-y19",
     "minPrice": 4390,
-    "maxPrice": 5090,
+    "maxPrice": 4990,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3cb9ba7f-b5f7.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -43965,9 +43965,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,740",
-        "priceNum": 4740,
-        "basePrice": 4740,
+        "price": "\u20b94,690",
+        "priceNum": 4690,
+        "basePrice": 4690,
         "active": true
       },
       {
@@ -43976,9 +43976,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,090",
-        "priceNum": 5090,
-        "basePrice": 5090,
+        "price": "\u20b94,990",
+        "priceNum": 4990,
+        "basePrice": 4990,
         "active": true
       }
     ]
@@ -44036,7 +44036,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y19e",
     "slug": "vivo-y19e",
     "minPrice": 5350,
-    "maxPrice": 6200,
+    "maxPrice": 5950,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ad332079-0927.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -44057,9 +44057,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,770",
-        "priceNum": 5770,
-        "basePrice": 5770,
+        "price": "\u20b95,650",
+        "priceNum": 5650,
+        "basePrice": 5650,
         "active": true
       },
       {
@@ -44068,9 +44068,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,200",
-        "priceNum": 6200,
-        "basePrice": 6200,
+        "price": "\u20b95,950",
+        "priceNum": 5950,
+        "basePrice": 5950,
         "active": true
       }
     ]
@@ -44163,7 +44163,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y20A",
     "slug": "vivo-y20a",
     "minPrice": 3860,
-    "maxPrice": 4470,
+    "maxPrice": 4460,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a53c1228-bb65.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -44195,9 +44195,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,470",
-        "priceNum": 4470,
-        "basePrice": 4470,
+        "price": "\u20b94,460",
+        "priceNum": 4460,
+        "basePrice": 4460,
         "active": true
       }
     ]
@@ -44244,7 +44244,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y20i",
     "slug": "vivo-y20i",
     "minPrice": 3730,
-    "maxPrice": 4320,
+    "maxPrice": 4330,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d8769842-200a.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -44265,9 +44265,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,020",
-        "priceNum": 4020,
-        "basePrice": 4020,
+        "price": "\u20b94,030",
+        "priceNum": 4030,
+        "basePrice": 4030,
         "active": true
       },
       {
@@ -44276,9 +44276,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,320",
-        "priceNum": 4320,
-        "basePrice": 4320,
+        "price": "\u20b94,330",
+        "priceNum": 4330,
+        "basePrice": 4330,
         "active": true
       }
     ]
@@ -44290,7 +44290,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y20T",
     "slug": "vivo-y20t",
     "minPrice": 4920,
-    "maxPrice": 5700,
+    "maxPrice": 5520,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d32e4eb0-5ab4.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -44311,9 +44311,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,310",
-        "priceNum": 5310,
-        "basePrice": 5310,
+        "price": "\u20b95,220",
+        "priceNum": 5220,
+        "basePrice": 5220,
         "active": true
       },
       {
@@ -44322,9 +44322,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,700",
-        "priceNum": 5700,
-        "basePrice": 5700,
+        "price": "\u20b95,520",
+        "priceNum": 5520,
+        "basePrice": 5520,
         "active": true
       }
     ]
@@ -44417,7 +44417,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y21a",
     "slug": "vivo-y21a",
     "minPrice": 4170,
-    "maxPrice": 4830,
+    "maxPrice": 4770,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/71d27a77-c442.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -44438,9 +44438,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,500",
-        "priceNum": 4500,
-        "basePrice": 4500,
+        "price": "\u20b94,470",
+        "priceNum": 4470,
+        "basePrice": 4470,
         "active": true
       },
       {
@@ -44449,9 +44449,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,830",
-        "priceNum": 4830,
-        "basePrice": 4830,
+        "price": "\u20b94,770",
+        "priceNum": 4770,
+        "basePrice": 4770,
         "active": true
       }
     ]
@@ -44463,7 +44463,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y21e",
     "slug": "vivo-y21e",
     "minPrice": 3960,
-    "maxPrice": 4590,
+    "maxPrice": 4560,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/059330ef-17bb.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -44484,9 +44484,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,270",
-        "priceNum": 4270,
-        "basePrice": 4270,
+        "price": "\u20b94,260",
+        "priceNum": 4260,
+        "basePrice": 4260,
         "active": true
       },
       {
@@ -44495,9 +44495,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,590",
-        "priceNum": 4590,
-        "basePrice": 4590,
+        "price": "\u20b94,560",
+        "priceNum": 4560,
+        "basePrice": 4560,
         "active": true
       }
     ]
@@ -44509,7 +44509,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y21G",
     "slug": "vivo-y21g",
     "minPrice": 4290,
-    "maxPrice": 4970,
+    "maxPrice": 4890,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/6654745b-8fe2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -44530,9 +44530,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b94,630",
-        "priceNum": 4630,
-        "basePrice": 4630,
+        "price": "\u20b94,590",
+        "priceNum": 4590,
+        "basePrice": 4590,
         "active": true
       },
       {
@@ -44541,9 +44541,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,970",
-        "priceNum": 4970,
-        "basePrice": 4970,
+        "price": "\u20b94,890",
+        "priceNum": 4890,
+        "basePrice": 4890,
         "active": true
       }
     ]
@@ -44555,7 +44555,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y21T",
     "slug": "vivo-y21t",
     "minPrice": 4960,
-    "maxPrice": 5750,
+    "maxPrice": 5560,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/118ea403-b365.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -44576,9 +44576,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,350",
-        "priceNum": 5350,
-        "basePrice": 5350,
+        "price": "\u20b95,260",
+        "priceNum": 5260,
+        "basePrice": 5260,
         "active": true
       },
       {
@@ -44587,9 +44587,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,750",
-        "priceNum": 5750,
-        "basePrice": 5750,
+        "price": "\u20b95,560",
+        "priceNum": 5560,
+        "basePrice": 5560,
         "active": true
       }
     ]
@@ -44647,7 +44647,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y27",
     "slug": "vivo-y27",
     "minPrice": 7120,
-    "maxPrice": 8250,
+    "maxPrice": 7720,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/278b8b5f-35e1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -44668,9 +44668,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b97,680",
-        "priceNum": 7680,
-        "basePrice": 7680,
+        "price": "\u20b97,420",
+        "priceNum": 7420,
+        "basePrice": 7420,
         "active": true
       },
       {
@@ -44679,9 +44679,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b98,250",
-        "priceNum": 8250,
-        "basePrice": 8250,
+        "price": "\u20b97,720",
+        "priceNum": 7720,
+        "basePrice": 7720,
         "active": true
       }
     ]
@@ -44912,7 +44912,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y31",
     "slug": "vivo-y31",
     "minPrice": 4940,
-    "maxPrice": 5730,
+    "maxPrice": 5540,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0db52d25-d819.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -44933,9 +44933,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,330",
-        "priceNum": 5330,
-        "basePrice": 5330,
+        "price": "\u20b95,240",
+        "priceNum": 5240,
+        "basePrice": 5240,
         "active": true
       },
       {
@@ -44944,9 +44944,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b95,730",
-        "priceNum": 5730,
-        "basePrice": 5730,
+        "price": "\u20b95,540",
+        "priceNum": 5540,
+        "basePrice": 5540,
         "active": true
       }
     ]
@@ -45028,7 +45028,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y33s",
     "slug": "vivo-y33s",
     "minPrice": 5660,
-    "maxPrice": 6560,
+    "maxPrice": 6260,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/40b7a9c2-1a35.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45049,9 +45049,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b96,110",
-        "priceNum": 6110,
-        "basePrice": 6110,
+        "price": "\u20b95,960",
+        "priceNum": 5960,
+        "basePrice": 5960,
         "active": true
       },
       {
@@ -45060,9 +45060,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,560",
-        "priceNum": 6560,
-        "basePrice": 6560,
+        "price": "\u20b96,260",
+        "priceNum": 6260,
+        "basePrice": 6260,
         "active": true
       }
     ]
@@ -45074,7 +45074,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y33T",
     "slug": "vivo-y33t",
     "minPrice": 5530,
-    "maxPrice": 6410,
+    "maxPrice": 6130,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3c6a44f6-b23c.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45095,9 +45095,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,970",
-        "priceNum": 5970,
-        "basePrice": 5970,
+        "price": "\u20b95,830",
+        "priceNum": 5830,
+        "basePrice": 5830,
         "active": true
       },
       {
@@ -45106,9 +45106,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,410",
-        "priceNum": 6410,
-        "basePrice": 6410,
+        "price": "\u20b96,130",
+        "priceNum": 6130,
+        "basePrice": 6130,
         "active": true
       }
     ]
@@ -45120,7 +45120,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y35",
     "slug": "vivo-y35",
     "minPrice": 5400,
-    "maxPrice": 6260,
+    "maxPrice": 6000,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/39bb3427-5677.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45141,9 +45141,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,830",
-        "priceNum": 5830,
-        "basePrice": 5830,
+        "price": "\u20b95,700",
+        "priceNum": 5700,
+        "basePrice": 5700,
         "active": true
       },
       {
@@ -45152,9 +45152,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,260",
-        "priceNum": 6260,
-        "basePrice": 6260,
+        "price": "\u20b96,000",
+        "priceNum": 6000,
+        "basePrice": 6000,
         "active": true
       }
     ]
@@ -45166,7 +45166,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y36",
     "slug": "vivo-y36",
     "minPrice": 8350,
-    "maxPrice": 9680,
+    "maxPrice": 8950,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9c874d8f-6144.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45187,9 +45187,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b99,010",
-        "priceNum": 9010,
-        "basePrice": 9010,
+        "price": "\u20b98,650",
+        "priceNum": 8650,
+        "basePrice": 8650,
         "active": true
       },
       {
@@ -45198,9 +45198,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b99,680",
-        "priceNum": 9680,
-        "basePrice": 9680,
+        "price": "\u20b98,950",
+        "priceNum": 8950,
+        "basePrice": 8950,
         "active": true
       }
     ]
@@ -45247,7 +45247,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y50",
     "slug": "vivo-y50",
     "minPrice": 5240,
-    "maxPrice": 6070,
+    "maxPrice": 5840,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4d8261ce-4c68.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45268,9 +45268,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,650",
-        "priceNum": 5650,
-        "basePrice": 5650,
+        "price": "\u20b95,540",
+        "priceNum": 5540,
+        "basePrice": 5540,
         "active": true
       },
       {
@@ -45279,9 +45279,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,070",
-        "priceNum": 6070,
-        "basePrice": 6070,
+        "price": "\u20b95,840",
+        "priceNum": 5840,
+        "basePrice": 5840,
         "active": true
       }
     ]
@@ -45293,7 +45293,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y51",
     "slug": "vivo-y51",
     "minPrice": 5450,
-    "maxPrice": 6320,
+    "maxPrice": 6050,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/46c8d840-0a0c.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45314,9 +45314,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,880",
-        "priceNum": 5880,
-        "basePrice": 5880,
+        "price": "\u20b95,750",
+        "priceNum": 5750,
+        "basePrice": 5750,
         "active": true
       },
       {
@@ -45325,9 +45325,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,320",
-        "priceNum": 6320,
-        "basePrice": 6320,
+        "price": "\u20b96,050",
+        "priceNum": 6050,
+        "basePrice": 6050,
         "active": true
       }
     ]
@@ -45409,7 +45409,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y53i",
     "slug": "vivo-y53i",
     "minPrice": 1500,
-    "maxPrice": 1730,
+    "maxPrice": 2100,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-qkfgcens-guzt.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45430,9 +45430,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,620",
-        "priceNum": 1620,
-        "basePrice": 1620,
+        "price": "\u20b91,800",
+        "priceNum": 1800,
+        "basePrice": 1800,
         "active": true
       },
       {
@@ -45441,9 +45441,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b91,730",
-        "priceNum": 1730,
-        "basePrice": 1730,
+        "price": "\u20b92,100",
+        "priceNum": 2100,
+        "basePrice": 2100,
         "active": true
       }
     ]
@@ -45455,7 +45455,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y53s",
     "slug": "vivo-y53s",
     "minPrice": 5680,
-    "maxPrice": 6580,
+    "maxPrice": 6280,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7b8d3b71-3357.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45476,9 +45476,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b96,130",
-        "priceNum": 6130,
-        "basePrice": 6130,
+        "price": "\u20b95,980",
+        "priceNum": 5980,
+        "basePrice": 5980,
         "active": true
       },
       {
@@ -45487,9 +45487,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,580",
-        "priceNum": 6580,
-        "basePrice": 6580,
+        "price": "\u20b96,280",
+        "priceNum": 6280,
+        "basePrice": 6280,
         "active": true
       }
     ]
@@ -45501,7 +45501,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y55s",
     "slug": "vivo-y55s",
     "minPrice": 1500,
-    "maxPrice": 1730,
+    "maxPrice": 2100,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-nyxx3zcj-434f.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45522,9 +45522,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,620",
-        "priceNum": 1620,
-        "basePrice": 1620,
+        "price": "\u20b91,800",
+        "priceNum": 1800,
+        "basePrice": 1800,
         "active": true
       },
       {
@@ -45533,9 +45533,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b91,730",
-        "priceNum": 1730,
-        "basePrice": 1730,
+        "price": "\u20b92,100",
+        "priceNum": 2100,
+        "basePrice": 2100,
         "active": true
       }
     ]
@@ -45582,7 +45582,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y58 5G",
     "slug": "vivo-y58-5g",
     "minPrice": 11430,
-    "maxPrice": 13940,
+    "maxPrice": 12530,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/cc48d763-2812.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45603,9 +45603,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b912,230",
-        "priceNum": 12230,
-        "basePrice": 12230,
+        "price": "\u20b911,780",
+        "priceNum": 11780,
+        "basePrice": 11780,
         "active": true
       },
       {
@@ -45614,9 +45614,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b913,030",
-        "priceNum": 13030,
-        "basePrice": 13030,
+        "price": "\u20b912,130",
+        "priceNum": 12130,
+        "basePrice": 12130,
         "active": true
       },
       {
@@ -45625,9 +45625,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b913,940",
-        "priceNum": 13940,
-        "basePrice": 13940,
+        "price": "\u20b912,530",
+        "priceNum": 12530,
+        "basePrice": 12530,
         "active": true
       }
     ]
@@ -45639,7 +45639,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y66",
     "slug": "vivo-y66",
     "minPrice": 1500,
-    "maxPrice": 1730,
+    "maxPrice": 2100,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-def4ccyy-1eoz.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45660,9 +45660,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,620",
-        "priceNum": 1620,
-        "basePrice": 1620,
+        "price": "\u20b91,800",
+        "priceNum": 1800,
+        "basePrice": 1800,
         "active": true
       },
       {
@@ -45671,9 +45671,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b91,730",
-        "priceNum": 1730,
-        "basePrice": 1730,
+        "price": "\u20b92,100",
+        "priceNum": 2100,
+        "basePrice": 2100,
         "active": true
       }
     ]
@@ -45685,7 +45685,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y69",
     "slug": "vivo-y69",
     "minPrice": 1530,
-    "maxPrice": 1770,
+    "maxPrice": 2130,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-kh3ygjvj-x8xs.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45706,9 +45706,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,650",
-        "priceNum": 1650,
-        "basePrice": 1650,
+        "price": "\u20b91,830",
+        "priceNum": 1830,
+        "basePrice": 1830,
         "active": true
       },
       {
@@ -45717,9 +45717,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b91,770",
-        "priceNum": 1770,
-        "basePrice": 1770,
+        "price": "\u20b92,130",
+        "priceNum": 2130,
+        "basePrice": 2130,
         "active": true
       }
     ]
@@ -45777,7 +45777,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y71i",
     "slug": "vivo-y71i",
     "minPrice": 1500,
-    "maxPrice": 1730,
+    "maxPrice": 2100,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-nxyenmo4-lqdt.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45798,9 +45798,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,620",
-        "priceNum": 1620,
-        "basePrice": 1620,
+        "price": "\u20b91,800",
+        "priceNum": 1800,
+        "basePrice": 1800,
         "active": true
       },
       {
@@ -45809,9 +45809,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b91,730",
-        "priceNum": 1730,
-        "basePrice": 1730,
+        "price": "\u20b92,100",
+        "priceNum": 2100,
+        "basePrice": 2100,
         "active": true
       }
     ]
@@ -45823,7 +45823,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y72 5G",
     "slug": "vivo-y72-5g",
     "minPrice": 7760,
-    "maxPrice": 9460,
+    "maxPrice": 8860,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c8eae791-fcc2.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45844,9 +45844,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b98,300",
-        "priceNum": 8300,
-        "basePrice": 8300,
+        "price": "\u20b98,110",
+        "priceNum": 8110,
+        "basePrice": 8110,
         "active": true
       },
       {
@@ -45855,9 +45855,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b98,840",
-        "priceNum": 8840,
-        "basePrice": 8840,
+        "price": "\u20b98,460",
+        "priceNum": 8460,
+        "basePrice": 8460,
         "active": true
       },
       {
@@ -45866,9 +45866,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b99,460",
-        "priceNum": 9460,
-        "basePrice": 9460,
+        "price": "\u20b98,860",
+        "priceNum": 8860,
+        "basePrice": 8860,
         "active": true
       }
     ]
@@ -45880,7 +45880,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y73",
     "slug": "vivo-y73",
     "minPrice": 6160,
-    "maxPrice": 7140,
+    "maxPrice": 6760,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/60dbad8e-904d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45901,9 +45901,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b96,650",
-        "priceNum": 6650,
-        "basePrice": 6650,
+        "price": "\u20b96,460",
+        "priceNum": 6460,
+        "basePrice": 6460,
         "active": true
       },
       {
@@ -45912,9 +45912,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b97,140",
-        "priceNum": 7140,
-        "basePrice": 7140,
+        "price": "\u20b96,760",
+        "priceNum": 6760,
+        "basePrice": 6760,
         "active": true
       }
     ]
@@ -45926,7 +45926,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y75",
     "slug": "vivo-y75",
     "minPrice": 6010,
-    "maxPrice": 6970,
+    "maxPrice": 6610,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a8fb2efa-08df.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45947,9 +45947,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b96,490",
-        "priceNum": 6490,
-        "basePrice": 6490,
+        "price": "\u20b96,310",
+        "priceNum": 6310,
+        "basePrice": 6310,
         "active": true
       },
       {
@@ -45958,9 +45958,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,970",
-        "priceNum": 6970,
-        "basePrice": 6970,
+        "price": "\u20b96,610",
+        "priceNum": 6610,
+        "basePrice": 6610,
         "active": true
       }
     ]
@@ -45972,7 +45972,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y75 5G",
     "slug": "vivo-y75-5g",
     "minPrice": 7830,
-    "maxPrice": 9550,
+    "maxPrice": 8930,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/30b20ca3-0d49.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -45993,9 +45993,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b98,370",
-        "priceNum": 8370,
-        "basePrice": 8370,
+        "price": "\u20b98,180",
+        "priceNum": 8180,
+        "basePrice": 8180,
         "active": true
       },
       {
@@ -46004,9 +46004,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b98,920",
-        "priceNum": 8920,
-        "basePrice": 8920,
+        "price": "\u20b98,530",
+        "priceNum": 8530,
+        "basePrice": 8530,
         "active": true
       },
       {
@@ -46015,9 +46015,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b99,550",
-        "priceNum": 9550,
-        "basePrice": 9550,
+        "price": "\u20b98,930",
+        "priceNum": 8930,
+        "basePrice": 8930,
         "active": true
       }
     ]
@@ -46064,7 +46064,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y81i",
     "slug": "vivo-y81i",
     "minPrice": 1500,
-    "maxPrice": 1730,
+    "maxPrice": 2100,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-kgkf3onw-2yqj.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -46085,9 +46085,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,620",
-        "priceNum": 1620,
-        "basePrice": 1620,
+        "price": "\u20b91,800",
+        "priceNum": 1800,
+        "basePrice": 1800,
         "active": true
       },
       {
@@ -46096,9 +46096,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b91,730",
-        "priceNum": 1730,
-        "basePrice": 1730,
+        "price": "\u20b92,100",
+        "priceNum": 2100,
+        "basePrice": 2100,
         "active": true
       }
     ]
@@ -46110,7 +46110,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y83",
     "slug": "vivo-y83",
     "minPrice": 2260,
-    "maxPrice": 2620,
+    "maxPrice": 2860,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-atf2mehw-53p4.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -46131,9 +46131,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,440",
-        "priceNum": 2440,
-        "basePrice": 2440,
+        "price": "\u20b92,560",
+        "priceNum": 2560,
+        "basePrice": 2560,
         "active": true
       },
       {
@@ -46142,9 +46142,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,620",
-        "priceNum": 2620,
-        "basePrice": 2620,
+        "price": "\u20b92,860",
+        "priceNum": 2860,
+        "basePrice": 2860,
         "active": true
       }
     ]
@@ -46156,7 +46156,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y83 Pro",
     "slug": "vivo-y83-pro",
     "minPrice": 2650,
-    "maxPrice": 3120,
+    "maxPrice": 3610,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-oqdwj0mc-ptug.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -46177,9 +46177,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b92,860",
-        "priceNum": 2860,
-        "basePrice": 2860,
+        "price": "\u20b93,130",
+        "priceNum": 3130,
+        "basePrice": 3130,
         "active": true
       },
       {
@@ -46188,9 +46188,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b93,120",
-        "priceNum": 3120,
-        "basePrice": 3120,
+        "price": "\u20b93,610",
+        "priceNum": 3610,
+        "basePrice": 3610,
         "active": true
       }
     ]
@@ -46202,7 +46202,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y90",
     "slug": "vivo-y90",
     "minPrice": 2050,
-    "maxPrice": 2370,
+    "maxPrice": 2650,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7dceb2c8-6365.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -46223,9 +46223,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,210",
-        "priceNum": 2210,
-        "basePrice": 2210,
+        "price": "\u20b92,350",
+        "priceNum": 2350,
+        "basePrice": 2350,
         "active": true
       },
       {
@@ -46234,9 +46234,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,370",
-        "priceNum": 2370,
-        "basePrice": 2370,
+        "price": "\u20b92,650",
+        "priceNum": 2650,
+        "basePrice": 2650,
         "active": true
       }
     ]
@@ -46364,7 +46364,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y95",
     "slug": "vivo-y95",
     "minPrice": 3180,
-    "maxPrice": 3680,
+    "maxPrice": 3780,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-wnx74ldc-ci6e.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -46385,9 +46385,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,430",
-        "priceNum": 3430,
-        "basePrice": 3430,
+        "price": "\u20b93,480",
+        "priceNum": 3480,
+        "basePrice": 3480,
         "active": true
       },
       {
@@ -46396,9 +46396,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,680",
-        "priceNum": 3680,
-        "basePrice": 3680,
+        "price": "\u20b93,780",
+        "priceNum": 3780,
+        "basePrice": 3780,
         "active": true
       }
     ]
@@ -46410,7 +46410,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y100 5G",
     "slug": "vivo-y100-5g",
     "minPrice": 10850,
-    "maxPrice": 13230,
+    "maxPrice": 11950,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/74f20742-d661.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -46431,9 +46431,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b911,600",
-        "priceNum": 11600,
-        "basePrice": 11600,
+        "price": "\u20b911,200",
+        "priceNum": 11200,
+        "basePrice": 11200,
         "active": true
       },
       {
@@ -46442,9 +46442,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b912,360",
-        "priceNum": 12360,
-        "basePrice": 12360,
+        "price": "\u20b911,550",
+        "priceNum": 11550,
+        "basePrice": 11550,
         "active": true
       },
       {
@@ -46453,9 +46453,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b913,230",
-        "priceNum": 13230,
-        "basePrice": 13230,
+        "price": "\u20b911,950",
+        "priceNum": 11950,
+        "basePrice": 11950,
         "active": true
       }
     ]
@@ -46572,7 +46572,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y200 Pro 5G",
     "slug": "vivo-y200-pro-5g",
     "minPrice": 14070,
-    "maxPrice": 16600,
+    "maxPrice": 15030,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/05fa8c7e-3c79.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -46593,9 +46593,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b915,190",
-        "priceNum": 15190,
-        "basePrice": 15190,
+        "price": "\u20b914,550",
+        "priceNum": 14550,
+        "basePrice": 14550,
         "active": true
       },
       {
@@ -46604,9 +46604,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b916,600",
-        "priceNum": 16600,
-        "basePrice": 16600,
+        "price": "\u20b915,030",
+        "priceNum": 15030,
+        "basePrice": 15030,
         "active": true
       }
     ]
@@ -46653,7 +46653,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Y300 Plus 5G",
     "slug": "vivo-y300-plus-5g",
     "minPrice": 16110,
-    "maxPrice": 19000,
+    "maxPrice": 17070,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/833c7262-3c04.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -46674,9 +46674,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b917,390",
-        "priceNum": 17390,
-        "basePrice": 17390,
+        "price": "\u20b916,590",
+        "priceNum": 16590,
+        "basePrice": 16590,
         "active": true
       },
       {
@@ -46685,9 +46685,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b919,000",
-        "priceNum": 19000,
-        "basePrice": 19000,
+        "price": "\u20b917,070",
+        "priceNum": 17070,
+        "basePrice": 17070,
         "active": true
       }
     ]
@@ -46883,7 +46883,7 @@ const MOBILE_DATASET = [
     "model": "Vivo Z10",
     "slug": "vivo-z10",
     "minPrice": 2500,
-    "maxPrice": 2900,
+    "maxPrice": 3100,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-f2rq32s1-5ar6.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/20922c34-8afc.jpg?w=200",
     "variants": [
@@ -46904,9 +46904,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,700",
-        "priceNum": 2700,
-        "basePrice": 2700,
+        "price": "\u20b92,800",
+        "priceNum": 2800,
+        "basePrice": 2800,
         "active": true
       },
       {
@@ -46915,9 +46915,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,900",
-        "priceNum": 2900,
-        "basePrice": 2900,
+        "price": "\u20b93,100",
+        "priceNum": 3100,
+        "basePrice": 3100,
         "active": true
       }
     ]
@@ -46929,7 +46929,7 @@ const MOBILE_DATASET = [
     "model": "13 Pro 5G",
     "slug": "13-pro-5g",
     "minPrice": 25650,
-    "maxPrice": 30260,
+    "maxPrice": 26610,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2c6c1fa5-91d9.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -46950,9 +46950,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b927,700",
-        "priceNum": 27700,
-        "basePrice": 27700,
+        "price": "\u20b926,130",
+        "priceNum": 26130,
+        "basePrice": 26130,
         "active": true
       },
       {
@@ -46961,9 +46961,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b930,260",
-        "priceNum": 30260,
-        "basePrice": 30260,
+        "price": "\u20b926,610",
+        "priceNum": 26610,
+        "basePrice": 26610,
         "active": true
       }
     ]
@@ -46975,7 +46975,7 @@ const MOBILE_DATASET = [
     "model": "14",
     "slug": "14",
     "minPrice": 27210,
-    "maxPrice": 31560,
+    "maxPrice": 27810,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d7dcd7a1-3155.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -46996,9 +46996,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b929,380",
-        "priceNum": 29380,
-        "basePrice": 29380,
+        "price": "\u20b927,510",
+        "priceNum": 27510,
+        "basePrice": 27510,
         "active": true
       },
       {
@@ -47007,9 +47007,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b931,560",
-        "priceNum": 31560,
-        "basePrice": 31560,
+        "price": "\u20b927,810",
+        "priceNum": 27810,
+        "basePrice": 27810,
         "active": true
       }
     ]
@@ -47021,7 +47021,7 @@ const MOBILE_DATASET = [
     "model": "14 Ultra",
     "slug": "14-ultra",
     "minPrice": 37780,
-    "maxPrice": 44580,
+    "maxPrice": 38360,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a037ddf3-05d9.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -47042,9 +47042,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b940,800",
-        "priceNum": 40800,
-        "basePrice": 40800,
+        "price": "\u20b938,260",
+        "priceNum": 38260,
+        "basePrice": 38260,
         "active": true
       },
       {
@@ -47053,9 +47053,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b944,580",
-        "priceNum": 44580,
-        "basePrice": 44580,
+        "price": "\u20b938,360",
+        "priceNum": 38360,
+        "basePrice": 38360,
         "active": true
       }
     ]
@@ -47067,7 +47067,7 @@ const MOBILE_DATASET = [
     "model": "Apple iPhone 13 Pro",
     "slug": "apple-iphone-13-pro",
     "minPrice": 32540,
-    "maxPrice": 38390,
+    "maxPrice": 33500,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d2daf417-65fa.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -47088,9 +47088,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b935,140",
-        "priceNum": 35140,
-        "basePrice": 35140,
+        "price": "\u20b933,020",
+        "priceNum": 33020,
+        "basePrice": 33020,
         "active": true
       },
       {
@@ -47099,9 +47099,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b938,390",
-        "priceNum": 38390,
-        "basePrice": 38390,
+        "price": "\u20b933,500",
+        "priceNum": 33500,
+        "basePrice": 33500,
         "active": true
       }
     ]
@@ -47113,7 +47113,7 @@ const MOBILE_DATASET = [
     "model": "Mi 10T Pro",
     "slug": "mi-10t-pro",
     "minPrice": 7840,
-    "maxPrice": 9250,
+    "maxPrice": 8800,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0f4c5ef2-7ed9.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -47134,9 +47134,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b98,460",
-        "priceNum": 8460,
-        "basePrice": 8460,
+        "price": "\u20b98,320",
+        "priceNum": 8320,
+        "basePrice": 8320,
         "active": true
       },
       {
@@ -47145,9 +47145,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b99,250",
-        "priceNum": 9250,
-        "basePrice": 9250,
+        "price": "\u20b98,800",
+        "priceNum": 8800,
+        "basePrice": 8800,
         "active": true
       }
     ]
@@ -47159,7 +47159,7 @@ const MOBILE_DATASET = [
     "model": "Mi 11 Ultra",
     "slug": "mi-11-ultra",
     "minPrice": 17370,
-    "maxPrice": 20490,
+    "maxPrice": 17950,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4f9ec4d3-cb05.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -47180,9 +47180,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b918,750",
-        "priceNum": 18750,
-        "basePrice": 18750,
+        "price": "\u20b917,850",
+        "priceNum": 17850,
+        "basePrice": 17850,
         "active": true
       },
       {
@@ -47191,9 +47191,9 @@ const MOBILE_DATASET = [
         "name": "1 TB",
         "ram": null,
         "storage": "1 TB",
-        "price": "\u20b920,490",
-        "priceNum": 20490,
-        "basePrice": 20490,
+        "price": "\u20b917,950",
+        "priceNum": 17950,
+        "basePrice": 17950,
         "active": true
       }
     ]
@@ -47205,7 +47205,7 @@ const MOBILE_DATASET = [
     "model": "Mi Mix 2",
     "slug": "mi-mix-2",
     "minPrice": 2910,
-    "maxPrice": 3370,
+    "maxPrice": 3510,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/76387541-c8d1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -47226,9 +47226,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,140",
-        "priceNum": 3140,
-        "basePrice": 3140,
+        "price": "\u20b93,210",
+        "priceNum": 3210,
+        "basePrice": 3210,
         "active": true
       },
       {
@@ -47237,9 +47237,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b93,370",
-        "priceNum": 3370,
-        "basePrice": 3370,
+        "price": "\u20b93,510",
+        "priceNum": 3510,
+        "basePrice": 3510,
         "active": true
       }
     ]
@@ -47251,7 +47251,7 @@ const MOBILE_DATASET = [
     "model": "Redmi 8",
     "slug": "redmi-8",
     "minPrice": 3450,
-    "maxPrice": 4000,
+    "maxPrice": 4050,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8794f3c2-c915.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -47272,9 +47272,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b93,720",
-        "priceNum": 3720,
-        "basePrice": 3720,
+        "price": "\u20b93,750",
+        "priceNum": 3750,
+        "basePrice": 3750,
         "active": true
       },
       {
@@ -47283,9 +47283,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b94,000",
-        "priceNum": 4000,
-        "basePrice": 4000,
+        "price": "\u20b94,050",
+        "priceNum": 4050,
+        "basePrice": 4050,
         "active": true
       }
     ]
@@ -47297,7 +47297,7 @@ const MOBILE_DATASET = [
     "model": "Redmi 10 Power",
     "slug": "redmi-10-power",
     "minPrice": 5430,
-    "maxPrice": 6290,
+    "maxPrice": 6030,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/57debd3f-ca29.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -47318,9 +47318,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b95,860",
-        "priceNum": 5860,
-        "basePrice": 5860,
+        "price": "\u20b95,730",
+        "priceNum": 5730,
+        "basePrice": 5730,
         "active": true
       },
       {
@@ -47329,9 +47329,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b96,290",
-        "priceNum": 6290,
-        "basePrice": 6290,
+        "price": "\u20b96,030",
+        "priceNum": 6030,
+        "basePrice": 6030,
         "active": true
       }
     ]
@@ -47343,7 +47343,7 @@ const MOBILE_DATASET = [
     "model": "Redmi A1",
     "slug": "redmi-a1",
     "minPrice": 2550,
-    "maxPrice": 2950,
+    "maxPrice": 3150,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2ad74634-c4c1.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -47364,9 +47364,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b92,750",
-        "priceNum": 2750,
-        "basePrice": 2750,
+        "price": "\u20b92,850",
+        "priceNum": 2850,
+        "basePrice": 2850,
         "active": true
       },
       {
@@ -47375,9 +47375,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b92,950",
-        "priceNum": 2950,
-        "basePrice": 2950,
+        "price": "\u20b93,150",
+        "priceNum": 3150,
+        "basePrice": 3150,
         "active": true
       }
     ]
@@ -47389,7 +47389,7 @@ const MOBILE_DATASET = [
     "model": "Redmi Note 11SE",
     "slug": "redmi-note-11se",
     "minPrice": 4880,
-    "maxPrice": 5950,
+    "maxPrice": 5980,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ad5111be-8058.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -47410,9 +47410,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b95,220",
-        "priceNum": 5220,
-        "basePrice": 5220,
+        "price": "\u20b95,230",
+        "priceNum": 5230,
+        "basePrice": 5230,
         "active": true
       },
       {
@@ -47421,9 +47421,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b95,560",
-        "priceNum": 5560,
-        "basePrice": 5560,
+        "price": "\u20b95,580",
+        "priceNum": 5580,
+        "basePrice": 5580,
         "active": true
       },
       {
@@ -47432,9 +47432,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b95,950",
-        "priceNum": 5950,
-        "basePrice": 5950,
+        "price": "\u20b95,980",
+        "priceNum": 5980,
+        "basePrice": 5980,
         "active": true
       }
     ]
@@ -47446,7 +47446,7 @@ const MOBILE_DATASET = [
     "model": "Redmi Y1 Lite",
     "slug": "redmi-y1-lite",
     "minPrice": 1500,
-    "maxPrice": 1730,
+    "maxPrice": 2100,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3d07d90a-2553.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -47467,9 +47467,9 @@ const MOBILE_DATASET = [
         "name": "4 GB/128 GB",
         "ram": "4 GB",
         "storage": "128 GB",
-        "price": "\u20b91,620",
-        "priceNum": 1620,
-        "basePrice": 1620,
+        "price": "\u20b91,800",
+        "priceNum": 1800,
+        "basePrice": 1800,
         "active": true
       },
       {
@@ -47478,9 +47478,9 @@ const MOBILE_DATASET = [
         "name": "6 GB/128 GB",
         "ram": "6 GB",
         "storage": "128 GB",
-        "price": "\u20b91,730",
-        "priceNum": 1730,
-        "basePrice": 1730,
+        "price": "\u20b92,100",
+        "priceNum": 2100,
+        "basePrice": 2100,
         "active": true
       }
     ]
@@ -47562,7 +47562,7 @@ const MOBILE_DATASET = [
     "model": "Xiaomi 11 Lite NE 5G",
     "slug": "xiaomi-11-lite-ne-5g",
     "minPrice": 8710,
-    "maxPrice": 10620,
+    "maxPrice": 9810,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a11fe54a-a171.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -47583,9 +47583,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b99,310",
-        "priceNum": 9310,
-        "basePrice": 9310,
+        "price": "\u20b99,060",
+        "priceNum": 9060,
+        "basePrice": 9060,
         "active": true
       },
       {
@@ -47594,9 +47594,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b99,920",
-        "priceNum": 9920,
-        "basePrice": 9920,
+        "price": "\u20b99,410",
+        "priceNum": 9410,
+        "basePrice": 9410,
         "active": true
       },
       {
@@ -47605,9 +47605,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b910,620",
-        "priceNum": 10620,
-        "basePrice": 10620,
+        "price": "\u20b99,810",
+        "priceNum": 9810,
+        "basePrice": 9810,
         "active": true
       }
     ]
@@ -47619,7 +47619,7 @@ const MOBILE_DATASET = [
     "model": "Xiaomi 11T Pro 5G",
     "slug": "xiaomi-11t-pro-5g",
     "minPrice": 8560,
-    "maxPrice": 10100,
+    "maxPrice": 9520,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a2b83e2d-f12d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -47640,9 +47640,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b99,240",
-        "priceNum": 9240,
-        "basePrice": 9240,
+        "price": "\u20b99,040",
+        "priceNum": 9040,
+        "basePrice": 9040,
         "active": true
       },
       {
@@ -47651,9 +47651,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b910,100",
-        "priceNum": 10100,
-        "basePrice": 10100,
+        "price": "\u20b99,520",
+        "priceNum": 9520,
+        "basePrice": 9520,
         "active": true
       }
     ]
@@ -47665,7 +47665,7 @@ const MOBILE_DATASET = [
     "model": "Xiaomi 12 Pro 5G",
     "slug": "xiaomi-12-pro-5g",
     "minPrice": 14380,
-    "maxPrice": 16960,
+    "maxPrice": 15340,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d213a621-d6e6.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -47686,9 +47686,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b915,530",
-        "priceNum": 15530,
-        "basePrice": 15530,
+        "price": "\u20b914,860",
+        "priceNum": 14860,
+        "basePrice": 14860,
         "active": true
       },
       {
@@ -47697,9 +47697,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b916,960",
-        "priceNum": 16960,
-        "basePrice": 16960,
+        "price": "\u20b915,340",
+        "priceNum": 15340,
+        "basePrice": 15340,
         "active": true
       }
     ]
@@ -49475,7 +49475,7 @@ const MOBILE_DATASET = [
     "model": "Xiaomi Redmi Note 4",
     "slug": "xiaomi-redmi-note-4",
     "minPrice": 1500,
-    "maxPrice": 1830,
+    "maxPrice": 2600,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-lsl54uvo-f2k5.png?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -49496,9 +49496,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b91,600",
-        "priceNum": 1600,
-        "basePrice": 1600,
+        "price": "\u20b91,850",
+        "priceNum": 1850,
+        "basePrice": 1850,
         "active": true
       },
       {
@@ -49507,9 +49507,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b91,700",
-        "priceNum": 1700,
-        "basePrice": 1700,
+        "price": "\u20b92,200",
+        "priceNum": 2200,
+        "basePrice": 2200,
         "active": true
       },
       {
@@ -49518,9 +49518,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b91,830",
-        "priceNum": 1830,
-        "basePrice": 1830,
+        "price": "\u20b92,600",
+        "priceNum": 2600,
+        "basePrice": 2600,
         "active": true
       }
     ]
@@ -50237,7 +50237,7 @@ const MOBILE_DATASET = [
     "model": "Xiaomi Redmi Note 11",
     "slug": "xiaomi-redmi-note-11",
     "minPrice": 4970,
-    "maxPrice": 6060,
+    "maxPrice": 6070,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2d93f49f-eeb8.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -50258,9 +50258,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b95,310",
-        "priceNum": 5310,
-        "basePrice": 5310,
+        "price": "\u20b95,320",
+        "priceNum": 5320,
+        "basePrice": 5320,
         "active": true
       },
       {
@@ -50269,9 +50269,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b95,660",
-        "priceNum": 5660,
-        "basePrice": 5660,
+        "price": "\u20b95,670",
+        "priceNum": 5670,
+        "basePrice": 5670,
         "active": true
       },
       {
@@ -50280,9 +50280,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b96,060",
-        "priceNum": 6060,
-        "basePrice": 6060,
+        "price": "\u20b96,070",
+        "priceNum": 6070,
+        "basePrice": 6070,
         "active": true
       }
     ]
@@ -50294,7 +50294,7 @@ const MOBILE_DATASET = [
     "model": "Xiaomi Redmi Note 11 Pro",
     "slug": "xiaomi-redmi-note-11-pro",
     "minPrice": 5930,
-    "maxPrice": 6990,
+    "maxPrice": 6890,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d5f781bf-ab7d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -50315,9 +50315,9 @@ const MOBILE_DATASET = [
         "name": "256 GB",
         "ram": null,
         "storage": "256 GB",
-        "price": "\u20b96,400",
-        "priceNum": 6400,
-        "basePrice": 6400,
+        "price": "\u20b96,410",
+        "priceNum": 6410,
+        "basePrice": 6410,
         "active": true
       },
       {
@@ -50326,9 +50326,9 @@ const MOBILE_DATASET = [
         "name": "512 GB",
         "ram": null,
         "storage": "512 GB",
-        "price": "\u20b96,990",
-        "priceNum": 6990,
-        "basePrice": 6990,
+        "price": "\u20b96,890",
+        "priceNum": 6890,
+        "basePrice": 6890,
         "active": true
       }
     ]
@@ -50478,7 +50478,7 @@ const MOBILE_DATASET = [
     "model": "Xiaomi Redmi Note 12",
     "slug": "xiaomi-redmi-note-12",
     "minPrice": 6910,
-    "maxPrice": 8430,
+    "maxPrice": 8010,
     "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d2166a5b-fd2d.jpg?w=800",
     "brandLogo": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/cb96df6e-080f.jpg?w=200",
     "variants": [
@@ -50499,9 +50499,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/128 GB",
         "ram": "8 GB",
         "storage": "128 GB",
-        "price": "\u20b97,390",
-        "priceNum": 7390,
-        "basePrice": 7390,
+        "price": "\u20b97,260",
+        "priceNum": 7260,
+        "basePrice": 7260,
         "active": true
       },
       {
@@ -50510,9 +50510,9 @@ const MOBILE_DATASET = [
         "name": "8 GB/256 GB",
         "ram": "8 GB",
         "storage": "256 GB",
-        "price": "\u20b97,870",
-        "priceNum": 7870,
-        "basePrice": 7870,
+        "price": "\u20b97,610",
+        "priceNum": 7610,
+        "basePrice": 7610,
         "active": true
       },
       {
@@ -50521,9 +50521,9 @@ const MOBILE_DATASET = [
         "name": "12 GB/256 GB",
         "ram": "12 GB",
         "storage": "256 GB",
-        "price": "\u20b98,430",
-        "priceNum": 8430,
-        "basePrice": 8430,
+        "price": "\u20b98,010",
+        "priceNum": 8010,
+        "basePrice": 8010,
         "active": true
       }
     ]

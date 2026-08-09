@@ -120,7 +120,7 @@ def main():
             'variants': c_variants
         })
 
-    # Deduplicate model titles & sort in ascending order
+    # Deduplicate model titles & sort in ascending order (prioritizing real scraped variants over 'Standard')
     merged_models = {}
     for item in models_raw:
         b = item['brand']
@@ -132,10 +132,14 @@ def main():
                 'model': c_m,
                 'variants': []
             }
-        seen_vars = set(v['variant'] for v in merged_models[key]['variants'])
         for v in item['variants']:
-            if v['variant'] not in seen_vars:
-                seen_vars.add(v['variant'])
+            v_title = (v.get('variant') or v.get('name') or '').strip()
+            if v_title == 'Standard' and len(merged_models[key]['variants']) > 0:
+                continue
+            existing_titles = [(x.get('variant') or x.get('name') or '').strip() for x in merged_models[key]['variants']]
+            if v_title not in existing_titles:
+                if v_title != 'Standard':
+                    merged_models[key]['variants'] = [x for x in merged_models[key]['variants'] if (x.get('variant') or x.get('name') or '').strip() != 'Standard']
                 merged_models[key]['variants'].append(v)
 
     models_raw = list(merged_models.values())
@@ -239,8 +243,8 @@ def main():
             # Category 1: Ultra / Pro Max / Fold / 1TB flagships
             if any(k in name_low for k in ['ultra', 'pro max', 'fold', '1tb']):
                 p256 = base_p
-                p512 = int(base_p * 1.08 // 10 * 10)
-                p1tb = int(base_p * 1.18 // 10 * 10)
+                p512 = base_p + 480
+                p1tb = base_p + 580
                 raw_variants = [
                     {'variant': '256 GB', 'price': f"₹{p256:,}"},
                     {'variant': '512 GB', 'price': f"₹{p512:,}"},
@@ -249,8 +253,8 @@ def main():
             # Category 2: Modern Pro / Plus / High-end flagships
             elif any(k in name_low for k in ['pro', 'plus', 'flip', 'magic', 'find x', 's24', 's23', 's22', 's21', 'pixel 9', 'pixel 8', 'pixel 7', 'iphone 16', 'iphone 15', 'iphone 14', 'iphone 13', 'iphone 12']):
                 p128 = base_p
-                p256 = int(base_p * 1.08 // 10 * 10)
-                p512 = int(base_p * 1.18 // 10 * 10)
+                p256 = base_p + 480
+                p512 = base_p + 960
                 raw_variants = [
                     {'variant': '128 GB', 'price': f"₹{p128:,}"},
                     {'variant': '256 GB', 'price': f"₹{p256:,}"},
@@ -259,9 +263,9 @@ def main():
             # Category 3: Mid-range RAM/Storage phones (5G, A-series, M-series, Redmi Note, Nord, Vivo V/Y, OPPO Reno/A, Realme GT)
             elif any(k in name_low for k in ['5g', 'note', 'nord', 'reno', 'gt', 'neo', 'pova', 'spark', 'camon', 'zero', 'hot', 'narzo', 'a5', 'a7', 'm3', 'm5', 'f2', 'x5', 'x6']):
                 p1 = base_p
-                p2 = int(base_p * 1.07 // 10 * 10)
-                p3 = int(base_p * 1.14 // 10 * 10)
-                p4 = int(base_p * 1.22 // 10 * 10)
+                p2 = base_p + 350
+                p3 = base_p + 700
+                p4 = base_p + 1100
                 raw_variants = [
                     {'variant': '6 GB/128 GB', 'price': f"₹{p1:,}"},
                     {'variant': '8 GB/128 GB', 'price': f"₹{p2:,}"},
@@ -271,8 +275,8 @@ def main():
             # Category 4: Standard Storage phones
             elif any(k in name_low for k in ['iphone', 'pixel', 'galaxy', 'xiaomi']):
                 p64 = base_p
-                p128 = int(base_p * 1.08 // 10 * 10)
-                p256 = int(base_p * 1.16 // 10 * 10)
+                p128 = base_p + 450
+                p256 = base_p + 900
                 raw_variants = [
                     {'variant': '64 GB', 'price': f"₹{p64:,}"},
                     {'variant': '128 GB', 'price': f"₹{p128:,}"},
@@ -281,8 +285,8 @@ def main():
             # Category 5: Budget / Entry level phones
             else:
                 p1 = base_p
-                p2 = int(base_p * 1.08 // 10 * 10)
-                p3 = int(base_p * 1.16 // 10 * 10)
+                p2 = base_p + 300
+                p3 = base_p + 600
                 raw_variants = [
                     {'variant': '4 GB/64 GB', 'price': f"₹{p1:,}"},
                     {'variant': '4 GB/128 GB', 'price': f"₹{p2:,}"},
