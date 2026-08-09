@@ -182,16 +182,39 @@ def main():
             m_id = f"{m_id}-{idx}"
         seen_model_ids.add(m_id)
 
-        # Image resolution
+        # Image resolution matching real Cashify S3 CDN images
         img_url = None
-        if m_slug in real_images:
-            img_url = real_images[m_slug]
-        elif m_name.lower() in real_images:
-            img_url = real_images[m_name.lower()]
-        elif f"used-{m_slug}" in real_images:
-            img_url = real_images[f"used-{m_slug}"]
-        else:
-            img_url = f"https://s3ng.cashify.in/cashify/product/img/xhdpi/{m_slug}.jpg?w=800"
+        candidates = [
+            m_slug,
+            m_name.lower(),
+            f"{b_slug}-{m_slug}",
+            f"{b_name.lower()} {m_name.lower()}",
+            clean_slug(f"{b_name} {m_name}"),
+            clean_slug(m_name),
+            f"used-{m_slug}",
+            f"sell-old-{m_slug}",
+        ]
+        base_name = re.sub(r'\s*(5g|4g|3g|edition|prime|pro|lite)\b', '', m_name, flags=re.I).strip()
+        candidates.append(base_name.lower())
+        candidates.append(clean_slug(base_name))
+        candidates.append(f"{b_slug}-{clean_slug(base_name)}")
+
+        for cand in candidates:
+            if cand in real_images and real_images[cand] and 'builder' not in real_images[cand]:
+                img_url = real_images[cand]
+                break
+
+        if not img_url:
+            clean_tokens = [t for t in re.split(r'[^a-z0-9]', m_name.lower()) if t and t not in [b_slug.lower(), 'samsung', 'apple', 'xiaomi', 'realme', 'oppo', 'vivo', 'oneplus', 'poco', 'motorola', '5g', '4g', 'phone', 'mobile']]
+            if clean_tokens:
+                core_key = clean_tokens[0]
+                for rk, rval in real_images.items():
+                    if rval and 'builder' not in rval and b_slug.lower() in rk and core_key in rk:
+                        img_url = rval
+                        break
+
+        if not img_url:
+            img_url = "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80"
 
         # Variants
         processed_vars = []
