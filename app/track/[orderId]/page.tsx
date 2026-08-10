@@ -15,6 +15,8 @@ import {
   Clock,
   Truck,
   UserCheck,
+  Phone,
+  Building2,
   Search,
   Banknote,
   ShieldCheck,
@@ -188,6 +190,63 @@ export default function OrderTrackingPage() {
               </div>
             </div>
           </div>
+
+          {/* ASSIGNED PICKUP EXECUTIVE CARD */}
+          {order.assignedPartnerName ? (
+            <div className="bg-gradient-to-br from-neutral-900 to-black text-white rounded-3xl p-6 sm:p-8 border border-neutral-800 shadow-2xl space-y-4 animate-fadeIn">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-neutral-800 pb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-yellow/20 border border-brand-yellow/40 flex items-center justify-center text-brand-yellow shrink-0">
+                    <UserCheck className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-950 border border-emerald-700 text-emerald-400 text-[10px] font-bold uppercase tracking-wider mb-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span>Pickup Executive Assigned</span>
+                    </div>
+                    <h2 className="text-xl font-black text-white">
+                      {order.assignedPartnerName}
+                    </h2>
+                    <p className="text-xs text-gray-400 flex items-center gap-1.5 mt-0.5">
+                      <Building2 className="w-3.5 h-3.5 text-brand-yellow" />
+                      <span>{order.assignedPartnerBusiness || "Express Logistics Partner"}</span>
+                    </p>
+                  </div>
+                </div>
+
+                <a
+                  href={`tel:${order.assignedPartnerPhone || "+919876543210"}`}
+                  className="inline-flex items-center justify-center gap-2 bg-brand-yellow text-black font-extrabold text-xs px-6 py-3 rounded-2xl border border-black shadow-yellowGlow hover:bg-yellow-400 transition-all text-center"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>Call Executive ({order.assignedPartnerPhone || "+91 9876543210"})</span>
+                </a>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-300 pt-1">
+                <div className="bg-neutral-800/80 p-3 rounded-2xl border border-neutral-700">
+                  <span className="text-[10px] font-bold uppercase text-gray-400 block">Scheduled Window</span>
+                  <span className="font-extrabold text-white text-sm">{order.pickupDate} ({order.pickupTimeSlot})</span>
+                </div>
+                <div className="bg-neutral-800/80 p-3 rounded-2xl border border-neutral-700">
+                  <span className="text-[10px] font-bold uppercase text-gray-400 block">Pickup Address</span>
+                  <span className="font-semibold text-gray-200 truncate block">{order.addressSummary || "Customer Address • PIN: " + order.pincode}</span>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="bg-white rounded-3xl p-6 border border-brand-border shadow-subtleCard flex items-center gap-4">
+              <div className="w-10 h-10 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 shrink-0">
+                <Clock className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h3 className="text-sm font-extrabold text-brand-black">Assigning Local Pickup Agent...</h3>
+                <p className="text-xs text-brand-muted mt-0.5">
+                  Our local logistics team is assigning a CashALL executive for pincode <strong className="text-black">{order.pincode}</strong>. Executive details will appear here as soon as dispatched.
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* VISUAL TIMELINE STEPPER */}
           <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-border shadow-subtleCard space-y-6">

@@ -98,6 +98,8 @@ export interface OrderData {
     | "CANCELLED";
   assignedPartnerId?: string;
   assignedPartnerName?: string;
+  assignedPartnerPhone?: string;
+  assignedPartnerBusiness?: string;
   revisedPrice?: number;
   priceDifferenceReason?: string;
   declaredConditionSummary?: string;
@@ -5422,12 +5424,13 @@ export const INITIAL_FAQS: FAQData[] = [
 
 const ENABLE_SAMPLE_DATA = process.env.NEXT_PUBLIC_ENABLE_SAMPLE_DATA === "true";
 
-export const INITIAL_PARTNERS: PartnerData[] = ENABLE_SAMPLE_DATA
-  ? [
-      { id: "part-1", name: "Rahul Sharma", phone: "+91 9876543210", email: "rahul@cashallpartners.in", businessName: "Express Logistics East", city: "Kolkata", status: "ACTIVE", rating: 4.9, completedPickups: 142 },
-      { id: "part-2", name: "Vikram Kumar", phone: "+91 9812345678", email: "vikram@cashallpartners.in", businessName: "Apex Courier Services", city: "Lucknow", status: "ACTIVE", rating: 4.8, completedPickups: 98 },
-    ]
-  : [];
+export const DEFAULT_PARTNERS: PartnerData[] = [
+  { id: "part-1", name: "Rahul Sharma", phone: "+91 9876543210", email: "rahul@cashallpartners.in", businessName: "Express Logistics East", city: "Kolkata", status: "ACTIVE", rating: 4.9, completedPickups: 142 },
+  { id: "part-2", name: "Vikram Kumar", phone: "+91 9812345678", email: "vikram@cashallpartners.in", businessName: "Apex Courier Services", city: "Lucknow", status: "ACTIVE", rating: 4.8, completedPickups: 98 },
+  { id: "part-3", name: "Amitav Roy", phone: "+91 7003216788", email: "amitav@cashallpartners.in", businessName: "CashALL Direct Dispatch", city: "Kolkata", status: "ACTIVE", rating: 5.0, completedPickups: 215 },
+];
+
+export const INITIAL_PARTNERS: PartnerData[] = ENABLE_SAMPLE_DATA ? DEFAULT_PARTNERS : DEFAULT_PARTNERS;
 
 // DEMO SAMPLE ORDERS
 export const INITIAL_ORDERS: OrderData[] = ENABLE_SAMPLE_DATA

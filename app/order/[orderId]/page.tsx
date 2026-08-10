@@ -8,7 +8,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { OrderData, INITIAL_VARIANTS, INITIAL_MODELS, INITIAL_BRANDS, INITIAL_ORDERS } from "@/lib/store";
-import { CheckCircle2, Calendar, MapPin, Smartphone, ArrowRight, ShieldCheck, Copy, Check } from "lucide-react";
+import { CheckCircle2, Calendar, MapPin, Smartphone, ArrowRight, ShieldCheck, Copy, Check, UserCheck, Phone } from "lucide-react";
 
 export default function OrderConfirmationPage() {
   const params = useParams();
@@ -120,10 +120,32 @@ export default function OrderConfirmationPage() {
                   <span>Pickup Location</span>
                 </div>
                 <div className="text-xs font-bold text-brand-black line-clamp-2">
-                  {order.addressSummary || "Customer Address, New Delhi"}
+                  {order.addressSummary || "Customer Address • PIN: " + order.pincode}
                 </div>
               </div>
             </div>
+
+            {/* ASSIGNED EXECUTIVE BANNER */}
+            {order.assignedPartnerName && (
+              <div className="p-4 bg-black text-white rounded-2xl border border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-left">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-brand-yellow/20 text-brand-yellow flex items-center justify-center font-bold shrink-0">
+                    <UserCheck className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase font-bold text-gray-400">Assigned Pickup Executive</div>
+                    <div className="text-sm font-extrabold text-white">{order.assignedPartnerName} ({order.assignedPartnerBusiness || "Express Logistics"})</div>
+                  </div>
+                </div>
+                <a
+                  href={`tel:${order.assignedPartnerPhone || "+919876543210"}`}
+                  className="bg-brand-yellow text-black font-extrabold text-xs px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-yellow-400 transition-all shadow-sm"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>Call Executive ({order.assignedPartnerPhone || "+91 9876543210"})</span>
+                </a>
+              </div>
+            )}
 
             {/* ACTION BUTTON */}
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
