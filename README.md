@@ -19,7 +19,7 @@
 10. **Live Order Tracking & Inspection**: Milestone stepper, physical inspection comparison (Declared vs Inspected), revised offer approval/decline, instant payment tracking, and in-app digital handover certificate.
 
 ### Admin Operations Portal (`/admin`)
-- **Protected Access**: Role-based authentication (`admin@cashall.in` / `admin123`).
+- **Protected Access**: Role-based authentication (`cashall7003216788@gmail.com`).
 - **Dashboard Overview**: Operational KPIs (Quotes, Orders, Pickups, Revenue, Completed Sales).
 - **Device Catalog**: Brands, Models, and Storage Variants CRUD.
 - **Pricing Matrix Manager**: Real-time adjustment of base prices and deduction rules without altering code.
@@ -60,8 +60,8 @@
 
 4. **Access Admin Portal**:
    Navigate to [http://localhost:3000/admin/login](http://localhost:3000/admin/login)
-   - **Email**: `admin@cashall.in`
-   - **Password**: `admin123`
+   - **Email**: `cashall7003216788@gmail.com`
+   - **Password**: Configured admin password.
 
 ---
 

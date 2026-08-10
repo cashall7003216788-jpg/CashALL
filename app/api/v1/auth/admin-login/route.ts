@@ -43,13 +43,29 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   }
 
   const { email, password } = result.data;
+  const targetAdminEmail = (process.env.ADMIN_EMAIL || "cashall7003216788@gmail.com").trim().toLowerCase();
+  const targetAdminPassword = process.env.ADMIN_PASSWORD || "Ank933967@";
+
+  const cleanEmail = email.trim().toLowerCase();
+
+  // Validate admin password and email matching
+  if (cleanEmail !== targetAdminEmail || password !== targetAdminPassword) {
+    throw new AppError("Invalid credentials.", 401);
+  }
 
   // Check email profile exists in database with admin roles
-  const user = await AuthService.verifyAdmin(email);
-
-  // Validate admin credential stubs for demo config (in production, verify hashed password)
-  if (email === "admin@cashall.in" && password !== "admin123") {
-    throw new AppError("Invalid credentials.", 401);
+  let user;
+  try {
+    user = await AuthService.verifyAdmin(cleanEmail);
+  } catch (err) {
+    // If profile not yet seeded in db, allow master admin login
+    user = {
+      id: "admin_master_1",
+      email: targetAdminEmail,
+      name: "CashALL Admin",
+      role: "ADMIN",
+      status: "ACTIVE",
+    };
   }
 
   return NextResponse.json({
@@ -62,7 +78,7 @@ export const POST = apiWrapper(async (req: NextRequest) => {
         role: user.role,
         status: user.status,
       },
-      token: "tok_admin_demo_session",
+      token: "tok_admin_master_session",
     },
   });
 });

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
@@ -20,6 +20,21 @@ import {
 export function AdminSidebar() {
   const pathname = usePathname();
   const router = useRouter();
+  const [adminEmail, setAdminEmail] = useState("cashall7003216788@gmail.com");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const session = localStorage.getItem("cashall_admin_session");
+      if (session) {
+        try {
+          const parsed = JSON.parse(session);
+          if (parsed?.email) {
+            setAdminEmail(parsed.email);
+          }
+        } catch (e) {}
+      }
+    }
+  }, []);
 
   const handleLogout = () => {
     if (typeof window !== "undefined") {
@@ -80,7 +95,7 @@ export function AdminSidebar() {
         <div className="flex items-center justify-between text-xs">
           <div className="truncate">
             <div className="font-bold text-white">Operator Console</div>
-            <div className="text-[10px] text-gray-400">admin@cashall.in</div>
+            <div className="text-[10px] text-gray-400">{adminEmail}</div>
           </div>
         </div>
 

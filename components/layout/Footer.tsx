@@ -135,11 +135,6 @@ export function Footer() {
                   Terms & Conditions
                 </Link>
               </li>
-              <li className="pt-2">
-                <Link href="/admin" className="text-brand-yellow/80 hover:text-brand-yellow font-semibold text-[11px] underline">
-                  Admin Operator Portal
-                </Link>
-              </li>
             </ul>
           </div>
 

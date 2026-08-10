@@ -240,13 +240,6 @@ export function Header() {
             >
               My Orders / Account
             </Link>
-            <Link
-              href="/admin"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-xs font-semibold text-gray-400 hover:text-brand-yellow"
-            >
-              Operator Admin Login
-            </Link>
           </div>
         )}
       </header>
