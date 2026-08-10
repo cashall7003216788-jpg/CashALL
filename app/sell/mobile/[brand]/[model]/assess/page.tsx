@@ -63,6 +63,7 @@ export default function ConditionAssessmentPage() {
   const [step, setStep] = useState<number>(1);
 
   // STEP 1: BASIC QUESTIONS (YES/NO)
+  const [powerWorking, setPowerWorking] = useState<boolean | null>(null);
   const [callsWorking, setCallsWorking] = useState<boolean | null>(null);
   const [touchWorking, setTouchWorking] = useState<boolean | null>(null);
   const [screenOriginal, setScreenOriginal] = useState<boolean | null>(null);
@@ -99,6 +100,7 @@ export default function ConditionAssessmentPage() {
     let totalDeductionPct = 0;
 
     // Step 1 Percentage Deductions
+    if (powerWorking === false) totalDeductionPct += getRuleDeduction("q-power", "o-p-no");
     if (callsWorking === false) totalDeductionPct += getRuleDeduction("q-calls", "o-c-no");
     if (touchWorking === false) totalDeductionPct += getRuleDeduction("q-touch", "o-t-no");
     if (screenOriginal === false) totalDeductionPct += getRuleDeduction("q-screen-orig", "o-so-no");
@@ -233,7 +235,41 @@ export default function ConditionAssessmentPage() {
               {step === 1 && (
                 <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-border shadow-premium space-y-8">
                   
-                  {/* QUESTION 1: CALLS */}
+                  {/* QUESTION 1: POWER / SWITCH ON */}
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-black text-brand-black">
+                      Does your phone switch on?
+                    </h3>
+                    <p className="text-xs text-brand-muted">
+                      Turn on the device screen and check basic power status.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
+                      <button
+                        onClick={() => setPowerWorking(true)}
+                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                          powerWorking === true
+                            ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
+                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                        }`}
+                      >
+                        Yes
+                      </button>
+                      <button
+                        onClick={() => setPowerWorking(false)}
+                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                          powerWorking === false
+                            ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
+                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                        }`}
+                      >
+                        No
+                      </button>
+                    </div>
+                  </div>
+
+                  <hr className="border-gray-100" />
+
+                  {/* QUESTION 2: CALLS */}
                   <div className="space-y-3">
                     <h3 className="text-lg font-black text-brand-black">
                       Are you able to make and receive calls?
@@ -747,6 +783,10 @@ export default function ConditionAssessmentPage() {
                   <div className="space-y-2 text-xs">
                     <div className="font-bold text-brand-black">Device Details</div>
                     <ul className="space-y-1 text-gray-600 pl-2">
+                      <li className="flex items-center gap-1.5">
+                        <span className={`w-1.5 h-1.5 rounded-full ${powerWorking === false ? "bg-red-500" : "bg-emerald-500"}`} />
+                        <span>Power: {powerWorking === null ? "Pending" : powerWorking ? "Turns ON" : "Power / Boot Issue (-50%)"}</span>
+                      </li>
                       <li className="flex items-center gap-1.5">
                         <span className={`w-1.5 h-1.5 rounded-full ${callsWorking ? "bg-emerald-500" : "bg-red-500"}`} />
                         <span>Calls: {callsWorking === null ? "Pending" : callsWorking ? "Working" : "Not Able to Make Calls"}</span>
