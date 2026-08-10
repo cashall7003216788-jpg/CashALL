@@ -1,3 +1,4 @@
+
 "use client";
 
 export const dynamic = "force-dynamic";
@@ -13,6 +14,7 @@ import {
   INITIAL_BRANDS,
   INITIAL_MODELS,
   INITIAL_VARIANTS,
+  INITIAL_PRICING_RULES,
   QuoteData,
 } from "@/lib/store";
 import {
@@ -85,34 +87,54 @@ export default function ConditionAssessmentPage() {
       : [...array, item];
   };
 
-  // CALCULATE DYNAMIC ESTIMATED PRICE (Percentage-based)
+  const getRuleDeduction = (questionId: string, optionId: string): number => {
+    const rule = INITIAL_PRICING_RULES.find((r) => r.questionId === questionId && r.optionId === optionId);
+    if (!rule) return 0;
+    return rule.adjustmentType === "PERCENTAGE_DEDUCTION" ? rule.adjustmentValue : 0;
+  };
+
+  // CALCULATE DYNAMIC ESTIMATED PRICE (Linked to Admin Pricing Rules Matrix)
   const calculateEstimatedPrice = () => {
     const baseP = variant.basePrice;
     let totalDeductionPct = 0;
 
     // Step 1 Percentage Deductions
-    if (callsWorking === false) totalDeductionPct += 12;
-    if (touchWorking === false) totalDeductionPct += 20;
-    if (screenOriginal === false) totalDeductionPct += 15;
+    if (callsWorking === false) totalDeductionPct += getRuleDeduction("q-calls", "o-c-no");
+    if (touchWorking === false) totalDeductionPct += getRuleDeduction("q-touch", "o-t-no");
+    if (screenOriginal === false) totalDeductionPct += getRuleDeduction("q-screen-orig", "o-so-no");
 
     // Step 2 Major Defect Percentage Deductions
-    if (selectedMajorDefects.includes("screen_broken")) totalDeductionPct += 25;
-    if (selectedMajorDefects.includes("screen_lines")) totalDeductionPct += 18;
-    if (selectedMajorDefects.includes("panel_missing")) totalDeductionPct += 10;
+    if (selectedMajorDefects.includes("screen_broken")) totalDeductionPct += getRuleDeduction("q-screen-defect", "o-s-cracked");
+    if (selectedMajorDefects.includes("screen_lines")) totalDeductionPct += getRuleDeduction("q-screen-defect", "o-s-lines");
+    if (selectedMajorDefects.includes("panel_missing")) totalDeductionPct += getRuleDeduction("q-screen-defect", "o-s-backpanel");
 
     // Step 3 Scratches & Dents Percentage Deductions
-    if (scratchLevel === "more_than_2") totalDeductionPct += 12;
-    if (scratchLevel === "1_2_scratches") totalDeductionPct += 5;
+    if (scratchLevel === "more_than_2") totalDeductionPct += getRuleDeduction("q-scratches", "o-sc-deep");
+    if (scratchLevel === "1_2_scratches") totalDeductionPct += getRuleDeduction("q-scratches", "o-sc-minor");
 
-    if (dentLevel === "major_dents") totalDeductionPct += 18;
-    if (dentLevel === "1_2_dents") totalDeductionPct += 8;
+    if (dentLevel === "major_dents") totalDeductionPct += getRuleDeduction("q-dents", "o-d-major");
+    if (dentLevel === "1_2_dents") totalDeductionPct += getRuleDeduction("q-dents", "o-d-minor");
 
-    // Step 4 Functional Issues (4% per issue)
-    totalDeductionPct += selectedFunctionalIssues.length * 4;
+    // Step 4 Functional Issues
+    if (selectedFunctionalIssues.includes("front_camera") || selectedFunctionalIssues.includes("back_camera")) {
+      totalDeductionPct += getRuleDeduction("q-func-camera", "o-fc-faulty");
+    }
+    if (selectedFunctionalIssues.includes("battery")) {
+      totalDeductionPct += getRuleDeduction("q-func-battery", "o-fb-weak");
+    }
+    if (selectedFunctionalIssues.includes("fingerprint") || selectedFunctionalIssues.includes("face_id")) {
+      totalDeductionPct += getRuleDeduction("q-func-biometric", "o-fbio-faulty");
+    }
+    if (selectedFunctionalIssues.includes("speaker") || selectedFunctionalIssues.includes("mic")) {
+      totalDeductionPct += getRuleDeduction("q-func-speaker", "o-fs-faulty");
+    }
+    if (selectedFunctionalIssues.includes("wifi") || selectedFunctionalIssues.includes("bluetooth")) {
+      totalDeductionPct += getRuleDeduction("q-func-connectivity", "o-fconn-faulty");
+    }
 
-    // Step 5 Accessories Deductions (Missing charger: -3%, Missing box: -2%)
-    if (!selectedAccessories.includes("charger")) totalDeductionPct += 3;
-    if (!selectedAccessories.includes("box")) totalDeductionPct += 2;
+    // Step 5 Accessories Deductions
+    if (!selectedAccessories.includes("charger")) totalDeductionPct += getRuleDeduction("q-acc-charger", "o-ac-no");
+    if (!selectedAccessories.includes("box")) totalDeductionPct += getRuleDeduction("q-acc-box", "o-ab-no");
 
     const totalDeductionAmount = Math.round((baseP * totalDeductionPct) / 100);
     const finalPrice = Math.max(Math.round(baseP * 0.15), baseP - totalDeductionAmount);

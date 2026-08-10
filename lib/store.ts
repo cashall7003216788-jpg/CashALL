@@ -5146,101 +5146,234 @@ const LAPTOP_VARIANTS: DeviceVariantData[] = [
 export const INITIAL_VARIANTS: DeviceVariantData[] = [...MOBILE_VARIANTS_PART_1, ...MOBILE_VARIANTS_PART_2, ...MOBILE_VARIANTS_PART_3, ...MOBILE_VARIANTS_PART_4, ...MOBILE_VARIANTS_PART_5, ...MOBILE_VARIANTS_PART_6, ...MOBILE_VARIANTS_PART_7, ...MOBILE_VARIANTS_PART_8, ...MOBILE_VARIANTS_PART_9, ...LAPTOP_VARIANTS];
 
 export const INITIAL_QUESTIONS: QuestionData[] = [
+  // STEP 1: BASIC OPERATIONAL HEALTH
   {
     id: "q-power",
     title: "Does your phone switch on?",
-    subtitle: "Turn on the phone screen and check basic power function",
+    subtitle: "Turn on the device screen and check basic power status",
     group: "BASIC",
     type: "SINGLE",
     sortOrder: 1,
     options: [
-      { id: "o-p-yes", label: "Turns ON normally", description: "Phone powers up to home screen", iconName: "Power", sortOrder: 1 },
-      { id: "o-p-no", label: "Power / Boot Issue", description: "Does not turn on or gets stuck on logo", iconName: "PowerOff", sortOrder: 2 },
+      { id: "o-p-yes", label: "Turns ON normally", description: "Powers up to home screen fine", iconName: "Power", sortOrder: 1 },
+      { id: "o-p-no", label: "Power / Boot Issue", description: "Does not turn on or gets stuck on boot logo", iconName: "PowerOff", sortOrder: 2 },
     ],
   },
   {
-    id: "q-screen",
-    title: "What is the physical condition of the screen?",
-    subtitle: "Check under clear light for scratches, cracks or display tint",
-    group: "SCREEN",
+    id: "q-calls",
+    title: "Can you make and receive calls?",
+    subtitle: "Check SIM network, earpiece speaker, and primary microphone",
+    group: "BASIC",
     type: "SINGLE",
     sortOrder: 2,
     options: [
-      { id: "o-s-flawless", label: "Flawless / Like New", description: "No scratches, zero defects", iconName: "Sparkles", sortOrder: 1 },
-      { id: "o-s-minor", label: "Minor Scratches", description: "1-2 light surface hairline scratches", iconName: "Minimize2", sortOrder: 2 },
-      { id: "o-s-heavy", label: "Heavy Scratches", description: "Multiple deep noticeable scratches", iconName: "Layers", sortOrder: 3 },
-      { id: "o-s-cracked", label: "Cracked / Damaged Glass", description: "Visible glass cracks or touch issue", iconName: "Smartphone", sortOrder: 4 },
+      { id: "o-c-yes", label: "Calls work normally", description: "Able to make & receive calls", iconName: "PhoneCall", sortOrder: 1 },
+      { id: "o-c-no", label: "Call / SIM / Mic issue", description: "Cannot place calls or mic/earpiece dead", iconName: "PhoneOff", sortOrder: 2 },
     ],
   },
   {
-    id: "q-body",
-    title: "What is the condition of the body / side frame?",
-    subtitle: "Inspect side edges, back glass, camera bump and corners",
-    group: "BODY",
+    id: "q-touch",
+    title: "Is the touch screen fully working?",
+    subtitle: "Test touch response across all screen edges and keyboard areas",
+    group: "BASIC",
     type: "SINGLE",
     sortOrder: 3,
     options: [
-      { id: "o-b-excellent", label: "Flawless Body", description: "No dents, no scratches", iconName: "ShieldCheck", sortOrder: 1 },
-      { id: "o-b-minor", label: "Minor Wear", description: "Light paint wear or minor micro scuffs", iconName: "Sliders", sortOrder: 2 },
-      { id: "o-b-dents", label: "Dents / Scratches", description: "Noticeable dents on corners or back glass scuffs", iconName: "AlertTriangle", sortOrder: 3 },
-      { id: "o-b-damaged", label: "Heavy Structural Damage", description: "Bent frame, cracked back panel", iconName: "XCircle", sortOrder: 4 },
+      { id: "o-t-yes", label: "Touch works perfectly", description: "Smooth response across full display", iconName: "Smartphone", sortOrder: 1 },
+      { id: "o-t-no", label: "Touch unresponsive / Dead spots", description: "Ghost touch or unresponsive screen sections", iconName: "XCircle", sortOrder: 2 },
     ],
   },
   {
-    id: "q-functional",
-    title: "Are there any functional issues?",
-    subtitle: "Select all features that are broken or malfunctioning",
-    group: "FUNCTIONAL",
-    type: "SINGLE", // Simplified to single choice options for clean step UI
+    id: "q-screen-orig",
+    title: "Is the screen original & unreplaced?",
+    subtitle: "Factory fitted original display vs third-party repaired screen",
+    group: "BASIC",
+    type: "SINGLE",
     sortOrder: 4,
     options: [
-      { id: "o-f-none", label: "All Functions Work Perfectly", description: "Cameras, Wi-Fi, Speakers, Fingerprint/FaceID all fine", iconName: "CheckCircle2", sortOrder: 1 },
-      { id: "o-f-minor", label: "1-2 Minor Issues", description: "Weak battery health or slightly muffled speaker", iconName: "AlertCircle", sortOrder: 2 },
-      { id: "o-f-major", label: "Major Fault (Camera/Wi-Fi/Biometric)", description: "Camera blurry, FaceID failed or Wi-Fi unresponsive", iconName: "AlertTriangle", sortOrder: 3 },
+      { id: "o-so-yes", label: "Original OEM Screen", description: "Original factory fitted screen", iconName: "Sparkles", sortOrder: 1 },
+      { id: "o-so-no", label: "Replaced / Non-Original Screen", description: "Screen replaced by local technician or local LCD", iconName: "AlertTriangle", sortOrder: 2 },
     ],
   },
+
+  // STEP 2: MAJOR SCREEN & DISPLAY DEFECTS
   {
-    id: "q-accessories",
-    title: "Which original accessories do you have?",
-    subtitle: "Having original box and charger increases your phone's value",
-    group: "ACCESSORIES",
+    id: "q-screen-defect",
+    title: "What is the physical condition of the screen?",
+    subtitle: "Inspect screen glass and active display under clear light",
+    group: "SCREEN",
     type: "SINGLE",
     sortOrder: 5,
     options: [
-      { id: "o-a-all", label: "Original Box + Original Charger", description: "Complete inbox packaging included", iconName: "PackageCheck", sortOrder: 1 },
-      { id: "o-a-box", label: "Original Box Only", description: "No charger cable included", iconName: "Package", sortOrder: 2 },
-      { id: "o-a-charger", label: "Original Charger Only", description: "No original box included", iconName: "Zap", sortOrder: 3 },
-      { id: "o-a-none", label: "Device Only", description: "No box or charger included", iconName: "Smartphone", sortOrder: 4 },
+      { id: "o-s-flawless", label: "Flawless Screen (No Cracks / Lines)", description: "No glass cracks or display spots", iconName: "ShieldCheck", sortOrder: 1 },
+      { id: "o-s-cracked", label: "Glass Cracked / Broken Screen", description: "Visible glass cracks or chipped outer glass", iconName: "Smartphone", sortOrder: 2 },
+      { id: "o-s-lines", label: "Display Lines / Spots / Discoloration", description: "Vertical green/pink lines, black ink spots, or tint", iconName: "Layers", sortOrder: 3 },
+      { id: "o-s-backpanel", label: "Back Panel Glass Broken / Missing", description: "Cracked back glass panel or missing frame panel", iconName: "XCircle", sortOrder: 4 },
+    ],
+  },
+
+  // STEP 3: BODY WEAR, SCRATCHES & DENTS
+  {
+    id: "q-scratches",
+    title: "Are there any screen scratches?",
+    subtitle: "Examine screen glass under direct light for scuffs",
+    group: "BODY",
+    type: "SINGLE",
+    sortOrder: 6,
+    options: [
+      { id: "o-sc-none", label: "No Scratches (Flawless)", description: "Clean scratchless glass surface", iconName: "Sparkles", sortOrder: 1 },
+      { id: "o-sc-minor", label: "1-2 Light Surface Scratches", description: "Minor micro scuffs invisible when display is ON", iconName: "Minimize2", sortOrder: 2 },
+      { id: "o-sc-deep", label: "More than 2 Deep Scratches", description: "Multiple deep noticeable scratches", iconName: "Layers", sortOrder: 3 },
+    ],
+  },
+  {
+    id: "q-dents",
+    title: "What is the condition of the body & side frame?",
+    subtitle: "Inspect side edges, metal frame, camera bump and corners",
+    group: "BODY",
+    type: "SINGLE",
+    sortOrder: 7,
+    options: [
+      { id: "o-d-none", label: "Flawless Body (No Dents)", description: "No paint wear, no corner dents", iconName: "ShieldCheck", sortOrder: 1 },
+      { id: "o-d-minor", label: "1-2 Minor Dents / Paint Scuffs", description: "Light corner scuffs or minor paint wear", iconName: "Sliders", sortOrder: 2 },
+      { id: "o-d-major", label: "Major Dents / Bent Frame", description: "Noticeable deep dents or bent chassis frame", iconName: "AlertTriangle", sortOrder: 3 },
+    ],
+  },
+
+  // STEP 4: FUNCTIONAL & HARDWARE PROBLEMS
+  {
+    id: "q-func-camera",
+    title: "Camera Functionality Status",
+    subtitle: "Front selfie camera & rear main camera test",
+    group: "FUNCTIONAL",
+    type: "SINGLE",
+    sortOrder: 8,
+    options: [
+      { id: "o-fc-ok", label: "Cameras Work Perfectly", description: "Front & rear camera focus and capture clearly", iconName: "CheckCircle2", sortOrder: 1 },
+      { id: "o-fc-faulty", label: "Camera Blurry / Blurry Lens / Faulty", description: "Camera app crashes, lens blurry, or flash broken", iconName: "AlertTriangle", sortOrder: 2 },
+    ],
+  },
+  {
+    id: "q-func-battery",
+    title: "Battery Health Status",
+    subtitle: "Battery backup, charging retention and health status",
+    group: "FUNCTIONAL",
+    type: "SINGLE",
+    sortOrder: 9,
+    options: [
+      { id: "o-fb-ok", label: "Normal Battery Health", description: "Holds charge well throughout the day", iconName: "CheckCircle2", sortOrder: 1 },
+      { id: "o-fb-weak", label: "Battery Drains Quickly / Service Warning", description: "Needs frequent charging or battery health below 80%", iconName: "AlertCircle", sortOrder: 2 },
+    ],
+  },
+  {
+    id: "q-func-biometric",
+    title: "Biometric Security Status",
+    subtitle: "Fingerprint scanner & Face ID recognition test",
+    group: "FUNCTIONAL",
+    type: "SINGLE",
+    sortOrder: 10,
+    options: [
+      { id: "o-fbio-ok", label: "Fingerprint / Face ID Works", description: "Unlocks device fast without errors", iconName: "CheckCircle2", sortOrder: 1 },
+      { id: "o-fbio-faulty", label: "Fingerprint / Face ID Failed", description: "Sensor unresponsive or disabled by system", iconName: "AlertTriangle", sortOrder: 2 },
+    ],
+  },
+  {
+    id: "q-func-speaker",
+    title: "Speaker & Audio Status",
+    subtitle: "Main loudspeaker and earpiece clarity test",
+    group: "FUNCTIONAL",
+    type: "SINGLE",
+    sortOrder: 11,
+    options: [
+      { id: "o-fs-ok", label: "Speakers Play Clear Sound", description: "Loudspeaker & earpiece crystal clear", iconName: "CheckCircle2", sortOrder: 1 },
+      { id: "o-fs-faulty", label: "Muffled / Low Volume / Distortion", description: "Crackling sound or speaker dead", iconName: "AlertCircle", sortOrder: 2 },
+    ],
+  },
+  {
+    id: "q-func-connectivity",
+    title: "Wireless Connectivity Status",
+    subtitle: "Wi-Fi, Bluetooth, and cellular network reception",
+    group: "FUNCTIONAL",
+    type: "SINGLE",
+    sortOrder: 12,
+    options: [
+      { id: "o-fconn-ok", label: "Wi-Fi & Bluetooth Work Fine", description: "Connects smoothly to networks & devices", iconName: "CheckCircle2", sortOrder: 1 },
+      { id: "o-fconn-faulty", label: "Wi-Fi / Bluetooth / Network Faulty", description: "Wi-Fi greyed out or fails to connect", iconName: "AlertTriangle", sortOrder: 2 },
+    ],
+  },
+
+  // STEP 5: ACCESSORIES & WARRANTY
+  {
+    id: "q-acc-box",
+    title: "Do you have the Original Device Box?",
+    subtitle: "Matching IMEI box increases resale value",
+    group: "ACCESSORIES",
+    type: "SINGLE",
+    sortOrder: 13,
+    options: [
+      { id: "o-ab-yes", label: "Original Box Available", description: "Same IMEI box included", iconName: "PackageCheck", sortOrder: 1 },
+      { id: "o-ab-no", label: "No Box Available", description: "Box not included", iconName: "Package", sortOrder: 2 },
+    ],
+  },
+  {
+    id: "q-acc-charger",
+    title: "Do you have the Original Fast Charger?",
+    subtitle: "Original inbox charging adapter & cable",
+    group: "ACCESSORIES",
+    type: "SINGLE",
+    sortOrder: 14,
+    options: [
+      { id: "o-ac-yes", label: "Original Charger Available", description: "Brand charger cable/adapter included", iconName: "Zap", sortOrder: 1 },
+      { id: "o-ac-no", label: "No Charger Available", description: "Charger not included", iconName: "XCircle", sortOrder: 2 },
+    ],
+  },
+  {
+    id: "q-acc-warranty",
+    title: "Is the phone under valid Brand Warranty?",
+    subtitle: "Must have valid GST invoice matching device details",
+    group: "ACCESSORIES",
+    type: "SINGLE",
+    sortOrder: 15,
+    options: [
+      { id: "o-aw-yes", label: "Under Brand Warranty (With Invoice)", description: "Device less than 11 months old with original bill", iconName: "ShieldCheck", sortOrder: 1 },
+      { id: "o-aw-no", label: "Out of Warranty / No Invoice", description: "Device more than 11 months old", iconName: "Clock", sortOrder: 2 },
     ],
   },
 ];
 
 export const INITIAL_PRICING_RULES: PricingRuleData[] = [
-  // Power (Step 1)
+  // Step 1: Basic Health Rules
   { id: "r-p-no", questionId: "q-power", optionId: "o-p-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 50 },
+  { id: "r-c-no", questionId: "q-calls", optionId: "o-c-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 12 },
+  { id: "r-t-no", questionId: "q-touch", optionId: "o-t-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 20 },
+  { id: "r-so-no", questionId: "q-screen-orig", optionId: "o-so-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 15 },
 
-  // Screen Condition (Step 2)
-  { id: "r-s-flawless", questionId: "q-screen", optionId: "o-s-flawless", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 0 },
-  { id: "r-s-minor", questionId: "q-screen", optionId: "o-s-minor", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 5 },
-  { id: "r-s-heavy", questionId: "q-screen", optionId: "o-s-heavy", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 12 },
-  { id: "r-s-cracked", questionId: "q-screen", optionId: "o-s-cracked", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 25 },
+  // Step 2: Major Screen Defect Rules
+  { id: "r-s-flawless", questionId: "q-screen-defect", optionId: "o-s-flawless", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 0 },
+  { id: "r-s-cracked", questionId: "q-screen-defect", optionId: "o-s-cracked", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 25 },
+  { id: "r-s-lines", questionId: "q-screen-defect", optionId: "o-s-lines", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 18 },
+  { id: "r-s-backpanel", questionId: "q-screen-defect", optionId: "o-s-backpanel", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 10 },
 
-  // Body Wear (Step 3)
-  { id: "r-b-excellent", questionId: "q-body", optionId: "o-b-excellent", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 0 },
-  { id: "r-b-minor", questionId: "q-body", optionId: "o-b-minor", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 3 },
-  { id: "r-b-dents", questionId: "q-body", optionId: "o-b-dents", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 8 },
-  { id: "r-b-damaged", questionId: "q-body", optionId: "o-b-damaged", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 18 },
+  // Step 3: Body Scratches & Dents Rules
+  { id: "r-sc-none", questionId: "q-scratches", optionId: "o-sc-none", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 0 },
+  { id: "r-sc-minor", questionId: "q-scratches", optionId: "o-sc-minor", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 5 },
+  { id: "r-sc-deep", questionId: "q-scratches", optionId: "o-sc-deep", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 12 },
 
-  // Functional Defects (Step 4)
-  { id: "r-f-none", questionId: "q-functional", optionId: "o-f-none", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 0 },
-  { id: "r-f-minor", questionId: "q-functional", optionId: "o-f-minor", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 6 },
-  { id: "r-f-major", questionId: "q-functional", optionId: "o-f-major", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 15 },
+  { id: "r-d-none", questionId: "q-dents", optionId: "o-d-none", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 0 },
+  { id: "r-d-minor", questionId: "q-dents", optionId: "o-d-minor", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 8 },
+  { id: "r-d-major", questionId: "q-dents", optionId: "o-d-major", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 18 },
 
-  // Accessories & Warranty (Step 5)
-  { id: "r-a-all", questionId: "q-accessories", optionId: "o-a-all", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 0 },
-  { id: "r-a-box", questionId: "q-accessories", optionId: "o-a-box", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 2 },
-  { id: "r-a-charger", questionId: "q-accessories", optionId: "o-a-charger", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 3 },
-  { id: "r-a-none", questionId: "q-accessories", optionId: "o-a-none", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 5 },
+  // Step 4: Functional Issue Rules
+  { id: "r-fc-faulty", questionId: "q-func-camera", optionId: "o-fc-faulty", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 10 },
+  { id: "r-fb-weak", questionId: "q-func-battery", optionId: "o-fb-weak", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 6 },
+  { id: "r-fbio-faulty", questionId: "q-func-biometric", optionId: "o-fbio-faulty", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 8 },
+  { id: "r-fs-faulty", questionId: "q-func-speaker", optionId: "o-fs-faulty", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 5 },
+  { id: "r-fconn-faulty", questionId: "q-func-connectivity", optionId: "o-fconn-faulty", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 12 },
+
+  // Step 5: Accessories & Warranty Rules
+  { id: "r-ab-no", questionId: "q-acc-box", optionId: "o-ab-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 2 },
+  { id: "r-ac-no", questionId: "q-acc-charger", optionId: "o-ac-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 3 },
+  { id: "r-aw-no", questionId: "q-acc-warranty", optionId: "o-aw-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 3 },
 ];
 
 export const AVAILABLE_STATES = ["West Bengal", "Uttar Pradesh", "Jharkhand"];
