@@ -222,11 +222,6 @@ export function CustomerAuthModal({
         {/* Firebase reCAPTCHA invisible container */}
         <div id="recaptcha-container" ref={recaptchaContainerRef} />
 
-        <div className="flex items-center gap-3 p-3 bg-yellow-50 rounded-xl border border-yellow-200 text-brand-black mb-4">
-          <ShieldCheck className="w-5 h-5 text-yellow-500 shrink-0" />
-          <span className="text-xs font-semibold">Secured by Firebase Phone Verification</span>
-        </div>
-
         {error && (
           <div className="bg-red-50 border border-red-200 text-red-700 text-xs p-3 rounded-xl mb-4">
             {error}

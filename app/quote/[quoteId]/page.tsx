@@ -397,11 +397,6 @@ export default function QuoteResultPage() {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 text-xs text-gray-500 bg-gray-50 px-3 py-2 rounded-lg">
-              <ShieldCheck className="w-3.5 h-3.5 text-yellow-500" />
-              <span>Secured by Firebase Phone Authentication</span>
-            </div>
-
             <Button
               type="submit"
               variant="primary"
