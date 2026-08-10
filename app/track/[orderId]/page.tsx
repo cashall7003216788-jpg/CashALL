@@ -28,7 +28,7 @@ import {
 
 export default function OrderTrackingPage() {
   const params = useParams();
-  const orderId = (params?.orderId as string) || "CA10482";
+  const orderId = (params?.orderId as string) || "";
 
   const [order, setOrder] = useState<OrderData | null>(null);
   const [customerDecision, setCustomerDecision] = useState<"NONE" | "ACCEPTED" | "DECLINED">("NONE");

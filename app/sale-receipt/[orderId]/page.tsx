@@ -29,47 +29,45 @@ function convertNumberToWords(num: number): string {
 
 export default function CustomerSaleReceiptPage() {
   const params = useParams();
-  const rawOrderId = (params?.orderId as string) || "CA10482";
+  const rawOrderId = (params?.orderId as string) || "";
   const [order, setOrder] = useState<OrderData | null>(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && rawOrderId) {
       const stored = localStorage.getItem(`cashall_order_${rawOrderId}`) || localStorage.getItem("cashall_latest_order");
       if (stored) {
         try {
-          setOrder(JSON.parse(stored));
-          return;
+          const parsed = JSON.parse(stored);
+          if (parsed && parsed.customerName !== "Ananya Roy" && parsed.orderNumber !== "CA10482") {
+            setOrder(parsed);
+            return;
+          }
         } catch (e) {
           console.error(e);
         }
       }
 
-      // Dynamic Fallback Order Generation for ANY customer order ID
-      const orderNum = rawOrderId.startsWith("CA") ? rawOrderId : `CA104${Math.floor(100 + Math.random() * 900)}`;
-      setOrder({
-        id: `ord-${rawOrderId}`,
-        orderNumber: orderNum,
-        quoteId: "quote-demo",
-        userId: "u-demo",
-        customerName: "Ananya Roy",
-        customerPhone: "+91 7003216788",
-        addressSummary: "3a, VIP Nagar, 3rd Floor, Kolkata, West Bengal - 700039",
-        pincode: "700039",
-        pickupDate: "Sat 28 Mar, 2026",
-        pickupTimeSlot: "10 AM - 1 PM",
-        status: "COMPLETED",
-        revisedPrice: 51900,
-        declaredConditionSummary: "Samsung Galaxy S25 Ultra 5G (12 GB/256 GB)",
-        imeiNumber: "352901547218795",
-        paymentStatus: "PAID",
-        paymentTxRef: "TXN9842109852",
-        createdAt: "2026-03-28T10:30:00.000Z",
-        updatedAt: "2026-03-28T11:45:00.000Z",
-      });
+      setOrder(null);
     }
   }, [rawOrderId]);
 
-  if (!order) return null;
+  if (!order) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6 text-brand-black">
+        <div className="bg-white rounded-3xl p-8 max-w-md w-full border border-gray-300 shadow-xl text-center space-y-4">
+          <h1 className="text-xl font-black text-brand-black">Sale Receipt Not Found</h1>
+          <p className="text-xs text-gray-500">
+            No valid customer sale receipt found for order reference <strong className="text-black">#{rawOrderId || "N/A"}</strong>.
+          </p>
+          <Link href="/account" className="inline-block pt-2">
+            <button className="bg-brand-yellow text-black font-extrabold text-xs px-6 py-2.5 rounded-xl border border-black shadow-md hover:bg-yellow-400 transition-all">
+              Go to My Account
+            </button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   const finalAmount = order.revisedPrice || 51900;
   const amountInWords = convertNumberToWords(finalAmount);

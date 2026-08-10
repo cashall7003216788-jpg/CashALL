@@ -11,7 +11,7 @@ import { ClipboardCheck, CheckCircle2, ShieldCheck, Save } from "lucide-react";
 function AdminInspectionsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const orderIdParam = searchParams.get("orderId") || "CA10482";
+  const orderIdParam = searchParams.get("orderId");
 
   const [order, setOrder] = useState<OrderData | null>(null);
   const [imei, setImei] = useState("");
@@ -23,6 +23,9 @@ function AdminInspectionsContent() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      // Clear legacy sample keys from browser localStorage if present
+      localStorage.removeItem("cashall_order_CA10482");
+
       const stored = orderIdParam
         ? localStorage.getItem(`cashall_order_${orderIdParam}`)
         : localStorage.getItem("cashall_latest_order");
@@ -30,19 +33,17 @@ function AdminInspectionsContent() {
       if (stored) {
         try {
           const parsed = JSON.parse(stored);
-          setOrder(parsed);
-          if (parsed.revisedPrice) setRevisedPrice(parsed.revisedPrice);
-          return;
+          if (parsed && parsed.customerName !== "Ananya Roy" && parsed.orderNumber !== "CA10482") {
+            setOrder(parsed);
+            if (parsed.revisedPrice) setRevisedPrice(parsed.revisedPrice);
+            return;
+          }
         } catch (e) {
           console.error(e);
         }
       }
 
-      if (INITIAL_ORDERS.length > 0) {
-        setOrder(INITIAL_ORDERS[0]);
-      } else {
-        setOrder(null);
-      }
+      setOrder(null);
     }
   }, [orderIdParam]);
 

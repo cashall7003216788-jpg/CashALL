@@ -12,7 +12,7 @@ import { CheckCircle2, Calendar, MapPin, Smartphone, ArrowRight, ShieldCheck, Co
 
 export default function OrderConfirmationPage() {
   const params = useParams();
-  const orderId = (params?.orderId as string) || "CA10482";
+  const orderId = (params?.orderId as string) || "";
 
   const [order, setOrder] = useState<OrderData | null>(null);
   const [copied, setCopied] = useState(false);
