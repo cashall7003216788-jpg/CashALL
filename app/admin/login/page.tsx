@@ -26,7 +26,7 @@ export default function AdminLoginPage() {
             JSON.stringify({ email, role: "ADMIN", token: "tok_admin_9842" })
           );
         }
-        router.push("/admin");
+        router.replace("/admin");
       } else {
         setLoading(false);
         setError("Invalid admin credentials. Use demo: admin@cashall.in / admin123");

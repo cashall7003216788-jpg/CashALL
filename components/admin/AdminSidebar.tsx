@@ -25,7 +25,7 @@ export function AdminSidebar() {
     if (typeof window !== "undefined") {
       localStorage.removeItem("cashall_admin_session");
     }
-    router.push("/admin/login");
+    router.replace("/admin/login");
   };
 
   const navItems = [
