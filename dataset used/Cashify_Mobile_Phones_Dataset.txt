@@ -471,7 +471,6 @@ Variant: 256 GB
 Cashify Price: Rs.77,210
 
 Variant: 512 GB
-
 Cashify Price: Rs.78,570
 
 Variant: 1 TB
