@@ -1,10 +1,19 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ShieldCheck, Truck, Banknote, HelpCircle } from "lucide-react";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedUser = localStorage.getItem("cashall_user");
+      setIsLoggedIn(!!storedUser);
+    }
+  }, []);
 
   return (
     <footer className="bg-brand-black text-gray-400 border-t border-neutral-800 pt-16 pb-12">
@@ -99,11 +108,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#how-it-works" className="hover:text-brand-yellow transition-colors">
-                  How It Works
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" className="hover:text-brand-yellow transition-colors">
                   Contact Us
                 </Link>
@@ -120,11 +124,13 @@ export function Footer() {
                   FAQ
                 </Link>
               </li>
-              <li>
-                <Link href="/account" className="hover:text-brand-yellow transition-colors">
-                  Track My Order
-                </Link>
-              </li>
+              {isLoggedIn && (
+                <li>
+                  <Link href="/account" className="hover:text-brand-yellow transition-colors">
+                    Track My Order
+                  </Link>
+                </li>
+              )}
               <li>
                 <Link href="/privacy" className="hover:text-brand-yellow transition-colors">
                   Privacy Policy
