@@ -60,6 +60,15 @@ export default function ConditionAssessmentPage() {
     INITIAL_VARIANTS.find((v) => v.modelId === model.id) ||
     INITIAL_VARIANTS[0];
 
+  // AUTH CHECK STATE
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsLoggedIn(!!localStorage.getItem("cashall_user"));
+    }
+  }, []);
+
   // WIZARD STATE
   const [step, setStep] = useState<number>(1);
 
@@ -611,7 +620,9 @@ export default function ConditionAssessmentPage() {
                       { id: "microphone", title: "Microphone not working", icon: Mic },
                       { id: "bluetooth", title: "Bluetooth not working", icon: Bluetooth },
                       { id: "vibrator", title: "Vibrator is not working", icon: Vibrate },
-                      { id: "battery_health", title: "Battery Health Below 80%", icon: BatteryCharging },
+                      ...(brandSlug === "apple"
+                        ? [{ id: "battery_health", title: "Battery Health Below 80%", icon: BatteryCharging }]
+                        : []),
                       { id: "front_camera", title: "Front Camera not working", icon: Camera },
                       { id: "back_camera", title: "Back Camera not working", icon: Camera },
                     ].map((item) => {
@@ -862,18 +873,32 @@ export default function ConditionAssessmentPage() {
 
                 </div>
 
-                {/* DYNAMIC ESTIMATED PRICE CARD */}
-                <div className="bg-brand-black text-white rounded-2xl p-5 border border-brand-yellow/30 text-center space-y-2">
-                  <span className="text-[11px] font-bold text-brand-yellow uppercase tracking-wider block">
-                    Estimated Cash Valuation
-                  </span>
-                  <div className="text-3xl font-black text-brand-yellow font-price">
-                    ₹{currentPrice.toLocaleString("en-IN")}
+                {/* ESTIMATED PRICE CARD - SHOWN ONLY AFTER LOGIN */}
+                {isLoggedIn ? (
+                  <div className="bg-brand-black text-white rounded-2xl p-5 border border-brand-yellow/30 text-center space-y-2">
+                    <span className="text-[11px] font-bold text-brand-yellow uppercase tracking-wider block">
+                      Estimated Cash Valuation
+                    </span>
+                    <div className="text-3xl font-black text-brand-yellow font-price">
+                      ₹{currentPrice.toLocaleString("en-IN")}
+                    </div>
+                    <p className="text-[11px] text-gray-300">
+                      Fast Doorstep Pickup & Direct Payment upon Physical Verification
+                    </p>
                   </div>
-                  <p className="text-[11px] text-gray-300">
-                    Fast Doorstep Pickup & Direct Payment upon Physical Verification
-                  </p>
-                </div>
+                ) : (
+                  <div className="bg-brand-black text-white rounded-2xl p-5 border border-neutral-800 text-center space-y-2">
+                    <span className="text-[11px] font-bold text-brand-yellow uppercase tracking-wider block">
+                      Best Value Guarantee
+                    </span>
+                    <div className="text-lg font-black text-gray-200">
+                      🔒 Login to Unlock Price
+                    </div>
+                    <p className="text-[11px] text-gray-400">
+                      Complete assessment and login to reveal your instant cash valuation.
+                    </p>
+                  </div>
+                )}
 
               </div>
             </div>

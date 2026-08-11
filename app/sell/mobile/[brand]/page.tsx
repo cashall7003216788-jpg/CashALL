@@ -22,6 +22,20 @@ export default function ModelSelectionPage() {
     const yearA = a.releaseYear ?? 0;
     const yearB = b.releaseYear ?? 0;
     if (yearA !== yearB) return yearB - yearA;
+
+    const rankName = (name: string) => {
+      let score = 0;
+      if (name.includes("Pro Max") || name.includes("Ultra") || name.includes("Fold")) score += 40;
+      else if (name.includes("Pro")) score += 30;
+      else if (name.includes("Plus")) score += 20;
+      else if (name.includes("Mini") || name.includes("Lite") || name.includes("SE") || name.includes("a")) score -= 10;
+      return score;
+    };
+
+    const rankA = rankName(a.name);
+    const rankB = rankName(b.name);
+    if (rankA !== rankB) return rankB - rankA;
+
     return a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" });
   });
 
@@ -139,11 +153,6 @@ export default function ModelSelectionPage() {
                     />
                   ) : (
                     <Smartphone className="w-10 h-10 text-gray-400" />
-                  )}
-                  {model.popular && (
-                    <span className="absolute top-2 left-2 bg-brand-yellow text-brand-black text-[9px] font-extrabold px-1.5 py-0.5 rounded">
-                      POPULAR
-                    </span>
                   )}
                 </div>
 

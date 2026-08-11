@@ -76,11 +76,8 @@ export function Footer() {
                 className="object-contain object-left h-full w-auto"
               />
             </div>
-            <p className="text-xs text-gray-400 max-w-sm leading-relaxed">
-              CashALL is India&apos;s transparent recommerce platform for selling used electronics. Get instant estimated valuations, enjoy fast doorstep pickups, and receive direct payments upon verification.
-            </p>
 
-            {/* SOCIAL MEDIA LINKS DIRECTLY BELOW DESCRIPTION */}
+            {/* SOCIAL MEDIA LINKS DIRECTLY BELOW LOGO */}
             <div className="pt-2 flex items-center gap-3">
               <span className="text-xs font-bold text-gray-300 uppercase tracking-wider">Follow us on:</span>
               <a

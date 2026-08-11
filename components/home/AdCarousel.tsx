@@ -7,13 +7,23 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const AD_SLIDES = [
   {
     id: 1,
-    image: "/photos/advertise1.jpeg",
+    image: "/photos/advertise1.png",
     alt: "CashALL Best Price Guarantee - Old Devices Real Value Instant Cash",
   },
   {
     id: 2,
-    image: "/photos/advertise2.jpeg",
+    image: "/photos/advetise2.png",
     alt: "CashALL Instant Doorstep Cash - Old Devices Sitting Idle Turn Them Into Cash",
+  },
+  {
+    id: 3,
+    image: "/photos/advetise3.png",
+    alt: "CashALL Transparent Pricing & Zero Deductions",
+  },
+  {
+    id: 4,
+    image: "/photos/advertise4.png",
+    alt: "CashALL Fast Doorstep Pickup & Direct Payout",
   },
 ];
 
@@ -22,13 +32,13 @@ export function AdCarousel() {
   const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
 
-  // AUTO SIDE-SCROLLING EFFECT (3s INTERVAL)
+  // AUTO SIDE-SCROLLING EFFECT (3.5s INTERVAL)
   useEffect(() => {
     if (isPaused) return;
 
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % AD_SLIDES.length);
-    }, 3000);
+    }, 3500);
 
     return () => clearInterval(timer);
   }, [isPaused]);
@@ -92,14 +102,14 @@ export function AdCarousel() {
         {/* PREV / NEXT BUTTONS */}
         <button
           onClick={handlePrev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/70 border border-brand-yellow/40 text-brand-yellow hover:bg-brand-yellow hover:text-black transition-colors opacity-80 group-hover:opacity-100 shadow-md"
+          className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/70 border border-brand-yellow/40 text-brand-yellow hover:bg-brand-yellow hover:text-black transition-colors opacity-80 group-hover:opacity-100 shadow-md z-10"
           aria-label="Previous advertisement"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={handleNext}
-          className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/70 border border-brand-yellow/40 text-brand-yellow hover:bg-brand-yellow hover:text-black transition-colors opacity-80 group-hover:opacity-100 shadow-md"
+          className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/70 border border-brand-yellow/40 text-brand-yellow hover:bg-brand-yellow hover:text-black transition-colors opacity-80 group-hover:opacity-100 shadow-md z-10"
           aria-label="Next advertisement"
         >
           <ChevronRight className="w-5 h-5" />
