@@ -155,6 +155,15 @@ export function PriceUnlockModal({
             >
               {loading ? "Unlocking Price..." : "CONTINUE"}
             </button>
+
+            <div className="pt-2 text-center">
+              <a
+                href="/admin"
+                className="text-[10px] text-gray-400 hover:text-brand-black font-medium tracking-wider transition-colors inline-flex items-center gap-1 opacity-60 hover:opacity-100"
+              >
+                <span>🔒 Admin Access Portal</span>
+              </a>
+            </div>
           </form>
 
         </div>
