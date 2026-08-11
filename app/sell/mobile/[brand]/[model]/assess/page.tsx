@@ -42,6 +42,62 @@ import {
   Check,
 } from "lucide-react";
 
+function BrokenScreenIcon({ className = "w-14 h-14" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 80 120" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="15" y="10" width="50" height="100" rx="10" stroke="#1E293B" strokeWidth="3" fill="#FFFFFF" />
+      <rect x="20" y="20" width="40" height="80" rx="4" stroke="#64748B" strokeWidth="1.5" fill="#F8FAFC" />
+      <line x1="34" y1="15" x2="46" y2="15" stroke="#1E293B" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M 32 30 L 45 48 L 38 60 L 52 75 L 42 90" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M 45 48 L 56 42" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M 38 60 L 26 68" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function DeadSpotLinesIcon({ className = "w-14 h-14" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 80 120" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="15" y="10" width="50" height="100" rx="10" stroke="#1E293B" strokeWidth="3" fill="#FFFFFF" />
+      <rect x="20" y="20" width="40" height="80" rx="4" stroke="#64748B" strokeWidth="1.5" fill="#F8FAFC" />
+      <line x1="34" y1="15" x2="46" y2="15" stroke="#1E293B" strokeWidth="2.5" strokeLinecap="round" />
+      <line x1="32" y1="20" x2="32" y2="100" stroke="#EF4444" strokeWidth="2.5" />
+      <line x1="42" y1="20" x2="42" y2="100" stroke="#10B981" strokeWidth="1.5" />
+      <circle cx="48" cy="65" r="3.5" fill="#10B981" />
+    </svg>
+  );
+}
+
+function BodyDefectsIcon({ className = "w-14 h-14" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 80 120" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 22 15 L 56 10 C 61 9 65 13 65 18 L 65 98 C 65 103 61 107 56 107 L 22 112 Z" stroke="#1E293B" strokeWidth="3" fill="#FFFFFF" />
+      <path d="M 15 20 L 22 15 L 22 112 L 15 106 C 13 104 12 100 12 96 L 12 26 C 12 22 13 18 15 20 Z" stroke="#1E293B" strokeWidth="2" fill="#F1F5F9" />
+      <rect x="26" y="22" width="10" height="22" rx="4" stroke="#1E293B" strokeWidth="2" fill="#E2E8F0" />
+      <circle cx="31" cy="27" r="2.5" fill="#1E293B" />
+      <circle cx="31" cy="37" r="2.5" fill="#1E293B" />
+      <line x1="8" y1="35" x2="14" y2="33" stroke="#000000" strokeWidth="2" strokeLinecap="round" />
+      <line x1="8" y1="45" x2="14" y2="43" stroke="#000000" strokeWidth="2" strokeLinecap="round" />
+      <line x1="8" y1="75" x2="14" y2="73" stroke="#000000" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function PanelMissingIcon({ className = "w-14 h-14" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 80 120" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="10" width="14" height="100" rx="5" stroke="#1E293B" strokeWidth="3" fill="#F8FAFC" />
+      <rect x="18" y="30" width="2" height="12" rx="1" fill="#1E293B" />
+      <rect x="18" y="50" width="2" height="8" rx="1" fill="#1E293B" />
+      <rect x="34" y="20" width="5" height="22" rx="2" stroke="#1E293B" strokeWidth="2" fill="#CBD5E1" />
+      <path d="M 48 18 L 48 102" stroke="#1E293B" strokeWidth="2.5" strokeDasharray="3 3" />
+      <circle cx="56" cy="60" r="10" stroke="#1E293B" strokeWidth="2" fill="#FFFFFF" />
+      <line x1="51" y1="60" x2="61" y2="60" stroke="#000000" strokeWidth="2" />
+      <line x1="56" y1="55" x2="56" y2="65" stroke="#000000" strokeWidth="2" />
+    </svg>
+  );
+}
+
 export default function ConditionAssessmentPage() {
   const params = useParams();
   const searchParams = useSearchParams();
@@ -492,25 +548,25 @@ export default function ConditionAssessmentPage() {
                         id: "screen_broken",
                         title: "Broken/scratch on device screen",
                         subtitle: "Cracks or deep scratches on front display glass",
-                        iconUrl: "https://s3n.cashify.in/estore/84e2c1deede043cca4ca490cf7b6379c.svg",
+                        icon: <BrokenScreenIcon className="w-14 h-14" />,
                       },
                       {
                         id: "screen_lines",
                         title: "Dead Spot/Visible line and Discoloration on screen",
                         subtitle: "Colored vertical lines, black patches or screen bleed",
-                        iconUrl: "https://s3n.cashify.in/estore/ae589baaf5924452abd846a33feacece.svg",
+                        icon: <DeadSpotLinesIcon className="w-14 h-14" />,
                       },
                       {
                         id: "body_defects",
                         title: "Scratch/Dent on device body",
                         subtitle: "Scratches, scuffs or dents on side metal frame & back panel",
-                        iconUrl: "https://s3n.cashify.in/estore/81f658c1cbf640df8ea8a02d53d96647.svg",
+                        icon: <BodyDefectsIcon className="w-14 h-14" />,
                       },
                       {
                         id: "panel_missing",
                         title: "Device panel missing/broken",
                         subtitle: "Back panel detached, cracked or camera lens missing",
-                        iconUrl: "https://s3n.cashify.in/estore/d0675cefdd86438581e32f095884d179.svg",
+                        icon: <PanelMissingIcon className="w-14 h-14" />,
                       },
                     ].map((item) => {
                       const isSelected = selectedMajorDefects.includes(item.id);
@@ -526,7 +582,7 @@ export default function ConditionAssessmentPage() {
                         >
                           <div className="w-full flex flex-col items-center">
                             <div className="w-20 h-20 bg-gray-50 rounded-2xl flex items-center justify-center p-2 mb-3 border border-gray-100">
-                              <img src={item.iconUrl} alt={item.title} className="w-14 h-14 object-contain" />
+                              {item.icon}
                             </div>
                             <h3 className="text-xs sm:text-sm font-extrabold text-brand-black mb-1 leading-snug">
                               {item.title}
