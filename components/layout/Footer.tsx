@@ -17,7 +17,7 @@ export function Footer() {
               <Truck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-wider">Fast Pickup</h4>
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider">Fast & Free Pickup</h4>
               <p className="text-[11px] text-gray-400">Express doorstep dispatch</p>
             </div>
           </div>
@@ -142,7 +142,7 @@ export function Footer() {
 
         {/* BOTTOM COPYRIGHT */}
         <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-          <p>© {currentYear} CashALL Recommerce Technologies Pvt. Ltd. All rights reserved.</p>
+          <p>@ 2026 Aarna Enterprise. All Rights Reserved</p>
           <p className="text-[11px]">Designed with transparent pricing for Indian phone sellers.</p>
         </div>
 

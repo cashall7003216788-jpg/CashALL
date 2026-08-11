@@ -5378,15 +5378,27 @@ export const INITIAL_PRICING_RULES: PricingRuleData[] = [
   { id: "r-aw-no", questionId: "q-acc-warranty", optionId: "o-aw-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 3 },
 ];
 
-export const AVAILABLE_STATES = ["West Bengal", "Uttar Pradesh", "Jharkhand"];
+export const AVAILABLE_STATES = ["West Bengal", "Maharashtra", "Karnataka", "Delhi", "Uttar Pradesh", "Jharkhand"];
 
 export const INITIAL_SERVICE_AREAS: ServiceAreaData[] = [
   { id: "sa-1", pincode: "700001", city: "Kolkata", state: "West Bengal", active: true, pickupAvailable: true },
-  { id: "sa-2", pincode: "226001", city: "Lucknow", state: "Uttar Pradesh", active: true, pickupAvailable: true },
-  { id: "sa-3", pincode: "834001", city: "Ranchi", state: "Jharkhand", active: true, pickupAvailable: true },
-  { id: "sa-4", pincode: "711101", city: "Howrah", state: "West Bengal", active: true, pickupAvailable: true },
-  { id: "sa-5", pincode: "208001", city: "Kanpur", state: "Uttar Pradesh", active: true, pickupAvailable: true },
-  { id: "sa-6", pincode: "831001", city: "Jamshedpur", state: "Jharkhand", active: true, pickupAvailable: true },
+  { id: "sa-2", pincode: "711101", city: "Howrah", state: "West Bengal", active: true, pickupAvailable: true },
+  { id: "sa-3", pincode: "712101", city: "Hooghly", state: "West Bengal", active: true, pickupAvailable: true },
+  { id: "sa-4", pincode: "700124", city: "North 24 Parganas", state: "West Bengal", active: true, pickupAvailable: true },
+  { id: "sa-5", pincode: "700144", city: "South 24 Parganas", state: "West Bengal", active: true, pickupAvailable: true },
+  { id: "sa-6", pincode: "400001", city: "Mumbai", state: "Maharashtra", active: true, pickupAvailable: true },
+  { id: "sa-7", pincode: "411001", city: "Pune", state: "Maharashtra", active: true, pickupAvailable: true },
+  { id: "sa-8", pincode: "440001", city: "Nagpur", state: "Maharashtra", active: true, pickupAvailable: true },
+  { id: "sa-9", pincode: "560001", city: "Bengaluru", state: "Karnataka", active: true, pickupAvailable: true },
+  { id: "sa-10", pincode: "570001", city: "Mysuru", state: "Karnataka", active: true, pickupAvailable: true },
+  { id: "sa-11", pincode: "110001", city: "New Delhi", state: "Delhi", active: true, pickupAvailable: true },
+  { id: "sa-12", pincode: "110034", city: "North Delhi", state: "Delhi", active: true, pickupAvailable: true },
+  { id: "sa-13", pincode: "110017", city: "South Delhi", state: "Delhi", active: true, pickupAvailable: true },
+  { id: "sa-14", pincode: "226001", city: "Lucknow", state: "Uttar Pradesh", active: true, pickupAvailable: true },
+  { id: "sa-15", pincode: "208001", city: "Kanpur", state: "Uttar Pradesh", active: true, pickupAvailable: true },
+  { id: "sa-16", pincode: "201301", city: "Noida", state: "Uttar Pradesh", active: true, pickupAvailable: true },
+  { id: "sa-17", pincode: "834001", city: "Ranchi", state: "Jharkhand", active: true, pickupAvailable: true },
+  { id: "sa-18", pincode: "831001", city: "Jamshedpur", state: "Jharkhand", active: true, pickupAvailable: true },
 ];
 
 export const INITIAL_FAQS: FAQData[] = [

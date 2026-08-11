@@ -1,9 +1,36 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { INITIAL_BRANDS } from "@/lib/store";
-import { ArrowRight, Smartphone } from "lucide-react";
+import { INITIAL_BRANDS, BrandData } from "@/lib/store";
+import { ArrowRight } from "lucide-react";
+import { BrandIcon } from "@/components/common/BrandIcon";
 
 export function PopularBrands() {
+  const [brands, setBrands] = useState<BrandData[]>([]);
+
+  useEffect(() => {
+    async function loadBrands() {
+      try {
+        const res = await fetch("/api/v1/catalog");
+        const json = await res.json();
+        if (json.success && json.data?.brands?.length > 0) {
+          setBrands(json.data.brands);
+        } else {
+          setBrands(INITIAL_BRANDS);
+        }
+      } catch (err) {
+        setBrands(INITIAL_BRANDS);
+      }
+    }
+    loadBrands();
+  }, []);
+
+  const displayBrands = brands.length > 0 ? brands : INITIAL_BRANDS;
+  const mobileBrands = displayBrands
+    .filter((b) => b.category === "MOBILE" || b.category === "BOTH")
+    .slice(0, 6);
+
   return (
     <section className="py-16 bg-white border-t border-brand-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,27 +55,23 @@ export function PopularBrands() {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-          {INITIAL_BRANDS.filter((b) => b.category === "MOBILE" || b.category === "BOTH")
-            .slice(0, 6)
-            .map((brand) => (
-              <Link
-                key={brand.id}
-                href={`/sell/mobile/${brand.slug}`}
-                className="bg-brand-bg rounded-2xl p-6 border border-brand-border hover:border-brand-yellow hover:bg-white shadow-subtleCard hover:shadow-premium transition-all duration-200 text-center group flex flex-col items-center justify-center space-y-3"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-white group-hover:bg-brand-yellow/20 flex items-center justify-center p-3 border border-gray-100 transition-colors">
-                  <Smartphone className="w-7 h-7 text-brand-black group-hover:scale-110 transition-transform" />
-                </div>
-                <div>
-                  <h3 className="text-base font-extrabold text-brand-black group-hover:text-black">
-                    {brand.name}
-                  </h3>
-                  <p className="text-[11px] text-brand-muted font-medium mt-0.5">
-                    Sell {brand.name}
-                  </p>
-                </div>
-              </Link>
-            ))}
+          {mobileBrands.map((brand) => (
+            <Link
+              key={brand.id}
+              href={`/sell/mobile/${brand.slug}`}
+              className="bg-brand-bg rounded-2xl p-6 border border-brand-border hover:border-brand-yellow hover:bg-white shadow-subtleCard hover:shadow-premium transition-all duration-200 text-center group flex flex-col items-center justify-center space-y-3"
+            >
+              <BrandIcon name={brand.name} logoUrl={brand.logoUrl} />
+              <div>
+                <h3 className="text-base font-extrabold text-brand-black group-hover:text-black">
+                  {brand.name}
+                </h3>
+                <p className="text-[11px] text-brand-muted font-medium mt-0.5">
+                  Sell {brand.name}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
 
       </div>

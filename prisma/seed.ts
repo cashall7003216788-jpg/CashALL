@@ -240,8 +240,23 @@ async function main() {
   // 8. Create Service Areas
   const pincodes = [
     { pincode: "700001", city: "Kolkata", state: "West Bengal" },
+    { pincode: "711101", city: "Howrah", state: "West Bengal" },
+    { pincode: "712101", city: "Hooghly", state: "West Bengal" },
+    { pincode: "700124", city: "North 24 Parganas", state: "West Bengal" },
+    { pincode: "700144", city: "South 24 Parganas", state: "West Bengal" },
+    { pincode: "400001", city: "Mumbai", state: "Maharashtra" },
+    { pincode: "411001", city: "Pune", state: "Maharashtra" },
+    { pincode: "440001", city: "Nagpur", state: "Maharashtra" },
+    { pincode: "560001", city: "Bengaluru", state: "Karnataka" },
+    { pincode: "570001", city: "Mysuru", state: "Karnataka" },
+    { pincode: "110001", city: "New Delhi", state: "Delhi" },
+    { pincode: "110034", city: "North Delhi", state: "Delhi" },
+    { pincode: "110017", city: "South Delhi", state: "Delhi" },
     { pincode: "226001", city: "Lucknow", state: "Uttar Pradesh" },
+    { pincode: "208001", city: "Kanpur", state: "Uttar Pradesh" },
+    { pincode: "201301", city: "Noida", state: "Uttar Pradesh" },
     { pincode: "834001", city: "Ranchi", state: "Jharkhand" },
+    { pincode: "831001", city: "Jamshedpur", state: "Jharkhand" },
   ];
   for (const p of pincodes) {
     await prisma.serviceArea.create({ data: p });

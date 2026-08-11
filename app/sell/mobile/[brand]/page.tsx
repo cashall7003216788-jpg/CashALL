@@ -18,9 +18,12 @@ export default function ModelSelectionPage() {
 
   const brand = INITIAL_BRANDS.find((b) => b.slug === brandSlug) || INITIAL_BRANDS[0];
 
-  const brandModels = INITIAL_MODELS.filter((m) => m.brandId === brand.id && m.category === "MOBILE").sort((a, b) =>
-    a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" })
-  );
+  const brandModels = INITIAL_MODELS.filter((m) => m.brandId === brand.id && m.category === "MOBILE").sort((a, b) => {
+    const yearA = a.releaseYear ?? 0;
+    const yearB = b.releaseYear ?? 0;
+    if (yearA !== yearB) return yearB - yearA;
+    return a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" });
+  });
 
   const availableSeries = getSeriesForBrand(brand.slug);
   const activeSeries = availableSeries.find((s) => s.id === selectedSeriesId) || null;

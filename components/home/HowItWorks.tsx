@@ -17,7 +17,7 @@ export function HowItWorks() {
     },
     {
       step: "03",
-      title: "Schedule Fast Pickup",
+      title: "Schedule Fast & Free Pickup",
       description: "Pick a convenient doorstep pickup date and time slot at your home or office.",
       icon: CalendarCheck,
     },

@@ -12,7 +12,7 @@ export default function PrivacyPage() {
             Privacy Policy (Draft Document)
           </h1>
           <p>
-            This Privacy Policy describes how CashALL Recommerce Technologies Pvt. Ltd. collects, uses, and protects user information when you visit or sell devices on CashALL.
+            This Privacy Policy describes how Aarna Enterprise collects, uses, and protects user information when you visit or sell devices on CashALL.
           </p>
           <h2 className="text-sm font-bold text-brand-black">1. Information We Collect</h2>
           <p>

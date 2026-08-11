@@ -4,12 +4,33 @@ import React, { useState } from "react";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { INITIAL_BRANDS, INITIAL_MODELS, INITIAL_VARIANTS } from "@/lib/store";
-import { Smartphone, Plus, Edit, HardDrive, Search } from "lucide-react";
+import { INITIAL_BRANDS, INITIAL_MODELS, INITIAL_VARIANTS, BrandData } from "@/lib/store";
+import { Smartphone, Plus, HardDrive, Search, Upload, Image as ImageIcon } from "lucide-react";
+import { BrandIcon } from "@/components/common/BrandIcon";
 
 export default function AdminCatalogPage() {
   const [activeTab, setActiveTab] = useState<"MODELS" | "BRANDS" | "VARIANTS">("MODELS");
   const [search, setSearch] = useState("");
+  const [brands, setBrands] = useState<BrandData[]>(INITIAL_BRANDS);
+  const [editingBrand, setEditingBrand] = useState<BrandData | null>(null);
+  const [newLogoUrl, setNewLogoUrl] = useState("");
+
+  const handleUpdateLogo = (brandId: string) => {
+    if (!newLogoUrl) return;
+    setBrands((prev) =>
+      prev.map((b) => (b.id === brandId ? { ...b, logoUrl: newLogoUrl } : b))
+    );
+    setEditingBrand(null);
+    setNewLogoUrl("");
+  };
+
+  const filteredBrands = brands.filter((b) =>
+    b.name.toLowerCase().includes(search.toLowerCase().trim())
+  );
+
+  const filteredModels = INITIAL_MODELS.filter((m) =>
+    m.name.toLowerCase().includes(search.toLowerCase().trim())
+  ).sort((a, b) => (b.releaseYear ?? 0) - (a.releaseYear ?? 0));
 
   return (
     <div className="min-h-screen bg-brand-bg flex">
@@ -22,7 +43,7 @@ export default function AdminCatalogPage() {
               Device Catalog Management
             </h1>
             <p className="text-xs text-brand-muted mt-0.5">
-              Manage brands, models, storage variants, images and base acquisition prices
+              Manage brands, models, storage variants, logos and base acquisition prices
             </p>
           </div>
 
@@ -65,7 +86,7 @@ export default function AdminCatalogPage() {
         <div className="bg-white rounded-3xl p-6 border border-brand-border shadow-subtleCard">
           {activeTab === "MODELS" && (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {INITIAL_MODELS.map((model) => (
+              {filteredModels.map((model) => (
                 <div key={model.id} className="p-4 bg-gray-50 rounded-2xl border border-gray-200 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center p-1 border border-gray-200">
@@ -73,7 +94,7 @@ export default function AdminCatalogPage() {
                     </div>
                     <div>
                       <div className="text-xs font-extrabold text-brand-black">{model.name}</div>
-                      <div className="text-[11px] text-gray-400">Year: {model.releaseYear}</div>
+                      <div className="text-[11px] text-gray-400">Sorted by Release Date</div>
                     </div>
                   </div>
                   <Badge variant={model.popular ? "yellow" : "neutral"}>{model.popular ? "Popular" : "Active"}</Badge>
@@ -83,12 +104,33 @@ export default function AdminCatalogPage() {
           )}
 
           {activeTab === "BRANDS" && (
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {INITIAL_BRANDS.map((brand) => (
-                <div key={brand.id} className="p-4 bg-gray-50 rounded-2xl border border-gray-200 text-center font-extrabold text-xs text-brand-black">
-                  {brand.name}
-                </div>
-              ))}
+            <div className="space-y-4">
+              <div className="text-xs font-bold text-gray-500 uppercase tracking-wider">
+                Phone & Laptop Brands ({filteredBrands.length})
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {filteredBrands.map((brand) => (
+                  <div key={brand.id} className="p-4 bg-gray-50 rounded-2xl border border-gray-200 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <BrandIcon name={brand.name} logoUrl={brand.logoUrl} className="w-12 h-12" />
+                      <div>
+                        <div className="text-sm font-extrabold text-brand-black">{brand.name}</div>
+                        <div className="text-[11px] text-gray-400 uppercase font-semibold">{brand.category}</div>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => {
+                        setEditingBrand(brand);
+                        setNewLogoUrl(brand.logoUrl || "");
+                      }}
+                      className="px-3 py-1.5 rounded-lg bg-white border border-gray-200 hover:border-brand-yellow text-xs font-bold text-brand-black flex items-center gap-1 transition-colors"
+                    >
+                      <ImageIcon className="w-3.5 h-3.5" />
+                      <span>Edit Logo</span>
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
@@ -106,6 +148,51 @@ export default function AdminCatalogPage() {
             </div>
           )}
         </div>
+
+        {/* EDIT BRAND LOGO MODAL */}
+        {editingBrand && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+            <div className="bg-white rounded-3xl p-6 max-w-md w-full border border-brand-border shadow-2xl space-y-4">
+              <div className="flex items-center justify-between border-b pb-3">
+                <h3 className="text-base font-extrabold text-brand-black">Update Brand Logo — {editingBrand.name}</h3>
+                <button onClick={() => setEditingBrand(null)} className="text-gray-400 hover:text-black">✕</button>
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-xs font-bold text-gray-700">Logo Image URL / Supabase Path</label>
+                <input
+                  type="text"
+                  value={newLogoUrl}
+                  onChange={(e) => setNewLogoUrl(e.target.value)}
+                  placeholder="https://... or /brands/apple.png"
+                  className="w-full px-3.5 py-2 text-xs font-medium border border-gray-300 rounded-xl focus:outline-none focus:border-brand-yellow"
+                />
+              </div>
+
+              {newLogoUrl && (
+                <div className="p-3 bg-gray-50 rounded-xl border text-center flex flex-col items-center">
+                  <span className="text-[11px] text-gray-400 font-bold mb-2">Live Logo Preview</span>
+                  <BrandIcon name={editingBrand.name} logoUrl={newLogoUrl} />
+                </div>
+              )}
+
+              <div className="flex items-center justify-end gap-2 pt-2">
+                <button
+                  onClick={() => setEditingBrand(null)}
+                  className="px-4 py-2 rounded-xl border border-gray-300 text-xs font-bold hover:bg-gray-50"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={() => handleUpdateLogo(editingBrand.id)}
+                  className="px-4 py-2 rounded-xl bg-brand-black text-white text-xs font-bold hover:bg-black"
+                >
+                  Save Logo
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
       </main>
     </div>

@@ -14,6 +14,7 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       include: {
         models: {
           where: { active: true, deletedAt: null },
+          orderBy: { releaseYear: "desc" },
           include: {
             variants: {
               where: { active: true, deletedAt: null },
