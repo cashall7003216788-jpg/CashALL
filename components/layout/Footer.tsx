@@ -79,6 +79,38 @@ export function Footer() {
             <p className="text-xs text-gray-400 max-w-sm leading-relaxed">
               CashALL is India&apos;s transparent recommerce platform for selling used electronics. Get instant estimated valuations, enjoy fast doorstep pickups, and receive direct payments upon verification.
             </p>
+
+            {/* SOCIAL MEDIA LINKS DIRECTLY BELOW DESCRIPTION */}
+            <div className="pt-2 flex items-center gap-3">
+              <span className="text-xs font-bold text-gray-300 uppercase tracking-wider">Follow us on:</span>
+              <a
+                href="https://www.facebook.com/profile.php?id=61592749535143"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-gray-400 hover:text-brand-yellow hover:border-brand-yellow/50 transition-all group"
+                title="Facebook"
+              >
+                <Facebook className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              </a>
+              <a
+                href="https://www.instagram.com/cashall_26/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-gray-400 hover:text-brand-yellow hover:border-brand-yellow/50 transition-all group"
+                title="Instagram"
+              >
+                <Instagram className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCymYHMF8-grP7txUbqIt6sQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-gray-400 hover:text-brand-yellow hover:border-brand-yellow/50 transition-all group"
+                title="YouTube"
+              >
+                <Youtube className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              </a>
+            </div>
           </div>
 
           {/* SELL */}
@@ -146,41 +178,9 @@ export function Footer() {
 
         </div>
 
-        {/* BOTTOM COPYRIGHT & SOCIAL MEDIA LINKS */}
-        <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+        {/* BOTTOM COPYRIGHT */}
+        <div className="pt-8 border-t border-neutral-800 flex items-center justify-between text-xs text-gray-400">
           <p className="font-medium text-gray-300">@ 2026 Aarna Enterprise. All Rights Reserved</p>
-          
-          {/* SOCIAL MEDIA LINKS */}
-          <div className="flex items-center gap-4">
-            <span className="text-xs font-bold text-gray-400 uppercase tracking-wider hidden sm:inline">Follow Us:</span>
-            <a
-              href="https://www.facebook.com/profile.php?id=61592749535143"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-gray-400 hover:text-brand-yellow hover:border-brand-yellow/50 transition-all group"
-              title="Facebook"
-            >
-              <Facebook className="w-4 h-4 group-hover:scale-110 transition-transform" />
-            </a>
-            <a
-              href="https://www.instagram.com/cashall_26/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-gray-400 hover:text-brand-yellow hover:border-brand-yellow/50 transition-all group"
-              title="Instagram"
-            >
-              <Instagram className="w-4 h-4 group-hover:scale-110 transition-transform" />
-            </a>
-            <a
-              href="https://www.youtube.com/channel/UCymYHMF8-grP7txUbqIt6sQ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-gray-400 hover:text-brand-yellow hover:border-brand-yellow/50 transition-all group"
-              title="YouTube"
-            >
-              <Youtube className="w-4 h-4 group-hover:scale-110 transition-transform" />
-            </a>
-          </div>
         </div>
 
       </div>

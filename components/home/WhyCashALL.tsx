@@ -36,13 +36,6 @@ export function WhyCashALL() {
     },
   ];
 
-  const promoCards = [
-    { id: "ad-1", src: "/photos/advertise1.jpeg", alt: "CashALL Best Value Guarantee" },
-    { id: "ad-2", src: "/photos/advertise2.jpeg", alt: "CashALL Instant Doorstep Cash" },
-    { id: "ad-3", src: "/photos/adverise3.png", alt: "CashALL Transparent Pricing" },
-    { id: "ad-4", src: "/photos/advertise4.png", alt: "CashALL Fast Pickup & Payment" },
-  ];
-
   return (
     <section className="py-20 bg-brand-bg border-t border-brand-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -73,32 +66,6 @@ export function WhyCashALL() {
               </div>
             );
           })}
-        </div>
-
-        {/* PROMOTIONAL ARTWORK CARDS FROM CASHALL PHOTOS */}
-        <div>
-          <div className="flex items-center gap-2 mb-6">
-            <Sparkles className="w-5 h-5 text-brand-yellow" />
-            <h3 className="text-xl font-extrabold text-brand-black">Official CashALL Highlights</h3>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {promoCards.map((card) => (
-              <div
-                key={card.id}
-                className="relative rounded-3xl overflow-hidden border border-brand-border bg-white shadow-subtleCard hover:shadow-premium transition-all duration-300 group aspect-[4/3]"
-              >
-                <Image
-                  src={card.src}
-                  alt={card.alt}
-                  fill
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex items-end">
-                  <span className="text-xs font-bold text-white leading-tight">{card.alt}</span>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* COMMERCIAL PROMO BANNER CAROUSEL / HIGHLIGHT (USING CASHALL ASSETS) */}

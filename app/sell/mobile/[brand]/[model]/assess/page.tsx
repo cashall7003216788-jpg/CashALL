@@ -10,6 +10,7 @@ import { useParams, useSearchParams, useRouter } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
+import { PriceUnlockModal } from "@/components/common/PriceUnlockModal";
 import {
   INITIAL_BRANDS,
   INITIAL_MODELS,
@@ -145,9 +146,15 @@ export default function ConditionAssessmentPage() {
   };
 
   const currentPrice = calculateEstimatedPrice();
+  const [unlockModalOpen, setUnlockModalOpen] = useState(false);
 
   // GENERATE FINAL QUOTE & REDIRECT
   const handleGenerateQuote = () => {
+    if (typeof window !== "undefined" && !localStorage.getItem("cashall_user")) {
+      setUnlockModalOpen(true);
+      return;
+    }
+
     const quoteId = `quote-${Date.now()}`;
     const quoteNumber = `CAQ-${Math.floor(100000 + Math.random() * 900000)}`;
 
@@ -875,6 +882,19 @@ export default function ConditionAssessmentPage() {
 
         </div>
       </main>
+
+      <PriceUnlockModal
+        isOpen={unlockModalOpen}
+        onClose={() => setUnlockModalOpen(false)}
+        onSuccess={() => {
+          setUnlockModalOpen(false);
+          handleGenerateQuote();
+        }}
+        deviceName={`${brand.name} ${model.name}`}
+        deviceImageUrl={model.imageUrl}
+        storage={variant.storage}
+      />
+
       <Footer />
     </div>
   );

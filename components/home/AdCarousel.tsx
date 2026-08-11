@@ -8,22 +8,12 @@ const AD_SLIDES = [
   {
     id: 1,
     image: "/photos/advertise1.jpeg",
-    alt: "CashALL Best Price Guarantee",
+    alt: "CashALL Best Price Guarantee - Old Devices Real Value Instant Cash",
   },
   {
     id: 2,
     image: "/photos/advertise2.jpeg",
-    alt: "CashALL Instant Doorstep Cash",
-  },
-  {
-    id: 3,
-    image: "/photos/adverise3.png",
-    alt: "CashALL Transparent Pricing",
-  },
-  {
-    id: 4,
-    image: "/photos/advertise4.png",
-    alt: "CashALL Fast Pickup & Direct Payout",
+    alt: "CashALL Instant Doorstep Cash - Old Devices Sitting Idle Turn Them Into Cash",
   },
 ];
 
