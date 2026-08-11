@@ -117,15 +117,6 @@ export function Header() {
               <Link href="/sell/laptop" className="hover:text-brand-yellow transition-colors">
                 Sell Laptop
               </Link>
-              
-              {/* NEED HELP CENTRAL TRIGGER */}
-              <button
-                onClick={() => setNeedHelpModalOpen(true)}
-                className="flex items-center gap-1.5 text-xs font-bold text-brand-yellow bg-neutral-900 px-3.5 py-1.5 rounded-full border border-neutral-800 hover:border-brand-yellow/40 hover:bg-neutral-800 transition-all"
-              >
-                <HelpCircle className="w-3.5 h-3.5 text-brand-yellow" />
-                <span>Need Help?</span>
-              </button>
             </nav>
 
             {/* RIGHT ACTION BUTTONS */}
@@ -296,19 +287,6 @@ export function Header() {
             >
               Sell Laptop
             </Link>
-
-            {/* NEED HELP TRIGGER IN MOBILE MENU */}
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                setNeedHelpModalOpen(true);
-              }}
-              className="w-full text-left py-2.5 text-base font-bold text-brand-yellow flex items-center gap-2 border-t border-neutral-800"
-            >
-              <HelpCircle className="w-5 h-5 text-brand-yellow" />
-              <span>Need Help? (FAQ & Support)</span>
-            </button>
-
           </div>
         )}
       </header>
