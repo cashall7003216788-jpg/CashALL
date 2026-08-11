@@ -308,6 +308,7 @@ export const INITIAL_BRANDS: BrandData[] = [
     "id": "b-dell",
     "name": "Dell",
     "slug": "dell",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg",
     "category": "LAPTOP",
     "sortOrder": 20,
     "active": true
@@ -316,6 +317,7 @@ export const INITIAL_BRANDS: BrandData[] = [
     "id": "b-hp",
     "name": "HP",
     "slug": "hp",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg",
     "category": "LAPTOP",
     "sortOrder": 21,
     "active": true
@@ -333,6 +335,7 @@ export const INITIAL_BRANDS: BrandData[] = [
     "id": "b-acer",
     "name": "Acer",
     "slug": "acer",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Acer_Logo.svg",
     "category": "LAPTOP",
     "sortOrder": 23,
     "active": true
@@ -341,6 +344,7 @@ export const INITIAL_BRANDS: BrandData[] = [
     "id": "b-microsoft",
     "name": "Microsoft",
     "slug": "microsoft",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
     "category": "LAPTOP",
     "sortOrder": 24,
     "active": true
@@ -349,6 +353,7 @@ export const INITIAL_BRANDS: BrandData[] = [
     "id": "b-msi",
     "name": "MSI",
     "slug": "msi",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/MSI-Logo.svg",
     "category": "LAPTOP",
     "sortOrder": 25,
     "active": true
@@ -357,6 +362,7 @@ export const INITIAL_BRANDS: BrandData[] = [
     "id": "b-avita",
     "name": "AVITA",
     "slug": "avita",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Avita-Logo.png/800px-Avita-Logo.png",
     "category": "LAPTOP",
     "sortOrder": 26,
     "active": true
@@ -365,6 +371,7 @@ export const INITIAL_BRANDS: BrandData[] = [
     "id": "b-other-laptop",
     "name": "Other Laptop",
     "slug": "other-laptop",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Laptop_icon.svg/512px-Laptop_icon.svg.png",
     "category": "LAPTOP",
     "sortOrder": 27,
     "active": true

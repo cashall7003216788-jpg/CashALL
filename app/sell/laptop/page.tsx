@@ -1,16 +1,33 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { INITIAL_BRANDS } from "@/lib/store";
-import { Search, Laptop, ChevronRight } from "lucide-react";
+import { INITIAL_BRANDS, BrandData } from "@/lib/store";
+import { Search, ChevronRight } from "lucide-react";
+import { BrandIcon } from "@/components/common/BrandIcon";
 
 export default function LaptopBrandSelectionPage() {
   const [search, setSearch] = useState("");
+  const [brands, setBrands] = useState<BrandData[]>(INITIAL_BRANDS);
 
-  const laptopBrands = INITIAL_BRANDS.filter(
+  useEffect(() => {
+    async function loadBrands() {
+      try {
+        const res = await fetch("/api/v1/catalog");
+        const json = await res.json();
+        if (json.success && json.data?.brands?.length > 0) {
+          setBrands(json.data.brands);
+        }
+      } catch (e) {
+        console.error("Error loading laptop brands", e);
+      }
+    }
+    loadBrands();
+  }, []);
+
+  const laptopBrands = brands.filter(
     (b) => b.category === "LAPTOP" || b.category === "BOTH"
   );
 
@@ -65,9 +82,7 @@ export default function LaptopBrandSelectionPage() {
                     href={`/sell/laptop/${brand.slug}`}
                     className="bg-white rounded-2xl p-6 border border-brand-border hover:border-brand-yellow hover:shadow-premium transition-all duration-200 text-center group flex flex-col items-center justify-center space-y-3"
                   >
-                    <div className="w-14 h-14 rounded-2xl bg-gray-50 group-hover:bg-brand-yellow/20 flex items-center justify-center p-3 border border-gray-100 transition-colors">
-                      <Laptop className="w-7 h-7 text-brand-black group-hover:scale-110 transition-transform" />
-                    </div>
+                    <BrandIcon name={brand.name} logoUrl={brand.logoUrl} fallbackType="LAPTOP" />
                     <span className="text-base font-extrabold text-brand-black group-hover:text-black">
                       {brand.name}
                     </span>

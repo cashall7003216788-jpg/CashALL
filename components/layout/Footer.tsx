@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ShieldCheck, Truck, Banknote, HelpCircle } from "lucide-react";
+import { ShieldCheck, Truck, Banknote, HelpCircle, Facebook, Instagram, Youtube } from "lucide-react";
 
 export function Footer() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -146,10 +146,41 @@ export function Footer() {
 
         </div>
 
-        {/* BOTTOM COPYRIGHT */}
-        <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-          <p>@ 2026 Aarna Enterprise. All Rights Reserved</p>
-          <p className="text-[11px]">Designed with transparent pricing for Indian phone sellers.</p>
+        {/* BOTTOM COPYRIGHT & SOCIAL MEDIA LINKS */}
+        <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+          <p className="font-medium text-gray-300">@ 2026 Aarna Enterprise. All Rights Reserved</p>
+          
+          {/* SOCIAL MEDIA LINKS */}
+          <div className="flex items-center gap-4">
+            <span className="text-xs font-bold text-gray-400 uppercase tracking-wider hidden sm:inline">Follow Us:</span>
+            <a
+              href="https://www.facebook.com/profile.php?id=61592749535143"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-gray-400 hover:text-brand-yellow hover:border-brand-yellow/50 transition-all group"
+              title="Facebook"
+            >
+              <Facebook className="w-4 h-4 group-hover:scale-110 transition-transform" />
+            </a>
+            <a
+              href="https://www.instagram.com/cashall_26/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-gray-400 hover:text-brand-yellow hover:border-brand-yellow/50 transition-all group"
+              title="Instagram"
+            >
+              <Instagram className="w-4 h-4 group-hover:scale-110 transition-transform" />
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCymYHMF8-grP7txUbqIt6sQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-gray-400 hover:text-brand-yellow hover:border-brand-yellow/50 transition-all group"
+              title="YouTube"
+            >
+              <Youtube className="w-4 h-4 group-hover:scale-110 transition-transform" />
+            </a>
+          </div>
         </div>
 
       </div>
