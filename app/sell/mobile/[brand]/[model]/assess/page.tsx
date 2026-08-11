@@ -73,6 +73,8 @@ export default function ConditionAssessmentPage() {
   const [step, setStep] = useState<number>(1);
 
   // STEP 1: BASIC QUESTIONS (YES/NO)
+  const [underWarranty, setUnderWarranty] = useState<boolean | null>(null);
+  const [validBill, setValidBill] = useState<boolean | null>(null);
   const [powerWorking, setPowerWorking] = useState<boolean | null>(null);
   const [callsWorking, setCallsWorking] = useState<boolean | null>(null);
   const [touchWorking, setTouchWorking] = useState<boolean | null>(null);
@@ -251,6 +253,74 @@ export default function ConditionAssessmentPage() {
               {step === 1 && (
                 <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-border shadow-premium space-y-8">
                   
+                  {/* QUESTION 0A: MANUFACTURER WARRANTY */}
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-black text-brand-black">
+                      Is your device under manufacturer warranty?
+                    </h3>
+                    <p className="text-xs text-brand-muted">
+                      You can get a better price for your device if it&apos;s under manufacturer warranty with a GST valid bill.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
+                      <button
+                        onClick={() => setUnderWarranty(true)}
+                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                          underWarranty === true
+                            ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
+                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                        }`}
+                      >
+                        Yes
+                      </button>
+                      <button
+                        onClick={() => setUnderWarranty(false)}
+                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                          underWarranty === false
+                            ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
+                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                        }`}
+                      >
+                        No
+                      </button>
+                    </div>
+                  </div>
+
+                  <hr className="border-gray-100" />
+
+                  {/* QUESTION 0B: GST VALID BILL WITH SAME IMEI */}
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-black text-brand-black">
+                      Do you have GST valid bill with the same IMEI?
+                    </h3>
+                    <p className="text-xs text-brand-muted">
+                      Make sure your bill has device IMEI mentioned on it.
+                    </p>
+                    <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
+                      <button
+                        onClick={() => setValidBill(true)}
+                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                          validBill === true
+                            ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
+                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                        }`}
+                      >
+                        Yes
+                      </button>
+                      <button
+                        onClick={() => setValidBill(false)}
+                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                          validBill === false
+                            ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
+                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                        }`}
+                      >
+                        No
+                      </button>
+                    </div>
+                  </div>
+
+                  <hr className="border-gray-100" />
+
                   {/* QUESTION 1: POWER / SWITCH ON */}
                   <div className="space-y-3">
                     <h3 className="text-lg font-black text-brand-black">
@@ -389,7 +459,7 @@ export default function ConditionAssessmentPage() {
                   <div className="pt-4 flex justify-end">
                     <Button
                       onClick={() => setStep(2)}
-                      disabled={callsWorking === null || touchWorking === null || screenOriginal === null}
+                      disabled={underWarranty === null || validBill === null || callsWorking === null || touchWorking === null || screenOriginal === null}
                       variant="primary"
                       size="lg"
                       className="font-extrabold px-8 gap-2 shadow-yellowGlow"
@@ -402,7 +472,7 @@ export default function ConditionAssessmentPage() {
                 </div>
               )}
 
-              {/* STEP 2: MAJOR DEFECT CATEGORIES */}
+              {/* STEP 2: MAJOR DEFECT CATEGORIES WITH CASHIFY SVG OPTION ICONS */}
               {step === 2 && (
                 <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-border shadow-premium space-y-6">
                   <div>
@@ -414,27 +484,31 @@ export default function ConditionAssessmentPage() {
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                     {[
                       {
                         id: "screen_broken",
                         title: "Broken/scratch on device screen",
                         subtitle: "Cracks or deep scratches on front display glass",
+                        iconUrl: "https://s3n.cashify.in/estore/84e2c1deede043cca4ca490cf7b6379c.svg",
                       },
                       {
                         id: "screen_lines",
                         title: "Dead Spot/Visible line and Discoloration on screen",
                         subtitle: "Colored vertical lines, black patches or screen bleed",
+                        iconUrl: "https://s3n.cashify.in/estore/ae589baaf5924452abd846a33feacece.svg",
                       },
                       {
                         id: "body_defects",
                         title: "Scratch/Dent on device body",
                         subtitle: "Scratches, scuffs or dents on side metal frame & back panel",
+                        iconUrl: "https://s3n.cashify.in/estore/81f658c1cbf640df8ea8a02d53d96647.svg",
                       },
                       {
                         id: "panel_missing",
                         title: "Device panel missing/broken",
                         subtitle: "Back panel detached, cracked or camera lens missing",
+                        iconUrl: "https://s3n.cashify.in/estore/d0675cefdd86438581e32f095884d179.svg",
                       },
                     ].map((item) => {
                       const isSelected = selectedMajorDefects.includes(item.id);
@@ -442,27 +516,26 @@ export default function ConditionAssessmentPage() {
                         <button
                           key={item.id}
                           onClick={() => setSelectedMajorDefects(toggleArrayItem(selectedMajorDefects, item.id))}
-                          className={`p-6 rounded-2xl border-2 text-left transition-all duration-200 flex flex-col justify-between ${
+                          className={`p-5 rounded-2xl border-2 text-center transition-all duration-200 flex flex-col items-center justify-between min-h-[220px] ${
                             isSelected
                               ? "border-brand-yellow bg-brand-yellow/10 shadow-subtleCard"
                               : "border-brand-border bg-white hover:border-gray-300"
                           }`}
                         >
-                          <div>
-                            <div className="flex items-center justify-between mb-4">
-                              <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center text-brand-black">
-                                <Smartphone className="w-6 h-6 text-brand-black" />
-                              </div>
-                              <div
-                                className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
-                                  isSelected ? "border-brand-black bg-brand-yellow" : "border-gray-300 bg-white"
-                                }`}
-                              >
-                                {isSelected && <Check className="w-3.5 h-3.5 text-brand-black stroke-[3]" />}
-                              </div>
+                          <div className="w-full flex flex-col items-center">
+                            <div className="w-20 h-20 bg-gray-50 rounded-2xl flex items-center justify-center p-2 mb-3 border border-gray-100">
+                              <img src={item.iconUrl} alt={item.title} className="w-14 h-14 object-contain" />
                             </div>
-                            <h3 className="text-sm font-extrabold text-brand-black mb-1">{item.title}</h3>
-                            <p className="text-xs text-brand-muted leading-relaxed">{item.subtitle}</p>
+                            <h3 className="text-xs sm:text-sm font-extrabold text-brand-black mb-1 leading-snug">
+                              {item.title}
+                            </h3>
+                          </div>
+                          <div
+                            className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mt-3 ${
+                              isSelected ? "border-brand-black bg-brand-yellow" : "border-gray-300 bg-white"
+                            }`}
+                          >
+                            {isSelected && <Check className="w-3.5 h-3.5 text-brand-black stroke-[3]" />}
                           </div>
                         </button>
                       );
