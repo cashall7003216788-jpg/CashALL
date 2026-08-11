@@ -2,32 +2,28 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const AD_SLIDES = [
   {
     id: 1,
     image: "/photos/advertise1.jpeg",
-    title: "Best Price Guarantee",
-    subtitle: "Get maximum cash value for your used mobile phone & laptop",
+    alt: "CashALL Best Price Guarantee",
   },
   {
     id: 2,
     image: "/photos/advertise2.jpeg",
-    title: "Fast & Free Doorstep Pickup",
-    subtitle: "Express logistics agent arrives right at your home or office",
+    alt: "CashALL Instant Doorstep Cash",
   },
   {
     id: 3,
     image: "/photos/adverise3.png",
-    title: "100% Instant Payment",
-    subtitle: "Direct UPI or IMPS bank transfer immediately upon physical inspection",
+    alt: "CashALL Transparent Pricing",
   },
   {
     id: 4,
     image: "/photos/advertise4.png",
-    title: "Transparent & Zero Deductions",
-    subtitle: "No hidden charges, zero doorstep convenience fee, transparent inspection",
+    alt: "CashALL Fast Pickup & Direct Payout",
   },
 ];
 
@@ -36,13 +32,13 @@ export function AdCarousel() {
   const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
 
-  // AUTO SIDE SCROLL EFFECT (3.5s INTERVAL)
+  // AUTO SIDE-SCROLLING EFFECT (3s INTERVAL)
   useEffect(() => {
     if (isPaused) return;
 
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % AD_SLIDES.length);
-    }, 3500);
+    }, 3000);
 
     return () => clearInterval(timer);
   }, [isPaused]);
@@ -55,7 +51,6 @@ export function AdCarousel() {
     setCurrentIndex((prev) => (prev + 1) % AD_SLIDES.length);
   };
 
-  // TOUCH SWIPE HANDLERS FOR MOBILE
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -75,33 +70,10 @@ export function AdCarousel() {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2">
-          <Sparkles className="w-5 h-5 text-brand-yellow" />
-          <h3 className="text-xl font-extrabold text-brand-black">Official Offers & Highlights</h3>
-        </div>
-        <div className="flex items-center gap-2">
-          <button
-            onClick={handlePrev}
-            className="p-2 rounded-full bg-white border border-brand-border text-brand-black hover:bg-brand-yellow hover:border-brand-yellow transition-colors shadow-sm"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="w-4 h-4" />
-          </button>
-          <button
-            onClick={handleNext}
-            className="p-2 rounded-full bg-white border border-brand-border text-brand-black hover:bg-brand-yellow hover:border-brand-yellow transition-colors shadow-sm"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
-
-      {/* AUTO SIDE-SCROLLING CONTAINER */}
+    <div className="w-full max-w-5xl mx-auto my-6 px-2 sm:px-4">
+      {/* FULLY VISIBLE ADVERTISEMENT CAROUSEL CONTAINER */}
       <div
-        className="relative overflow-hidden rounded-3xl border border-neutral-800 bg-brand-black shadow-2xl group"
+        className="relative overflow-hidden rounded-2xl border-2 border-brand-yellow/50 bg-black shadow-yellowGlow group"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onTouchStart={handleTouchStart}
@@ -112,41 +84,47 @@ export function AdCarousel() {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {AD_SLIDES.map((slide) => (
-            <div key={slide.id} className="w-full flex-shrink-0 relative aspect-[16/7] sm:aspect-[21/8] max-h-[420px] bg-neutral-900">
+            <div
+              key={slide.id}
+              className="w-full flex-shrink-0 relative aspect-[16/8] sm:aspect-[21/9] max-h-[380px] bg-black flex items-center justify-center"
+            >
               <Image
                 src={slide.image}
-                alt={slide.title}
+                alt={slide.alt}
                 fill
-                className="object-cover object-center"
+                className="object-contain object-center"
                 priority={slide.id === 1}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-brand-black/30 to-transparent flex items-end p-6 sm:p-10">
-                <div className="max-w-xl space-y-1">
-                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-brand-yellow text-brand-black text-[10px] font-extrabold tracking-wider uppercase mb-1">
-                    CashALL Exclusive
-                  </span>
-                  <h4 className="text-xl sm:text-3xl font-black text-white leading-tight">
-                    {slide.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-gray-300 font-medium line-clamp-2">
-                    {slide.subtitle}
-                  </p>
-                </div>
-              </div>
             </div>
           ))}
         </div>
 
+        {/* PREV / NEXT BUTTONS */}
+        <button
+          onClick={handlePrev}
+          className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/70 border border-brand-yellow/40 text-brand-yellow hover:bg-brand-yellow hover:text-black transition-colors opacity-80 group-hover:opacity-100 shadow-md"
+          aria-label="Previous advertisement"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={handleNext}
+          className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/70 border border-brand-yellow/40 text-brand-yellow hover:bg-brand-yellow hover:text-black transition-colors opacity-80 group-hover:opacity-100 shadow-md"
+          aria-label="Next advertisement"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+
         {/* NAVIGATION DOTS */}
-        <div className="absolute bottom-4 right-6 flex items-center gap-2 z-20">
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10 bg-black/60 px-3 py-1 rounded-full border border-neutral-800">
           {AD_SLIDES.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 currentIndex === idx
-                  ? "w-8 bg-brand-yellow"
-                  : "w-2 bg-white/50 hover:bg-white"
+                  ? "w-7 bg-brand-yellow"
+                  : "w-2 bg-gray-500 hover:bg-white"
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />

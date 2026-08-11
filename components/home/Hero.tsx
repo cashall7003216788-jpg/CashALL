@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { DeviceSearch } from "./DeviceSearch";
+import { AdCarousel } from "./AdCarousel";
 import { ShieldCheck, Truck, Zap, Lock } from "lucide-react";
 
 export function Hero() {
@@ -28,6 +28,11 @@ export function Hero() {
             Get an instant estimated price for your Mobile Phone or Laptop. Enjoy fast & free doorstep pickup & direct payment upon verification.
           </p>
 
+          {/* FULLY VISIBLE ADVERTISEMENT AUTO SIDE-SCROLL CAROUSEL RIGHT AFTER HEADING & SUBTITLE */}
+          <div className="pt-2">
+            <AdCarousel />
+          </div>
+
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <Link href="/sell" className="w-full sm:w-auto">
@@ -50,12 +55,12 @@ export function Hero() {
           </div>
 
           {/* SEARCH INTEGRATION */}
-          <div id="find-phone" className="pt-8">
+          <div id="find-phone" className="pt-6">
             <DeviceSearch />
           </div>
 
           {/* TRUST INDICATORS UNDERNEATH */}
-          <div className="pt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+          <div className="pt-8 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
             <div className="flex items-center gap-2.5 p-3.5 rounded-2xl bg-neutral-900/80 border border-neutral-800 hover:border-brand-yellow/30 transition-colors">
               <Truck className="w-4 h-4 text-brand-yellow shrink-0" />
               <span className="text-xs font-semibold text-gray-200">Fast & Free Pickup</span>
