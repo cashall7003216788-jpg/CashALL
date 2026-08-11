@@ -18,26 +18,9 @@ export default function ModelSelectionPage() {
 
   const brand = INITIAL_BRANDS.find((b) => b.slug === brandSlug) || INITIAL_BRANDS[0];
 
-  const brandModels = INITIAL_MODELS.filter((m) => m.brandId === brand.id && m.category === "MOBILE").sort((a, b) => {
-    const yearA = a.releaseYear ?? 0;
-    const yearB = b.releaseYear ?? 0;
-    if (yearA !== yearB) return yearB - yearA;
-
-    const rankName = (name: string) => {
-      let score = 0;
-      if (name.includes("Pro Max") || name.includes("Ultra") || name.includes("Fold")) score += 40;
-      else if (name.includes("Pro")) score += 30;
-      else if (name.includes("Plus")) score += 20;
-      else if (name.includes("Mini") || name.includes("Lite") || name.includes("SE") || name.includes("a")) score -= 10;
-      return score;
-    };
-
-    const rankA = rankName(a.name);
-    const rankB = rankName(b.name);
-    if (rankA !== rankB) return rankB - rankA;
-
-    return a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" });
-  });
+  const brandModels = INITIAL_MODELS.filter(
+    (m) => m.brandId === brand.id && m.category === "MOBILE"
+  );
 
   const availableSeries = getSeriesForBrand(brand.slug);
   const activeSeries = availableSeries.find((s) => s.id === selectedSeriesId) || null;

@@ -5145,14 +5145,38 @@ const LAPTOP_VARIANTS: DeviceVariantData[] = [
 export const INITIAL_VARIANTS: DeviceVariantData[] = [...MOBILE_VARIANTS_PART_1, ...MOBILE_VARIANTS_PART_2, ...MOBILE_VARIANTS_PART_3, ...MOBILE_VARIANTS_PART_4, ...MOBILE_VARIANTS_PART_5, ...MOBILE_VARIANTS_PART_6, ...MOBILE_VARIANTS_PART_7, ...MOBILE_VARIANTS_PART_8, ...MOBILE_VARIANTS_PART_9, ...LAPTOP_VARIANTS];
 
 export const INITIAL_QUESTIONS: QuestionData[] = [
-  // STEP 1: BASIC OPERATIONAL HEALTH
+  // STEP 1: BASIC HEALTH & WARRANTY
   {
-    id: "q-power",
-    title: "Does your phone switch on?",
-    subtitle: "Turn on the device screen and check basic power status",
+    id: "q-warranty",
+    title: "Is your device under manufacturer warranty?",
+    subtitle: "You can get a better price for your device if it's under manufacturer warranty with a GST valid bill.",
     group: "BASIC",
     type: "SINGLE",
     sortOrder: 1,
+    options: [
+      { id: "o-w-yes", label: "Under Manufacturer Warranty", description: "Less than 11 months old", iconName: "ShieldCheck", sortOrder: 1 },
+      { id: "o-w-no", label: "Out of Warranty", description: "More than 11 months old", iconName: "Clock", sortOrder: 2 },
+    ],
+  },
+  {
+    id: "q-gst-bill",
+    title: "Do you have GST valid bill with the same IMEI?",
+    subtitle: "Make sure your bill has device IMEI mentioned on it.",
+    group: "BASIC",
+    type: "SINGLE",
+    sortOrder: 2,
+    options: [
+      { id: "o-gb-yes", label: "GST Valid Bill Available", description: "Matching IMEI bill included", iconName: "FileCheck", sortOrder: 1 },
+      { id: "o-gb-no", label: "No GST Bill / Lost", description: "Invoice not available", iconName: "FileX", sortOrder: 2 },
+    ],
+  },
+  {
+    id: "q-power",
+    title: "Does your phone switch on?",
+    subtitle: "Check basic power status and startup",
+    group: "BASIC",
+    type: "SINGLE",
+    sortOrder: 3,
     options: [
       { id: "o-p-yes", label: "Turns ON normally", description: "Powers up to home screen fine", iconName: "Power", sortOrder: 1 },
       { id: "o-p-no", label: "Power / Boot Issue", description: "Does not turn on or gets stuck on boot logo", iconName: "PowerOff", sortOrder: 2 },
@@ -5341,7 +5365,9 @@ export const INITIAL_QUESTIONS: QuestionData[] = [
 ];
 
 export const INITIAL_PRICING_RULES: PricingRuleData[] = [
-  // Step 1: Basic Health Rules
+  // Step 1: Basic Health & Warranty Rules
+  { id: "r-w-no", questionId: "q-warranty", optionId: "o-w-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 5 },
+  { id: "r-gb-no", questionId: "q-gst-bill", optionId: "o-gb-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 3 },
   { id: "r-p-no", questionId: "q-power", optionId: "o-p-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 50 },
   { id: "r-c-no", questionId: "q-calls", optionId: "o-c-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 12 },
   { id: "r-t-no", questionId: "q-touch", optionId: "o-t-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 20 },

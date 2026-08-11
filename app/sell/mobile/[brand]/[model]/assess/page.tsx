@@ -112,6 +112,8 @@ export default function ConditionAssessmentPage() {
     let totalDeductionPct = 0;
 
     // Step 1 Percentage Deductions
+    if (underWarranty === false) totalDeductionPct += getRuleDeduction("q-warranty", "o-w-no");
+    if (validBill === false) totalDeductionPct += getRuleDeduction("q-gst-bill", "o-gb-no");
     if (powerWorking === false) totalDeductionPct += getRuleDeduction("q-power", "o-p-no");
     if (callsWorking === false) totalDeductionPct += getRuleDeduction("q-calls", "o-c-no");
     if (touchWorking === false) totalDeductionPct += getRuleDeduction("q-touch", "o-t-no");

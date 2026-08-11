@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { X, Lock, Smartphone } from "lucide-react";
 
 interface PriceUnlockModalProps {
@@ -54,27 +53,30 @@ export function PriceUnlockModal({
     setTimeout(() => {
       setLoading(false);
       onSuccess(userObj);
-    }, 500);
+    }, 400);
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fadeIn">
-      {/* MODAL CARD */}
-      <div className="bg-white rounded-3xl overflow-hidden max-w-md w-full shadow-2xl border border-brand-border relative text-brand-black animate-scaleUp">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
+      {/* MODAL CARD IN CASHALL BLACK & YELLOW THEME */}
+      <div className="bg-white rounded-3xl overflow-hidden max-w-md w-full shadow-2xl border-2 border-brand-yellow/40 relative text-brand-black animate-scaleUp">
         
-        {/* TEAL HEADER */}
-        <div className="bg-[#14b8a6] text-white px-6 py-4 flex items-center justify-between">
-          <h2 className="text-xl sm:text-2xl font-black tracking-tight">Login/Signup</h2>
+        {/* CASHALL BLACK & YELLOW HEADER */}
+        <div className="bg-brand-black text-white px-6 py-4 flex items-center justify-between border-b border-brand-yellow/30">
+          <div className="flex items-center gap-2">
+            <span className="w-3 h-3 rounded-full bg-brand-yellow animate-pulse" />
+            <h2 className="text-xl font-black text-brand-yellow tracking-tight">CashALL Login / Signup</h2>
+          </div>
           <button
             onClick={onClose}
-            className="p-1 rounded-full text-white/80 hover:text-white hover:bg-white/20 transition-colors"
+            className="p-1.5 rounded-full text-gray-400 hover:text-white hover:bg-neutral-800 transition-colors"
             aria-label="Close"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <div className="p-6 space-y-6">
+        <div className="p-6 space-y-5">
           
           {/* PRODUCT CARD BOX */}
           <div className="bg-gray-50 border border-gray-200 rounded-2xl p-4 flex items-center gap-4">
@@ -97,9 +99,9 @@ export function PriceUnlockModal({
             </div>
           </div>
 
-          {/* LOCK BANNER */}
-          <div className="bg-[#e6fffa] text-[#0d9488] border border-[#99f6e4] rounded-xl py-3 px-4 flex items-center justify-center gap-2 text-xs sm:text-sm font-extrabold text-center">
-            <Lock className="w-4 h-4 shrink-0 text-[#0d9488]" />
+          {/* LOCK BANNER IN CASHALL STYLING */}
+          <div className="bg-brand-black text-brand-yellow border border-brand-yellow/40 rounded-xl py-3 px-4 flex items-center justify-center gap-2 text-xs sm:text-sm font-extrabold text-center shadow-sm">
+            <Lock className="w-4 h-4 shrink-0 text-brand-yellow" />
             <span>Login to unlock the best price</span>
           </div>
 
@@ -112,7 +114,7 @@ export function PriceUnlockModal({
             )}
 
             <div>
-              <label className="block text-xs font-bold text-gray-600 mb-1">
+              <label className="block text-xs font-bold text-gray-700 mb-1">
                 Enter your phone number
               </label>
               <div className="relative flex items-center">
@@ -128,7 +130,7 @@ export function PriceUnlockModal({
                   placeholder="Enter your Mobile"
                   required
                   autoFocus
-                  className="w-full pl-12 pr-4 py-3 text-sm font-semibold bg-gray-50 rounded-xl border border-gray-300 focus:outline-none focus:border-[#14b8a6] focus:bg-white transition-all"
+                  className="w-full pl-12 pr-4 py-3 text-sm font-semibold bg-gray-50 rounded-xl border border-gray-300 focus:outline-none focus:border-brand-yellow focus:bg-white transition-all"
                 />
               </div>
             </div>
@@ -139,7 +141,7 @@ export function PriceUnlockModal({
                 id="terms-check"
                 checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)}
-                className="mt-0.5 w-4 h-4 text-[#14b8a6] rounded border-gray-300 focus:ring-[#14b8a6]"
+                className="mt-0.5 w-4 h-4 text-brand-black rounded border-gray-300 focus:ring-brand-yellow"
               />
               <label htmlFor="terms-check" className="text-[11px] text-gray-500 font-medium leading-tight">
                 I agree to the <span className="underline text-gray-700 font-bold">Terms and Conditions</span> &amp; <span className="underline text-gray-700 font-bold">Privacy Policy</span>
@@ -149,7 +151,7 @@ export function PriceUnlockModal({
             <button
               type="submit"
               disabled={loading || phoneNumber.length < 10}
-              className="w-full py-3.5 bg-gray-200 hover:bg-[#14b8a6] hover:text-white text-gray-700 font-black text-sm rounded-xl transition-all uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
+              className="w-full py-3.5 bg-brand-yellow hover:bg-brand-yellowHover text-brand-black font-black text-sm rounded-xl transition-all uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed shadow-yellowGlow"
             >
               {loading ? "Unlocking Price..." : "CONTINUE"}
             </button>
