@@ -113,6 +113,23 @@ export default function LaptopAssessmentPage() {
   // ── STEP STATE ──────────────────────────────────────────────────────────
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("cashall_user");
+      if (stored) {
+        try {
+          const u = JSON.parse(stored);
+          if (u && (u.phone || u.name)) {
+            setIsLoggedIn(true);
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    }
+  }, [modalOpen]);
 
   // Step 1: Core Functional & Warranty Questions
   const [turnsOn, setTurnsOn] = useState<string>("yes"); // yes | no
@@ -522,23 +539,59 @@ export default function LaptopAssessmentPage() {
                 })}
               </div>
 
-              <div className="bg-yellow-50 rounded-2xl p-6 border border-brand-yellow/40 flex items-center justify-between gap-4">
-                <div>
-                  <span className="text-xs font-extrabold text-brand-black uppercase tracking-wider block">Estimated Resale Quote</span>
-                  <span className="text-2xl sm:text-3xl font-black text-brand-black font-mono mt-1 block">
-                    &#8377;{finalPrice.toLocaleString("en-IN")}
-                  </span>
-                  <p className="text-[11px] text-brand-muted mt-0.5">Includes free doorstep pickup &amp; instant cash/UPI payment upon verification</p>
+              {/* PRICE DISPLAY CARD - SHOWN ONLY AFTER LOGIN */}
+              {isLoggedIn ? (
+                <div className="bg-brand-black text-white rounded-3xl p-6 sm:p-8 border border-brand-yellow/40 shadow-yellowGlow space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                      <span className="text-xs font-bold text-brand-yellow uppercase tracking-wider block">
+                        Unlocked Instant Cash Valuation
+                      </span>
+                      <span className="text-3xl sm:text-4xl font-black text-brand-yellow font-mono mt-1 block">
+                        &#8377;{finalPrice.toLocaleString("en-IN")}
+                      </span>
+                      <p className="text-xs text-gray-300 mt-1">
+                        Includes free doorstep pickup &amp; direct instant payment upon physical verification
+                      </p>
+                    </div>
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      onClick={() => {
+                        alert("Order placed successfully! Our pickup partner will contact you shortly.");
+                      }}
+                      className="font-black px-8 py-4 text-sm shadow-yellowGlow shrink-0"
+                    >
+                      BOOK FREE PICKUP &rarr;
+                    </Button>
+                  </div>
                 </div>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  onClick={() => setModalOpen(true)}
-                  className="font-black px-8 py-4 text-sm shadow-yellowGlow shrink-0"
-                >
-                  GET EXACT QUOTE &rarr;
-                </Button>
-              </div>
+              ) : (
+                <div className="bg-brand-black text-white rounded-3xl p-6 sm:p-8 border border-neutral-800 text-center space-y-4">
+                  <div className="max-w-md mx-auto space-y-2">
+                    <div className="w-12 h-12 bg-neutral-900 rounded-full flex items-center justify-center mx-auto text-brand-yellow text-xl border border-neutral-800">
+                      🔒
+                    </div>
+                    <span className="text-xs font-extrabold text-brand-yellow uppercase tracking-wider block">
+                      Best Price Guarantee
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-black text-white">
+                      Login to View Instant Valuation Price
+                    </h3>
+                    <p className="text-xs text-gray-400 leading-relaxed">
+                      Please login or enter your mobile number to unlock your instant cash valuation quote and schedule free doorstep pickup.
+                    </p>
+                  </div>
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    onClick={() => setModalOpen(true)}
+                    className="font-black px-8 py-4 text-sm shadow-yellowGlow"
+                  >
+                    🔒 UNLOCK PRICE &amp; CONTINUE &rarr;
+                  </Button>
+                </div>
+              )}
 
               <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                 <button type="button" onClick={() => setCurrentStep(4)} className="text-xs font-bold text-gray-500 hover:text-black">
@@ -557,7 +610,13 @@ export default function LaptopAssessmentPage() {
       <PriceUnlockModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
-        onSuccess={() => setModalOpen(false)}
+        onSuccess={(userData) => {
+          setModalOpen(false);
+          setIsLoggedIn(true);
+          if (typeof window !== "undefined") {
+            localStorage.setItem("cashall_user", JSON.stringify(userData));
+          }
+        }}
         deviceName={`${brand.name} ${model?.name || "Laptop"}`}
         storage={variant?.storage || "Standard Specs"}
       />
