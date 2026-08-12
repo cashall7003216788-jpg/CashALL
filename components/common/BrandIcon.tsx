@@ -14,8 +14,8 @@ interface BrandIconProps {
 export function BrandIcon({
   name,
   logoUrl,
-  className = "w-14 h-14",
-  imageClassName = "max-h-10 max-w-10",
+  className = "w-20 h-20 sm:w-24 sm:h-24",
+  imageClassName = "max-h-16 max-w-16 sm:max-h-20 sm:max-w-20",
   fallbackType = "MOBILE",
 }: BrandIconProps) {
   const [error, setError] = useState(false);
@@ -32,9 +32,9 @@ export function BrandIcon({
           className={`${imageClassName} object-contain transition-transform group-hover:scale-105`}
         />
       ) : fallbackType === "LAPTOP" ? (
-        <Laptop className="w-6 h-6 text-brand-black group-hover:scale-110 transition-transform" />
+        <Laptop className="w-8 h-8 sm:w-10 sm:h-10 text-brand-black group-hover:scale-110 transition-transform" />
       ) : (
-        <Smartphone className="w-6 h-6 text-brand-black group-hover:scale-110 transition-transform" />
+        <Smartphone className="w-8 h-8 sm:w-10 sm:h-10 text-brand-black group-hover:scale-110 transition-transform" />
       )}
     </div>
   );

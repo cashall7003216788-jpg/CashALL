@@ -73,15 +73,15 @@ export function Header() {
             {/* LEFT LOGO & LOCATION */}
             <div className="flex items-center space-x-5 sm:space-x-8">
               
-              {/* CASHALL LOGO (ENLARGED VISUAL DISPLAY SIZE) */}
+              {/* CASHALL LOGO (MAXIMUM VISIBILITY ENLARGED DISPLAY) */}
               <Link href="/" className="flex items-center gap-2 group shrink-0">
-                <div className="relative h-14 sm:h-16 w-44 sm:w-56 flex items-center justify-start overflow-hidden py-1">
+                <div className="relative h-16 sm:h-20 w-52 sm:w-64 flex items-center justify-start py-0.5">
                   <Image
                     src="/logo.png"
                     alt="CashALL Logo"
-                    width={240}
-                    height={70}
-                    className="object-contain object-left h-full w-auto transition-transform group-hover:scale-105"
+                    width={320}
+                    height={90}
+                    className="object-contain object-left h-full max-h-16 sm:max-h-20 w-auto transition-transform group-hover:scale-105"
                     priority
                   />
                 </div>
