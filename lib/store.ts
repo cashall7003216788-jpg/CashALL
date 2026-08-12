@@ -378,7 +378,7 @@ export const INITIAL_BRANDS: BrandData[] = [
   }
 ];
 
-const MOBILE_MODELS_PART_1: DeviceModelData[
+const MOBILE_MODELS_PART_1: DeviceModelData[] = [
   {"id": "m-apple-apple-iphone-17-pro-max", "brandId": "b-apple", "brandSlug": "apple", "name": "Apple iPhone 17 Pro Max", "slug": "apple-iphone-17-pro-max", "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c90a2a0b-fcc8.jpg?w=800", "releaseYear": 2025, "popular": false, "active": true, "contactForPrice": false, "category": "MOBILE"},
   {"id": "m-apple-apple-iphone-17-pro", "brandId": "b-apple", "brandSlug": "apple", "name": "Apple iPhone 17 Pro", "slug": "apple-iphone-17-pro", "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/eeee646c-8046.jpg?w=800", "releaseYear": 2025, "popular": false, "active": true, "contactForPrice": false, "category": "MOBILE"},
   {"id": "m-apple-apple-iphone-17", "brandId": "b-apple", "brandSlug": "apple", "name": "Apple iPhone 17", "slug": "apple-iphone-17", "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ac41123f-6b8f.jpg?w=800", "releaseYear": 2025, "popular": false, "active": true, "contactForPrice": false, "category": "MOBILE"},
@@ -421,7 +421,7 @@ const MOBILE_MODELS_PART_1: DeviceModelData[
   {"id": "m-apple-apple-iphone-6s-plus", "brandId": "b-apple", "brandSlug": "apple", "name": "Apple iPhone 6S Plus", "slug": "apple-iphone-6s-plus", "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-73kjnouo-hzvn.png?w=800", "releaseYear": 2015, "popular": true, "active": true, "contactForPrice": false, "category": "MOBILE"},
   {"id": "m-apple-apple-iphone-6", "brandId": "b-apple", "brandSlug": "apple", "name": "Apple iPhone 6", "slug": "apple-iphone-6", "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-qp4ba4sq-aeny.png?w=800", "releaseYear": 2014, "popular": true, "active": true, "contactForPrice": false, "category": "MOBILE"},
   {"id": "m-apple-apple-iphone-6-plus", "brandId": "b-apple", "brandSlug": "apple", "name": "Apple iPhone 6 Plus", "slug": "apple-iphone-6-plus", "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-yicxxl1r-d1ta.png?w=800", "releaseYear": 2014, "popular": true, "active": true, "contactForPrice": false, "category": "MOBILE"},
-] = [
+
 
   {"id": "m-asus-asus-rog-phone-3", "brandId": "b-asus", "brandSlug": "asus", "name": "Asus ROG Phone 3", "slug": "asus-rog-phone-3", "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d34e200c-24f8.jpg?w=800", "releaseYear": 2024, "popular": false, "active": true, "contactForPrice": false, "category": "MOBILE"},
   {"id": "m-asus-asus-rog-phone-ii-zs660kl", "brandId": "b-asus", "brandSlug": "asus", "name": "Asus ROG Phone II ZS660KL", "slug": "asus-rog-phone-ii-zs660kl", "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3eb58600-5ea7.jpg?w=800", "releaseYear": 2024, "popular": false, "active": true, "contactForPrice": false, "category": "MOBILE"},
