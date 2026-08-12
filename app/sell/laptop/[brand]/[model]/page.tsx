@@ -28,7 +28,7 @@ export default function LaptopVariantSelectionPage() {
   const selectedVariant = fallbackVariants.find((v) => v.id === selectedVariantId) || fallbackVariants[0];
 
   const handleContinue = () => {
-    router.push(`/sell/mobile/${brand.slug}/${model?.slug}/assess?variantId=${selectedVariant.id}`);
+    router.push(`/sell/laptop/${brand.slug}/${model?.slug}/assess?variantId=${selectedVariant.id}`);
   };
 
   const isContactPrice = model?.contactForPrice === true;
