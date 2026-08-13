@@ -95,34 +95,43 @@ export default function OrderTrackingPage() {
   }
 
   const steps = [
-    { key: "QUOTE_CREATED", label: "Quote Created", desc: "Online estimate generated" },
+    { key: "QUOTE_CREATED", label: "Quote Created", desc: "Online estimate generated (No Aadhaar required)" },
     { key: "PICKUP_SCHEDULED", label: "Pickup Scheduled", desc: `${order.pickupDate} (${order.pickupTimeSlot})` },
-    { key: "EXECUTIVE_ASSIGNED", label: "CashALL Executive Assigned", desc: order.assignedPartnerName || "Doorstep executive assigned" },
-    { key: "EXECUTIVE_ON_THE_WAY", label: "Executive On The Way", desc: "CashALL executive traveling to your address" },
-    { key: "INSPECTION_STARTED", label: "Device Inspection", desc: "Physical check & IMEI verification" },
-    { key: "FINAL_OFFER_PENDING", label: "Final Price Offer", desc: "Confirmed/Revised valuation" },
-    { key: "PAYMENT_PROCESSING", label: "Payment", desc: "Direct UPI/Bank payout" },
-    { key: "COMPLETED", label: "Completed", desc: "Device handed over & paid" },
+    { key: "INSPECTION_STARTED", label: "Device Inspection", desc: "Physical hardware check & IMEI verification" },
+    { key: "FINAL_OFFER", label: "Final Offer Submitted", desc: "Inspection-based purchase price" },
+    { key: "IDENTITY_VERIFICATION_PENDING", label: "Seller Identity Verification", desc: "Government ID / Aadhaar e-KYC" },
+    { key: "ESIGNED", label: "Sale Agreement eSign", desc: "Legal ownership declaration signed" },
+    { key: "PAYMENT_CONFIRMED", label: "UPI Payment Recorded", desc: "Direct payout to seller" },
+    { key: "DEVICE_RECEIVED", label: "Device Handover", desc: "Physical custody received by CashALL" },
+    { key: "COMPLETED", label: "Completed", desc: "Final Purchase Receipt generated" },
   ];
 
   const getStepStatus = (stepKey: string) => {
     const statusOrder = [
       "QUOTE_CREATED",
       "PICKUP_SCHEDULED",
-      "EXECUTIVE_ASSIGNED",
-      "EXECUTIVE_ON_THE_WAY",
+      "ASSIGNED",
+      "PARTNER_ACCEPTED",
       "INSPECTION_STARTED",
-      "FINAL_OFFER_PENDING",
-      "ACCEPTED",
-      "PAYMENT_PROCESSING",
-      "PAID",
+      "INSPECTION_COMPLETED",
+      "IMEI_VERIFIED",
+      "FINAL_OFFER",
+      "CUSTOMER_ACCEPTED",
+      "IDENTITY_VERIFICATION_PENDING",
+      "IDENTITY_VERIFIED",
+      "ESIGN_PENDING",
+      "ESIGNED",
+      "PAYMENT_PENDING",
+      "PAYMENT_CONFIRMED",
+      "DEVICE_RECEIVED",
+      "BILL_GENERATED",
       "COMPLETED",
     ];
 
     const currentIndex = statusOrder.indexOf(order.status);
     const stepIndex = statusOrder.indexOf(stepKey);
 
-    if (currentIndex >= stepIndex || (stepKey === "FINAL_OFFER_PENDING" && customerDecision === "ACCEPTED")) {
+    if (currentIndex >= stepIndex || (stepKey === "FINAL_OFFER" && customerDecision === "ACCEPTED")) {
       return "COMPLETED";
     }
     if (currentIndex === stepIndex - 1) {
@@ -131,31 +140,49 @@ export default function OrderTrackingPage() {
     return "PENDING";
   };
 
-  const handleAcceptOffer = () => {
-    setCustomerDecision("ACCEPTED");
-    const updated: OrderData = {
-      ...order,
-      status: "ACCEPTED",
-      paymentStatus: "PAID",
-      paymentTxRef: `UPI-CASHPAY-${Math.floor(1000000000 + Math.random() * 9000000000)}`,
-      updatedAt: new Date().toISOString(),
-    };
-    setOrder(updated);
-    if (typeof window !== "undefined") {
-      localStorage.setItem(`cashall_order_${order.orderNumber}`, JSON.stringify(updated));
+  const handleAcceptOffer = async () => {
+    try {
+      setCustomerDecision("ACCEPTED");
+      await fetch(`/api/v1/orders/${order.id || order.orderNumber}/accept-offer`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ accept: true }),
+      });
+
+      const updated: OrderData = {
+        ...order,
+        status: "IDENTITY_VERIFICATION_PENDING",
+        updatedAt: new Date().toISOString(),
+      };
+      setOrder(updated);
+      if (typeof window !== "undefined") {
+        localStorage.setItem(`cashall_order_${order.orderNumber}`, JSON.stringify(updated));
+      }
+    } catch (e) {
+      console.error(e);
     }
   };
 
-  const handleDeclineOffer = () => {
-    setCustomerDecision("DECLINED");
-    const updated: OrderData = {
-      ...order,
-      status: "DECLINED",
-      updatedAt: new Date().toISOString(),
-    };
-    setOrder(updated);
-    if (typeof window !== "undefined") {
-      localStorage.setItem(`cashall_order_${order.orderNumber}`, JSON.stringify(updated));
+  const handleDeclineOffer = async () => {
+    try {
+      setCustomerDecision("DECLINED");
+      await fetch(`/api/v1/orders/${order.id || order.orderNumber}/accept-offer`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ accept: false, declineReason: "Customer rejected final price." }),
+      });
+
+      const updated: OrderData = {
+        ...order,
+        status: "REJECTED",
+        updatedAt: new Date().toISOString(),
+      };
+      setOrder(updated);
+      if (typeof window !== "undefined") {
+        localStorage.setItem(`cashall_order_${order.orderNumber}`, JSON.stringify(updated));
+      }
+    } catch (e) {
+      console.error(e);
     }
   };
 
@@ -293,7 +320,7 @@ export default function OrderTrackingPage() {
           </div>
 
           {/* PRICE REVISION / FINAL OFFER ACCEPTANCE MODULE (Sections 34 & 35) */}
-          {(order.status === "FINAL_OFFER_PENDING" || order.status === "ACCEPTED" || customerDecision === "ACCEPTED") && (
+          {["FINAL_OFFER", "FINAL_OFFER_PENDING", "CUSTOMER_ACCEPTED", "IDENTITY_VERIFICATION_PENDING", "IDENTITY_VERIFIED", "ACCEPTED", "COMPLETED"].includes(order.status) && (
             <div className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-brand-yellow shadow-premium space-y-6">
               
               <div className="flex items-center justify-between border-b border-gray-100 pb-4">
@@ -343,7 +370,7 @@ export default function OrderTrackingPage() {
               )}
 
               {/* ACCEPT / DECLINE ACTIONS */}
-              {customerDecision === "NONE" && order.status === "FINAL_OFFER_PENDING" ? (
+              {customerDecision === "NONE" && (order.status === "FINAL_OFFER" || order.status === "FINAL_OFFER_PENDING") ? (
                 <div className="pt-2 space-y-3">
                   <div className="flex flex-col sm:flex-row items-center gap-4">
                     <Button

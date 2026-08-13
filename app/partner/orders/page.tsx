@@ -168,25 +168,46 @@ export default function PartnerOrdersPage() {
               </div>
 
               {/* Action Buttons */}
-              <div className="grid grid-cols-2 gap-2 pt-1">
-                <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ord.addressText)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="py-2.5 bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 transition-colors"
-                >
-                  <MapPin className="w-3.5 h-3.5 text-brand-yellow" />
-                  <span>Google Maps</span>
-                </a>
+              {(() => {
+                let targetHref = `/partner/orders/${ord.id}/inspection`;
+                let btnLabel = "Inspect Device";
 
-                <Link
-                  href={`/partner/orders/${ord.id}/inspection`}
-                  className="py-2.5 bg-brand-yellow hover:bg-brand-yellowHover text-brand-black font-extrabold text-xs rounded-xl flex items-center justify-center gap-1.5 shadow-yellowGlow transition-all"
-                >
-                  <ClipboardCheck className="w-3.5 h-3.5" />
-                  <span>Inspect Device</span>
-                </Link>
-              </div>
+                if (["FINAL_OFFER", "CUSTOMER_ACCEPTED", "IDENTITY_VERIFICATION_PENDING"].includes(ord.status)) {
+                  targetHref = `/partner/orders/${ord.id}/verification`;
+                  btnLabel = ord.status === "FINAL_OFFER" ? "Offer Pending" : "Seller Verification";
+                } else if (["IDENTITY_VERIFIED", "ESIGN_PENDING"].includes(ord.status)) {
+                  targetHref = `/partner/orders/${ord.id}/signature`;
+                  btnLabel = "eSign Agreement";
+                } else if (["ESIGNED", "PAYMENT_PENDING", "PAYMENT_CONFIRMED", "DEVICE_RECEIVED"].includes(ord.status)) {
+                  targetHref = `/partner/orders/${ord.id}/payment`;
+                  btnLabel = ord.status === "PAYMENT_CONFIRMED" ? "Handover & Bill" : "UPI Payment";
+                } else if (ord.status === "COMPLETED") {
+                  targetHref = `/order/${ord.orderNumber}/bill`;
+                  btnLabel = "View Final Bill";
+                }
+
+                return (
+                  <div className="grid grid-cols-2 gap-2 pt-1">
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ord.addressText)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="py-2.5 bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 transition-colors"
+                    >
+                      <MapPin className="w-3.5 h-3.5 text-brand-yellow" />
+                      <span>Google Maps</span>
+                    </a>
+
+                    <Link
+                      href={targetHref}
+                      className="py-2.5 bg-brand-yellow hover:bg-brand-yellowHover text-brand-black font-extrabold text-xs rounded-xl flex items-center justify-center gap-1.5 shadow-yellowGlow transition-all"
+                    >
+                      <ClipboardCheck className="w-3.5 h-3.5" />
+                      <span>{btnLabel}</span>
+                    </Link>
+                  </div>
+                );
+              })()}
             </div>
           ))
         )}

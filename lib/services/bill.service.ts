@@ -45,7 +45,7 @@ export class BillService {
 
     const billNumber = `CABILL-${order.orderNumber}`;
     const deviceName = `${order.quote.variant.model.brand.name} ${order.quote.variant.model.name}`;
-    const payment = order.payments.find((p) => p.status === "PAID" || p.status === "CONFIRMED") || order.payments[0];
+    const payment = order.payments.find((p) => p.status === "PAID") || order.payments[0];
     const signature = order.signatures.find((s) => s.status === "ESIGNED") || order.signatures[0];
     const identity = order.identityVerifications[0];
     const imei = order.imeiVerifications[0];

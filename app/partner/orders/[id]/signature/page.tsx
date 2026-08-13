@@ -30,10 +30,6 @@ export default function PartnerSignaturePage({ params }: { params: { id: string 
       setError("Please enter the seller's full legal name and 10-digit phone number.");
       return;
     }
-    if (!deviceReceivedConfirmed) {
-      setError("You must confirm physical receipt of the device into CashALL custody.");
-      return;
-    }
 
     setLoading(true);
     setError("");
@@ -55,26 +51,9 @@ export default function PartnerSignaturePage({ params }: { params: { id: string 
         throw new Error(esignData.message || "Failed to record electronic signature.");
       }
 
-      // 2. Device Received Confirmation
-      await fetch(`/api/v1/orders/${params.id}/device-received`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-      });
-
-      // 3. Generate Final Bill & Complete Order
-      const billRes = await fetch(`/api/v1/orders/${params.id}/generate-bill`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-      });
-
-      const billData = await billRes.json();
-      if (!billRes.ok) {
-        throw new Error(billData.message || "Failed to generate final bill.");
-      }
-
-      router.push(`/partner/orders?success=1`);
+      router.push(`/partner/orders/${params.id}/payment`);
     } catch (err: any) {
-      setError(err.message || "Failed to complete transaction.");
+      setError(err.message || "Failed to record electronic signature.");
     } finally {
       setLoading(false);
     }
@@ -180,15 +159,15 @@ export default function PartnerSignaturePage({ params }: { params: { id: string 
 
         <button
           type="submit"
-          disabled={loading || !deviceReceivedConfirmed}
+          disabled={loading}
           className="w-full py-4 bg-brand-yellow text-brand-black font-black text-sm rounded-2xl flex items-center justify-center gap-2 hover:bg-brand-yellowHover shadow-yellowGlow transition-all disabled:opacity-50"
         >
           {loading ? (
-            <span>Signing & Generating Signed Bill...</span>
+            <span>Signing Sale Agreement...</span>
           ) : (
             <>
-              <span>Complete Transaction & Generate Bill</span>
-              <CheckCircle2 className="w-4 h-4" />
+              <span>Sign Agreement & Proceed to Payment</span>
+              <ArrowRight className="w-4 h-4" />
             </>
           )}
         </button>

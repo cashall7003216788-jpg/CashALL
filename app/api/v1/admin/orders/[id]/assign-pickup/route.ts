@@ -82,7 +82,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     return tx.order.update({
       where: { id: order.id },
       data: {
-        status: "PARTNER_ASSIGNED",
+        status: "ASSIGNED",
         pickupDate,
         pickupTimeSlot,
       },

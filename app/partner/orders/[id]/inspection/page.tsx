@@ -114,7 +114,7 @@ export default function PartnerInspectionPage({ params }: { params: { id: string
         }),
       });
 
-      router.push(`/partner/orders/${params.id}/payment`);
+      router.push(`/partner/orders/${params.id}/verification`);
     } catch (err: any) {
       setError(err.message || "An error occurred during inspection submission.");
     } finally {
@@ -300,7 +300,7 @@ export default function PartnerInspectionPage({ params }: { params: { id: string
             <span>Verifying IMEI & Submitting...</span>
           ) : (
             <>
-              <span>Submit Inspection & Proceed to Payment</span>
+              <span>Submit Inspection & Final Offer</span>
               <ArrowRight className="w-4 h-4" />
             </>
           )}

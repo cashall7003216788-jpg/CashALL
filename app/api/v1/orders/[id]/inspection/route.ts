@@ -12,7 +12,7 @@ const inspectionSchema = z.object({
   inspectorName: z.string().min(1, "Inspector name required"),
   imei1: z.string().min(14, "IMEI 1 must be 14-16 digits"),
   imei2: z.string().optional(),
-  physicalAnswers: z.record(z.any()),
+  physicalAnswers: z.record(z.string(), z.any()),
   revisedPrice: z.number().min(0, "Price must be >= 0"),
   priceDifferenceReason: z.string().optional(),
   photoUrls: z.array(z.string()).min(1, "At least one inspection photo is required"),

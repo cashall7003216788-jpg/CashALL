@@ -41,22 +41,22 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
 
     const updatedOrder = await prisma.order.update({
       where: { id: order.id },
-      data: { status: "CUSTOMER_ACCEPTED" },
+      data: { status: "IDENTITY_VERIFICATION_PENDING" },
     });
 
     await AuditService.log({
       actorId: decodedUser.uid,
       actorRole: decodedUser.role,
-      action: "CUSTOMER_ACCEPTED",
+      action: "CUSTOMER_ACCEPTED_FINAL_OFFER",
       tableName: "Order",
       recordId: order.id,
       oldValues: { status: order.status },
-      newValues: { status: "CUSTOMER_ACCEPTED", acceptedPrice: order.finalPrice },
+      newValues: { status: "IDENTITY_VERIFICATION_PENDING", acceptedPrice: order.finalPrice, acceptedAt: new Date() },
     });
 
     return NextResponse.json({
       success: true,
-      message: "Final offer accepted by customer.",
+      message: "Final offer accepted by customer. Seller identity verification is now pending.",
       data: { order: updatedOrder },
     });
   } else {
@@ -77,7 +77,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     await AuditService.log({
       actorId: decodedUser.uid,
       actorRole: decodedUser.role,
-      action: "CUSTOMER_DECLINED",
+      action: "CUSTOMER_REJECTED_FINAL_OFFER",
       tableName: "Order",
       recordId: order.id,
       oldValues: { status: order.status },
@@ -86,7 +86,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
 
     return NextResponse.json({
       success: true,
-      message: "Offer declined by customer.",
+      message: "Offer declined by customer. Transaction stopped.",
       data: { order: updatedOrder },
     });
   }

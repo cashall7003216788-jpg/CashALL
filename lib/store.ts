@@ -83,19 +83,7 @@ export interface OrderData {
   pincode: string;
   pickupDate: string;
   pickupTimeSlot: string;
-  status:
-    | "QUOTE_CREATED"
-    | "PICKUP_SCHEDULED"
-    | "PARTNER_ASSIGNED"
-    | "PARTNER_ON_THE_WAY"
-    | "INSPECTION_STARTED"
-    | "FINAL_OFFER_PENDING"
-    | "ACCEPTED"
-    | "DECLINED"
-    | "PAYMENT_PROCESSING"
-    | "PAID"
-    | "COMPLETED"
-    | "CANCELLED";
+  status: string;
   assignedPartnerId?: string;
   assignedPartnerName?: string;
   assignedPartnerPhone?: string;

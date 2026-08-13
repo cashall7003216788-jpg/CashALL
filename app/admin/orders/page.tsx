@@ -42,6 +42,11 @@ export default function AdminOrdersPage() {
             estimatedPrice: ord.quote?.estimatedPrice ?? 0,
             revisedPrice: ord.finalPrice ?? null,
             status: ord.status,
+            identityStatus: ord.identityVerifications?.[0]?.status || "PENDING",
+            imeiStatus: ord.imeiVerifications?.[0]?.status || "PENDING",
+            esignStatus: ord.signatures?.some((s: any) => s.status === "ESIGNED") ? "SIGNED" : "PENDING",
+            paymentStatus: ord.payments?.[0]?.status || "PENDING",
+            deviceStatus: ["DEVICE_RECEIVED", "BILL_GENERATED", "COMPLETED"].includes(ord.status) ? "RECEIVED" : "NOT RECEIVED",
           }));
           setOrders(mapped);
         } else {
@@ -64,7 +69,7 @@ export default function AdminOrdersPage() {
         <div>
           <h1 className="text-2xl font-black text-brand-black">Order Operations Repository</h1>
           <p className="text-xs text-brand-muted mt-0.5">
-            Full view of all customer selling orders, pickup dates, and payment states
+            Full view of all customer selling orders, pickup dates, identity verification, and payment controls
           </p>
         </div>
 
@@ -97,14 +102,14 @@ export default function AdminOrdersPage() {
                   <th className="p-3">Order ID</th>
                   <th className="p-3">Customer</th>
                   <th className="p-3">Location</th>
-                  <th className="p-3">Pickup Window</th>
                   <th className="p-3">Valuation</th>
+                  <th className="p-3">Verification Breakdown</th>
                   <th className="p-3">Status</th>
                   <th className="p-3 text-right">Actions</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {orders.map((ord) => (
+                {orders.map((ord: any) => (
                   <tr key={ord.id} className="hover:bg-gray-50/80 transition-colors">
                     <td className="p-3 font-extrabold text-brand-black">{ord.orderNumber}</td>
                     <td className="p-3">
@@ -112,9 +117,27 @@ export default function AdminOrdersPage() {
                       <div className="text-[11px] text-brand-muted">{ord.customerPhone}</div>
                     </td>
                     <td className="p-3 font-semibold text-brand-black">{ord.pincode}</td>
-                    <td className="p-3 text-gray-500 font-medium">{ord.pickupDate} ({ord.pickupTimeSlot})</td>
                     <td className="p-3 font-bold font-price text-brand-black">
                       ₹{(ord.revisedPrice || ord.estimatedPrice).toLocaleString("en-IN")}
+                    </td>
+                    <td className="p-3">
+                      <div className="flex flex-wrap gap-1 text-[10px]">
+                        <span className={`px-2 py-0.5 rounded font-bold ${ord.identityStatus === "VERIFIED" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"}`}>
+                          ID: {ord.identityStatus}
+                        </span>
+                        <span className={`px-2 py-0.5 rounded font-bold ${ord.imeiStatus === "CLEAR" || ord.imeiStatus === "VERIFIED" ? "bg-green-100 text-green-800" : ord.imeiStatus === "FLAGGED" ? "bg-red-100 text-red-800" : "bg-gray-100 text-gray-600"}`}>
+                          IMEI: {ord.imeiStatus}
+                        </span>
+                        <span className={`px-2 py-0.5 rounded font-bold ${ord.esignStatus === "SIGNED" ? "bg-blue-100 text-blue-800" : "bg-gray-100 text-gray-600"}`}>
+                          eSign: {ord.esignStatus}
+                        </span>
+                        <span className={`px-2 py-0.5 rounded font-bold ${ord.paymentStatus === "PAID" || ord.paymentStatus === "CONFIRMED" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"}`}>
+                          Payment: {ord.paymentStatus}
+                        </span>
+                        <span className={`px-2 py-0.5 rounded font-bold ${ord.deviceStatus === "RECEIVED" ? "bg-emerald-100 text-emerald-800" : "bg-gray-100 text-gray-600"}`}>
+                          Device: {ord.deviceStatus}
+                        </span>
+                      </div>
                     </td>
                     <td className="p-3">
                       <Badge variant="yellow">{ord.status.replace(/_/g, " ")}</Badge>
