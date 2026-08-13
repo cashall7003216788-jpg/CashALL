@@ -232,13 +232,14 @@ export function CustomerAuthModal({
           <form onSubmit={handleSendOtp} className="space-y-4">
             <div>
               <label className="block text-xs font-bold text-brand-black mb-1">
-                Your Name (Optional)
+                Your Full Name *
               </label>
               <input
                 type="text"
                 value={customerName}
                 onChange={(e) => setCustomerName(e.target.value)}
-                placeholder="Enter your name"
+                placeholder="Enter your full name"
+                required
                 className="w-full px-3.5 py-2.5 text-sm bg-white rounded-xl border border-gray-200 focus:outline-none focus:border-yellow-400"
               />
             </div>
@@ -267,7 +268,7 @@ export function CustomerAuthModal({
 
             <button
               type="submit"
-              disabled={loading || phoneNumber.replace(/\D/g, "").length < 10}
+              disabled={loading || phoneNumber.replace(/\D/g, "").length < 10 || !customerName.trim()}
               className="w-full bg-yellow-400 hover:bg-yellow-500 disabled:opacity-50 disabled:cursor-not-allowed text-black font-extrabold text-sm py-3 rounded-xl flex items-center justify-center gap-2 transition-colors"
             >
               {loading ? "Sending OTP..." : "Get Verification OTP"}

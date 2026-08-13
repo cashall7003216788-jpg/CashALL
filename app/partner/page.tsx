@@ -12,13 +12,20 @@ import {
   ShieldCheck,
   LogOut,
   AlertCircle,
+  UserPlus,
+  Building2,
+  MapPin,
+  User,
 } from "lucide-react";
 
 export default function PartnerPortalPage() {
   const router = useRouter();
   const [partnerUser, setPartnerUser] = useState<any>(null);
+  const [mode, setMode] = useState<"LOGIN" | "REGISTER">("LOGIN");
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
+  const [businessName, setBusinessName] = useState("");
+  const [city, setCity] = useState("Kolkata");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -35,11 +42,15 @@ export default function PartnerPortalPage() {
     }
   }, []);
 
-  const handlePartnerLogin = async (e: React.FormEvent) => {
+  const handlePartnerSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const cleanPhone = phone.replace(/\D/g, "");
     if (cleanPhone.length < 10) {
       setError("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+    if (!name.trim()) {
+      setError("Please enter your full name. Name is required for partner access.");
       return;
     }
 
@@ -52,7 +63,10 @@ export default function PartnerPortalPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           phone: cleanPhone,
-          name: name.trim() || undefined,
+          name: name.trim(),
+          businessName: businessName.trim() || undefined,
+          city: city.trim() || "Kolkata",
+          mode,
         }),
       });
 
@@ -63,9 +77,10 @@ export default function PartnerPortalPage() {
 
       const sessionObj = data.data?.partner || {
         id: `p_${Date.now()}`,
-        name: name.trim() || `Executive ${cleanPhone.slice(-4)}`,
+        name: name.trim(),
         phone: cleanPhone,
-        businessName: "CashALL Doorstep Logistics",
+        businessName: businessName.trim() || "CashALL Logistics",
+        city: city || "Kolkata",
       };
 
       if (typeof window !== "undefined") {
@@ -74,7 +89,7 @@ export default function PartnerPortalPage() {
       setPartnerUser(sessionObj);
       router.push("/partner/orders");
     } catch (err: any) {
-      setError(err.message || "Failed to log in to Partner Portal.");
+      setError(err.message || "Failed to authenticate partner.");
     } finally {
       setLoading(false);
     }
@@ -85,11 +100,13 @@ export default function PartnerPortalPage() {
       localStorage.removeItem("cashall_partner_session");
     }
     setPartnerUser(null);
+    setPhone("");
+    setName("");
   };
 
   return (
     <div className="min-h-screen bg-brand-black text-white flex flex-col justify-between p-6">
-      <div className="max-w-md mx-auto w-full space-y-8 pt-8">
+      <div className="max-w-md mx-auto w-full space-y-8 pt-6">
         
         {/* Header */}
         <div className="text-center space-y-3">
@@ -121,10 +138,11 @@ export default function PartnerPortalPage() {
 
               <button
                 onClick={handlePartnerLogout}
-                className="p-2 text-gray-400 hover:text-red-400 rounded-xl hover:bg-neutral-900 transition-colors"
+                className="p-2 text-gray-400 hover:text-red-400 rounded-xl hover:bg-neutral-900 transition-colors text-xs font-bold flex items-center gap-1"
                 title="Switch Partner Account"
               >
                 <LogOut className="w-4 h-4" />
+                <span>Exit</span>
               </button>
             </div>
 
@@ -149,18 +167,39 @@ export default function PartnerPortalPage() {
             </Link>
           </div>
         ) : (
-          /* PARTNER LOGIN FORM */
+          /* PARTNER AUTHENTICATION FORM (LOGIN OR REGISTER) */
           <div className="bg-neutral-900 border border-neutral-800 rounded-3xl p-6 space-y-6 shadow-2xl">
+            
+            {/* Mode Switcher Tabs */}
+            <div className="flex bg-neutral-950 p-1 rounded-2xl border border-neutral-800">
+              <button
+                type="button"
+                onClick={() => { setMode("LOGIN"); setError(""); }}
+                className={`flex-1 py-2 text-xs font-extrabold rounded-xl transition-all ${mode === "LOGIN" ? "bg-brand-yellow text-brand-black shadow-md" : "text-gray-400 hover:text-white"}`}
+              >
+                Partner Log In
+              </button>
+              <button
+                type="button"
+                onClick={() => { setMode("REGISTER"); setError(""); }}
+                className={`flex-1 py-2 text-xs font-extrabold rounded-xl transition-all ${mode === "REGISTER" ? "bg-brand-yellow text-brand-black shadow-md" : "text-gray-400 hover:text-white"}`}
+              >
+                New Partner Account
+              </button>
+            </div>
+
             <div className="space-y-1">
               <div className="text-xs font-bold text-brand-yellow uppercase tracking-wider flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Executive Authentication</span>
               </div>
               <h2 className="text-lg font-extrabold text-white">
-                Log In to Partner Portal
+                {mode === "LOGIN" ? "Log In to Partner Portal" : "Create New Partner Account"}
               </h2>
               <p className="text-xs text-gray-400 leading-relaxed">
-                Enter your registered mobile phone number to view your assigned field pickups.
+                {mode === "LOGIN"
+                  ? "Enter your registered mobile number and full name to access your pickups."
+                  : "Register as a CashALL field logistics partner to start accepting doorstep pickups."}
               </p>
             </div>
 
@@ -171,7 +210,27 @@ export default function PartnerPortalPage() {
               </div>
             )}
 
-            <form onSubmit={handlePartnerLogin} className="space-y-4">
+            <form onSubmit={handlePartnerSubmit} className="space-y-4">
+              <div>
+                <label className="text-[11px] font-bold text-gray-300 block mb-1">
+                  Full Name *
+                </label>
+                <div className="relative flex items-center">
+                  <User className="w-4 h-4 text-gray-500 absolute left-3.5" />
+                  <input
+                    type="text"
+                    placeholder="Enter executive full name"
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      setError("");
+                    }}
+                    required
+                    className="w-full bg-neutral-950 border border-neutral-800 text-xs text-white pl-10 pr-3 py-3 rounded-xl focus:border-brand-yellow focus:outline-none"
+                  />
+                </div>
+              </div>
+
               <div>
                 <label className="text-[11px] font-bold text-gray-300 block mb-1">
                   Registered Mobile Number *
@@ -193,34 +252,82 @@ export default function PartnerPortalPage() {
                 </div>
               </div>
 
-              <div>
-                <label className="text-[11px] font-bold text-gray-300 block mb-1">
-                  Executive Full Name (Optional)
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. Rahul Sharma"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-neutral-950 border border-neutral-800 text-xs text-white p-3 rounded-xl focus:border-brand-yellow focus:outline-none"
-                />
-              </div>
+              {mode === "REGISTER" && (
+                <>
+                  <div>
+                    <label className="text-[11px] font-bold text-gray-300 block mb-1">
+                      Business / Agency Name (Optional)
+                    </label>
+                    <div className="relative flex items-center">
+                      <Building2 className="w-4 h-4 text-gray-500 absolute left-3.5" />
+                      <input
+                        type="text"
+                        placeholder="e.g. CashALL Doorstep Logistics"
+                        value={businessName}
+                        onChange={(e) => setBusinessName(e.target.value)}
+                        className="w-full bg-neutral-950 border border-neutral-800 text-xs text-white pl-10 pr-3 py-3 rounded-xl focus:border-brand-yellow focus:outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-[11px] font-bold text-gray-300 block mb-1">
+                      Operating City *
+                    </label>
+                    <div className="relative flex items-center">
+                      <MapPin className="w-4 h-4 text-gray-500 absolute left-3.5" />
+                      <input
+                        type="text"
+                        placeholder="e.g. Kolkata"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                        required
+                        className="w-full bg-neutral-950 border border-neutral-800 text-xs text-white pl-10 pr-3 py-3 rounded-xl focus:border-brand-yellow focus:outline-none"
+                      />
+                    </div>
+                  </div>
+                </>
+              )}
 
               <button
                 type="submit"
-                disabled={loading || phone.length < 10}
+                disabled={loading || phone.length < 10 || !name.trim()}
                 className="w-full py-4 bg-brand-yellow text-brand-black font-black text-sm rounded-2xl flex items-center justify-center gap-2 hover:bg-brand-yellowHover shadow-yellowGlow transition-all disabled:opacity-50"
               >
                 {loading ? (
-                  <span>Authenticating Executive...</span>
-                ) : (
+                  <span>Authenticating...</span>
+                ) : mode === "LOGIN" ? (
                   <>
                     <span>LOG IN TO PARTNER PORTAL</span>
                     <ArrowRight className="w-4 h-4" />
                   </>
+                ) : (
+                  <>
+                    <UserPlus className="w-4 h-4" />
+                    <span>CREATE PARTNER ACCOUNT</span>
+                  </>
                 )}
               </button>
             </form>
+
+            {/* Bottom Toggle Link */}
+            <div className="text-center pt-2 border-t border-neutral-800">
+              {mode === "LOGIN" ? (
+                <button
+                  onClick={() => { setMode("REGISTER"); setError(""); }}
+                  className="text-xs font-bold text-brand-yellow hover:underline"
+                >
+                  New Partner? Create an Account →
+                </button>
+              ) : (
+                <button
+                  onClick={() => { setMode("LOGIN"); setError(""); }}
+                  className="text-xs font-bold text-brand-yellow hover:underline"
+                >
+                  ← Already have a partner account? Log In
+                </button>
+              )}
+            </div>
           </div>
         )}
 

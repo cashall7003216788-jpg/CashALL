@@ -6,7 +6,10 @@ import { z } from "zod";
 
 const schema = z.object({
   phone: z.string().min(10, "Valid 10-digit mobile number required"),
-  name: z.string().optional(),
+  name: z.string().min(2, "Full name is required for partner authentication"),
+  businessName: z.string().optional(),
+  city: z.string().optional(),
+  mode: z.enum(["LOGIN", "REGISTER"]).optional(),
 });
 
 export const POST = apiWrapper(async (req: NextRequest) => {
@@ -22,20 +25,32 @@ export const POST = apiWrapper(async (req: NextRequest) => {
     throw new AppError("Invalid mobile phone number format.", 400);
   }
 
+  const cleanName = validation.data.name.trim();
+
   // Find or create Partner profile
   let partner = await prisma.partner.findFirst({
     where: { phone: cleanPhone },
   });
 
-  if (!partner) {
-    const partnerName = validation.data.name?.trim() || `Partner Exec (${cleanPhone.slice(-4)})`;
+  if (partner) {
+    // Update partner name and city if updated
+    partner = await prisma.partner.update({
+      where: { id: partner.id },
+      data: {
+        name: cleanName,
+        city: validation.data.city || partner.city || "Kolkata",
+        businessName: validation.data.businessName || partner.businessName,
+      },
+    });
+  } else {
+    // Create new Partner account
     partner = await prisma.partner.create({
       data: {
-        name: partnerName,
+        name: cleanName,
         phone: cleanPhone,
         email: `partner_${cleanPhone}@cashall.in`,
-        businessName: "CashALL Doorstep Logistics",
-        city: "Kolkata",
+        businessName: validation.data.businessName || "CashALL Doorstep Logistics",
+        city: validation.data.city || "Kolkata",
         status: "ACTIVE",
       },
     });
@@ -43,7 +58,7 @@ export const POST = apiWrapper(async (req: NextRequest) => {
 
   return NextResponse.json({
     success: true,
-    message: "Partner authenticated successfully.",
+    message: validation.data.mode === "REGISTER" ? "Partner account created successfully." : "Partner authenticated successfully.",
     data: {
       partner: {
         id: partner.id,
