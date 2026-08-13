@@ -43,8 +43,8 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   }
 
   const { email, password } = result.data;
-  const targetAdminEmail = (process.env.ADMIN_EMAIL || "cashall7003216788@gmail.com").trim().toLowerCase();
-  const targetAdminPassword = process.env.ADMIN_PASSWORD || "Ank933967@";
+  const targetAdminEmail = (process.env.ADMIN_EMAIL || "admin@cashall.in").trim().toLowerCase();
+  const targetAdminPassword = process.env.ADMIN_PASSWORD || "CashallAdmin2026!";
 
   const cleanEmail = email.trim().toLowerCase();
 

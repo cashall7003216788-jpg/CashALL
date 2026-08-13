@@ -7,14 +7,20 @@ export const GET = apiWrapper(async (req: NextRequest) => {
   const decodedUser = await verifyAuthToken(req);
   requireRole(["PARTNER", "ADMIN", "SUPER_ADMIN"], decodedUser.role);
 
-  // Find partner profile associated with user
-  const partner = await prisma.partner.findFirst({
-    where: { phone: decodedUser.phone || "" },
-  });
+  const { searchParams } = new URL(req.url);
+  const paramPhone = searchParams.get("phone");
+  const targetPhone = (paramPhone || decodedUser.phone || "").replace(/\D/g, "");
 
-  // Query pickups assigned to this partner or return all assigned pickups if admin
+  // Find partner profile associated with phone number
+  const partner = targetPhone
+    ? await prisma.partner.findFirst({
+        where: { phone: targetPhone },
+      })
+    : null;
+
+  // Query pickups assigned to this partner or return all assigned pickups if partner filter not specified
   const pickups = await prisma.pickup.findMany({
-    where: decodedUser.role === "PARTNER" && partner ? { partnerId: partner.id } : {},
+    where: partner ? { partnerId: partner.id } : {},
     include: {
       order: {
         include: {

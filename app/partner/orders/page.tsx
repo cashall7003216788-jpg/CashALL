@@ -40,11 +40,29 @@ export default function PartnerOrdersPage() {
   const [orders, setOrders] = useState<PartnerOrder[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const [partnerUser, setPartnerUser] = useState<any>(null);
 
   useEffect(() => {
+    let partnerPhone = "";
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("cashall_partner_session");
+      if (stored) {
+        try {
+          const parsed = JSON.parse(stored);
+          setPartnerUser(parsed);
+          partnerPhone = parsed.phone || "";
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    }
+
     const fetchOrders = async () => {
       try {
-        const res = await fetch("/api/v1/partner/orders");
+        const queryUrl = partnerPhone
+          ? `/api/v1/partner/orders?phone=${encodeURIComponent(partnerPhone)}`
+          : "/api/v1/partner/orders";
+        const res = await fetch(queryUrl);
         if (res.ok) {
           const data = await res.json();
           setOrders(data.orders || []);
@@ -58,6 +76,13 @@ export default function PartnerOrdersPage() {
     fetchOrders();
   }, []);
 
+  const handleLogout = () => {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("cashall_partner_session");
+      window.location.href = "/partner";
+    }
+  };
+
   const filteredOrders = orders.filter(
     (o) =>
       o.orderNumber.toLowerCase().includes(search.toLowerCase()) ||
@@ -69,19 +94,33 @@ export default function PartnerOrdersPage() {
     <div className="min-h-screen bg-neutral-950 text-white pb-12">
       {/* Mobile Top Header */}
       <div className="bg-neutral-900 border-b border-neutral-800 p-4 sticky top-0 z-30 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-brand-yellow/20 flex items-center justify-center border border-brand-yellow/40">
-            <Truck className="w-4 h-4 text-brand-yellow" />
+        <div className="flex items-center gap-2.5">
+          <div className="w-9 h-9 rounded-xl bg-brand-yellow/20 flex items-center justify-center border border-brand-yellow/40">
+            <Truck className="w-4.5 h-4.5 text-brand-yellow" />
           </div>
           <div>
-            <h1 className="text-sm font-black text-white leading-tight">Partner Pickups</h1>
-            <p className="text-[10px] text-gray-400">Assigned Field Tasks</p>
+            <h1 className="text-xs font-black text-white leading-tight">
+              {partnerUser?.name || "Partner Field Portal"}
+            </h1>
+            <p className="text-[10px] text-gray-400 font-mono">
+              {partnerUser?.phone ? `+91 ${partnerUser.phone}` : "Assigned Field Tasks"}
+            </p>
           </div>
         </div>
 
-        <Badge variant="yellow" className="text-[10px] font-bold">
-          {orders.length} Active
-        </Badge>
+        <div className="flex items-center gap-2">
+          <Badge variant="yellow" className="text-[10px] font-bold">
+            {orders.length} Pickups
+          </Badge>
+
+          <button
+            onClick={handleLogout}
+            className="p-1.5 bg-neutral-800 hover:bg-neutral-700 text-gray-300 hover:text-white rounded-lg text-xs font-bold transition-colors"
+            title="Log Out"
+          >
+            Exit
+          </button>
+        </div>
       </div>
 
       {/* Search Input */}

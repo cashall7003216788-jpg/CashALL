@@ -40,32 +40,10 @@ export default function AdminLoginPage() {
         }
         router.replace("/admin");
       } else {
-        // Fallback validation if database API is offline
-        if (email.trim().toLowerCase() === "cashall7003216788@gmail.com" && password === "Ank933967@") {
-          if (typeof window !== "undefined") {
-            localStorage.setItem(
-              "cashall_admin_session",
-              JSON.stringify({ email: email.trim(), role: "ADMIN", token: "tok_admin_9842" })
-            );
-          }
-          router.replace("/admin");
-          return;
-        }
         setError(data.error?.message || data.message || "Invalid operator email or password.");
       }
-    } catch (err) {
-      // Offline fallback check
-      if (email.trim().toLowerCase() === "cashall7003216788@gmail.com" && password === "Ank933967@") {
-        if (typeof window !== "undefined") {
-          localStorage.setItem(
-            "cashall_admin_session",
-            JSON.stringify({ email: email.trim(), role: "ADMIN", token: "tok_admin_9842" })
-          );
-        }
-        router.replace("/admin");
-      } else {
-        setError("Invalid operator email or password.");
-      }
+    } catch (err: any) {
+      setError(err?.message || "Invalid operator email or password.");
     } finally {
       setLoading(false);
     }
