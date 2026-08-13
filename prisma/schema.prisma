@@ -15,18 +15,42 @@ enum Role {
 }
 
 enum OrderStatus {
+  CREATED
+  IDENTITY_VERIFICATION_PENDING
+  IDENTITY_VERIFIED
+  IDENTITY_MANUAL_REVIEW
+  ASSIGNED
+  PARTNER_ACCEPTED
+  INSPECTION_STARTED
+  INSPECTION_COMPLETED
+  IMEI_VERIFICATION_PENDING
+  IMEI_VERIFIED
+  IMEI_FLAGGED
+  IMEI_MANUAL_REVIEW
+  FINAL_OFFER
+  CUSTOMER_ACCEPTED
+  PAYMENT_PENDING
+  PAYMENT_CONFIRMED
+  PAYMENT_MANUAL_REVIEW
+  ESIGN_PENDING
+  ESIGNED
+  DEVICE_RECEIVED
+  BILL_GENERATED
+  COMPLETED
+  DISPUTED
+  CANCELLED
+  REJECTED
+  PAYMENT_FAILED
+  VERIFICATION_FAILED
+  // Legacy backward compatibility aliases
   QUOTE_CREATED
   PICKUP_SCHEDULED
-  PARTNER_ASSIGNED
   PARTNER_ON_THE_WAY
-  INSPECTION_STARTED
   FINAL_OFFER_PENDING
   ACCEPTED
   DECLINED
   PAYMENT_PROCESSING
   PAID
-  COMPLETED
-  CANCELLED
 }
 
 enum PartnerStatus {
@@ -73,12 +97,14 @@ model User {
   updatedAt   DateTime  @updatedAt
   deletedAt   DateTime?
 
-  addresses       Address[]
-  orders          Order[]
-  customerDevices CustomerDevice[]
-  tickets         SupportTicket[]
-  logs            ActivityLog[]
-  notificationTokens UserNotificationToken[]
+  addresses             Address[]
+  orders                Order[]
+  customerDevices       CustomerDevice[]
+  tickets               SupportTicket[]
+  logs                  ActivityLog[]
+  notificationTokens    UserNotificationToken[]
+  identityVerifications IdentityVerification[]
+  signatures            Signature[]
 
   @@index([phone])
   @@index([email])
@@ -282,20 +308,102 @@ model Order {
   updatedAt      DateTime    @updatedAt
   deletedAt      DateTime?
 
-  quote          Quote           @relation(fields: [quoteId], references: [id], onDelete: Cascade)
-  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
-  address        Address?        @relation(fields: [addressId], references: [id], onDelete: SetNull)
-  pickups        Pickup[]
-  qcReports      QcReport[]
-  payments       Payment[]
-  invoices       Invoice[]
-  offers         Offer[]
-  imeiRecords    Imei[]
-  imageRefs      ImageReference[]
+  quote                 Quote                   @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  user                  User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  address               Address?                @relation(fields: [addressId], references: [id], onDelete: SetNull)
+  pickups               Pickup[]
+  qcReports             QcReport[]
+  payments              Payment[]
+  invoices              Invoice[]
+  offers                Offer[]
+  imeiRecords           Imei[]
+  imageRefs             ImageReference[]
+  identityVerifications IdentityVerification[]
+  imeiVerifications     ImeiVerification[]
+  signatures            Signature[]
+  bills                 Bill[]
 
   @@index([orderNumber])
   @@index([userId])
   @@index([quoteId])
+}
+
+model IdentityVerification {
+  id                    String    @id @default(uuid()) @db.Uuid
+  orderId               String    @db.Uuid
+  userId                String    @db.Uuid
+  provider              String    @default("DEMO_MOCK_PROVIDER")
+  status                String    @default("PENDING") // PENDING, VERIFIED, FAILED, EXPIRED, MANUAL_REVIEW
+  referenceId           String?
+  maskedIdNumber        String?
+  verificationTimestamp DateTime?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@index([userId])
+}
+
+model ImeiVerification {
+  id          String    @id @default(uuid()) @db.Uuid
+  orderId     String    @db.Uuid
+  imei1       String
+  imei2       String?
+  status      String    @default("PENDING") // PENDING, CLEAR, FLAGGED, UNKNOWN, FAILED, MANUAL_REVIEW
+  provider    String    @default("DEMO_MOCK_IMEI")
+  referenceId String?
+  detailsJson String?   @db.Text
+  verifiedAt  DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@index([imei1])
+}
+
+model Signature {
+  id                String    @id @default(uuid()) @db.Uuid
+  orderId           String    @db.Uuid
+  userId            String    @db.Uuid
+  signerName        String
+  signerPhone       String
+  signingProvider   String    @default("DEMO_MOCK_ESIGN")
+  status            String    @default("PENDING") // PENDING, ESIGNED, FAILED
+  signedDocumentUrl String?
+  documentHash      String?
+  sellerDeclaration String    @db.Text
+  signedAt          DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@index([userId])
+}
+
+model Bill {
+  id               String    @id @default(uuid()) @db.Uuid
+  orderId          String    @db.Uuid
+  billNumber       String    @unique
+  saleAgreementUrl String?
+  receiptUrl       String?
+  signedPdfUrl     String?
+  status           String    @default("GENERATED") // GENERATED, SIGNED, ISSUED
+  billDataJson     String    @db.Text
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@index([billNumber])
 }
 
 model Pickup {
@@ -357,21 +465,27 @@ model Offer {
 }
 
 model Payment {
-  id             String        @id @default(uuid()) @db.Uuid
-  orderId        String        @db.Uuid
-  amount         Float
-  method         PaymentMethod @default(UPI)
-  status         PaymentStatus @default(PENDING)
-  transactionRef String?
-  paidAt         DateTime?
-  createdAt      DateTime      @default(now())
-  updatedAt      DateTime      @updatedAt
-  deletedAt      DateTime?
+  id                 String        @id @default(uuid()) @db.Uuid
+  orderId            String        @db.Uuid
+  amount             Float
+  method             PaymentMethod @default(UPI)
+  status             PaymentStatus @default(PENDING)
+  transactionRef     String?
+  upiId              String?
+  utrNumber          String?
+  paymentProofUrl    String?
+  recordedBy         String?
+  isCorporateAccount Boolean       @default(true)
+  paidAt             DateTime?
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+  deletedAt          DateTime?
 
   order   Order            @relation(fields: [orderId], references: [id], onDelete: Cascade)
   history PaymentHistory[]
 
   @@index([orderId])
+  @@index([utrNumber])
 }
 
 model PaymentHistory {

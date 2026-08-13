@@ -3,82 +3,91 @@ import { apiWrapper } from "@/lib/utils/api-wrapper";
 import { verifyAuthToken } from "@/lib/middlewares/auth";
 import { prisma } from "@/lib/db";
 import { AppError } from "@/lib/utils/AppError";
-import { NotificationHelper } from "@/lib/services/notification.helper";
+import { OrderStateMachine } from "@/lib/services/order-state";
+import { AuditService } from "@/lib/services/audit.service";
+import { z } from "zod";
+
+const schema = z.object({
+  accept: z.boolean(),
+  declineReason: z.string().optional(),
+});
 
 export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { id: string } }) => {
   const decodedUser = await verifyAuthToken(req);
-  const orderIdentifier = params.id;
+  const body = await req.json();
+  const validation = schema.safeParse(body);
 
-  const order = await prisma.order.findFirst({
-    where: {
-      OR: [
-        { id: orderIdentifier },
-        { orderNumber: orderIdentifier },
-      ],
-      deletedAt: null,
-    },
-    include: {
-      offers: {
-        where: { status: "PENDING" },
-        orderBy: { createdAt: "desc" },
-      },
-    },
+  if (!validation.success) {
+    throw new AppError(validation.error.issues[0].message, 400);
+  }
+
+  const order = await prisma.order.findUnique({
+    where: { id: params.id },
+    include: { offers: true },
   });
+  if (!order) throw new AppError("Order not found.", 404);
 
-  if (!order) {
-    throw new AppError("Order not found.", 404);
-  }
+  const pendingOffer = order.offers.find((o) => o.status === "PENDING") || order.offers[0];
 
-  if (order.userId !== decodedUser.uid) {
-    throw new AppError("Access denied.", 403);
-  }
+  if (validation.data.accept) {
+    OrderStateMachine.assertTransition(order.status, "CUSTOMER_ACCEPTED");
 
-  const pendingOffer = order.offers[0];
-  if (!pendingOffer) {
-    throw new AppError("No pending revised offer found for this order.", 400);
-  }
+    if (pendingOffer) {
+      await prisma.offer.update({
+        where: { id: pendingOffer.id },
+        data: { status: "ACCEPTED", customerResponseAt: new Date() },
+      });
+    }
 
-  // Update offer status, order status, and finalPrice in a transaction
-  const updatedOrder = await prisma.$transaction(async (tx) => {
-    await tx.offer.update({
-      where: { id: pendingOffer.id },
-      data: {
-        status: "ACCEPTED",
-        customerResponseAt: new Date(),
-      },
-    });
-
-    return tx.order.update({
+    const updatedOrder = await prisma.order.update({
       where: { id: order.id },
-      data: {
-        status: "ACCEPTED",
-        finalPrice: pendingOffer.revisedPrice,
-      },
+      data: { status: "CUSTOMER_ACCEPTED" },
     });
-  });
 
-  // Log user activity
-  await prisma.activityLog.create({
-    data: {
-      userId: decodedUser.uid,
-      action: "ACCEPT_REVISED_OFFER",
-      details: JSON.stringify({
-        orderNumber: order.orderNumber,
-        originalPrice: pendingOffer.originalPrice,
-        revisedPrice: pendingOffer.revisedPrice,
-      }),
-    },
-  });
+    await AuditService.log({
+      actorId: decodedUser.uid,
+      actorRole: decodedUser.role,
+      action: "CUSTOMER_ACCEPTED",
+      tableName: "Order",
+      recordId: order.id,
+      oldValues: { status: order.status },
+      newValues: { status: "CUSTOMER_ACCEPTED", acceptedPrice: order.finalPrice },
+    });
 
-  // Trigger push notification
-  await NotificationHelper.triggerMilestoneNotification(
-    order.id,
-    order.userId,
-    "OFFER_ACCEPTED"
-  );
+    return NextResponse.json({
+      success: true,
+      message: "Final offer accepted by customer.",
+      data: { order: updatedOrder },
+    });
+  } else {
+    OrderStateMachine.assertTransition(order.status, "REJECTED");
 
-  return NextResponse.json({
-    success: true,
-    data: updatedOrder,
-  });
+    if (pendingOffer) {
+      await prisma.offer.update({
+        where: { id: pendingOffer.id },
+        data: { status: "DECLINED", customerResponseAt: new Date() },
+      });
+    }
+
+    const updatedOrder = await prisma.order.update({
+      where: { id: order.id },
+      data: { status: "REJECTED" },
+    });
+
+    await AuditService.log({
+      actorId: decodedUser.uid,
+      actorRole: decodedUser.role,
+      action: "CUSTOMER_DECLINED",
+      tableName: "Order",
+      recordId: order.id,
+      oldValues: { status: order.status },
+      newValues: { status: "REJECTED", reason: validation.data.declineReason },
+    });
+
+    return NextResponse.json({
+      success: true,
+      message: "Offer declined by customer.",
+      data: { order: updatedOrder },
+    });
+  }
 });
