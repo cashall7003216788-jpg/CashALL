@@ -19,13 +19,13 @@ export function Hero() {
           
           {/* PRIMARY HEADLINE */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Turn Your Used Device <br className="hidden sm:inline" />
-            <span className="text-brand-yellow underline decoration-brand-yellow/30 underline-offset-8">Into Instant Cash.</span>
+            Sell Your Old Devices <br className="hidden sm:inline" />
+            <span className="text-brand-yellow underline decoration-brand-yellow/30 underline-offset-8">for the Best Value with CashALL.</span>
           </h1>
 
           {/* SUPPORTING TEXT */}
           <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Get an instant estimated price for your Mobile Phone or Laptop. Enjoy fast & free doorstep pickup & direct payment upon verification.
+            Get an instant estimated price for your mobile phone or laptop with CashALL. Enjoy fast doorstep pickup and secure payment.
           </p>
 
           {/* FULLY VISIBLE ADVERTISEMENT AUTO SIDE-SCROLL CAROUSEL RIGHT AFTER HEADING & SUBTITLE */}

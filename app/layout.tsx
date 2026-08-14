@@ -3,25 +3,85 @@ import "./globals.css";
 import { SupportWidget } from "@/components/common/SupportWidget";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
-  title: "CashALL — Turn Your Used Device Into Instant Cash | Phone & Laptop Recommerce",
+  metadataBase: new URL("https://www.cashall.in"),
+
+  title: {
+    default: "CashALL | Best Value for Your Old Devices",
+    template: "%s | CashALL",
+  },
+
   description:
-    "Sell your used smartphone or laptop online with CashALL. Get instant transparent price valuations, fast doorstep pickup, physical verification, and instant direct payment.",
+    "CashALL helps you sell your old phones and laptops for the best value. Get a transparent price, fast pickup and secure payment for your old devices.",
+
   keywords: [
-    "Sell old phone",
-    "Sell old laptop",
-    "Used laptop price estimate",
-    "Cash for phone India",
-    "Sell MacBook Air",
-    "Doorstep device pickup",
-    "Transparent valuation",
+    "CashALL",
+    "CashALL India",
+    "sell old phone",
+    "sell old mobile",
+    "sell old laptop",
+    "sell used phone",
+    "sell used laptop",
+    "old device resale",
+    "sell electronics",
+    "phone resale",
+    "laptop resale",
   ],
-  authors: [{ name: "CashALL Technologies" }],
+
+  authors: [
+    {
+      name: "CashALL",
+    },
+  ],
+
+  creator: "CashALL",
+  publisher: "CashALL",
+
+  alternates: {
+    canonical: "https://www.cashall.in/",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
   openGraph: {
-    title: "CashALL — Turn Your Used Phone or Laptop Into Cash",
+    type: "website",
+    locale: "en_IN",
+    url: "https://www.cashall.in/",
+    siteName: "CashALL",
+    title: "CashALL | Best Value for Your Old Devices",
     description:
-      "Instant estimated value, fast doorstep pickup, transparent physical verification, and instant direct payment.",
-    images: ["/logo.png"],
+      "Sell your old phones and laptops with CashALL. Get the best value, fast pickup and secure payment.",
+    images: [
+      {
+        url: "/photos/CashALL_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "CashALL - Best Value for Your Old Devices",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "CashALL | Best Value for Your Old Devices",
+    description:
+      "Sell your old phones and laptops with CashALL. Get the best value, fast pickup and secure payment.",
+    images: ["/photos/CashALL_logo.png"],
+  },
+
+  icons: {
+    icon: "/photos/CashALL_favicon.png",
+    shortcut: "/photos/CashALL_favicon.png",
+    apple: "/photos/CashALL_favicon.png",
   },
 };
 

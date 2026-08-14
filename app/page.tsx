@@ -9,8 +9,41 @@ import { FAQAccordion } from "@/components/home/FAQAccordion";
 import { FinalCTA } from "@/components/home/FinalCTA";
 
 export default function HomePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.cashall.in/#organization",
+        "name": "CashALL",
+        "url": "https://www.cashall.in/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.cashall.in/photos/CashALL_logo.png",
+        },
+        "description":
+          "CashALL helps you sell your old phones and laptops for the best value with transparent pricing, fast pickup and secure payment.",
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.cashall.in/#website",
+        "url": "https://www.cashall.in/",
+        "name": "CashALL",
+        "description": "Best Value for Your Old Devices",
+        "publisher": {
+          "@id": "https://www.cashall.in/#organization",
+        },
+        "inLanguage": "en-IN",
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-brand-black">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main className="flex-grow">
         <Hero />

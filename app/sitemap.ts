@@ -1,20 +1,62 @@
-import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.cashall.in'
+  const baseUrl = "https://www.cashall.in";
 
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/sell`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/sell/mobile`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/sell/laptop`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.8,
     },
-  ]
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/faq`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+  ];
 }
