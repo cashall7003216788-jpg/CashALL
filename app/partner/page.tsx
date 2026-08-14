@@ -72,7 +72,7 @@ export default function PartnerPortalPage() {
 
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(data.message || "Partner authentication failed.");
+        throw new Error(data.error || data.message || "Partner authentication failed.");
       }
 
       const sessionObj = data.data?.partner || {
