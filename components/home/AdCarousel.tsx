@@ -73,7 +73,7 @@ export function AdCarousel() {
     <div className="w-full max-w-5xl mx-auto my-6 px-2 sm:px-4">
       {/* FULLY VISIBLE ADVERTISEMENT CAROUSEL CONTAINER */}
       <div
-        className="relative overflow-hidden rounded-2xl border-2 border-brand-yellow/50 bg-black shadow-yellowGlow group"
+        className="relative overflow-hidden rounded-2xl bg-black group"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onTouchStart={handleTouchStart}
@@ -102,14 +102,14 @@ export function AdCarousel() {
         {/* PREV / NEXT BUTTONS */}
         <button
           onClick={handlePrev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/70 border border-brand-yellow/40 text-brand-yellow hover:bg-brand-yellow hover:text-black transition-colors opacity-80 group-hover:opacity-100 shadow-md z-10"
+          className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/70 border border-neutral-800 text-white hover:bg-neutral-800 transition-colors opacity-80 group-hover:opacity-100 shadow-md z-10"
           aria-label="Previous advertisement"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={handleNext}
-          className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/70 border border-brand-yellow/40 text-brand-yellow hover:bg-brand-yellow hover:text-black transition-colors opacity-80 group-hover:opacity-100 shadow-md z-10"
+          className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/70 border border-neutral-800 text-white hover:bg-neutral-800 transition-colors opacity-80 group-hover:opacity-100 shadow-md z-10"
           aria-label="Next advertisement"
         >
           <ChevronRight className="w-5 h-5" />
