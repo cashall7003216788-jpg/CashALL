@@ -16,26 +16,31 @@ export default function HomePage() {
         "@type": "Organization",
         "@id": "https://www.cashall.in/#organization",
         "name": "CashALL",
+        "alternateName": ["CashALL India", "cashall.in"],
         "url": "https://www.cashall.in/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.cashall.in/photos/CashALL_logo.png",
+          "url": "https://www.cashall.in/photos/CashALL_favicon.png",
+          "width": 1024,
+          "height": 1024
         },
+        "image": "https://www.cashall.in/photos/CashALL_favicon.png",
         "description":
-          "CashALL helps you sell your old phones and laptops for the best value with transparent pricing, fast pickup and secure payment.",
+          "CashALL helps you sell your old phones and laptops for the best value with transparent pricing, fast pickup and secure payment."
       },
       {
         "@type": "WebSite",
         "@id": "https://www.cashall.in/#website",
         "url": "https://www.cashall.in/",
         "name": "CashALL",
+        "alternateName": ["CashALL India", "cashall.in"],
         "description": "Best Value for Your Old Devices",
         "publisher": {
-          "@id": "https://www.cashall.in/#organization",
+          "@id": "https://www.cashall.in/#organization"
         },
-        "inLanguage": "en-IN",
-      },
-    ],
+        "inLanguage": "en-IN"
+      }
+    ]
   };
 
   return (
