@@ -61,7 +61,7 @@ export class ESignService {
         signerPhone: params.signerPhone,
         signingProvider: providerName,
         status: "ESIGNED",
-        signedDocumentUrl: params.signatureDataUrl || `https://cashall.in/documents/agreements/${order.orderNumber}.pdf`,
+        signedDocumentUrl: params.signatureDataUrl || `https://www.cashall.in/documents/agreements/${order.orderNumber}.pdf`,
         documentHash,
         sellerDeclaration: params.sellerDeclaration,
         signedAt: new Date(),

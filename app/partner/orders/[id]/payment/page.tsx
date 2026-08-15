@@ -65,7 +65,7 @@ export default function PartnerPaymentPage({ params }: { params: { id: string } 
           amount: Number(amount),
           upiId: upiId.trim(),
           utrNumber: utrNumber.trim(),
-          paymentProofUrl: paymentProofUrl.trim() || `https://cashall.in/uploads/payments/utr_${utrNumber.trim()}.jpg`,
+          paymentProofUrl: paymentProofUrl.trim() || `https://www.cashall.in/uploads/payments/utr_${utrNumber.trim()}.jpg`,
           isCorporateAccount,
         }),
       });

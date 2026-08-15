@@ -90,7 +90,7 @@ export class BillService {
       },
       cashallInfo: {
         companyName: "CashALL Recommerce Pvt Ltd",
-        website: "https://cashall.in",
+        website: "https://www.cashall.in",
         contactEmail: "support@cashall.in",
       },
     };
@@ -101,16 +101,16 @@ export class BillService {
       update: {
         billDataJson: JSON.stringify(billData),
         status: "ISSUED",
-        saleAgreementUrl: `https://cashall.in/documents/agreements/${order.orderNumber}.pdf`,
-        receiptUrl: `https://cashall.in/documents/receipts/${billNumber}.pdf`,
-        signedPdfUrl: `https://cashall.in/documents/signed/${billNumber}.pdf`,
+        saleAgreementUrl: `https://www.cashall.in/documents/agreements/${order.orderNumber}.pdf`,
+        receiptUrl: `https://www.cashall.in/documents/receipts/${billNumber}.pdf`,
+        signedPdfUrl: `https://www.cashall.in/documents/signed/${billNumber}.pdf`,
       },
       create: {
         orderId: order.id,
         billNumber,
-        saleAgreementUrl: `https://cashall.in/documents/agreements/${order.orderNumber}.pdf`,
-        receiptUrl: `https://cashall.in/documents/receipts/${billNumber}.pdf`,
-        signedPdfUrl: `https://cashall.in/documents/signed/${billNumber}.pdf`,
+        saleAgreementUrl: `https://www.cashall.in/documents/agreements/${order.orderNumber}.pdf`,
+        receiptUrl: `https://www.cashall.in/documents/receipts/${billNumber}.pdf`,
+        signedPdfUrl: `https://www.cashall.in/documents/signed/${billNumber}.pdf`,
         status: "ISSUED",
         billDataJson: JSON.stringify(billData),
       },

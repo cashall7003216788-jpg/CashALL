@@ -55,7 +55,7 @@ export default function PartnerInspectionPage({ params }: { params: { id: string
       setPhotoUrlInput("");
     } else {
       // Default demo photo fallback
-      setPhotos((prev) => [...prev, `https://cashall.in/uploads/inspection_${Date.now()}.jpg`]);
+      setPhotos((prev) => [...prev, `https://www.cashall.in/uploads/inspection_${Date.now()}.jpg`]);
     }
   };
 

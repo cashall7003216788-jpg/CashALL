@@ -271,7 +271,7 @@ export default function PurchaseReceiptPage() {
               We take data security seriously. To prevent data breach, all CashALL devices are 100% factory data-wiped using DoD 5220.22-M military grade wiping standards. The device then undergoes 32-point inspection testing before authorized resale.
             </p>
             <div className="text-[11px] font-bold text-gray-800">
-              Verification Portal: <span className="text-blue-600 underline">https://cashall.in/verify-certificate/{order.orderNumber}</span>
+              Verification Portal: <span className="text-blue-600 underline">https://www.cashall.in/verify-certificate/{order.orderNumber}</span>
             </div>
           </div>
         </div>
