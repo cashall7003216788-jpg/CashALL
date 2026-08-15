@@ -79,7 +79,10 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/photos/CashALL_favicon.png",
+    icon: [
+      { url: "/photos/CashALL_favicon.png", sizes: "1024x1024", type: "image/png" },
+      { url: "/favicon.png", sizes: "1024x1024", type: "image/png" },
+    ],
     shortcut: "/photos/CashALL_favicon.png",
     apple: "/photos/CashALL_favicon.png",
   },
