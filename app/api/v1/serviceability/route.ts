@@ -7,11 +7,7 @@ export const dynamic = "force-dynamic";
 
 export const GET = apiWrapper(async (_req: NextRequest) => {
   try {
-    const dbAreas = await prisma.serviceArea.findMany({
-      where: { active: true, deletedAt: null },
-    });
-
-    const areas = dbAreas.length > 0 ? dbAreas : INITIAL_SERVICE_AREAS;
+    const areas = INITIAL_SERVICE_AREAS;
 
     // Group by state
     const statesMap: Record<string, { city: string; pincode: string }[]> = {};

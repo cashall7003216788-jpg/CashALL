@@ -17,10 +17,7 @@ export function Header() {
   const [deviceChoiceOpen, setDeviceChoiceOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   
-  const [selectedLocation, setSelectedLocation] = useState<{ city: string; state: string } | null>({
-    city: "Kolkata",
-    state: "West Bengal",
-  });
+  const [selectedLocation, setSelectedLocation] = useState<{ city: string; state: string } | null>(null);
   
   const [user, setUser] = useState<{ name?: string; phone?: string; email?: string } | null>(null);
 
