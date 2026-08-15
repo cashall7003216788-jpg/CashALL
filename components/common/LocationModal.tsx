@@ -196,43 +196,60 @@ export function LocationModal({
             /* STEP 1: STATE SELECTION LIST */
             <>
               <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider px-2 pb-1">
-                Serviceable States
+                Serviceable States ({filteredStates.length})
               </div>
               {filteredStates.length > 0 ? (
-                <div className="space-y-2">
+                <div className="space-y-2.5">
                   {filteredStates.map((st) => {
                     const isSelectedState =
                       selectedLocation?.state.toLowerCase() === st.name.toLowerCase();
 
                     return (
-                      <button
+                      <div
                         key={st.name}
-                        onClick={() => {
-                          setActiveState(st);
-                          setSearch("");
-                        }}
-                        className={`w-full flex items-center justify-between p-4 rounded-2xl border text-left text-xs font-bold transition-all ${
+                        className={`w-full flex items-center justify-between p-3.5 rounded-2xl border text-left text-xs font-bold transition-all ${
                           isSelectedState
-                            ? "bg-brand-yellow/10 border-brand-yellow/50 text-brand-yellow"
-                            : "bg-neutral-900/80 border-neutral-800 text-gray-200 hover:border-brand-yellow/50 hover:bg-neutral-800"
+                            ? "bg-brand-yellow/10 border-brand-yellow/60 text-brand-yellow"
+                            : "bg-neutral-900/80 border-neutral-800 text-gray-200 hover:border-brand-yellow/50"
                         }`}
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-xl bg-neutral-800 flex items-center justify-center text-brand-yellow">
-                            <MapPin className="w-4 h-4" />
+                          <div className="w-9 h-9 rounded-xl bg-neutral-800 flex items-center justify-center text-brand-yellow shrink-0 border border-neutral-700">
+                            <MapPin className="w-4.5 h-4.5" />
                           </div>
                           <div>
-                            <div className="text-sm font-extrabold text-white">{st.name}</div>
+                            <div className="text-sm font-black text-white">{st.name}</div>
                             <div className="text-[11px] text-gray-400 font-normal">
-                              {st.cities.length} available {st.cities.length === 1 ? "location" : "locations"}
+                              {st.cities.length} {st.cities.length === 1 ? "location" : "locations"} available
                             </div>
                           </div>
                         </div>
-                        <div className="text-xs text-brand-yellow font-bold flex items-center gap-1">
-                          <span>Select</span>
-                          <span>&rarr;</span>
+
+                        <div className="flex items-center gap-2">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              const defaultCity = st.cities[0]?.city || st.name;
+                              onSelectLocation({ city: defaultCity, state: st.name });
+                              onClose();
+                            }}
+                            className="px-3 py-1.5 rounded-xl bg-brand-yellow text-brand-black text-[11px] font-extrabold hover:bg-brand-yellowHover shadow-sm transition-all"
+                          >
+                            Select State
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setActiveState(st);
+                              setSearch("");
+                            }}
+                            className="px-2.5 py-1.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-gray-300 text-[11px] font-bold transition-colors"
+                            title="View cities in state"
+                          >
+                            Cities &rarr;
+                          </button>
                         </div>
-                      </button>
+                      </div>
                     );
                   })}
                 </div>
