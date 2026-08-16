@@ -85,21 +85,24 @@ function PickupCheckoutContent() {
 
     setIsSubmitting(true);
     const orderNum = `CA${Math.floor(10000 + Math.random() * 90000)}`;
+    const finalName = fullName.trim() || "Customer";
+    const finalPhone = phone.trim() || "—";
+    const fullAddress = `${house}, ${street}, ${area}${landmark ? ", " + landmark : ""}, ${selectedState} - ${pincode}`;
 
     const newOrder: OrderData = {
       id: `ord-${Date.now()}`,
       orderNumber: orderNum,
       quoteId: quote?.id || quoteId,
-      userId: `u-${Date.now()}`,
-      customerName: fullName || "Phone Seller",
-      customerPhone: phone || "+91 9876543210",
+      userId: `u-${finalPhone.replace(/\D/g, "") || Date.now()}`,
+      customerName: finalName,
+      customerPhone: finalPhone,
       pincode,
-      addressSummary: `${house}, ${street}, ${area}, ${landmark ? landmark + ", " : ""}${selectedState} - ${pincode}`,
+      addressSummary: fullAddress,
       pickupDate,
       pickupTimeSlot: pickupSlot,
       status: "PICKUP_SCHEDULED",
       revisedPrice: quote?.estimatedPrice,
-      declaredConditionSummary: "Customer Declared Valuation",
+      declaredConditionSummary: quote?.variantId ? "Customer Declared Valuation" : "Device Selling Order",
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
@@ -110,6 +113,13 @@ function PickupCheckoutContent() {
 
       const existing = JSON.parse(localStorage.getItem("cashall_all_orders") || "[]");
       localStorage.setItem("cashall_all_orders", JSON.stringify([newOrder, ...existing]));
+
+      // Save user session details
+      localStorage.setItem("cashall_user", JSON.stringify({
+        id: newOrder.userId,
+        name: finalName,
+        phone: finalPhone,
+      }));
     }
 
     setTimeout(() => {
