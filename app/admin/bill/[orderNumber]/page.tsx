@@ -11,6 +11,9 @@ interface BillData {
   customerName: string;
   customerPhone: string;
   pickupAddress: string;
+  buyerName: string;
+  buyerGstin: string;
+  buyerAddress: string;
   deviceName: string;
   variantName: string;
   quoteNumber: string;
@@ -69,6 +72,9 @@ export default function AdminBillPage() {
               customerName: "Kundan Kumar Singh",
               customerPhone: "+91 9876543210",
               pickupAddress: "Ranchi, Jharkhand",
+              buyerName: "AARNA ENTERPRISE (Parent Company of CashALL)",
+              buyerGstin: "19AVPPG9800J1Z3",
+              buyerAddress: "Howrah, West Bengal",
               deviceName: "OPPO A33",
               variantName: "64 GB Storage",
               quoteNumber: "CAQ-367384",
@@ -89,7 +95,10 @@ export default function AdminBillPage() {
               billNumber: "BILL-CA72512-2026",
               customerName: "West Bengal Customer",
               customerPhone: "+91 7003216788",
-              pickupAddress: "6/6 Kings Road, Howrah, Kings Road, West Bengal - 711101",
+              pickupAddress: "6/6 Kings Road, Howrah, West Bengal - 711101",
+              buyerName: "AARNA ENTERPRISE (Parent Company of CashALL)",
+              buyerGstin: "19AVPPG9800J1Z3",
+              buyerAddress: "Howrah, West Bengal",
               deviceName: "Apple iPhone 13",
               variantName: "128 GB Storage",
               quoteNumber: "CAQ-725120",
@@ -112,6 +121,7 @@ export default function AdminBillPage() {
         }
 
         const payment = ord.payments?.[0];
+        const assignedPartner = ord.pickups?.[0]?.partner;
         setBill({
           orderNumber: ord.orderNumber,
           billNumber: `BILL-${ord.orderNumber}-${new Date().getFullYear()}`,
@@ -120,6 +130,9 @@ export default function AdminBillPage() {
           pickupAddress: ord.address
             ? `${ord.address.house}, ${ord.address.street}, ${ord.address.area}, ${ord.address.city}, ${ord.address.state} - ${ord.address.pincode}`
             : "—",
+          buyerName: assignedPartner ? (assignedPartner.companyName || assignedPartner.name || "Authorized Partner") : "AARNA ENTERPRISE (Parent Company of CashALL)",
+          buyerGstin: assignedPartner ? (assignedPartner.gstin || "N/A") : "19AVPPG9800J1Z3",
+          buyerAddress: assignedPartner ? (assignedPartner.address || "Authorized Partner Franchise") : "Howrah, West Bengal",
           deviceName: ord.quote?.variant?.model?.brand?.name
             ? `${ord.quote.variant.model.brand.name} ${ord.quote.variant.model.name}`
             : "Device",
@@ -210,14 +223,22 @@ export default function AdminBillPage() {
 
         <div className="px-8 py-6 space-y-6">
 
-          {/* Customer & Order Info Grid */}
-          <div className="grid grid-cols-2 gap-6">
+          {/* Customer, Buyer & Order Info Grid */}
+          <div className="grid grid-cols-3 gap-6">
             <div>
               <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Seller Details</div>
               <div className="space-y-1 text-xs">
                 <div className="font-bold text-gray-900 text-sm">{bill.customerName}</div>
                 <div className="text-gray-600">{bill.customerPhone}</div>
                 <div className="text-gray-500 leading-snug mt-1">{bill.pickupAddress}</div>
+              </div>
+            </div>
+            <div>
+              <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Buyer Details</div>
+              <div className="space-y-1 text-xs">
+                <div className="font-bold text-gray-900 text-sm">{bill.buyerName}</div>
+                <div className="text-gray-600 font-semibold">GSTIN: {bill.buyerGstin}</div>
+                <div className="text-gray-500 leading-snug mt-1">{bill.buyerAddress}</div>
               </div>
             </div>
             <div>

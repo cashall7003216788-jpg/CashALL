@@ -46,6 +46,12 @@ export class BillService {
           ? `${order.address.house}, ${order.address.street}, ${order.address.city}, ${order.address.state} - ${order.address.pincode}`
           : "—",
       },
+      buyer: {
+        name: "AARNA ENTERPRISE",
+        tagline: "Parent Company of CashALL",
+        gstin: "19AVPPG9800J1Z3",
+        address: "Howrah, West Bengal",
+      },
       device: {
         brand: order.quote.variant.model.brand.name,
         model: order.quote.variant.model.name,
