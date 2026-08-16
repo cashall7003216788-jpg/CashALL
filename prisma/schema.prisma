@@ -1,10 +1,721 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-generator client {
-  provider = "prisma-client-js"
+model User {
+  id                 String                  @id @default(uuid()) @db.Uuid
+  phone              String                  @unique
+  name               String?
+  email              String?                 @unique
+  role               Role                    @default(CUSTOMER)
+  status             String                  @default("ACTIVE")
+  firebaseUid        String                  @unique
+  lastLogin          DateTime?
+  createdAt          DateTime                @default(now())
+  updatedAt          DateTime                @updatedAt
+  deletedAt          DateTime?
+  logs               ActivityLog[]
+  addresses          Address[]
+  customerDevices    CustomerDevice[]
+  OfferCalculation   OfferCalculation[]
+  orders             Order[]
+  tickets            SupportTicket[]
+  notificationTokens UserNotificationToken[]
+
+  @@index([phone])
+  @@index([email])
+}
+
+model Address {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @db.Uuid
+  fullName  String
+  phone     String
+  house     String
+  street    String
+  area      String
+  landmark  String?
+  city      String
+  state     String
+  pincode   String
+  latitude  Float?
+  longitude Float?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  orders    Order[]
+
+  @@index([userId])
+  @@index([pincode])
+}
+
+model Category {
+  id        String    @id @default(uuid()) @db.Uuid
+  name      String
+  slug      String    @unique
+  active    Boolean   @default(true)
+  sortOrder Int       @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@index([slug])
+}
+
+model Brand {
+  id        String        @id @default(uuid()) @db.Uuid
+  name      String
+  slug      String        @unique
+  logoUrl   String?
+  category  String        @default("MOBILE")
+  active    Boolean       @default(true)
+  sortOrder Int           @default(0)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  deletedAt DateTime?
+  models    DeviceModel[]
+
+  @@index([slug])
+  @@index([category])
+}
+
+model DeviceModel {
+  id               String             @id @default(uuid()) @db.Uuid
+  brandId          String             @db.Uuid
+  questionSetId    String?            @db.Uuid
+  name             String
+  slug             String             @unique
+  category         String             @default("MOBILE")
+  imageUrl         String?
+  releaseYear      Int?
+  basePrice        Float?
+  description      String?
+  popular          Boolean            @default(false)
+  active           Boolean            @default(true)
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  deletedAt        DateTime?
+  ColorVariant     ColorVariant[]
+  DeviceImage      DeviceImage[]
+  brand            Brand              @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  QuestionSet      QuestionSet?       @relation(fields: [questionSetId], references: [id])
+  variants         DeviceVariant[]
+  OfferCalculation OfferCalculation[]
+  PricingRule      PricingRule[]
+
+  @@index([brandId])
+  @@index([slug])
+  @@index([category])
+  @@index([questionSetId])
+}
+
+model DeviceVariant {
+  id               String             @id @default(uuid()) @db.Uuid
+  modelId          String             @db.Uuid
+  ram              String?
+  storage          String
+  basePrice        Float
+  active           Boolean            @default(true)
+  sortOrder        Int                @default(0)
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  deletedAt        DateTime?
+  colorVariants    ColorVariant[]
+  model            DeviceModel        @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  OfferCalculation OfferCalculation[]
+  pricingRules     PricingRule[]
+  quotes           Quote[]
+
+  @@index([modelId])
+}
+
+model ColorVariant {
+  id          String         @id @default(uuid()) @db.Uuid
+  modelId     String?        @db.Uuid
+  variantId   String?        @db.Uuid
+  colorName   String
+  hexCode     String?
+  imageUrl    String?
+  active      Boolean        @default(true)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  deletedAt   DateTime?
+  DeviceModel DeviceModel?   @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  variant     DeviceVariant? @relation(fields: [variantId], references: [id], onDelete: Cascade)
+
+  @@index([variantId])
+  @@index([modelId])
+}
+
+model ConditionQuestion {
+  id            String            @id @default(uuid()) @db.Uuid
+  questionSetId String?           @db.Uuid
+  title         String
+  subtitle      String?
+  group         String
+  type          String            @default("SINGLE")
+  sortOrder     Int               @default(0)
+  isRequired    Boolean           @default(true)
+  active        Boolean           @default(true)
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+  deletedAt     DateTime?
+  options       ConditionOption[]
+  QuestionSet   QuestionSet?      @relation(fields: [questionSetId], references: [id])
+  pricingRules  PricingRule[]
+
+  @@index([group])
+  @@index([questionSetId])
+}
+
+model ConditionOption {
+  id           String            @id @default(uuid()) @db.Uuid
+  questionId   String            @db.Uuid
+  label        String
+  description  String?
+  iconName     String?
+  sortOrder    Int               @default(0)
+  active       Boolean           @default(true)
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  deletedAt    DateTime?
+  question     ConditionQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  pricingRules PricingRule[]
+
+  @@index([questionId])
+}
+
+model PricingRule {
+  id              String            @id @default(uuid()) @db.Uuid
+  modelId         String?           @db.Uuid
+  variantId       String?           @db.Uuid
+  questionId      String            @db.Uuid
+  optionId        String            @db.Uuid
+  ruleType        String
+  adjustmentType  String            @default("PERCENTAGE_DEDUCTION")
+  adjustmentValue Float
+  minValue        Float?
+  maxValue        Float?
+  priority        Int               @default(0)
+  active          Boolean           @default(true)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  deletedAt       DateTime?
+  PricingHistory  PricingHistory[]
+  DeviceModel     DeviceModel?      @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  option          ConditionOption   @relation(fields: [optionId], references: [id], onDelete: Cascade)
+  question        ConditionQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  variant         DeviceVariant?    @relation(fields: [variantId], references: [id], onDelete: Cascade)
+
+  @@index([variantId])
+  @@index([questionId])
+  @@index([optionId])
+  @@index([modelId])
+}
+
+model Quote {
+  id                  String        @id @default(uuid()) @db.Uuid
+  quoteNumber         String        @unique
+  variantId           String        @db.Uuid
+  selectedAnswersJson String
+  basePrice           Float
+  totalDeductions     Float
+  estimatedPrice      Float
+  breakdownJson       String
+  expiresAt           DateTime
+  status              String        @default("ACTIVE")
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+  deletedAt           DateTime?
+  orders              Order[]
+  variant             DeviceVariant @relation(fields: [variantId], references: [id], onDelete: Cascade)
+
+  @@index([quoteNumber])
+  @@index([variantId])
+}
+
+model Order {
+  id             String           @id @default(uuid()) @db.Uuid
+  orderNumber    String           @unique
+  quoteId        String           @db.Uuid
+  userId         String           @db.Uuid
+  addressId      String?          @db.Uuid
+  pickupDate     String
+  pickupTimeSlot String
+  status         OrderStatus      @default(QUOTE_CREATED)
+  finalPrice     Float?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  deletedAt      DateTime?
+  imageRefs      ImageReference[]
+  imeiRecords    Imei[]
+  invoices       Invoice[]
+  offers         Offer[]
+  address        Address?         @relation(fields: [addressId], references: [id])
+  quote          Quote            @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  user           User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  payments       Payment[]
+  pickups        Pickup[]
+  qcReports      QcReport[]
+
+  @@index([orderNumber])
+  @@index([userId])
+  @@index([quoteId])
+}
+
+model Pickup {
+  id         String    @id @default(uuid()) @db.Uuid
+  orderId    String    @db.Uuid
+  partnerId  String?   @db.Uuid
+  date       String
+  timeSlot   String
+  status     String    @default("SCHEDULED")
+  notes      String?
+  assignedAt DateTime?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  deletedAt  DateTime?
+  order      Order     @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  partner    Partner?  @relation(fields: [partnerId], references: [id])
+
+  @@index([orderId])
+  @@index([partnerId])
+}
+
+model QcReport {
+  id                    String    @id @default(uuid()) @db.Uuid
+  orderId               String    @db.Uuid
+  inspectorName         String
+  imeiNumber            String
+  declaredAnswersJson   String
+  physicalAnswersJson   String
+  revisedPrice          Float
+  priceDifferenceReason String?
+  status                String    @default("PENDING_APPROVAL")
+  photoUrlsJson         String?
+  inspectedAt           DateTime  @default(now())
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  deletedAt             DateTime?
+  order                 Order     @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+}
+
+model Offer {
+  id                    String    @id @default(uuid()) @db.Uuid
+  orderId               String    @db.Uuid
+  originalPrice         Float
+  revisedPrice          Float
+  priceDifferenceReason String?
+  status                String    @default("PENDING")
+  customerResponseAt    DateTime?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  deletedAt             DateTime?
+  order                 Order     @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+}
+
+model Payment {
+  id             String           @id @default(uuid()) @db.Uuid
+  orderId        String           @db.Uuid
+  amount         Float
+  method         PaymentMethod    @default(UPI)
+  status         PaymentStatus    @default(PENDING)
+  transactionRef String?
+  paidAt         DateTime?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  deletedAt      DateTime?
+  order          Order            @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  history        PaymentHistory[]
+
+  @@index([orderId])
+}
+
+model PaymentHistory {
+  id        String    @id @default(uuid()) @db.Uuid
+  paymentId String    @db.Uuid
+  event     String
+  details   String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  payment   Payment   @relation(fields: [paymentId], references: [id], onDelete: Cascade)
+
+  @@index([paymentId])
+}
+
+model Invoice {
+  id            String    @id @default(uuid()) @db.Uuid
+  orderId       String    @db.Uuid
+  invoiceNumber String    @unique
+  pdfUrl        String
+  status        String    @default("ISSUED")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  deletedAt     DateTime?
+  order         Order     @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@index([invoiceNumber])
+}
+
+model ServiceArea {
+  id              String    @id @default(uuid()) @db.Uuid
+  pincode         String    @unique
+  city            String
+  state           String
+  active          Boolean   @default(true)
+  pickupAvailable Boolean   @default(true)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  deletedAt       DateTime?
+
+  @@index([pincode])
+}
+
+model Partner {
+  id               String        @id @default(uuid()) @db.Uuid
+  name             String
+  phone            String        @unique
+  email            String
+  businessName     String?
+  city             String
+  status           PartnerStatus @default(ACTIVE)
+  rating           Float         @default(5.0)
+  completedPickups Int           @default(0)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  deletedAt        DateTime?
+  pickups          Pickup[]
+
+  @@index([phone])
+}
+
+model PartnerApplication {
+  id             String    @id @default(uuid()) @db.Uuid
+  name           String
+  phone          String
+  email          String
+  businessName   String
+  city           String
+  state          String
+  pincodesServed String
+  experience     String?
+  status         String    @default("PENDING")
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  deletedAt      DateTime?
+}
+
+model BulkLead {
+  id          String    @id @default(uuid()) @db.Uuid
+  name        String
+  company     String
+  phone       String
+  email       String
+  city        String
+  deviceCount String
+  deviceTypes String
+  message     String?
+  status      String    @default("NEW")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+}
+
+model FAQ {
+  id        String    @id @default(uuid()) @db.Uuid
+  question  String
+  answer    String
+  category  String    @default("GENERAL")
+  sortOrder Int       @default(0)
+  active    Boolean   @default(true)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model Imei {
+  id        String    @id @default(uuid()) @db.Uuid
+  code      String    @unique
+  status    String    @default("VERIFIED")
+  checkedAt DateTime  @default(now())
+  comments  String?
+  orderId   String?   @db.Uuid
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  order     Order?    @relation(fields: [orderId], references: [id])
+
+  @@index([code])
+}
+
+model Coupon {
+  id            String       @id @default(uuid()) @db.Uuid
+  code          String       @unique
+  discountType  DiscountType @default(FIXED)
+  discountValue Float
+  maxUsage      Int          @default(100)
+  usedCount     Int          @default(0)
+  active        Boolean      @default(true)
+  expiresAt     DateTime?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  deletedAt     DateTime?
+
+  @@index([code])
+}
+
+model Referral {
+  id           String    @id @default(uuid()) @db.Uuid
+  referrerId   String    @db.Uuid
+  refereeId    String    @db.Uuid
+  status       String    @default("PENDING")
+  rewardAmount Float
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  deletedAt    DateTime?
+
+  @@index([referrerId])
+  @@index([refereeId])
+}
+
+model SupportTicket {
+  id          String       @id @default(uuid()) @db.Uuid
+  userId      String?      @db.Uuid
+  name        String
+  email       String
+  subject     String
+  message     String
+  status      TicketStatus @default(OPEN)
+  repliesJson String       @default("[]")
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  deletedAt   DateTime?
+  user        User?        @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+model SystemSetting {
+  id          String    @id @default(uuid()) @db.Uuid
+  key         String    @unique
+  value       String
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+
+  @@index([key])
+}
+
+model ImageReference {
+  id         String    @id @default(uuid()) @db.Uuid
+  url        String
+  bucket     String
+  key        String
+  entityType String
+  entityId   String    @db.Uuid
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  deletedAt  DateTime?
+  order      Order     @relation(fields: [entityId], references: [id], onDelete: Cascade)
+
+  @@index([entityId])
+}
+
+model CustomerDevice {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @db.Uuid
+  brand     String
+  model     String
+  storage   String
+  color     String?
+  imei      String?
+  status    String    @default("ACTIVE")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Notification {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @db.Uuid
+  title     String
+  message   String
+  read      Boolean   @default(false)
+  type      String    @default("INFO")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@index([userId])
+}
+
+model EmailLog {
+  id        String    @id @default(uuid()) @db.Uuid
+  to        String
+  subject   String
+  body      String
+  status    String    @default("QUEUED")
+  error     String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@index([to])
+}
+
+model OtpLog {
+  id        String    @id @default(uuid()) @db.Uuid
+  phone     String
+  code      String
+  expiresAt DateTime
+  verified  Boolean   @default(false)
+  type      String    @default("LOGIN")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@index([phone])
+}
+
+model AdminLog {
+  id          String    @id @default(uuid()) @db.Uuid
+  adminUserId String    @db.Uuid
+  action      String
+  ipAddress   String?
+  details     String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+
+  @@index([adminUserId])
+}
+
+model ActivityLog {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String    @db.Uuid
+  action    String
+  details   String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model AuditLog {
+  id            String    @id @default(uuid()) @db.Uuid
+  actorId       String    @db.Uuid
+  actorRole     String
+  action        String
+  tableName     String
+  recordId      String    @db.Uuid
+  oldValuesJson String?
+  newValuesJson String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  deletedAt     DateTime?
+
+  @@index([recordId])
+}
+
+model UserNotificationToken {
+  id         String    @id @default(uuid()) @db.Uuid
+  userId     String    @db.Uuid
+  token      String    @unique
+  deviceType String    @default("UNKNOWN")
+  active     Boolean   @default(true)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  deletedAt  DateTime?
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([token])
+}
+
+model DeviceImage {
+  id          String      @id @db.Uuid
+  modelId     String      @db.Uuid
+  imageUrl    String
+  isPrimary   Boolean     @default(false)
+  caption     String?
+  sortOrder   Int         @default(0)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime
+  deletedAt   DateTime?
+  DeviceModel DeviceModel @relation(fields: [modelId], references: [id], onDelete: Cascade)
+
+  @@index([modelId])
+}
+
+model OfferCalculation {
+  id                    String         @id @db.Uuid
+  quoteNumber           String         @unique
+  modelId               String         @db.Uuid
+  variantId             String?        @db.Uuid
+  userId                String?        @db.Uuid
+  basePrice             Float
+  selectedAnswersJson   String
+  rulesAppliedJson      String
+  fixedAdjustments      Float
+  percentageAdjustments Float
+  finalOffer            Float
+  adminRuleVersion      String         @default("v1.0")
+  calculatedAt          DateTime       @default(now())
+  DeviceModel           DeviceModel    @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  User                  User?          @relation(fields: [userId], references: [id])
+  DeviceVariant         DeviceVariant? @relation(fields: [variantId], references: [id])
+
+  @@index([modelId])
+  @@index([quoteNumber])
+  @@index([userId])
+  @@index([variantId])
+}
+
+model PricingHistory {
+  id          String      @id @db.Uuid
+  ruleId      String      @db.Uuid
+  oldType     String?
+  oldValue    Float?
+  newType     String
+  newValue    Float
+  changedBy   String?
+  reason      String?
+  createdAt   DateTime    @default(now())
+  PricingRule PricingRule @relation(fields: [ruleId], references: [id], onDelete: Cascade)
+
+  @@index([ruleId])
+}
+
+model QuestionSet {
+  id                String              @id @db.Uuid
+  name              String
+  description       String?
+  deviceCategory    String              @default("MOBILE")
+  active            Boolean             @default(true)
+  sortOrder         Int                 @default(0)
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime
+  deletedAt         DateTime?
+  ConditionQuestion ConditionQuestion[]
+  DeviceModel       DeviceModel[]
 }
 
 enum Role {
@@ -15,42 +726,18 @@ enum Role {
 }
 
 enum OrderStatus {
-  CREATED
-  IDENTITY_VERIFICATION_PENDING
-  IDENTITY_VERIFIED
-  IDENTITY_MANUAL_REVIEW
-  ASSIGNED
-  PARTNER_ACCEPTED
-  INSPECTION_STARTED
-  INSPECTION_COMPLETED
-  IMEI_VERIFICATION_PENDING
-  IMEI_VERIFIED
-  IMEI_FLAGGED
-  IMEI_MANUAL_REVIEW
-  FINAL_OFFER
-  CUSTOMER_ACCEPTED
-  PAYMENT_PENDING
-  PAYMENT_CONFIRMED
-  PAYMENT_MANUAL_REVIEW
-  ESIGN_PENDING
-  ESIGNED
-  DEVICE_RECEIVED
-  BILL_GENERATED
-  COMPLETED
-  DISPUTED
-  CANCELLED
-  REJECTED
-  PAYMENT_FAILED
-  VERIFICATION_FAILED
-  // Legacy backward compatibility aliases
   QUOTE_CREATED
   PICKUP_SCHEDULED
+  PARTNER_ASSIGNED
   PARTNER_ON_THE_WAY
+  INSPECTION_STARTED
   FINAL_OFFER_PENDING
   ACCEPTED
   DECLINED
   PAYMENT_PROCESSING
   PAID
+  COMPLETED
+  CANCELLED
 }
 
 enum PartnerStatus {
@@ -82,726 +769,4 @@ enum TicketStatus {
 enum DiscountType {
   FIXED
   PERCENTAGE
-}
-
-model User {
-  id          String    @id @default(uuid()) @db.Uuid
-  phone       String    @unique
-  name        String?
-  email       String?   @unique
-  role        Role      @default(CUSTOMER)
-  status      String    @default("ACTIVE") // ACTIVE, SUSPENDED
-  firebaseUid String    @unique
-  lastLogin   DateTime?
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  deletedAt   DateTime?
-
-  addresses             Address[]
-  orders                Order[]
-  customerDevices       CustomerDevice[]
-  tickets               SupportTicket[]
-  logs                  ActivityLog[]
-  notificationTokens    UserNotificationToken[]
-  identityVerifications IdentityVerification[]
-  signatures            Signature[]
-
-  @@index([phone])
-  @@index([email])
-}
-
-model Address {
-  id         String    @id @default(uuid()) @db.Uuid
-  userId     String    @db.Uuid
-  fullName   String
-  phone      String
-  house      String
-  street     String
-  area       String
-  landmark   String?
-  city       String
-  state      String
-  pincode    String
-  latitude   Float?
-  longitude  Float?
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
-  deletedAt  DateTime?
-
-  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  orders Order[]
-
-  @@index([userId])
-  @@index([pincode])
-}
-
-model Category {
-  id        String    @id @default(uuid()) @db.Uuid
-  name      String
-  slug      String    @unique
-  active    Boolean   @default(true)
-  sortOrder Int       @default(0)
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
-
-  @@index([slug])
-}
-
-model Brand {
-  id        String    @id @default(uuid()) @db.Uuid
-  name      String
-  slug      String    @unique
-  logoUrl   String?
-  active    Boolean   @default(true)
-  sortOrder Int       @default(0)
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
-
-  models DeviceModel[]
-
-  @@index([slug])
-}
-
-model DeviceModel {
-  id          String    @id @default(uuid()) @db.Uuid
-  brandId     String    @db.Uuid
-  name        String
-  slug        String    @unique
-  imageUrl    String?
-  releaseYear Int?
-  popular     Boolean   @default(false)
-  active      Boolean   @default(true)
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  deletedAt   DateTime?
-
-  brand    Brand           @relation(fields: [brandId], references: [id], onDelete: Cascade)
-  variants DeviceVariant[]
-
-  @@index([brandId])
-  @@index([slug])
-}
-
-model DeviceVariant {
-  id         String    @id @default(uuid()) @db.Uuid
-  modelId    String    @db.Uuid
-  ram        String?
-  storage    String
-  basePrice  Float
-  active     Boolean   @default(true)
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
-  deletedAt  DateTime?
-
-  model          DeviceModel     @relation(fields: [modelId], references: [id], onDelete: Cascade)
-  quotes         Quote[]
-  pricingRules   PricingRule[]
-  colorVariants  ColorVariant[]
-
-  @@index([modelId])
-}
-
-model ColorVariant {
-  id        String    @id @default(uuid()) @db.Uuid
-  variantId String    @db.Uuid
-  colorName String
-  hexCode   String?
-  active    Boolean   @default(true)
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
-
-  variant DeviceVariant @relation(fields: [variantId], references: [id], onDelete: Cascade)
-
-  @@index([variantId])
-}
-
-model ConditionQuestion {
-  id        String    @id @default(uuid()) @db.Uuid
-  title     String
-  subtitle  String?
-  group     String    // BASIC, SCREEN, BODY, FUNCTIONAL, REPAIR, ACCESSORIES
-  type      String    @default("SINGLE") // SINGLE, MULTIPLE
-  sortOrder Int       @default(0)
-  active    Boolean   @default(true)
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
-
-  options      ConditionOption[]
-  pricingRules PricingRule[]
-}
-
-model ConditionOption {
-  id          String    @id @default(uuid()) @db.Uuid
-  questionId  String    @db.Uuid
-  label       String
-  description String?
-  iconName    String?
-  sortOrder   Int       @default(0)
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  deletedAt   DateTime?
-
-  question     ConditionQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
-  pricingRules PricingRule[]
-
-  @@index([questionId])
-}
-
-model PricingRule {
-  id              String    @id @default(uuid()) @db.Uuid
-  variantId       String?   @db.Uuid
-  questionId      String    @db.Uuid
-  optionId        String    @db.Uuid
-  adjustmentType  String    // FIXED_DEDUCTION, PERCENTAGE_DEDUCTION, FIXED_BONUS
-  adjustmentValue Float
-  active          Boolean   @default(true)
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
-  deletedAt       DateTime?
-
-  variant  DeviceVariant?    @relation(fields: [variantId], references: [id], onDelete: Cascade)
-  question ConditionQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
-  option   ConditionOption   @relation(fields: [optionId], references: [id], onDelete: Cascade)
-
-  @@index([variantId])
-  @@index([questionId])
-  @@index([optionId])
-}
-
-model Quote {
-  id                  String    @id @default(uuid()) @db.Uuid
-  quoteNumber         String    @unique
-  variantId           String    @db.Uuid
-  selectedAnswersJson String    @db.Text // JSON string of SelectedAnswer[]
-  basePrice           Float
-  totalDeductions     Float
-  estimatedPrice      Float
-  breakdownJson       String    @db.Text // JSON string of DeductionItem[]
-  expiresAt           DateTime
-  status              String    @default("ACTIVE") // ACTIVE, ORDERED, EXPIRED
-  createdAt           DateTime  @default(now())
-  updatedAt           DateTime  @updatedAt
-  deletedAt           DateTime?
-
-  variant DeviceVariant @relation(fields: [variantId], references: [id], onDelete: Cascade)
-  orders  Order[]
-
-  @@index([quoteNumber])
-  @@index([variantId])
-}
-
-model Order {
-  id             String      @id @default(uuid()) @db.Uuid
-  orderNumber    String      @unique
-  quoteId        String      @db.Uuid
-  userId         String      @db.Uuid
-  addressId      String?     @db.Uuid
-  pickupDate     String
-  pickupTimeSlot String
-  status         OrderStatus @default(QUOTE_CREATED)
-  finalPrice     Float?
-  createdAt      DateTime    @default(now())
-  updatedAt      DateTime    @updatedAt
-  deletedAt      DateTime?
-
-  quote                 Quote                   @relation(fields: [quoteId], references: [id], onDelete: Cascade)
-  user                  User                    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  address               Address?                @relation(fields: [addressId], references: [id], onDelete: SetNull)
-  pickups               Pickup[]
-  qcReports             QcReport[]
-  payments              Payment[]
-  invoices              Invoice[]
-  offers                Offer[]
-  imeiRecords           Imei[]
-  imageRefs             ImageReference[]
-  identityVerifications IdentityVerification[]
-  imeiVerifications     ImeiVerification[]
-  signatures            Signature[]
-  bills                 Bill[]
-
-  @@index([orderNumber])
-  @@index([userId])
-  @@index([quoteId])
-}
-
-model IdentityVerification {
-  id                    String    @id @default(uuid()) @db.Uuid
-  orderId               String    @db.Uuid
-  userId                String    @db.Uuid
-  provider              String    @default("DEMO_MOCK_PROVIDER")
-  status                String    @default("PENDING") // PENDING, VERIFIED, FAILED, EXPIRED, MANUAL_REVIEW
-  referenceId           String?
-  maskedIdNumber        String?
-  verificationTimestamp DateTime?
-  createdAt             DateTime  @default(now())
-  updatedAt             DateTime  @updatedAt
-
-  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
-  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@index([orderId])
-  @@index([userId])
-}
-
-model ImeiVerification {
-  id          String    @id @default(uuid()) @db.Uuid
-  orderId     String    @db.Uuid
-  imei1       String
-  imei2       String?
-  status      String    @default("PENDING") // PENDING, CLEAR, FLAGGED, UNKNOWN, FAILED, MANUAL_REVIEW
-  provider    String    @default("DEMO_MOCK_IMEI")
-  referenceId String?
-  detailsJson String?   @db.Text
-  verifiedAt  DateTime?
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-
-  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
-
-  @@index([orderId])
-  @@index([imei1])
-}
-
-model Signature {
-  id                String    @id @default(uuid()) @db.Uuid
-  orderId           String    @db.Uuid
-  userId            String    @db.Uuid
-  signerName        String
-  signerPhone       String
-  signingProvider   String    @default("DEMO_MOCK_ESIGN")
-  status            String    @default("PENDING") // PENDING, ESIGNED, FAILED
-  signedDocumentUrl String?
-  documentHash      String?
-  sellerDeclaration String    @db.Text
-  signedAt          DateTime?
-  createdAt         DateTime  @default(now())
-  updatedAt         DateTime  @updatedAt
-
-  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
-  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@index([orderId])
-  @@index([userId])
-}
-
-model Bill {
-  id               String    @id @default(uuid()) @db.Uuid
-  orderId          String    @db.Uuid
-  billNumber       String    @unique
-  saleAgreementUrl String?
-  receiptUrl       String?
-  signedPdfUrl     String?
-  status           String    @default("GENERATED") // GENERATED, SIGNED, ISSUED
-  billDataJson     String    @db.Text
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
-
-  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
-
-  @@index([orderId])
-  @@index([billNumber])
-}
-
-model Pickup {
-  id         String    @id @default(uuid()) @db.Uuid
-  orderId    String    @db.Uuid
-  partnerId  String?   @db.Uuid
-  date       String
-  timeSlot   String
-  status     String    @default("SCHEDULED") // SCHEDULED, ASSIGNED, ON_THE_WAY, ARRIVED, COMPLETED, CANCELLED
-  notes      String?   @db.Text
-  assignedAt DateTime?
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
-  deletedAt  DateTime?
-
-  order   Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
-  partner Partner? @relation(fields: [partnerId], references: [id], onDelete: SetNull)
-
-  @@index([orderId])
-  @@index([partnerId])
-}
-
-model QcReport {
-  id                    String    @id @default(uuid()) @db.Uuid
-  orderId               String    @db.Uuid
-  inspectorName         String
-  imeiNumber            String
-  declaredAnswersJson   String    @db.Text
-  physicalAnswersJson   String    @db.Text
-  revisedPrice          Float
-  priceDifferenceReason String?   @db.Text
-  status                String    @default("PENDING_APPROVAL") // PENDING_APPROVAL, APPROVED, REJECTED
-  photoUrlsJson         String?   @db.Text // Array of uploaded verification photos
-  inspectedAt           DateTime  @default(now())
-  createdAt             DateTime  @default(now())
-  updatedAt             DateTime  @updatedAt
-  deletedAt             DateTime?
-
-  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
-
-  @@index([orderId])
-}
-
-model Offer {
-  id                    String    @id @default(uuid()) @db.Uuid
-  orderId               String    @db.Uuid
-  originalPrice         Float
-  revisedPrice          Float
-  priceDifferenceReason String?   @db.Text
-  status                String    @default("PENDING") // PENDING, ACCEPTED, DECLINED
-  customerResponseAt    DateTime?
-  createdAt             DateTime  @default(now())
-  updatedAt             DateTime  @updatedAt
-  deletedAt             DateTime?
-
-  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
-
-  @@index([orderId])
-}
-
-model Payment {
-  id                 String        @id @default(uuid()) @db.Uuid
-  orderId            String        @db.Uuid
-  amount             Float
-  method             PaymentMethod @default(UPI)
-  status             PaymentStatus @default(PENDING)
-  transactionRef     String?
-  upiId              String?
-  utrNumber          String?
-  paymentProofUrl    String?
-  recordedBy         String?
-  isCorporateAccount Boolean       @default(true)
-  paidAt             DateTime?
-  createdAt          DateTime      @default(now())
-  updatedAt          DateTime      @updatedAt
-  deletedAt          DateTime?
-
-  order   Order            @relation(fields: [orderId], references: [id], onDelete: Cascade)
-  history PaymentHistory[]
-
-  @@index([orderId])
-  @@index([utrNumber])
-}
-
-model PaymentHistory {
-  id        String    @id @default(uuid()) @db.Uuid
-  paymentId String    @db.Uuid
-  event     String    // PAYMENT_CREATED, INITIATED, SUCCESS, FAILED
-  details   String?   @db.Text
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
-
-  payment Payment @relation(fields: [paymentId], references: [id], onDelete: Cascade)
-
-  @@index([paymentId])
-}
-
-model Invoice {
-  id            String    @id @default(uuid()) @db.Uuid
-  orderId       String    @db.Uuid
-  invoiceNumber String    @unique
-  pdfUrl        String
-  status        String    @default("ISSUED") // ISSUED, CANCELLED
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  deletedAt     DateTime?
-
-  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
-
-  @@index([orderId])
-  @@index([invoiceNumber])
-}
-
-model ServiceArea {
-  id              String    @id @default(uuid()) @db.Uuid
-  pincode         String    @unique
-  city            String
-  state           String
-  active          Boolean   @default(true)
-  pickupAvailable Boolean   @default(true)
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
-  deletedAt  DateTime?
-
-  @@index([pincode])
-}
-
-model Partner {
-  id               String        @id @default(uuid()) @db.Uuid
-  name             String
-  phone            String        @unique
-  email            String
-  businessName     String?
-  city             String
-  status           PartnerStatus @default(ACTIVE)
-  rating           Float         @default(5.0)
-  completedPickups Int           @default(0)
-  createdAt        DateTime      @default(now())
-  updatedAt        DateTime      @updatedAt
-  deletedAt        DateTime?
-
-  pickups Pickup[]
-
-  @@index([phone])
-}
-
-model PartnerApplication {
-  id             String    @id @default(uuid()) @db.Uuid
-  name           String
-  phone          String
-  email          String
-  businessName   String
-  city           String
-  state          String
-  pincodesServed String    @db.Text
-  experience     String?   @db.Text
-  status         String    @default("PENDING") // PENDING, APPROVED, REJECTED
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
-  deletedAt      DateTime?
-}
-
-model BulkLead {
-  id          String    @id @default(uuid()) @db.Uuid
-  name        String
-  company     String
-  phone       String
-  email       String
-  city        String
-  deviceCount String
-  deviceTypes String
-  message     String?   @db.Text
-  status      String    @default("NEW") // NEW, IN_TOUCH, CLOSED
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  deletedAt   DateTime?
-}
-
-model FAQ {
-  id        String    @id @default(uuid()) @db.Uuid
-  question  String
-  answer    String    @db.Text
-  category  String    @default("GENERAL")
-  sortOrder Int       @default(0)
-  active    Boolean   @default(true)
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
-}
-
-model Imei {
-  id        String    @id @default(uuid()) @db.Uuid
-  code      String    @unique
-  status    String    @default("VERIFIED") // VERIFIED, BLACKLISTED, DUPLICATE, BLOCKED
-  checkedAt DateTime  @default(now())
-  comments  String?   @db.Text
-  orderId   String?   @db.Uuid
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
-
-  order Order? @relation(fields: [orderId], references: [id], onDelete: SetNull)
-
-  @@index([code])
-}
-
-model Coupon {
-  id            String       @id @default(uuid()) @db.Uuid
-  code          String       @unique
-  discountType  DiscountType @default(FIXED)
-  discountValue Float
-  maxUsage      Int          @default(100)
-  usedCount     Int          @default(0)
-  active        Boolean      @default(true)
-  expiresAt     DateTime?
-  createdAt     DateTime     @default(now())
-  updatedAt     DateTime     @updatedAt
-  deletedAt     DateTime?
-
-  @@index([code])
-}
-
-model Referral {
-  id           String    @id @default(uuid()) @db.Uuid
-  referrerId   String    @db.Uuid
-  refereeId    String    @db.Uuid
-  status       String    @default("PENDING") // PENDING, PAID, CANCELLED
-  rewardAmount Float
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
-  deletedAt    DateTime?
-
-  @@index([referrerId])
-  @@index([refereeId])
-}
-
-model SupportTicket {
-  id          String       @id @default(uuid()) @db.Uuid
-  userId      String?      @db.Uuid
-  name        String
-  email       String
-  subject     String
-  message     String       @db.Text
-  status      TicketStatus @default(OPEN)
-  repliesJson String       @default("[]") @db.Text // Array of SupportReply[]
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
-  deletedAt   DateTime?
-
-  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
-
-  @@index([userId])
-}
-
-model SystemSetting {
-  id          String    @id @default(uuid()) @db.Uuid
-  key         String    @unique
-  value       String    @db.Text
-  description String?   @db.Text
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  deletedAt   DateTime?
-
-  @@index([key])
-}
-
-model ImageReference {
-  id         String    @id @default(uuid()) @db.Uuid
-  url        String
-  bucket     String
-  key        String
-  entityType String    // ORDER, QC_REPORT, USER_PROFILE
-  entityId   String    @db.Uuid
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
-  deletedAt  DateTime?
-
-  order Order @relation(fields: [entityId], references: [id], onDelete: Cascade)
-
-  @@index([entityId])
-}
-
-model CustomerDevice {
-  id        String    @id @default(uuid()) @db.Uuid
-  userId    String    @db.Uuid
-  brand     String
-  model     String
-  storage   String
-  color     String?
-  imei      String?
-  status    String    @default("ACTIVE")
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@index([userId])
-}
-
-model Notification {
-  id        String    @id @default(uuid()) @db.Uuid
-  userId    String    @db.Uuid
-  title     String
-  message   String    @db.Text
-  read      Boolean   @default(false)
-  type      String    @default("INFO")
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
-
-  @@index([userId])
-}
-
-model EmailLog {
-  id        String    @id @default(uuid()) @db.Uuid
-  to        String
-  subject   String
-  body      String    @db.Text
-  status    String    @default("QUEUED") // QUEUED, SENT, FAILED
-  error     String?   @db.Text
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
-
-  @@index([to])
-}
-
-model OtpLog {
-  id        String    @id @default(uuid()) @db.Uuid
-  phone     String
-  code      String
-  expiresAt DateTime
-  verified  Boolean   @default(false)
-  type      String    @default("LOGIN")
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
-
-  @@index([phone])
-}
-
-model AdminLog {
-  id          String    @id @default(uuid()) @db.Uuid
-  adminUserId String    @db.Uuid
-  action      String
-  ipAddress   String?
-  details     String?   @db.Text
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
-  deletedAt   DateTime?
-
-  @@index([adminUserId])
-}
-
-model ActivityLog {
-  id        String    @id @default(uuid()) @db.Uuid
-  userId    String    @db.Uuid
-  action    String
-  details   String?   @db.Text
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  deletedAt DateTime?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@index([userId])
-}
-
-model AuditLog {
-  id            String    @id @default(uuid()) @db.Uuid
-  actorId       String    @db.Uuid
-  actorRole     String
-  action        String    // CREATE, UPDATE, DELETE, STATUS_CHANGE
-  tableName     String
-  recordId      String    @db.Uuid
-  oldValuesJson String?   @db.Text
-  newValuesJson String?   @db.Text
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  deletedAt     DateTime?
-
-  @@index([recordId])
-}
-
-model UserNotificationToken {
-  id         String    @id @default(uuid()) @db.Uuid
-  userId     String    @db.Uuid
-  token      String    @unique
-  deviceType String    @default("UNKNOWN") // ANDROID, IOS, WEB, UNKNOWN
-  active     Boolean   @default(true)
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
-  deletedAt  DateTime?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@index([userId])
-  @@index([token])
 }
