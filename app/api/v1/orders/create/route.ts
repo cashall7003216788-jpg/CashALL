@@ -125,7 +125,6 @@ export const POST = apiWrapper(async (req: NextRequest) => {
 
   // Send WhatsApp alert to admin
   const deviceName = `${order.quote.variant.model.brand.name} ${order.quote.variant.model.name}`;
-  const addressText = `${data.house}, ${data.street}, ${data.area}, ${data.city}, ${data.state} - ${data.pincode}`;
   WhatsAppService.notifyNewOrder({
     orderNumber: order.orderNumber,
     customerName: data.fullName,
