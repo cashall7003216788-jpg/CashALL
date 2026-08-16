@@ -26,7 +26,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
 
   const updatedOrder = await prisma.order.update({
     where: { id: order.id },
-    data: { status: "DISPUTED" },
+    data: { status: "CANCELLED" },
   });
 
   await AuditService.log({
@@ -36,7 +36,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     tableName: "Order",
     recordId: order.id,
     oldValues: { status: order.status },
-    newValues: { status: "DISPUTED", reason: validation.data.reason, evidence: validation.data.evidenceDetails },
+    newValues: { status: "CANCELLED", reason: validation.data.reason, evidence: validation.data.evidenceDetails },
   });
 
   return NextResponse.json({

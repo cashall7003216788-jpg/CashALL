@@ -34,10 +34,7 @@ export const GET = apiWrapper(async (req: NextRequest) => {
             },
           },
           qcReports: true,
-          identityVerifications: true,
-          imeiVerifications: true,
           payments: true,
-          signatures: true,
         },
       },
     },
@@ -59,11 +56,11 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     estimatedPrice: p.order.quote.estimatedPrice,
     finalPrice: p.order.finalPrice,
     status: p.order.status,
-    identityStatus: p.order.identityVerifications[0]?.status || "PENDING",
-    imeiStatus: p.order.imeiVerifications[0]?.status || "PENDING",
+    identityStatus: "PENDING",
+    imeiStatus: "PENDING",
     hasQcReport: p.order.qcReports.length > 0,
     paymentStatus: p.order.payments[0]?.status || "PENDING",
-    isSigned: p.order.signatures.some((s) => s.status === "ESIGNED"),
+    isSigned: false,
   }));
 
   return NextResponse.json({

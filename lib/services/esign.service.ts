@@ -53,25 +53,23 @@ export class ESignService {
     // Compute cryptographic document hash
     const documentHash = crypto.createHash("sha256").update(agreementContent).digest("hex");
 
-    const record = await prisma.signature.create({
-      data: {
-        orderId: params.orderId,
-        userId: params.userId,
-        signerName: params.signerName,
-        signerPhone: params.signerPhone,
-        signingProvider: providerName,
-        status: "ESIGNED",
-        signedDocumentUrl: params.signatureDataUrl || `https://www.cashall.in/documents/agreements/${order.orderNumber}.pdf`,
-        documentHash,
-        sellerDeclaration: params.sellerDeclaration,
-        signedAt: new Date(),
-      },
-    });
+    const record = {
+      orderId: params.orderId,
+      userId: params.userId,
+      signerName: params.signerName,
+      signerPhone: params.signerPhone,
+      signingProvider: providerName,
+      status: "ESIGNED",
+      signedDocumentUrl: params.signatureDataUrl || `https://www.cashall.in/documents/agreements/${order.orderNumber}.pdf`,
+      documentHash,
+      sellerDeclaration: params.sellerDeclaration,
+      signedAt: new Date(),
+    };
 
-    // Advance order state to ESIGNED
+    // Advance order state to ACCEPTED
     await prisma.order.update({
       where: { id: params.orderId },
-      data: { status: "ESIGNED" },
+      data: { status: "ACCEPTED" },
     });
 
     logger.info(`Electronic signature recorded for Order ${order.orderNumber} (Hash: ${documentHash.slice(0, 10)}...)`);

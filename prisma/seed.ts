@@ -233,7 +233,10 @@ async function main() {
 
   for (const rule of rules) {
     await prisma.pricingRule.create({
-      data: rule,
+      data: {
+        ...rule,
+        ruleType: rule.adjustmentType,
+      },
     });
   }
 

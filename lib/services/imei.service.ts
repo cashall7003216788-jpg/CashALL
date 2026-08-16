@@ -40,30 +40,24 @@ export class ImeiService {
       details = "Device IMEI flagged as blacklisted or reported lost/stolen.";
     }
 
-    const record = await prisma.imeiVerification.create({
-      data: {
-        orderId: params.orderId,
-        imei1: clean1,
-        imei2: clean2,
-        status,
-        provider: providerName,
-        referenceId: `IMEI_CHK_${Date.now()}`,
-        detailsJson: JSON.stringify({ clean1, clean2, status, details }),
-        verifiedAt: status === "CLEAR" ? new Date() : null,
-      },
-    });
+    const record = {
+      id: `imei-${Date.now()}`,
+      orderId: params.orderId,
+      imei1: clean1,
+      imei2: clean2,
+      status,
+      provider: providerName,
+      referenceId: `IMEI_CHK_${Date.now()}`,
+      detailsJson: JSON.stringify({ clean1, clean2, status, details }),
+      verifiedAt: status === "CLEAR" ? new Date() : null,
+    };
 
-    // If FLAGGED: Update order status to IMEI_FLAGGED and STOP TRANSACTION
+    // If FLAGGED: Update order status to CANCELLED and STOP TRANSACTION
     if (status === "FLAGGED") {
       logger.warn(`STOLEN/FLAGGED DEVICE DETECTED: Order ${params.orderId} IMEI ${clean1}. Halting transaction.`);
       await prisma.order.update({
         where: { id: params.orderId },
-        data: { status: "IMEI_FLAGGED" },
-      });
-    } else if (status === "CLEAR") {
-      await prisma.order.update({
-        where: { id: params.orderId },
-        data: { status: "IMEI_VERIFIED" },
+        data: { status: "CANCELLED" },
       });
     }
 

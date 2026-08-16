@@ -6,7 +6,7 @@ export interface SeriesItem {
 
 export const BRAND_SERIES_MAP: Record<string, SeriesItem[]> = {
   samsung: [
-    { id: "s-sam-s", name: "Galaxy S Series", matchPattern: ["Galaxy S", " S2", " S1", " S20", " S21", " S22", " S23", " S24", " S25", " S10", " S9", " S8", " S7", " S6"] },
+    { id: "s-sam-s", name: "Galaxy S Series", matchPattern: ["Galaxy S", "S26", "S25", "S24", "S23", "S22", "S21", "S20", "S10", "S9", "S8", "S7", "S6"] },
     { id: "s-sam-a", name: "Galaxy A Series", matchPattern: ["Galaxy A", " A0", " A1", " A2", " A3", " A5", " A7", " A8", " A9", " A50", " A51", " A52", " A53", " A54", " A55", " A70", " A71", " A72", " A73"] },
     { id: "s-sam-m", name: "Galaxy M Series", matchPattern: ["Galaxy M", " M0", " M1", " M2", " M3", " M5", " M10", " M20", " M30", " M51", " M52", " M53", " M54", " M55"] },
     { id: "s-sam-z", name: "Galaxy Z Flip / Fold", matchPattern: ["Galaxy Z", "Fold", "Flip"] },
@@ -43,12 +43,12 @@ export const BRAND_SERIES_MAP: Record<string, SeriesItem[]> = {
     { id: "s-op-open", name: "Open Series", matchPattern: ["Open"] },
   ],
   vivo: [
-    { id: "s-viv-v", name: "V Series", matchPattern: [" V", "V1", "V2", "V3", "V4", "V5"] },
-    { id: "s-viv-y", name: "Y Series", matchPattern: [" Y", "Y1", "Y2", "Y3", "Y5", "Y7", "Y8", "Y9", "Y100", "Y200"] },
-    { id: "s-viv-x", name: "X Series", matchPattern: [" X", "X50", "X60", "X70", "X80", "X90", "X100"] },
-    { id: "s-viv-t", name: "T Series", matchPattern: [" T", "T1", "T2", "T3"] },
-    { id: "s-viv-s", name: "S Series", matchPattern: [" S", "S1", "S5", "S6", "S7", "S9", "S10", "S12", "S15", "S16", "S17", "S18"] },
-    { id: "s-viv-z", name: "Z Series", matchPattern: [" Z", "Z1", "Z3", "Z5", "Z6"] },
+    { id: "s-viv-v", name: "V Series", matchPattern: ["Vivo V", "V1", "V2", "V3", "V4", "V5", "V7", "V9", "V11", "V15", "V17", "V19", "V20", "V21", "V23", "V25", "V27", "V29", "V30", "V40"] },
+    { id: "s-viv-y", name: "Y Series", matchPattern: ["Vivo Y", " Y1", " Y2", " Y3", " Y5", " Y7", " Y8", " Y9", " Y100", " Y200"] },
+    { id: "s-viv-x", name: "X Series", matchPattern: ["Vivo X", " X50", " X60", " X70", " X80", " X90", " X100"] },
+    { id: "s-viv-t", name: "T Series", matchPattern: ["Vivo T", " T1", " T2", " T3"] },
+    { id: "s-viv-s", name: "S Series", matchPattern: ["Vivo S1", "Vivo S5", "Vivo S6", "Vivo S7", "Vivo S9", "Vivo S10", "Vivo S12", "Vivo S15", "Vivo S16", "Vivo S17", "Vivo S18"] },
+    { id: "s-viv-z", name: "Z Series", matchPattern: ["Vivo Z", " Z1", " Z3", " Z5", " Z6"] },
   ],
   oppo: [
     { id: "s-opp-reno", name: "Reno Series", matchPattern: ["Reno"] },
@@ -66,10 +66,10 @@ export const BRAND_SERIES_MAP: Record<string, SeriesItem[]> = {
     { id: "s-rea-x", name: "X Series", matchPattern: [" X", "X2", "X3", "X7", "X50"] },
   ],
   poco: [
-    { id: "s-poc-f", name: "POCO F Series", matchPattern: ["F1", "F2", "F3", "F4", "F5", "F6"] },
-    { id: "s-poc-x", name: "POCO X Series", matchPattern: ["X2", "X3", "X4", "X5", "X6"] },
-    { id: "s-poc-m", name: "POCO M Series", matchPattern: ["M2", "M3", "M4", "M5", "M6"] },
-    { id: "s-poc-c", name: "POCO C Series", matchPattern: ["C3", "C31", "C50", "C51", "C55", "C65"] },
+    { id: "s-poc-f", name: "POCO F Series", matchPattern: ["F1", "F2", "F3", "F4", "F5", "F6", "F7"] },
+    { id: "s-poc-x", name: "POCO X Series", matchPattern: ["X2", "X3", "X4", "X5", "X6", "X7"] },
+    { id: "s-poc-m", name: "POCO M Series", matchPattern: ["M2", "M3", "M4", "M5", "M6", "M7"] },
+    { id: "s-poc-c", name: "POCO C Series", matchPattern: ["C3", "C31", "C50", "C51", "C55", "C65", "C75"] },
   ],
   motorola: [
     { id: "s-mot-edge", name: "Moto Edge Series", matchPattern: ["Edge"] },
@@ -147,13 +147,14 @@ export function filterModelsBySeries(models: any[], series: SeriesItem | null): 
   }
 
   return models.filter((m) => {
-    const name = m.name || "";
+    const name = (m.name || "").trim().toLowerCase();
     return series.matchPattern!.some((pattern) => {
-      // Exact substring or regex word boundary match
-      if (pattern.startsWith(" ")) {
-        return name.toLowerCase().includes(pattern.toLowerCase());
+      const p = pattern.trim().toLowerCase();
+      // If matching Vivo S series, ensure name doesn't belong to Vivo V, Y, X, T, Z series
+      if (series.id === "s-viv-s" && (name.startsWith("vivo v") || name.startsWith("vivo y") || name.startsWith("vivo x") || name.startsWith("vivo t") || name.startsWith("vivo z"))) {
+        return false;
       }
-      return name.toLowerCase().includes(pattern.toLowerCase());
+      return name.includes(p);
     });
   });
 }

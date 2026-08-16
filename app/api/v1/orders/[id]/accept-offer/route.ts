@@ -41,7 +41,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
 
     const updatedOrder = await prisma.order.update({
       where: { id: order.id },
-      data: { status: "IDENTITY_VERIFICATION_PENDING" },
+      data: { status: "ACCEPTED" },
     });
 
     await AuditService.log({
@@ -51,7 +51,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
       tableName: "Order",
       recordId: order.id,
       oldValues: { status: order.status },
-      newValues: { status: "IDENTITY_VERIFICATION_PENDING", acceptedPrice: order.finalPrice, acceptedAt: new Date() },
+      newValues: { status: "ACCEPTED", acceptedPrice: order.finalPrice, acceptedAt: new Date() },
     });
 
     return NextResponse.json({
@@ -60,7 +60,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
       data: { order: updatedOrder },
     });
   } else {
-    OrderStateMachine.assertTransition(order.status, "REJECTED");
+    OrderStateMachine.assertTransition(order.status, "DECLINED");
 
     if (pendingOffer) {
       await prisma.offer.update({
@@ -71,7 +71,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
 
     const updatedOrder = await prisma.order.update({
       where: { id: order.id },
-      data: { status: "REJECTED" },
+      data: { status: "DECLINED" },
     });
 
     await AuditService.log({

@@ -13,11 +13,11 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   const order = await prisma.order.findUnique({ where: { id: params.id } });
   if (!order) throw new AppError("Order not found.", 404);
 
-  OrderStateMachine.assertTransition(order.status, "DEVICE_RECEIVED");
+  OrderStateMachine.assertTransition(order.status, "INSPECTION_STARTED");
 
   const updatedOrder = await prisma.order.update({
     where: { id: order.id },
-    data: { status: "DEVICE_RECEIVED" },
+    data: { status: "INSPECTION_STARTED" },
   });
 
   await AuditService.log({
@@ -27,7 +27,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     tableName: "Order",
     recordId: order.id,
     oldValues: { status: order.status },
-    newValues: { status: "DEVICE_RECEIVED" },
+    newValues: { status: "INSPECTION_STARTED" },
   });
 
   return NextResponse.json({

@@ -44,7 +44,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     }
   }
 
-  OrderStateMachine.assertTransition(order.status, "PAYMENT_CONFIRMED");
+  OrderStateMachine.assertTransition(order.status, "PAID");
 
   // Create Payment record
   const payment = await prisma.payment.create({
@@ -54,18 +54,13 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
       method: "UPI",
       status: "PAID",
       transactionRef: data.utrNumber,
-      upiId: data.upiId,
-      utrNumber: data.utrNumber,
-      paymentProofUrl: data.paymentProofUrl || null,
-      recordedBy: decodedUser.uid,
-      isCorporateAccount: data.isCorporateAccount,
       paidAt: new Date(),
     },
   });
 
   const updatedOrder = await prisma.order.update({
     where: { id: order.id },
-    data: { status: "PAYMENT_CONFIRMED" },
+    data: { status: "PAID" },
   });
 
   await AuditService.log({
@@ -75,7 +70,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     tableName: "Order",
     recordId: order.id,
     oldValues: { status: order.status },
-    newValues: { status: "PAYMENT_CONFIRMED", amount: data.amount, utr: data.utrNumber },
+    newValues: { status: "PAID", amount: data.amount, utr: data.utrNumber },
   });
 
   return NextResponse.json({

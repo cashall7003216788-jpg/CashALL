@@ -29,7 +29,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   });
   if (!order) throw new AppError("Order not found.", 404);
 
-  OrderStateMachine.assertTransition(order.status, "FINAL_OFFER");
+  OrderStateMachine.assertTransition(order.status, "FINAL_OFFER_PENDING");
 
   // Create Offer record
   const offer = await prisma.offer.create({
@@ -45,7 +45,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   const updatedOrder = await prisma.order.update({
     where: { id: order.id },
     data: {
-      status: "FINAL_OFFER",
+      status: "FINAL_OFFER_PENDING",
       finalPrice: validation.data.finalPrice,
     },
   });
@@ -57,7 +57,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     tableName: "Order",
     recordId: order.id,
     oldValues: { status: order.status },
-    newValues: { status: "FINAL_OFFER", finalPrice: validation.data.finalPrice },
+    newValues: { status: "FINAL_OFFER_PENDING", finalPrice: validation.data.finalPrice },
   });
 
   return NextResponse.json({

@@ -32,10 +32,6 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
         method: "UPI",
         status: "PAID",
         transactionRef: utr || `ADMIN-${Date.now()}`,
-        upiId: upiId || "admin-override",
-        utrNumber: utr || `ADMIN-${Date.now()}`,
-        recordedBy: decodedUser.uid,
-        isCorporateAccount: true,
         paidAt: new Date(),
       },
     });

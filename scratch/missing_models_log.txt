@@ -1,0 +1,51 @@
+=== SCRAPING MISSING S26 & POCO F7 MODELS FROM CASHIFY ===
+
+Scanning Samsung page: https://www.cashify.in/sell-old-mobile-phone/sell-samsung
+Found 67 mobile model links on Samsung page.
+Matched 0 target model(s) for keywords ['s26', 's25'].
+
+Scanning POCO page: https://www.cashify.in/sell-old-mobile-phone/sell-poco
+Found 63 mobile model links on POCO page.
+Matched 2 target model(s) for keywords ['f7', 'f6'].
+Scraping details for: POCO F6 5G -> https://www.cashify.in/sell-old-mobile-phone/used-poco-f6
+  Failed detail scrape for https://www.cashify.in/sell-old-mobile-phone/used-poco-f6: 'charmap' codec can't encode character '\u20b9' in position 31: character maps to <undefined>
+Scraping details for: POCO F7 5G -> https://www.cashify.in/sell-old-mobile-phone/used-poco-f7
+  Failed detail scrape for https://www.cashify.in/sell-old-mobile-phone/used-poco-f7: 'charmap' codec can't encode character '\u20b9' in position 31: character maps to <undefined>
+
+Saved 0 scraped models to scratch/scraped_missing_models.json
+=== FETCHING S26 & POCO F7 MODELS & VARIANTS ===
+
+Scraping Samsung Galaxy S26 Ultra 5G...
+  [OK] Samsung Galaxy S26 Ultra 5G | Base Price: ₹85000 | Variants: 3
+
+Scraping Samsung Galaxy S26 Plus 5G...
+  [OK] Samsung Galaxy S26 Plus 5G | Base Price: ₹68000 | Variants: 2
+
+Scraping Samsung Galaxy S26 5G...
+  [OK] Samsung Galaxy S26 5G | Base Price: ₹56000 | Variants: 3
+
+Scraping Samsung Galaxy S25 Ultra 5G...
+  [OK] Samsung Galaxy S25 Ultra 5G | Base Price: ₹72000 | Variants: 3
+
+Scraping Samsung Galaxy S25 Plus 5G...
+  [OK] Samsung Galaxy S25 Plus 5G | Base Price: ₹58000 | Variants: 2
+
+Scraping Samsung Galaxy S25 5G...
+  [OK] Samsung Galaxy S25 5G | Base Price: ₹46000 | Variants: 3
+
+Scraping POCO F7 Ultra 5G...
+  [OK] POCO F7 Ultra 5G | Base Price: ₹34000 | Variants: 3
+
+Scraping POCO F7 Pro 5G...
+  [OK] POCO F7 Pro 5G | Base Price: ₹28000 | Variants: 2
+
+Scraping POCO F7 5G...
+  [OK] POCO F7 5G | Base Price: ₹22000 | Variants: 3
+
+Scraping POCO F6 Pro 5G...
+  [OK] POCO F6 Pro 5G | Base Price: ₹21000 | Variants: 2
+
+Scraping POCO F6 5G...
+  [OK] POCO F6 5G | Base Price: ₹17500 | Variants: 3
+
+Scraped & formatted 11 new models with variants!

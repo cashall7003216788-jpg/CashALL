@@ -27,7 +27,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   if (!order) throw new AppError("Order not found.", 404);
 
   // Validate state transition
-  OrderStateMachine.assertTransition(order.status, "IDENTITY_VERIFIED");
+  OrderStateMachine.assertTransition(order.status, "ACCEPTED");
 
   const verification = await IdentityService.verifyIdentity({
     orderId: order.id,
@@ -37,10 +37,10 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     fullName: validation.data.fullName,
   });
 
-  // Update order status to IDENTITY_VERIFIED
+  // Update order status to ACCEPTED
   const updatedOrder = await prisma.order.update({
     where: { id: order.id },
-    data: { status: "IDENTITY_VERIFIED" },
+    data: { status: "ACCEPTED" },
   });
 
   await AuditService.log({
@@ -50,7 +50,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     tableName: "Order",
     recordId: order.id,
     oldValues: { status: order.status },
-    newValues: { status: "IDENTITY_VERIFIED", verificationId: verification.id },
+    newValues: { status: "ACCEPTED", verificationId: verification.id },
   });
 
   return NextResponse.json({

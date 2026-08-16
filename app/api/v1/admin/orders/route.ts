@@ -56,10 +56,8 @@ export const GET = apiWrapper(async (req: NextRequest) => {
         pickups: {
           include: { partner: true },
         },
-        identityVerifications: true,
-        imeiVerifications: true,
-        signatures: true,
         payments: true,
+        qcReports: true,
       },
       orderBy: { createdAt: "desc" },
       skip,

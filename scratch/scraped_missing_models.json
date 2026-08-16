@@ -1,0 +1,479 @@
+[
+  {
+    "model": {
+      "id": "m-samsung-galaxy-s26-ultra-5g",
+      "brandId": "b-samsung",
+      "brandSlug": "samsung",
+      "name": "Samsung Galaxy S26 Ultra 5G",
+      "slug": "samsung-galaxy-s26-ultra-5g",
+      "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/44993712-50cd.jpg?w=60&blur=30",
+      "releaseYear": 2026,
+      "popular": true,
+      "active": true,
+      "contactForPrice": false,
+      "category": "MOBILE"
+    },
+    "variants": [
+      {
+        "id": "v-m-samsung-galaxy-s26-ultra-5g-1",
+        "modelId": "m-samsung-galaxy-s26-ultra-5g",
+        "name": "12 GB / 256 GB",
+        "ram": "12 GB",
+        "storage": "256 GB",
+        "basePrice": 85000,
+        "slug": "samsung-galaxy-s26-ultra-5g-12gb-256gb",
+        "active": true
+      },
+      {
+        "id": "v-m-samsung-galaxy-s26-ultra-5g-2",
+        "modelId": "m-samsung-galaxy-s26-ultra-5g",
+        "name": "12 GB / 512 GB",
+        "ram": "12 GB",
+        "storage": "512 GB",
+        "basePrice": 95200,
+        "slug": "samsung-galaxy-s26-ultra-5g-12gb-512gb",
+        "active": true
+      },
+      {
+        "id": "v-m-samsung-galaxy-s26-ultra-5g-3",
+        "modelId": "m-samsung-galaxy-s26-ultra-5g",
+        "name": "16 GB / 1 TB",
+        "ram": "16 GB",
+        "storage": "1 TB",
+        "basePrice": 106250,
+        "slug": "samsung-galaxy-s26-ultra-5g-16gb-1tb",
+        "active": true
+      }
+    ]
+  },
+  {
+    "model": {
+      "id": "m-samsung-galaxy-s26-plus-5g",
+      "brandId": "b-samsung",
+      "brandSlug": "samsung",
+      "name": "Samsung Galaxy S26 Plus 5G",
+      "slug": "samsung-galaxy-s26-plus-5g",
+      "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ed7b2d75-340d.jpg?dpr=2&w=320",
+      "releaseYear": 2026,
+      "popular": true,
+      "active": true,
+      "contactForPrice": false,
+      "category": "MOBILE"
+    },
+    "variants": [
+      {
+        "id": "v-m-samsung-galaxy-s26-plus-5g-1",
+        "modelId": "m-samsung-galaxy-s26-plus-5g",
+        "name": "12 GB / 256 GB",
+        "ram": "12 GB",
+        "storage": "256 GB",
+        "basePrice": 68000,
+        "slug": "samsung-galaxy-s26-plus-5g-12gb-256gb",
+        "active": true
+      },
+      {
+        "id": "v-m-samsung-galaxy-s26-plus-5g-2",
+        "modelId": "m-samsung-galaxy-s26-plus-5g",
+        "name": "12 GB / 512 GB",
+        "ram": "12 GB",
+        "storage": "512 GB",
+        "basePrice": 76160,
+        "slug": "samsung-galaxy-s26-plus-5g-12gb-512gb",
+        "active": true
+      }
+    ]
+  },
+  {
+    "model": {
+      "id": "m-samsung-galaxy-s26-5g",
+      "brandId": "b-samsung",
+      "brandSlug": "samsung",
+      "name": "Samsung Galaxy S26 5G",
+      "slug": "samsung-galaxy-s26-5g",
+      "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3967bfe5-be37.jpg?dpr=2&w=320",
+      "releaseYear": 2026,
+      "popular": true,
+      "active": true,
+      "contactForPrice": false,
+      "category": "MOBILE"
+    },
+    "variants": [
+      {
+        "id": "v-m-samsung-galaxy-s26-5g-1",
+        "modelId": "m-samsung-galaxy-s26-5g",
+        "name": "8 GB / 128 GB",
+        "ram": "8 GB",
+        "storage": "128 GB",
+        "basePrice": 50400,
+        "slug": "samsung-galaxy-s26-5g-8gb-128gb",
+        "active": true
+      },
+      {
+        "id": "v-m-samsung-galaxy-s26-5g-2",
+        "modelId": "m-samsung-galaxy-s26-5g",
+        "name": "8 GB / 256 GB",
+        "ram": "8 GB",
+        "storage": "256 GB",
+        "basePrice": 56000,
+        "slug": "samsung-galaxy-s26-5g-8gb-256gb",
+        "active": true
+      },
+      {
+        "id": "v-m-samsung-galaxy-s26-5g-3",
+        "modelId": "m-samsung-galaxy-s26-5g",
+        "name": "12 GB / 256 GB",
+        "ram": "12 GB",
+        "storage": "256 GB",
+        "basePrice": 60480,
+        "slug": "samsung-galaxy-s26-5g-12gb-256gb",
+        "active": true
+      }
+    ]
+  },
+  {
+    "model": {
+      "id": "m-samsung-galaxy-s25-ultra-5g",
+      "brandId": "b-samsung",
+      "brandSlug": "samsung",
+      "name": "Samsung Galaxy S25 Ultra 5G",
+      "slug": "samsung-galaxy-s25-ultra-5g",
+      "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0eec7384-1b5a.jpg?dpr=2&w=320",
+      "releaseYear": 2025,
+      "popular": true,
+      "active": true,
+      "contactForPrice": false,
+      "category": "MOBILE"
+    },
+    "variants": [
+      {
+        "id": "v-m-samsung-galaxy-s25-ultra-5g-1",
+        "modelId": "m-samsung-galaxy-s25-ultra-5g",
+        "name": "12 GB / 256 GB",
+        "ram": "12 GB",
+        "storage": "256 GB",
+        "basePrice": 72000,
+        "slug": "samsung-galaxy-s25-ultra-5g-12gb-256gb",
+        "active": true
+      },
+      {
+        "id": "v-m-samsung-galaxy-s25-ultra-5g-2",
+        "modelId": "m-samsung-galaxy-s25-ultra-5g",
+        "name": "12 GB / 512 GB",
+        "ram": "12 GB",
+        "storage": "512 GB",
+        "basePrice": 80640,
+        "slug": "samsung-galaxy-s25-ultra-5g-12gb-512gb",
+        "active": true
+      },
+      {
+        "id": "v-m-samsung-galaxy-s25-ultra-5g-3",
+        "modelId": "m-samsung-galaxy-s25-ultra-5g",
+        "name": "16 GB / 1 TB",
+        "ram": "16 GB",
+        "storage": "1 TB",
+        "basePrice": 90000,
+        "slug": "samsung-galaxy-s25-ultra-5g-16gb-1tb",
+        "active": true
+      }
+    ]
+  },
+  {
+    "model": {
+      "id": "m-samsung-galaxy-s25-plus-5g",
+      "brandId": "b-samsung",
+      "brandSlug": "samsung",
+      "name": "Samsung Galaxy S25 Plus 5G",
+      "slug": "samsung-galaxy-s25-plus-5g",
+      "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9e093f7b-30d7.jpg?dpr=2&w=320",
+      "releaseYear": 2025,
+      "popular": false,
+      "active": true,
+      "contactForPrice": false,
+      "category": "MOBILE"
+    },
+    "variants": [
+      {
+        "id": "v-m-samsung-galaxy-s25-plus-5g-1",
+        "modelId": "m-samsung-galaxy-s25-plus-5g",
+        "name": "12 GB / 256 GB",
+        "ram": "12 GB",
+        "storage": "256 GB",
+        "basePrice": 58000,
+        "slug": "samsung-galaxy-s25-plus-5g-12gb-256gb",
+        "active": true
+      },
+      {
+        "id": "v-m-samsung-galaxy-s25-plus-5g-2",
+        "modelId": "m-samsung-galaxy-s25-plus-5g",
+        "name": "12 GB / 512 GB",
+        "ram": "12 GB",
+        "storage": "512 GB",
+        "basePrice": 64960,
+        "slug": "samsung-galaxy-s25-plus-5g-12gb-512gb",
+        "active": true
+      }
+    ]
+  },
+  {
+    "model": {
+      "id": "m-samsung-galaxy-s25-5g",
+      "brandId": "b-samsung",
+      "brandSlug": "samsung",
+      "name": "Samsung Galaxy S25 5G",
+      "slug": "samsung-galaxy-s25-5g",
+      "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1fcc94d7-eb45.jpg?dpr=2&w=320",
+      "releaseYear": 2025,
+      "popular": false,
+      "active": true,
+      "contactForPrice": false,
+      "category": "MOBILE"
+    },
+    "variants": [
+      {
+        "id": "v-m-samsung-galaxy-s25-5g-1",
+        "modelId": "m-samsung-galaxy-s25-5g",
+        "name": "8 GB / 128 GB",
+        "ram": "8 GB",
+        "storage": "128 GB",
+        "basePrice": 41400,
+        "slug": "samsung-galaxy-s25-5g-8gb-128gb",
+        "active": true
+      },
+      {
+        "id": "v-m-samsung-galaxy-s25-5g-2",
+        "modelId": "m-samsung-galaxy-s25-5g",
+        "name": "8 GB / 256 GB",
+        "ram": "8 GB",
+        "storage": "256 GB",
+        "basePrice": 46000,
+        "slug": "samsung-galaxy-s25-5g-8gb-256gb",
+        "active": true
+      },
+      {
+        "id": "v-m-samsung-galaxy-s25-5g-3",
+        "modelId": "m-samsung-galaxy-s25-5g",
+        "name": "12 GB / 256 GB",
+        "ram": "12 GB",
+        "storage": "256 GB",
+        "basePrice": 49680,
+        "slug": "samsung-galaxy-s25-5g-12gb-256gb",
+        "active": true
+      }
+    ]
+  },
+  {
+    "model": {
+      "id": "m-poco-f7-ultra-5g",
+      "brandId": "b-poco",
+      "brandSlug": "poco",
+      "name": "POCO F7 Ultra 5G",
+      "slug": "poco-f7-ultra-5g",
+      "imageUrl": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/2e7cdc22-5a5f.jpg?w=200",
+      "releaseYear": 2025,
+      "popular": true,
+      "active": true,
+      "contactForPrice": false,
+      "category": "MOBILE"
+    },
+    "variants": [
+      {
+        "id": "v-m-poco-f7-ultra-5g-1",
+        "modelId": "m-poco-f7-ultra-5g",
+        "name": "12 GB / 256 GB",
+        "ram": "12 GB",
+        "storage": "256 GB",
+        "basePrice": 34000,
+        "slug": "poco-f7-ultra-5g-12gb-256gb",
+        "active": true
+      },
+      {
+        "id": "v-m-poco-f7-ultra-5g-2",
+        "modelId": "m-poco-f7-ultra-5g",
+        "name": "12 GB / 512 GB",
+        "ram": "12 GB",
+        "storage": "512 GB",
+        "basePrice": 38080,
+        "slug": "poco-f7-ultra-5g-12gb-512gb",
+        "active": true
+      },
+      {
+        "id": "v-m-poco-f7-ultra-5g-3",
+        "modelId": "m-poco-f7-ultra-5g",
+        "name": "16 GB / 1 TB",
+        "ram": "16 GB",
+        "storage": "1 TB",
+        "basePrice": 42500,
+        "slug": "poco-f7-ultra-5g-16gb-1tb",
+        "active": true
+      }
+    ]
+  },
+  {
+    "model": {
+      "id": "m-poco-f7-pro-5g",
+      "brandId": "b-poco",
+      "brandSlug": "poco",
+      "name": "POCO F7 Pro 5G",
+      "slug": "poco-f7-pro-5g",
+      "imageUrl": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/2e7cdc22-5a5f.jpg?w=200",
+      "releaseYear": 2025,
+      "popular": true,
+      "active": true,
+      "contactForPrice": false,
+      "category": "MOBILE"
+    },
+    "variants": [
+      {
+        "id": "v-m-poco-f7-pro-5g-1",
+        "modelId": "m-poco-f7-pro-5g",
+        "name": "12 GB / 256 GB",
+        "ram": "12 GB",
+        "storage": "256 GB",
+        "basePrice": 28000,
+        "slug": "poco-f7-pro-5g-12gb-256gb",
+        "active": true
+      },
+      {
+        "id": "v-m-poco-f7-pro-5g-2",
+        "modelId": "m-poco-f7-pro-5g",
+        "name": "12 GB / 512 GB",
+        "ram": "12 GB",
+        "storage": "512 GB",
+        "basePrice": 31360,
+        "slug": "poco-f7-pro-5g-12gb-512gb",
+        "active": true
+      }
+    ]
+  },
+  {
+    "model": {
+      "id": "m-poco-f7-5g",
+      "brandId": "b-poco",
+      "brandSlug": "poco",
+      "name": "POCO F7 5G",
+      "slug": "poco-f7-5g",
+      "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/fe341196-308e.jpg?dpr=2&w=320",
+      "releaseYear": 2025,
+      "popular": true,
+      "active": true,
+      "contactForPrice": false,
+      "category": "MOBILE"
+    },
+    "variants": [
+      {
+        "id": "v-m-poco-f7-5g-1",
+        "modelId": "m-poco-f7-5g",
+        "name": "8 GB / 128 GB",
+        "ram": "8 GB",
+        "storage": "128 GB",
+        "basePrice": 19800,
+        "slug": "poco-f7-5g-8gb-128gb",
+        "active": true
+      },
+      {
+        "id": "v-m-poco-f7-5g-2",
+        "modelId": "m-poco-f7-5g",
+        "name": "8 GB / 256 GB",
+        "ram": "8 GB",
+        "storage": "256 GB",
+        "basePrice": 22000,
+        "slug": "poco-f7-5g-8gb-256gb",
+        "active": true
+      },
+      {
+        "id": "v-m-poco-f7-5g-3",
+        "modelId": "m-poco-f7-5g",
+        "name": "12 GB / 256 GB",
+        "ram": "12 GB",
+        "storage": "256 GB",
+        "basePrice": 23760,
+        "slug": "poco-f7-5g-12gb-256gb",
+        "active": true
+      }
+    ]
+  },
+  {
+    "model": {
+      "id": "m-poco-f6-pro-5g",
+      "brandId": "b-poco",
+      "brandSlug": "poco",
+      "name": "POCO F6 Pro 5G",
+      "slug": "poco-f6-pro-5g",
+      "imageUrl": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/2e7cdc22-5a5f.jpg?w=200",
+      "releaseYear": 2024,
+      "popular": false,
+      "active": true,
+      "contactForPrice": false,
+      "category": "MOBILE"
+    },
+    "variants": [
+      {
+        "id": "v-m-poco-f6-pro-5g-1",
+        "modelId": "m-poco-f6-pro-5g",
+        "name": "12 GB / 256 GB",
+        "ram": "12 GB",
+        "storage": "256 GB",
+        "basePrice": 21000,
+        "slug": "poco-f6-pro-5g-12gb-256gb",
+        "active": true
+      },
+      {
+        "id": "v-m-poco-f6-pro-5g-2",
+        "modelId": "m-poco-f6-pro-5g",
+        "name": "12 GB / 512 GB",
+        "ram": "12 GB",
+        "storage": "512 GB",
+        "basePrice": 23520,
+        "slug": "poco-f6-pro-5g-12gb-512gb",
+        "active": true
+      }
+    ]
+  },
+  {
+    "model": {
+      "id": "m-poco-f6-5g",
+      "brandId": "b-poco",
+      "brandSlug": "poco",
+      "name": "POCO F6 5G",
+      "slug": "poco-f6-5g",
+      "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9ff9d591-0301.jpg?dpr=2&w=320",
+      "releaseYear": 2024,
+      "popular": false,
+      "active": true,
+      "contactForPrice": false,
+      "category": "MOBILE"
+    },
+    "variants": [
+      {
+        "id": "v-m-poco-f6-5g-1",
+        "modelId": "m-poco-f6-5g",
+        "name": "8 GB / 128 GB",
+        "ram": "8 GB",
+        "storage": "128 GB",
+        "basePrice": 15750,
+        "slug": "poco-f6-5g-8gb-128gb",
+        "active": true
+      },
+      {
+        "id": "v-m-poco-f6-5g-2",
+        "modelId": "m-poco-f6-5g",
+        "name": "8 GB / 256 GB",
+        "ram": "8 GB",
+        "storage": "256 GB",
+        "basePrice": 17500,
+        "slug": "poco-f6-5g-8gb-256gb",
+        "active": true
+      },
+      {
+        "id": "v-m-poco-f6-5g-3",
+        "modelId": "m-poco-f6-5g",
+        "name": "12 GB / 256 GB",
+        "ram": "12 GB",
+        "storage": "256 GB",
+        "basePrice": 18900,
+        "slug": "poco-f6-5g-12gb-256gb",
+        "active": true
+      }
+    ]
+  }
+]
