@@ -147,8 +147,7 @@ buyer_info = Paragraph(
     "<b>Buyer Name:</b> AARNA ENTERPRISE<br/>"
     "<i>(Parent Company of CashALL)</i><br/>"
     "<b>GSTIN:</b> 19AVPPG9800J1Z3<br/>"
-    "<b>Address:</b> Howrah, West Bengal<br/>"
-    "<b>Channel:</b> Direct CashALL Platform",
+    "<b>Address:</b> Howrah, West Bengal",
     normal_text
 )
 
