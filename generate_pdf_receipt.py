@@ -4,7 +4,7 @@ from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 
-pdf_path = r"C:\Users\DELL\.gemini\antigravity-ide\brain\54c12800-0e00-4cca-9925-dce28f008bb3\CashALL_Bill_CA72512_Kundan_Kumar_Singh.pdf"
+pdf_path = r"C:\Users\DELL\.gemini\antigravity-ide\brain\54c12800-0e00-4cca-9925-dce28f008bb3\CashALL_Bill_CA36738_Kundan_Kumar_Singh.pdf"
 
 doc = SimpleDocTemplate(
     pdf_path,
@@ -101,7 +101,7 @@ header_data = [
     ],
     [
         Paragraph("India's Transparent Device Recommerce<br/>www.cashall.in | Helpline: 7003216788", subtitle_style),
-        Paragraph("<b>Bill No:</b> BILL-CA72512-2026<br/><b>Date:</b> 16 August 2026", right_meta_style)
+        Paragraph("<b>Bill No:</b> BILL-CA36738-2026<br/><b>Date:</b> 16 August 2026", right_meta_style)
     ]
 ]
 
@@ -139,7 +139,7 @@ seller_info = Paragraph(
 )
 
 order_info = Paragraph(
-    "<b>Order ID:</b> CA72512<br/>"
+    "<b>Order ID:</b> CA36738<br/>"
     "<b>Quote Valuation ID:</b> CAQ-367384<br/>"
     "<b>Transaction Type:</b> Doorstep Device Buyback<br/>"
     "<b>Inspection Status:</b> Verified & Completed",
