@@ -8,7 +8,25 @@ import { INITIAL_SERVICE_AREAS, ServiceAreaData } from "@/lib/store";
 import { MapPin, Plus, CheckCircle2 } from "lucide-react";
 
 export default function AdminServiceAreasPage() {
-  const [areas, setAreas] = useState<ServiceAreaData[]>(INITIAL_SERVICE_AREAS);
+  const [areas, setAreas] = React.useState<ServiceAreaData[]>([]);
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      let combined = [...INITIAL_SERVICE_AREAS];
+      try {
+        const stored = JSON.parse(localStorage.getItem("cashall_service_areas") || "[]");
+        stored.forEach((item: any) => {
+          if (item && item.pincode && !combined.some((a) => a.pincode === item.pincode)) {
+            combined.unshift(item);
+          }
+        });
+      } catch (e) {
+        console.error(e);
+      }
+      setAreas(combined);
+    }
+  }, []);
+
   const [newPincode, setNewPincode] = useState("");
   const [newCity, setNewCity] = useState("");
   const [newState, setNewState] = useState("");
@@ -21,11 +39,18 @@ export default function AdminServiceAreasPage() {
       id: `sa-${Date.now()}`,
       pincode: newPincode,
       city: newCity,
-      state: newState || "West Bengal",
+      state: newState.trim() || "West Bengal",
       active: true,
       pickupAvailable: true,
     };
-    setAreas([newItem, ...areas]);
+
+    const updated = [newItem, ...areas];
+    setAreas(updated);
+
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cashall_service_areas", JSON.stringify(updated));
+    }
+
     setNewPincode("");
     setNewCity("");
     setNewState("");

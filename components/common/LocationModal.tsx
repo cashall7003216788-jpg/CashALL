@@ -28,45 +28,43 @@ export function LocationModal({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchLocations() {
-      try {
-        const res = await fetch("/api/v1/serviceability");
-        const json = await res.json();
-        if (json.success && json.data?.states?.length > 0) {
-          setStates(json.data.states);
-        } else {
-          fallbackStates();
-        }
-      } catch (err) {
-        fallbackStates();
-      } finally {
-        setLoading(false);
-      }
-    }
+    function loadLocations() {
+      let combinedAreas = [...INITIAL_SERVICE_AREAS];
 
-    function fallbackStates() {
+      if (typeof window !== "undefined") {
+        try {
+          const localAreas = JSON.parse(localStorage.getItem("cashall_service_areas") || "[]");
+          localAreas.forEach((item: any) => {
+            if (item && item.pincode && item.state && !combinedAreas.some((a) => a.pincode === item.pincode)) {
+              combinedAreas.push(item);
+            }
+          });
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
       const statesMap: Record<string, { city: string; pincode: string }[]> = {};
-      INITIAL_SERVICE_AREAS.forEach((area) => {
+      combinedAreas.forEach((area) => {
+        if (area.active === false) return;
         if (!statesMap[area.state]) statesMap[area.state] = [];
         if (!statesMap[area.state].some((c) => c.city.toLowerCase() === area.city.toLowerCase())) {
           statesMap[area.state].push({ city: area.city, pincode: area.pincode });
         }
       });
+
       const stList = Object.keys(statesMap).map((name) => ({
         name,
         cities: statesMap[name],
       }));
+
       setStates(stList);
+      setLoading(false);
     }
 
     if (isOpen) {
-      fetchLocations();
+      loadLocations();
       setSearch("");
-      // Pre-select active state if user already has selected location
-      if (selectedLocation) {
-        const matchState = states.find((s) => s.name.toLowerCase() === selectedLocation.state.toLowerCase());
-        if (matchState) setActiveState(matchState);
-      }
     }
   }, [isOpen]);
 

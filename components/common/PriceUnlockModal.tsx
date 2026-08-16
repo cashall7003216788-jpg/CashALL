@@ -20,6 +20,7 @@ export function PriceUnlockModal({
   deviceImageUrl,
   storage,
 }: PriceUnlockModalProps) {
+  const [customerName, setCustomerName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [agreed, setAgreed] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -30,8 +31,12 @@ export function PriceUnlockModal({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const clean = phoneNumber.replace(/\D/g, "");
-    if (clean.length < 10) {
-      setError("Please enter a valid 10-digit mobile number");
+    if (!customerName.trim()) {
+      setError("Please enter your Full Name.");
+      return;
+    }
+    if (clean.length !== 10) {
+      setError("Please enter a valid 10-digit mobile number.");
       return;
     }
     if (!agreed) {
@@ -41,13 +46,14 @@ export function PriceUnlockModal({
 
     setLoading(true);
     const userObj = {
-      id: `usr_${Date.now()}`,
-      name: "Customer",
+      id: `usr_${clean}`,
+      name: customerName.trim(),
       phone: clean,
     };
 
     if (typeof window !== "undefined") {
       localStorage.setItem("cashall_user", JSON.stringify(userObj));
+      document.cookie = `cashall_user_phone=${clean}; path=/; max-age=31536000`;
     }
 
     setTimeout(() => {
@@ -65,7 +71,7 @@ export function PriceUnlockModal({
         <div className="bg-brand-black text-white px-6 py-4 flex items-center justify-between border-b border-brand-yellow/30">
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-brand-yellow animate-pulse" />
-            <h2 className="text-xl font-black text-brand-yellow tracking-tight">CashALL Login / Signup</h2>
+            <h2 className="text-xl font-black text-brand-yellow tracking-tight">CashALL Customer Login</h2>
           </div>
           <button
             onClick={onClose}
@@ -102,7 +108,7 @@ export function PriceUnlockModal({
           {/* LOCK BANNER IN CASHALL STYLING */}
           <div className="bg-brand-black text-brand-yellow border border-brand-yellow/40 rounded-xl py-3 px-4 flex items-center justify-center gap-2 text-xs sm:text-sm font-extrabold text-center shadow-sm">
             <Lock className="w-4 h-4 shrink-0 text-brand-yellow" />
-            <span>Login to unlock the best price</span>
+            <span>Login to unlock the best valuation price</span>
           </div>
 
           {/* FORM */}
@@ -115,7 +121,24 @@ export function PriceUnlockModal({
 
             <div>
               <label className="block text-xs font-bold text-gray-700 mb-1">
-                Enter your phone number
+                Your Full Name *
+              </label>
+              <input
+                type="text"
+                value={customerName}
+                onChange={(e) => {
+                  setCustomerName(e.target.value);
+                  setError("");
+                }}
+                placeholder="Enter your full name"
+                required
+                className="w-full px-4 py-3 text-sm font-semibold bg-gray-50 rounded-xl border border-gray-300 focus:outline-none focus:border-brand-yellow focus:bg-white transition-all"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-gray-700 mb-1">
+                Mobile Phone Number *
               </label>
               <div className="relative flex items-center">
                 <span className="absolute left-3.5 text-xs font-black text-gray-700">+91</span>
@@ -127,9 +150,8 @@ export function PriceUnlockModal({
                     setError("");
                   }}
                   maxLength={10}
-                  placeholder="Enter your Mobile"
+                  placeholder="Enter 10-digit mobile number"
                   required
-                  autoFocus
                   className="w-full pl-12 pr-4 py-3 text-sm font-semibold bg-gray-50 rounded-xl border border-gray-300 focus:outline-none focus:border-brand-yellow focus:bg-white transition-all"
                 />
               </div>
