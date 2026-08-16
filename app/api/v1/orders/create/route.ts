@@ -6,6 +6,7 @@ import { AppError } from "@/lib/utils/AppError";
 import { MapsService } from "@/lib/services/maps.service";
 import { NotificationHelper } from "@/lib/services/notification.helper";
 import { EmailService } from "@/lib/services/email.service";
+import { WhatsAppService } from "@/lib/services/whatsapp.service";
 import { logger } from "@/lib/utils/logger";
 import { z } from "zod";
 
@@ -122,9 +123,22 @@ export const POST = apiWrapper(async (req: NextRequest) => {
     "PICKUP_SCHEDULED"
   );
 
+  // Send WhatsApp alert to admin
+  const deviceName = `${order.quote.variant.model.brand.name} ${order.quote.variant.model.name}`;
+  const addressText = `${data.house}, ${data.street}, ${data.area}, ${data.city}, ${data.state} - ${data.pincode}`;
+  WhatsAppService.notifyNewOrder({
+    orderNumber: order.orderNumber,
+    customerName: data.fullName,
+    customerPhone: data.phone,
+    deviceName,
+    estimatedPrice: order.finalPrice ?? 0,
+    pickupDate: order.pickupDate,
+    pickupTimeSlot: order.pickupTimeSlot,
+    address: addressText,
+  }).catch((err) => logger.error("Failed to send WhatsApp notification:", err));
+
   // Send confirmation email
   if (decodedUser.email) {
-    const deviceName = `${order.quote.variant.model.brand.name} ${order.quote.variant.model.name}`;
     EmailService.sendEmail(
       decodedUser.email,
       `Order Confirmed: #${order.orderNumber} 🎉`,

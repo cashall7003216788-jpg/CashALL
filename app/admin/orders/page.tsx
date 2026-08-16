@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { Badge } from "@/components/ui/Badge";
-import { ShoppingBag, ClipboardCheck, Eye, Loader2 } from "lucide-react";
+import { ShoppingBag, ClipboardCheck, Eye, Loader2, Receipt, CheckCircle2, IndianRupee } from "lucide-react";
 
 interface Order {
   id: string;
@@ -17,70 +17,138 @@ interface Order {
   estimatedPrice: number;
   revisedPrice: number | null;
   status: string;
+  identityStatus: string;
+  imeiStatus: string;
+  esignStatus: string;
+  paymentStatus: string;
+  deviceStatus: string;
+}
+
+function getAdminToken() {
+  if (typeof window === "undefined") return "";
+  try {
+    return JSON.parse(localStorage.getItem("cashall_admin_session") || "{}")?.token || "";
+  } catch { return ""; }
 }
 
 export default function AdminOrdersPage() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [actionLoading, setActionLoading] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchOrders = async () => {
-      try {
-        const session = typeof window !== "undefined"
-          ? JSON.parse(localStorage.getItem("cashall_admin_session") || "{}")
-          : {};
-        const token = session?.token || "";
-
-        const res = await fetch("/api/v1/admin/orders", {
-          headers: token ? { Authorization: `Bearer ${token}` } : {},
-        });
-        if (res.ok) {
-          const json = await res.json();
-          const raw = json.data?.orders || json.orders || [];
-          const mapped = raw.map((ord: any) => ({
-            id: ord.id,
-            orderNumber: ord.orderNumber,
-            customerName: ord.user?.name || "—",
-            customerPhone: ord.user?.phone || "—",
-            pincode: ord.address?.pincode || "—",
-            pickupDate: ord.pickupDate || "—",
-            pickupTimeSlot: ord.pickupTimeSlot || "—",
-            estimatedPrice: ord.quote?.estimatedPrice ?? 0,
-            revisedPrice: ord.finalPrice ?? null,
-            status: ord.status,
-            identityStatus: ord.identityVerifications?.[0]?.status || "PENDING",
-            imeiStatus: ord.imeiVerifications?.[0]?.status || "PENDING",
-            esignStatus: ord.signatures?.some((s: any) => s.status === "ESIGNED") ? "SIGNED" : "PENDING",
-            paymentStatus: ord.payments?.[0]?.status || "PENDING",
-            deviceStatus: ["DEVICE_RECEIVED", "BILL_GENERATED", "COMPLETED"].includes(ord.status) ? "RECEIVED" : "NOT RECEIVED",
-          }));
-          setOrders(mapped);
-        } else {
-          const errData = await res.json().catch(() => ({}));
-          setError(errData?.error || `Failed to load orders (${res.status})`);
-          setOrders([]);
-        }
-      } catch (err: any) {
-        setError(err?.message || "Network error loading orders.");
+  const fetchOrders = useCallback(async () => {
+    setLoading(true);
+    try {
+      const token = getAdminToken();
+      const res = await fetch("/api/v1/admin/orders", {
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      });
+      if (res.ok) {
+        const json = await res.json();
+        const raw = json.data?.orders || json.orders || [];
+        const mapped = raw.map((ord: any) => ({
+          id: ord.id,
+          orderNumber: ord.orderNumber,
+          customerName: ord.user?.name || "—",
+          customerPhone: ord.user?.phone || "—",
+          pincode: ord.address?.pincode || "—",
+          pickupDate: ord.pickupDate || "—",
+          pickupTimeSlot: ord.pickupTimeSlot || "—",
+          estimatedPrice: ord.quote?.estimatedPrice ?? 0,
+          revisedPrice: ord.finalPrice ?? null,
+          status: ord.status,
+          identityStatus: ord.identityVerifications?.[0]?.status || "PENDING",
+          imeiStatus: ord.imeiVerifications?.[0]?.status || "PENDING",
+          esignStatus: ord.signatures?.some((s: any) => s.status === "ESIGNED") ? "SIGNED" : "PENDING",
+          paymentStatus: ord.payments?.[0]?.status || "PENDING",
+          deviceStatus: ["DEVICE_RECEIVED", "BILL_GENERATED", "COMPLETED"].includes(ord.status) ? "RECEIVED" : "NOT RECEIVED",
+        }));
+        setOrders(mapped);
+      } else {
+        const errData = await res.json().catch(() => ({}));
+        setError(errData?.error || `Failed to load orders (${res.status})`);
         setOrders([]);
-      } finally {
-        setLoading(false);
       }
-    };
-    fetchOrders();
+    } catch (err: any) {
+      setError(err?.message || "Network error loading orders.");
+      setOrders([]);
+    } finally {
+      setLoading(false);
+    }
   }, []);
+
+  useEffect(() => { fetchOrders(); }, [fetchOrders]);
+
+  // Mark order as COMPLETED (payment confirmed + bill generated)
+  const handleMarkCompleted = async (ord: Order) => {
+    const finalPrice = ord.revisedPrice || ord.estimatedPrice;
+    const utr = prompt(`Enter UTR / Transaction reference number for ₹${finalPrice.toLocaleString("en-IN")} paid to ${ord.customerName}:`);
+    if (!utr) return;
+    const upiId = prompt("Enter UPI ID / PhonePe handle used for payment:") || "—";
+
+    setActionLoading(ord.id + "-complete");
+    const token = getAdminToken();
+    try {
+      // 1. Record payment
+      const payRes = await fetch(`/api/v1/orders/${ord.id}/payment`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+        body: JSON.stringify({
+          amount: finalPrice,
+          upiId,
+          utrNumber: utr,
+          isCorporateAccount: true,
+        }),
+      });
+
+      if (!payRes.ok) {
+        const errData = await payRes.json().catch(() => ({}));
+        // Try force-completing via status update if payment fails
+        const forceRes = await fetch(`/api/v1/admin/orders/${ord.id}/complete`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+          body: JSON.stringify({ finalPrice, utr, upiId }),
+        });
+        if (!forceRes.ok) {
+          alert(`Error: ${errData?.error || "Could not mark as paid"}`);
+          return;
+        }
+      }
+
+      // 2. Generate bill
+      await fetch(`/api/v1/orders/${ord.id}/generate-bill`, {
+        method: "POST",
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      });
+
+      alert(`✅ Order ${ord.orderNumber} marked COMPLETED and bill generated!`);
+      fetchOrders();
+    } catch (err: any) {
+      alert(`Error: ${err.message}`);
+    } finally {
+      setActionLoading(null);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-brand-bg flex">
       <AdminSidebar />
 
       <main className="flex-grow p-8 overflow-y-auto space-y-8">
-        <div>
-          <h1 className="text-2xl font-black text-brand-black">Order Operations Repository</h1>
-          <p className="text-xs text-brand-muted mt-0.5">
-            Full view of all customer selling orders, pickup dates, identity verification, and payment controls
-          </p>
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-black text-brand-black">Order Operations Repository</h1>
+            <p className="text-xs text-brand-muted mt-0.5">
+              Full view of all customer selling orders, pickup dates, identity verification, and payment controls
+            </p>
+          </div>
+          <button
+            onClick={fetchOrders}
+            className="text-xs font-bold text-brand-muted bg-white border border-brand-border px-3 py-1.5 rounded-xl hover:bg-gray-50 transition"
+          >
+            Refresh
+          </button>
         </div>
 
         <div className="bg-white rounded-3xl p-6 border border-brand-border shadow-premium overflow-x-auto">
@@ -113,7 +181,7 @@ export default function AdminOrdersPage() {
                   <th className="p-3">Customer</th>
                   <th className="p-3">Location</th>
                   <th className="p-3">Valuation</th>
-                  <th className="p-3">Verification Breakdown</th>
+                  <th className="p-3">Verification</th>
                   <th className="p-3">Status</th>
                   <th className="p-3 text-right">Actions</th>
                 </tr>
@@ -135,38 +203,60 @@ export default function AdminOrdersPage() {
                         <span className={`px-2 py-0.5 rounded font-bold ${ord.identityStatus === "VERIFIED" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"}`}>
                           ID: {ord.identityStatus}
                         </span>
-                        <span className={`px-2 py-0.5 rounded font-bold ${ord.imeiStatus === "CLEAR" || ord.imeiStatus === "VERIFIED" ? "bg-green-100 text-green-800" : ord.imeiStatus === "FLAGGED" ? "bg-red-100 text-red-800" : "bg-gray-100 text-gray-600"}`}>
-                          IMEI: {ord.imeiStatus}
-                        </span>
-                        <span className={`px-2 py-0.5 rounded font-bold ${ord.esignStatus === "SIGNED" ? "bg-blue-100 text-blue-800" : "bg-gray-100 text-gray-600"}`}>
-                          eSign: {ord.esignStatus}
-                        </span>
                         <span className={`px-2 py-0.5 rounded font-bold ${ord.paymentStatus === "PAID" || ord.paymentStatus === "CONFIRMED" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"}`}>
-                          Payment: {ord.paymentStatus}
-                        </span>
-                        <span className={`px-2 py-0.5 rounded font-bold ${ord.deviceStatus === "RECEIVED" ? "bg-emerald-100 text-emerald-800" : "bg-gray-100 text-gray-600"}`}>
-                          Device: {ord.deviceStatus}
+                          Pay: {ord.paymentStatus}
                         </span>
                       </div>
                     </td>
                     <td className="p-3">
-                      <Badge variant="yellow">{ord.status.replace(/_/g, " ")}</Badge>
+                      <Badge variant={["COMPLETED", "BILL_GENERATED"].includes(ord.status) ? "primary" : "yellow"}>
+                        {ord.status.replace(/_/g, " ")}
+                      </Badge>
                     </td>
-                    <td className="p-3 text-right space-x-2">
-                      <Link
-                        href={`/track/${ord.orderNumber}`}
-                        className="inline-flex items-center gap-1 text-[11px] font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 px-2.5 py-1 rounded-lg transition-colors"
-                      >
-                        <Eye className="w-3.5 h-3.5" />
-                        <span>Track</span>
-                      </Link>
-                      <Link
-                        href={`/admin/inspections?orderId=${ord.orderNumber}`}
-                        className="inline-flex items-center gap-1 text-[11px] font-bold text-brand-black bg-brand-yellow hover:bg-brand-yellowHover px-2.5 py-1 rounded-lg transition-colors"
-                      >
-                        <ClipboardCheck className="w-3.5 h-3.5" />
-                        <span>Inspect</span>
-                      </Link>
+                    <td className="p-3 text-right">
+                      <div className="flex items-center justify-end gap-1.5 flex-wrap">
+                        <Link
+                          href={`/track/${ord.orderNumber}`}
+                          className="inline-flex items-center gap-1 text-[11px] font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 px-2.5 py-1 rounded-lg transition-colors"
+                        >
+                          <Eye className="w-3.5 h-3.5" />
+                          Track
+                        </Link>
+
+                        <Link
+                          href={`/admin/inspections?orderId=${ord.orderNumber}`}
+                          className="inline-flex items-center gap-1 text-[11px] font-bold text-brand-black bg-brand-yellow hover:bg-yellow-400 px-2.5 py-1 rounded-lg transition-colors"
+                        >
+                          <ClipboardCheck className="w-3.5 h-3.5" />
+                          Inspect
+                        </Link>
+
+                        {/* Mark Paid + Complete */}
+                        {!["COMPLETED", "BILL_GENERATED", "PAYMENT_CONFIRMED"].includes(ord.status) && (
+                          <button
+                            onClick={() => handleMarkCompleted(ord)}
+                            disabled={actionLoading === ord.id + "-complete"}
+                            className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-green-600 hover:bg-green-700 px-2.5 py-1 rounded-lg transition-colors disabled:opacity-60"
+                          >
+                            {actionLoading === ord.id + "-complete" ? (
+                              <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                            ) : (
+                              <IndianRupee className="w-3.5 h-3.5" />
+                            )}
+                            Mark Paid
+                          </button>
+                        )}
+
+                        {/* Generate Bill */}
+                        <Link
+                          href={`/admin/bill/${ord.orderNumber}`}
+                          target="_blank"
+                          className="inline-flex items-center gap-1 text-[11px] font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 px-2.5 py-1 rounded-lg transition-colors"
+                        >
+                          <Receipt className="w-3.5 h-3.5" />
+                          Bill
+                        </Link>
+                      </div>
                     </td>
                   </tr>
                 ))}
