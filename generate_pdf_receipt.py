@@ -100,7 +100,7 @@ header_data = [
         Paragraph("PURCHASE RECEIPT", right_header_style)
     ],
     [
-        Paragraph("India's Transparent Device Recommerce<br/>www.cashall.in | Helpline: 7003216788", subtitle_style),
+        Paragraph("Best Value For Your Old Devices<br/>www.cashall.in | Helpline: 7003216788", subtitle_style),
         Paragraph("<b>Bill No:</b> BILL-CA36738-2026<br/><b>Date:</b> 16 August 2026", right_meta_style)
     ]
 ]
@@ -132,6 +132,7 @@ elements.append(Spacer(1, 12))
 # --- SELLER & ORDER INFO GRID ---
 seller_info = Paragraph(
     "<b>Name:</b> Kundan Kumar Singh<br/>"
+    "<b>Address:</b> Line 1, Main Road, Ranchi, Jharkhand - 834001<br/>"
     "<b>Paid To Account:</b> Kundan Kumar Singh<br/>"
     "<b>Payment Date:</b> 16 August 2026, 9:16 PM<br/>"
     "<b>Status:</b> Payment Verified & Success",
@@ -218,7 +219,7 @@ elements.append(Spacer(1, 20))
 
 # --- FOOTER ---
 footer_text = Paragraph(
-    "<center><b>Thank you for choosing CashALL — India's Most Transparent Device Recommerce Platform</b><br/>"
+    "<center><b>Thank you for choosing CashALL — Best Value For Your Old Devices</b><br/>"
     "CashALL | cashall.in | Helpline: 7003216788</center>",
     ParagraphStyle('FooterText', fontName='Helvetica', fontSize=8, textColor=colors.HexColor('#777777'), leading=11)
 )

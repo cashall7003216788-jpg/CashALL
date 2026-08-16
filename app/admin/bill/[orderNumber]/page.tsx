@@ -191,7 +191,7 @@ export default function AdminBillPage() {
               <div className="flex items-center gap-2 mb-1">
                 <img src="/logo.png" alt="CashALL" className="h-8 w-auto object-contain brightness-0 invert" onError={(e) => { (e.target as any).style.display = 'none'; }} />
               </div>
-              <p className="text-xs text-gray-400 mt-1">India&apos;s Transparent Device Recommerce</p>
+              <p className="text-xs text-gray-400 mt-1">Best Value For Your Old Devices</p>
               <p className="text-[11px] text-gray-500 mt-0.5">www.cashall.in</p>
             </div>
             <div className="text-right">
