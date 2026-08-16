@@ -51,7 +51,7 @@ const DEFAULT_ORDERS: Order[] = [
     id: "ord-ca36738",
     orderNumber: "CA36738",
     customerName: "Kundan Kumar Singh",
-    customerPhone: "+91 9876543210",
+    customerPhone: "+91 7003216788",
     pincode: "834001",
     location: "Ranchi, Jharkhand",
     deviceName: "OPPO A33 (64 GB)",
@@ -318,15 +318,22 @@ export default function AdminOrdersPage() {
                     </td>
                     <td className="p-3 text-right">
                       <div className="flex items-center justify-end gap-1.5 flex-wrap">
-                        {/* Assign In-House Agent */}
-                        <button
-                          onClick={() => handleAssignAgent(ord)}
-                          className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-900 bg-amber-100 hover:bg-amber-200 px-2.5 py-1 rounded-lg transition-colors"
-                          title="Click to write/edit In-House Agent Name"
-                        >
-                          <UserCheck className="w-3.5 h-3.5 text-amber-700" />
-                          <span>{ord.agentName ? `Agent: ${ord.agentName}` : "+ Assign Agent"}</span>
-                        </button>
+                        {/* Assign In-House Agent (Only on Active/Pending Orders) */}
+                        {!["COMPLETED", "BILL_GENERATED", "CANCELLED"].includes(ord.status) ? (
+                          <button
+                            onClick={() => handleAssignAgent(ord)}
+                            className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-900 bg-amber-100 hover:bg-amber-200 px-2.5 py-1 rounded-lg transition-colors"
+                            title="Click to write/edit In-House Agent Name"
+                          >
+                            <UserCheck className="w-3.5 h-3.5 text-amber-700" />
+                            <span>{ord.agentName ? `Agent: ${ord.agentName}` : "+ Assign Agent"}</span>
+                          </button>
+                        ) : ord.agentName ? (
+                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-gray-700 bg-gray-100 px-2 py-0.5 rounded-md">
+                            <UserCheck className="w-3 h-3 text-gray-500" />
+                            <span>Agent: {ord.agentName}</span>
+                          </span>
+                        ) : null}
 
                         <Link
                           href={`/track/${ord.orderNumber}`}
