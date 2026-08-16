@@ -29,7 +29,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   if (!partner) throw new AppError("Partner not found.", 404);
 
   // Validate state transition
-  OrderStateMachine.assertTransition(order.status, "ASSIGNED");
+  OrderStateMachine.assertTransition(order.status, "PARTNER_ASSIGNED");
 
   // Update Pickup record
   await prisma.pickup.updateMany({
@@ -43,7 +43,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
 
   const updatedOrder = await prisma.order.update({
     where: { id: order.id },
-    data: { status: "ASSIGNED" },
+    data: { status: "PARTNER_ASSIGNED" },
   });
 
   await AuditService.log({
@@ -53,7 +53,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     tableName: "Order",
     recordId: order.id,
     oldValues: { status: order.status },
-    newValues: { status: "ASSIGNED", partnerId: partner.id, partnerName: partner.name },
+    newValues: { status: "PARTNER_ASSIGNED", partnerId: partner.id, partnerName: partner.name },
   });
 
   return NextResponse.json({
