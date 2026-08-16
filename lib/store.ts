@@ -5350,9 +5350,8 @@ export const INITIAL_PRICING_RULES: PricingRuleData[] = [
 
 export const AVAILABLE_STATES = [
   "West Bengal",
-  "Bihar",
-  "Jharkhand",
   "Uttar Pradesh",
+  "Jharkhand",
 ];
 
 export const INITIAL_SERVICE_AREAS: ServiceAreaData[] = [
@@ -5360,14 +5359,12 @@ export const INITIAL_SERVICE_AREAS: ServiceAreaData[] = [
   { id: "sa-1", pincode: "700001", city: "Kolkata", state: "West Bengal", active: true, pickupAvailable: true },
   { id: "sa-2", pincode: "700120", city: "Barrackpore", state: "West Bengal", active: true, pickupAvailable: true },
 
-  // Bihar (1 City: Ballia)
-  { id: "sa-4", pincode: "277001", city: "Ballia", state: "Bihar", active: true, pickupAvailable: true },
+  // Uttar Pradesh (2 Cities: Gorakhpur, Ballia)
+  { id: "sa-3", pincode: "273001", city: "Gorakhpur", state: "Uttar Pradesh", active: true, pickupAvailable: true },
+  { id: "sa-4", pincode: "277001", city: "Ballia", state: "Uttar Pradesh", active: true, pickupAvailable: true },
 
   // Jharkhand (1 City: Ranchi)
   { id: "sa-5", pincode: "834001", city: "Ranchi", state: "Jharkhand", active: true, pickupAvailable: true },
-
-  // Uttar Pradesh (1 City: Gorakhpur)
-  { id: "sa-3", pincode: "273001", city: "Gorakhpur", state: "Uttar Pradesh", active: true, pickupAvailable: true },
 ];
 
 export const INITIAL_FAQS: FAQData[] = [

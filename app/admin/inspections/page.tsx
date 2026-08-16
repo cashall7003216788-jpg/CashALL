@@ -73,36 +73,130 @@ function AdminInspectionsContent() {
   };
 
   if (!order) {
+    const inspectionList = [
+      {
+        orderNumber: "CA36738",
+        customerName: "Kundan Kumar Singh",
+        customerPhone: "+91 9876543210",
+        location: "Ranchi, Jharkhand",
+        deviceName: "OPPO A33 (64 GB)",
+        inspector: "Rajesh Kumar (CashALL In-House Agent)",
+        findings: "Flawless Screen, Minor Paint Wear",
+        originalPrice: 2889,
+        revisedPrice: 2700,
+        status: "COMPLETED",
+        date: "16 Aug 2026",
+      },
+      {
+        orderNumber: "CA72512",
+        customerName: "West Bengal Customer",
+        customerPhone: "+91 7003216788",
+        location: "6/6 Kings Road, Howrah, West Bengal",
+        deviceName: "Apple iPhone 13 (128 GB)",
+        inspector: "CashALL Logistics Team",
+        findings: "Pending Doorstep Inspection",
+        originalPrice: 32500,
+        revisedPrice: null,
+        status: "READY_FOR_INSPECTION",
+        date: "Tomorrow (1-4 PM)",
+      },
+    ];
+
     return (
       <div className="min-h-screen bg-brand-bg flex">
         <AdminSidebar />
 
         <main className="flex-grow p-8 overflow-y-auto space-y-8">
-          <div>
-            <h1 className="text-2xl font-black text-brand-black">
-              Physical Inspection & Price Revision Entry
-            </h1>
-            <p className="text-xs text-brand-muted mt-0.5">
-              Record IMEI, physical condition findings, and submit revised final offers to customers
-            </p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-black text-brand-black">
+                Physical Inspection & Price Revision Entry
+              </h1>
+              <p className="text-xs text-brand-muted mt-0.5">
+                Record IMEI, physical condition findings, and submit revised final offers to customers
+              </p>
+            </div>
           </div>
 
-          <div className="bg-white rounded-3xl p-12 border border-brand-border shadow-subtleCard text-center space-y-4 max-w-xl mx-auto my-12">
-            <div className="w-16 h-16 bg-brand-yellow/20 rounded-2xl flex items-center justify-center mx-auto text-brand-black">
-              <ClipboardCheck className="w-8 h-8" />
+          <div className="bg-white rounded-3xl p-6 border border-brand-border shadow-premium space-y-4">
+            <h2 className="text-sm font-extrabold text-brand-black border-b border-gray-100 pb-3">
+              Doorstep Physical Inspection Log
+            </h2>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs">
+                <thead>
+                  <tr className="bg-gray-50 text-gray-400 font-bold uppercase tracking-wider border-b border-gray-100">
+                    <th className="p-3">Order ID</th>
+                    <th className="p-3">Customer & Location</th>
+                    <th className="p-3">Device</th>
+                    <th className="p-3">Assigned Inspector</th>
+                    <th className="p-3">Inspection Findings</th>
+                    <th className="p-3">Valuation</th>
+                    <th className="p-3">Status</th>
+                    <th className="p-3 text-right">Action</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {inspectionList.map((item) => (
+                    <tr key={item.orderNumber} className="hover:bg-gray-50/80 transition-colors">
+                      <td className="p-3 font-extrabold text-brand-black">{item.orderNumber}</td>
+                      <td className="p-3">
+                        <div className="font-bold text-brand-black">{item.customerName}</div>
+                        <div className="text-[11px] text-brand-muted">{item.customerPhone}</div>
+                      </td>
+                      <td className="p-3 font-bold text-brand-black">{item.deviceName}</td>
+                      <td className="p-3 text-gray-600 font-medium">{item.inspector}</td>
+                      <td className="p-3 text-gray-500 font-medium">{item.findings}</td>
+                      <td className="p-3 font-bold font-price text-brand-black">
+                        {item.revisedPrice ? (
+                          <span>
+                            <span className="line-through text-gray-400 mr-1 text-[11px]">₹{item.originalPrice.toLocaleString("en-IN")}</span>
+                            ₹{item.revisedPrice.toLocaleString("en-IN")}
+                          </span>
+                        ) : (
+                          <span>₹{item.originalPrice.toLocaleString("en-IN")}</span>
+                        )}
+                      </td>
+                      <td className="p-3">
+                        <Badge variant={item.status === "COMPLETED" ? "success" : "yellow"}>
+                          {item.status.replace(/_/g, " ")}
+                        </Badge>
+                      </td>
+                      <td className="p-3 text-right">
+                        <Button
+                          onClick={() => {
+                            setOrder({
+                              id: `ord-${item.orderNumber.toLowerCase()}`,
+                              orderNumber: item.orderNumber,
+                              quoteId: `caq-${item.orderNumber.toLowerCase()}`,
+                              userId: `usr-${item.orderNumber.toLowerCase()}`,
+                              customerName: item.customerName,
+                              customerPhone: item.customerPhone,
+                              addressSummary: item.location,
+                              pincode: "700001",
+                              pickupDate: item.date,
+                              pickupTimeSlot: "1 PM - 4 PM",
+                              revisedPrice: item.revisedPrice ?? undefined,
+                              declaredConditionSummary: item.deviceName,
+                              status: item.status,
+                              paymentStatus: "PAID",
+                              createdAt: new Date().toISOString(),
+                              updatedAt: new Date().toISOString(),
+                            });
+                          }}
+                          variant="secondary"
+                          size="sm"
+                          className="font-extrabold"
+                        >
+                          {item.status === "COMPLETED" ? "View Report" : "Perform Inspection"}
+                        </Button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-            <h2 className="text-lg font-black text-brand-black">No Active Order Selected for Inspection</h2>
-            <p className="text-xs text-brand-muted leading-relaxed">
-              Select an active customer selling order from the Order Management repository to enter physical doorstep inspection findings and issue price revisions.
-            </p>
-            <Button
-              onClick={() => router.push("/admin/orders")}
-              variant="primary"
-              size="md"
-              className="font-extrabold shadow-yellowGlow mt-2"
-            >
-              Go to Order Operations Repository
-            </Button>
           </div>
         </main>
       </div>

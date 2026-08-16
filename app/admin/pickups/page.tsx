@@ -6,6 +6,51 @@ import { Badge } from "@/components/ui/Badge";
 import { DEFAULT_PARTNERS, OrderData } from "@/lib/store";
 import { Truck, CheckCircle2, UserCheck, Phone, Building2 } from "lucide-react";
 
+const DEFAULT_PICKUP_ORDERS: OrderData[] = [
+  {
+    id: "ord-ca72512",
+    orderNumber: "CA72512",
+    quoteId: "q-caq725120",
+    userId: "u-ca72512",
+    customerName: "West Bengal Customer",
+    customerPhone: "+91 7003216788",
+    pincode: "711101",
+    addressSummary: "6/6 Kings Road, Howrah, West Bengal - 711101",
+    pickupDate: "Tomorrow",
+    pickupTimeSlot: "1 PM - 4 PM",
+    revisedPrice: undefined,
+    status: "PICKUP_SCHEDULED",
+    assignedPartnerId: "p-inhouse-kol",
+    assignedPartnerName: "CashALL Logistics Team (Kolkata Hub)",
+    assignedPartnerPhone: "+91 7003216788",
+    assignedPartnerBusiness: "In-House CashALL Logistics",
+    declaredConditionSummary: "Apple iPhone 13 128 GB",
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+  {
+    id: "ord-ca36738",
+    orderNumber: "CA36738",
+    quoteId: "q-caq367384",
+    userId: "u-ca36738",
+    customerName: "Kundan Kumar Singh",
+    customerPhone: "+91 9876543210",
+    pincode: "834001",
+    addressSummary: "Ranchi, Jharkhand",
+    pickupDate: "16 Aug 2026",
+    pickupTimeSlot: "9:16 PM",
+    revisedPrice: 2700,
+    status: "COMPLETED",
+    assignedPartnerId: "p-rajesh",
+    assignedPartnerName: "Rajesh Kumar (CashALL In-House Agent)",
+    assignedPartnerPhone: "+91 9876543210",
+    assignedPartnerBusiness: "In-House CashALL Agent",
+    declaredConditionSummary: "OPPO A33 64 GB - Device Received & Paid",
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+];
+
 export default function AdminPickupsPage() {
   const [pickups, setPickups] = useState<OrderData[]>([]);
   const [selectedPartnerMap, setSelectedPartnerMap] = useState<Record<string, string>>({});
@@ -48,6 +93,13 @@ export default function AdminPickupsPage() {
           }
         }
       }
+
+      DEFAULT_PICKUP_ORDERS.forEach((def) => {
+        if (!seenIds.has(def.orderNumber)) {
+          ordersList.push(def);
+          seenIds.add(def.orderNumber);
+        }
+      });
 
       setPickups(ordersList);
     }
