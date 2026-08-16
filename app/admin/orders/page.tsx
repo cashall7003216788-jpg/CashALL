@@ -209,7 +209,7 @@ export default function AdminOrdersPage() {
                       </div>
                     </td>
                     <td className="p-3">
-                      <Badge variant={["COMPLETED", "BILL_GENERATED"].includes(ord.status) ? "primary" : "yellow"}>
+                      <Badge variant={["COMPLETED", "BILL_GENERATED"].includes(ord.status) ? "success" : "yellow"}>
                         {ord.status.replace(/_/g, " ")}
                       </Badge>
                     </td>
