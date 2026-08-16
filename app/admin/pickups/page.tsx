@@ -109,6 +109,34 @@ export default function AdminPickupsPage() {
     loadAllOrders();
   }, []);
 
+  const handleAssignInHouseAgent = (order: OrderData) => {
+    const currentAgent = order.assignedPartnerName || "";
+    const name = prompt(`Enter In-House CashALL Agent Name for Order #${order.orderNumber}:`, currentAgent || "CashALL In-House Agent");
+    if (!name || !name.trim()) return;
+
+    const agentName = name.trim();
+    const updatedOrder: OrderData = {
+      ...order,
+      assignedPartnerId: "p-inhouse-custom",
+      assignedPartnerName: `${agentName} (CashALL In-House Agent)`,
+      assignedPartnerPhone: "+91 7003216788",
+      assignedPartnerBusiness: "In-House CashALL Logistics Agent",
+      status: "PARTNER_ASSIGNED",
+      updatedAt: new Date().toISOString(),
+    };
+
+    if (typeof window !== "undefined") {
+      localStorage.setItem(`cashall_order_${order.id}`, JSON.stringify(updatedOrder));
+      localStorage.setItem(`cashall_order_${order.orderNumber}`, JSON.stringify(updatedOrder));
+      localStorage.setItem("cashall_latest_order", JSON.stringify(updatedOrder));
+      localStorage.setItem(`cashall_agent_${order.orderNumber}`, agentName);
+    }
+
+    setDispatchSuccess(`In-House Agent "${agentName}" recorded for Order #${order.orderNumber}!`);
+    setTimeout(() => setDispatchSuccess(null), 4000);
+    loadAllOrders();
+  };
+
   const handlePartnerSelect = (orderId: string, partnerId: string) => {
     setSelectedPartnerMap((prev) => ({ ...prev, [orderId]: partnerId }));
   };
@@ -209,10 +237,17 @@ export default function AdminPickupsPage() {
                         <div className="space-y-1">
                           <select
                             value={currentSelected}
-                            onChange={(e) => handlePartnerSelect(pk.id, e.target.value)}
+                            onChange={(e) => {
+                              if (e.target.value === "inhouse_write_custom") {
+                                handleAssignInHouseAgent(pk);
+                              } else {
+                                handlePartnerSelect(pk.id, e.target.value);
+                              }
+                            }}
                             className="bg-gray-50 border border-gray-300 rounded-xl px-3 py-1.5 text-xs font-bold text-brand-black focus:outline-none focus:border-brand-yellow w-full max-w-xs"
                           >
                             <option value="">— Unassigned (Pending Agent) —</option>
+                            <option value="inhouse_write_custom">✏️ In-House Agent (Type Custom Name)</option>
                             {DEFAULT_PARTNERS.map((part) => (
                               <option key={part.id} value={part.id}>
                                 {part.name} ({part.businessName} • {part.city})
@@ -223,27 +258,33 @@ export default function AdminPickupsPage() {
                           {pk.assignedPartnerName && (
                             <div className="text-[11px] text-emerald-800 font-bold flex items-center gap-1.5 pt-0.5">
                               <UserCheck className="w-3.5 h-3.5 text-emerald-600" />
-                              <span>{pk.assignedPartnerName} ({pk.assignedPartnerPhone || "+91 9876543210"})</span>
+                              <span>{pk.assignedPartnerName}</span>
+                              <button
+                                onClick={() => handleAssignInHouseAgent(pk)}
+                                className="text-[10px] text-blue-600 underline font-semibold ml-1"
+                              >
+                                Edit Name
+                              </button>
                             </div>
                           )}
                         </div>
                       </td>
                       <td className="p-3">
-                        <Badge variant={pk.status === "PARTNER_ASSIGNED" ? "yellow" : "neutral"}>
+                        <Badge variant={pk.status === "PARTNER_ASSIGNED" || pk.status === "COMPLETED" ? "success" : "yellow"}>
                           {pk.status.replace(/_/g, " ")}
                         </Badge>
                       </td>
                       <td className="p-3 text-right">
                         <button
                           onClick={() => handleAssignPartner(pk)}
-                          disabled={!currentSelected}
+                          disabled={!currentSelected || currentSelected === "inhouse_write_custom"}
                           className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all border shadow-sm ${
-                            currentSelected
+                            currentSelected && currentSelected !== "inhouse_write_custom"
                               ? "bg-brand-yellow text-black border-black hover:bg-yellow-400"
                               : "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
                           }`}
                         >
-                          Assign & Dispatch
+                          Assign Partner
                         </button>
                       </td>
                     </tr>

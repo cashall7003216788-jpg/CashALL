@@ -80,7 +80,9 @@ function AdminInspectionsContent() {
         customerPhone: "+91 9876543210",
         location: "Ranchi, Jharkhand",
         deviceName: "OPPO A33 (64 GB)",
-        inspector: "Rajesh Kumar (CashALL In-House Agent)",
+        inspector: (typeof window !== "undefined" && localStorage.getItem("cashall_agent_CA36738"))
+          ? `${localStorage.getItem("cashall_agent_CA36738")} (CashALL In-House Agent)`
+          : "CashALL In-House Agent",
         findings: "Flawless Screen, Minor Paint Wear",
         originalPrice: 2889,
         revisedPrice: 2700,
@@ -93,7 +95,9 @@ function AdminInspectionsContent() {
         customerPhone: "+91 7003216788",
         location: "6/6 Kings Road, Howrah, West Bengal",
         deviceName: "Apple iPhone 13 (128 GB)",
-        inspector: "CashALL Logistics Team",
+        inspector: (typeof window !== "undefined" && localStorage.getItem("cashall_agent_CA72512"))
+          ? `${localStorage.getItem("cashall_agent_CA72512")} (CashALL In-House Agent)`
+          : "CashALL In-House Agent",
         findings: "Pending Doorstep Inspection",
         originalPrice: 32500,
         revisedPrice: null,

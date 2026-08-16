@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { Badge } from "@/components/ui/Badge";
-import { ShoppingBag, ClipboardCheck, Eye, Loader2, Receipt, IndianRupee } from "lucide-react";
+import { ShoppingBag, ClipboardCheck, Eye, Loader2, Receipt, IndianRupee, UserCheck } from "lucide-react";
 
 interface Order {
   id: string;
@@ -24,6 +24,7 @@ interface Order {
   esignStatus: string;
   paymentStatus: string;
   deviceStatus: string;
+  agentName?: string;
 }
 
 const DEFAULT_ORDERS: Order[] = [
@@ -212,6 +213,22 @@ export default function AdminOrdersPage() {
     }
   };
 
+  const handleAssignAgent = (ord: Order) => {
+    const currentAgent = ord.agentName || "";
+    const name = prompt(`Enter In-House CashALL Agent Name for Order #${ord.orderNumber}:`, currentAgent);
+    if (name === null) return;
+
+    const trimmed = name.trim();
+    const updatedOrders = orders.map((o) =>
+      o.id === ord.id ? { ...o, agentName: trimmed } : o
+    );
+    setOrders(updatedOrders);
+
+    if (typeof window !== "undefined") {
+      localStorage.setItem(`cashall_agent_${ord.orderNumber}`, trimmed);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-brand-bg flex">
       <AdminSidebar />
@@ -301,6 +318,16 @@ export default function AdminOrdersPage() {
                     </td>
                     <td className="p-3 text-right">
                       <div className="flex items-center justify-end gap-1.5 flex-wrap">
+                        {/* Assign In-House Agent */}
+                        <button
+                          onClick={() => handleAssignAgent(ord)}
+                          className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-900 bg-amber-100 hover:bg-amber-200 px-2.5 py-1 rounded-lg transition-colors"
+                          title="Click to write/edit In-House Agent Name"
+                        >
+                          <UserCheck className="w-3.5 h-3.5 text-amber-700" />
+                          <span>{ord.agentName ? `Agent: ${ord.agentName}` : "+ Assign Agent"}</span>
+                        </button>
+
                         <Link
                           href={`/track/${ord.orderNumber}`}
                           className="inline-flex items-center gap-1 text-[11px] font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 px-2.5 py-1 rounded-lg transition-colors"
