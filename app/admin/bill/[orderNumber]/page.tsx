@@ -267,7 +267,7 @@ export default function AdminBillPage() {
           <div className="border-t border-gray-100 pt-4 flex items-start gap-2">
             <Shield className="w-4 h-4 text-gray-300 shrink-0 mt-0.5" />
             <p className="text-[10px] text-gray-400 leading-snug">
-              This is a computer-generated receipt issued by CashALL. The seller (named above) has voluntarily sold the device to CashALL at the agreed final price. This document serves as the legal sale agreement and payment confirmation. For disputes contact: support@cashall.in
+              This is a computer-generated receipt issued by CashALL. The seller (named above) has voluntarily sold the device to CashALL at the agreed final price. This document serves as the legal sale agreement and payment confirmation.
             </p>
           </div>
 
@@ -278,7 +278,7 @@ export default function AdminBillPage() {
 
         {/* Footer strip */}
         <div className="bg-black text-center py-3 text-[10px] text-gray-500">
-          CashALL | cashall.in | support@cashall.in
+          CashALL | cashall.in | Helpline: 7003216788
         </div>
       </div>
 
