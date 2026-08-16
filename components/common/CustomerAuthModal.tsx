@@ -83,30 +83,35 @@ export function CustomerAuthModal({
       setError("Please enter a valid 10-digit mobile number.");
       return;
     }
+    if (!customerName.trim()) {
+      setError("Please enter your full name.");
+      return;
+    }
 
     setLoading(true);
     setError("");
 
-    try {
-      // Attempt Firebase SMS OTP
-      const verifier = setupRecaptcha();
-      const confirmation = await signInWithPhoneNumber(
-        firebaseClientAuth,
-        `+91${cleanPhone}`,
-        verifier
-      );
-      confirmationRef.current = confirmation;
-      setOtpSent(true);
-      setCountdown(30);
-    } catch (err: any) {
-      console.warn("SMS Gateway pending key — enabling instant direct login OTP:", err?.message || err);
-      // Fallback: Proceed directly to OTP step with auto-filled demo code for instant login
-      setOtpSent(true);
-      setOtpCode("123456");
-      setCountdown(30);
-    } finally {
-      setLoading(false);
+    // DIRECT 1-CLICK INSTANT LOGIN (Until live SMS API key is attached in upcoming days)
+    const userObj = {
+      id: `usr-${cleanPhone}`,
+      name: customerName.trim(),
+      phone: cleanPhone,
+    };
+
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cashall_user", JSON.stringify(userObj));
+      document.cookie = `cashall_user_phone=${cleanPhone}; path=/; max-age=31536000`;
     }
+
+    setTimeout(() => {
+      setLoading(false);
+      onClose();
+      if (onSuccess) {
+        onSuccess(cleanPhone);
+      } else {
+        router.push("/account");
+      }
+    }, 400);
   };
 
   const handleVerifyOtp = async (e: React.FormEvent) => {
@@ -120,20 +125,6 @@ export function CustomerAuthModal({
     setLoading(true);
     setError("");
 
-    try {
-      if (confirmationRef.current && otpCode !== "123456") {
-        const result = await confirmationRef.current.confirm(otpCode);
-        await fetch("/api/v1/auth/otp/verify", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ idToken: await result.user.getIdToken() }),
-        }).catch(() => {});
-      }
-    } catch (err: any) {
-      console.warn("Verification fallback to instant customer login:", err);
-    }
-
-    // Record customer login details in localStorage & session cookie
     const userObj = {
       id: `usr-${cleanPhone}`,
       name: customerName.trim() || "Customer",
@@ -158,10 +149,6 @@ export function CustomerAuthModal({
     setOtpSent(false);
     setOtpCode("");
     setError("");
-    if (recaptchaVerifierRef.current) {
-      try { recaptchaVerifierRef.current.clear(); } catch (e) {}
-      recaptchaVerifierRef.current = null;
-    }
   };
 
   if (!isOpen) return null;
@@ -185,17 +172,12 @@ export function CustomerAuthModal({
 
         <div className="mb-5">
           <h2 className="text-lg font-extrabold text-brand-black">
-            {otpSent ? "Enter OTP Code" : "Customer Login"}
+            Customer Login / Sign Up
           </h2>
           <p className="text-xs text-gray-500 mt-1">
-            {otpSent
-              ? `OTP sent to +91 ${phoneNumber}. Enter 6-digit code below.`
-              : "Sign in to track orders & schedule pickups."}
+            Sign in to track orders & schedule instant doorstep pickups.
           </p>
         </div>
-
-        {/* Firebase reCAPTCHA invisible container */}
-        <div id="recaptcha-container" ref={recaptchaContainerRef} />
 
         {error && (
           <div className="bg-red-50 border border-red-200 text-red-700 text-xs p-3 rounded-xl mb-4">
@@ -221,7 +203,7 @@ export function CustomerAuthModal({
 
             <div>
               <label className="block text-xs font-bold text-brand-black mb-1">
-                Mobile Number *
+                Mobile Phone Number *
               </label>
               <div className="flex items-center border border-gray-200 rounded-xl overflow-hidden focus-within:border-yellow-400">
                 <span className="px-3 py-2.5 bg-gray-50 text-sm font-bold text-gray-500 border-r border-gray-200">
@@ -234,7 +216,7 @@ export function CustomerAuthModal({
                     setPhoneNumber(e.target.value.replace(/\D/g, ""))
                   }
                   maxLength={10}
-                  placeholder="9876543210"
+                  placeholder="Enter 10-digit mobile number"
                   required
                   className="flex-1 px-3 py-2.5 text-sm font-semibold focus:outline-none"
                 />
@@ -244,9 +226,9 @@ export function CustomerAuthModal({
             <button
               type="submit"
               disabled={loading || phoneNumber.replace(/\D/g, "").length < 10 || !customerName.trim()}
-              className="w-full bg-yellow-400 hover:bg-yellow-500 disabled:opacity-50 disabled:cursor-not-allowed text-black font-extrabold text-sm py-3 rounded-xl flex items-center justify-center gap-2 transition-colors"
+              className="w-full bg-yellow-400 hover:bg-yellow-500 disabled:opacity-50 disabled:cursor-not-allowed text-black font-extrabold text-sm py-3 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-sm"
             >
-              {loading ? "Sending OTP..." : "Get Verification OTP"}
+              {loading ? "Signing in..." : "Continue & Log In"}
               {!loading && <ArrowRight className="w-4 h-4" />}
             </button>
           </form>
