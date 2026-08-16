@@ -70,7 +70,7 @@ export default function AdminBillPage() {
               orderNumber: "CA36738",
               billNumber: "BILL-CA36738-2026",
               customerName: "Kundan Kumar Singh",
-              customerPhone: "+91 7003216788",
+              customerPhone: "+91 9876543210",
               pickupAddress: "Ranchi, Jharkhand",
               buyerName: "AARNA ENTERPRISE (Parent Company of CashALL)",
               buyerGstin: "19AVPPG9800J1Z3",

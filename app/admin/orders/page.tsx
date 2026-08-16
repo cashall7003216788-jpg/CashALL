@@ -51,7 +51,7 @@ const DEFAULT_ORDERS: Order[] = [
     id: "ord-ca36738",
     orderNumber: "CA36738",
     customerName: "Kundan Kumar Singh",
-    customerPhone: "+91 7003216788",
+    customerPhone: "+91 9876543210",
     pincode: "834001",
     location: "Ranchi, Jharkhand",
     deviceName: "OPPO A33 (64 GB)",

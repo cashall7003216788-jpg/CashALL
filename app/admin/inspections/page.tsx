@@ -77,7 +77,7 @@ function AdminInspectionsContent() {
       {
         orderNumber: "CA36738",
         customerName: "Kundan Kumar Singh",
-        customerPhone: "+91 7003216788",
+        customerPhone: "+91 9876543210",
         location: "Ranchi, Jharkhand",
         deviceName: "OPPO A33 (64 GB)",
         inspector: (typeof window !== "undefined" && localStorage.getItem("cashall_agent_CA36738"))

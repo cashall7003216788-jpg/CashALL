@@ -34,7 +34,7 @@ const DEFAULT_PICKUP_ORDERS: OrderData[] = [
     quoteId: "q-caq367384",
     userId: "u-ca36738",
     customerName: "Kundan Kumar Singh",
-    customerPhone: "+91 7003216788",
+    customerPhone: "+91 9876543210",
     pincode: "834001",
     addressSummary: "Ranchi, Jharkhand",
     pickupDate: "16 Aug 2026",
