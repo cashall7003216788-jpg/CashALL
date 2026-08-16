@@ -27,7 +27,14 @@ export default function AdminOrdersPage() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await fetch("/api/v1/admin/orders");
+        const session = typeof window !== "undefined"
+          ? JSON.parse(localStorage.getItem("cashall_admin_session") || "{}")
+          : {};
+        const token = session?.token || "";
+
+        const res = await fetch("/api/v1/admin/orders", {
+          headers: token ? { Authorization: `Bearer ${token}` } : {},
+        });
         if (res.ok) {
           const json = await res.json();
           const raw = json.data?.orders || json.orders || [];
@@ -50,9 +57,12 @@ export default function AdminOrdersPage() {
           }));
           setOrders(mapped);
         } else {
+          const errData = await res.json().catch(() => ({}));
+          setError(errData?.error || `Failed to load orders (${res.status})`);
           setOrders([]);
         }
       } catch (err: any) {
+        setError(err?.message || "Network error loading orders.");
         setOrders([]);
       } finally {
         setLoading(false);

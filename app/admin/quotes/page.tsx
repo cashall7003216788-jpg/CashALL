@@ -23,7 +23,14 @@ export default function AdminQuotesPage() {
   useEffect(() => {
     const fetchQuotes = async () => {
       try {
-        const res = await fetch("/api/v1/admin/quotes");
+        const session = typeof window !== "undefined"
+          ? JSON.parse(localStorage.getItem("cashall_admin_session") || "{}")
+          : {};
+        const token = session?.token || "";
+
+        const res = await fetch("/api/v1/admin/quotes", {
+          headers: token ? { Authorization: `Bearer ${token}` } : {},
+        });
         if (res.ok) {
           const data = await res.json();
           setQuotes(data.quotes || []);

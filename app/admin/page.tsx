@@ -45,8 +45,13 @@ export default function AdminDashboardPage() {
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
+        const session = typeof window !== "undefined"
+          ? JSON.parse(localStorage.getItem("cashall_admin_session") || "{}")
+          : {};
+        const token = session?.token || "";
+
         const res = await fetch("/api/v1/admin/dashboard", {
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
         });
         if (res.ok) {
           const data = await res.json();

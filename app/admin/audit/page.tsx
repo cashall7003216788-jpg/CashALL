@@ -25,7 +25,14 @@ export default function AdminAuditPage() {
   useEffect(() => {
     const fetchAudit = async () => {
       try {
-        const res = await fetch("/api/v1/admin/dashboard");
+        const session = typeof window !== "undefined"
+          ? JSON.parse(localStorage.getItem("cashall_admin_session") || "{}")
+          : {};
+        const token = session?.token || "";
+
+        const res = await fetch("/api/v1/admin/dashboard", {
+          headers: token ? { Authorization: `Bearer ${token}` } : {},
+        });
         if (res.ok) {
           const json = await res.json();
           setLogs(json.auditLogs || []);
