@@ -125,38 +125,42 @@ export default function AdminOrdersPage() {
       console.warn("Could not fetch DB orders, falling back to local state:", err);
     }
 
-    // 2. Fetch from LocalStorage
+    // 2. Add local storage orders if present & sync them to DB
     if (typeof window !== "undefined") {
       try {
         const localAll = JSON.parse(localStorage.getItem("cashall_all_orders") || "[]");
-        const latest = localStorage.getItem("cashall_latest_order");
-        const items = [...localAll];
-        if (latest) {
-          try { items.unshift(JSON.parse(latest)); } catch {}
+        if (Array.isArray(localAll) && localAll.length > 0) {
+          // Auto-push any unsynced local orders to PostgreSQL DB
+          fetch("/api/v1/orders/sync-local", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ orders: localAll }),
+          }).catch((err) => console.warn("Admin auto-sync error:", err));
+
+          localAll.forEach((item: any) => {
+            if (item.orderNumber && !combinedOrders.some((o) => o.orderNumber === item.orderNumber)) {
+              combinedOrders.push({
+                id: item.id || `ord-${item.orderNumber}`,
+                orderNumber: item.orderNumber,
+                customerName: item.customerName || "Customer",
+                customerPhone: item.customerPhone || "—",
+                pincode: item.pincode || "—",
+                location: item.addressSummary || "Doorstep Address",
+                deviceName: item.deviceName || "Mobile Device",
+                pickupDate: item.pickupDate || "Scheduled",
+                pickupTimeSlot: item.pickupTimeSlot || "Standard Slot",
+                estimatedPrice: item.revisedPrice || item.estimatedPrice || 0,
+                revisedPrice: item.revisedPrice || null,
+                status: item.status || "PICKUP_SCHEDULED",
+                identityStatus: "PENDING",
+                imeiStatus: "PENDING",
+                esignStatus: "PENDING",
+                paymentStatus: item.status === "COMPLETED" ? "PAID" : "PENDING",
+                deviceStatus: item.status === "COMPLETED" ? "RECEIVED" : "NOT RECEIVED",
+              });
+            }
+          });
         }
-        items.forEach((item: any) => {
-          if (item && item.orderNumber && !combinedOrders.some((o) => o.orderNumber === item.orderNumber)) {
-            combinedOrders.push({
-              id: item.id || `ord-${item.orderNumber}`,
-              orderNumber: item.orderNumber,
-              customerName: item.customerName || "Customer",
-              customerPhone: item.customerPhone || "—",
-              pincode: item.pincode || "—",
-              location: item.addressSummary || "Doorstep Address",
-              deviceName: item.deviceName || "Mobile Device",
-              pickupDate: item.pickupDate || "Scheduled",
-              pickupTimeSlot: item.pickupTimeSlot || "Standard Slot",
-              estimatedPrice: item.revisedPrice || item.estimatedPrice || 0,
-              revisedPrice: item.revisedPrice || null,
-              status: item.status || "PICKUP_SCHEDULED",
-              identityStatus: "PENDING",
-              imeiStatus: "PENDING",
-              esignStatus: "PENDING",
-              paymentStatus: item.status === "COMPLETED" ? "PAID" : "PENDING",
-              deviceStatus: item.status === "COMPLETED" ? "RECEIVED" : "NOT RECEIVED",
-            });
-          }
-        });
       } catch (e) {
         console.error(e);
       }

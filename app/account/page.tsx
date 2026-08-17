@@ -47,7 +47,16 @@ export default function CustomerAccountPage() {
         }
       }
 
-      // 2. Fetch central PostgreSQL database orders for this user's phone
+      // 2. Auto-sync any local storage orders to PostgreSQL database
+      if (localOrders.length > 0) {
+        fetch("/api/v1/orders/sync-local", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ orders: localOrders }),
+        }).catch((err) => console.warn("Auto-sync error:", err));
+      }
+
+      // 3. Fetch central PostgreSQL database orders for this user's phone
       if (phoneNum) {
         fetch(`/api/v1/orders/user?phone=${encodeURIComponent(phoneNum)}`)
           .then((res) => res.json())
