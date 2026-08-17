@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { apiWrapper } from "@/lib/utils/api-wrapper";
 import { prisma } from "@/lib/db";
+import { WhatsAppService } from "@/lib/services/whatsapp.service";
 import { z } from "zod";
 
 const syncOrderSchema = z.object({
@@ -126,6 +127,18 @@ export const POST = apiWrapper(async (req: NextRequest) => {
         notes: "Order synced to database automatically.",
       },
     });
+
+    // 6. WhatsApp Notification
+    WhatsAppService.notifyNewOrder({
+      orderNumber: order.orderNumber,
+      customerName: name,
+      customerPhone: phone,
+      deviceName: deviceName,
+      estimatedPrice: price,
+      pickupDate: item.pickupDate || "Tomorrow",
+      pickupTimeSlot: item.pickupTimeSlot || "10 AM - 1 PM",
+      address: item.addressSummary || "Doorstep Address, Howrah, West Bengal",
+    }).catch((err) => console.warn("WhatsApp notify on sync error:", err));
 
     syncedCount++;
   }

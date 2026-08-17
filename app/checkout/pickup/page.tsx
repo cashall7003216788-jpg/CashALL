@@ -204,6 +204,15 @@ function PickupCheckoutContent() {
         name: finalName,
         phone: finalPhone,
       }));
+
+      // If primary creation API failed, trigger sync-local in background immediately
+      if (!apiSuccess) {
+        fetch("/api/v1/orders/sync-local", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ orders: [newOrder] }),
+        }).catch((err) => console.warn("Checkout sync-local background trigger error:", err));
+      }
     }
 
     setTimeout(() => {
