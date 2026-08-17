@@ -62,9 +62,20 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   // 2. Find or Create Quote
   let quote = null;
   if (data.quoteId) {
-    quote = await prisma.quote.findUnique({
-      where: { id: data.quoteId },
-    });
+    const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(data.quoteId);
+    try {
+      if (isUuid) {
+        quote = await prisma.quote.findUnique({
+          where: { id: data.quoteId },
+        });
+      } else {
+        quote = await prisma.quote.findFirst({
+          where: { quoteNumber: data.quoteId },
+        });
+      }
+    } catch (e) {
+      console.warn("Quote lookup by ID failed, will create new quote:", e);
+    }
   }
 
   if (!quote) {
