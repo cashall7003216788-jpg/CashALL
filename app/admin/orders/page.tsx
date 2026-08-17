@@ -87,11 +87,16 @@ export default function AdminOrdersPage() {
 
     let combinedOrders: Order[] = [];
 
-    // 1. Fetch from Database API
+    // 1. Fetch from Database API (Bypass browser GET caching)
     try {
       const token = getAdminToken();
-      const res = await fetch("/api/v1/admin/orders", {
-        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      const res = await fetch(`/api/v1/admin/orders?t=${Date.now()}`, {
+        cache: "no-store",
+        headers: {
+          "Cache-Control": "no-cache, no-store, must-revalidate",
+          Prisma: "no-cache",
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
       });
       if (res.ok) {
         const json = await res.json();
