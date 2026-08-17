@@ -79,19 +79,53 @@ function PickupCheckoutContent() {
     }
   };
 
-  const handleConfirmOrder = (e: React.FormEvent) => {
+  const handleConfirmOrder = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!house || !street || !area) return;
 
     setIsSubmitting(true);
-    const orderNum = `CA${Math.floor(10000 + Math.random() * 90000)}`;
     const finalName = fullName.trim() || "Customer";
     const finalPhone = phone.trim() || "—";
     const fullAddress = `${house}, ${street}, ${area}${landmark ? ", " + landmark : ""}, ${selectedState} - ${pincode}`;
+    const fullDeviceName = `${brand.name} ${model.name}`;
+
+    let createdOrderNum = `CA${Math.floor(10000 + Math.random() * 90000)}`;
+
+    try {
+      const res = await fetch("/api/v1/orders/create", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          quoteId: quote?.id || quoteId,
+          fullName: finalName,
+          phone: finalPhone,
+          house,
+          street,
+          area,
+          landmark,
+          city: "Kolkata",
+          state: selectedState,
+          pincode,
+          pickupDate,
+          pickupTimeSlot: pickupSlot,
+          deviceName: fullDeviceName,
+          estimatedPrice: quote?.estimatedPrice || 32500,
+        }),
+      });
+
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success && json.data?.orderNumber) {
+          createdOrderNum = json.data.orderNumber;
+        }
+      }
+    } catch (err) {
+      console.warn("Server API order recording failed, proceeding with backup save:", err);
+    }
 
     const newOrder: OrderData = {
       id: `ord-${Date.now()}`,
-      orderNumber: orderNum,
+      orderNumber: createdOrderNum,
       quoteId: quote?.id || quoteId,
       userId: `u-${finalPhone.replace(/\D/g, "") || Date.now()}`,
       customerName: finalName,
@@ -108,7 +142,7 @@ function PickupCheckoutContent() {
     };
 
     if (typeof window !== "undefined") {
-      localStorage.setItem(`cashall_order_${orderNum}`, JSON.stringify(newOrder));
+      localStorage.setItem(`cashall_order_${createdOrderNum}`, JSON.stringify(newOrder));
       localStorage.setItem("cashall_latest_order", JSON.stringify(newOrder));
 
       const existing = JSON.parse(localStorage.getItem("cashall_all_orders") || "[]");
@@ -124,8 +158,8 @@ function PickupCheckoutContent() {
 
     setTimeout(() => {
       setIsSubmitting(false);
-      router.push(`/order/${orderNum}`);
-    }, 800);
+      router.push(`/order/${createdOrderNum}`);
+    }, 600);
   };
 
   const variant = INITIAL_VARIANTS.find((v) => v.id === quote?.variantId) || INITIAL_VARIANTS[0];

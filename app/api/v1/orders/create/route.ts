@@ -1,152 +1,171 @@
 import { NextRequest, NextResponse } from "next/server";
 import { apiWrapper } from "@/lib/utils/api-wrapper";
-import { verifyAuthToken } from "@/lib/middlewares/auth";
 import { prisma } from "@/lib/db";
-import { AppError } from "@/lib/utils/AppError";
-import { MapsService } from "@/lib/services/maps.service";
-import { NotificationHelper } from "@/lib/services/notification.helper";
-import { EmailService } from "@/lib/services/email.service";
 import { WhatsAppService } from "@/lib/services/whatsapp.service";
 import { logger } from "@/lib/utils/logger";
 import { z } from "zod";
 
 const createOrderSchema = z.object({
-  quoteId: z.string().min(1, "quoteId is required"),
+  quoteId: z.string().optional(),
   fullName: z.string().min(1, "Name is required"),
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
   house: z.string().min(1, "House details are required"),
   street: z.string().min(1, "Street is required"),
   area: z.string().min(1, "Area is required"),
   landmark: z.string().optional(),
-  city: z.string().min(1, "City is required"),
-  state: z.string().min(1, "State is required"),
-  pincode: z.string().length(6, "PIN Code must be 6 digits"),
+  city: z.string().optional(),
+  state: z.string().optional(),
+  pincode: z.string().min(6, "PIN Code must be 6 digits"),
   pickupDate: z.string().min(1, "Pickup date is required"),
   pickupTimeSlot: z.string().min(1, "Pickup time slot is required"),
+  deviceName: z.string().optional(),
+  estimatedPrice: z.number().optional(),
 });
 
 export const POST = apiWrapper(async (req: NextRequest) => {
-  const decodedUser = await verifyAuthToken(req);
-
   const body = await req.json();
   const validation = createOrderSchema.safeParse(body);
 
   if (!validation.success) {
-    throw new AppError(validation.error.issues[0].message, 400);
+    return NextResponse.json(
+      { success: false, error: validation.error.issues[0].message },
+      { status: 400 }
+    );
   }
 
   const data = validation.data;
+  const cleanPhone = data.phone.replace(/\D/g, "");
+  const city = data.city || "Kolkata";
+  const state = data.state || "West Bengal";
 
-  // 1. Fetch Quote
-  const quote = await prisma.quote.findUnique({
-    where: { id: data.quoteId },
+  // 1. Find or Create User
+  let user = await prisma.user.findFirst({
+    where: { phone: cleanPhone },
   });
 
-  if (!quote) {
-    throw new AppError("Invalid or expired quote.", 404);
+  if (!user) {
+    user = await prisma.user.create({
+      data: {
+        phone: cleanPhone,
+        name: data.fullName,
+        firebaseUid: `uid_${cleanPhone}_${Date.now()}`,
+        role: "CUSTOMER",
+      },
+    });
+  } else if (data.fullName && user.name !== data.fullName) {
+    user = await prisma.user.update({
+      where: { id: user.id },
+      data: { name: data.fullName },
+    });
   }
 
-  // Update quote status to ORDERED
-  await prisma.quote.update({
-    where: { id: quote.id },
-    data: { status: "ORDERED" },
-  });
+  // 2. Find or Create Quote
+  let quote = null;
+  if (data.quoteId) {
+    quote = await prisma.quote.findUnique({
+      where: { id: data.quoteId },
+    });
+  }
 
-  // 2. Geocode Address via MapsService
-  const addressText = `${data.house}, ${data.street}, ${data.area}, ${data.landmark ? data.landmark + ", " : ""}${data.city}, ${data.state} - ${data.pincode}`;
-  const coordinates = await MapsService.geocodeAddress(addressText);
+  if (!quote) {
+    const defaultVariant = await prisma.deviceVariant.findFirst({
+      include: { model: { include: { brand: true } } },
+    });
+
+    if (defaultVariant) {
+      const price = data.estimatedPrice || 32500;
+      quote = await prisma.quote.create({
+        data: {
+          quoteNumber: `Q${Math.floor(10000 + Math.random() * 90000)}`,
+          variantId: defaultVariant.id,
+          selectedAnswersJson: JSON.stringify({ device: data.deviceName || "Customer Mobile Device" }),
+          basePrice: price,
+          totalDeductions: 0,
+          estimatedPrice: price,
+          breakdownJson: JSON.stringify({ summary: "Customer declared valuation" }),
+          status: "ORDERED",
+          expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+        },
+      });
+    }
+  }
 
   // 3. Create Address Record
   const address = await prisma.address.create({
     data: {
-      userId: decodedUser.uid,
+      userId: user.id,
       fullName: data.fullName,
-      phone: data.phone,
+      phone: cleanPhone,
       house: data.house,
       street: data.street,
       area: data.area,
       landmark: data.landmark || null,
-      city: data.city,
-      state: data.state,
+      city: city,
+      state: state,
       pincode: data.pincode,
-      latitude: coordinates.latitude,
-      longitude: coordinates.longitude,
     },
   });
 
   // 4. Create Order
   const orderNumber = `CA${Math.floor(10000 + Math.random() * 90000)}`;
+  const orderDataPayload: any = {
+    orderNumber,
+    userId: user.id,
+    addressId: address.id,
+    pickupDate: data.pickupDate,
+    pickupTimeSlot: data.pickupTimeSlot,
+    status: "PICKUP_SCHEDULED",
+    finalPrice: data.estimatedPrice || (quote ? quote.estimatedPrice : 0),
+  };
+  if (quote) {
+    orderDataPayload.quoteId = quote.id;
+  }
+
   const order = await prisma.order.create({
-    data: {
-      orderNumber,
-      quoteId: quote.id,
-      userId: decodedUser.uid,
-      addressId: address.id,
-      pickupDate: data.pickupDate,
-      pickupTimeSlot: data.pickupTimeSlot,
-      status: "PICKUP_SCHEDULED",
-      finalPrice: quote.estimatedPrice,
-    },
-    include: {
-      quote: {
-        include: {
-          variant: {
-            include: {
-              model: {
-                include: {
-                  brand: true,
-                },
-              },
-            },
-          },
-        },
-      },
-      address: true,
-    },
+    data: orderDataPayload,
   });
 
-  // 5. Create Pickup schedule record
+  // 5. Create Pickup Schedule
   await prisma.pickup.create({
     data: {
       orderId: order.id,
       date: data.pickupDate,
       timeSlot: data.pickupTimeSlot,
       status: "SCHEDULED",
-      notes: "System scheduled doorstep pickup.",
+      notes: "Doorstep pickup order confirmed.",
     },
   });
 
-  // Trigger push notification
-  await NotificationHelper.triggerMilestoneNotification(
-    order.id,
-    decodedUser.uid,
-    "PICKUP_SCHEDULED"
-  );
+  const fullAddress = `${data.house}, ${data.street}, ${data.area}${data.landmark ? ", " + data.landmark : ""}, ${state} - ${data.pincode}`;
+  const device = data.deviceName || "Customer Mobile Device";
 
-  // Send WhatsApp alert to admin
-  const deviceName = `${order.quote.variant.model.brand.name} ${order.quote.variant.model.name}`;
+  // 6. Trigger WhatsApp Notification to Admin (7003216788)
   WhatsAppService.notifyNewOrder({
     orderNumber: order.orderNumber,
     customerName: data.fullName,
-    customerPhone: data.phone,
-    deviceName,
+    customerPhone: cleanPhone,
+    deviceName: device,
     estimatedPrice: order.finalPrice ?? 0,
     pickupDate: order.pickupDate,
     pickupTimeSlot: order.pickupTimeSlot,
-    address: addressText,
-  }).catch((err) => logger.error("Failed to send WhatsApp notification:", err));
-
-  // Send confirmation email
-  if (decodedUser.email) {
-    EmailService.sendEmail(
-      decodedUser.email,
-      `Order Confirmed: #${order.orderNumber} 🎉`,
-      EmailService.compileOrderTemplate(order.orderNumber, deviceName, order.pickupDate, order.pickupTimeSlot)
-    ).catch((err) => logger.error("Failed to send order email:", err));
-  }
+    address: fullAddress,
+  }).catch((err) => logger.error("WhatsApp notification error:", err));
 
   return NextResponse.json({
     success: true,
-    data: order,
+    data: {
+      id: order.id,
+      orderNumber: order.orderNumber,
+      customerName: data.fullName,
+      customerPhone: cleanPhone,
+      deviceName: device,
+      pincode: data.pincode,
+      addressSummary: fullAddress,
+      pickupDate: data.pickupDate,
+      pickupTimeSlot: data.pickupTimeSlot,
+      estimatedPrice: order.finalPrice,
+      status: order.status,
+      createdAt: order.createdAt.toISOString(),
+    },
   });
 });

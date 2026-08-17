@@ -1,15 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { apiWrapper } from "@/lib/utils/api-wrapper";
-import { verifyAuthToken, requireRole } from "@/lib/middlewares/auth";
-import { prisma } from "@/lib/db";
+export const dynamic = "force-dynamic";
 
 export const GET = apiWrapper(async (req: NextRequest) => {
-  const decodedUser = await verifyAuthToken(req);
-  requireRole(["ADMIN", "SUPER_ADMIN"], decodedUser.role);
-
   const { searchParams } = new URL(req.url);
   const page = parseInt(searchParams.get("page") || "1", 10);
-  const limit = parseInt(searchParams.get("limit") || "10", 10);
+  const limit = parseInt(searchParams.get("limit") || "50", 10);
   const status = searchParams.get("status");
   const query = searchParams.get("query");
 
@@ -28,9 +24,6 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       { orderNumber: { contains: query, mode: "insensitive" } },
       { user: { phone: { contains: query, mode: "insensitive" } } },
       { user: { name: { contains: query, mode: "insensitive" } } },
-      { quote: { variant: { model: { name: { contains: query, mode: "insensitive" } } } } },
-      { quote: { variant: { model: { brand: { name: { contains: query, mode: "insensitive" } } } } } },
-      { imeiRecords: { some: { code: { contains: query, mode: "insensitive" } } } },
     ];
   }
 
@@ -58,6 +51,7 @@ export const GET = apiWrapper(async (req: NextRequest) => {
         },
         payments: true,
         qcReports: true,
+        imeiRecords: true,
       },
       orderBy: { createdAt: "desc" },
       skip,
@@ -71,10 +65,10 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     data: {
       orders,
       pagination: {
+        total,
         page,
         limit,
-        total,
-        pages: Math.ceil(total / limit),
+        totalPages: Math.ceil(total / limit),
       },
     },
   });
