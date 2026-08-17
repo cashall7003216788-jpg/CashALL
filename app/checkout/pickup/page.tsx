@@ -94,7 +94,6 @@ function PickupCheckoutContent() {
 
   const handleConfirmOrder = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!house || !street || !area) return;
 
     // Validate phone — critical for cross-device sync
     const cleanPhone = phone.trim().replace(/\D/g, "");
@@ -106,7 +105,10 @@ function PickupCheckoutContent() {
     setIsSubmitting(true);
     const finalName = fullName.trim() || "Customer";
     const finalPhone = cleanPhone; // Always use digits-only for DB storage
-    const fullAddress = `${house}, ${street}, ${area}${landmark ? ", " + landmark : ""}, ${selectedState} - ${pincode}`;
+    const finalHouse = house.trim() || "Customer Address";
+    const finalStreet = street.trim() || finalHouse;
+    const finalArea = area.trim() || "West Bengal";
+    const fullAddress = `${finalHouse}, ${finalStreet}, ${finalArea}${landmark ? ", " + landmark.trim() : ""}, ${selectedState} - ${pincode}`;
 
     // Resolve device name: priority order:
     // 1. resolvedDeviceName from cashall_current_variant (most accurate)
@@ -134,9 +136,9 @@ function PickupCheckoutContent() {
             quoteId: quote?.id || quoteId,
             fullName: finalName,
             phone: finalPhone,
-            house,
-            street,
-            area,
+            house: finalHouse,
+            street: finalStreet,
+            area: finalArea,
             landmark,
             city: "Kolkata",
             state: selectedState,
