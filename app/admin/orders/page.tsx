@@ -27,46 +27,7 @@ interface Order {
   agentName?: string;
 }
 
-const DEFAULT_ORDERS: Order[] = [
-  {
-    id: "ord-ca72512",
-    orderNumber: "CA72512",
-    customerName: "West Bengal Customer",
-    customerPhone: "+91 7003216788",
-    pincode: "711101",
-    location: "6/6 Kings Road, Howrah, West Bengal - 711101",
-    deviceName: "Apple iPhone 13 (128 GB)",
-    pickupDate: "Tomorrow",
-    pickupTimeSlot: "1 PM - 4 PM",
-    estimatedPrice: 32500,
-    revisedPrice: null,
-    status: "PICKUP_SCHEDULED",
-    identityStatus: "PENDING",
-    imeiStatus: "PENDING",
-    esignStatus: "PENDING",
-    paymentStatus: "PENDING",
-    deviceStatus: "NOT RECEIVED",
-  },
-  {
-    id: "ord-ca36738",
-    orderNumber: "CA36738",
-    customerName: "Kundan Kumar Singh",
-    customerPhone: "+91 9876543210",
-    pincode: "834001",
-    location: "Ranchi, Jharkhand",
-    deviceName: "OPPO A33 (64 GB)",
-    pickupDate: "16 Aug 2026",
-    pickupTimeSlot: "9:16 PM",
-    estimatedPrice: 2889,
-    revisedPrice: 2700,
-    status: "COMPLETED",
-    identityStatus: "VERIFIED",
-    imeiStatus: "VERIFIED",
-    esignStatus: "SIGNED",
-    paymentStatus: "PAID",
-    deviceStatus: "RECEIVED",
-  },
-];
+
 
 function getAdminToken() {
   if (typeof window === "undefined") return "";

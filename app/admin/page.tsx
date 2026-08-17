@@ -81,30 +81,24 @@ export default function AdminDashboardPage() {
         if (res.ok) {
           const data = await res.json();
           const dbOrders: RecentOrder[] = data.recentOrders || [];
-          const combinedOrders = [...dbOrders];
-          DEFAULT_RECENT_ORDERS.forEach((def) => {
-            if (!combinedOrders.some((o) => o.orderNumber === def.orderNumber)) {
-              combinedOrders.push(def);
-            }
-          });
-          setRecentOrders(combinedOrders);
+          setRecentOrders(dbOrders);
 
           const dbStats = data.stats || {};
           setStats({
-            todayQuotes: (dbStats.todayQuotes || 0) + 2,
-            todayOrders: (dbStats.todayOrders || 0) + 2,
-            pickupsToday: (dbStats.pickupsToday || 0) + 2,
-            pendingInspections: (dbStats.pendingInspections || 0) + 1,
-            pendingPayments: (dbStats.pendingPayments || 0) + 1,
-            completedSales: (dbStats.completedSales || 0) + 1,
+            todayQuotes: dbStats.todayQuotes || 0,
+            todayOrders: dbStats.todayOrders || 0,
+            pickupsToday: dbStats.pickupsToday || 0,
+            pendingInspections: dbStats.pendingInspections || 0,
+            pendingPayments: dbStats.pendingPayments || 0,
+            completedSales: dbStats.completedSales || 0,
           });
         } else {
           setRecentOrders(DEFAULT_RECENT_ORDERS);
           setStats({ todayQuotes: 2, todayOrders: 2, pickupsToday: 2, pendingInspections: 1, pendingPayments: 1, completedSales: 1 });
         }
       } catch (err: any) {
-        setRecentOrders(DEFAULT_RECENT_ORDERS);
-        setStats({ todayQuotes: 2, todayOrders: 2, pickupsToday: 2, pendingInspections: 1, pendingPayments: 1, completedSales: 1 });
+        setRecentOrders([]);
+        setStats({ todayQuotes: 0, todayOrders: 0, pickupsToday: 0, pendingInspections: 0, pendingPayments: 0, completedSales: 0 });
       } finally {
         setLoading(false);
       }

@@ -96,13 +96,6 @@ export default function AdminPickupsPage() {
         }
       }
 
-      DEFAULT_PICKUP_ORDERS.forEach((def) => {
-        if (!seenIds.has(def.orderNumber)) {
-          ordersList.push(def);
-          seenIds.add(def.orderNumber);
-        }
-      });
-
       setPickups(ordersList);
     }
   };

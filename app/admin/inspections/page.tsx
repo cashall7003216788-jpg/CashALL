@@ -113,32 +113,7 @@ function AdminInspectionsContent() {
   };
 
   if (!order) {
-    // Use real DB orders; only show seed fallback if nothing loaded yet
-    const SEED_ORDERS = [
-      {
-        id: "ord-ca36738",
-        orderNumber: "CA36738",
-        quoteId: "caq-ca36738",
-        userId: "usr-ca36738",
-        customerName: "Kundan Kumar Singh",
-        customerPhone: "+91 9876543210",
-        addressSummary: "Ranchi, Jharkhand",
-        pincode: "834001",
-        deviceName: "OPPO A33 (64 GB)",
-        pickupDate: "16 Aug 2026",
-        pickupTimeSlot: "9:16 PM",
-        revisedPrice: 2700,
-        estimatedPrice: 2889,
-        declaredConditionSummary: "OPPO A33 (64 GB)",
-        status: "COMPLETED",
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      },
-    ] as OrderData[];
-
-    const displayList: OrderData[] = allOrders.length > 0
-      ? allOrders
-      : SEED_ORDERS;
+    const displayList: OrderData[] = allOrders;
 
     return (
       <div className="min-h-screen bg-brand-bg flex">
