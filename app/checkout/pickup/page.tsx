@@ -96,9 +96,16 @@ function PickupCheckoutContent() {
     e.preventDefault();
     if (!house || !street || !area) return;
 
+    // Validate phone — critical for cross-device sync
+    const cleanPhone = phone.trim().replace(/\D/g, "");
+    if (cleanPhone.length < 10) {
+      alert("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
     setIsSubmitting(true);
     const finalName = fullName.trim() || "Customer";
-    const finalPhone = phone.trim() || "—";
+    const finalPhone = cleanPhone; // Always use digits-only for DB storage
     const fullAddress = `${house}, ${street}, ${area}${landmark ? ", " + landmark : ""}, ${selectedState} - ${pincode}`;
 
     // Resolve device name: priority order:
@@ -114,54 +121,72 @@ function PickupCheckoutContent() {
     }
     if (!fullDeviceName) fullDeviceName = "Customer Mobile Device";
 
-    let createdOrderNum = `CA${Math.floor(10000 + Math.random() * 90000)}`;
+    let createdOrderNum = "";
+    let apiSuccess = false;
 
-    try {
-      const res = await fetch("/api/v1/orders/create", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          quoteId: quote?.id || quoteId,
-          fullName: finalName,
-          phone: finalPhone,
-          house,
-          street,
-          area,
-          landmark,
-          city: "Kolkata",
-          state: selectedState,
-          pincode,
-          pickupDate,
-          pickupTimeSlot: pickupSlot,
-          deviceName: fullDeviceName,
-          estimatedPrice: quote?.estimatedPrice || 32500,
-        }),
-      });
+    // Try up to 2 times to reach the server
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      try {
+        const res = await fetch("/api/v1/orders/create", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            quoteId: quote?.id || quoteId,
+            fullName: finalName,
+            phone: finalPhone,
+            house,
+            street,
+            area,
+            landmark,
+            city: "Kolkata",
+            state: selectedState,
+            pincode,
+            pickupDate,
+            pickupTimeSlot: pickupSlot,
+            deviceName: fullDeviceName,
+            estimatedPrice: quote?.estimatedPrice || 32500,
+          }),
+        });
 
-      if (res.ok) {
-        const json = await res.json();
-        if (json.success && json.data?.orderNumber) {
-          createdOrderNum = json.data.orderNumber;
+        if (res.ok) {
+          const json = await res.json();
+          if (json.success && json.data?.orderNumber) {
+            createdOrderNum = json.data.orderNumber;
+            apiSuccess = true;
+            break; // Success — stop retrying
+          }
+        } else {
+          console.warn(`Order API attempt ${attempt} failed: HTTP ${res.status}`);
         }
+      } catch (err) {
+        console.warn(`Order API attempt ${attempt} error:`, err);
       }
-    } catch (err) {
-      console.warn("Server API order recording failed, proceeding with backup save:", err);
+      // Wait 1s before retry
+      if (attempt < 2) await new Promise((r) => setTimeout(r, 1000));
+    }
+
+    // If API failed after retries, use a local ID but warn
+    if (!apiSuccess) {
+      createdOrderNum = `CA${Math.floor(10000 + Math.random() * 90000)}`;
+      console.error("⚠️ Order could NOT be saved to server after 2 attempts. Saved locally only.");
     }
 
     const newOrder: OrderData = {
       id: `ord-${Date.now()}`,
       orderNumber: createdOrderNum,
       quoteId: quote?.id || quoteId,
-      userId: `u-${finalPhone.replace(/\D/g, "") || Date.now()}`,
+      userId: `u-${finalPhone}`,
       customerName: finalName,
       customerPhone: finalPhone,
+      deviceName: fullDeviceName,   // Always store device name
       pincode,
       addressSummary: fullAddress,
       pickupDate,
       pickupTimeSlot: pickupSlot,
       status: "PICKUP_SCHEDULED",
       revisedPrice: quote?.estimatedPrice,
-      declaredConditionSummary: quote?.variantId ? "Customer Declared Valuation" : "Device Selling Order",
+      estimatedPrice: quote?.estimatedPrice,
+      declaredConditionSummary: fullDeviceName,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };

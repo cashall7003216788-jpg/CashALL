@@ -12,16 +12,21 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     return NextResponse.json({ success: true, orders: [] });
   }
 
-  // Clean phone number (strip +91, spaces)
-  const cleanPhone = phone.replace(/\D/g, "").slice(-10);
+  // Clean phone number (strip +91, spaces, dashes) — match last 10 digits
+  const rawClean = phone.replace(/\D/g, "");
+  const cleanPhone10 = rawClean.slice(-10); // last 10 digits only
+  const cleanPhone12 = rawClean.length === 10 ? `91${rawClean}` : rawClean; // with country code
 
+  // Try both: last-10-digit match (e.g. "6289477287") and full with code (e.g. "916289477287")
   const orders = await prisma.order.findMany({
     where: {
       deletedAt: null,
       user: {
-        phone: {
-          contains: cleanPhone,
-        },
+        OR: [
+          { phone: { contains: cleanPhone10 } },
+          { phone: { equals: cleanPhone12 } },
+          { phone: { equals: cleanPhone10 } },
+        ],
       },
     },
     include: {
