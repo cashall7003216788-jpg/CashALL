@@ -56,26 +56,30 @@ export default function AdminPickupsPage() {
   const [selectedPartnerMap, setSelectedPartnerMap] = useState<Record<string, string>>({});
   const [dispatchSuccess, setDispatchSuccess] = useState<string | null>(null);
 
-  const loadAllOrders = () => {
+  const loadAllOrders = async () => {
     if (typeof window !== "undefined") {
       const ordersList: OrderData[] = [];
       const seenIds = new Set<string>();
 
-      // Check cashall_latest_order
-      const latestRaw = localStorage.getItem("cashall_latest_order");
-      if (latestRaw) {
-        try {
-          const parsed = JSON.parse(latestRaw);
-          if (parsed && parsed.orderNumber && parsed.customerName !== "Ananya Roy") {
-            ordersList.push(parsed);
-            seenIds.add(parsed.orderNumber);
+      // 1. Fetch DB orders
+      try {
+        const res = await fetch("/api/v1/admin/orders");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.success && Array.isArray(data.orders)) {
+            data.orders.forEach((ord: any) => {
+              if (ord.orderNumber && !seenIds.has(ord.orderNumber)) {
+                ordersList.push(ord);
+                seenIds.add(ord.orderNumber);
+              }
+            });
           }
-        } catch (e) {
-          console.error(e);
         }
+      } catch (e) {
+        console.error("Failed to fetch DB orders in pickups:", e);
       }
 
-      // Scan all localStorage keys for cashall_order_*
+      // 2. Check localStorage
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
         if (key && key.startsWith("cashall_order_")) {
@@ -87,9 +91,7 @@ export default function AdminPickupsPage() {
                 ordersList.push(parsed);
                 seenIds.add(parsed.orderNumber);
               }
-            } catch (e) {
-              console.error(e);
-            }
+            } catch (e) {}
           }
         }
       }
@@ -132,7 +134,7 @@ export default function AdminPickupsPage() {
       localStorage.setItem(`cashall_agent_${order.orderNumber}`, agentName);
     }
 
-    setDispatchSuccess(`In-House Agent "${agentName}" recorded for Order #${order.orderNumber}!`);
+    setDispatchSuccess(`In-House Agent "${agentName}" assigned to Order #${order.orderNumber}!`);
     setTimeout(() => setDispatchSuccess(null), 4000);
     loadAllOrders();
   };
@@ -143,10 +145,17 @@ export default function AdminPickupsPage() {
 
   const handleAssignPartner = (order: OrderData) => {
     const partnerId = selectedPartnerMap[order.id] || order.assignedPartnerId;
-    if (!partnerId) return;
+    
+    if (!partnerId || partnerId === "inhouse_write_custom") {
+      handleAssignInHouseAgent(order);
+      return;
+    }
 
     const partner = DEFAULT_PARTNERS.find((p) => p.id === partnerId);
-    if (!partner) return;
+    if (!partner) {
+      handleAssignInHouseAgent(order);
+      return;
+    }
 
     const updatedOrder: OrderData = {
       ...order,
@@ -277,14 +286,9 @@ export default function AdminPickupsPage() {
                       <td className="p-3 text-right">
                         <button
                           onClick={() => handleAssignPartner(pk)}
-                          disabled={!currentSelected || currentSelected === "inhouse_write_custom"}
-                          className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all border shadow-sm ${
-                            currentSelected && currentSelected !== "inhouse_write_custom"
-                              ? "bg-brand-yellow text-black border-black hover:bg-yellow-400"
-                              : "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
-                          }`}
+                          className="px-4 py-2 rounded-xl text-xs font-extrabold transition-all border shadow-sm bg-brand-yellow text-black border-black hover:bg-yellow-400 cursor-pointer shadow-yellowGlow"
                         >
-                          Assign Partner
+                          {pk.assignedPartnerName ? "Edit / Re-Assign" : "+ Assign Agent"}
                         </button>
                       </td>
                     </tr>

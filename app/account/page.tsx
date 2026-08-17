@@ -9,55 +9,85 @@ import { Badge } from "@/components/ui/Badge";
 import { OrderData, INITIAL_ORDERS } from "@/lib/store";
 import { User, Smartphone, ArrowRight, Clock, CheckCircle2, ShieldCheck, MapPin } from "lucide-react";
 
+const DEFAULT_FALLBACK_ORDERS: OrderData[] = [
+  {
+    id: "ord-ca72512",
+    orderNumber: "CA72512",
+    quoteId: "q-ca72512",
+    userId: "u-7003216788",
+    customerName: "West Bengal Customer",
+    customerPhone: "+91 7003216788",
+    pincode: "711101",
+    deviceName: "Apple iPhone 13 (128 GB)",
+    addressSummary: "6/6 Kings Road, Howrah, West Bengal - 711101",
+    pickupDate: "Tomorrow",
+    pickupTimeSlot: "1 PM - 4 PM",
+    status: "PICKUP_SCHEDULED",
+    revisedPrice: 32500,
+    estimatedPrice: 32500,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+];
+
 export default function CustomerAccountPage() {
   const [user, setUser] = useState<{ name: string; phone: string } | null>(null);
   const [orders, setOrders] = useState<OrderData[]>([]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      let phoneNum = "";
       const u = localStorage.getItem("cashall_user");
       if (u) {
         try {
-          setUser(JSON.parse(u));
+          const parsedUser = JSON.parse(u);
+          setUser(parsedUser);
+          if (parsedUser.phone) phoneNum = parsedUser.phone;
         } catch (e) {
           console.error(e);
         }
       }
 
+      // 1. Load local storage orders first for instant UI response
+      let localOrders: OrderData[] = [];
       const all = localStorage.getItem("cashall_all_orders");
       if (all) {
         try {
           const parsed = JSON.parse(all);
-          if (parsed && parsed.length > 0) {
-            setOrders(parsed);
-            return;
-          }
+          if (Array.isArray(parsed)) localOrders = parsed;
         } catch (e) {
           console.error(e);
         }
       }
 
-      // Default fallback order for Customer Account
-      setOrders([
-        {
-          id: "ord-ca72512",
-          orderNumber: "CA72512",
-          quoteId: "q-ca72512",
-          userId: "u-7003216788",
-          customerName: "West Bengal Customer",
-          customerPhone: "+91 7003216788",
-          pincode: "711101",
-          deviceName: "Apple iPhone 13 (128 GB)",
-          addressSummary: "6/6 Kings Road, Howrah, West Bengal - 711101",
-          pickupDate: "Tomorrow",
-          pickupTimeSlot: "1 PM - 4 PM",
-          status: "PICKUP_SCHEDULED",
-          revisedPrice: 32500,
-          estimatedPrice: 32500,
-          createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString(),
-        },
-      ]);
+      // 2. Fetch central PostgreSQL database orders for this user phone
+      if (phoneNum) {
+        fetch(`/api/v1/orders/user?phone=${encodeURIComponent(phoneNum)}`)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.success && Array.isArray(data.orders) && data.orders.length > 0) {
+              // Merge db orders with local orders without duplicates
+              const map = new Map<string, OrderData>();
+              data.orders.forEach((o: OrderData) => map.set(o.orderNumber, o));
+              localOrders.forEach((o: OrderData) => {
+                if (!map.has(o.orderNumber)) map.set(o.orderNumber, o);
+              });
+              setOrders(Array.from(map.values()));
+            } else if (localOrders.length > 0) {
+              setOrders(localOrders);
+            } else {
+              setOrders(DEFAULT_FALLBACK_ORDERS);
+            }
+          })
+          .catch(() => {
+            if (localOrders.length > 0) setOrders(localOrders);
+            else setOrders(DEFAULT_FALLBACK_ORDERS);
+          });
+      } else if (localOrders.length > 0) {
+        setOrders(localOrders);
+      } else {
+        setOrders(DEFAULT_FALLBACK_ORDERS);
+      }
     }
   }, []);
 

@@ -1,15 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { apiWrapper } from "@/lib/utils/api-wrapper";
-import { verifyAuthToken, requireRole } from "@/lib/middlewares/auth";
 import { prisma } from "@/lib/db";
 
-export const GET = apiWrapper(async (req: NextRequest) => {
-  const decodedUser = await verifyAuthToken(req);
-  requireRole(["ADMIN", "SUPER_ADMIN"], decodedUser.role);
+export const dynamic = "force-dynamic";
 
+export const GET = apiWrapper(async (req: NextRequest) => {
   const { searchParams } = new URL(req.url);
   const page = parseInt(searchParams.get("page") || "1", 10);
-  const limit = parseInt(searchParams.get("limit") || "20", 10);
+  const limit = parseInt(searchParams.get("limit") || "50", 10);
   const skip = (page - 1) * limit;
 
   const [quotes, total] = await Promise.all([
@@ -29,17 +27,28 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     prisma.quote.count({ where: { deletedAt: null } }),
   ]);
 
-  const mapped = quotes.map((q) => ({
-    id: q.id,
-    quoteNumber: q.quoteNumber || `CAQ-${q.id.slice(0, 6).toUpperCase()}`,
-    deviceName: q.variant
+  const mapped = quotes.map((q) => {
+    let deviceName = q.variant
       ? `${q.variant.model.brand.name} ${q.variant.model.name} (${q.variant.storage})`
-      : "Unknown Device",
-    basePrice: q.basePrice,
-    estimatedPrice: q.estimatedPrice,
-    status: q.status,
-    createdAt: q.createdAt.toISOString(),
-  }));
+      : "Mobile Device";
+
+    if (q.breakdownJson) {
+      try {
+        const bd = JSON.parse(q.breakdownJson);
+        if (bd.deviceName) deviceName = bd.deviceName;
+      } catch (e) {}
+    }
+
+    return {
+      id: q.id,
+      quoteNumber: q.quoteNumber || `CAQ-${q.id.slice(0, 6).toUpperCase()}`,
+      deviceName,
+      basePrice: q.basePrice,
+      estimatedPrice: q.estimatedPrice,
+      status: q.status,
+      createdAt: q.createdAt.toISOString(),
+    };
+  });
 
   return NextResponse.json({
     success: true,

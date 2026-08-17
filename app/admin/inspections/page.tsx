@@ -14,6 +14,7 @@ function AdminInspectionsContent() {
   const orderIdParam = searchParams.get("orderId");
 
   const [order, setOrder] = useState<OrderData | null>(null);
+  const [allOrders, setAllOrders] = useState<OrderData[]>([]);
   const [imei, setImei] = useState("");
   const [screenFinding, setScreenFinding] = useState("Flawless Screen");
   const [bodyFinding, setBodyFinding] = useState("Flawless Body");
@@ -23,27 +24,43 @@ function AdminInspectionsContent() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      // Clear legacy sample keys from browser localStorage if present
+      // Clear legacy sample keys
       localStorage.removeItem("cashall_order_CA10482");
+
+      // Fetch DB orders
+      fetch("/api/v1/admin/orders")
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success && Array.isArray(data.orders)) {
+            setAllOrders(data.orders);
+            if (orderIdParam) {
+              const matched = data.orders.find((o: OrderData) => o.orderNumber === orderIdParam || o.id === orderIdParam);
+              if (matched) {
+                setOrder(matched);
+                if (matched.revisedPrice || matched.estimatedPrice) {
+                  setRevisedPrice(matched.revisedPrice || matched.estimatedPrice || 0);
+                }
+              }
+            }
+          }
+        })
+        .catch((e) => console.error(e));
 
       const stored = orderIdParam
         ? localStorage.getItem(`cashall_order_${orderIdParam}`)
         : localStorage.getItem("cashall_latest_order");
 
-      if (stored) {
+      if (stored && !order) {
         try {
           const parsed = JSON.parse(stored);
           if (parsed && parsed.customerName !== "Ananya Roy" && parsed.orderNumber !== "CA10482") {
             setOrder(parsed);
             if (parsed.revisedPrice) setRevisedPrice(parsed.revisedPrice);
-            return;
           }
         } catch (e) {
           console.error(e);
         }
       }
-
-      setOrder(null);
     }
   }, [orderIdParam]);
 
@@ -213,17 +230,53 @@ function AdminInspectionsContent() {
 
       <main className="flex-grow p-8 overflow-y-auto space-y-8">
         
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-black text-brand-black">
-              Physical Inspection & Price Revision Entry
-            </h1>
-            <p className="text-xs text-brand-muted mt-0.5">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="flex items-center gap-3">
+              <Button
+                onClick={() => {
+                  setOrder(null);
+                  router.push("/admin/inspections");
+                }}
+                variant="secondary"
+                size="sm"
+                className="font-extrabold gap-1.5 shadow-sm"
+              >
+                <span>← Back to All Orders</span>
+              </Button>
+              <h1 className="text-xl font-black text-brand-black">
+                Physical Inspection Log
+              </h1>
+            </div>
+            <p className="text-xs text-brand-muted">
               Record IMEI, physical condition findings, and submit revised final offers to customers
             </p>
           </div>
 
-          <Badge variant="yellow">ORDER #{order.orderNumber}</Badge>
+          <div className="flex items-center gap-2">
+            <select
+              value={order.orderNumber}
+              onChange={(e) => {
+                const targetNo = e.target.value;
+                const found = allOrders.find((o) => o.orderNumber === targetNo);
+                if (found) {
+                  setOrder(found);
+                  setRevisedPrice(found.revisedPrice || found.estimatedPrice || 0);
+                }
+              }}
+              className="bg-white border border-gray-300 rounded-xl px-3 py-2 text-xs font-bold text-brand-black focus:outline-none focus:border-brand-yellow shadow-sm"
+            >
+              <option value={order.orderNumber}>ORDER #{order.orderNumber} ({order.customerName})</option>
+              {allOrders
+                .filter((o) => o.orderNumber !== order.orderNumber)
+                .map((o) => (
+                  <option key={o.orderNumber} value={o.orderNumber}>
+                    ORDER #{o.orderNumber} - {o.customerName} ({o.deviceName || "Device"})
+                  </option>
+                ))}
+            </select>
+            <Badge variant="yellow">ORDER #{order.orderNumber}</Badge>
+          </div>
         </div>
 
         {saved && (
