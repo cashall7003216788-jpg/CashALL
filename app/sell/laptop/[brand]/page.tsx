@@ -85,18 +85,22 @@ export default function LaptopModelSelectionPage() {
                     </div>
                   )}
 
-                  <div className="w-full aspect-video bg-gray-50 rounded-xl mb-4 flex items-center justify-center p-4 border border-gray-100 group-hover:border-brand-yellow/30">
-                    {model.imageUrl ? (
-                      <Image
-                        src={model.imageUrl}
-                        alt={model.name}
-                        width={200}
-                        height={130}
-                        className="object-contain max-h-32 group-hover:scale-105 transition-transform"
-                      />
-                    ) : (
-                      <Laptop className="w-12 h-12 text-gray-400" />
-                    )}
+                  <div className="w-full aspect-video bg-gray-50 rounded-xl mb-4 flex items-center justify-center p-4 border border-gray-100 group-hover:border-brand-yellow/30 relative overflow-hidden">
+                    <img
+                      src={model.imageUrl || "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop"}
+                      alt={model.name}
+                      onError={(e) => {
+                        (e.target as HTMLElement).style.display = "none";
+                        const parent = (e.target as HTMLElement).parentElement;
+                        if (parent && !parent.querySelector('.fallback-icon')) {
+                          const fallback = document.createElement('div');
+                          fallback.className = 'fallback-icon flex flex-col items-center justify-center text-gray-400';
+                          fallback.innerHTML = '<svg class="w-12 h-12 text-brand-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>';
+                          parent.appendChild(fallback);
+                        }
+                      }}
+                      className="object-contain max-h-32 w-full h-full group-hover:scale-105 transition-transform"
+                    />
                   </div>
 
                   <div>

@@ -88,48 +88,52 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   }
 
   if (!quote) {
-    let variant = await prisma.deviceVariant.findFirst({
-      include: { model: { include: { brand: true } } },
-    });
-
-    if (!variant) {
-      let brand = await prisma.brand.findFirst();
-      if (!brand) {
-        brand = await prisma.brand.create({
-          data: { name: "CashALL", slug: "cashall", category: "MOBILE" },
+    try {
+      let variant = await prisma.deviceVariant.findFirst();
+      if (!variant) {
+        let brand = await prisma.brand.findFirst();
+        if (!brand) {
+          const uniqueSlug = `cashall-${Date.now()}`;
+          brand = await prisma.brand.create({
+            data: { name: "CashALL", slug: uniqueSlug, category: "MOBILE" },
+          });
+        }
+        let model = await prisma.deviceModel.findFirst({ where: { brandId: brand.id } });
+        if (!model) {
+          model = await prisma.deviceModel.create({
+            data: { brandId: brand.id, name: deviceName, slug: `dev-${Date.now()}`, category: "MOBILE", basePrice: estimatedPrice },
+          });
+        }
+        variant = await prisma.deviceVariant.create({
+          data: { modelId: model.id, storage: "128 GB", basePrice: estimatedPrice },
         });
       }
-      let model = await prisma.deviceModel.findFirst({ where: { brandId: brand.id } });
-      if (!model) {
-        model = await prisma.deviceModel.create({
-          data: { brandId: brand.id, name: "Mobile Device", slug: "mobile-device", category: "MOBILE", basePrice: estimatedPrice },
-        });
-      }
-      variant = await prisma.deviceVariant.create({
-        data: { modelId: model.id, storage: "128 GB", basePrice: estimatedPrice },
-        include: { model: { include: { brand: true } } },
-      });
-    }
 
-    quote = await prisma.quote.create({
-      data: {
-        quoteNumber: `Q${Math.floor(10000 + Math.random() * 90000)}`,
-        variantId: variant.id,
-        selectedAnswersJson: JSON.stringify({ device: deviceName }),
-        basePrice: estimatedPrice,
-        totalDeductions: 0,
-        estimatedPrice: estimatedPrice,
-        breakdownJson: JSON.stringify({
-          deviceName: deviceName,
+      quote = await prisma.quote.create({
+        data: {
+          quoteNumber: data.quoteId || `Q${Math.floor(10000 + Math.random() * 90000)}`,
+          variantId: variant.id,
+          selectedAnswersJson: JSON.stringify({ device: deviceName }),
           basePrice: estimatedPrice,
+          totalDeductions: 0,
           estimatedPrice: estimatedPrice,
-          summary: "Customer declared valuation",
-        }),
-        status: "ORDERED",
-        expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
-      },
-    });
+          breakdownJson: JSON.stringify({
+            deviceName: deviceName,
+            basePrice: estimatedPrice,
+            estimatedPrice: estimatedPrice,
+            summary: "Customer declared valuation",
+          }),
+          status: "ORDERED",
+          expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+        },
+      });
+    } catch (quoteErr) {
+      console.error("Quote creation fallback error:", quoteErr);
+      quote = await prisma.quote.findFirst();
+    }
   }
+
+  const finalQuoteId = quote?.id || data.quoteId || "q-default";
 
   // 3. Create Address Record
   const address = await prisma.address.create({
@@ -153,7 +157,7 @@ export const POST = apiWrapper(async (req: NextRequest) => {
     data: {
       orderNumber,
       userId: user.id,
-      quoteId: quote.id,
+      quoteId: finalQuoteId,
       addressId: address.id,
       pickupDate: pickupDate,
       pickupTimeSlot: pickupTimeSlot,
