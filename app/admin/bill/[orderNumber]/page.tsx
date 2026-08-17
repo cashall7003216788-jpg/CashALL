@@ -340,7 +340,7 @@ export default function AdminBillPage() {
           </div>
 
           <div className="text-center text-[11px] text-gray-400 font-medium">
-            Thank you for choosing CashALL — India&apos;s most transparent device recommerce platform.
+            Thank you for choosing CashALL — India&apos;s most transparent device selling platform.
           </div>
         </div>
 

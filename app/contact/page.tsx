@@ -192,7 +192,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="font-bold text-brand-black">Headquarters</div>
-                      <div>CashALL Recommerce Technologies, Connaught Place, New Delhi 110001</div>
+                      <div>Howrah, West Bengal</div>
                     </div>
                   </div>
                 </div>

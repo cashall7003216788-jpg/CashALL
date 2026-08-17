@@ -132,7 +132,7 @@ export default function AdminDashboardPage() {
           <div>
             <h1 className="text-2xl font-black text-brand-black">Operations Control Center</h1>
             <p className="text-xs text-brand-muted mt-0.5">
-              Live recommerce metrics, quote conversions, doorstep pickup dispatch, and final valuations
+              Live business metrics, quote conversions, doorstep pickup dispatch, and final valuations
             </p>
           </div>
           <Link

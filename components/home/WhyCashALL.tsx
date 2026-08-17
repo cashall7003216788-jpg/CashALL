@@ -76,7 +76,7 @@ export function WhyCashALL() {
             <div className="p-8 sm:p-12 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-yellow/20 border border-brand-yellow/40 text-brand-yellow text-xs font-bold">
                 <Sparkles className="w-4 h-4" />
-                <span>Verified Recommerce Partner</span>
+                <span>Verified CashALL Partner</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-black leading-tight">
                 Sell Your Old Phone In <span className="text-brand-yellow">3 Simple Steps</span>

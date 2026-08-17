@@ -178,8 +178,8 @@ export default function CustomerSaleReceiptPage() {
               <span>Issued By (Purchaser)</span>
               <span className="text-[10px] font-bold text-gray-400">OFFICIAL</span>
             </div>
-            <div className="font-extrabold text-white text-sm">CashALL Recommerce Technologies Pvt Ltd</div>
-            <div className="text-gray-300">Connaught Place, New Delhi - 110001</div>
+            <div className="font-extrabold text-white text-sm">CashALL Pvt Ltd</div>
+            <div className="text-gray-300">Howrah, West Bengal</div>
             <div className="text-gray-400 text-[11px]">Helpline: +91 7003216788 | cashall7003216788@gmail.com</div>
             <div className="text-brand-yellow text-[11px] font-bold">GSTIN: 07AAGCM0328J3ZK</div>
           </div>
@@ -207,7 +207,7 @@ export default function CustomerSaleReceiptPage() {
                   </div>
                 </td>
                 <td className="p-4 text-center font-bold text-gray-600">
-                  Used Device Recommerce
+                  Used Device Sale
                 </td>
                 <td className="p-4 text-right font-black text-base text-brand-black font-price">
                   ₹{(finalAmount + 99).toLocaleString("en-IN")}
@@ -269,7 +269,7 @@ export default function CustomerSaleReceiptPage() {
               <span>Legal Transfer of Ownership</span>
             </div>
             <p className="text-gray-600 leading-relaxed text-[11px]">
-              By accepting payment reference <strong>{order.paymentTxRef || "TXN9842109852"}</strong>, ownership of the device has been legally transferred to CashALL Recommerce Technologies.
+              By accepting payment reference <strong>{order.paymentTxRef || "TXN9842109852"}</strong>, ownership of the device has been legally transferred to CashALL.
             </p>
           </div>
 

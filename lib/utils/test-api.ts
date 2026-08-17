@@ -61,7 +61,7 @@ async function runTests() {
 
     // 4. Geocoding / Maps Service Test
     console.log("\n🔍 Test 4: Testing MapsService.geocodeAddress...");
-    const coords = await MapsService.geocodeAddress("Connaught Place, New Delhi, Delhi 110001");
+    const coords = await MapsService.geocodeAddress("Howrah, West Bengal 711101");
     console.log(`✅ MapsService geocoded coordinates: Lat: ${coords.latitude}, Lng: ${coords.longitude}`);
 
     // 5. Firebase Notification Register Test
@@ -101,10 +101,10 @@ async function runTests() {
         phone: "+91 8888888888",
         house: "Shop 12",
         street: "Main Market",
-        area: "Connaught Place",
-        city: "New Delhi",
-        state: "Delhi",
-        pincode: "110001",
+        area: "Howrah",
+        city: "Howrah",
+        state: "West Bengal",
+        pincode: "711101",
         latitude: coords.latitude,
         longitude: coords.longitude,
       },

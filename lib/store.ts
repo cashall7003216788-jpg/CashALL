@@ -5397,7 +5397,7 @@ export const INITIAL_FAQS: FAQData[] = [
   {
     id: "faq-5",
     question: "What happens to the personal data on my device?",
-    answer: "Our pickup partner helps you perform a factory data reset in your presence during pickup. CashALL ensures complete data wiping protocols before devices enter recommerce.",
+    answer: "Our pickup partner helps you perform a factory data reset in your presence during pickup. CashALL ensures complete data wiping protocols before devices enter processing for resale.",
     category: "SECURITY",
   }];
 

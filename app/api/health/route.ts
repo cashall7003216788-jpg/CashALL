@@ -5,7 +5,7 @@ export async function GET() {
     return NextResponse.json({
       status: "ok",
       timestamp: new Date().toISOString(),
-      service: "CashALL Recommerce API",
+      service: "CashALL API",
       environment: process.env.NODE_ENV || "production",
       database: "connected",
     });

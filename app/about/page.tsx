@@ -19,7 +19,7 @@ export default function AboutPage() {
               Sell Your Old Devices Without The Guesswork.
             </h1>
             <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
-              CashALL is built to introduce complete pricing transparency, speed, and trust into India&apos;s recommerce market.
+              CashALL is built to introduce complete pricing transparency, speed, and trust into India&apos;s used device market.
             </p>
           </div>
 

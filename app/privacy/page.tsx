@@ -20,7 +20,7 @@ export default function PrivacyPage() {
           </p>
           <h2 className="text-sm font-bold text-brand-black">2. Device Data Security & Erasure</h2>
           <p>
-            We prioritize device privacy. Customer device data is reset during doorstep pickup in your presence. CashALL requires all recommerce inventory to undergo certified factory erasures before resale.
+            We prioritize device privacy. Customer device data is reset during doorstep pickup in your presence. CashALL requires all device inventory to undergo certified factory erasures before resale.
           </p>
         </div>
       </main>

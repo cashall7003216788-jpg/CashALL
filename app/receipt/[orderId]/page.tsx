@@ -126,7 +126,7 @@ export default function PurchaseReceiptPage() {
 
           <div className="text-left sm:text-right">
             <div className="text-xs text-gray-400 font-bold tracking-wider uppercase mb-1">www.cashall.in</div>
-            <div className="text-base font-black text-gray-900">CashALL Recommerce Technologies Pvt Ltd</div>
+            <div className="text-base font-black text-gray-900">CashALL Pvt Ltd</div>
             <div className="text-xs text-gray-500 font-medium">CIN: U27205DL2026PTC190441</div>
             <div className="text-xs text-gray-500 font-medium">GST: 07AAGCM0328J3ZK</div>
           </div>
@@ -140,11 +140,11 @@ export default function PurchaseReceiptPage() {
             <div className="font-black text-gray-900 border-b border-gray-200 pb-2 text-sm">Purchaser Details</div>
             <div className="grid grid-cols-3 gap-1">
               <span className="font-bold text-gray-700">Purchaser :</span>
-              <span className="col-span-2 font-bold text-gray-900">CASHALL RECOMMERCE ENTERPRISE</span>
+              <span className="col-span-2 font-bold text-gray-900">CASHALL ENTERPRISE</span>
             </div>
             <div className="grid grid-cols-3 gap-1">
               <span className="font-bold text-gray-700">Address :</span>
-              <span className="col-span-2 text-gray-800">Connaught Place, New Delhi - 110001</span>
+              <span className="col-span-2 text-gray-800">Howrah, West Bengal</span>
             </div>
             <div className="grid grid-cols-3 gap-1">
               <span className="font-bold text-gray-700">GST Number :</span>
@@ -279,7 +279,7 @@ export default function PurchaseReceiptPage() {
         {/* REGISTERED ADDRESS FOOTER */}
         <div className="text-[11px] text-gray-500 border-t border-gray-200 pt-4 flex justify-between items-center">
           <div>
-            <span className="font-bold text-gray-700">Registered Office:</span> CashALL Recommerce Technologies, Connaught Place, New Delhi - 110001
+            <span className="font-bold text-gray-700">Registered Office:</span> Howrah, West Bengal
           </div>
           <div className="font-bold text-gray-400">Page 1 of 2</div>
         </div>
@@ -347,7 +347,7 @@ export default function PurchaseReceiptPage() {
             THANKS FOR CHOOSING CASHALL
           </div>
           <div className="text-xs text-gray-400 font-medium">
-            India&apos;s Most Trusted & Transparent Recommerce Platform — www.cashall.in
+            India&apos;s Most Trusted & Transparent Device Selling Platform — www.cashall.in
           </div>
         </div>
 

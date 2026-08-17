@@ -353,7 +353,7 @@ export default function PartnerPortalPage() {
       </div>
 
       <div className="text-center text-[11px] text-gray-600 font-semibold py-4">
-        © CashALL Recommerce • Partner Field Operations
+        © CashALL • Partner Field Operations
       </div>
     </div>
   );

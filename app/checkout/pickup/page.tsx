@@ -376,7 +376,7 @@ function PickupCheckoutContent() {
                       type="text"
                       value={area}
                       onChange={(e) => setArea(e.target.value)}
-                      placeholder="e.g. Connaught Place"
+                      placeholder="e.g. Shibpur / Kings Road"
                       required
                       className="w-full px-3 py-2 text-xs bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow"
                     />
