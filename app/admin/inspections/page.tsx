@@ -27,33 +27,56 @@ function AdminInspectionsContent() {
       // Clear legacy sample keys
       localStorage.removeItem("cashall_order_CA10482");
 
-      // Fetch DB orders
-      fetch("/api/v1/admin/orders")
+      // Fetch DB orders — admin orders API returns data.data.orders (not data.orders)
+      fetch("/api/v1/admin/orders?limit=200")
         .then((res) => res.json())
         .then((data) => {
-          if (data.success && Array.isArray(data.orders)) {
-            setAllOrders(data.orders);
+          // Handle both response shapes: data.data.orders and data.orders
+          const rawOrders = data.data?.orders || data.orders || [];
+          if (Array.isArray(rawOrders) && rawOrders.length > 0) {
+            // Map to OrderData format
+            const mapped: OrderData[] = rawOrders.map((ord: any) => ({
+              id: ord.id,
+              orderNumber: ord.orderNumber,
+              quoteId: ord.quoteId || "",
+              userId: ord.userId || "",
+              customerName: ord.user?.name || ord.customerName || "Customer",
+              customerPhone: ord.user?.phone || ord.customerPhone || "—",
+              deviceName: ord.deviceName || "Mobile Device",
+              addressSummary: ord.address
+                ? `${ord.address.house || ""}, ${ord.address.city || ""}, ${ord.address.state || ""} - ${ord.address.pincode || ""}`
+                : ord.addressSummary || "—",
+              pincode: ord.address?.pincode || ord.pincode || "700001",
+              pickupDate: ord.pickupDate || "Scheduled",
+              pickupTimeSlot: ord.pickupTimeSlot || "Standard Slot",
+              revisedPrice: ord.finalPrice || ord.revisedPrice || undefined,
+              estimatedPrice: ord.quote?.estimatedPrice || ord.estimatedPrice || 0,
+              declaredConditionSummary: ord.deviceName || "Customer Device",
+              status: ord.status || "PICKUP_SCHEDULED",
+              createdAt: ord.createdAt || new Date().toISOString(),
+              updatedAt: ord.updatedAt || new Date().toISOString(),
+            }));
+            setAllOrders(mapped);
             if (orderIdParam) {
-              const matched = data.orders.find((o: OrderData) => o.orderNumber === orderIdParam || o.id === orderIdParam);
+              const matched = mapped.find((o) => o.orderNumber === orderIdParam || o.id === orderIdParam);
               if (matched) {
                 setOrder(matched);
-                if (matched.revisedPrice || matched.estimatedPrice) {
-                  setRevisedPrice(matched.revisedPrice || matched.estimatedPrice || 0);
-                }
+                setRevisedPrice(matched.revisedPrice || matched.estimatedPrice || 0);
               }
             }
           }
         })
-        .catch((e) => console.error(e));
+        .catch((e) => console.error("Failed to load admin orders:", e));
 
+      // Also check localStorage for the specific order
       const stored = orderIdParam
         ? localStorage.getItem(`cashall_order_${orderIdParam}`)
-        : localStorage.getItem("cashall_latest_order");
+        : null; // Don't load cashall_latest_order — it's the LAST customer's order, not necessarily ours
 
       if (stored && !order) {
         try {
           const parsed = JSON.parse(stored);
-          if (parsed && parsed.customerName !== "Ananya Roy" && parsed.orderNumber !== "CA10482") {
+          if (parsed && parsed.orderNumber !== "CA10482") {
             setOrder(parsed);
             if (parsed.revisedPrice) setRevisedPrice(parsed.revisedPrice);
           }
@@ -90,38 +113,32 @@ function AdminInspectionsContent() {
   };
 
   if (!order) {
-    const inspectionList = [
+    // Use real DB orders; only show seed fallback if nothing loaded yet
+    const SEED_ORDERS = [
       {
+        id: "ord-ca36738",
         orderNumber: "CA36738",
+        quoteId: "caq-ca36738",
+        userId: "usr-ca36738",
         customerName: "Kundan Kumar Singh",
         customerPhone: "+91 9876543210",
-        location: "Ranchi, Jharkhand",
+        addressSummary: "Ranchi, Jharkhand",
+        pincode: "834001",
         deviceName: "OPPO A33 (64 GB)",
-        inspector: (typeof window !== "undefined" && localStorage.getItem("cashall_agent_CA36738"))
-          ? `${localStorage.getItem("cashall_agent_CA36738")} (CashALL In-House Agent)`
-          : "CashALL In-House Agent",
-        findings: "Flawless Screen, Minor Paint Wear",
-        originalPrice: 2889,
+        pickupDate: "16 Aug 2026",
+        pickupTimeSlot: "9:16 PM",
         revisedPrice: 2700,
+        estimatedPrice: 2889,
+        declaredConditionSummary: "OPPO A33 (64 GB)",
         status: "COMPLETED",
-        date: "16 Aug 2026",
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
       },
-      {
-        orderNumber: "CA72512",
-        customerName: "West Bengal Customer",
-        customerPhone: "+91 7003216788",
-        location: "6/6 Kings Road, Howrah, West Bengal",
-        deviceName: "Apple iPhone 13 (128 GB)",
-        inspector: (typeof window !== "undefined" && localStorage.getItem("cashall_agent_CA72512"))
-          ? `${localStorage.getItem("cashall_agent_CA72512")} (CashALL In-House Agent)`
-          : "CashALL In-House Agent",
-        findings: "Pending Doorstep Inspection",
-        originalPrice: 32500,
-        revisedPrice: null,
-        status: "READY_FOR_INSPECTION",
-        date: "Tomorrow (1-4 PM)",
-      },
-    ];
+    ] as OrderData[];
+
+    const displayList: OrderData[] = allOrders.length > 0
+      ? allOrders
+      : SEED_ORDERS;
 
     return (
       <div className="min-h-screen bg-brand-bg flex">
@@ -141,7 +158,7 @@ function AdminInspectionsContent() {
 
           <div className="bg-white rounded-3xl p-6 border border-brand-border shadow-premium space-y-4">
             <h2 className="text-sm font-extrabold text-brand-black border-b border-gray-100 pb-3">
-              Doorstep Physical Inspection Log
+              Doorstep Physical Inspection Log {allOrders.length > 0 && <span className="text-brand-muted font-normal ml-1">({allOrders.length} orders)</span>}
             </h2>
 
             <div className="overflow-x-auto">
@@ -152,31 +169,34 @@ function AdminInspectionsContent() {
                     <th className="p-3">Customer & Location</th>
                     <th className="p-3">Device</th>
                     <th className="p-3">Assigned Inspector</th>
-                    <th className="p-3">Inspection Findings</th>
                     <th className="p-3">Valuation</th>
                     <th className="p-3">Status</th>
                     <th className="p-3 text-right">Action</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
-                  {inspectionList.map((item) => (
+                  {displayList.map((item) => (
                     <tr key={item.orderNumber} className="hover:bg-gray-50/80 transition-colors">
                       <td className="p-3 font-extrabold text-brand-black">{item.orderNumber}</td>
                       <td className="p-3">
                         <div className="font-bold text-brand-black">{item.customerName}</div>
                         <div className="text-[11px] text-brand-muted">{item.customerPhone}</div>
+                        <div className="text-[11px] text-gray-400">{item.addressSummary}</div>
                       </td>
-                      <td className="p-3 font-bold text-brand-black">{item.deviceName}</td>
-                      <td className="p-3 text-gray-600 font-medium">{item.inspector}</td>
-                      <td className="p-3 text-gray-500 font-medium">{item.findings}</td>
+                      <td className="p-3 font-bold text-brand-black">{item.deviceName || "Mobile Device"}</td>
+                      <td className="p-3 text-gray-600 font-medium">
+                        {(typeof window !== "undefined" && localStorage.getItem(`cashall_agent_${item.orderNumber}`))
+                          ? `${localStorage.getItem(`cashall_agent_${item.orderNumber}`)} (CashALL In-House Agent)`
+                          : "CashALL In-House Agent"}
+                      </td>
                       <td className="p-3 font-bold font-price text-brand-black">
                         {item.revisedPrice ? (
                           <span>
-                            <span className="line-through text-gray-400 mr-1 text-[11px]">₹{item.originalPrice.toLocaleString("en-IN")}</span>
+                            <span className="line-through text-gray-400 mr-1 text-[11px]">₹{(item.estimatedPrice || 0).toLocaleString("en-IN")}</span>
                             ₹{item.revisedPrice.toLocaleString("en-IN")}
                           </span>
                         ) : (
-                          <span>₹{item.originalPrice.toLocaleString("en-IN")}</span>
+                          <span>₹{(item.estimatedPrice || 0).toLocaleString("en-IN")}</span>
                         )}
                       </td>
                       <td className="p-3">
@@ -187,24 +207,8 @@ function AdminInspectionsContent() {
                       <td className="p-3 text-right">
                         <Button
                           onClick={() => {
-                            setOrder({
-                              id: `ord-${item.orderNumber.toLowerCase()}`,
-                              orderNumber: item.orderNumber,
-                              quoteId: `caq-${item.orderNumber.toLowerCase()}`,
-                              userId: `usr-${item.orderNumber.toLowerCase()}`,
-                              customerName: item.customerName,
-                              customerPhone: item.customerPhone,
-                              addressSummary: item.location,
-                              pincode: "700001",
-                              pickupDate: item.date,
-                              pickupTimeSlot: "1 PM - 4 PM",
-                              revisedPrice: item.revisedPrice ?? undefined,
-                              declaredConditionSummary: item.deviceName,
-                              status: item.status,
-                              paymentStatus: "PAID",
-                              createdAt: new Date().toISOString(),
-                              updatedAt: new Date().toISOString(),
-                            });
+                            setOrder(item);
+                            setRevisedPrice(item.revisedPrice || item.estimatedPrice || 0);
                           }}
                           variant="secondary"
                           size="sm"

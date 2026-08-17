@@ -27,7 +27,17 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     include: {
       user: true,
       address: true,
-      quote: true,
+      quote: {
+        include: {
+          variant: {
+            include: {
+              model: {
+                include: { brand: true },
+              },
+            },
+          },
+        },
+      },
       pickups: true,
     },
     orderBy: {
@@ -36,16 +46,35 @@ export const GET = apiWrapper(async (req: NextRequest) => {
   });
 
   const formattedOrders = orders.map((ord) => {
+    // Resolve deviceName from multiple sources in priority order
     let deviceName = "Mobile Device";
-    let basePrice = ord.quote?.basePrice || 0;
-    let estimatedPrice = ord.quote?.estimatedPrice || ord.finalPrice || 0;
 
+    // 1. Try breakdownJson (new object format with deviceName key)
     if (ord.quote?.breakdownJson) {
       try {
         const bd = JSON.parse(ord.quote.breakdownJson);
-        if (bd.deviceName) deviceName = bd.deviceName;
+        if (bd && typeof bd === "object" && !Array.isArray(bd) && bd.deviceName) {
+          deviceName = bd.deviceName;
+        }
       } catch (e) {}
     }
+
+    // 2. Try selectedAnswersJson.device (backup)
+    if (deviceName === "Mobile Device" && ord.quote?.selectedAnswersJson) {
+      try {
+        const sa = JSON.parse(ord.quote.selectedAnswersJson);
+        if (sa?.device && sa.device !== "Customer Mobile Device") deviceName = sa.device;
+      } catch (e) {}
+    }
+
+    // 3. Try variant -> model -> brand chain
+    if (deviceName === "Mobile Device" && ord.quote?.variant?.model) {
+      const m = ord.quote.variant.model;
+      deviceName = m.brand ? `${m.brand.name} ${m.name}` : m.name;
+    }
+
+    const basePrice = ord.quote?.basePrice || 0;
+    const estimatedPrice = ord.quote?.estimatedPrice || ord.finalPrice || 0;
 
     const pickup = ord.pickups && ord.pickups.length > 0 ? ord.pickups[0] : null;
 

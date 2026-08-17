@@ -28,6 +28,7 @@ function PickupCheckoutContent() {
   const [pincode, setPincode] = useState("700001");
   const [serviceStatus, setServiceStatus] = useState<"IDLE" | "AVAILABLE" | "UNAVAILABLE">("AVAILABLE");
   const [selectedState, setSelectedState] = useState("West Bengal");
+  const [resolvedDeviceName, setResolvedDeviceName] = useState("");
 
   // Address fields
   const [fullName, setFullName] = useState("");
@@ -63,6 +64,18 @@ function PickupCheckoutContent() {
           console.error(e);
         }
       }
+
+      // Pre-load current variant for device name resolution
+      const storedVariant = localStorage.getItem("cashall_current_variant");
+      if (storedVariant) {
+        try {
+          const sv = JSON.parse(storedVariant);
+          if (sv?.modelName && sv?.brandName) {
+            const varName = sv.storage ? `${sv.brandName} ${sv.modelName} (${sv.storage})` : `${sv.brandName} ${sv.modelName}`;
+            setResolvedDeviceName(varName);
+          }
+        } catch (e) {}
+      }
     }
   }, [quoteId]);
 
@@ -87,7 +100,19 @@ function PickupCheckoutContent() {
     const finalName = fullName.trim() || "Customer";
     const finalPhone = phone.trim() || "—";
     const fullAddress = `${house}, ${street}, ${area}${landmark ? ", " + landmark : ""}, ${selectedState} - ${pincode}`;
-    const fullDeviceName = `${brand.name} ${model.name}`;
+
+    // Resolve device name: priority order:
+    // 1. resolvedDeviceName from cashall_current_variant (most accurate)
+    // 2. quote.breakdownJson.deviceName (saved during assessment)
+    // 3. Never use INITIAL_VARIANTS fallback (can be wrong model)
+    let fullDeviceName = resolvedDeviceName;
+    if (!fullDeviceName && quote?.breakdownJson) {
+      try {
+        const bd = JSON.parse(quote.breakdownJson);
+        if (bd.deviceName) fullDeviceName = bd.deviceName;
+      } catch {}
+    }
+    if (!fullDeviceName) fullDeviceName = "Customer Mobile Device";
 
     let createdOrderNum = `CA${Math.floor(10000 + Math.random() * 90000)}`;
 
@@ -162,9 +187,37 @@ function PickupCheckoutContent() {
     }, 600);
   };
 
-  const variant = INITIAL_VARIANTS.find((v) => v.id === quote?.variantId) || INITIAL_VARIANTS[0];
-  const model = INITIAL_MODELS.find((m) => m.id === variant.modelId) || INITIAL_MODELS[0];
-  const brand = INITIAL_BRANDS.find((b) => b.id === model.brandId) || INITIAL_BRANDS[0];
+  // Resolve display device name for sidebar - read from stored data, never fall back to INITIAL_VARIANTS[0]
+  const sidebarDeviceName = (() => {
+    if (resolvedDeviceName) return resolvedDeviceName;
+    if (quote?.breakdownJson) {
+      try {
+        const bd = JSON.parse(quote.breakdownJson);
+        if (bd.deviceName) return bd.deviceName;
+      } catch {}
+    }
+    // Only use INITIAL_VARIANTS if variantId actually matches
+    const matchedVariant = INITIAL_VARIANTS.find((v) => v.id === quote?.variantId);
+    if (matchedVariant) {
+      const matchedModel = INITIAL_MODELS.find((m) => m.id === matchedVariant.modelId);
+      const matchedBrand = matchedModel ? INITIAL_BRANDS.find((b) => b.id === matchedModel.brandId) : null;
+      if (matchedModel && matchedBrand) return `${matchedBrand.name} ${matchedModel.name} (${matchedVariant.storage})`;
+    }
+    return "Your Device";
+  })();
+  const sidebarStorage = (() => {
+    if (resolvedDeviceName) return "";
+    const matchedVariant = INITIAL_VARIANTS.find((v) => v.id === quote?.variantId);
+    return matchedVariant?.storage || "128 GB";
+  })();
+  const sidebarImageUrl = (() => {
+    const matchedVariant = INITIAL_VARIANTS.find((v) => v.id === quote?.variantId);
+    if (matchedVariant) {
+      const matchedModel = INITIAL_MODELS.find((m) => m.id === matchedVariant.modelId);
+      return matchedModel?.imageUrl || null;
+    }
+    return null;
+  })();
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg text-brand-black">
@@ -391,17 +444,17 @@ function PickupCheckoutContent() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center p-1 border border-gray-100 shrink-0">
-                      {model.imageUrl ? (
-                        <Image src={model.imageUrl} alt={model.name} width={32} height={32} className="object-contain max-h-8" />
+                      {sidebarImageUrl ? (
+                        <Image src={sidebarImageUrl} alt={sidebarDeviceName} width={32} height={32} className="object-contain max-h-8" />
                       ) : (
                         <Truck className="w-5 h-5 text-gray-400" />
                       )}
                     </div>
                     <div>
                       <div className="text-xs font-extrabold text-brand-black">
-                        {brand.name} {model.name}
+                        {sidebarDeviceName}
                       </div>
-                      <div className="text-[11px] text-brand-muted">{variant.storage} Storage</div>
+                      {sidebarStorage && <div className="text-[11px] text-brand-muted">{sidebarStorage} Storage</div>}
                     </div>
                   </div>
 

@@ -82,7 +82,12 @@ export const POST = apiWrapper(async (req: NextRequest) => {
           basePrice: price,
           totalDeductions: 0,
           estimatedPrice: price,
-          breakdownJson: JSON.stringify({ summary: "Customer declared valuation" }),
+          breakdownJson: JSON.stringify({
+            deviceName: data.deviceName || "Customer Mobile Device",
+            basePrice: price,
+            estimatedPrice: price,
+            summary: "Customer declared valuation",
+          }),
           status: "ORDERED",
           expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
         },

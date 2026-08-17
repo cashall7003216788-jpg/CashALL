@@ -61,10 +61,35 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     prisma.order.count({ where }),
   ]);
 
+  const formattedOrders = orders.map((ord: any) => {
+    // Resolve deviceName: breakdownJson → variant→model chain → fallback
+    let deviceName = "Mobile Device";
+    if (ord.quote?.breakdownJson) {
+      try {
+        const bd = JSON.parse(ord.quote.breakdownJson);
+        if (bd && typeof bd === "object" && !Array.isArray(bd) && bd.deviceName) {
+          deviceName = bd.deviceName;
+        }
+      } catch {}
+    }
+    if (deviceName === "Mobile Device" && ord.quote?.variant?.model) {
+      const m = ord.quote.variant.model;
+      deviceName = m.brand ? `${m.brand.name} ${m.name}` : m.name;
+    }
+    if (deviceName === "Mobile Device" && ord.quote?.selectedAnswersJson) {
+      try {
+        const sa = JSON.parse(ord.quote.selectedAnswersJson);
+        if (sa?.device && sa.device !== "Customer Mobile Device") deviceName = sa.device;
+      } catch {}
+    }
+
+    return { ...ord, deviceName };
+  });
+
   return NextResponse.json({
     success: true,
     data: {
-      orders,
+      orders: formattedOrders,
       pagination: {
         total,
         page,

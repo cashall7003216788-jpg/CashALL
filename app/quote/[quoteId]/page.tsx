@@ -107,12 +107,43 @@ export default function QuoteResultPage() {
 
   if (!quote) return null;
 
-  const variant = INITIAL_VARIANTS.find((v) => v.id === quote.variantId) || INITIAL_VARIANTS[0];
-  const model = INITIAL_MODELS.find((m) => m.id === variant.modelId) || INITIAL_MODELS[0];
-  const brand = INITIAL_BRANDS.find((b) => b.id === model.brandId) || INITIAL_BRANDS[0];
+  // Resolve device name: priority = breakdownJson.deviceName > matched variant > "Your Device"
+  let resolvedDeviceName = "Your Device";
+  let resolvedBasePrice = quote.basePrice || 0;
+  let resolvedEstimatedPrice = quote.estimatedPrice || 0;
 
-  const breakdown: Array<{ category: string; title: string; selection: string; amount: number }> =
-    JSON.parse(quote.breakdownJson || "[]");
+  // 1. Try breakdownJson (new object format with deviceName)
+  let parsedBreakdown: any = null;
+  try {
+    parsedBreakdown = JSON.parse(quote.breakdownJson || "{}");
+    if (parsedBreakdown && typeof parsedBreakdown === "object" && !Array.isArray(parsedBreakdown)) {
+      if (parsedBreakdown.deviceName) resolvedDeviceName = parsedBreakdown.deviceName;
+    }
+  } catch {}
+
+  // 2. Only use INITIAL_VARIANTS if variantId actually matches (no fallback to [0])
+  const matchedVariant = INITIAL_VARIANTS.find((v) => v.id === quote.variantId);
+  const matchedModel = matchedVariant ? INITIAL_MODELS.find((m) => m.id === matchedVariant.modelId) : null;
+  const matchedBrand = matchedModel ? INITIAL_BRANDS.find((b) => b.id === matchedModel.brandId) : null;
+
+  if (resolvedDeviceName === "Your Device" && matchedModel && matchedBrand) {
+    resolvedDeviceName = `${matchedBrand.name} ${matchedModel.name}${matchedVariant?.storage ? " (" + matchedVariant.storage + ")" : ""}`;
+  }
+
+  // Breakdown for display - handle both array and object formats
+  const breakdown: Array<{ category: string; title: string; selection: string; amount: number }> = (() => {
+    if (!parsedBreakdown) return [];
+    if (Array.isArray(parsedBreakdown)) return parsedBreakdown;
+    if (Array.isArray(parsedBreakdown.summary)) {
+      return parsedBreakdown.summary.map((s: any) => ({
+        category: "SUMMARY",
+        title: s.label || "",
+        selection: "",
+        amount: s.amount || 0,
+      }));
+    }
+    return [];
+  })();
 
   const handleScheduleClick = () => {
     // Check if customer phone is already stored
@@ -238,9 +269,7 @@ export default function QuoteResultPage() {
 
             <div className="flex items-center justify-center gap-2 text-sm text-gray-300">
               <Smartphone className="w-4 h-4 text-brand-yellow" />
-              <span className="font-bold">{brand.name} {model.name}</span>
-              <span className="text-gray-500">•</span>
-              <span>{variant.storage} Storage</span>
+              <span className="font-bold">{resolvedDeviceName}</span>
             </div>
 
             {/* EXPIRY TIMER */}
@@ -270,7 +299,7 @@ export default function QuoteResultPage() {
               {/* BASE PRICE */}
               <div className="py-3 flex items-center justify-between font-bold text-brand-black">
                 <div>
-                  <span>Base Acquisition Value ({variant.storage})</span>
+                  <span>Base Acquisition Value ({resolvedDeviceName})</span>
                   <div className="text-[11px] font-normal text-brand-muted">Market baseline for flawless unit</div>
                 </div>
                 <span className="font-price text-base">₹{quote.basePrice.toLocaleString("en-IN")}</span>

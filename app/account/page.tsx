@@ -6,29 +6,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { OrderData, INITIAL_ORDERS } from "@/lib/store";
-import { User, Smartphone, ArrowRight, Clock, CheckCircle2, ShieldCheck, MapPin } from "lucide-react";
-
-const DEFAULT_FALLBACK_ORDERS: OrderData[] = [
-  {
-    id: "ord-ca72512",
-    orderNumber: "CA72512",
-    quoteId: "q-ca72512",
-    userId: "u-7003216788",
-    customerName: "West Bengal Customer",
-    customerPhone: "+91 7003216788",
-    pincode: "711101",
-    deviceName: "Apple iPhone 13 (128 GB)",
-    addressSummary: "6/6 Kings Road, Howrah, West Bengal - 711101",
-    pickupDate: "Tomorrow",
-    pickupTimeSlot: "1 PM - 4 PM",
-    status: "PICKUP_SCHEDULED",
-    revisedPrice: 32500,
-    estimatedPrice: 32500,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-  },
-];
+import { OrderData } from "@/lib/store";
+import { User, Smartphone, ArrowRight, Clock } from "lucide-react";
 
 export default function CustomerAccountPage() {
   const [user, setUser] = useState<{ name: string; phone: string } | null>(null);
@@ -48,19 +27,27 @@ export default function CustomerAccountPage() {
         }
       }
 
-      // 1. Load local storage orders first for instant UI response
+      // 1. Load local storage orders first for instant UI response (only this customer's orders)
       let localOrders: OrderData[] = [];
       const all = localStorage.getItem("cashall_all_orders");
       if (all) {
         try {
           const parsed = JSON.parse(all);
-          if (Array.isArray(parsed)) localOrders = parsed;
+          if (Array.isArray(parsed)) {
+            // Only include orders that match this customer's phone or have no phone attached
+            localOrders = parsed.filter((o: OrderData) => {
+              if (!phoneNum) return true;
+              const cleanStored = (o.customerPhone || "").replace(/\D/g, "").slice(-10);
+              const cleanCurrent = phoneNum.replace(/\D/g, "").slice(-10);
+              return !cleanStored || cleanStored === cleanCurrent;
+            });
+          }
         } catch (e) {
           console.error(e);
         }
       }
 
-      // 2. Fetch central PostgreSQL database orders for this user phone
+      // 2. Fetch central PostgreSQL database orders for this user's phone
       if (phoneNum) {
         fetch(`/api/v1/orders/user?phone=${encodeURIComponent(phoneNum)}`)
           .then((res) => res.json())
@@ -76,17 +63,17 @@ export default function CustomerAccountPage() {
             } else if (localOrders.length > 0) {
               setOrders(localOrders);
             } else {
-              setOrders(DEFAULT_FALLBACK_ORDERS);
+              setOrders([]); // Show empty state — never show another customer's order
             }
           })
           .catch(() => {
             if (localOrders.length > 0) setOrders(localOrders);
-            else setOrders(DEFAULT_FALLBACK_ORDERS);
+            else setOrders([]); // Show empty state
           });
       } else if (localOrders.length > 0) {
         setOrders(localOrders);
       } else {
-        setOrders(DEFAULT_FALLBACK_ORDERS);
+        setOrders([]); // No user + no local data = empty state
       }
     }
   }, []);

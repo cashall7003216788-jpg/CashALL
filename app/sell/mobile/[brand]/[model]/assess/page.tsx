@@ -293,6 +293,8 @@ export default function ConditionAssessmentPage() {
       accessories: selectedAccessories,
     };
 
+    const deviceFullName = `${brand.name} ${model.name}${variant.storage ? " (" + variant.storage + ")" : ""}`;
+
     const newQuote: QuoteData = {
       id: quoteId,
       quoteNumber,
@@ -301,10 +303,15 @@ export default function ConditionAssessmentPage() {
       basePrice: variant.basePrice,
       totalDeductions: variant.basePrice - currentPrice,
       estimatedPrice: currentPrice,
-      breakdownJson: JSON.stringify([
-        { label: "Base Device Market Valuation", amount: variant.basePrice },
-        { label: "Condition & Defect Adjustments", amount: currentPrice - variant.basePrice },
-      ]),
+      breakdownJson: JSON.stringify({
+        deviceName: deviceFullName,
+        basePrice: variant.basePrice,
+        estimatedPrice: currentPrice,
+        summary: [
+          { label: "Base Device Market Valuation", amount: variant.basePrice },
+          { label: "Condition & Defect Adjustments", amount: currentPrice - variant.basePrice },
+        ],
+      }),
       expiresAt: new Date(Date.now() + 48 * 60 * 60 * 1000).toISOString(),
       status: "ACTIVE",
       createdAt: new Date().toISOString(),

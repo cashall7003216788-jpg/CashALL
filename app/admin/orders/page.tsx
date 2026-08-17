@@ -103,7 +103,11 @@ export default function AdminOrdersPage() {
           customerPhone: ord.user?.phone || "—",
           pincode: ord.address?.pincode || "—",
           location: ord.address ? `${ord.address.house}, ${ord.address.city}, ${ord.address.state} - ${ord.address.pincode}` : "—",
-          deviceName: ord.quote?.variant?.model ? `${ord.quote.variant.model.brand.name} ${ord.quote.variant.model.name}` : "Mobile Device",
+          // deviceName is pre-resolved by the API from breakdownJson → variant→model chain
+          deviceName: ord.deviceName ||
+            (ord.quote?.variant?.model
+              ? `${ord.quote.variant.model.brand?.name || ""} ${ord.quote.variant.model.name}`.trim()
+              : "Mobile Device"),
           pickupDate: ord.pickupDate || "—",
           pickupTimeSlot: ord.pickupTimeSlot || "—",
           estimatedPrice: ord.quote?.estimatedPrice ?? 0,
