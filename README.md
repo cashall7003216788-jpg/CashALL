@@ -1,4 +1,4 @@
-# CashALL — Recommerce Platform & Web Application
+# CashALL
 
 **CashALL** is a modern Indian recommerce platform enabling customers to sell used mobile phones with transparent price valuation, free doorstep pickup, physical verification, price revision approval, and instant direct payment.
 
