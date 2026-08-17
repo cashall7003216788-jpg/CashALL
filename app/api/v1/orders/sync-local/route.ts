@@ -62,12 +62,29 @@ export const POST = apiWrapper(async (req: NextRequest) => {
       });
     }
 
-    // 2. Find default variant & create quote
-    const variant = await prisma.deviceVariant.findFirst({
+    // 2. Find or create variant & quote
+    let variant = await prisma.deviceVariant.findFirst({
       include: { model: { include: { brand: true } } },
     });
 
-    if (!variant) continue;
+    if (!variant) {
+      let brand = await prisma.brand.findFirst();
+      if (!brand) {
+        brand = await prisma.brand.create({
+          data: { name: "CashALL", slug: "cashall", category: "MOBILE" },
+        });
+      }
+      let model = await prisma.deviceModel.findFirst({ where: { brandId: brand.id } });
+      if (!model) {
+        model = await prisma.deviceModel.create({
+          data: { brandId: brand.id, name: "Mobile Device", slug: "mobile-device", category: "MOBILE", basePrice: price },
+        });
+      }
+      variant = await prisma.deviceVariant.create({
+        data: { modelId: model.id, storage: "128 GB", basePrice: price },
+        include: { model: { include: { brand: true } } },
+      });
+    }
 
     const quote = await prisma.quote.create({
       data: {
