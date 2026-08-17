@@ -54,7 +54,7 @@ export default function CustomerBillPage() {
             <div className="flex items-start justify-between border-b border-gray-200 pb-6">
               <div>
                 <div className="text-2xl font-black text-brand-black font-price">CashALL</div>
-                <div className="text-xs text-brand-muted">CashALL Pvt Ltd • Instant Device Payouts</div>
+                <div className="text-xs text-brand-muted">CashALL • Instant Device Payouts</div>
                 <div className="text-[11px] text-gray-400 mt-1">GSTIN: 19AAACC1208D1Z5 • support@cashall.in</div>
               </div>
               <div className="text-right">

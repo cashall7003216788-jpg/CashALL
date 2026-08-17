@@ -126,7 +126,7 @@ export default function PurchaseReceiptPage() {
 
           <div className="text-left sm:text-right">
             <div className="text-xs text-gray-400 font-bold tracking-wider uppercase mb-1">www.cashall.in</div>
-            <div className="text-base font-black text-gray-900">CashALL Pvt Ltd</div>
+            <div className="text-base font-black text-gray-900">CashALL</div>
             <div className="text-xs text-gray-500 font-medium">CIN: U27205DL2026PTC190441</div>
             <div className="text-xs text-gray-500 font-medium">GST: 07AAGCM0328J3ZK</div>
           </div>
@@ -140,7 +140,7 @@ export default function PurchaseReceiptPage() {
             <div className="font-black text-gray-900 border-b border-gray-200 pb-2 text-sm">Purchaser Details</div>
             <div className="grid grid-cols-3 gap-1">
               <span className="font-bold text-gray-700">Purchaser :</span>
-              <span className="col-span-2 font-bold text-gray-900">CASHALL ENTERPRISE</span>
+              <span className="col-span-2 font-bold text-gray-900">CashALL</span>
             </div>
             <div className="grid grid-cols-3 gap-1">
               <span className="font-bold text-gray-700">Address :</span>

@@ -178,7 +178,7 @@ export default function CustomerSaleReceiptPage() {
               <span>Issued By (Purchaser)</span>
               <span className="text-[10px] font-bold text-gray-400">OFFICIAL</span>
             </div>
-            <div className="font-extrabold text-white text-sm">CashALL Pvt Ltd</div>
+            <div className="font-extrabold text-white text-sm">CashALL</div>
             <div className="text-gray-300">Howrah, West Bengal</div>
             <div className="text-gray-400 text-[11px]">Helpline: +91 7003216788 | cashall7003216788@gmail.com</div>
             <div className="text-brand-yellow text-[11px] font-bold">GSTIN: 07AAGCM0328J3ZK</div>

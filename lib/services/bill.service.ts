@@ -80,7 +80,7 @@ export class BillService {
         documentHash: "—",
       },
       cashallInfo: {
-        companyName: "CashALL Pvt Ltd",
+        companyName: "CashALL",
         website: "https://www.cashall.in",
         contactEmail: "support@cashall.in",
       },
