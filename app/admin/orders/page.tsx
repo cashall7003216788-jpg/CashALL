@@ -166,13 +166,6 @@ export default function AdminOrdersPage() {
       }
     }
 
-    // 3. Append Default Seed Orders if not present
-    DEFAULT_ORDERS.forEach((def) => {
-      if (!combinedOrders.some((o) => o.orderNumber === def.orderNumber)) {
-        combinedOrders.push(def);
-      }
-    });
-
     setOrders(combinedOrders);
     setLoading(false);
   }, []);

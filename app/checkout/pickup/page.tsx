@@ -173,10 +173,11 @@ function PickupCheckoutContent() {
       if (attempt < 2) await new Promise((r) => setTimeout(r, 1000));
     }
 
-    // If API failed after retries, use a local ID but warn
+    // If API failed after retries, halt and inform user instead of generating fake local order
     if (!apiSuccess) {
-      createdOrderNum = `CA${Math.floor(10000 + Math.random() * 90000)}`;
-      console.error("⚠️ Order could NOT be saved to server after 2 attempts. Saved locally only.");
+      setIsSubmitting(false);
+      alert("Could not connect to CashALL server. Please check your connection and try again.");
+      return;
     }
 
     const newOrder: OrderData = {
@@ -212,15 +213,6 @@ function PickupCheckoutContent() {
         name: finalName,
         phone: finalPhone,
       }));
-
-      // If primary creation API failed, trigger sync-local in background immediately
-      if (!apiSuccess) {
-        fetch("/api/v1/orders/sync-local", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ orders: [newOrder] }),
-        }).catch((err) => console.warn("Checkout sync-local background trigger error:", err));
-      }
     }
 
     setTimeout(() => {
