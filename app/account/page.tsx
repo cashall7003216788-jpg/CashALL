@@ -27,15 +27,37 @@ export default function CustomerAccountPage() {
       const all = localStorage.getItem("cashall_all_orders");
       if (all) {
         try {
-          setOrders(JSON.parse(all));
-          return;
+          const parsed = JSON.parse(all);
+          if (parsed && parsed.length > 0) {
+            setOrders(parsed);
+            return;
+          }
         } catch (e) {
           console.error(e);
         }
       }
 
-      // Default initial orders fallback
-      setOrders(INITIAL_ORDERS);
+      // Default fallback order for Customer Account
+      setOrders([
+        {
+          id: "ord-ca72512",
+          orderNumber: "CA72512",
+          quoteId: "q-ca72512",
+          userId: "u-7003216788",
+          customerName: "West Bengal Customer",
+          customerPhone: "+91 7003216788",
+          pincode: "711101",
+          deviceName: "Apple iPhone 13 (128 GB)",
+          addressSummary: "6/6 Kings Road, Howrah, West Bengal - 711101",
+          pickupDate: "Tomorrow",
+          pickupTimeSlot: "1 PM - 4 PM",
+          status: "PICKUP_SCHEDULED",
+          revisedPrice: 32500,
+          estimatedPrice: 32500,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+        },
+      ]);
     }
   }, []);
 
@@ -81,7 +103,7 @@ export default function CustomerAccountPage() {
 
                       <div className="text-base font-black text-brand-black flex items-center gap-2">
                         <Smartphone className="w-4 h-4 text-brand-yellow" />
-                        <span>iPhone 15 (128GB)</span>
+                        <span>{ord.deviceName || "Apple iPhone 13 (128 GB)"}</span>
                       </div>
 
                       <div className="text-xs text-brand-muted flex flex-wrap items-center gap-3">
@@ -96,7 +118,7 @@ export default function CustomerAccountPage() {
                       <div className="text-right">
                         <span className="text-[11px] font-bold text-gray-400 uppercase">Valuation</span>
                         <div className="text-xl font-black text-brand-black font-price">
-                          ₹{(ord.revisedPrice || 31400).toLocaleString("en-IN")}
+                          ₹{(ord.revisedPrice || ord.estimatedPrice || 32500).toLocaleString("en-IN")}
                         </div>
                       </div>
 

@@ -33,6 +33,13 @@ export default function VariantSelectionPage() {
   const selectedVariant = fallbackVariants.find((v) => v.id === selectedVariantId) || fallbackVariants[0];
 
   const handleContinue = () => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cashall_current_variant", JSON.stringify({
+        ...selectedVariant,
+        modelName: model.name,
+        brandName: brand.name,
+      }));
+    }
     router.push(`/sell/mobile/${brand.slug}/${model.slug}/assess?variantId=${selectedVariant.id}`);
   };
 

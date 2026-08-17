@@ -105,25 +105,80 @@ export default function ConditionAssessmentPage() {
 
   const brandSlug = (params?.brand as string) || "apple";
   const modelSlug = (params?.model as string) || "iphone-15";
-  const variantIdParam = searchParams.get("variantId") || "v-ip15-128";
+  const variantIdParam = searchParams.get("variantId") || "";
 
-  const brand = INITIAL_BRANDS.find((b) => b.slug === brandSlug) || INITIAL_BRANDS[0];
-  const model =
-    INITIAL_MODELS.find((m) => m.slug === modelSlug) ||
-    INITIAL_MODELS.find((m) => m.slug === "iphone-15")!;
-  const variant =
-    INITIAL_VARIANTS.find((v) => v.id === variantIdParam) ||
-    INITIAL_VARIANTS.find((v) => v.modelId === model.id) ||
-    INITIAL_VARIANTS[0];
+  const brand = INITIAL_BRANDS.find((b) => b.slug.toLowerCase() === brandSlug.toLowerCase()) || {
+    id: `b-${brandSlug}`,
+    name: brandSlug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
+    slug: brandSlug,
+    category: "MOBILE",
+    active: true,
+  };
 
-  // AUTH CHECK STATE
+  const model = INITIAL_MODELS.find((m) => m.slug.toLowerCase() === modelSlug.toLowerCase()) || {
+    id: `m-${modelSlug}`,
+    brandId: brand.id,
+    brandSlug: brand.slug,
+    name: modelSlug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
+    slug: modelSlug,
+    imageUrl: `https://s3ng.cashify.in/cashify/product/img/xhdpi/${modelSlug}.jpg`,
+    releaseYear: 2024,
+    popular: true,
+    active: true,
+    contactForPrice: false,
+    category: "MOBILE",
+  };
+
+  // Determine variant from param, localStorage, or model matching (never fall back to iPhone 6)
+  let resolvedVariant = INITIAL_VARIANTS.find((v) => v.id === variantIdParam);
+
+  const [activeVariant, setActiveVariant] = useState<any>(resolvedVariant || null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   React.useEffect(() => {
     if (typeof window !== "undefined") {
       setIsLoggedIn(!!localStorage.getItem("cashall_user"));
+
+      let foundVar = resolvedVariant;
+      if (!foundVar) {
+        try {
+          const stored = localStorage.getItem("cashall_current_variant");
+          if (stored) {
+            const parsed = JSON.parse(stored);
+            if (parsed && (parsed.modelId === model.id || parsed.id === variantIdParam || parsed.storage)) {
+              foundVar = parsed;
+            }
+          }
+        } catch (e) {}
+      }
+
+      if (!foundVar) {
+        const matchByModel = INITIAL_VARIANTS.filter((v) => v.modelId === model.id);
+        if (matchByModel.length > 0) {
+          foundVar = matchByModel[0];
+        } else {
+          // Dynamic fallback variant matching model's real base price
+          foundVar = {
+            id: `v-${model.slug}-128`,
+            modelId: model.id,
+            storage: "128 GB",
+            basePrice: modelSlug.includes("10a") ? 28000 : (modelSlug.includes("15") ? 52000 : 25000),
+            active: true,
+          };
+        }
+      }
+
+      setActiveVariant(foundVar);
     }
-  }, []);
+  }, [variantIdParam, model.id, model.slug]);
+
+  const variant = activeVariant || {
+    id: `v-${model.slug}-128`,
+    modelId: model.id,
+    storage: "128 GB",
+    basePrice: modelSlug.includes("10a") ? 28000 : 25000,
+    active: true,
+  };
 
   // WIZARD STATE
   const [step, setStep] = useState<number>(1);
@@ -1004,11 +1059,23 @@ export default function ConditionAssessmentPage() {
 
                 </div>
 
-                {/* ESTIMATED PRICE CARD - SHOWN ONLY AFTER LOGIN */}
-                {isLoggedIn ? (
-                  <div className="bg-brand-black text-white rounded-2xl p-5 border border-brand-yellow/30 text-center space-y-2">
+                {/* ESTIMATED PRICE CARD - HIDE DURING QUESTIONS (STEPS 1-5) AND SHOW ONLY AFTER FINISHING ALL QUESTIONS */}
+                {step <= 5 ? (
+                  <div className="bg-brand-black text-white rounded-2xl p-5 border border-brand-yellow/30 text-center space-y-2 shadow-sm">
                     <span className="text-[11px] font-bold text-brand-yellow uppercase tracking-wider block">
-                      Estimated Cash Valuation
+                      Condition Assessment in Progress
+                    </span>
+                    <div className="text-base font-black text-gray-200">
+                      Step {step} of 5
+                    </div>
+                    <p className="text-[11px] text-gray-300 leading-relaxed">
+                      Complete all 5 condition questions to reveal your instant cash valuation. Base value up to <strong className="text-brand-yellow font-price">₹{variant.basePrice.toLocaleString("en-IN")}</strong>.
+                    </p>
+                  </div>
+                ) : isLoggedIn ? (
+                  <div className="bg-brand-black text-white rounded-2xl p-5 border border-brand-yellow/30 text-center space-y-2 shadow-md">
+                    <span className="text-[11px] font-bold text-brand-yellow uppercase tracking-wider block">
+                      Instant Cash Valuation
                     </span>
                     <div className="text-3xl font-black text-brand-yellow font-price">
                       ₹{currentPrice.toLocaleString("en-IN")}
@@ -1018,7 +1085,7 @@ export default function ConditionAssessmentPage() {
                     </p>
                   </div>
                 ) : (
-                  <div className="bg-brand-black text-white rounded-2xl p-5 border border-neutral-800 text-center space-y-2">
+                  <div className="bg-brand-black text-white rounded-2xl p-5 border border-neutral-800 text-center space-y-2 shadow-md">
                     <span className="text-[11px] font-bold text-brand-yellow uppercase tracking-wider block">
                       Best Value Guarantee
                     </span>

@@ -78,6 +78,7 @@ export interface OrderData {
   userId: string;
   customerName: string;
   customerPhone: string;
+  deviceName?: string;
   addressId?: string;
   addressSummary?: string;
   pincode: string;
@@ -88,6 +89,7 @@ export interface OrderData {
   assignedPartnerName?: string;
   assignedPartnerPhone?: string;
   assignedPartnerBusiness?: string;
+  estimatedPrice?: number;
   revisedPrice?: number;
   priceDifferenceReason?: string;
   declaredConditionSummary?: string;
