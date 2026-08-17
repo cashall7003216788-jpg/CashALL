@@ -109,9 +109,11 @@ export const POST = apiWrapper(async (req: NextRequest) => {
         });
       }
 
+      const generatedQuoteNumber = `Q${Math.floor(100000 + Math.random() * 900000)}-${Date.now().toString().slice(-4)}`;
+
       quote = await prisma.quote.create({
         data: {
-          quoteNumber: data.quoteId || `Q${Math.floor(10000 + Math.random() * 90000)}`,
+          quoteNumber: generatedQuoteNumber,
           variantId: variant.id,
           selectedAnswersJson: JSON.stringify({ device: deviceName }),
           basePrice: estimatedPrice,
@@ -133,7 +135,12 @@ export const POST = apiWrapper(async (req: NextRequest) => {
     }
   }
 
-  const finalQuoteId = quote?.id || data.quoteId || "q-default";
+  // Ensure quote is guaranteed non-null
+  if (!quote) {
+    throw new Error("Unable to resolve valid quote for order placement.");
+  }
+
+  const finalQuoteId = quote.id;
 
   // 3. Create Address Record
   const address = await prisma.address.create({
