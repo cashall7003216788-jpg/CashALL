@@ -1,0 +1,639 @@
+[
+  {
+    "name": "Asus X Series",
+    "slug": "asus-x-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/46a01940-7609.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus K Series",
+    "slug": "asus-k-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9610d855-e71a.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus R Series",
+    "slug": "asus-r-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/462a47f9-e1f9.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus E Series",
+    "slug": "asus-e-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/17e91a2c-3f6c.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus A Series",
+    "slug": "asus-a-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f2ae00a5-4f53.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus F Series",
+    "slug": "asus-f-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ad3ccbd3-e553.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus Q Series",
+    "slug": "asus-q-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/da445620-1966.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus N Series",
+    "slug": "asus-n-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e50afad7-8a31.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus FX Series",
+    "slug": "asus-fx-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0e7c4660-03c0.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "AsusPro P Series",
+    "slug": "asuspro-p-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/220ed3b6-aa59.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus Chromebook Series",
+    "slug": "asus-chromebook-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1fc7a86b-3e51.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus Chromebook Flip Series",
+    "slug": "asus-chromebook-flip-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b8882aa9-70e0.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus B Series",
+    "slug": "asus-b-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1ec64e2d-4adf.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus NX Series",
+    "slug": "asus-nx-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/aaca9459-8d62.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus P series",
+    "slug": "asus-p-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/7dc48b48-ed9a.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "AsusPro B Series",
+    "slug": "asuspro-b-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5b233b99-bd41.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus FZ Series",
+    "slug": "asus-fz-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c7beb7fb-7d28.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Asus V Series",
+    "slug": "asus-v-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/22d4546a-da34.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Other Asus Series",
+    "slug": "other-asus-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/fa72b19c-7c37.jpg?w=200",
+    "price": 35000,
+    "brand": "asus"
+  },
+  {
+    "name": "Macbook Air 2025",
+    "slug": "macbook-air-2025",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/866ba979-b24c.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro 2025",
+    "slug": "macbook-pro-2025",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/dd635be2-d746.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "Macbook Neo Series",
+    "slug": "macbook-neo-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/25fdb780-ab1f.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "Macbook Air 2026",
+    "slug": "macbook-air-2026",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/904a7182-267b.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro 2024",
+    "slug": "macbook-pro-2024",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/32cf8149-3645.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro 2023",
+    "slug": "macbook-pro-2023",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5f32d963-46a3.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro 2022",
+    "slug": "macbook-pro-2022",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/dd767d21-a754.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro 2020 (Touch Bar, Four Thunderbolt 3 ports)",
+    "slug": "macbook-pro-2020-(touch-bar,-four-thunderbolt-3-ports)",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/89a66ea7-83e8.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro 2021",
+    "slug": "macbook-pro-2021",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ed102c4f-125c.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro 2020 (Touch Bar, Two Thunderbolt 3 ports)",
+    "slug": "macbook-pro-2020-(touch-bar,-two-thunderbolt-3-ports)",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2737e96e-5816.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro 2020",
+    "slug": "macbook-pro-2020",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b99faa8c-8844.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro 2019",
+    "slug": "macbook-pro-2019",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/17f0b83e-875b.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro 2019 (Touch Bar, Four Thunderbolt 3 ports)",
+    "slug": "macbook-pro-2019-(touch-bar,-four-thunderbolt-3-ports)",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/33ffe4a7-3334.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro 2019 (Touch Bar, Two Thunderbolt 3 ports)",
+    "slug": "macbook-pro-2019-(touch-bar,-two-thunderbolt-3-ports)",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/33e4b267-4b2b.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro 2019 (Touch Bar)",
+    "slug": "macbook-pro-2019-(touch-bar)",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/be00b175-d9bf.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro (Mid-2018, Touch Bar, Four Thunderbolt 3 Ports)",
+    "slug": "macbook-pro-(mid-2018,-touch-bar,-four-thunderbolt-3-ports)",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0ffac354-b1e0.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro (Mid-2017, Touch Bar, Four Thunderbolt 3 Ports)",
+    "slug": "macbook-pro-(mid-2017,-touch-bar,-four-thunderbolt-3-ports)",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/371cf064-4471.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro (Mid-2017, Two Thunderbolt 3 Ports)",
+    "slug": "macbook-pro-(mid-2017,-two-thunderbolt-3-ports)",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e2098db8-be0c.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro (Late 2016, Touch Bar, Four Thunderbolt 3 Ports)",
+    "slug": "macbook-pro-(late-2016,-touch-bar,-four-thunderbolt-3-ports)",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ff75fa17-180d.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro (Late 2016, Two Thunderbolt 3 Ports)",
+    "slug": "macbook-pro-(late-2016,-two-thunderbolt-3-ports)",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/528a23f1-b0d4.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro Retina Mid 2015",
+    "slug": "macbook-pro-retina-mid-2015",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9507fc07-2cee.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro Retina Early 2015",
+    "slug": "macbook-pro-retina-early-2015",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d5f00101-f1a5.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro Retina Mid 2014",
+    "slug": "macbook-pro-retina-mid-2014",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4a8a7685-88f2.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro Retina Late 2013",
+    "slug": "macbook-pro-retina-late-2013",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/001ee2c5-1a7e.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro Retina Early 2013",
+    "slug": "macbook-pro-retina-early-2013",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/05692cbe-c41d.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air 2023",
+    "slug": "macbook-air-2023",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/db9ef407-4a18.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air 2022",
+    "slug": "macbook-air-2022",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/6c75c8b5-88a0.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air 2020",
+    "slug": "macbook-air-2020",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3e4863fe-7dcc.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air 2024",
+    "slug": "macbook-air-2024",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5372f5ef-25a2.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air 2019",
+    "slug": "macbook-air-2019",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1a02a183-f62c.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air 2018",
+    "slug": "macbook-air-2018",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/22a40d73-ddf9.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air Mid 2017",
+    "slug": "macbook-air-mid-2017",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1e83be50-644e.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air Early 2015",
+    "slug": "macbook-air-early-2015",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9d7b63dd-6697.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air Early 2014",
+    "slug": "macbook-air-early-2014",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e0784a88-2983.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air Mid 2013",
+    "slug": "macbook-air-mid-2013",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a82af176-2db0.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Retina Mid 2017",
+    "slug": "macbook-retina-mid-2017",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/393dff6b-fcb1.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Retina Early 2016",
+    "slug": "macbook-retina-early-2016",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/932f699d-5674.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Retina Early 2015",
+    "slug": "macbook-retina-early-2015",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9ebc8974-5cfa.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air 2022",
+    "slug": "macbook-air-2022",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/6c75c8b5-88a0.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air Mid 2017",
+    "slug": "macbook-air-mid-2017",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1e83be50-644e.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air 2025",
+    "slug": "macbook-air-2025",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/866ba979-b24c.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air 2020",
+    "slug": "macbook-air-2020",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3e4863fe-7dcc.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air Early 2015",
+    "slug": "macbook-air-early-2015",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9d7b63dd-6697.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Pro 2022",
+    "slug": "macbook-pro-2022",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/dd767d21-a754.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MacBook Air 2018",
+    "slug": "macbook-air-2018",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/22a40d73-ddf9.jpg?w=200",
+    "price": 35000,
+    "brand": "apple"
+  },
+  {
+    "name": "MSI Crosshair Series",
+    "slug": "msi-crosshair-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/665a408c-455f.jpg?w=200",
+    "price": 35000,
+    "brand": "msi"
+  },
+  {
+    "name": "Nokia PureBook Series",
+    "slug": "nokia-purebook-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f737be42-92b0.jpg?w=200",
+    "price": 35000,
+    "brand": "nokia"
+  },
+  {
+    "name": "Other LG Series",
+    "slug": "other-lg-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b26b94aa-9248.jpg?w=200",
+    "price": 35000,
+    "brand": "lg"
+  },
+  {
+    "name": "LG Gram Series",
+    "slug": "lg-gram-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/260071b4-ef46.jpg?w=200",
+    "price": 35000,
+    "brand": "lg"
+  },
+  {
+    "name": "Other Laptop Series",
+    "slug": "other-laptop-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/532d7a4a-3ad8.jpg?w=200",
+    "price": 35000,
+    "brand": "other-laptop"
+  },
+  {
+    "name": "Lenovo LOQ Series",
+    "slug": "lenovo-loq-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3e2c35a7-79ff.jpg?w=200",
+    "price": 35000,
+    "brand": "lenovo"
+  },
+  {
+    "name": "Lenovo Y Series",
+    "slug": "lenovo-y-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/76ceb294-5745.jpg?w=200",
+    "price": 35000,
+    "brand": "lenovo"
+  },
+  {
+    "name": "Lenovo V Series",
+    "slug": "lenovo-v-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2654d67f-611f.jpg?w=200",
+    "price": 35000,
+    "brand": "lenovo"
+  },
+  {
+    "name": "Lenovo 300e Series",
+    "slug": "lenovo-300e-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/24fdca2d-fd6a.jpg?w=200",
+    "price": 35000,
+    "brand": "lenovo"
+  },
+  {
+    "name": "Lenovo N Series",
+    "slug": "lenovo-n-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9196de15-0cec.jpg?w=200",
+    "price": 35000,
+    "brand": "lenovo"
+  },
+  {
+    "name": "Lenovo 500e Series",
+    "slug": "lenovo-500e-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f0196b3b-3026.jpg?w=200",
+    "price": 35000,
+    "brand": "lenovo"
+  },
+  {
+    "name": "Lenovo 100e Series",
+    "slug": "lenovo-100e-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c04d0dc5-1a94.jpg?w=200",
+    "price": 35000,
+    "brand": "lenovo"
+  },
+  {
+    "name": "Lenovo 11e Series",
+    "slug": "lenovo-11e-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a59b17a8-180e.jpg?w=200",
+    "price": 35000,
+    "brand": "lenovo"
+  },
+  {
+    "name": "Other Lenovo Series",
+    "slug": "other-lenovo-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/6e162610-8f56.jpg?w=200",
+    "price": 35000,
+    "brand": "lenovo"
+  },
+  {
+    "name": "Other Lenovo Series",
+    "slug": "other-lenovo-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/6e162610-8f56.jpg?w=200",
+    "price": 35000,
+    "brand": "lenovo"
+  },
+  {
+    "name": "Acer Chromebook Series",
+    "slug": "acer-chromebook-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/b5ad822f-f6ff.jpg?w=200",
+    "price": 35000,
+    "brand": "acer"
+  },
+  {
+    "name": "Other Acer Series",
+    "slug": "other-acer-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a6ceb593-90cd.jpg?w=200",
+    "price": 35000,
+    "brand": "acer"
+  },
+  {
+    "name": "Surface Laptop 2 Series",
+    "slug": "surface-laptop-2-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/590ffe7b-c033.jpg?w=200",
+    "price": 35000,
+    "brand": "microsoft"
+  },
+  {
+    "name": "Surface Laptop 3 Series",
+    "slug": "surface-laptop-3-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/12722115-4b74.jpg?w=200",
+    "price": 35000,
+    "brand": "microsoft"
+  },
+  {
+    "name": "Surface Laptop 4 Series",
+    "slug": "surface-laptop-4-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/04ab7c03-3fee.jpg?w=200",
+    "price": 35000,
+    "brand": "microsoft"
+  },
+  {
+    "name": "Surface Laptop Series",
+    "slug": "surface-laptop-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5b1f1ed0-3f34.jpg?w=200",
+    "price": 35000,
+    "brand": "microsoft"
+  },
+  {
+    "name": "Other Microsoft Series",
+    "slug": "other-microsoft-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/38ddb184-3ecb.jpg?w=200",
+    "price": 35000,
+    "brand": "microsoft"
+  },
+  {
+    "name": "Dell 15 Series",
+    "slug": "dell-15-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e3a5c287-68f9.jpg?w=200",
+    "price": 35000,
+    "brand": "dell"
+  },
+  {
+    "name": "Dell Chromebook Series",
+    "slug": "dell-chromebook-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f650cb2a-a34f.jpg?w=200",
+    "price": 35000,
+    "brand": "dell"
+  },
+  {
+    "name": "Other Dell Series",
+    "slug": "other-dell-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0da459cd-1d35.jpg?w=200",
+    "price": 35000,
+    "brand": "dell"
+  },
+  {
+    "name": "Other Dell Series",
+    "slug": "other-dell-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0da459cd-1d35.jpg?w=200",
+    "price": 35000,
+    "brand": "dell"
+  },
+  {
+    "name": "Others Samsung Series",
+    "slug": "others-samsung-series",
+    "image": "https://s3ng.cashify.in/cashify/product/img/xhdpi/da34afb6-f920.jpg?w=200",
+    "price": 35000,
+    "brand": "samsung"
+  }
+]
