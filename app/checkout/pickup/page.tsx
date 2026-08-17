@@ -25,8 +25,8 @@ function PickupCheckoutContent() {
   const quoteId = searchParams.get("quoteId") || "quote-demo";
 
   const [quote, setQuote] = useState<QuoteData | null>(null);
-  const [pincode, setPincode] = useState("700001");
-  const [serviceStatus, setServiceStatus] = useState<"IDLE" | "AVAILABLE" | "UNAVAILABLE">("AVAILABLE");
+  const [pincode, setPincode] = useState("");
+  const [serviceStatus, setServiceStatus] = useState<"IDLE" | "AVAILABLE" | "UNAVAILABLE">("IDLE");
   const [selectedState, setSelectedState] = useState("West Bengal");
   const [resolvedDeviceName, setResolvedDeviceName] = useState("");
 
@@ -84,7 +84,7 @@ function PickupCheckoutContent() {
     if (match) {
       setServiceStatus("AVAILABLE");
       setSelectedState(match.state);
-    } else if (pincode.length === 6) {
+    } else if (pincode.trim().length === 6) {
       setServiceStatus("AVAILABLE");
       setSelectedState("West Bengal");
     } else {
@@ -94,6 +94,12 @@ function PickupCheckoutContent() {
 
   const handleConfirmOrder = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate mandatory PIN code
+    if (!pincode.trim() || pincode.trim().length !== 6) {
+      alert("Please enter a valid 6-digit PIN code for pickup.");
+      return;
+    }
 
     // Validate phone — critical for cross-device sync
     const cleanPhone = phone.trim().replace(/\D/g, "");
@@ -279,16 +285,17 @@ function PickupCheckoutContent() {
               <div className="bg-white rounded-3xl p-6 border border-brand-border shadow-subtleCard space-y-4">
                 <div className="flex items-center gap-2 border-b border-gray-100 pb-3">
                   <MapPin className="w-5 h-5 text-brand-yellow shrink-0" />
-                  <h2 className="text-base font-bold text-brand-black">1. Pickup PIN Code & Serviceability</h2>
+                  <h2 className="text-base font-bold text-brand-black">1. Pickup PIN Code & Serviceability <span className="text-red-500">*</span></h2>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <input
                     type="text"
+                    required
                     value={pincode}
                     onChange={(e) => setPincode(e.target.value.replace(/\D/g, ""))}
                     maxLength={6}
-                    placeholder="Enter 6-digit PIN code"
+                    placeholder="Enter 6-digit PIN code *"
                     className="w-48 px-3.5 py-2 text-xs font-bold bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow"
                   />
                   <button

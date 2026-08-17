@@ -6,15 +6,16 @@ import { z } from "zod";
 
 const syncOrderSchema = z.object({
   orderNumber: z.string(),
-  customerName: z.string().optional(),
-  customerPhone: z.string().optional(),
-  deviceName: z.string().optional(),
-  addressSummary: z.string().optional(),
-  pincode: z.string().optional(),
-  pickupDate: z.string().optional(),
-  pickupTimeSlot: z.string().optional(),
-  estimatedPrice: z.number().optional(),
-  status: z.string().optional(),
+  customerName: z.any().optional(),
+  customerPhone: z.any().optional(),
+  deviceName: z.any().optional(),
+  addressSummary: z.any().optional(),
+  pincode: z.any().optional(),
+  pickupDate: z.any().optional(),
+  pickupTimeSlot: z.any().optional(),
+  estimatedPrice: z.any().optional(),
+  revisedPrice: z.any().optional(),
+  status: z.any().optional(),
 });
 
 const bulkSyncSchema = z.object({
@@ -44,10 +45,18 @@ export const POST = apiWrapper(async (req: NextRequest) => {
 
     if (existing) continue; // Already in DB, no need to re-sync
 
-    const phone = (item.customerPhone || "7003216788").replace(/\D/g, "").slice(-10) || "7003216788";
-    const name = item.customerName || "Customer";
-    const price = item.estimatedPrice || 32500;
-    const deviceName = item.deviceName || "Customer Mobile Device";
+    const rawPhone = item.customerPhone ? String(item.customerPhone) : "7003216788";
+    const phone = rawPhone.replace(/\D/g, "").slice(-10) || "7003216788";
+    const name = item.customerName ? String(item.customerName) : "Customer";
+    
+    const rawPrice = item.estimatedPrice ?? item.revisedPrice ?? 32500;
+    const price = typeof rawPrice === "number" ? rawPrice : parseFloat(String(rawPrice)) || 32500;
+    
+    const deviceName = item.deviceName ? String(item.deviceName) : "Customer Mobile Device";
+    const pincodeStr = item.pincode ? String(item.pincode) : "700001";
+    const pickupDateStr = item.pickupDate ? String(item.pickupDate) : "Tomorrow";
+    const pickupSlotStr = item.pickupTimeSlot ? String(item.pickupTimeSlot) : "10 AM - 1 PM";
+    const addressStr = item.addressSummary ? String(item.addressSummary) : "Doorstep Address, Howrah, West Bengal";
 
     // 1. Find or create User
     let user = await prisma.user.findFirst({ where: { phone } });
@@ -111,12 +120,12 @@ export const POST = apiWrapper(async (req: NextRequest) => {
         userId: user.id,
         fullName: name,
         phone: phone,
-        house: item.addressSummary || "Customer Address",
+        house: addressStr,
         street: "Service Area",
         area: "West Bengal",
         city: "Kolkata",
         state: "West Bengal",
-        pincode: item.pincode || "700001",
+        pincode: pincodeStr,
       },
     });
 
@@ -127,8 +136,8 @@ export const POST = apiWrapper(async (req: NextRequest) => {
         userId: user.id,
         quoteId: quote.id,
         addressId: address.id,
-        pickupDate: item.pickupDate || "Tomorrow",
-        pickupTimeSlot: item.pickupTimeSlot || "10 AM - 1 PM",
+        pickupDate: pickupDateStr,
+        pickupTimeSlot: pickupSlotStr,
         status: (item.status as any) || "PICKUP_SCHEDULED",
         finalPrice: price,
       },
@@ -138,8 +147,8 @@ export const POST = apiWrapper(async (req: NextRequest) => {
     await prisma.pickup.create({
       data: {
         orderId: order.id,
-        date: item.pickupDate || "Tomorrow",
-        timeSlot: item.pickupTimeSlot || "10 AM - 1 PM",
+        date: pickupDateStr,
+        timeSlot: pickupSlotStr,
         status: "SCHEDULED",
         notes: "Order synced to database automatically.",
       },
@@ -152,9 +161,9 @@ export const POST = apiWrapper(async (req: NextRequest) => {
       customerPhone: phone,
       deviceName: deviceName,
       estimatedPrice: price,
-      pickupDate: item.pickupDate || "Tomorrow",
-      pickupTimeSlot: item.pickupTimeSlot || "10 AM - 1 PM",
-      address: item.addressSummary || "Doorstep Address, Howrah, West Bengal",
+      pickupDate: pickupDateStr,
+      pickupTimeSlot: pickupSlotStr,
+      address: addressStr,
     }).catch((err) => console.warn("WhatsApp notify on sync error:", err));
 
     syncedCount++;
