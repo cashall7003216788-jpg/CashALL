@@ -104,9 +104,12 @@ export default function LaptopAssessmentPage() {
   const modelSlug = (params?.model as string) || "macbook-retina-early-2015";
   const variantId = searchParams.get("variantId") || "";
 
-  const brand = INITIAL_BRANDS.find((b) => b.slug === brandSlug) || INITIAL_BRANDS[0];
-  const model = INITIAL_MODELS.find((m) => m.slug === modelSlug) || INITIAL_MODELS[0];
-  const variant = INITIAL_VARIANTS.find((v) => v.id === variantId) || INITIAL_VARIANTS[0];
+  const brand = INITIAL_BRANDS.find((b) => b.slug.toLowerCase() === brandSlug.toLowerCase()) || INITIAL_BRANDS[0];
+  const model = INITIAL_MODELS.find((m) => m.slug.toLowerCase() === modelSlug.toLowerCase() || m.id === modelSlug) ||
+    INITIAL_MODELS.find((m) => m.category === "LAPTOP" && m.brandSlug?.toLowerCase() === brandSlug.toLowerCase()) ||
+    INITIAL_MODELS.find((m) => m.category === "LAPTOP") || INITIAL_MODELS[0];
+  const variant = INITIAL_VARIANTS.find((v) => v.id === variantId) ||
+    INITIAL_VARIANTS.find((v) => v.modelId === model?.id) || INITIAL_VARIANTS[0];
 
   const basePrice = variant?.basePrice || 24000;
 

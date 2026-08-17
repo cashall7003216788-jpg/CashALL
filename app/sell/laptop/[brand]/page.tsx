@@ -14,8 +14,15 @@ export default function LaptopModelSelectionPage() {
   const brandSlug = (params?.brand as string) || "apple";
   const [search, setSearch] = useState("");
 
-  const brand = INITIAL_BRANDS.find((b) => b.slug === brandSlug) || INITIAL_BRANDS[0];
-  const brandModels = INITIAL_MODELS.filter((m) => m.brandId === brand.id && m.category === "LAPTOP");
+  const brand = INITIAL_BRANDS.find(
+    (b) => b.slug.toLowerCase() === brandSlug.toLowerCase() || b.slug.toLowerCase() === `${brandSlug.toLowerCase()}-laptop`
+  ) || { id: `b-${brandSlug}`, name: brandSlug.toUpperCase(), slug: brandSlug, category: "LAPTOP" };
+
+  const brandModels = INITIAL_MODELS.filter(
+    (m) =>
+      (m.brandId === brand.id || m.brandSlug?.toLowerCase() === brandSlug.toLowerCase()) &&
+      (m.category === "LAPTOP" || m.id.startsWith("m-laptop-"))
+  );
   const filteredModels = brandModels.filter((m) =>
     m.name.toLowerCase().includes(search.toLowerCase().trim())
   );

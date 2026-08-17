@@ -16,8 +16,10 @@ export default function LaptopVariantSelectionPage() {
   const brandSlug = (params?.brand as string) || "apple";
   const modelSlug = (params?.model as string) || "macbook-air-2025";
 
-  const brand = INITIAL_BRANDS.find((b) => b.slug === brandSlug) || INITIAL_BRANDS[0];
-  const model = INITIAL_MODELS.find((m) => m.slug === modelSlug) || INITIAL_MODELS[0];
+  const brand = INITIAL_BRANDS.find((b) => b.slug.toLowerCase() === brandSlug.toLowerCase()) || INITIAL_BRANDS[0];
+  const model = INITIAL_MODELS.find((m) => m.slug.toLowerCase() === modelSlug.toLowerCase() || m.id === modelSlug) ||
+    INITIAL_MODELS.find((m) => m.category === "LAPTOP" && m.brandSlug?.toLowerCase() === brandSlug.toLowerCase()) ||
+    INITIAL_MODELS.find((m) => m.category === "LAPTOP") || INITIAL_MODELS[0];
 
   const variants = INITIAL_VARIANTS.filter((v) => v.modelId === model?.id);
   const fallbackVariants = variants.length > 0 ? variants : [

@@ -2,11 +2,11 @@ import json
 import re
 import os
 
-DATASET_TXT = r'c:\Users\DELL\OneDrive\Desktop\CashALL\Cashify_Mobile_Phones_Dataset.txt'
-REAL_IMAGES_JSON = r'c:\Users\DELL\OneDrive\Desktop\CashALL\real_cashify_images.json'
+DATASET_TXT = r'c:\Users\DELL\OneDrive\Desktop\CashALL\dataset used\Cashify_Mobile_Phones_Dataset.txt'
+REAL_IMAGES_JSON = r'c:\Users\DELL\OneDrive\Desktop\CashALL\dataset used\real_cashify_images.json'
 STORE_TS = r'c:\Users\DELL\OneDrive\Desktop\CashALL\lib\store.ts'
-DATASET_JSON = r'c:\Users\DELL\OneDrive\Desktop\CashALL\dataset.json'
-DATASET_JS = r'c:\Users\DELL\OneDrive\Desktop\CashALL\dataset.js'
+DATASET_JSON = r'c:\Users\DELL\OneDrive\Desktop\CashALL\dataset used\dataset.json'
+DATASET_JS = r'c:\Users\DELL\OneDrive\Desktop\CashALL\dataset used\dataset.js'
 
 BRAND_LOGOS = {
     "Apple": "https://s3ng.cashify.in/cashify/brand/img/xhdpi/2e7cdc22-5a5f.jpg?w=200",
