@@ -17,15 +17,6 @@ interface Quote {
 
 const DEFAULT_QUOTES: Quote[] = [
   {
-    id: "q-caq725120",
-    quoteNumber: "CAQ-725120",
-    deviceName: "Apple iPhone 13 (128 GB)",
-    basePrice: 42000,
-    estimatedPrice: 32500,
-    status: "ORDERED",
-    createdAt: "2026-08-16T10:00:00.000Z",
-  },
-  {
     id: "q-caq367384",
     quoteNumber: "CAQ-367384",
     deviceName: "OPPO A33 (64 GB)",
