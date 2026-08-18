@@ -13,7 +13,12 @@ import {
   Loader2,
   FileText,
   Mail,
-  Send
+  Send,
+  MapPin,
+  Smartphone,
+  Calendar,
+  CheckCircle2,
+  Clock
 } from "lucide-react";
 
 interface Order {
@@ -77,7 +82,7 @@ export default function AdminOrdersPage() {
         const raw = json.data?.orders || json.orders || [];
         const mapped = raw.map((ord: any) => {
           const assignedPartner = ord.pickups?.[0]?.partner;
-          const assignedPartnerName = assignedPartner ? (assignedPartner.name || assignedPartner.companyName) : ord.agentName;
+          const assignedPartnerName = assignedPartner ? (assignedPartner.name || assignedPartner.companyName) : (ord.pickups?.[0]?.notes || ord.agentName || ord.assignedPartnerName);
 
           // Unified Status Resolution across Database
           let status = ord.status || "PICKUP_SCHEDULED";
@@ -130,7 +135,7 @@ export default function AdminOrdersPage() {
     if (typeof window !== "undefined") {
       try {
         const BLACKLIST_NUMS = new Set(["CA25844", "CA97538", "CA80419"]);
-        const BLACKLIST_PHONES = new Set(["6289477287", "8128492403"]);
+        const BLACKLIST_PHONES = new Set(["8128492403"]);
 
         const rawLocal = JSON.parse(localStorage.getItem("cashall_all_orders") || "[]");
         if (Array.isArray(rawLocal) && rawLocal.length > 0) {
@@ -278,6 +283,7 @@ export default function AdminOrdersPage() {
         headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
         body: JSON.stringify({
           partnerId: "p-inhouse-custom",
+          partnerName: agentName,
           pickupDate: ord.pickupDate || "Today",
           pickupTimeSlot: ord.pickupTimeSlot || "10 AM - 1 PM",
         }),
@@ -307,202 +313,219 @@ export default function AdminOrdersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-bg flex max-w-full overflow-x-hidden">
+    <div className="min-h-screen bg-neutral-900 text-white flex">
       <AdminSidebar />
 
       <main className="flex-grow p-4 sm:p-6 lg:p-8 overflow-y-auto space-y-6 max-w-full">
-        <div className="flex items-center justify-between">
+        {/* HEADER TOOLBAR */}
+        <div className="flex items-center justify-between bg-neutral-800 p-6 rounded-3xl border border-neutral-700 shadow-xl">
           <div>
-            <h1 className="text-xl sm:text-2xl font-black text-brand-black">Order Operations Repository</h1>
-            <p className="text-xs text-brand-muted mt-0.5">
-              Full view of all customer selling orders, pickup dates, identity verification, and payment controls
+            <h1 className="text-2xl font-black text-yellow-400 tracking-wide font-price">Order Operations Console</h1>
+            <p className="text-xs text-neutral-400 mt-1">
+              Live Doorstep Selling Orders • Real-Time Supabase Synchronization
             </p>
           </div>
           <button
             onClick={fetchOrders}
-            className="text-xs font-bold text-brand-muted bg-white border border-brand-border px-3 py-1.5 rounded-xl hover:bg-gray-50 transition shrink-0"
+            className="flex items-center gap-2 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2 rounded-xl transition shadow-lg"
           >
-            Refresh
+            <Clock className="w-4 h-4" />
+            Refresh Orders
           </button>
         </div>
 
-        <div className="bg-white rounded-3xl p-4 sm:p-6 border border-brand-border shadow-premium w-full">
+        {/* MAIN CARDS LIST CONTAINER */}
+        <div className="space-y-4">
           {loading && (
-            <div className="flex items-center justify-center py-16">
-              <Loader2 className="w-5 h-5 animate-spin text-brand-yellow" />
-              <span className="ml-2 text-xs text-brand-muted font-semibold">Loading live orders...</span>
+            <div className="bg-neutral-800 rounded-3xl p-12 text-center border border-neutral-700">
+              <Loader2 className="w-6 h-6 animate-spin text-yellow-400 mx-auto mb-2" />
+              <span className="text-xs text-neutral-400 font-semibold">Fetching live orders from Supabase PostgreSQL...</span>
             </div>
           )}
 
           {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 text-xs p-4 rounded-2xl font-semibold mb-4">
+            <div className="bg-red-950 border border-red-800 text-red-300 text-xs p-4 rounded-2xl font-semibold">
               {error}
             </div>
           )}
 
           {!loading && orders.length === 0 && (
-            <div className="text-center py-16 text-brand-muted">
-              <ShoppingBag className="w-10 h-10 mx-auto mb-3 opacity-25" />
-              <p className="text-sm font-bold">No orders yet</p>
-              <p className="text-xs mt-1">Customer orders will appear here once they schedule a pickup.</p>
+            <div className="bg-neutral-800 rounded-3xl p-16 text-center border border-neutral-700">
+              <ShoppingBag className="w-12 h-12 mx-auto mb-3 opacity-30 text-yellow-400" />
+              <p className="text-base font-bold text-white">No active orders found</p>
+              <p className="text-xs text-neutral-400 mt-1">Customer doorstep selling requests will appear here in real-time.</p>
             </div>
           )}
 
-          {!loading && orders.length > 0 && (
-            <div className="w-full">
-              <table className="w-full text-left text-xs table-fixed">
-                <thead>
-                  <tr className="bg-gray-50 text-gray-400 font-bold uppercase tracking-wider border-b border-gray-100">
-                    <th className="p-3 w-[15%]">Order ID</th>
-                    <th className="p-3 w-[25%]">Customer & Location</th>
-                    <th className="p-3 w-[20%]">Device & Offer</th>
-                    <th className="p-3 w-[15%]">Verification</th>
-                    <th className="p-3 w-[12%]">Status</th>
-                    <th className="p-3 w-[13%] text-right">Actions</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  {orders.map((ord: Order) => (
-                    <tr key={ord.id} className="hover:bg-gray-50/80 transition-colors">
-                      {/* 1. ORDER ID & PICKUP WINDOW */}
-                      <td className="p-3 font-extrabold text-brand-black align-top">
-                        <div className="text-sm font-black">{ord.orderNumber}</div>
-                        <div className="text-[10px] text-gray-400 mt-0.5">{ord.pickupDate}</div>
-                        <div className="text-[10px] text-gray-400">({ord.pickupTimeSlot})</div>
-                      </td>
+          {!loading && orders.map((ord: Order) => (
+            <div
+              key={ord.id}
+              className="bg-neutral-800 border border-neutral-700 rounded-3xl p-6 shadow-xl hover:border-neutral-600 transition-all space-y-4"
+            >
+              {/* ROW 1: TOP BADGES & IDENTIFIERS */}
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-neutral-700 pb-4">
+                <div className="flex items-center gap-3">
+                  <div className="bg-black text-yellow-400 text-base font-black px-4 py-1.5 rounded-xl border border-yellow-400/20 font-price">
+                    #{ord.orderNumber}
+                  </div>
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-neutral-300">
+                    <Calendar className="w-3.5 h-3.5 text-yellow-400" />
+                    <span>{ord.pickupDate} ({ord.pickupTimeSlot})</span>
+                  </div>
+                </div>
 
-                      {/* 2. CUSTOMER, PHONE & EMAIL */}
-                      <td className="p-3 align-top">
-                        <div className="font-bold text-brand-black text-sm">{ord.customerName}</div>
-                        <div className="text-[11px] text-brand-muted font-medium">{ord.customerPhone}</div>
-                        {ord.customerEmail && (
-                          <div className="text-[10px] text-blue-600 font-semibold truncate max-w-[200px]" title={ord.customerEmail}>
-                            ✉️ {ord.customerEmail}
-                          </div>
-                        )}
-                        <div className="text-[10px] text-gray-500 line-clamp-2 mt-0.5" title={ord.location}>
-                          {ord.location}
-                        </div>
-                      </td>
+                <div className="flex items-center gap-2 flex-wrap">
+                  {/* Status Badge */}
+                  <span className={`text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider ${
+                    ["COMPLETED", "BILL_GENERATED"].includes(ord.status)
+                      ? "bg-green-950 text-green-400 border border-green-700"
+                      : ord.status === "PARTNER_ASSIGNED"
+                      ? "bg-blue-950 text-blue-400 border border-blue-700"
+                      : "bg-amber-950 text-yellow-400 border border-yellow-700"
+                  }`}>
+                    {ord.status.replace(/_/g, " ")}
+                  </span>
 
-                      {/* 3. DEVICE & OFFER RATE */}
-                      <td className="p-3 align-top">
-                        <div className="font-bold text-brand-black">{ord.deviceName}</div>
-                        <div className="font-extrabold font-price text-brand-black text-sm mt-1">
-                          ₹{(ord.revisedPrice || ord.estimatedPrice).toLocaleString("en-IN")}
-                        </div>
-                        {ord.revisedPrice && ord.revisedPrice !== ord.estimatedPrice && (
-                          <div className="text-[9px] text-gray-400 line-through">
-                            Base: ₹{ord.estimatedPrice.toLocaleString("en-IN")}
-                          </div>
-                        )}
-                      </td>
+                  {/* Payment Badge */}
+                  <span className={`text-xs font-bold px-3 py-1 rounded-full ${
+                    ord.paymentStatus === "PAID" ? "bg-emerald-950 text-emerald-300 border border-emerald-700" : "bg-neutral-700 text-neutral-300"
+                  }`}>
+                    Payment: {ord.paymentStatus}
+                  </span>
+                </div>
+              </div>
 
-                      {/* 4. VERIFICATION PENDING/CONFIRMED STATUSES */}
-                      <td className="p-3 align-top">
-                        <div className="flex flex-col gap-1 text-[10px]">
-                          <span className={`px-2 py-0.5 rounded font-bold w-fit ${ord.identityStatus === "VERIFIED" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"}`}>
-                            ID: {ord.identityStatus}
-                          </span>
-                          <span className={`px-2 py-0.5 rounded font-bold w-fit ${ord.paymentStatus === "PAID" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"}`}>
-                            Pay: {ord.paymentStatus}
-                          </span>
-                        </div>
-                      </td>
+              {/* ROW 2: 3-COLUMN CONTENT GRID */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* COLUMN 1: CUSTOMER & LOCATION */}
+                <div className="space-y-2">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">Customer & Location</div>
+                  <div className="font-bold text-white text-base">{ord.customerName}</div>
+                  <div className="text-xs text-neutral-300 font-medium">📞 {ord.customerPhone}</div>
+                  
+                  {ord.customerEmail ? (
+                    <div className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-400 bg-yellow-400/10 px-3 py-1 rounded-xl border border-yellow-400/20">
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>{ord.customerEmail}</span>
+                    </div>
+                  ) : (
+                    <div className="text-xs text-neutral-500 italic">No email recorded</div>
+                  )}
 
-                      {/* 5. ORDER STATUS BADGE */}
-                      <td className="p-3 align-top">
-                        <Badge variant={["COMPLETED", "BILL_GENERATED"].includes(ord.status) ? "success" : "yellow"}>
-                          {ord.status.replace(/_/g, " ")}
-                        </Badge>
-                      </td>
+                  <div className="flex items-start gap-1.5 text-xs text-neutral-400 mt-2">
+                    <MapPin className="w-3.5 h-3.5 text-yellow-400 shrink-0 mt-0.5" />
+                    <span className="line-clamp-2">{ord.location}</span>
+                  </div>
+                </div>
 
-                      {/* 6. ACTIONS COLUMN */}
-                      <td className="p-3 align-top text-right">
-                        <div className="flex flex-col items-end gap-1.5">
-                          {/* Assign Agent / Agent Assigned Status */}
-                          {!["COMPLETED", "BILL_GENERATED", "CANCELLED"].includes(ord.status) ? (
-                            <button
-                              onClick={() => handleAssignAgent(ord)}
-                              disabled={actionLoading === ord.id + "-agent"}
-                              className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-900 bg-amber-100 hover:bg-amber-200 px-2 py-1 rounded-lg transition-colors w-full justify-center"
-                              title="Click to assign or edit In-House Agent"
-                            >
-                              <UserCheck className="w-3 h-3 text-amber-700" />
-                              <span className="truncate">{ord.agentName ? `Agent: ${ord.agentName}` : "+ Assign Agent"}</span>
-                            </button>
-                          ) : ord.agentName ? (
-                            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-gray-700 bg-gray-100 px-2 py-0.5 rounded-md truncate max-w-[130px]">
-                              <UserCheck className="w-3 h-3 text-gray-500" />
-                              <span>Agent: {ord.agentName}</span>
-                            </span>
-                          ) : null}
+                {/* COLUMN 2: DEVICE & OFFER VALUATION */}
+                <div className="space-y-2">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">Device Purchased & Valuation</div>
+                  <div className="flex items-center gap-2">
+                    <Smartphone className="w-4 h-4 text-yellow-400" />
+                    <span className="font-bold text-white text-sm">{ord.deviceName}</span>
+                  </div>
 
-                          <div className="flex items-center gap-1 w-full">
-                            <Link
-                              href={`/track/${ord.orderNumber}`}
-                              className="inline-flex items-center justify-center gap-0.5 text-[10px] font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded-lg transition-colors flex-1"
-                            >
-                              <Eye className="w-3 h-3" />
-                              Track
-                            </Link>
+                  <div className="bg-black/50 p-3 rounded-2xl border border-neutral-700 space-y-1">
+                    <div className="text-[11px] text-neutral-400">Final Settled Price Payout:</div>
+                    <div className="text-xl font-black text-green-400 font-price">
+                      ₹{(ord.revisedPrice || ord.estimatedPrice).toLocaleString("en-IN")}
+                    </div>
+                    {ord.revisedPrice && ord.revisedPrice !== ord.estimatedPrice && (
+                      <div className="text-[10px] text-neutral-500 line-through">
+                        Initial Quote: ₹{ord.estimatedPrice.toLocaleString("en-IN")}
+                      </div>
+                    )}
+                  </div>
+                </div>
 
-                            <Link
-                              href={`/admin/inspections?orderId=${ord.orderNumber}`}
-                              className="inline-flex items-center justify-center gap-0.5 text-[10px] font-bold text-brand-black bg-brand-yellow hover:bg-yellow-400 px-2 py-1 rounded-lg transition-colors flex-1"
-                            >
-                              <ClipboardCheck className="w-3 h-3" />
-                              Inspect
-                            </Link>
-                          </div>
+                {/* COLUMN 3: LOGISTICS AGENT */}
+                <div className="space-y-2">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">Assigned Logistics Agent</div>
+                  {ord.agentName ? (
+                    <div className="bg-blue-950/50 border border-blue-800/60 p-3 rounded-2xl space-y-1">
+                      <div className="flex items-center gap-1.5 text-blue-300 font-bold text-xs">
+                        <UserCheck className="w-4 h-4 text-blue-400 shrink-0" />
+                        <span>{ord.agentName}</span>
+                      </div>
+                      <div className="text-[10px] text-blue-200/70">Status: Agent Deployed for Pickup</div>
+                    </div>
+                  ) : (
+                    <div className="bg-neutral-900 border border-neutral-700 p-3 rounded-2xl text-xs text-neutral-400 italic">
+                      No agent assigned yet. Click "Assign Agent" below.
+                    </div>
+                  )}
 
-                          {/* Mark Paid + Complete */}
-                          {!["COMPLETED", "BILL_GENERATED"].includes(ord.status) && (
-                            <button
-                              onClick={() => handleMarkCompleted(ord)}
-                              disabled={actionLoading === ord.id + "-complete"}
-                              className="inline-flex items-center justify-center gap-1 text-[10px] font-bold text-white bg-green-600 hover:bg-green-700 px-2.5 py-1 rounded-lg transition-colors w-full disabled:opacity-60"
-                            >
-                              {actionLoading === ord.id + "-complete" ? (
-                                <Loader2 className="w-3 h-3 animate-spin" />
-                              ) : (
-                                <IndianRupee className="w-3 h-3" />
-                              )}
-                              Mark Paid
-                            </button>
-                          )}
+                  {ord.utr && (
+                    <div className="text-xs text-neutral-300 font-mono">
+                      <span className="text-neutral-500">UTR Ref: </span>
+                      <span className="font-bold text-yellow-400">{ord.utr}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
 
-                          {/* Send / Re-send Bill Email Button */}
-                          <button
-                            onClick={() => handleSendBillEmail(ord)}
-                            disabled={actionLoading === ord.id + "-email"}
-                            className="inline-flex items-center justify-center gap-1 text-[10px] font-bold text-blue-900 bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded-lg transition-colors w-full disabled:opacity-60"
-                            title="Send or re-send Tax Invoice & Official PDF Bill Email to customer"
-                          >
-                            {actionLoading === ord.id + "-email" ? (
-                              <Loader2 className="w-3 h-3 animate-spin" />
-                            ) : (
-                              <Send className="w-3 h-3 text-blue-700" />
-                            )}
-                            <span>Send Bill Email</span>
-                          </button>
+              {/* ROW 3: ACTION BUTTONS TOOLBAR */}
+              <div className="pt-4 border-t border-neutral-700 flex flex-wrap items-center justify-between gap-3">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <Link
+                    href={`/track/${ord.orderNumber}`}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-200 bg-neutral-700 hover:bg-neutral-600 px-3 py-2 rounded-xl transition"
+                  >
+                    <Eye className="w-3.5 h-3.5" />
+                    <span>Track Order</span>
+                  </Link>
 
-                          {/* View Official Bill */}
-                          <Link
-                            href={`/admin/bill/${ord.orderNumber}`}
-                            className="inline-flex items-center justify-center gap-1 text-[10px] font-bold text-gray-800 bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded-lg transition-colors w-full"
-                          >
-                            <FileText className="w-3 h-3 text-gray-600" />
-                            <span>View Bill</span>
-                          </Link>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                  <Link
+                    href={`/admin/inspections?orderId=${ord.orderNumber}`}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-3.5 py-2 rounded-xl transition shadow-md"
+                  >
+                    <ClipboardCheck className="w-3.5 h-3.5" />
+                    <span>Physical Inspection</span>
+                  </Link>
+
+                  <button
+                    onClick={() => handleAssignAgent(ord)}
+                    disabled={actionLoading === ord.id + "-agent"}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-300 bg-blue-950 hover:bg-blue-900 border border-blue-800 px-3.5 py-2 rounded-xl transition"
+                  >
+                    {actionLoading === ord.id + "-agent" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <UserCheck className="w-3.5 h-3.5" />}
+                    <span>{ord.agentName ? "Re-Assign Agent" : "Assign Agent"}</span>
+                  </button>
+                </div>
+
+                <div className="flex items-center gap-2 flex-wrap">
+                  {!["COMPLETED", "BILL_GENERATED"].includes(ord.status) && (
+                    <button
+                      onClick={() => handleMarkCompleted(ord)}
+                      disabled={actionLoading === ord.id + "-complete"}
+                      className="inline-flex items-center gap-1.5 text-xs font-black text-white bg-green-600 hover:bg-green-500 px-4 py-2 rounded-xl transition shadow-lg disabled:opacity-60"
+                    >
+                      {actionLoading === ord.id + "-complete" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <IndianRupee className="w-3.5 h-3.5" />}
+                      <span>Mark Paid</span>
+                    </button>
+                  )}
+
+                  <button
+                    onClick={() => handleSendBillEmail(ord)}
+                    disabled={actionLoading === ord.id + "-email"}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 px-3.5 py-2 rounded-xl transition disabled:opacity-60"
+                  >
+                    {actionLoading === ord.id + "-email" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Send className="w-3.5 h-3.5" />}
+                    <span>Send Bill Email</span>
+                  </button>
+
+                  <Link
+                    href={`/admin/bill/${ord.orderNumber}`}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-300 bg-neutral-700 hover:bg-neutral-600 px-3.5 py-2 rounded-xl transition"
+                  >
+                    <FileText className="w-3.5 h-3.5" />
+                    <span>View Bill</span>
+                  </Link>
+                </div>
+              </div>
             </div>
-          )}
+          ))}
         </div>
       </main>
     </div>

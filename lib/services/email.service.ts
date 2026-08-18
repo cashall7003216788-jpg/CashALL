@@ -186,4 +186,36 @@ export class EmailService {
       </div>
     `;
   }
+
+  /**
+   * Helper to dispatch official Tax Invoice & Bill Email to customer.
+   */
+  static async sendBillEmail({
+    to,
+    orderNumber,
+    customerName,
+    deviceName,
+    finalPrice,
+    utrNumber,
+    billUrl,
+  }: {
+    to: string;
+    orderNumber: string;
+    customerName: string;
+    deviceName?: string;
+    finalPrice: number;
+    utrNumber: string;
+    billUrl?: string;
+  }) {
+    const html = EmailService.compilePayoutTemplate(
+      orderNumber,
+      finalPrice,
+      utrNumber,
+      customerName,
+      deviceName
+    );
+    const subject = `CashALL Tax Invoice & Purchase Receipt #${orderNumber} — ₹${finalPrice.toLocaleString('en-IN')}`;
+    const result = await EmailService.sendEmail(to, subject, html);
+    return result.success;
+  }
 }

@@ -83,7 +83,17 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       } catch {}
     }
 
-    return { ...ord, deviceName };
+    const assignedPartner = ord.pickups?.[0]?.partner;
+    const assignedPartnerName = assignedPartner ? (assignedPartner.name || assignedPartner.companyName) : null;
+    const customerEmail = ord.user?.email || null;
+
+    return {
+      ...ord,
+      deviceName,
+      customerEmail,
+      assignedPartnerName,
+      agentName: assignedPartnerName,
+    };
   });
 
   return NextResponse.json({

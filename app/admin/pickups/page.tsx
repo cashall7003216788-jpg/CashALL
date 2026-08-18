@@ -110,6 +110,19 @@ export default function AdminPickupsPage() {
     if (!name || !name.trim()) return;
 
     const agentName = name.trim();
+
+    // Call API to persist PARTNER_ASSIGNED in PostgreSQL database
+    fetch(`/api/v1/admin/orders/${order.orderNumber}/assign-pickup`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        partnerId: "p-inhouse-custom",
+        partnerName: agentName,
+        pickupDate: order.pickupDate || "Today",
+        pickupTimeSlot: order.pickupTimeSlot || "10 AM - 1 PM",
+      }),
+    }).catch((e) => console.warn("Assign API call warning:", e));
+
     const updatedOrder: OrderData = {
       ...order,
       assignedPartnerId: "p-inhouse-custom",
@@ -129,7 +142,7 @@ export default function AdminPickupsPage() {
 
     setDispatchSuccess(`In-House Agent "${agentName}" assigned to Order #${order.orderNumber}!`);
     setTimeout(() => setDispatchSuccess(null), 4000);
-    loadAllOrders();
+    setTimeout(() => loadAllOrders(), 500);
   };
 
   const handlePartnerSelect = (orderId: string, partnerId: string) => {

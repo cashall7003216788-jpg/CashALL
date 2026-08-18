@@ -4,13 +4,13 @@ import { verifyAuthToken, requireRole } from "@/lib/middlewares/auth";
 import { prisma } from "@/lib/db";
 import { AppError } from "@/lib/utils/AppError";
 import { logger } from "@/lib/utils/logger";
-import { NotificationHelper } from "@/lib/services/notification.helper";
 import { z } from "zod";
 
 const assignPickupSchema = z.object({
-  partnerId: z.string().min(1, "partnerId is required"),
-  pickupDate: z.string().min(1, "Pickup date is required"),
-  pickupTimeSlot: z.string().min(1, "Time slot is required"),
+  partnerId: z.string().optional(),
+  partnerName: z.string().optional(),
+  pickupDate: z.string().optional(),
+  pickupTimeSlot: z.string().optional(),
 });
 
 export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { id: string } }) => {
@@ -18,22 +18,14 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   requireRole(["ADMIN", "SUPER_ADMIN"], decodedUser.role);
 
   const orderIdentifier = params.id;
-  const body = await req.json();
+  const body = await req.json().catch(() => ({}));
   const validation = assignPickupSchema.safeParse(body);
 
   if (!validation.success) {
     throw new AppError(validation.error.issues[0].message, 400);
   }
 
-  const { partnerId, pickupDate, pickupTimeSlot } = validation.data;
-
-  // Verify partner
-  const partner = await prisma.partner.findUnique({
-    where: { id: partnerId },
-  });
-  if (!partner) {
-    throw new AppError("Pickup partner not found.", 404);
-  }
+  const { partnerId: rawPartnerId, partnerName: rawPartnerName, pickupDate: rawDate, pickupTimeSlot: rawTime } = validation.data;
 
   const order = await prisma.order.findFirst({
     where: {
@@ -49,20 +41,49 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     throw new AppError("Order not found.", 404);
   }
 
-  // Update order status and schedule in transaction
+  const pickupDate = rawDate || order.pickupDate || "Today";
+  const pickupTimeSlot = rawTime || order.pickupTimeSlot || "10 AM - 1 PM";
+  const agentName = rawPartnerName || "CashALL In-House Agent";
+
+  // Find or Create Default In-House Partner in DB
+  let partner = null;
+  if (rawPartnerId && rawPartnerId !== "p-inhouse-custom") {
+    partner = await prisma.partner.findUnique({ where: { id: rawPartnerId } });
+  }
+
+  if (!partner) {
+    partner = await prisma.partner.findFirst({
+      where: { phone: "7003216788" },
+    });
+    if (!partner) {
+      partner = await prisma.partner.create({
+        data: {
+          name: agentName,
+          businessName: "CashALL In-House Logistics",
+          phone: "7003216788",
+          email: "support@cashall.in",
+          city: "Kolkata",
+          status: "ACTIVE",
+        },
+      });
+    }
+  }
+
+  // Update order status and pickup record in PostgreSQL database
   const updatedOrder = await prisma.$transaction(async (tx) => {
     const existingPickup = await tx.pickup.findFirst({
-      where: { orderId: order.id, status: "SCHEDULED" },
+      where: { orderId: order.id },
     });
 
     if (existingPickup) {
       await tx.pickup.update({
         where: { id: existingPickup.id },
         data: {
-          partnerId,
+          partnerId: partner.id,
           date: pickupDate,
           timeSlot: pickupTimeSlot,
           status: "ASSIGNED",
+          notes: agentName,
           assignedAt: new Date(),
         },
       });
@@ -70,10 +91,11 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
       await tx.pickup.create({
         data: {
           orderId: order.id,
-          partnerId,
+          partnerId: partner.id,
           date: pickupDate,
           timeSlot: pickupTimeSlot,
           status: "ASSIGNED",
+          notes: agentName,
           assignedAt: new Date(),
         },
       });
@@ -89,30 +111,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     });
   });
 
-  // Log action
-  await prisma.adminLog.create({
-    data: {
-      adminUserId: decodedUser.uid,
-      action: "ASSIGN_PICKUP_PARTNER",
-      details: JSON.stringify({
-        orderNumber: order.orderNumber,
-        partnerId,
-        partnerName: partner.name,
-      }),
-    },
-  });
-
-  logger.adminAction(decodedUser.uid, "ASSIGN_PICKUP_PARTNER", {
-    orderNumber: order.orderNumber,
-    partnerName: partner.name,
-  });
-
-  // Trigger push notification
-  await NotificationHelper.triggerMilestoneNotification(
-    order.id,
-    order.userId,
-    "PARTNER_ASSIGNED"
-  );
+  logger.info(`[PARTNER ASSIGNED] Order #${order.orderNumber} assigned to ${agentName}`);
 
   return NextResponse.json({
     success: true,
