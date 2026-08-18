@@ -1,41 +1,72 @@
 import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { logger } from "../utils/logger";
 
 const resendApiKey = process.env.RESEND_API_KEY;
-
 export const resend = resendApiKey && !resendApiKey.startsWith("re_mock") ? new Resend(resendApiKey) : null;
+
+const gmailUser = process.env.GMAIL_USER || "cashall7003216788@gmail.com";
+const gmailPass = process.env.GMAIL_APP_PASSWORD || process.env.SMTP_PASSWORD;
+
+// Nodemailer SMTP Transporter for Gmail (cashall7003216788@gmail.com)
+const smtpTransporter = gmailPass
+  ? nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: gmailUser,
+        pass: gmailPass,
+      },
+    })
+  : null;
 
 export class EmailService {
   /**
-   * Sends an email using the Resend service or logs clean trace.
+   * Sends an email using Nodemailer (Gmail), Resend, or logs clean trace.
    */
   static async sendEmail(to: string, subject: string, html: string) {
-    const fromAddress = process.env.EMAIL_FROM || "CashALL <onboarding@resend.dev>";
+    const fromAddress = process.env.EMAIL_FROM || `CashALL <${gmailUser}>`;
 
-    if (!resend) {
-      logger.info(`[EMAIL SERVICE] Resend API Key is in development mode. Simulating email send to ${to}: "${subject}"`);
-      console.log(`\n============================ EMAIL DISPATCH TRACE ============================`);
-      console.log(`TO: ${to}`);
-      console.log(`FROM: ${fromAddress}`);
-      console.log(`SUBJECT: ${subject}`);
-      console.log(`TIMESTAMP: ${new Date().toISOString()}`);
-      console.log(`=============================================================================\n`);
-      return { success: true, simulated: true };
+    // 1. Try sending via Gmail SMTP if App Password is provided
+    if (smtpTransporter) {
+      try {
+        const info = await smtpTransporter.sendMail({
+          from: fromAddress,
+          to,
+          subject,
+          html,
+        });
+        logger.info(`Email sent via Gmail SMTP (${gmailUser}) to ${to}. MessageId: ${info.messageId}`);
+        return { success: true, messageId: info.messageId, provider: "GMAIL_SMTP" };
+      } catch (error) {
+        logger.error(`Error sending email via Gmail SMTP to ${to}:`, error);
+      }
     }
 
-    try {
-      const data = await resend.emails.send({
-        from: fromAddress,
-        to,
-        subject,
-        html,
-      });
-
-      logger.info(`Email sent successfully to ${to}. Resend ID: ${data.data?.id}`);
-      return data;
-    } catch (error) {
-      logger.error(`Error sending email to ${to}:`, error);
+    // 2. Try sending via Resend API if Resend Key is configured
+    if (resend) {
+      try {
+        const data = await resend.emails.send({
+          from: fromAddress,
+          to,
+          subject,
+          html,
+        });
+        logger.info(`Email sent via Resend API to ${to}. Resend ID: ${data.data?.id}`);
+        return { success: true, id: data.data?.id, provider: "RESEND" };
+      } catch (error) {
+        logger.error(`Error sending email via Resend API to ${to}:`, error);
+      }
     }
+
+    // 3. Simulated trace in development or before SMTP App Password entry
+    logger.info(`[EMAIL SERVICE] Sending from ${gmailUser} to ${to}: "${subject}"`);
+    console.log(`\n============================ CASHALL GMAIL DISPATCH TRACE ============================`);
+    console.log(`FROM: ${fromAddress}`);
+    console.log(`TO: ${to}`);
+    console.log(`SUBJECT: ${subject}`);
+    console.log(`TIMESTAMP: ${new Date().toISOString()}`);
+    console.log(`======================================================================================\n`);
+    return { success: true, simulated: true, senderEmail: gmailUser };
   }
 
   /**
@@ -52,7 +83,7 @@ export class EmailService {
         <p style="font-size: 14px; line-height: 1.5; color: #444;">Thank you for choosing CashALL. We make selling your old mobile phones and laptops simple, fast, and secure.</p>
         <p style="font-size: 14px; line-height: 1.5; color: #444;">Get instant doorstep inspections, transparent price calculations, and immediate bank transfers.</p>
         <hr style="border: 0; border-top: 1px solid #eeeeee; margin: 24px 0;" />
-        <p style="font-size: 11px; color: #888888; text-align: center;">CashALL | AARNA ENTERPRISE | Helpline: 7003216788</p>
+        <p style="font-size: 11px; color: #888888; text-align: center;">CashALL | AARNA ENTERPRISE | cashall7003216788@gmail.com | Helpline: 7003216788</p>
       </div>
     `;
   }
@@ -83,6 +114,8 @@ export class EmailService {
           </tr>
         </table>
         <p>Go to CashALL to schedule your doorstep pickup now!</p>
+        <hr style="border: 0; border-top: 1px solid #eeeeee; margin: 24px 0;" />
+        <p style="font-size: 11px; color: #888888; text-align: center;">CashALL | cashall7003216788@gmail.com</p>
       </div>
     `;
   }
@@ -139,7 +172,7 @@ export class EmailService {
         <p style="font-size: 12px; color: #6b7280; line-height: 1.4;">This automated email serves as your official purchase acknowledgment and transaction record from AARNA ENTERPRISE (Parent Company of CashALL).</p>
 
         <hr style="border: 0; border-top: 1px solid #eeeeee; margin: 24px 0;" />
-        <p style="font-size: 11px; color: #9ca3af; text-align: center; margin: 0;">CashALL | GSTIN: 19AVPPG9800J1Z3 | Customer Support: +91 7003216788 | www.cashall.in</p>
+        <p style="font-size: 11px; color: #9ca3af; text-align: center; margin: 0;">CashALL | GSTIN: 19AVPPG9800J1Z3 | cashall7003216788@gmail.com | Helpline: +91 7003216788 | www.cashall.in</p>
       </div>
     `;
   }
