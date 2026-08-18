@@ -5,37 +5,47 @@ import { logger } from "../utils/logger";
 const resendApiKey = process.env.RESEND_API_KEY;
 export const resend = resendApiKey && !resendApiKey.startsWith("re_mock") ? new Resend(resendApiKey) : null;
 
-const gmailUser = process.env.GMAIL_USER || "cashall7003216788@gmail.com";
-const gmailPass = process.env.GMAIL_APP_PASSWORD || process.env.SMTP_PASSWORD;
-
-// Nodemailer SMTP Transporter for Gmail (cashall7003216788@gmail.com)
-const smtpTransporter = gmailPass
-  ? nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: gmailUser,
-        pass: gmailPass,
-      },
-    })
-  : null;
-
 export class EmailService {
+  /**
+   * Helper to create Gmail SMTP transporter dynamically at runtime.
+   */
+  private static getTransporter() {
+    const gmailUser = process.env.GMAIL_USER || "cashall7003216788@gmail.com";
+    const gmailPass = (process.env.GMAIL_APP_PASSWORD || process.env.SMTP_PASSWORD || "").trim();
+
+    if (gmailPass) {
+      return {
+        transporter: nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: gmailUser,
+            pass: gmailPass,
+          },
+        }),
+        gmailUser,
+      };
+    }
+    return { transporter: null, gmailUser };
+  }
+
   /**
    * Sends an email using Nodemailer (Gmail), Resend, or logs clean trace.
    */
   static async sendEmail(to: string, subject: string, html: string) {
+    const { transporter, gmailUser } = EmailService.getTransporter();
     const fromAddress = process.env.EMAIL_FROM || `CashALL <${gmailUser}>`;
 
-    // 1. Try sending via Gmail SMTP if App Password is provided
-    if (smtpTransporter) {
+    // 1. Try sending via Gmail SMTP if App Password is set
+    if (transporter) {
       try {
-        const info = await smtpTransporter.sendMail({
+        const info = await transporter.sendMail({
           from: fromAddress,
           to,
           subject,
           html,
         });
         logger.info(`Email sent via Gmail SMTP (${gmailUser}) to ${to}. MessageId: ${info.messageId}`);
+        console.log(`\n✅ LIVE EMAIL SENT VIA GMAIL SMTP to ${to} (MessageId: ${info.messageId})\n`);
         return { success: true, messageId: info.messageId, provider: "GMAIL_SMTP" };
       } catch (error) {
         logger.error(`Error sending email via Gmail SMTP to ${to}:`, error);
@@ -58,7 +68,7 @@ export class EmailService {
       }
     }
 
-    // 3. Simulated trace in development or before SMTP App Password entry
+    // 3. Simulated trace in development
     logger.info(`[EMAIL SERVICE] Sending from ${gmailUser} to ${to}: "${subject}"`);
     console.log(`\n============================ CASHALL GMAIL DISPATCH TRACE ============================`);
     console.log(`FROM: ${fromAddress}`);
