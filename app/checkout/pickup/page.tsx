@@ -27,6 +27,7 @@ function PickupCheckoutContent() {
   const [quote, setQuote] = useState<QuoteData | null>(null);
   const [pincode, setPincode] = useState("");
   const [serviceStatus, setServiceStatus] = useState<"IDLE" | "AVAILABLE" | "UNAVAILABLE">("IDLE");
+  const [city, setCity] = useState("Kolkata");
   const [selectedState, setSelectedState] = useState("West Bengal");
   const [resolvedDeviceName, setResolvedDeviceName] = useState("");
 
@@ -42,6 +43,83 @@ function PickupCheckoutContent() {
   const [pickupDate, setPickupDate] = useState("Tomorrow");
   const [pickupSlot, setPickupSlot] = useState("10 AM - 1 PM");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const ALL_INDIAN_STATES = [
+    "West Bengal",
+    "Gujarat",
+    "Maharashtra",
+    "Delhi NCR",
+    "Karnataka",
+    "Tamil Nadu",
+    "Telangana",
+    "Uttar Pradesh",
+    "Bihar",
+    "Rajasthan",
+    "Madhya Pradesh",
+    "Punjab",
+    "Haryana",
+    "Odisha",
+    "Assam",
+    "Andhra Pradesh",
+    "Kerala",
+    "Jharkhand",
+    "Chhattisgarh",
+    "Goa",
+    "Himachal Pradesh",
+    "Other State",
+  ];
+
+  const resolveStateFromPincode = (pin: string): { city: string; state: string } => {
+    const p = pin.trim();
+    if (p.startsWith("38") || p.startsWith("39")) return { city: "Ahmedabad", state: "Gujarat" };
+    if (p.startsWith("40") || p.startsWith("41") || p.startsWith("42")) return { city: "Mumbai", state: "Maharashtra" };
+    if (p.startsWith("11")) return { city: "New Delhi", state: "Delhi NCR" };
+    if (p.startsWith("56") || p.startsWith("57")) return { city: "Bengaluru", state: "Karnataka" };
+    if (p.startsWith("60") || p.startsWith("61") || p.startsWith("62")) return { city: "Chennai", state: "Tamil Nadu" };
+    if (p.startsWith("50")) return { city: "Hyderabad", state: "Telangana" };
+    if (p.startsWith("20") || p.startsWith("22")) return { city: "Lucknow", state: "Uttar Pradesh" };
+    if (p.startsWith("80") || p.startsWith("81")) return { city: "Patna", state: "Bihar" };
+    if (p.startsWith("30") || p.startsWith("31")) return { city: "Jaipur", state: "Rajasthan" };
+    if (p.startsWith("75")) return { city: "Bhubaneswar", state: "Odisha" };
+    if (p.startsWith("78")) return { city: "Guwahati", state: "Assam" };
+    if (p.startsWith("70") || p.startsWith("71") || p.startsWith("72") || p.startsWith("73") || p.startsWith("74")) {
+      return { city: p.startsWith("711") ? "Howrah" : "Kolkata", state: "West Bengal" };
+    }
+    return { city: "Local Area", state: "West Bengal" };
+  };
+
+  const checkPincode = async () => {
+    const pinStr = pincode.trim();
+    if (!pinStr || pinStr.length !== 6) {
+      setServiceStatus("UNAVAILABLE");
+      return;
+    }
+
+    // First try Indian Postal Pincode API for exact city & state
+    try {
+      const res = await fetch(`https://api.postalpincode.in/pincode/${pinStr}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data) && data[0]?.Status === "Success" && data[0]?.PostOffice?.length > 0) {
+          const po = data[0].PostOffice[0];
+          const detectedCity = po.District || po.Name || "City";
+          const detectedState = po.State || "West Bengal";
+          setCity(detectedCity);
+          setSelectedState(detectedState);
+          setServiceStatus("AVAILABLE");
+          return;
+        }
+      }
+    } catch (e) {
+      console.warn("Postal API lookup fallback:", e);
+    }
+
+    // Fallback to internal lookup
+    const resolved = resolveStateFromPincode(pinStr);
+    setCity(resolved.city);
+    setSelectedState(resolved.state);
+    setServiceStatus("AVAILABLE");
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -79,19 +157,6 @@ function PickupCheckoutContent() {
     }
   }, [quoteId]);
 
-  const checkPincode = () => {
-    const match = INITIAL_SERVICE_AREAS.find((s) => s.pincode === pincode.trim() && s.active);
-    if (match) {
-      setServiceStatus("AVAILABLE");
-      setSelectedState(match.state);
-    } else if (pincode.trim().length === 6) {
-      setServiceStatus("AVAILABLE");
-      setSelectedState("West Bengal");
-    } else {
-      setServiceStatus("UNAVAILABLE");
-    }
-  };
-
   const handleConfirmOrder = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -109,25 +174,14 @@ function PickupCheckoutContent() {
     }
 
     setIsSubmitting(true);
-    const finalName = fullName.trim() || "Customer";
-    const finalPhone = cleanPhone; // Always use digits-only for DB storage
-    const finalHouse = house.trim() || "Customer Address";
-    const finalStreet = street.trim() || finalHouse;
-    const finalArea = area.trim() || "West Bengal";
-    const fullAddress = `${finalHouse}, ${finalStreet}, ${finalArea}${landmark ? ", " + landmark.trim() : ""}, ${selectedState} - ${pincode}`;
 
-    // Resolve device name: priority order:
-    // 1. resolvedDeviceName from cashall_current_variant (most accurate)
-    // 2. quote.breakdownJson.deviceName (saved during assessment)
-    // 3. Never use INITIAL_VARIANTS fallback (can be wrong model)
-    let fullDeviceName = resolvedDeviceName;
-    if (!fullDeviceName && quote?.breakdownJson) {
-      try {
-        const bd = JSON.parse(quote.breakdownJson);
-        if (bd.deviceName) fullDeviceName = bd.deviceName;
-      } catch {}
-    }
-    if (!fullDeviceName) fullDeviceName = "Customer Mobile Device";
+    const finalName = fullName.trim() || "Customer";
+    const finalPhone = cleanPhone;
+    const finalHouse = house.trim() || "Customer Address";
+    const finalStreet = street.trim() || "Doorstep Location";
+    const finalArea = area.trim() || selectedState;
+    const finalCity = city.trim() || "Kolkata";
+    const fullDeviceName = resolvedDeviceName || quote?.breakdownJson ? (JSON.parse(quote?.breakdownJson || "{}").deviceName || "Mobile Device") : "Mobile Device";
 
     let createdOrderNum = "";
     let apiSuccess = false;
@@ -147,7 +201,7 @@ function PickupCheckoutContent() {
             street: finalStreet,
             area: finalArea,
             landmark,
-            city: "Kolkata",
+            city: finalCity,
             state: selectedState,
             pincode,
             pickupDate,
@@ -182,6 +236,8 @@ function PickupCheckoutContent() {
       alert(serverErrorMsg || "Unable to process order right now. Please check your details and try again.");
       return;
     }
+
+    const fullAddress = `${finalHouse}, ${finalStreet}, ${finalArea}${landmark ? ", " + landmark.trim() : ""}, ${finalCity}, ${selectedState} - ${pincode}`;
 
     const newOrder: OrderData = {
       id: `ord-${Date.now()}`,
@@ -393,6 +449,38 @@ function PickupCheckoutContent() {
                       required
                       className="w-full px-3 py-2 text-xs bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow"
                     />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-brand-black mb-1">
+                      City / District <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
+                      placeholder="e.g. Ahmedabad, Kolkata, Howrah"
+                      required
+                      className="w-full px-3 py-2 text-xs bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow font-bold text-brand-black"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-brand-black mb-1">
+                      State / Union Territory <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                      value={selectedState}
+                      onChange={(e) => setSelectedState(e.target.value)}
+                      required
+                      className="w-full px-3 py-2 text-xs bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow font-bold text-brand-black cursor-pointer"
+                    >
+                      {ALL_INDIAN_STATES.map((st) => (
+                        <option key={st} value={st}>
+                          {st}
+                        </option>
+                      ))}
+                    </select>
                   </div>
 
                   <div>
