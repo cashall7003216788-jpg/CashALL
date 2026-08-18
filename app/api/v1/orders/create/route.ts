@@ -48,6 +48,8 @@ export async function POST(req: NextRequest) {
 
     logger.info(`[ORDER CREATE] Processing order placement for ${fullName} (${cleanPhone}) - Device: ${deviceName}`);
 
+    const rawEmail = data.email ? String(data.email).trim() : null;
+
     // 1. Find or Create User
     let user = await prisma.user.findFirst({
       where: { phone: cleanPhone },
@@ -58,14 +60,18 @@ export async function POST(req: NextRequest) {
         data: {
           phone: cleanPhone,
           name: fullName,
+          email: rawEmail,
           firebaseUid: `uid_${cleanPhone}_${Date.now()}`,
           role: "CUSTOMER",
         },
       });
-    } else if (fullName && user.name !== fullName) {
+    } else {
       user = await prisma.user.update({
         where: { id: user.id },
-        data: { name: fullName },
+        data: {
+          name: fullName || user.name,
+          ...(rawEmail ? { email: rawEmail } : {}),
+        },
       });
     }
 

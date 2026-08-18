@@ -3,6 +3,8 @@ import { apiWrapper } from "@/lib/utils/api-wrapper";
 import { verifyAuthToken, requireRole } from "@/lib/middlewares/auth";
 import { prisma } from "@/lib/db";
 import { AppError } from "@/lib/utils/AppError";
+import { EmailService } from "@/lib/services/email.service";
+import { logger } from "@/lib/utils/logger";
 
 export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { id: string } }) => {
   const decodedUser = await verifyAuthToken(req);
@@ -21,6 +23,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   if (!order) throw new AppError("Order not found.", 404);
 
   const price = finalPrice || order.finalPrice || order.quote?.estimatedPrice || 0;
+  const transactionRef = utr || `ADMIN-${Date.now()}`;
 
   // Create payment record if not exists
   const existingPayment = await prisma.payment.findFirst({ where: { orderId: order.id } });
@@ -31,7 +34,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
         amount: price,
         method: "UPI",
         status: "PAID",
-        transactionRef: utr || `ADMIN-${Date.now()}`,
+        transactionRef,
         paidAt: new Date(),
       },
     });
@@ -46,9 +49,29 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     },
   });
 
+  // Automatically send Tax Invoice & Receipt email to customer if email is available
+  if (order.user?.email) {
+    const customerEmail = order.user.email;
+    const deviceName = order.quote?.breakdownJson
+      ? (JSON.parse(order.quote.breakdownJson || "{}").deviceName || "Mobile Device")
+      : "Mobile Device";
+
+    const emailHtml = EmailService.compilePayoutTemplate(
+      order.orderNumber,
+      price,
+      transactionRef
+    );
+
+    EmailService.sendEmail(
+      customerEmail,
+      `Tax Invoice & Payment Receipt for Order #${order.orderNumber} - CashALL`,
+      emailHtml
+    ).catch((err) => logger.error(`Failed to send bill email to ${customerEmail}:`, err));
+  }
+
   return NextResponse.json({
     success: true,
-    message: `Order ${order.orderNumber} force-completed by admin.`,
+    message: `Order ${order.orderNumber} completed & payment receipt dispatched.`,
     data: updatedOrder,
   });
 });

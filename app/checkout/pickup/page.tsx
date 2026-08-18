@@ -34,6 +34,7 @@ function PickupCheckoutContent() {
   // Address fields
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
   const [house, setHouse] = useState("");
   const [street, setStreet] = useState("");
   const [area, setArea] = useState("");
@@ -129,6 +130,7 @@ function PickupCheckoutContent() {
           const u = JSON.parse(storedUser);
           setFullName(u.name || "");
           setPhone(u.phone || "");
+          setEmail(u.email || "");
         } catch (e) {
           console.error(e);
         }
@@ -177,11 +179,17 @@ function PickupCheckoutContent() {
 
     const finalName = fullName.trim() || "Customer";
     const finalPhone = cleanPhone;
+    const finalEmail = email.trim();
     const finalHouse = house.trim() || "Customer Address";
     const finalStreet = street.trim() || "Doorstep Location";
     const finalArea = area.trim() || selectedState;
     const finalCity = city.trim() || "Kolkata";
     const fullDeviceName = resolvedDeviceName || quote?.breakdownJson ? (JSON.parse(quote?.breakdownJson || "{}").deviceName || "Mobile Device") : "Mobile Device";
+
+    // Update user profile in local storage with email
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cashall_user", JSON.stringify({ name: finalName, phone: finalPhone, email: finalEmail }));
+    }
 
     let createdOrderNum = "";
     let apiSuccess = false;
@@ -197,6 +205,7 @@ function PickupCheckoutContent() {
             quoteId: quote?.id || quoteId,
             fullName: finalName,
             phone: finalPhone,
+            email: finalEmail,
             house: finalHouse,
             street: finalStreet,
             area: finalArea,
@@ -405,6 +414,19 @@ function PickupCheckoutContent() {
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="10-Digit Mobile"
                       required
+                      className="w-full px-3 py-2 text-xs bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-brand-black mb-1">
+                      Email Address <span className="text-gray-400 font-normal">(For Final Bill & PDF Invoice)</span>
+                    </label>
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="e.g. customer@gmail.com"
                       className="w-full px-3 py-2 text-xs bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow"
                     />
                   </div>
