@@ -13,8 +13,14 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   const body = await req.json().catch(() => ({}));
   const { finalPrice, utr, upiId } = body;
 
-  const order = await prisma.order.findUnique({
-    where: { id: params.id },
+  const order = await prisma.order.findFirst({
+    where: {
+      OR: [
+        { id: params.id },
+        { orderNumber: params.id },
+      ],
+      deletedAt: null,
+    },
     include: {
       user: true,
       quote: { include: { variant: { include: { model: { include: { brand: true } } } } } },
@@ -33,6 +39,16 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
         orderId: order.id,
         amount: price,
         method: "UPI",
+        status: "PAID",
+        transactionRef,
+        paidAt: new Date(),
+      },
+    });
+  } else {
+    await prisma.payment.update({
+      where: { id: existingPayment.id },
+      data: {
+        amount: price,
         status: "PAID",
         transactionRef,
         paidAt: new Date(),

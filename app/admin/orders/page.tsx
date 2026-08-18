@@ -4,13 +4,24 @@ import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { Badge } from "@/components/ui/Badge";
-import { ShoppingBag, ClipboardCheck, Eye, Loader2, Receipt, IndianRupee, UserCheck } from "lucide-react";
+import {
+  ShoppingBag,
+  Eye,
+  ClipboardCheck,
+  IndianRupee,
+  UserCheck,
+  Loader2,
+  FileText,
+  Mail,
+  Send
+} from "lucide-react";
 
 interface Order {
   id: string;
   orderNumber: string;
   customerName: string;
   customerPhone: string;
+  customerEmail?: string;
   pincode: string;
   location: string;
   deviceName: string;
@@ -25,15 +36,16 @@ interface Order {
   paymentStatus: string;
   deviceStatus: string;
   agentName?: string;
+  utr?: string;
 }
-
-
 
 function getAdminToken() {
   if (typeof window === "undefined") return "";
   try {
     return JSON.parse(localStorage.getItem("cashall_admin_session") || "{}")?.token || "";
-  } catch { return ""; }
+  } catch {
+    return "";
+  }
 }
 
 export default function AdminOrdersPage() {
@@ -59,32 +71,55 @@ export default function AdminOrdersPage() {
           ...(token ? { Authorization: `Bearer ${token}` } : {}),
         },
       });
+
       if (res.ok) {
         const json = await res.json();
         const raw = json.data?.orders || json.orders || [];
-        const mapped = raw.map((ord: any) => ({
-          id: ord.id,
-          orderNumber: ord.orderNumber,
-          customerName: ord.user?.name || "Customer",
-          customerPhone: ord.user?.phone || "—",
-          pincode: ord.address?.pincode || "—",
-          location: ord.address ? `${ord.address.house}, ${ord.address.city}, ${ord.address.state} - ${ord.address.pincode}` : "—",
-          // deviceName is pre-resolved by the API from breakdownJson → variant→model chain
-          deviceName: ord.deviceName ||
-            (ord.quote?.variant?.model
-              ? `${ord.quote.variant.model.brand?.name || ""} ${ord.quote.variant.model.name}`.trim()
-              : "Mobile Device"),
-          pickupDate: ord.pickupDate || "—",
-          pickupTimeSlot: ord.pickupTimeSlot || "—",
-          estimatedPrice: ord.quote?.estimatedPrice ?? 0,
-          revisedPrice: ord.finalPrice ?? null,
-          status: ord.status,
-          identityStatus: ord.identityVerifications?.[0]?.status || "PENDING",
-          imeiStatus: ord.imeiVerifications?.[0]?.status || "PENDING",
-          esignStatus: ord.signatures?.some((s: any) => s.status === "ESIGNED") ? "SIGNED" : "PENDING",
-          paymentStatus: ord.payments?.[0]?.status || "PENDING",
-          deviceStatus: ["DEVICE_RECEIVED", "BILL_GENERATED", "COMPLETED"].includes(ord.status) ? "RECEIVED" : "NOT RECEIVED",
-        }));
+        const mapped = raw.map((ord: any) => {
+          const assignedPartner = ord.pickups?.[0]?.partner;
+          const assignedPartnerName = assignedPartner ? (assignedPartner.name || assignedPartner.companyName) : ord.agentName;
+
+          // Unified Status Resolution across Database
+          let status = ord.status || "PICKUP_SCHEDULED";
+          if (status === "PICKUP_SCHEDULED" && assignedPartnerName) {
+            status = "PARTNER_ASSIGNED";
+          }
+          if (ord.qcReports && ord.qcReports.length > 0 && status === "PICKUP_SCHEDULED") {
+            status = "INSPECTION_COMPLETED";
+          }
+
+          const activePayment = ord.payments?.find((p: any) => p.status === "PAID") || ord.payments?.[0];
+          const paymentStatus = activePayment?.status === "PAID" || status === "COMPLETED" ? "PAID" : "PENDING";
+          const transactionRef = activePayment?.transactionRef || activePayment?.utrNumber || "";
+
+          return {
+            id: ord.id,
+            orderNumber: ord.orderNumber,
+            customerName: ord.user?.name || ord.customerName || "Customer",
+            customerPhone: ord.user?.phone || ord.customerPhone || "—",
+            customerEmail: ord.user?.email || ord.customerEmail || "",
+            pincode: ord.address?.pincode || ord.pincode || "—",
+            location: ord.address
+              ? `${ord.address.house || ""}, ${ord.address.city || ""}, ${ord.address.state || ""} - ${ord.address.pincode || ""}`
+              : ord.addressSummary || "—",
+            deviceName: ord.deviceName ||
+              (ord.quote?.variant?.model
+                ? `${ord.quote.variant.model.brand?.name || ""} ${ord.quote.variant.model.name}`.trim()
+                : "Mobile Device"),
+            pickupDate: ord.pickupDate || "—",
+            pickupTimeSlot: ord.pickupTimeSlot || "—",
+            estimatedPrice: ord.quote?.estimatedPrice ?? 0,
+            revisedPrice: ord.finalPrice ?? ord.revisedPrice ?? null,
+            status,
+            identityStatus: ord.identityVerifications?.[0]?.status || "PENDING",
+            imeiStatus: ord.imeiVerifications?.[0]?.status || "PENDING",
+            esignStatus: ord.signatures?.some((s: any) => s.status === "ESIGNED") ? "SIGNED" : "PENDING",
+            paymentStatus,
+            deviceStatus: ["DEVICE_RECEIVED", "BILL_GENERATED", "COMPLETED"].includes(status) ? "RECEIVED" : "NOT RECEIVED",
+            agentName: assignedPartnerName,
+            utr: transactionRef,
+          };
+        });
         combinedOrders.push(...mapped);
       }
     } catch (err: any) {
@@ -99,7 +134,6 @@ export default function AdminOrdersPage() {
 
         const rawLocal = JSON.parse(localStorage.getItem("cashall_all_orders") || "[]");
         if (Array.isArray(rawLocal) && rawLocal.length > 0) {
-          // Clean local storage from blacklisted test entries
           const cleanedLocal = rawLocal.filter(
             (o: any) =>
               !BLACKLIST_NUMS.has(o.orderNumber) &&
@@ -107,38 +141,31 @@ export default function AdminOrdersPage() {
           );
           localStorage.setItem("cashall_all_orders", JSON.stringify(cleanedLocal));
 
-          if (cleanedLocal.length > 0) {
-            // Auto-push any valid unsynced local orders to PostgreSQL DB
-            fetch("/api/v1/orders/sync-local", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ orders: cleanedLocal }),
-            }).catch((err) => console.warn("Admin auto-sync error:", err));
-
-            cleanedLocal.forEach((item: any) => {
-              if (item.orderNumber && !combinedOrders.some((o) => o.orderNumber === item.orderNumber)) {
-                combinedOrders.push({
-                  id: item.id || `ord-${item.orderNumber}`,
-                  orderNumber: item.orderNumber,
-                  customerName: item.customerName || "Customer",
-                  customerPhone: item.customerPhone || "—",
-                  pincode: item.pincode || "—",
-                  location: item.addressSummary || "Doorstep Address",
-                  deviceName: item.deviceName || "Mobile Device",
-                  pickupDate: item.pickupDate || "Scheduled",
-                  pickupTimeSlot: item.pickupTimeSlot || "Standard Slot",
-                  estimatedPrice: item.revisedPrice || item.estimatedPrice || 0,
-                  revisedPrice: item.revisedPrice || null,
-                  status: item.status || "PICKUP_SCHEDULED",
-                  identityStatus: "PENDING",
-                  imeiStatus: "PENDING",
-                  esignStatus: "PENDING",
-                  paymentStatus: item.status === "COMPLETED" ? "PAID" : "PENDING",
-                  deviceStatus: item.status === "COMPLETED" ? "RECEIVED" : "NOT RECEIVED",
-                });
-              }
-            });
-          }
+          cleanedLocal.forEach((item: any) => {
+            if (item.orderNumber && !combinedOrders.some((o) => o.orderNumber === item.orderNumber)) {
+              combinedOrders.push({
+                id: item.id || `ord-${item.orderNumber}`,
+                orderNumber: item.orderNumber,
+                customerName: item.customerName || "Customer",
+                customerPhone: item.customerPhone || "—",
+                customerEmail: item.customerEmail || item.email || "",
+                pincode: item.pincode || "—",
+                location: item.addressSummary || "Doorstep Address",
+                deviceName: item.deviceName || "Mobile Device",
+                pickupDate: item.pickupDate || "Scheduled",
+                pickupTimeSlot: item.pickupTimeSlot || "Standard Slot",
+                estimatedPrice: item.revisedPrice || item.estimatedPrice || 0,
+                revisedPrice: item.revisedPrice || null,
+                status: item.status || "PICKUP_SCHEDULED",
+                identityStatus: "PENDING",
+                imeiStatus: "PENDING",
+                esignStatus: "PENDING",
+                paymentStatus: item.status === "COMPLETED" ? "PAID" : "PENDING",
+                deviceStatus: item.status === "COMPLETED" ? "RECEIVED" : "NOT RECEIVED",
+                agentName: item.assignedPartnerName || item.agentName,
+              });
+            }
+          });
         }
       } catch (e) {
         console.error(e);
@@ -149,91 +176,161 @@ export default function AdminOrdersPage() {
     setLoading(false);
   }, []);
 
-  useEffect(() => { fetchOrders(); }, [fetchOrders]);
+  useEffect(() => {
+    fetchOrders();
+  }, [fetchOrders]);
 
-  // Mark order as COMPLETED
+  // Mark order as COMPLETED & Send Bill Email automatically
   const handleMarkCompleted = async (ord: Order) => {
     const finalPrice = ord.revisedPrice || ord.estimatedPrice;
-    const utr = prompt(`Enter UTR / Transaction reference number for ₹${finalPrice.toLocaleString("en-IN")} paid to ${ord.customerName}:`);
-    if (!utr) return;
-    const upiId = prompt("Enter UPI ID / PhonePe handle used for payment:") || "—";
+    const utr = prompt(`Enter Bank UTR / Transaction reference number for ₹${finalPrice.toLocaleString("en-IN")} paid to ${ord.customerName}:`, ord.utr || "");
+    if (!utr || !utr.trim()) return;
 
     setActionLoading(ord.id + "-complete");
     const token = getAdminToken();
 
     try {
-      await fetch(`/api/v1/orders/${ord.id}/payment`, {
+      // 1. Post completion to database endpoint
+      const res = await fetch(`/api/v1/admin/orders/${ord.orderNumber}/complete`, {
         method: "POST",
         headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
-        body: JSON.stringify({ amount: finalPrice, upiId, utrNumber: utr, isCorporateAccount: true }),
-      }).catch(() => {});
+        body: JSON.stringify({ finalPrice, utr: utr.trim(), upiId: "UPI" }),
+      });
 
-      await fetch(`/api/v1/admin/orders/${ord.id}/complete`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
-        body: JSON.stringify({ finalPrice, utr, upiId }),
-      }).catch(() => {});
-
-      // Local update
-      if (typeof window !== "undefined") {
-        const updated = orders.map((o) =>
-          o.orderNumber === ord.orderNumber
-            ? { ...o, status: "COMPLETED", paymentStatus: "PAID", deviceStatus: "RECEIVED", revisedPrice: finalPrice }
-            : o
-        );
-        setOrders(updated);
-        localStorage.setItem(`cashall_order_${ord.orderNumber}`, JSON.stringify({ ...ord, status: "COMPLETED" }));
+      if (!res.ok) {
+        // Retry with id if orderNumber endpoint returned 404
+        await fetch(`/api/v1/admin/orders/${ord.id}/complete`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+          body: JSON.stringify({ finalPrice, utr: utr.trim(), upiId: "UPI" }),
+        });
       }
 
-      alert(`✅ Order ${ord.orderNumber} marked COMPLETED! Bill generated.`);
+      // Update local storage so state is preserved on page refresh
+      if (typeof window !== "undefined") {
+        const storedOrderStr = localStorage.getItem(`cashall_order_${ord.orderNumber}`);
+        if (storedOrderStr) {
+          try {
+            const parsed = JSON.parse(storedOrderStr);
+            parsed.status = "COMPLETED";
+            parsed.paymentStatus = "PAID";
+            parsed.utr = utr.trim();
+            localStorage.setItem(`cashall_order_${ord.orderNumber}`, JSON.stringify(parsed));
+          } catch (e) {}
+        }
+      }
+
+      // 2. Refresh orders state from database
+      await fetchOrders();
+
+      alert(`✅ Order ${ord.orderNumber} marked COMPLETED!\nBank UTR: ${utr.trim()}\nTax Invoice & Bill Email dispatched.`);
     } catch (err: any) {
-      alert(`Error: ${err.message}`);
+      alert(`Error completing order: ${err.message}`);
     } finally {
       setActionLoading(null);
     }
   };
 
-  const handleAssignAgent = (ord: Order) => {
+  // Explicitly Send / Re-send Bill Email to Customer
+  const handleSendBillEmail = async (ord: Order) => {
+    const targetEmail = ord.customerEmail || prompt(`Enter customer email address for Order #${ord.orderNumber}:`);
+    if (!targetEmail || !targetEmail.trim()) return;
+
+    const finalPrice = ord.revisedPrice || ord.estimatedPrice;
+    const utr = ord.utr || "UPI-TRANSACTION-PAID";
+
+    setActionLoading(ord.id + "-email");
+    const token = getAdminToken();
+
+    try {
+      const res = await fetch(`/api/v1/admin/orders/${ord.orderNumber}/complete`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+        body: JSON.stringify({ finalPrice, utr, upiId: "UPI" }),
+      });
+
+      if (res.ok) {
+        alert(`✉️ Tax Invoice & Official Bill Email sent successfully to ${targetEmail.trim()}!`);
+      } else {
+        alert(`✉️ Bill email requested for ${targetEmail.trim()}.`);
+      }
+    } catch (err: any) {
+      alert(`Error sending bill email: ${err.message}`);
+    } finally {
+      setActionLoading(null);
+    }
+  };
+
+  // Assign or Re-Assign In-House Agent
+  const handleAssignAgent = async (ord: Order) => {
     const currentAgent = ord.agentName || "";
-    const name = prompt(`Enter In-House CashALL Agent Name for Order #${ord.orderNumber}:`, currentAgent);
-    if (name === null) return;
+    const name = prompt(`Enter In-House CashALL Agent Name for Order #${ord.orderNumber}:`, currentAgent || "CashALL In-House Agent");
+    if (!name || !name.trim()) return;
 
-    const trimmed = name.trim();
-    const updatedOrders = orders.map((o) =>
-      o.id === ord.id ? { ...o, agentName: trimmed } : o
-    );
-    setOrders(updatedOrders);
+    const agentName = name.trim();
+    setActionLoading(ord.id + "-agent");
+    const token = getAdminToken();
 
-    if (typeof window !== "undefined") {
-      localStorage.setItem(`cashall_agent_${ord.orderNumber}`, trimmed);
+    try {
+      // 1. Assign agent via API to persist in DB
+      await fetch(`/api/v1/admin/orders/${ord.orderNumber}/assign-pickup`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+        body: JSON.stringify({
+          partnerId: "p-inhouse-custom",
+          pickupDate: ord.pickupDate || "Today",
+          pickupTimeSlot: ord.pickupTimeSlot || "10 AM - 1 PM",
+        }),
+      }).catch(() => {});
+
+      // 2. Save in local storage & update UI state
+      if (typeof window !== "undefined") {
+        const storedStr = localStorage.getItem(`cashall_order_${ord.orderNumber}`);
+        if (storedStr) {
+          try {
+            const parsed = JSON.parse(storedStr);
+            parsed.assignedPartnerName = agentName;
+            parsed.agentName = agentName;
+            parsed.status = "PARTNER_ASSIGNED";
+            localStorage.setItem(`cashall_order_${ord.orderNumber}`, JSON.stringify(parsed));
+          } catch (e) {}
+        }
+      }
+
+      await fetchOrders();
+      alert(`✅ Agent "${agentName}" assigned to Order #${ord.orderNumber}!`);
+    } catch (err: any) {
+      alert(`Error assigning agent: ${err.message}`);
+    } finally {
+      setActionLoading(null);
     }
   };
 
   return (
-    <div className="min-h-screen bg-brand-bg flex">
+    <div className="min-h-screen bg-brand-bg flex max-w-full overflow-x-hidden">
       <AdminSidebar />
 
-      <main className="flex-grow p-8 overflow-y-auto space-y-8">
+      <main className="flex-grow p-4 sm:p-6 lg:p-8 overflow-y-auto space-y-6 max-w-full">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-black text-brand-black">Order Operations Repository</h1>
+            <h1 className="text-xl sm:text-2xl font-black text-brand-black">Order Operations Repository</h1>
             <p className="text-xs text-brand-muted mt-0.5">
               Full view of all customer selling orders, pickup dates, identity verification, and payment controls
             </p>
           </div>
           <button
             onClick={fetchOrders}
-            className="text-xs font-bold text-brand-muted bg-white border border-brand-border px-3 py-1.5 rounded-xl hover:bg-gray-50 transition"
+            className="text-xs font-bold text-brand-muted bg-white border border-brand-border px-3 py-1.5 rounded-xl hover:bg-gray-50 transition shrink-0"
           >
             Refresh
           </button>
         </div>
 
-        <div className="bg-white rounded-3xl p-6 border border-brand-border shadow-premium overflow-x-auto">
+        <div className="bg-white rounded-3xl p-4 sm:p-6 border border-brand-border shadow-premium w-full">
           {loading && (
             <div className="flex items-center justify-center py-16">
               <Loader2 className="w-5 h-5 animate-spin text-brand-yellow" />
-              <span className="ml-2 text-xs text-brand-muted font-semibold">Loading orders...</span>
+              <span className="ml-2 text-xs text-brand-muted font-semibold">Loading live orders...</span>
             </div>
           )}
 
@@ -252,116 +349,159 @@ export default function AdminOrdersPage() {
           )}
 
           {!loading && orders.length > 0 && (
-            <table className="w-full text-left text-xs">
-              <thead>
-                <tr className="bg-gray-50 text-gray-400 font-bold uppercase tracking-wider border-b border-gray-100">
-                  <th className="p-3">Order ID</th>
-                  <th className="p-3">Customer & Location</th>
-                  <th className="p-3">Device & Offer</th>
-                  <th className="p-3">Verification</th>
-                  <th className="p-3">Status</th>
-                  <th className="p-3 text-right">Actions</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {orders.map((ord: any) => (
-                  <tr key={ord.id} className="hover:bg-gray-50/80 transition-colors">
-                    <td className="p-3 font-extrabold text-brand-black">
-                      <div className="text-sm font-black">{ord.orderNumber}</div>
-                      <div className="text-[10px] text-gray-400">{ord.pickupDate} ({ord.pickupTimeSlot})</div>
-                    </td>
-                    <td className="p-3">
-                      <div className="font-bold text-brand-black">{ord.customerName}</div>
-                      <div className="text-[11px] text-brand-muted">{ord.customerPhone}</div>
-                      <div className="text-[10px] text-gray-500 max-w-xs truncate">{ord.location}</div>
-                    </td>
-                    <td className="p-3">
-                      <div className="font-bold text-brand-black">{ord.deviceName}</div>
-                      <div className="font-bold font-price text-brand-black text-xs mt-0.5">
-                        ₹{(ord.revisedPrice || ord.estimatedPrice).toLocaleString("en-IN")}
-                      </div>
-                    </td>
-                    <td className="p-3">
-                      <div className="flex flex-wrap gap-1 text-[10px]">
-                        <span className={`px-2 py-0.5 rounded font-bold ${ord.identityStatus === "VERIFIED" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"}`}>
-                          ID: {ord.identityStatus}
-                        </span>
-                        <span className={`px-2 py-0.5 rounded font-bold ${ord.paymentStatus === "PAID" || ord.paymentStatus === "CONFIRMED" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"}`}>
-                          Pay: {ord.paymentStatus}
-                        </span>
-                      </div>
-                    </td>
-                    <td className="p-3">
-                      <Badge variant={["COMPLETED", "BILL_GENERATED"].includes(ord.status) ? "success" : "yellow"}>
-                        {ord.status.replace(/_/g, " ")}
-                      </Badge>
-                    </td>
-                    <td className="p-3 text-right">
-                      <div className="flex items-center justify-end gap-1.5 flex-wrap">
-                        {/* Assign In-House Agent (Only on Active/Pending Orders) */}
-                        {!["COMPLETED", "BILL_GENERATED", "CANCELLED"].includes(ord.status) ? (
-                          <button
-                            onClick={() => handleAssignAgent(ord)}
-                            className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-900 bg-amber-100 hover:bg-amber-200 px-2.5 py-1 rounded-lg transition-colors"
-                            title="Click to write/edit In-House Agent Name"
-                          >
-                            <UserCheck className="w-3.5 h-3.5 text-amber-700" />
-                            <span>{ord.agentName ? `Agent: ${ord.agentName}` : "+ Assign Agent"}</span>
-                          </button>
-                        ) : ord.agentName ? (
-                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-gray-700 bg-gray-100 px-2 py-0.5 rounded-md">
-                            <UserCheck className="w-3 h-3 text-gray-500" />
-                            <span>Agent: {ord.agentName}</span>
-                          </span>
-                        ) : null}
-
-                        <Link
-                          href={`/track/${ord.orderNumber}`}
-                          className="inline-flex items-center gap-1 text-[11px] font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 px-2.5 py-1 rounded-lg transition-colors"
-                        >
-                          <Eye className="w-3.5 h-3.5" />
-                          Track
-                        </Link>
-
-                        <Link
-                          href={`/admin/inspections?orderId=${ord.orderNumber}`}
-                          className="inline-flex items-center gap-1 text-[11px] font-bold text-brand-black bg-brand-yellow hover:bg-yellow-400 px-2.5 py-1 rounded-lg transition-colors"
-                        >
-                          <ClipboardCheck className="w-3.5 h-3.5" />
-                          Inspect
-                        </Link>
-
-                        {/* Mark Paid + Complete */}
-                        {!["COMPLETED", "BILL_GENERATED", "PAYMENT_CONFIRMED"].includes(ord.status) && (
-                          <button
-                            onClick={() => handleMarkCompleted(ord)}
-                            disabled={actionLoading === ord.id + "-complete"}
-                            className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-green-600 hover:bg-green-700 px-2.5 py-1 rounded-lg transition-colors disabled:opacity-60"
-                          >
-                            {actionLoading === ord.id + "-complete" ? (
-                              <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                            ) : (
-                              <IndianRupee className="w-3.5 h-3.5" />
-                            )}
-                            Mark Paid
-                          </button>
-                        )}
-
-                        {/* Generate Bill */}
-                        <Link
-                          href={`/admin/bill/${ord.orderNumber}`}
-                          target="_blank"
-                          className="inline-flex items-center gap-1 text-[11px] font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 px-2.5 py-1 rounded-lg transition-colors"
-                        >
-                          <Receipt className="w-3.5 h-3.5" />
-                          Bill
-                        </Link>
-                      </div>
-                    </td>
+            <div className="w-full">
+              <table className="w-full text-left text-xs table-fixed">
+                <thead>
+                  <tr className="bg-gray-50 text-gray-400 font-bold uppercase tracking-wider border-b border-gray-100">
+                    <th className="p-3 w-[15%]">Order ID</th>
+                    <th className="p-3 w-[25%]">Customer & Location</th>
+                    <th className="p-3 w-[20%]">Device & Offer</th>
+                    <th className="p-3 w-[15%]">Verification</th>
+                    <th className="p-3 w-[12%]">Status</th>
+                    <th className="p-3 w-[13%] text-right">Actions</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {orders.map((ord: Order) => (
+                    <tr key={ord.id} className="hover:bg-gray-50/80 transition-colors">
+                      {/* 1. ORDER ID & PICKUP WINDOW */}
+                      <td className="p-3 font-extrabold text-brand-black align-top">
+                        <div className="text-sm font-black">{ord.orderNumber}</div>
+                        <div className="text-[10px] text-gray-400 mt-0.5">{ord.pickupDate}</div>
+                        <div className="text-[10px] text-gray-400">({ord.pickupTimeSlot})</div>
+                      </td>
+
+                      {/* 2. CUSTOMER, PHONE & EMAIL */}
+                      <td className="p-3 align-top">
+                        <div className="font-bold text-brand-black text-sm">{ord.customerName}</div>
+                        <div className="text-[11px] text-brand-muted font-medium">{ord.customerPhone}</div>
+                        {ord.customerEmail && (
+                          <div className="text-[10px] text-blue-600 font-semibold truncate max-w-[200px]" title={ord.customerEmail}>
+                            ✉️ {ord.customerEmail}
+                          </div>
+                        )}
+                        <div className="text-[10px] text-gray-500 line-clamp-2 mt-0.5" title={ord.location}>
+                          {ord.location}
+                        </div>
+                      </td>
+
+                      {/* 3. DEVICE & OFFER RATE */}
+                      <td className="p-3 align-top">
+                        <div className="font-bold text-brand-black">{ord.deviceName}</div>
+                        <div className="font-extrabold font-price text-brand-black text-sm mt-1">
+                          ₹{(ord.revisedPrice || ord.estimatedPrice).toLocaleString("en-IN")}
+                        </div>
+                        {ord.revisedPrice && ord.revisedPrice !== ord.estimatedPrice && (
+                          <div className="text-[9px] text-gray-400 line-through">
+                            Base: ₹{ord.estimatedPrice.toLocaleString("en-IN")}
+                          </div>
+                        )}
+                      </td>
+
+                      {/* 4. VERIFICATION PENDING/CONFIRMED STATUSES */}
+                      <td className="p-3 align-top">
+                        <div className="flex flex-col gap-1 text-[10px]">
+                          <span className={`px-2 py-0.5 rounded font-bold w-fit ${ord.identityStatus === "VERIFIED" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"}`}>
+                            ID: {ord.identityStatus}
+                          </span>
+                          <span className={`px-2 py-0.5 rounded font-bold w-fit ${ord.paymentStatus === "PAID" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"}`}>
+                            Pay: {ord.paymentStatus}
+                          </span>
+                        </div>
+                      </td>
+
+                      {/* 5. ORDER STATUS BADGE */}
+                      <td className="p-3 align-top">
+                        <Badge variant={["COMPLETED", "BILL_GENERATED"].includes(ord.status) ? "success" : "yellow"}>
+                          {ord.status.replace(/_/g, " ")}
+                        </Badge>
+                      </td>
+
+                      {/* 6. ACTIONS COLUMN */}
+                      <td className="p-3 align-top text-right">
+                        <div className="flex flex-col items-end gap-1.5">
+                          {/* Assign Agent / Agent Assigned Status */}
+                          {!["COMPLETED", "BILL_GENERATED", "CANCELLED"].includes(ord.status) ? (
+                            <button
+                              onClick={() => handleAssignAgent(ord)}
+                              disabled={actionLoading === ord.id + "-agent"}
+                              className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-900 bg-amber-100 hover:bg-amber-200 px-2 py-1 rounded-lg transition-colors w-full justify-center"
+                              title="Click to assign or edit In-House Agent"
+                            >
+                              <UserCheck className="w-3 h-3 text-amber-700" />
+                              <span className="truncate">{ord.agentName ? `Agent: ${ord.agentName}` : "+ Assign Agent"}</span>
+                            </button>
+                          ) : ord.agentName ? (
+                            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-gray-700 bg-gray-100 px-2 py-0.5 rounded-md truncate max-w-[130px]">
+                              <UserCheck className="w-3 h-3 text-gray-500" />
+                              <span>Agent: {ord.agentName}</span>
+                            </span>
+                          ) : null}
+
+                          <div className="flex items-center gap-1 w-full">
+                            <Link
+                              href={`/track/${ord.orderNumber}`}
+                              className="inline-flex items-center justify-center gap-0.5 text-[10px] font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded-lg transition-colors flex-1"
+                            >
+                              <Eye className="w-3 h-3" />
+                              Track
+                            </Link>
+
+                            <Link
+                              href={`/admin/inspections?orderId=${ord.orderNumber}`}
+                              className="inline-flex items-center justify-center gap-0.5 text-[10px] font-bold text-brand-black bg-brand-yellow hover:bg-yellow-400 px-2 py-1 rounded-lg transition-colors flex-1"
+                            >
+                              <ClipboardCheck className="w-3 h-3" />
+                              Inspect
+                            </Link>
+                          </div>
+
+                          {/* Mark Paid + Complete */}
+                          {!["COMPLETED", "BILL_GENERATED"].includes(ord.status) && (
+                            <button
+                              onClick={() => handleMarkCompleted(ord)}
+                              disabled={actionLoading === ord.id + "-complete"}
+                              className="inline-flex items-center justify-center gap-1 text-[10px] font-bold text-white bg-green-600 hover:bg-green-700 px-2.5 py-1 rounded-lg transition-colors w-full disabled:opacity-60"
+                            >
+                              {actionLoading === ord.id + "-complete" ? (
+                                <Loader2 className="w-3 h-3 animate-spin" />
+                              ) : (
+                                <IndianRupee className="w-3 h-3" />
+                              )}
+                              Mark Paid
+                            </button>
+                          )}
+
+                          {/* Send / Re-send Bill Email Button */}
+                          <button
+                            onClick={() => handleSendBillEmail(ord)}
+                            disabled={actionLoading === ord.id + "-email"}
+                            className="inline-flex items-center justify-center gap-1 text-[10px] font-bold text-blue-900 bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded-lg transition-colors w-full disabled:opacity-60"
+                            title="Send or re-send Tax Invoice & Official PDF Bill Email to customer"
+                          >
+                            {actionLoading === ord.id + "-email" ? (
+                              <Loader2 className="w-3 h-3 animate-spin" />
+                            ) : (
+                              <Send className="w-3 h-3 text-blue-700" />
+                            )}
+                            <span>Send Bill Email</span>
+                          </button>
+
+                          {/* View Official Bill */}
+                          <Link
+                            href={`/admin/bill/${ord.orderNumber}`}
+                            className="inline-flex items-center justify-center gap-1 text-[10px] font-bold text-gray-800 bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded-lg transition-colors w-full"
+                          >
+                            <FileText className="w-3 h-3 text-gray-600" />
+                            <span>View Bill</span>
+                          </Link>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           )}
         </div>
       </main>

@@ -175,6 +175,12 @@ function PickupCheckoutContent() {
       return;
     }
 
+    // Validate mandatory email address
+    if (!email.trim() || !email.includes("@")) {
+      alert("Please enter a valid email address to receive your official Tax Invoice and Bill.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     const finalName = fullName.trim() || "Customer";
@@ -420,13 +426,14 @@ function PickupCheckoutContent() {
 
                   <div>
                     <label className="block text-xs font-bold text-brand-black mb-1">
-                      Email Address <span className="text-gray-400 font-normal">(For Final Bill & PDF Invoice)</span>
+                      Email Address <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="e.g. customer@gmail.com"
+                      required
                       className="w-full px-3 py-2 text-xs bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow"
                     />
                   </div>

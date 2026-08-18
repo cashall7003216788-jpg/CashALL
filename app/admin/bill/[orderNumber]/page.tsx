@@ -91,8 +91,8 @@ export default function AdminBillPage() {
           estimatedPrice: ord.quote?.estimatedPrice ?? 0,
           finalPrice: payment?.amount ?? ord.finalPrice ?? 0,
           paymentMethod: payment?.method || "UPI",
-          utrNumber: payment?.utrNumber || "—",
-          upiId: payment?.upiId || "—",
+          utrNumber: payment?.transactionRef || (payment as any)?.utrNumber || ord.payments?.[0]?.transactionRef || "N/A",
+          upiId: payment?.upiId || (payment as any)?.upiId || "Instant UPI",
           paidAt: payment?.paidAt
             ? new Date(payment.paidAt).toLocaleString("en-IN", { dateStyle: "long", timeStyle: "short" })
             : new Date().toLocaleString("en-IN", { dateStyle: "long", timeStyle: "short" }),
@@ -152,7 +152,8 @@ export default function AdminBillPage() {
           <div className="flex items-center justify-between">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <img src="/logo.png" alt="CashALL" className="h-8 w-auto object-contain brightness-0 invert" onError={(e) => { (e.target as any).style.display = 'none'; }} />
+                <img src="/icon.png" alt="CashALL Logo" className="h-7 w-7 object-contain rounded-lg" onError={(e) => { (e.target as any).style.display = 'none'; }} />
+                <span className="text-2xl font-black text-yellow-400 tracking-wide font-price">CashALL</span>
               </div>
               <p className="text-xs text-gray-400 mt-1">Best Value For Your Old Devices</p>
               <p className="text-[11px] text-gray-500 mt-0.5">www.cashall.in</p>
@@ -272,12 +273,10 @@ export default function AdminBillPage() {
                   <span className="font-bold text-gray-900">{bill.upiId}</span>
                 </div>
               )}
-              {bill.utrNumber !== "—" && (
-                <div>
-                  <span className="text-gray-500">UTR/Ref: </span>
-                  <span className="font-mono font-bold text-gray-900">{bill.utrNumber}</span>
-                </div>
-              )}
+              <div>
+                <span className="text-gray-500">Bank UTR / Ref: </span>
+                <span className="font-mono font-bold text-gray-900">{bill.utrNumber}</span>
+              </div>
             </div>
           </div>
 
