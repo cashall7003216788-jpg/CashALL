@@ -14,8 +14,14 @@ export function PopularBrands() {
       try {
         const res = await fetch("/api/v1/catalog");
         const json = await res.json();
-        if (json.success && json.data?.brands?.length > 0) {
-          setBrands(json.data.brands);
+        if (json.success && Array.isArray(json.data?.brands) && json.data.brands.length > 0) {
+          const apiBrands = json.data.brands;
+          setBrands(() => {
+            const mergedMap = new Map<string, BrandData>();
+            INITIAL_BRANDS.forEach((b) => mergedMap.set(b.slug || b.name.toLowerCase(), b));
+            apiBrands.forEach((b: BrandData) => mergedMap.set(b.slug || b.name.toLowerCase(), b));
+            return Array.from(mergedMap.values());
+          });
         } else {
           setBrands(INITIAL_BRANDS);
         }
