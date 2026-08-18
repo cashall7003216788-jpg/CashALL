@@ -369,6 +369,7 @@ export const INITIAL_BRANDS: BrandData[] = [
 ];
 
 const MOBILE_MODELS_PART_1: DeviceModelData[] = [
+  {"id": "m-poco-poco-f7-5g", "brandId": "b-poco", "brandSlug": "poco", "name": "POCO F7 5G", "slug": "poco-f7-5g", "imageUrl": "https://s3n.cashify.in/cashify/product/img/xhdpi/poco-f7-5g.jpg?w=800", "releaseYear": 2025, "popular": true, "active": true, "contactForPrice": false, "category": "MOBILE"},
   {"id": "m-apple-apple-iphone-6", "brandId": "b-apple", "brandSlug": "apple", "name": "Apple iPhone 6", "slug": "apple-iphone-6", "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-qp4ba4sq-aeny.png?w=800", "releaseYear": 2024, "popular": true, "active": true, "contactForPrice": false, "category": "MOBILE"},
   {"id": "m-apple-apple-iphone-6-plus", "brandId": "b-apple", "brandSlug": "apple", "name": "Apple iPhone 6 Plus", "slug": "apple-iphone-6-plus", "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-yicxxl1r-d1ta.png?w=800", "releaseYear": 2024, "popular": true, "active": true, "contactForPrice": false, "category": "MOBILE"},
   {"id": "m-apple-apple-iphone-6s", "brandId": "b-apple", "brandSlug": "apple", "name": "Apple iPhone 6S", "slug": "apple-iphone-6s", "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-oh9xlwt8-yunr.png?w=800", "releaseYear": 2024, "popular": true, "active": true, "contactForPrice": false, "category": "MOBILE"},
@@ -2638,6 +2639,8 @@ const LAPTOP_MODELS: DeviceModelData[] = [
 export const INITIAL_MODELS: DeviceModelData[] = [...MOBILE_MODELS_PART_1, ...MOBILE_MODELS_PART_2, ...MOBILE_MODELS_PART_3, ...LAPTOP_MODELS];
 
 const MOBILE_VARIANTS_PART_1: DeviceVariantData[] = [
+  {"id": "v-poco-f7-5g-12gb-256gb", "modelId": "m-poco-poco-f7-5g", "storage": "12 GB / 256 GB", "basePrice": 22500, "active": true},
+  {"id": "v-poco-f7-5g-12gb-512gb", "modelId": "m-poco-poco-f7-5g", "storage": "12 GB / 512 GB", "basePrice": 24500, "active": true},
   {"id": "v-apple-apple-iphone-6-16-gb", "modelId": "m-apple-apple-iphone-6", "storage": "16 GB", "basePrice": 1670, "active": true},
   {"id": "v-apple-apple-iphone-6-32-gb", "modelId": "m-apple-apple-iphone-6", "storage": "32 GB", "basePrice": 1890, "active": true},
   {"id": "v-apple-apple-iphone-6-64-gb", "modelId": "m-apple-apple-iphone-6", "storage": "64 GB", "basePrice": 2120, "active": true},
