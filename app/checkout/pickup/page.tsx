@@ -132,6 +132,7 @@ function PickupCheckoutContent() {
     let createdOrderNum = "";
     let apiSuccess = false;
 
+    let serverErrorMsg = "";
     // Try up to 2 times to reach the server
     for (let attempt = 1; attempt <= 2; attempt++) {
       try {
@@ -156,13 +157,15 @@ function PickupCheckoutContent() {
           }),
         });
 
-        if (res.ok) {
-          const json = await res.json();
-          if (json.success && json.data?.orderNumber) {
-            createdOrderNum = json.data.orderNumber;
-            apiSuccess = true;
-            break; // Success — stop retrying
-          }
+        const json = await res.json().catch(() => null);
+
+        if (json && json.success && json.data?.orderNumber) {
+          createdOrderNum = json.data.orderNumber;
+          apiSuccess = true;
+          break; // Success — stop retrying
+        } else if (json && json.error) {
+          serverErrorMsg = json.error;
+          console.warn(`Order API attempt ${attempt} returned error: ${json.error}`);
         } else {
           console.warn(`Order API attempt ${attempt} failed: HTTP ${res.status}`);
         }
@@ -173,10 +176,10 @@ function PickupCheckoutContent() {
       if (attempt < 2) await new Promise((r) => setTimeout(r, 1000));
     }
 
-    // If API failed after retries, halt and inform user instead of generating fake local order
+    // If API failed after retries, halt and inform user
     if (!apiSuccess) {
       setIsSubmitting(false);
-      alert("Could not connect to CashALL server. Please check your connection and try again.");
+      alert(serverErrorMsg || "Unable to process order right now. Please check your details and try again.");
       return;
     }
 
