@@ -59,7 +59,9 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     const emailHtml = EmailService.compilePayoutTemplate(
       order.orderNumber,
       price,
-      transactionRef
+      transactionRef,
+      order.user.name || "Customer",
+      deviceName
     );
 
     EmailService.sendEmail(
