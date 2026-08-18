@@ -176,8 +176,14 @@ export function Footer() {
         </div>
 
         {/* BOTTOM COPYRIGHT */}
-        <div className="pt-8 border-t border-neutral-800 flex items-center justify-between text-xs text-gray-400">
-          <p className="font-medium text-gray-300">@ 2026 Aarna Enterprise. All Rights Reserved</p>
+        <div className="pt-8 border-t border-neutral-800 flex flex-wrap items-center justify-between text-xs text-gray-400 gap-2">
+          <p className="font-medium text-gray-300">@ 2026 Aarna Enterprise (CashALL). All Rights Reserved</p>
+          <p className="text-gray-400">
+            Official Email Support:{" "}
+            <a href="mailto:support@cashall.in" className="text-brand-yellow font-bold hover:underline">
+              support@cashall.in
+            </a>
+          </p>
         </div>
 
       </div>

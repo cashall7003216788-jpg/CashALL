@@ -179,9 +179,9 @@ export default function ContactPage() {
                       <Mail className="w-4 h-4 text-blue-700" />
                     </div>
                     <div>
-                      <div className="font-bold text-brand-black">Email Address</div>
-                      <a href="mailto:cashall7003216788@gmail.com" className="text-brand-black font-medium hover:underline">
-                        cashall7003216788@gmail.com
+                      <div className="font-bold text-brand-black">Official Email Support</div>
+                      <a href="mailto:support@cashall.in" className="text-blue-600 font-extrabold hover:underline">
+                        support@cashall.in
                       </a>
                     </div>
                   </div>

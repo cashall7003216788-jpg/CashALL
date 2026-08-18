@@ -10,48 +10,57 @@ export class EmailService {
    * Helper to create Gmail SMTP transporter dynamically at runtime.
    */
   private static getTransporter() {
-    const gmailUser = process.env.GMAIL_USER || "cashall7003216788@gmail.com";
-    const gmailPass = (process.env.GMAIL_APP_PASSWORD || process.env.SMTP_PASSWORD || "").trim();
+    const smtpUser = process.env.SMTP_USER || process.env.GMAIL_USER || "admin@cashall.in";
+    const smtpPass = (process.env.SMTP_PASS || process.env.GMAIL_APP_PASSWORD || process.env.SMTP_PASSWORD || "Ank933967@").trim();
+    const smtpHost = process.env.SMTP_HOST || (smtpUser.endsWith("@cashall.in") ? "smtp.hostinger.com" : undefined);
+    const smtpPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 465;
 
-    if (gmailPass) {
+    if (smtpPass) {
+      const config: any = smtpHost
+        ? {
+            host: smtpHost,
+            port: smtpPort,
+            secure: smtpPort === 465,
+            auth: { user: smtpUser, pass: smtpPass },
+          }
+        : {
+            service: "gmail",
+            auth: { user: smtpUser, pass: smtpPass },
+          };
+
       return {
-        transporter: nodemailer.createTransport({
-          service: "gmail",
-          auth: {
-            user: gmailUser,
-            pass: gmailPass,
-          },
-        }),
-        gmailUser,
+        transporter: nodemailer.createTransport(config),
+        smtpUser,
       };
     }
-    return { transporter: null, gmailUser };
+    return { transporter: null, smtpUser };
   }
 
   /**
    * Sends an email using Nodemailer (Gmail), Resend, or logs clean trace.
    */
   static async sendEmail(to: string, subject: string, html: string) {
-    const { transporter, gmailUser } = EmailService.getTransporter();
-    const fromAddress = `"CashALL Official" <${gmailUser}>`;
+    const { transporter, smtpUser } = EmailService.getTransporter();
+    const fromAddress = process.env.EMAIL_FROM || `"CashALL Support" <support@cashall.in>`;
+    const replyTo = "support@cashall.in";
     const textFallback = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 
-    // 1. Try sending via Gmail SMTP if App Password is set
+    // 1. Try sending via Official Domain SMTP (admin@cashall.in)
     if (transporter) {
       try {
         const info = await transporter.sendMail({
           from: fromAddress,
           to,
-          replyTo: gmailUser,
+          replyTo,
           subject,
           text: textFallback,
           html,
         });
-        logger.info(`Email sent via Gmail SMTP (${gmailUser}) to ${to}. MessageId: ${info.messageId}`);
-        console.log(`\n✅ LIVE EMAIL SENT VIA GMAIL SMTP to ${to} (MessageId: ${info.messageId})\n`);
-        return { success: true, messageId: info.messageId, provider: "GMAIL_SMTP" };
+        logger.info(`Email sent via Domain SMTP (${smtpUser}) to ${to}. MessageId: ${info.messageId}`);
+        console.log(`\n✅ LIVE EMAIL SENT VIA DOMAIN SMTP (${smtpUser}) to ${to} (MessageId: ${info.messageId})\n`);
+        return { success: true, messageId: info.messageId, provider: "DOMAIN_SMTP" };
       } catch (error) {
-        logger.error(`Error sending email via Gmail SMTP to ${to}:`, error);
+        logger.error(`Error sending email via Domain SMTP to ${to}:`, error);
       }
     }
 
@@ -72,14 +81,14 @@ export class EmailService {
     }
 
     // 3. Simulated trace in development
-    logger.info(`[EMAIL SERVICE] Sending from ${gmailUser} to ${to}: "${subject}"`);
-    console.log(`\n============================ CASHALL GMAIL DISPATCH TRACE ============================`);
+    logger.info(`[EMAIL SERVICE] Sending from ${smtpUser} to ${to}: "${subject}"`);
+    console.log(`\n============================ CASHALL DOMAIN DISPATCH TRACE ============================`);
     console.log(`FROM: ${fromAddress}`);
     console.log(`TO: ${to}`);
     console.log(`SUBJECT: ${subject}`);
     console.log(`TIMESTAMP: ${new Date().toISOString()}`);
     console.log(`======================================================================================\n`);
-    return { success: true, simulated: true, senderEmail: gmailUser };
+    return { success: true, simulated: true, senderEmail: smtpUser };
   }
 
   /**
