@@ -33,7 +33,8 @@ export class EmailService {
    */
   static async sendEmail(to: string, subject: string, html: string) {
     const { transporter, gmailUser } = EmailService.getTransporter();
-    const fromAddress = process.env.EMAIL_FROM || `CashALL <${gmailUser}>`;
+    const fromAddress = `"CashALL Official" <${gmailUser}>`;
+    const textFallback = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 
     // 1. Try sending via Gmail SMTP if App Password is set
     if (transporter) {
@@ -41,7 +42,9 @@ export class EmailService {
         const info = await transporter.sendMail({
           from: fromAddress,
           to,
+          replyTo: gmailUser,
           subject,
+          text: textFallback,
           html,
         });
         logger.info(`Email sent via Gmail SMTP (${gmailUser}) to ${to}. MessageId: ${info.messageId}`);
