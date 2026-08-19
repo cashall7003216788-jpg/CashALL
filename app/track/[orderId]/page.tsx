@@ -45,20 +45,51 @@ export default function OrderTrackingPage() {
           setOrder(parsed);
           if (parsed.status === "ACCEPTED" || parsed.status === "PAID" || parsed.status === "COMPLETED") {
             setCustomerDecision("ACCEPTED");
-          } else if (parsed.status === "DECLINED") {
-            setCustomerDecision("DECLINED");
           }
-          return;
-        } catch (e) {
-          console.error(e);
-        }
+        } catch (e) {}
       }
+    }
 
-      if (INITIAL_ORDERS.length > 0) {
-        setOrder(INITIAL_ORDERS[0]);
-      } else {
-        setOrder(null);
-      }
+    if (orderId) {
+      fetch(`/api/v1/orders/${orderId}?t=${Date.now()}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data && data.success && data.data) {
+            const ord = data.data;
+            const activePayment = ord.payments?.find((p: any) => p.status === "PAID") || ord.payments?.[0];
+            const isPaid = activePayment?.status === "PAID" || ord.status === "COMPLETED";
+
+            const mapped: OrderData = {
+              id: ord.id,
+              orderNumber: ord.orderNumber,
+              quoteId: ord.quoteId || "",
+              userId: ord.userId || "",
+              customerName: ord.customerName || ord.user?.name || "Customer",
+              customerPhone: ord.customerPhone || ord.user?.phone || "—",
+              customerEmail: ord.customerEmail || ord.user?.email || "",
+              deviceName: ord.deviceName || "Mobile Device",
+              addressSummary: ord.addressSummary || "Doorstep Address",
+              pincode: ord.pincode || ord.address?.pincode || "700001",
+              pickupDate: ord.pickupDate || "Scheduled",
+              pickupTimeSlot: ord.pickupTimeSlot || "Standard Slot",
+              assignedPartnerName: ord.assignedPartnerName || null,
+              assignedPartnerPhone: ord.assignedPartnerPhone || "7003216788",
+              assignedPartnerBusiness: ord.assignedPartnerBusiness || "CashALL Express Logistics",
+              estimatedPrice: ord.estimatedPrice || ord.quote?.estimatedPrice || 0,
+              revisedPrice: ord.revisedPrice || ord.finalPrice || ord.estimatedPrice || 0,
+              status: ord.status || "PICKUP_SCHEDULED",
+              paymentStatus: isPaid ? "PAID" : "PENDING",
+              paymentTxRef: ord.utr || activePayment?.transactionRef || "",
+              createdAt: ord.createdAt || new Date().toISOString(),
+              updatedAt: ord.updatedAt || new Date().toISOString(),
+            };
+            setOrder(mapped);
+            if (isPaid || ord.status === "ACCEPTED") {
+              setCustomerDecision("ACCEPTED");
+            }
+          }
+        })
+        .catch((e) => console.warn("Live order fetch warning:", e));
     }
   }, [orderId]);
 
@@ -95,48 +126,48 @@ export default function OrderTrackingPage() {
   }
 
   const steps = [
-    { key: "QUOTE_CREATED", label: "Quote Created", desc: "Online estimate generated (No Aadhaar required)" },
-    { key: "PICKUP_SCHEDULED", label: "Pickup Scheduled", desc: `${order.pickupDate} (${order.pickupTimeSlot})` },
-    { key: "INSPECTION_STARTED", label: "Device Inspection", desc: "Physical hardware check & IMEI verification" },
-    { key: "FINAL_OFFER", label: "Final Offer Submitted", desc: "Inspection-based purchase price" },
-    { key: "IDENTITY_VERIFICATION_PENDING", label: "Seller Identity Verification", desc: "Government ID / Aadhaar e-KYC" },
-    { key: "ESIGNED", label: "Sale Agreement eSign", desc: "Legal ownership declaration signed" },
-    { key: "PAYMENT_CONFIRMED", label: "UPI Payment Recorded", desc: "Direct payout to seller" },
-    { key: "DEVICE_RECEIVED", label: "Device Handover", desc: "Physical custody received by CashALL" },
-    { key: "COMPLETED", label: "Completed", desc: "Final Purchase Receipt generated" },
+    {
+      key: "ORDER_ACCEPTED",
+      label: "Order Accepted",
+      desc: "Doorstep selling request confirmed",
+    },
+    {
+      key: "AGENT_ASSIGNED",
+      label: "Agent Assigned",
+      desc: order.assignedPartnerName
+        ? `Executive ${order.assignedPartnerName} assigned for pickup`
+        : "CashALL doorstep executive assigned",
+    },
+    {
+      key: "PHYSICAL_INSPECTION",
+      label: "Physical Inspection",
+      desc: "Hardware condition & IMEI verified at doorstep",
+    },
+    {
+      key: "PAYMENT_COMPLETED",
+      label: "Payment Completed",
+      desc: order.paymentStatus === "PAID" || order.status === "COMPLETED"
+        ? `₹${(order.revisedPrice || order.estimatedPrice || 0).toLocaleString("en-IN")} payout transferred to seller`
+        : "Instant payout transfer to seller",
+    },
+    {
+      key: "BILL_GENERATED",
+      label: "Bill Generated",
+      desc: "Official Tax Invoice & Purchase Receipt ready",
+    },
   ];
 
   const getStepStatus = (stepKey: string) => {
-    const statusOrder = [
-      "QUOTE_CREATED",
-      "PICKUP_SCHEDULED",
-      "ASSIGNED",
-      "PARTNER_ACCEPTED",
-      "INSPECTION_STARTED",
-      "INSPECTION_COMPLETED",
-      "IMEI_VERIFIED",
-      "FINAL_OFFER",
-      "CUSTOMER_ACCEPTED",
-      "IDENTITY_VERIFICATION_PENDING",
-      "IDENTITY_VERIFIED",
-      "ESIGN_PENDING",
-      "ESIGNED",
-      "PAYMENT_PENDING",
-      "PAYMENT_CONFIRMED",
-      "DEVICE_RECEIVED",
-      "BILL_GENERATED",
-      "COMPLETED",
-    ];
+    const s = order.status;
+    const isPaid = order.paymentStatus === "PAID" || s === "COMPLETED" || s === "PAID";
+    const isInspected = s === "INSPECTION_COMPLETED" || s === "ACCEPTED" || isPaid;
+    const isAssigned = !!order.assignedPartnerName || s === "PARTNER_ASSIGNED" || isInspected;
 
-    const currentIndex = statusOrder.indexOf(order.status);
-    const stepIndex = statusOrder.indexOf(stepKey);
-
-    if (currentIndex >= stepIndex || (stepKey === "FINAL_OFFER" && customerDecision === "ACCEPTED")) {
-      return "COMPLETED";
-    }
-    if (currentIndex === stepIndex - 1) {
-      return "ACTIVE";
-    }
+    if (stepKey === "ORDER_ACCEPTED") return "COMPLETED";
+    if (stepKey === "AGENT_ASSIGNED") return isAssigned ? "COMPLETED" : "ACTIVE";
+    if (stepKey === "PHYSICAL_INSPECTION") return isInspected ? "COMPLETED" : isAssigned ? "ACTIVE" : "PENDING";
+    if (stepKey === "PAYMENT_COMPLETED") return isPaid ? "COMPLETED" : isInspected ? "ACTIVE" : "PENDING";
+    if (stepKey === "BILL_GENERATED") return isPaid || isInspected ? "COMPLETED" : "PENDING";
     return "PENDING";
   };
 

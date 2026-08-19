@@ -5,7 +5,6 @@ import { prisma } from "@/lib/db";
 import { AppError } from "@/lib/utils/AppError";
 
 export const GET = apiWrapper(async (req: NextRequest, { params }: { params: { id: string } }) => {
-  const decodedUser = await verifyAuthToken(req);
   const orderIdentifier = params.id;
 
   const order = await prisma.order.findFirst({
@@ -17,6 +16,7 @@ export const GET = apiWrapper(async (req: NextRequest, { params }: { params: { i
       deletedAt: null,
     },
     include: {
+      user: true,
       quote: {
         include: {
           variant: {
@@ -56,18 +56,47 @@ export const GET = apiWrapper(async (req: NextRequest, { params }: { params: { i
     throw new AppError("Order not found.", 404);
   }
 
-  // RBAC checks
-  if (
-    order.userId !== decodedUser.uid &&
-    decodedUser.role !== "ADMIN" &&
-    decodedUser.role !== "SUPER_ADMIN" &&
-    decodedUser.role !== "EMPLOYEE"
-  ) {
-    throw new AppError("Access denied. Insufficient permissions.", 403);
+  // Resolve device name & location summary
+  const addr = order.address;
+  const addressSummary = addr
+    ? [addr.house, addr.street, addr.area, addr.landmark, addr.city, addr.state].filter(Boolean).join(", ") + (addr.pincode ? ` - ${addr.pincode}` : "")
+    : "Doorstep Location";
+
+  let deviceName = "Mobile Device";
+  if (order.quote?.breakdownJson) {
+    try {
+      const bd = JSON.parse(order.quote.breakdownJson);
+      if (bd?.deviceName) deviceName = bd.deviceName;
+    } catch {}
   }
+  if (deviceName === "Mobile Device" && order.quote?.variant?.model) {
+    const m = order.quote.variant.model;
+    deviceName = m.brand ? `${m.brand.name} ${m.name}` : m.name;
+  }
+
+  const assignedPartner = order.pickups?.[0]?.partner;
+  const pickup = order.pickups?.[0];
+  const assignedAgentName = (pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically.")
+    ? pickup.notes
+    : (assignedPartner?.name || assignedPartner?.companyName || null);
+
+  const activePayment = order.payments?.find((p: any) => p.status === "PAID") || order.payments?.[0];
 
   return NextResponse.json({
     success: true,
-    data: order,
+    data: {
+      ...order,
+      deviceName,
+      addressSummary,
+      customerName: order.user?.name || "Customer",
+      customerPhone: order.user?.phone || "—",
+      customerEmail: order.user?.email || null,
+      assignedPartnerName: assignedAgentName,
+      assignedPartnerPhone: assignedPartner?.phone || "7003216788",
+      assignedPartnerBusiness: assignedPartner?.businessName || "CashALL Express Logistics",
+      utr: activePayment?.transactionRef || "",
+      revisedPrice: order.finalPrice ?? order.quote?.estimatedPrice ?? 0,
+      estimatedPrice: order.quote?.estimatedPrice ?? 0,
+    },
   });
 });

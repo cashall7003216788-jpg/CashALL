@@ -194,8 +194,13 @@ export default function AdminOrdersPage() {
   // Mark order as COMPLETED & Send Bill Email automatically
   const handleMarkCompleted = async (ord: Order) => {
     const finalPrice = ord.revisedPrice || ord.estimatedPrice;
-    const utr = prompt(`Enter Bank UTR / Transaction reference number for ₹${finalPrice.toLocaleString("en-IN")} paid to ${ord.customerName}:`, ord.utr || "");
-    if (!utr || !utr.trim()) return;
+    const utrInput = prompt(
+      `Enter Bank UTR / Transaction reference for ₹${finalPrice.toLocaleString("en-IN")} paid to ${ord.customerName} (Leave blank if not available):`,
+      ord.utr && ord.utr !== "N/A" ? ord.utr : ""
+    );
+
+    if (utrInput === null) return; // User clicked Cancel
+    const finalUtr = utrInput.trim();
 
     setActionLoading(ord.id + "-complete");
     const token = getAdminToken();
@@ -204,18 +209,26 @@ export default function AdminOrdersPage() {
       // 1. Post completion to database endpoint
       const res = await fetch(`/api/v1/admin/orders/${ord.orderNumber}/complete`, {
         method: "POST",
-        headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
-        body: JSON.stringify({ finalPrice, utr: utr.trim(), upiId: "UPI" }),
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ finalPrice, utr: finalUtr, upiId: "UPI" }),
       });
 
       if (!res.ok) {
-        // Retry with id if orderNumber endpoint returned 404
         await fetch(`/api/v1/admin/orders/${ord.id}/complete`, {
           method: "POST",
-          headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
-          body: JSON.stringify({ finalPrice, utr: utr.trim(), upiId: "UPI" }),
+          headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+          body: JSON.stringify({ finalPrice, utr: finalUtr, upiId: "UPI" }),
         });
       }
+
+      // Update local UI state immediately
+      setOrders((prev) =>
+        prev.map((item) =>
+          item.id === ord.id || item.orderNumber === ord.orderNumber
+            ? { ...item, status: "COMPLETED", paymentStatus: "PAID", utr: finalUtr }
+            : item
+        )
+      );
 
       // Update local storage so state is preserved on page refresh
       if (typeof window !== "undefined") {
@@ -225,7 +238,7 @@ export default function AdminOrdersPage() {
             const parsed = JSON.parse(storedOrderStr);
             parsed.status = "COMPLETED";
             parsed.paymentStatus = "PAID";
-            parsed.utr = utr.trim();
+            parsed.utr = finalUtr;
             localStorage.setItem(`cashall_order_${ord.orderNumber}`, JSON.stringify(parsed));
           } catch (e) {}
         }
@@ -234,7 +247,7 @@ export default function AdminOrdersPage() {
       // 2. Refresh orders state from database
       await fetchOrders();
 
-      alert(`✅ Order ${ord.orderNumber} marked COMPLETED!\nBank UTR: ${utr.trim()}\nTax Invoice & Bill Email dispatched.`);
+      alert(`✅ Order ${ord.orderNumber} marked COMPLETED!\nPayment Status: PAID\n${finalUtr ? `Bank UTR: ${finalUtr}` : "Bank UTR: (Blank on Bill)"}`);
     } catch (err: any) {
       alert(`Error completing order: ${err.message}`);
     } finally {
@@ -438,18 +451,18 @@ export default function AdminOrdersPage() {
                   <div className="font-bold text-white text-base">{ord.customerName}</div>
                   <div className="text-xs text-neutral-300 font-medium">📞 {ord.customerPhone}</div>
                   
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2 max-w-full">
                     {ord.customerEmail ? (
-                      <div className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-400 bg-yellow-400/10 px-3 py-1 rounded-xl border border-yellow-400/20">
-                        <Mail className="w-3.5 h-3.5" />
-                        <span>{ord.customerEmail}</span>
+                      <div className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-400 bg-yellow-400/10 px-2.5 py-1 rounded-xl border border-yellow-400/20 max-w-[calc(100%-65px)] truncate">
+                        <Mail className="w-3.5 h-3.5 shrink-0" />
+                        <span className="truncate">{ord.customerEmail}</span>
                       </div>
                     ) : (
                       <div className="text-xs text-neutral-500 italic">No email recorded</div>
                     )}
                     <button
                       onClick={() => handleUpdateEmail(ord)}
-                      className="text-[10px] text-yellow-400 hover:underline font-bold"
+                      className="text-[10px] text-yellow-400 hover:text-yellow-300 font-bold shrink-0 bg-yellow-400/10 px-2 py-0.5 rounded-lg border border-yellow-400/30 transition-colors"
                     >
                       {ord.customerEmail ? "Edit" : "+ Add Email"}
                     </button>
