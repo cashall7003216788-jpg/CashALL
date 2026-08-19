@@ -20,7 +20,7 @@ import {
 export function AdminSidebar() {
   const pathname = usePathname();
   const router = useRouter();
-  const [adminEmail, setAdminEmail] = useState("cashall7003216788@gmail.com");
+  const [adminEmail, setAdminEmail] = useState("support@cashall.in");
 
   useEffect(() => {
     if (typeof window !== "undefined") {

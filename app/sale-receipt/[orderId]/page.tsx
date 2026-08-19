@@ -180,7 +180,7 @@ export default function CustomerSaleReceiptPage() {
             </div>
             <div className="font-extrabold text-white text-sm">CashALL</div>
             <div className="text-gray-300">Howrah, West Bengal</div>
-            <div className="text-gray-400 text-[11px]">Helpline: +91 7003216788 | cashall7003216788@gmail.com</div>
+            <div className="text-gray-400 text-[11px]">Helpline: +91 7003216788 | support@cashall.in</div>
             <div className="text-brand-yellow text-[11px] font-bold">GSTIN: 07AAGCM0328J3ZK</div>
           </div>
 
@@ -279,7 +279,7 @@ export default function CustomerSaleReceiptPage() {
         <div className="border-t border-gray-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="text-gray-500 text-center sm:text-left">
             <div className="font-bold text-gray-800">Thank you for selling with CashALL!</div>
-            <div>For any queries regarding this receipt, contact +91 7003216788 or cashall7003216788@gmail.com</div>
+            <div>For any queries regarding this receipt, contact +91 7003216788 or support@cashall.in</div>
           </div>
 
           <div className="text-right shrink-0">

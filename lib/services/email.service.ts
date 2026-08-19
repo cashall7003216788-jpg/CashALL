@@ -105,7 +105,7 @@ export class EmailService {
         <p style="font-size: 14px; line-height: 1.5; color: #444;">Thank you for choosing CashALL. We make selling your old mobile phones and laptops simple, fast, and secure.</p>
         <p style="font-size: 14px; line-height: 1.5; color: #444;">Get instant doorstep inspections, transparent price calculations, and immediate bank transfers.</p>
         <hr style="border: 0; border-top: 1px solid #eeeeee; margin: 24px 0;" />
-        <p style="font-size: 11px; color: #888888; text-align: center;">CashALL | AARNA ENTERPRISE | cashall7003216788@gmail.com | Helpline: 7003216788</p>
+        <p style="font-size: 11px; color: #888888; text-align: center;">CashALL | AARNA ENTERPRISE | support@cashall.in | Helpline: 7003216788</p>
       </div>
     `;
   }
@@ -137,7 +137,7 @@ export class EmailService {
         </table>
         <p>Go to CashALL to schedule your doorstep pickup now!</p>
         <hr style="border: 0; border-top: 1px solid #eeeeee; margin: 24px 0;" />
-        <p style="font-size: 11px; color: #888888; text-align: center;">CashALL | cashall7003216788@gmail.com</p>
+        <p style="font-size: 11px; color: #888888; text-align: center;">CashALL | support@cashall.in</p>
       </div>
     `;
   }

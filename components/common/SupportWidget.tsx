@@ -74,7 +74,7 @@ export function SupportWidget() {
 
             {/* EMAIL */}
             <a
-              href="mailto:cashall7003216788@gmail.com"
+              href="mailto:support@cashall.in"
               className="flex items-center gap-3 p-3 rounded-2xl bg-gray-50 hover:bg-gray-100 border border-gray-100 transition-colors group"
             >
               <div className="w-8 h-8 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
@@ -82,7 +82,7 @@ export function SupportWidget() {
               </div>
               <div className="flex-grow">
                 <div className="font-extrabold text-brand-black">Email Support</div>
-                <div className="text-[11px] text-gray-500">cashall7003216788@gmail.com</div>
+                <div className="text-[11px] text-gray-500">support@cashall.in</div>
               </div>
             </a>
 
