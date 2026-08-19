@@ -76,6 +76,24 @@ export default function AdminBillPage() {
         const agentName = ord.agentName || ord.pickups?.[0]?.notes || assignedPartner?.name || "Hyder Ali";
         const currentYear = new Date().getFullYear();
 
+        // Robust device name extraction: ord.deviceName -> breakdownJson -> selectedAnswersJson -> variant.model
+        let resolvedDeviceName = ord.deviceName || "Mobile Device";
+        if (ord.quote?.breakdownJson) {
+          try {
+            const bd = JSON.parse(ord.quote.breakdownJson);
+            if (bd?.deviceName) resolvedDeviceName = bd.deviceName;
+          } catch {}
+        }
+        if ((!resolvedDeviceName || resolvedDeviceName === "Mobile Device") && ord.quote?.selectedAnswersJson) {
+          try {
+            const sa = JSON.parse(ord.quote.selectedAnswersJson);
+            if (sa?.device && sa.device !== "Customer Mobile Device") resolvedDeviceName = sa.device;
+          } catch {}
+        }
+        if ((!resolvedDeviceName || resolvedDeviceName === "Mobile Device") && ord.quote?.variant?.model?.brand?.name) {
+          resolvedDeviceName = `${ord.quote.variant.model.brand.name} ${ord.quote.variant.model.name}`;
+        }
+
         setBill({
           orderNumber: ord.orderNumber,
           billNumber: `${ord.orderNumber}-${currentYear}`,
@@ -88,9 +106,7 @@ export default function AdminBillPage() {
           buyerGstin: "19AVPPG9800JIZ3",
           buyerAddress: "Howrah, West Bengal",
           agentName: agentName,
-          deviceName: ord.quote?.variant?.model?.brand?.name
-            ? `${ord.quote.variant.model.brand.name} ${ord.quote.variant.model.name}`
-            : (ord.deviceName || "Device"),
+          deviceName: resolvedDeviceName,
           variantName: ord.quote?.variant?.name || ord.quote?.variant?.storage || "—",
           quoteNumber: ord.quote?.quoteNumber || `CAQ-${ord.id?.slice(0, 6).toUpperCase()}`,
           estimatedPrice: ord.quote?.estimatedPrice ?? 0,
