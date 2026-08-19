@@ -31,9 +31,16 @@ export class BillService {
       throw new Error("Order not found for bill generation.");
     }
 
-    const billNumber = `CABILL-${order.orderNumber}`;
+    const currentYear = new Date().getFullYear();
+    const billNumber = `${order.orderNumber}-${currentYear}`;
     const deviceName = `${order.quote.variant.model.brand.name} ${order.quote.variant.model.name}`;
     const payment = order.payments.find((p) => p.status === "PAID") || order.payments[0];
+
+    // Find assigned pickup executive / agent name
+    const pickup = (order as any).pickups?.[0];
+    const assignedAgent = (pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically.")
+      ? pickup.notes
+      : (pickup?.partner?.name || "CashALL Pickup Executive");
 
     const billData = {
       billNumber,
@@ -48,9 +55,10 @@ export class BillService {
       },
       buyer: {
         name: "AARNA ENTERPRISE",
-        tagline: "Parent Company of CashALL",
-        gstin: "19AVPPG9800J1Z3",
+        platform: "CashALL Platform",
+        gstin: "19AVPPG9800JIZ3",
         address: "Howrah, West Bengal",
+        assignedAgent: assignedAgent,
       },
       device: {
         brand: order.quote.variant.model.brand.name,

@@ -54,15 +54,15 @@ export default function CustomerBillPage() {
             <div className="flex items-start justify-between border-b border-gray-200 pb-6">
               <div>
                 <div className="text-2xl font-black text-brand-black font-price">CashALL</div>
-                <div className="text-xs text-brand-muted">CashALL • Instant Device Payouts</div>
-                <div className="text-[11px] text-gray-400 mt-1">GSTIN: 19AAACC1208D1Z5 • support@cashall.in</div>
+                <div className="text-xs text-brand-muted">AARNA ENTERPRISE • CashALL Platform</div>
+                <div className="text-[11px] text-gray-400 mt-1">GSTIN: 19AVPPG9800JIZ3 • Howrah, West Bengal • support@cashall.in</div>
               </div>
               <div className="text-right">
                 <div className="inline-block bg-green-100 text-green-800 text-[11px] font-black uppercase px-3 py-1 rounded-full border border-green-300">
                   OFFICIAL SIGNED BILL
                 </div>
                 <div className="text-sm font-extrabold text-brand-black mt-2">
-                  {billData?.billNumber || `CABILL-${orderId}`}
+                  {billData?.billNumber || `${orderId}-${new Date().getFullYear()}`}
                 </div>
                 <div className="text-xs text-brand-muted">
                   Date: {new Date().toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}

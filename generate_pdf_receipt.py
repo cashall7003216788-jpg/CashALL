@@ -105,7 +105,7 @@ header_data = [
     ],
     [
         Paragraph("Best Value For Your Old Devices<br/>www.cashall.in | Helpline: 7003216788", subtitle_style),
-        Paragraph(f"<b>Bill No:</b> BILL-{order_number}-2026<br/><b>Date:</b> 16 August 2026", right_meta_style)
+        Paragraph(f"<b>Bill No:</b> {order_number}-2026<br/><b>Date:</b> 16 August 2026", right_meta_style)
     ]
 ]
 
@@ -145,9 +145,10 @@ seller_info = Paragraph(
 
 buyer_info = Paragraph(
     "<b>Buyer Name:</b> AARNA ENTERPRISE<br/>"
-    "<i>(Parent Company of CashALL)</i><br/>"
-    "<b>GSTIN:</b> 19AVPPG9800J1Z3<br/>"
-    "<b>Address:</b> Howrah, West Bengal",
+    "<i>(CashALL Platform)</i><br/>"
+    "<b>GSTIN:</b> 19AVPPG9800JIZ3<br/>"
+    "<b>Address:</b> Howrah, West Bengal<br/>"
+    "<b>Assigned Agent:</b> Hyder Ali",
     normal_text
 )
 

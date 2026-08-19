@@ -14,6 +14,7 @@ interface BillData {
   buyerName: string;
   buyerGstin: string;
   buyerAddress: string;
+  agentName: string;
   deviceName: string;
   variantName: string;
   quoteNumber: string;
@@ -72,20 +73,24 @@ export default function AdminBillPage() {
 
         const payment = ord.payments?.[0];
         const assignedPartner = ord.pickups?.[0]?.partner;
+        const agentName = ord.agentName || ord.pickups?.[0]?.notes || assignedPartner?.name || "Hyder Ali";
+        const currentYear = new Date().getFullYear();
+
         setBill({
           orderNumber: ord.orderNumber,
-          billNumber: `BILL-${ord.orderNumber}-${new Date().getFullYear()}`,
-          customerName: ord.user?.name || "Customer",
+          billNumber: `${ord.orderNumber}-${currentYear}`,
+          customerName: ord.user?.name || ord.customerName || "Customer",
           customerPhone: ord.user?.phone || ord.address?.phone || "—",
           pickupAddress: ord.address
             ? `${ord.address.house}, ${ord.address.street}, ${ord.address.area}, ${ord.address.city}, ${ord.address.state} - ${ord.address.pincode}`
             : "—",
-          buyerName: assignedPartner ? (assignedPartner.companyName || assignedPartner.name || "Authorized Partner") : "AARNA ENTERPRISE (Parent Company of CashALL)",
-          buyerGstin: assignedPartner ? (assignedPartner.gstin || "N/A") : "19AVPPG9800J1Z3",
-          buyerAddress: assignedPartner ? (assignedPartner.address || "Authorized Partner Franchise") : "Howrah, West Bengal",
+          buyerName: "AARNA ENTERPRISE",
+          buyerGstin: "19AVPPG9800JIZ3",
+          buyerAddress: "Howrah, West Bengal",
+          agentName: agentName,
           deviceName: ord.quote?.variant?.model?.brand?.name
             ? `${ord.quote.variant.model.brand.name} ${ord.quote.variant.model.name}`
-            : "Device",
+            : (ord.deviceName || "Device"),
           variantName: ord.quote?.variant?.name || ord.quote?.variant?.storage || "—",
           quoteNumber: ord.quote?.quoteNumber || `CAQ-${ord.id?.slice(0, 6).toUpperCase()}`,
           estimatedPrice: ord.quote?.estimatedPrice ?? 0,
@@ -189,7 +194,10 @@ export default function AdminBillPage() {
               <div className="space-y-1 text-xs">
                 <div className="font-bold text-gray-900 text-sm">{bill.buyerName}</div>
                 <div className="text-gray-600 font-semibold">GSTIN: {bill.buyerGstin}</div>
-                <div className="text-gray-500 leading-snug mt-1">{bill.buyerAddress}</div>
+                <div className="text-gray-500 leading-snug mt-0.5">{bill.buyerAddress}</div>
+                <div className="text-yellow-700 font-bold text-[11px] mt-1.5 pt-1 border-t border-gray-100">
+                  Assigned Agent: <span className="text-gray-900">{bill.agentName}</span>
+                </div>
               </div>
             </div>
             <div>

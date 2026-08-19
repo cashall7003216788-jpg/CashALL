@@ -191,10 +191,10 @@ export class EmailService {
           <a href="https://cashall.in/order/${orderNumber}/bill" style="background-color: #FACC15; color: #000000; padding: 12px 24px; font-weight: 800; text-decoration: none; border-radius: 10px; display: inline-block; font-size: 14px;">View Official PDF Bill</a>
         </div>
 
-        <p style="font-size: 12px; color: #6b7280; line-height: 1.4;">This automated email serves as your official purchase acknowledgment and transaction record from AARNA ENTERPRISE (Parent Company of CashALL).</p>
+        <p style="font-size: 12px; color: #6b7280; line-height: 1.4;">This automated email serves as your official purchase acknowledgment and transaction record from AARNA ENTERPRISE (CashALL Platform, HQ: Howrah, West Bengal).</p>
 
         <hr style="border: 0; border-top: 1px solid #eeeeee; margin: 24px 0;" />
-        <p style="font-size: 11px; color: #9ca3af; text-align: center; margin: 0;">CashALL | GSTIN: 19AVPPG9800J1Z3 | cashall7003216788@gmail.com | Helpline: +91 7003216788 | www.cashall.in</p>
+        <p style="font-size: 11px; color: #9ca3af; text-align: center; margin: 0;">CashALL • AARNA ENTERPRISE | GSTIN: 19AVPPG9800JIZ3 | Howrah, West Bengal | support@cashall.in | Helpline: +91 7003216788 | www.cashall.in</p>
       </div>
     `;
   }
