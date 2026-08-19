@@ -4,12 +4,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { UserCheck, Lock, Mail, Phone, ArrowRight, Loader2, ShieldCheck, AlertCircle } from "lucide-react";
+import { UserCheck, Lock, Mail, Phone, ArrowRight, Loader2, ShieldCheck, AlertCircle, Eye, EyeOff } from "lucide-react";
 
 export default function AgentLoginPage() {
   const router = useRouter();
   const [emailOrPhone, setEmailOrPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -119,12 +120,19 @@ export default function AgentLoginPage() {
               <div className="relative">
                 <Lock className="w-4 h-4 text-neutral-500 absolute left-3.5 top-3.5" />
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full bg-neutral-950 border border-neutral-800 text-white text-xs rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:border-yellow-400 transition"
+                  className="w-full bg-neutral-950 border border-neutral-800 text-white text-xs rounded-xl pl-10 pr-10 py-3 focus:outline-none focus:border-yellow-400 transition"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3.5 top-3.5 text-neutral-500 hover:text-yellow-400 transition"
+                >
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
               </div>
             </div>
 

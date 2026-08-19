@@ -18,6 +18,8 @@ import {
   AlertCircle,
   RefreshCw,
   ShoppingBag,
+  Eye,
+  EyeOff,
 } from "lucide-react";
 
 interface Agent {
@@ -38,6 +40,7 @@ export default function AdminAgentsPage() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -209,12 +212,19 @@ export default function AdminAgentsPage() {
                 <div className="relative">
                   <Lock className="w-4 h-4 text-neutral-400 absolute left-3 top-3" />
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     placeholder="Login Password for Agent Portal"
                     value={formData.password}
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                    className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-9 pr-3 py-2.5 focus:outline-none focus:border-yellow-400 transition"
+                    className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-9 pr-9 py-2.5 focus:outline-none focus:border-yellow-400 transition"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-3 text-neutral-400 hover:text-yellow-400 transition"
+                  >
+                    {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  </button>
                 </div>
               </div>
 

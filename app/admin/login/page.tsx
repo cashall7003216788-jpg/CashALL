@@ -4,12 +4,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
-import { ShieldCheck, Lock, Mail, AlertCircle } from "lucide-react";
+import { ShieldCheck, Lock, Mail, AlertCircle, Eye, EyeOff } from "lucide-react";
 
 export default function AdminLoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -99,14 +100,21 @@ export default function AdminLoginPage() {
             <div className="relative flex items-center">
               <Lock className="w-4 h-4 absolute left-3 text-gray-500" />
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter password"
                 autoComplete="new-password"
                 required
-                className="w-full pl-10 pr-3 py-2.5 text-xs bg-neutral-800 border border-neutral-700 rounded-xl text-white focus:outline-none focus:border-brand-yellow"
+                className="w-full pl-10 pr-10 py-2.5 text-xs bg-neutral-800 border border-neutral-700 rounded-xl text-white focus:outline-none focus:border-brand-yellow"
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 text-gray-500 hover:text-brand-yellow transition"
+              >
+                {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              </button>
             </div>
           </div>
 
