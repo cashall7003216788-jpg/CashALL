@@ -8,6 +8,7 @@ const createOrderSchema = z.object({
   quoteId: z.any().optional(),
   fullName: z.any().optional(),
   phone: z.any().optional(),
+  email: z.any().optional(),
   house: z.any().optional(),
   street: z.any().optional(),
   area: z.any().optional(),
@@ -48,7 +49,7 @@ export async function POST(req: NextRequest) {
 
     logger.info(`[ORDER CREATE] Processing order placement for ${fullName} (${cleanPhone}) - Device: ${deviceName}`);
 
-    const rawEmail = data.email ? String(data.email).trim() : null;
+    const rawEmail = (data.email || body.email) ? String(data.email || body.email).trim() : null;
 
     // 1. Find or Create User
     let user = await prisma.user.findFirst({

@@ -261,6 +261,7 @@ function PickupCheckoutContent() {
       userId: `u-${finalPhone}`,
       customerName: finalName,
       customerPhone: finalPhone,
+      customerEmail: finalEmail,
       deviceName: fullDeviceName,   // Always store device name
       pincode,
       addressSummary: fullAddress,
@@ -286,6 +287,7 @@ function PickupCheckoutContent() {
         id: newOrder.userId,
         name: finalName,
         phone: finalPhone,
+        email: finalEmail,
       }));
     }
 

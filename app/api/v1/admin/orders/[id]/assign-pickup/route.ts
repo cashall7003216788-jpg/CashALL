@@ -66,6 +66,11 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
           status: "ACTIVE",
         },
       });
+    } else {
+      partner = await prisma.partner.update({
+        where: { id: partner.id },
+        data: { name: agentName },
+      });
     }
   }
 

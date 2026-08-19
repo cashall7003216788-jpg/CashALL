@@ -83,9 +83,12 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       } catch {}
     }
 
-    const assignedPartner = ord.pickups?.[0]?.partner;
-    const assignedPartnerName = assignedPartner ? (assignedPartner.name || assignedPartner.companyName) : null;
-    const customerEmail = ord.user?.email || null;
+    const pickup = ord.pickups?.[0];
+    const assignedPartner = pickup?.partner;
+    const assignedPartnerName = (pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically.")
+      ? pickup.notes
+      : (assignedPartner?.name || assignedPartner?.companyName || null);
+    const customerEmail = ord.user?.email || ord.customerEmail || null;
 
     return {
       ...ord,

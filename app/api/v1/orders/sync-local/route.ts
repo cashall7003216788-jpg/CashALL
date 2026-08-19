@@ -8,6 +8,7 @@ const syncOrderSchema = z.object({
   orderNumber: z.string(),
   customerName: z.any().optional(),
   customerPhone: z.any().optional(),
+  customerEmail: z.any().optional(),
   deviceName: z.any().optional(),
   addressSummary: z.any().optional(),
   pincode: z.any().optional(),
@@ -48,6 +49,7 @@ export const POST = apiWrapper(async (req: NextRequest) => {
     const rawPhone = item.customerPhone ? String(item.customerPhone) : "7003216788";
     const phone = rawPhone.replace(/\D/g, "").slice(-10) || "7003216788";
     const name = item.customerName ? String(item.customerName) : "Customer";
+    const rawEmail = item.customerEmail ? String(item.customerEmail).trim() : null;
     
     const rawPrice = item.estimatedPrice ?? item.revisedPrice ?? 32500;
     const price = typeof rawPrice === "number" ? rawPrice : parseFloat(String(rawPrice)) || 32500;
@@ -65,9 +67,15 @@ export const POST = apiWrapper(async (req: NextRequest) => {
         data: {
           phone,
           name,
+          email: rawEmail,
           firebaseUid: `uid_${phone}_sync_${Date.now()}`,
           role: "CUSTOMER",
         },
+      });
+    } else if (rawEmail && !user.email) {
+      user = await prisma.user.update({
+        where: { id: user.id },
+        data: { email: rawEmail },
       });
     }
 

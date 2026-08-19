@@ -78,6 +78,7 @@ export interface OrderData {
   userId: string;
   customerName: string;
   customerPhone: string;
+  customerEmail?: string;
   deviceName?: string;
   addressId?: string;
   addressSummary?: string;
