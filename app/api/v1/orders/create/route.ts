@@ -111,23 +111,30 @@ export async function POST(req: NextRequest) {
     }
 
     if (!quote) {
-      // Find or seed a valid DeviceVariant with valid UUID
-      let variant = await prisma.deviceVariant.findFirst();
+      // Parse brand name from deviceName (e.g., "Motorola Moto G52" -> Brand "Motorola", Model "Moto G52")
+      const firstWord = deviceName.trim().split(" ")[0] || "CashALL";
+      let brand = await prisma.brand.findFirst({
+        where: { name: { contains: firstWord, mode: "insensitive" } },
+      });
+      if (!brand) {
+        brand = await prisma.brand.create({
+          data: { name: firstWord, slug: `${firstWord.toLowerCase()}-${Date.now()}`, category: "MOBILE" },
+        });
+      }
+
+      let model = await prisma.deviceModel.findFirst({
+        where: { brandId: brand.id, name: { contains: deviceName.slice(0, 15), mode: "insensitive" } },
+      });
+      if (!model) {
+        model = await prisma.deviceModel.create({
+          data: { brandId: brand.id, name: deviceName, slug: `dev-${Date.now()}`, category: "MOBILE", basePrice: estimatedPrice },
+        });
+      }
+
+      let variant = await prisma.deviceVariant.findFirst({ where: { modelId: model.id } });
       if (!variant) {
-        let brand = await prisma.brand.findFirst();
-        if (!brand) {
-          brand = await prisma.brand.create({
-            data: { name: "CashALL", slug: `cashall-${Date.now()}`, category: "MOBILE" },
-          });
-        }
-        let model = await prisma.deviceModel.findFirst({ where: { brandId: brand.id } });
-        if (!model) {
-          model = await prisma.deviceModel.create({
-            data: { brandId: brand.id, name: deviceName, slug: `dev-${Date.now()}`, category: "MOBILE", basePrice: estimatedPrice },
-          });
-        }
         variant = await prisma.deviceVariant.create({
-          data: { modelId: model.id, storage: "128 GB", basePrice: estimatedPrice },
+          data: { modelId: model.id, storage: "Default Storage", basePrice: estimatedPrice },
         });
       }
 
