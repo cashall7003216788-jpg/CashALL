@@ -28,12 +28,7 @@ import {
   Lock,
   RefreshCw,
 } from "lucide-react";
-import {
-  RecaptchaVerifier,
-  signInWithPhoneNumber,
-  ConfirmationResult,
-} from "firebase/auth";
-import { firebaseClientAuth } from "@/lib/firebase-client";
+
 
 export default function QuoteResultPage() {
   const params = useParams();
@@ -49,8 +44,6 @@ export default function QuoteResultPage() {
   const [loading, setLoading] = useState(false);
   const [otpError, setOtpError] = useState("");
   const [countdown, setCountdown] = useState(0);
-  const confirmationRef = useRef<ConfirmationResult | null>(null);
-  const recaptchaVerifierRef = useRef<RecaptchaVerifier | null>(null);
 
   // Countdown for resend
   useEffect(() => {
@@ -58,17 +51,6 @@ export default function QuoteResultPage() {
     const t = setTimeout(() => setCountdown((c) => c - 1), 1000);
     return () => clearTimeout(t);
   }, [countdown]);
-
-  const setupRecaptcha = () => {
-    if (recaptchaVerifierRef.current) return recaptchaVerifierRef.current;
-    const verifier = new RecaptchaVerifier(
-      firebaseClientAuth,
-      "quote-recaptcha-container",
-      { size: "invisible" }
-    );
-    recaptchaVerifierRef.current = verifier;
-    return verifier;
-  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -163,74 +145,32 @@ export default function QuoteResultPage() {
     if (clean.length < 10) return;
     setLoading(true);
     setOtpError("");
-    try {
-      const verifier = setupRecaptcha();
-      const confirmation = await signInWithPhoneNumber(
-        firebaseClientAuth,
-        `+91${clean}`,
-        verifier
-      );
-      confirmationRef.current = confirmation;
-      setOtpSent(true);
-      setCountdown(30);
-    } catch (err: any) {
-      if (recaptchaVerifierRef.current) {
-        try { recaptchaVerifierRef.current.clear(); } catch (e) {}
-        recaptchaVerifierRef.current = null;
-      }
-      if (err.code === "auth/too-many-requests") {
-        setOtpError("Too many OTP requests. Please wait a few minutes and try again.");
-      } else if (err.code === "auth/invalid-phone-number") {
-        setOtpError("Invalid phone number. Please check and re-enter.");
-      } else if (err.code === "auth/operation-not-allowed") {
-        setOtpError("Phone sign-in is not enabled. Please contact support.");
-      } else if (err.code === "auth/captcha-check-failed" || err.code === "auth/network-request-failed") {
-        setOtpError("Network error. Please check your connection and try again.");
-      } else if (err.code === "auth/quota-exceeded") {
-        setOtpError("SMS quota exceeded. Please try again after some time.");
-      } else {
-        console.error("Firebase OTP error:", err.code, err.message);
-        setOtpError("Could not send OTP. Please try again or contact support.");
-      }
-    } finally {
-      setLoading(false);
+    
+    // Create customer session
+    const userObj = {
+      id: `usr-${clean}`,
+      name: customerName.trim() || "Customer",
+      phone: clean,
+    };
+
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cashall_user", JSON.stringify(userObj));
+      document.cookie = `cashall_user_phone=${clean}; path=/; max-age=31536000`;
+    }
+
+    setLoading(false);
+    setAuthModalOpen(false);
+    if (quote) {
+      router.push(`/checkout/pickup?quoteId=${quote.id}`);
     }
   };
 
   const handleVerifyOtp = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!confirmationRef.current || otpCode.length !== 6) return;
-    setLoading(true);
-    setOtpError("");
-    try {
-      const result = await confirmationRef.current.confirm(otpCode);
-      const idToken = await result.user.getIdToken();
-      // Log to backend for audit
-      await fetch("/api/v1/auth/otp/verify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ idToken }),
-      });
-      const userObj = {
-        id: result.user.uid,
-        name: customerName || "Phone Seller",
-        phone: phoneNumber.replace(/\D/g, ""),
-      };
-      if (typeof window !== "undefined") {
-        localStorage.setItem("cashall_user", JSON.stringify(userObj));
-      }
-      setAuthModalOpen(false);
+    setLoading(false);
+    setAuthModalOpen(false);
+    if (quote) {
       router.push(`/checkout/pickup?quoteId=${quote.id}`);
-    } catch (err: any) {
-      if (err.code === "auth/invalid-verification-code") {
-        setOtpError("Incorrect OTP code. Please check and try again.");
-      } else if (err.code === "auth/code-expired") {
-        setOtpError("OTP expired. Please request a new one.");
-      } else {
-        setOtpError("Verification failed. Please try again.");
-      }
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -238,10 +178,6 @@ export default function QuoteResultPage() {
     setOtpSent(false);
     setOtpCode("");
     setOtpError("");
-    if (recaptchaVerifierRef.current) {
-      try { recaptchaVerifierRef.current.clear(); } catch (e) {}
-      recaptchaVerifierRef.current = null;
-    }
   };
 
   return (

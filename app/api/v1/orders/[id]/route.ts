@@ -78,7 +78,7 @@ export const GET = apiWrapper(async (req: NextRequest, { params }: { params: { i
   const pickup = order.pickups?.[0];
   const assignedAgentName = (pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically.")
     ? pickup.notes
-    : (assignedPartner?.name || assignedPartner?.companyName || null);
+    : (assignedPartner?.name || assignedPartner?.businessName || null);
 
   const activePayment = order.payments?.find((p: any) => p.status === "PAID") || order.payments?.[0];
 

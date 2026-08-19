@@ -3,12 +3,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
-  RecaptchaVerifier,
-  signInWithPhoneNumber,
-  ConfirmationResult,
-} from "firebase/auth";
-import { firebaseClientAuth } from "@/lib/firebase-client";
-import {
   ShieldCheck,
   CheckCircle2,
   Lock,
@@ -35,9 +29,6 @@ export function CustomerAuthModal({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [countdown, setCountdown] = useState(0);
-  const confirmationRef = useRef<ConfirmationResult | null>(null);
-  const recaptchaContainerRef = useRef<HTMLDivElement>(null);
-  const recaptchaVerifierRef = useRef<RecaptchaVerifier | null>(null);
 
   // Countdown timer for resend
   useEffect(() => {
@@ -55,26 +46,8 @@ export function CustomerAuthModal({
       setError("");
       setLoading(false);
       setCountdown(0);
-      // Cleanup recaptcha
-      if (recaptchaVerifierRef.current) {
-        try {
-          recaptchaVerifierRef.current.clear();
-        } catch (e) {}
-        recaptchaVerifierRef.current = null;
-      }
     }
   }, [isOpen]);
-
-  const setupRecaptcha = () => {
-    if (recaptchaVerifierRef.current) return recaptchaVerifierRef.current;
-    const verifier = new RecaptchaVerifier(
-      firebaseClientAuth,
-      "recaptcha-container",
-      { size: "invisible" }
-    );
-    recaptchaVerifierRef.current = verifier;
-    return verifier;
-  };
 
   const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
