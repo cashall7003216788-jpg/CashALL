@@ -39,7 +39,15 @@ export class EmailService {
   /**
    * Sends an email using Nodemailer (Gmail), Resend, or logs clean trace.
    */
-  static async sendEmail(to: string, subject: string, html: string) {
+  /**
+   * Sends an email using Nodemailer (Gmail), Resend, or logs clean trace.
+   */
+  static async sendEmail(
+    to: string,
+    subject: string,
+    html: string,
+    attachments?: Array<{ filename: string; content: Buffer }>
+  ) {
     const { transporter, smtpUser } = EmailService.getTransporter();
     const fromAddress = process.env.EMAIL_FROM || `"CashALL Support" <support@cashall.in>`;
     const replyTo = "support@cashall.in";
@@ -55,6 +63,7 @@ export class EmailService {
           subject,
           text: textFallback,
           html,
+          attachments,
         });
         logger.info(`Email sent via Domain SMTP (${smtpUser}) to ${to}. MessageId: ${info.messageId}`);
         console.log(`\n✅ LIVE EMAIL SENT VIA DOMAIN SMTP (${smtpUser}) to ${to} (MessageId: ${info.messageId})\n`);
@@ -67,11 +76,17 @@ export class EmailService {
     // 2. Try sending via Resend API if Resend Key is configured
     if (resend) {
       try {
+        const resendAttachments = attachments?.map((att) => ({
+          filename: att.filename,
+          content: att.content,
+        }));
+
         const data = await resend.emails.send({
           from: fromAddress,
           to,
           subject,
           html,
+          attachments: resendAttachments,
         });
         logger.info(`Email sent via Resend API to ${to}. Resend ID: ${data.data?.id}`);
         return { success: true, id: data.data?.id, provider: "RESEND" };
@@ -86,9 +101,68 @@ export class EmailService {
     console.log(`FROM: ${fromAddress}`);
     console.log(`TO: ${to}`);
     console.log(`SUBJECT: ${subject}`);
+    console.log(`ATTACHMENTS: ${attachments?.length || 0} files`);
     console.log(`TIMESTAMP: ${new Date().toISOString()}`);
     console.log(`======================================================================================\n`);
     return { success: true, simulated: true, senderEmail: smtpUser };
+  }
+
+  /**
+   * Generates and dispatches PDF Invoice Email to customer.
+   */
+  static async sendInvoicePdfEmail({
+    to,
+    orderNumber,
+    customerName,
+    customerPhone,
+    customerAddress,
+    deviceName,
+    finalPrice,
+    urn,
+    agentName,
+  }: {
+    to: string;
+    orderNumber: string;
+    customerName: string;
+    customerPhone?: string;
+    customerAddress?: string;
+    deviceName: string;
+    finalPrice: number;
+    urn: string;
+    agentName?: string;
+  }) {
+    let pdfBuffer: Buffer | null = null;
+    try {
+      const { generateInvoicePdfBuffer } = await import("@/components/pdf/InvoicePdf");
+      pdfBuffer = await generateInvoicePdfBuffer({
+        orderNumber,
+        customerName,
+        customerPhone: customerPhone || "N/A",
+        customerEmail: to,
+        customerAddress,
+        deviceName,
+        amountPaid: finalPrice,
+        urn,
+        agentName,
+      });
+    } catch (pdfErr) {
+      logger.error("Error building PDF invoice buffer:", pdfErr);
+    }
+
+    const html = EmailService.compilePayoutTemplate(
+      orderNumber,
+      finalPrice,
+      urn,
+      customerName,
+      deviceName
+    );
+    const subject = `CashALL Official Invoice #${orderNumber} — ₹${finalPrice.toLocaleString("en-IN")}`;
+
+    const attachments = pdfBuffer
+      ? [{ filename: `CashALL_Invoice_${orderNumber}.pdf`, content: pdfBuffer }]
+      : undefined;
+
+    return await EmailService.sendEmail(to, subject, html, attachments);
   }
 
   /**

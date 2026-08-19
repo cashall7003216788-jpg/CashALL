@@ -24,6 +24,7 @@ model User {
   customerDevices    CustomerDevice[]
   OfferCalculation   OfferCalculation[]
   orders             Order[]
+  assignedOrders     Order[]                 @relation("AgentOrders")
   tickets            SupportTicket[]
   notificationTokens UserNotificationToken[]
 
@@ -248,19 +249,23 @@ model Order {
   addressId      String?          @db.Uuid
   pickupDate     String
   pickupTimeSlot String
-  status         OrderStatus      @default(QUOTE_CREATED)
-  finalPrice     Float?
-  createdAt      DateTime         @default(now())
-  updatedAt      DateTime         @updatedAt
-  deletedAt      DateTime?
-  imageRefs      ImageReference[]
-  imeiRecords    Imei[]
-  invoices       Invoice[]
-  offers         Offer[]
-  address        Address?         @relation(fields: [addressId], references: [id])
-  quote          Quote            @relation(fields: [quoteId], references: [id], onDelete: Cascade)
-  user           User             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  payments       Payment[]
+  status               OrderStatus      @default(QUOTE_CREATED)
+  finalPrice           Float?
+  agentId              String?          @db.Uuid
+  urn                  String?
+  paymentScreenshotUrl String?
+  createdAt            DateTime         @default(now())
+  updatedAt            DateTime         @updatedAt
+  deletedAt            DateTime?
+  imageRefs            ImageReference[]
+  imeiRecords          Imei[]
+  invoices             Invoice[]
+  offers               Offer[]
+  address              Address?         @relation(fields: [addressId], references: [id])
+  quote                Quote            @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+  user                 User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  agent                User?            @relation("AgentOrders", fields: [agentId], references: [id])
+  payments             Payment[]
   pickups        Pickup[]
   qcReports      QcReport[]
 
@@ -723,6 +728,7 @@ enum Role {
   ADMIN
   SUPER_ADMIN
   EMPLOYEE
+  AGENT
 }
 
 enum OrderStatus {

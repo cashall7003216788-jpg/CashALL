@@ -18,7 +18,8 @@ import {
   Smartphone,
   Calendar,
   CheckCircle2,
-  Clock
+  Clock,
+  Upload
 } from "lucide-react";
 
 interface Order {
@@ -40,6 +41,7 @@ interface Order {
   esignStatus: string;
   paymentStatus: string;
   deviceStatus: string;
+  agentId?: string;
   agentName?: string;
   utr?: string;
 }
@@ -56,6 +58,7 @@ function getAdminToken() {
 
 export default function AdminOrdersPage() {
   const [orders, setOrders] = useState<Order[]>([]);
+  const [availableAgents, setAvailableAgents] = useState<{ id: string; name: string; phone: string }[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [actionLoading, setActionLoading] = useState<string | null>(null);
@@ -127,7 +130,8 @@ export default function AdminOrdersPage() {
             esignStatus: ord.signatures?.some((s: any) => s.status === "ESIGNED") ? "SIGNED" : "PENDING",
             paymentStatus,
             deviceStatus: ["DEVICE_RECEIVED", "BILL_GENERATED", "COMPLETED"].includes(status) ? "RECEIVED" : "NOT RECEIVED",
-            agentName: assignedPartnerName,
+            agentId: ord.agentId || ord.agent?.id,
+            agentName: ord.agent?.name || assignedPartnerName,
             utr: transactionRef,
           };
         });
@@ -173,6 +177,7 @@ export default function AdminOrdersPage() {
                 esignStatus: "PENDING",
                 paymentStatus: item.status === "COMPLETED" ? "PAID" : "PENDING",
                 deviceStatus: item.status === "COMPLETED" ? "RECEIVED" : "NOT RECEIVED",
+                agentId: item.agentId,
                 agentName: item.assignedPartnerName || item.agentName,
               });
             }
@@ -187,9 +192,120 @@ export default function AdminOrdersPage() {
     setLoading(false);
   }, []);
 
+  const fetchAvailableAgents = useCallback(async () => {
+    try {
+      const res = await fetch("/api/v1/admin/agents");
+      const json = await res.json();
+      if (json.success && Array.isArray(json.agents)) {
+        setAvailableAgents(
+          json.agents.map((a: any) => ({
+            id: a.id,
+            name: a.name || a.phone || "Field Agent",
+            phone: a.phone,
+          }))
+        );
+      }
+    } catch (e) {
+      console.error("Error loading agents dropdown list:", e);
+    }
+  }, []);
+
   useEffect(() => {
     fetchOrders();
-  }, [fetchOrders]);
+    fetchAvailableAgents();
+  }, [fetchOrders, fetchAvailableAgents]);
+
+  const handleSelectAgent = async (ord: Order, selectedAgentId: string) => {
+    const selectedObj = availableAgents.find((a) => a.id === selectedAgentId);
+    const agentName = selectedObj ? selectedObj.name : "";
+
+    setActionLoading(ord.id + "-agent");
+    try {
+      const res = await fetch(`/api/v1/admin/orders/${ord.orderNumber}/assign-agent`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ agentId: selectedAgentId, agentName }),
+      });
+
+      if (res.ok) {
+        setOrders((prev) =>
+          prev.map((item) =>
+            item.id === ord.id || item.orderNumber === ord.orderNumber
+              ? { ...item, agentId: selectedAgentId, agentName, status: "PARTNER_ASSIGNED" }
+              : item
+          )
+        );
+      }
+    } catch (err: any) {
+      alert(`Error assigning agent: ${err.message}`);
+    } finally {
+      setActionLoading(null);
+    }
+  };
+
+  // Dual-Location OCR Payment Screenshot Upload for Admin
+  const handleAdminFileUpload = async (ord: Order, e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setActionLoading(ord.id + "-upload");
+    let extractedUrn = "";
+
+    try {
+      // Tesseract.js OCR parsing
+      try {
+        const Tesseract = await import("tesseract.js");
+        const worker = await Tesseract.createWorker("eng");
+        const ret = await worker.recognize(file);
+        await worker.terminate();
+
+        const recognizedText = ret.data.text || "";
+        const match = recognizedText.match(/\b\d{12}\b/);
+        if (match && match[0]) {
+          extractedUrn = match[0];
+        }
+      } catch (ocrErr) {
+        console.warn("Tesseract.js OCR fallback notice:", ocrErr);
+      }
+
+      if (!extractedUrn) {
+        const manualInput = prompt(
+          `Enter 12-Digit URN / Bank Transaction ID for Order #${ord.orderNumber}:`,
+          ord.utr || ""
+        );
+        if (manualInput) extractedUrn = manualInput.trim();
+      }
+
+      const bodyFormData = new FormData();
+      bodyFormData.append("orderId", ord.orderNumber);
+      bodyFormData.append("file", file);
+      bodyFormData.append("urn", extractedUrn);
+
+      const res = await fetch("/api/v1/agent/upload-payment", {
+        method: "POST",
+        body: bodyFormData,
+      });
+
+      const json = await res.json();
+
+      if (json.success) {
+        setOrders((prev) =>
+          prev.map((item) =>
+            item.id === ord.id || item.orderNumber === ord.orderNumber
+              ? { ...item, utr: json.urn || extractedUrn || item.utr }
+              : item
+          )
+        );
+        alert(`✅ Payment Screenshot Uploaded & Saved!\n12-Digit URN: ${json.urn || extractedUrn || "Saved"}\nOrder status remains ACTIVE awaiting manual Admin 'Mark as Paid' approval.`);
+      } else {
+        alert(`Upload error: ${json.error || "Failed to upload payment screenshot."}`);
+      }
+    } catch (err: any) {
+      alert(`Error uploading payment screenshot: ${err.message}`);
+    } finally {
+      setActionLoading(null);
+    }
+  };
 
   // Mark order as COMPLETED & Send Bill Email automatically
   const handleMarkCompleted = async (ord: Order) => {
@@ -499,22 +615,38 @@ export default function AdminOrdersPage() {
                 {/* COLUMN 3: LOGISTICS AGENT */}
                 <div className="space-y-2">
                   <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">Assigned Logistics Agent</div>
-                  {ord.agentName ? (
-                    <div className="bg-blue-950/50 border border-blue-800/60 p-3 rounded-2xl space-y-1">
-                      <div className="flex items-center gap-1.5 text-blue-300 font-bold text-xs">
-                        <UserCheck className="w-4 h-4 text-blue-400 shrink-0" />
-                        <span>{ord.agentName}</span>
+                  <div className="space-y-2">
+                    <select
+                      value={ord.agentId || ""}
+                      onChange={(e) => handleSelectAgent(ord, e.target.value)}
+                      disabled={actionLoading === ord.id + "-agent"}
+                      className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs font-bold rounded-xl px-3 py-2.5 focus:outline-none focus:border-yellow-400 transition cursor-pointer"
+                    >
+                      <option value="">-- Select Field Agent --</option>
+                      {availableAgents.map((ag) => (
+                        <option key={ag.id} value={ag.id}>
+                          👤 {ag.name} ({ag.phone})
+                        </option>
+                      ))}
+                    </select>
+
+                    {ord.agentName ? (
+                      <div className="bg-blue-950/50 border border-blue-800/60 p-2.5 rounded-2xl flex items-center justify-between text-xs text-blue-300">
+                        <div className="flex items-center gap-1.5 font-bold">
+                          <UserCheck className="w-3.5 h-3.5 text-blue-400" />
+                          <span>{ord.agentName}</span>
+                        </div>
+                        <span className="text-[10px] bg-blue-900/60 text-blue-200 font-extrabold px-2 py-0.5 rounded">
+                          ASSIGNED
+                        </span>
                       </div>
-                      <div className="text-[10px] text-blue-200/70">Status: Agent Deployed for Pickup</div>
-                    </div>
-                  ) : (
-                    <div className="bg-neutral-900 border border-neutral-700 p-3 rounded-2xl text-xs text-neutral-400 italic">
-                      No agent assigned yet. Click "Assign Agent" below.
-                    </div>
-                  )}
+                    ) : (
+                      <div className="text-[11px] text-neutral-500 italic">No agent assigned yet. Select from dropdown.</div>
+                    )}
+                  </div>
 
                   {ord.utr && (
-                    <div className="text-xs text-neutral-300 font-mono">
+                    <div className="text-xs text-neutral-300 font-mono pt-1">
                       <span className="text-neutral-500">UTR Ref: </span>
                       <span className="font-bold text-yellow-400">{ord.utr}</span>
                     </div>
@@ -540,6 +672,22 @@ export default function AdminOrdersPage() {
                     <ClipboardCheck className="w-3.5 h-3.5" />
                     <span>Physical Inspection</span>
                   </Link>
+
+                  <label className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-300 bg-yellow-950/60 hover:bg-yellow-900/80 border border-yellow-700/60 px-3.5 py-2 rounded-xl transition cursor-pointer">
+                    {actionLoading === ord.id + "-upload" ? (
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    ) : (
+                      <Upload className="w-3.5 h-3.5 text-yellow-400" />
+                    )}
+                    <span>Upload Screenshot</span>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => handleAdminFileUpload(ord, e)}
+                      disabled={actionLoading === ord.id + "-upload"}
+                      className="hidden"
+                    />
+                  </label>
 
                   <button
                     onClick={() => handleAssignAgent(ord)}

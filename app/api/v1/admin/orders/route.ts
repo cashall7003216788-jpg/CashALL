@@ -33,6 +33,7 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       where,
       include: {
         user: true,
+        agent: true,
         address: true,
         quote: {
           include: {
@@ -88,14 +89,16 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     const assignedPartnerName = (pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically.")
       ? pickup.notes
       : (assignedPartner?.name || (assignedPartner as any)?.businessName || null);
+    const agentName = ord.agent?.name || assignedPartnerName;
     const customerEmail = ord.user?.email || ord.customerEmail || null;
 
     return {
       ...ord,
       deviceName,
       customerEmail,
-      assignedPartnerName,
-      agentName: assignedPartnerName,
+      assignedPartnerName: agentName,
+      agentName,
+      agentId: ord.agentId || null,
     };
   });
 
