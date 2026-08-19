@@ -28,39 +28,82 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     ];
   }
 
-  const [orders, total] = await Promise.all([
-    prisma.order.findMany({
-      where,
-      include: {
-        user: true,
-        agent: true,
-        address: true,
-        quote: {
-          include: {
-            variant: {
-              include: {
-                model: {
-                  include: {
-                    brand: true,
+  let orders: any[] = [];
+  let total = 0;
+
+  try {
+    const res = await Promise.all([
+      prisma.order.findMany({
+        where,
+        include: {
+          user: true,
+          agent: true,
+          address: true,
+          quote: {
+            include: {
+              variant: {
+                include: {
+                  model: {
+                    include: {
+                      brand: true,
+                    },
                   },
                 },
               },
             },
           },
+          pickups: {
+            include: { partner: true },
+          },
+          payments: true,
+          qcReports: true,
+          imeiRecords: true,
         },
-        pickups: {
-          include: { partner: true },
+        orderBy: { createdAt: "desc" },
+        skip,
+        take: limit,
+      }),
+      prisma.order.count({ where }),
+    ]);
+    orders = res[0];
+    total = res[1];
+  } catch (dbErr) {
+    console.warn("DB findMany with agent relation failed, falling back without agent relation:", dbErr);
+    const res = await Promise.all([
+      prisma.order.findMany({
+        where,
+        include: {
+          user: true,
+          address: true,
+          quote: {
+            include: {
+              variant: {
+                include: {
+                  model: {
+                    include: {
+                      brand: true,
+                    },
+                  },
+                },
+              },
+            },
+          },
+          pickups: {
+            include: { partner: true },
+          },
+          payments: true,
+          qcReports: true,
+          imeiRecords: true,
         },
-        payments: true,
-        qcReports: true,
-        imeiRecords: true,
-      },
-      orderBy: { createdAt: "desc" },
-      skip,
-      take: limit,
-    }),
-    prisma.order.count({ where }),
-  ]);
+        orderBy: { createdAt: "desc" },
+        skip,
+        take: limit,
+      }),
+      prisma.order.count({ where }),
+    ]);
+    orders = res[0];
+    total = res[1];
+  }
 
   const formattedOrders = orders.map((ord: any) => {
     // Resolve deviceName: breakdownJson → variant→model chain → fallback
