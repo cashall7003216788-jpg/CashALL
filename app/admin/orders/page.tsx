@@ -453,7 +453,7 @@ export default function AdminOrdersPage() {
                   
                   <div className="flex flex-wrap items-center gap-2 max-w-full">
                     {ord.customerEmail ? (
-                      <div className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-400 bg-yellow-400/10 px-2.5 py-1 rounded-xl border border-yellow-400/20 max-w-[calc(100%-65px)] truncate">
+                      <div className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-400 bg-yellow-400/10 px-2.5 py-1 rounded-xl border border-yellow-400/20 max-w-[calc(100%-60px)] truncate">
                         <Mail className="w-3.5 h-3.5 shrink-0" />
                         <span className="truncate">{ord.customerEmail}</span>
                       </div>
@@ -462,7 +462,7 @@ export default function AdminOrdersPage() {
                     )}
                     <button
                       onClick={() => handleUpdateEmail(ord)}
-                      className="text-[10px] text-yellow-400 hover:text-yellow-300 font-bold shrink-0 bg-yellow-400/10 px-2 py-0.5 rounded-lg border border-yellow-400/30 transition-colors"
+                      className="text-[10px] text-yellow-400 hover:text-yellow-300 font-bold shrink-0 bg-yellow-400/10 px-2 py-1 rounded-lg border border-yellow-400/30 transition-colors"
                     >
                       {ord.customerEmail ? "Edit" : "+ Add Email"}
                     </button>
@@ -482,16 +482,17 @@ export default function AdminOrdersPage() {
                     <span className="font-bold text-white text-sm">{ord.deviceName}</span>
                   </div>
 
-                  <div className="bg-black/50 p-3 rounded-2xl border border-neutral-700 space-y-1">
+                  <div className="bg-black/50 p-3 rounded-2xl border border-neutral-700 space-y-1.5">
+                    {ord.estimatedPrice ? (
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-neutral-400">Online Customer Quote:</span>
+                        <span className="font-bold text-yellow-400 font-price">₹{ord.estimatedPrice.toLocaleString("en-IN")}</span>
+                      </div>
+                    ) : null}
                     <div className="text-[11px] text-neutral-400">Final Settled Price Payout:</div>
                     <div className="text-xl font-black text-green-400 font-price">
-                      ₹{(ord.revisedPrice || ord.estimatedPrice).toLocaleString("en-IN")}
+                      ₹{(ord.revisedPrice || (ord as any).finalPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
                     </div>
-                    {ord.revisedPrice && ord.revisedPrice !== ord.estimatedPrice && (
-                      <div className="text-[10px] text-neutral-500 line-through">
-                        Initial Quote: ₹{ord.estimatedPrice.toLocaleString("en-IN")}
-                      </div>
-                    )}
                   </div>
                 </div>
 

@@ -87,7 +87,7 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     const assignedPartner = pickup?.partner;
     const assignedPartnerName = (pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically.")
       ? pickup.notes
-      : (assignedPartner?.name || assignedPartner?.companyName || null);
+      : (assignedPartner?.name || (assignedPartner as any)?.businessName || null);
     const customerEmail = ord.user?.email || ord.customerEmail || null;
 
     return {

@@ -96,6 +96,20 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    if (quote && estimatedPrice > 0 && quote.estimatedPrice !== estimatedPrice) {
+      try {
+        quote = await prisma.quote.update({
+          where: { id: quote.id },
+          data: {
+            estimatedPrice: estimatedPrice,
+            basePrice: Math.max(quote.basePrice, estimatedPrice),
+          },
+        });
+      } catch (e) {
+        logger.warn("Failed to update quote estimated price:", e);
+      }
+    }
+
     if (!quote) {
       // Find or seed a valid DeviceVariant with valid UUID
       let variant = await prisma.deviceVariant.findFirst();
@@ -125,7 +139,7 @@ export async function POST(req: NextRequest) {
             quoteNumber: generatedQuoteNumber,
             variantId: variant.id,
             selectedAnswersJson: JSON.stringify({ device: deviceName }),
-            basePrice: estimatedPrice,
+            basePrice: Math.max(variant.basePrice, estimatedPrice),
             totalDeductions: 0,
             estimatedPrice: estimatedPrice,
             breakdownJson: JSON.stringify({
