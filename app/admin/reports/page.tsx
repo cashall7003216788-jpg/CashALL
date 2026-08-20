@@ -229,11 +229,15 @@ export default function AdminReportsPage() {
                   </span>
                 </div>
                 <div className="flex justify-between text-xs pt-1 border-t border-neutral-800">
-                  <span className="text-neutral-400">Completed Doorstep Leads:</span>
-                  <span className="font-bold text-white">{ap.completedLeads} Lead(s)</span>
+                  <span className="text-neutral-400 uppercase font-bold text-[11px]">LEADS COMPLETED:</span>
+                  <span className="font-bold text-emerald-400 font-mono">{ap.completedLeads}</span>
                 </div>
                 <div className="flex justify-between text-xs">
-                  <span className="text-neutral-400">Total Value:</span>
+                  <span className="text-neutral-400 uppercase font-bold text-[11px]">LEADS NOT COMPLETED:</span>
+                  <span className="font-bold text-amber-400 font-mono">{(ap as any).uncompletedLeads || 0}</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-neutral-400 uppercase font-bold text-[11px]">Total Value:</span>
                   <span className="font-black text-green-400 font-price">₹{ap.totalPayout.toLocaleString("en-IN")}</span>
                 </div>
               </div>
@@ -323,78 +327,6 @@ export default function AdminReportsPage() {
                         </span>
                       </td>
                       <td className="py-3 px-3 text-neutral-400 font-mono">{sc.callTimeIST}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </div>
-
-        {/* ORDER REPORT ENTRIES TABLE */}
-        <div className="bg-neutral-800 border border-neutral-700 p-6 rounded-3xl shadow-xl space-y-4">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-neutral-700 pb-4">
-            <h2 className="text-lg font-bold text-white">Full Transaction Audit Ledger</h2>
-
-            <div className="relative w-full sm:w-72">
-              <Search className="w-4 h-4 text-neutral-400 absolute left-3.5 top-3" />
-              <input
-                type="text"
-                placeholder="Search order, customer, UTR, agent..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-yellow-400 transition"
-              />
-            </div>
-          </div>
-
-          {loading ? (
-            <div className="flex items-center justify-center py-16">
-              <Loader2 className="w-6 h-6 animate-spin text-yellow-400" />
-              <span className="ml-2 text-xs text-neutral-400 font-semibold">Generating live report ledger...</span>
-            </div>
-          ) : filteredEntries.length === 0 ? (
-            <div className="text-center py-16 text-neutral-400">
-              <FileText className="w-10 h-10 mx-auto mb-3 opacity-30 text-yellow-400" />
-              <p className="text-sm font-bold text-white">No report entries found</p>
-            </div>
-          ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider font-extrabold">
-                    <th className="py-3 px-3">Order Number</th>
-                    <th className="py-3 px-3">Date</th>
-                    <th className="py-3 px-3">Customer & Phone</th>
-                    <th className="py-3 px-3">Device Name</th>
-                    <th className="py-3 px-3">Disbursed Amount</th>
-                    <th className="py-3 px-3">Bank UTR / Ref</th>
-                    <th className="py-3 px-3">Assigned Agent</th>
-                    <th className="py-3 px-3">Status</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-700/60">
-                  {filteredEntries.map((item) => (
-                    <tr key={item.id} className="hover:bg-neutral-750/50 transition">
-                      <td className="py-4 px-3 font-mono font-black text-yellow-400">{item.orderNumber}</td>
-                      <td className="py-4 px-3 text-neutral-300">{item.date}</td>
-                      <td className="py-4 px-3">
-                        <div className="font-bold text-white">{item.customerName}</div>
-                        <div className="text-[11px] text-neutral-400 font-mono">{item.customerPhone}</div>
-                      </td>
-                      <td className="py-4 px-3 font-semibold text-white">{item.deviceName}</td>
-                      <td className="py-4 px-3 font-black text-green-400 font-price">₹{item.amountPaid.toLocaleString("en-IN")}</td>
-                      <td className="py-4 px-3 font-mono text-neutral-300">{item.urn}</td>
-                      <td className="py-4 px-3 font-bold text-yellow-300">{item.agentName}</td>
-                      <td className="py-4 px-3">
-                        <span className={`text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider ${
-                          item.paymentStatus === "PAID" || item.status === "COMPLETED"
-                            ? "bg-green-950 text-green-400 border border-green-700"
-                            : "bg-amber-950 text-amber-400 border border-amber-700"
-                        }`}>
-                          {item.paymentStatus}
-                        </span>
-                      </td>
                     </tr>
                   ))}
                 </tbody>

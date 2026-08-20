@@ -113,16 +113,18 @@ export async function GET() {
     });
 
     // Aggregate Agent Performance & Completed Leads
-    const agentMap: Record<string, { agentName: string; completedLeads: number; totalPayout: number }> = {};
+    const agentMap: Record<string, { agentName: string; completedLeads: number; uncompletedLeads: number; totalPayout: number }> = {};
 
     reportEntries.forEach((entry) => {
       const aName = entry.agentName;
       if (!agentMap[aName]) {
-        agentMap[aName] = { agentName: aName, completedLeads: 0, totalPayout: 0 };
+        agentMap[aName] = { agentName: aName, completedLeads: 0, uncompletedLeads: 0, totalPayout: 0 };
       }
       if (entry.status === "COMPLETED" || entry.paymentStatus === "PAID") {
         agentMap[aName].completedLeads += 1;
         agentMap[aName].totalPayout += entry.amountPaid;
+      } else {
+        agentMap[aName].uncompletedLeads += 1;
       }
     });
 

@@ -13,6 +13,8 @@ import {
   Calendar,
   Clock,
   AlertCircle,
+  Download,
+  Printer,
 } from "lucide-react";
 
 interface Quote {
@@ -63,6 +65,36 @@ export default function AdminQuotesPage() {
     return qStr.includes(searchQuery.toLowerCase());
   });
 
+  const handleDownloadCSV = () => {
+    if (filteredQuotes.length === 0) return;
+    const headers = ["Quote ID", "Customer Name", "Customer Phone", "Device Purchased", "Estimated Price (INR)", "Scheduled Visit", "Booking Status", "Generated Date"];
+    const rows = filteredQuotes.map((q) => [
+      q.quoteNumber,
+      `"${(q.customerName || "Customer Lead").replace(/"/g, '""')}"`,
+      q.customerPhone || "—",
+      `"${q.deviceName.replace(/"/g, '""')}"`,
+      q.estimatedPrice,
+      q.pickupDate ? `"${q.pickupDate} (${q.pickupTimeSlot || "Standard"})"` : "Not Scheduled",
+      q.status,
+      new Date(q.createdAt).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }),
+    ]);
+    const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map((e) => e.join(","))].join("\n");
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `CashALL_Quotes_${new Date().toISOString().slice(0, 10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleDownloadPDF = () => {
+    if (typeof document !== "undefined") {
+      document.title = `CashALL_Quotes_Repository_${new Date().toISOString().slice(0, 10)}`;
+    }
+    window.print();
+  };
+
   const uncompletedCount = quotes.filter((q) => q.status.includes("UNCOMPLETED")).length;
   const orderedCount = quotes.filter((q) => q.status === "ORDERED").length;
   const completedCount = quotes.filter((q) => q.status === "COMPLETED").length;
@@ -73,7 +105,7 @@ export default function AdminQuotesPage() {
 
       <main className="flex-grow p-4 sm:p-6 lg:p-8 overflow-y-auto space-y-6 max-w-full">
         {/* HEADER */}
-        <div className="flex flex-wrap items-center justify-between gap-4 bg-neutral-800 p-6 rounded-3xl border border-neutral-700 shadow-xl">
+        <div className="flex flex-wrap items-center justify-between gap-4 bg-neutral-800 p-6 rounded-3xl border border-neutral-700 shadow-xl print:hidden">
           <div>
             <div className="flex items-center gap-2">
               <FileText className="w-6 h-6 text-yellow-400" />
@@ -86,14 +118,34 @@ export default function AdminQuotesPage() {
             </p>
           </div>
 
-          <button
-            onClick={fetchQuotes}
-            disabled={loading}
-            className="flex items-center gap-2 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2.5 rounded-xl transition shadow-lg disabled:opacity-50"
-          >
-            <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
-            Refresh Leads
-          </button>
+          <div className="flex items-center gap-3 flex-wrap">
+            <button
+              onClick={handleDownloadCSV}
+              disabled={filteredQuotes.length === 0}
+              className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-lg disabled:opacity-50"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download CSV</span>
+            </button>
+
+            <button
+              onClick={handleDownloadPDF}
+              disabled={filteredQuotes.length === 0}
+              className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-lg disabled:opacity-50"
+            >
+              <Printer className="w-4 h-4" />
+              <span>Download PDF</span>
+            </button>
+
+            <button
+              onClick={fetchQuotes}
+              disabled={loading}
+              className="flex items-center gap-2 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2.5 rounded-xl transition shadow-lg disabled:opacity-50"
+            >
+              <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
+              <span>Refresh Leads</span>
+            </button>
+          </div>
         </div>
 
         {/* METRICS STATS */}

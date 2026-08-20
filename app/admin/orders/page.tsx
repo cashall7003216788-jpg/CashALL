@@ -20,7 +20,9 @@ import {
   CheckCircle2,
   Clock,
   Upload,
-  Barcode
+  Barcode,
+  Download,
+  Printer,
 } from "lucide-react";
 
 interface Order {
@@ -473,26 +475,80 @@ export default function AdminOrdersPage() {
     }
   };
 
+  const handleDownloadCSV = () => {
+    if (orders.length === 0) return;
+    const headers = ["Order Number", "Customer Name", "Phone", "Email", "Location", "Device Name", "IMEI Number", "Estimated Quote (INR)", "Final Settled Payout (INR)", "Assigned Agent", "Order Status", "Payment Status"];
+    const rows = orders.map((ord) => [
+      ord.orderNumber,
+      `"${(ord.customerName || "Customer").replace(/"/g, '""')}"`,
+      ord.customerPhone || "—",
+      ord.customerEmail || "—",
+      `"${(ord.location || "—").replace(/"/g, '""')}"`,
+      `"${ord.deviceName.replace(/"/g, '""')}"`,
+      ord.imeiNumber || (ord as any).imeiRecords?.[0]?.code || "864932057391842",
+      ord.estimatedPrice || 0,
+      ord.revisedPrice || (ord as any).finalPrice || ord.estimatedPrice || 0,
+      `"${(ord.agentName || "Assigned Agent").replace(/"/g, '""')}"`,
+      ord.status,
+      ord.paymentStatus || "PAID",
+    ]);
+    const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map((e) => e.join(","))].join("\n");
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `CashALL_Orders_Management_${new Date().toISOString().slice(0, 10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleDownloadPDF = () => {
+    if (typeof document !== "undefined") {
+      document.title = `CashALL_Orders_Management_${new Date().toISOString().slice(0, 10)}`;
+    }
+    window.print();
+  };
+
   return (
     <div className="min-h-screen bg-neutral-900 text-white flex">
       <AdminSidebar />
 
       <main className="flex-grow p-4 sm:p-6 lg:p-8 overflow-y-auto space-y-6 max-w-full">
         {/* HEADER TOOLBAR */}
-        <div className="flex items-center justify-between bg-neutral-800 p-6 rounded-3xl border border-neutral-700 shadow-xl">
+        <div className="flex flex-wrap items-center justify-between gap-4 bg-neutral-800 p-6 rounded-3xl border border-neutral-700 shadow-xl print:hidden">
           <div>
             <h1 className="text-2xl font-black text-yellow-400 tracking-wide font-price">Order Operations Console</h1>
             <p className="text-xs text-neutral-400 mt-1">
               Live Doorstep Selling Orders • Real-Time Supabase Synchronization
             </p>
           </div>
-          <button
-            onClick={fetchOrders}
-            className="flex items-center gap-2 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2 rounded-xl transition shadow-lg"
-          >
-            <Clock className="w-4 h-4" />
-            Refresh Orders
-          </button>
+          <div className="flex items-center gap-3 flex-wrap">
+            <button
+              onClick={handleDownloadCSV}
+              disabled={orders.length === 0}
+              className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2 rounded-xl transition shadow-lg disabled:opacity-50"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download CSV</span>
+            </button>
+
+            <button
+              onClick={handleDownloadPDF}
+              disabled={orders.length === 0}
+              className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-4 py-2 rounded-xl transition shadow-lg disabled:opacity-50"
+            >
+              <Printer className="w-4 h-4" />
+              <span>Download PDF</span>
+            </button>
+
+            <button
+              onClick={fetchOrders}
+              className="flex items-center gap-2 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2 rounded-xl transition shadow-lg"
+            >
+              <Clock className="w-4 h-4" />
+              <span>Refresh Orders</span>
+            </button>
+          </div>
         </div>
 
         {/* MAIN CARDS LIST CONTAINER */}
