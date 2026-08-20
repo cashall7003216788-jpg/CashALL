@@ -129,10 +129,19 @@ export const GET = apiWrapper(async (req: NextRequest) => {
 
     const pickup = ord.pickups?.[0];
     const assignedPartner = pickup?.partner;
-    const assignedPartnerName = (pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically.")
+    const pickupNotes = (pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically.")
       ? pickup.notes
-      : (assignedPartner?.name || (assignedPartner as any)?.businessName || null);
-    const agentName = ord.agent?.name || assignedPartnerName;
+      : null;
+
+    let agentName = null;
+    // Only resolve agentName if ord.agent has role AGENT
+    if (ord.agent && ord.agent.role === "AGENT") {
+      agentName = ord.agent.name;
+    }
+    if (!agentName && pickupNotes) {
+      agentName = pickupNotes;
+    }
+
     const customerEmail = ord.user?.email || ord.customerEmail || null;
 
     return {

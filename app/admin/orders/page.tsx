@@ -620,7 +620,7 @@ export default function AdminOrdersPage() {
                       <option value="">-- Select Field Agent --</option>
                       {availableAgents.map((ag) => (
                         <option key={ag.id} value={ag.id}>
-                          👤 {ag.name} ({ag.phone})
+                          {ag.name}
                         </option>
                       ))}
                     </select>
