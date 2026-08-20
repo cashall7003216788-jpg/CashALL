@@ -22,7 +22,14 @@ export async function GET(req: NextRequest) {
     }
     if (!targetAgentUser && name) {
       targetAgentUser = await prisma.user.findFirst({
-        where: { name: { equals: name, mode: "insensitive" }, role: "AGENT", deletedAt: null },
+        where: {
+          OR: [
+            { name: { equals: name, mode: "insensitive" } },
+            { email: { equals: `${name.toLowerCase().replace(/\s+/g, ".")}@cashall.in`, mode: "insensitive" } },
+          ],
+          role: "AGENT",
+          deletedAt: null,
+        },
       });
     }
 
@@ -53,10 +60,18 @@ export async function GET(req: NextRequest) {
       });
     }
 
-    // Build query to fetch assigned lead orders for this field agent
+    // STRICT ISOLATION FILTERING:
+    // If no agent identification criteria is provided or matched, return an empty array (0 orders).
+    if (whereOrConditions.length === 0) {
+      return NextResponse.json({
+        success: true,
+        orders: [],
+      });
+    }
+
     const where: any = {
       deletedAt: null,
-      ...(whereOrConditions.length > 0 ? { OR: whereOrConditions } : {}),
+      OR: whereOrConditions,
     };
 
     const orders = await prisma.order.findMany({
