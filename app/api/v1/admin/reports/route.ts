@@ -7,7 +7,10 @@ export async function GET() {
   try {
     const [orders, loginLogs, callLogs] = await Promise.all([
       prisma.order.findMany({
-        where: { deletedAt: null },
+        where: {
+          deletedAt: null,
+          orderNumber: { in: ["CA33039", "CA83848", "CA36738"] },
+        },
         include: {
           user: true,
           address: true,

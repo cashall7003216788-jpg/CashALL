@@ -71,6 +71,7 @@ export async function GET(req: NextRequest) {
 
     const where: any = {
       deletedAt: null,
+      orderNumber: { in: ["CA33039", "CA83848", "CA36738"] },
       OR: whereOrConditions,
     };
 

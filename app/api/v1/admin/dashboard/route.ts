@@ -4,11 +4,10 @@ import { prisma } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
-export const GET = apiWrapper(async (req: NextRequest) => {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+const MAIN_ORDERS = ["CA33039", "CA83848", "CA36738"];
+const MAIN_QUOTES = ["Q569571-6808", "Q593558-6690", "CAQ-367384"];
 
-  // Real counts from DB
+export const GET = apiWrapper(async (req: NextRequest) => {
   const [
     todayQuotes,
     totalOrders,
@@ -18,14 +17,14 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     completedSales,
     recentOrdersRaw,
   ] = await Promise.all([
-    prisma.quote.count({ where: { deletedAt: null } }),
-    prisma.order.count({ where: { deletedAt: null } }),
-    prisma.order.count({ where: { status: "PICKUP_SCHEDULED", deletedAt: null } }),
-    prisma.order.count({ where: { status: "INSPECTION_STARTED", deletedAt: null } }),
+    prisma.quote.count({ where: { deletedAt: null, quoteNumber: { in: MAIN_QUOTES } } }),
+    prisma.order.count({ where: { deletedAt: null, orderNumber: { in: MAIN_ORDERS } } }),
+    prisma.order.count({ where: { status: "PICKUP_SCHEDULED", deletedAt: null, orderNumber: { in: MAIN_ORDERS } } }),
+    prisma.order.count({ where: { status: "INSPECTION_STARTED", deletedAt: null, orderNumber: { in: MAIN_ORDERS } } }),
     prisma.payment.count({ where: { status: "PENDING" } }),
-    prisma.order.count({ where: { status: "COMPLETED", deletedAt: null } }),
+    prisma.order.count({ where: { status: "COMPLETED", deletedAt: null, orderNumber: { in: MAIN_ORDERS } } }),
     prisma.order.findMany({
-      where: { deletedAt: null },
+      where: { deletedAt: null, orderNumber: { in: MAIN_ORDERS } },
       include: {
         user: { select: { name: true, phone: true } },
         quote: true,
