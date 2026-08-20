@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
-import { ShieldCheck, Lock, Mail, AlertCircle, Eye, EyeOff } from "lucide-react";
+import { ShieldCheck, Lock, User, AlertCircle, Eye, EyeOff } from "lucide-react";
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
@@ -16,6 +16,11 @@ export default function AdminLoginPage() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!name.trim()) {
+      setError("Please enter your operator name.");
+      return;
+    }
+
     setLoading(true);
     setError("");
 
@@ -23,7 +28,7 @@ export default function AdminLoginPage() {
       const res = await fetch("/api/v1/auth/admin-login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), password }),
+        body: JSON.stringify({ name: name.trim(), password }),
       });
 
       const data = await res.json();
@@ -33,7 +38,8 @@ export default function AdminLoginPage() {
           localStorage.setItem(
             "cashall_admin_session",
             JSON.stringify({
-              email: data.data?.user?.email || email.trim(),
+              name: data.data?.user?.name || name.trim(),
+              email: data.data?.user?.email || "admin@cashall.in",
               role: data.data?.user?.role || "ADMIN",
               token: data.data?.token || "tok_admin_session",
             })
@@ -41,10 +47,10 @@ export default function AdminLoginPage() {
         }
         router.replace("/admin");
       } else {
-        setError(data.error?.message || data.message || "Invalid operator email or password.");
+        setError(data.error || data.message || "Invalid operator name or password.");
       }
     } catch (err: any) {
-      setError(err?.message || "Invalid operator email or password.");
+      setError(err?.message || "Invalid operator name or password.");
     } finally {
       setLoading(false);
     }
@@ -80,14 +86,14 @@ export default function AdminLoginPage() {
 
         <form onSubmit={handleLogin} className="space-y-4" autoComplete="off">
           <div>
-            <label className="block text-xs font-bold text-gray-300 mb-1">Operator Email</label>
+            <label className="block text-xs font-bold text-gray-300 mb-1">Operator Name</label>
             <div className="relative flex items-center">
-              <Mail className="w-4 h-4 absolute left-3 text-gray-500" />
+              <User className="w-4 h-4 absolute left-3 text-gray-500" />
               <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter email"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="e.g. SANGEET SHAW or Ankit Gupta"
                 autoComplete="off"
                 required
                 className="w-full pl-10 pr-3 py-2.5 text-xs bg-neutral-800 border border-neutral-700 rounded-xl text-white focus:outline-none focus:border-brand-yellow"

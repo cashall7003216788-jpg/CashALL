@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { UserCheck, Lock, Mail, Phone, ArrowRight, Loader2, ShieldCheck, AlertCircle, Eye, EyeOff } from "lucide-react";
+import { UserCheck, Lock, ArrowRight, Loader2, ShieldCheck, AlertCircle, Eye, EyeOff } from "lucide-react";
 
 export default function AgentLoginPage() {
   const router = useRouter();
@@ -17,7 +17,7 @@ export default function AgentLoginPage() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!emailOrPhone.trim()) {
-      setError("Please enter your registered agent email or phone number.");
+      setError("Please enter your registered agent name, email, or phone number.");
       return;
     }
 
@@ -28,7 +28,7 @@ export default function AgentLoginPage() {
       const res = await fetch("/api/v1/agent/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ emailOrPhone, password }),
+        body: JSON.stringify({ emailOrPhone: emailOrPhone.trim(), password }),
       });
 
       const json = await res.json();
@@ -94,17 +94,17 @@ export default function AgentLoginPage() {
           )}
 
           <form onSubmit={handleLogin} className="space-y-4">
-            {/* EMAIL OR PHONE */}
+            {/* NAME, EMAIL OR PHONE */}
             <div>
               <label className="block text-xs font-bold text-neutral-300 mb-1.5">
-                Agent Email or Mobile Number
+                Agent Name, Email or Mobile Number
               </label>
               <div className="relative">
                 <UserCheck className="w-4 h-4 text-neutral-500 absolute left-3.5 top-3.5" />
                 <input
                   type="text"
                   required
-                  placeholder="e.g. 7003216788 or agent@cashall.in"
+                  placeholder="e.g. SANGEET SHAW, 7003216788 or agent@cashall.in"
                   value={emailOrPhone}
                   onChange={(e) => setEmailOrPhone(e.target.value)}
                   className="w-full bg-neutral-950 border border-neutral-800 text-white text-xs rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:border-yellow-400 transition"

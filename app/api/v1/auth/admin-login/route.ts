@@ -1,82 +1,54 @@
 import { NextRequest, NextResponse } from "next/server";
 import { apiWrapper } from "@/lib/utils/api-wrapper";
-import { adminLoginSchema } from "@/lib/validators/auth";
-import { AuthService } from "@/lib/services/auth.service";
 import { AppError } from "@/lib/utils/AppError";
+
+export const dynamic = "force-dynamic";
+
+const ALLOWED_ADMINS = [
+  "SANGEET SHAW",
+  "ABHISHEK BISWAKARMA",
+  "ANKIT GUPTA",
+  "AYUSH GUPTA",
+];
+
+const ADMIN_PASSWORD = "Ank933967@";
 
 export const POST = apiWrapper(async (req: NextRequest) => {
   const body = await req.json();
-  
-  // 1. Firebase ID Token authorization mode
-  if (body.idToken) {
-    const { firebaseAdmin } = await import("@/lib/services/firebase");
-    try {
-      const decodedToken = await firebaseAdmin.auth().verifyIdToken(body.idToken);
-      if (!decodedToken.email) {
-        throw new AppError("Firebase token does not contain an email.", 400);
-      }
-      
-      const user = await AuthService.verifyAdmin(decodedToken.email);
-      return NextResponse.json({
-        success: true,
-        data: {
-          user: {
-            id: user.id,
-            email: user.email,
-            name: user.name,
-            role: user.role,
-            status: user.status,
-          },
-          token: body.idToken,
-        },
-      });
-    } catch (err: any) {
-      if (err instanceof AppError) throw err;
-      throw new AppError(`Admin auth failed: ${err.message}`, 401);
-    }
+
+  // Accept input via name, operatorName, email, or username
+  const inputName = (body.name || body.operatorName || body.email || "").trim();
+  const inputPassword = body.password;
+
+  if (!inputName) {
+    throw new AppError("Operator name is required.", 400);
   }
 
-  // 2. Direct email authentication mode (checks role and password configuration)
-  const result = adminLoginSchema.safeParse(body);
-  if (!result.success) {
-    throw new AppError(result.error.issues[0].message, 400);
+  if (!inputPassword) {
+    throw new AppError("Password is required.", 400);
   }
 
-  const { email, password } = result.data;
-  const targetAdminEmail = (process.env.ADMIN_EMAIL || "support@cashall.in").trim().toLowerCase();
-  const targetAdminPassword = process.env.ADMIN_PASSWORD || "Ank933967@";
+  // Case-insensitive operator name matching (capital, small, mixed letters)
+  const matchedAdmin = ALLOWED_ADMINS.find(
+    (adminName) => adminName.toLowerCase() === inputName.toLowerCase()
+  );
 
-  const cleanEmail = email.trim().toLowerCase();
-
-  // Validate admin password and email matching
-  if (cleanEmail !== targetAdminEmail || password !== targetAdminPassword) {
-    throw new AppError("Invalid credentials.", 401);
+  // Exact-case password matching
+  if (!matchedAdmin || inputPassword !== ADMIN_PASSWORD) {
+    throw new AppError("Invalid operator name or password.", 401);
   }
 
-  // Check email profile exists in database with admin roles
-  let user;
-  try {
-    user = await AuthService.verifyAdmin(cleanEmail);
-  } catch (err) {
-    // If profile not yet seeded in db, allow master admin login
-    user = {
-      id: "admin_master_1",
-      email: targetAdminEmail,
-      name: "CashALL Admin",
-      role: "ADMIN",
-      status: "ACTIVE",
-    };
-  }
+  const slugifiedId = `admin_${matchedAdmin.toLowerCase().replace(/\s+/g, "_")}`;
 
   return NextResponse.json({
     success: true,
     data: {
       user: {
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        role: user.role,
-        status: user.status,
+        id: slugifiedId,
+        name: matchedAdmin,
+        email: `${matchedAdmin.toLowerCase().replace(/\s+/g, ".")}@cashall.in`,
+        role: "ADMIN",
+        status: "ACTIVE",
       },
       token: "tok_admin_master_session",
     },
