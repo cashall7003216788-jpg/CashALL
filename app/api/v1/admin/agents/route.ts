@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
+import { prisma } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
-
-import { prisma } from "@/lib/db";
 
 export async function GET() {
   try {
@@ -42,24 +41,28 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, phone, password } = body;
+    const { name, username, phone, password } = body;
 
-    if (!phone) {
+    if (!phone && !name && !username) {
       return NextResponse.json(
-        { success: false, error: "Phone number is required" },
+        { success: false, error: "Full Name, User Name, Phone Number, and Password are required" },
         { status: 400 }
       );
     }
 
-    const cleanPhone = phone.trim();
-    const cleanEmail = email ? email.trim() : null;
+    const fullName = (name || username || "CashALL Field Agent").trim();
+    const cleanUsername = (username || fullName).trim();
+    const cleanPhone = phone ? phone.trim() : `99${Date.now().toString().slice(-8)}`;
+    const autoEmail = `${cleanUsername.toLowerCase().replace(/\s+/g, ".")}@cashall.in`;
 
-    // Check if phone or email already exists
+    // Check if phone or email or name already exists in database
     const existingUser = await prisma.user.findFirst({
       where: {
         OR: [
           { phone: cleanPhone },
-          ...(cleanEmail ? [{ email: cleanEmail }] : []),
+          { email: autoEmail },
+          { name: { equals: fullName, mode: "insensitive" } },
+          { name: { equals: cleanUsername, mode: "insensitive" } },
         ],
       },
     });
@@ -70,14 +73,14 @@ export async function POST(req: Request) {
         where: { id: existingUser.id },
         data: {
           role: "AGENT",
-          name: name || existingUser.name,
-          email: cleanEmail || existingUser.email,
+          name: fullName,
+          email: existingUser.email || autoEmail,
         },
       });
 
       return NextResponse.json({
         success: true,
-        message: "User role updated to AGENT",
+        message: "User registered/updated as AGENT successfully",
         agent: updated,
       });
     }
@@ -86,8 +89,8 @@ export async function POST(req: Request) {
 
     const agent = await prisma.user.create({
       data: {
-        name: name || "CashALL Field Agent",
-        email: cleanEmail,
+        name: fullName,
+        email: autoEmail,
         phone: cleanPhone,
         role: "AGENT",
         firebaseUid,

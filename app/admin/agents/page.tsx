@@ -6,7 +6,6 @@ import {
   UserCheck,
   Plus,
   Loader2,
-  Mail,
   Phone,
   Lock,
   User,
@@ -14,9 +13,9 @@ import {
   CheckCircle2,
   AlertCircle,
   RefreshCw,
-  ShoppingBag,
   Eye,
   EyeOff,
+  UserPlus,
 } from "lucide-react";
 
 interface Agent {
@@ -39,10 +38,10 @@ export default function AdminAgentsPage() {
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  // Form State
+  // Form State: Full Name, User Name, Phone Number, Password
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    username: "",
     phone: "",
     password: "",
   });
@@ -71,8 +70,20 @@ export default function AdminAgentsPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.name.trim()) {
+      setError("Agent Full Name is required.");
+      return;
+    }
+    if (!formData.username.trim()) {
+      setError("User Name is required.");
+      return;
+    }
     if (!formData.phone.trim()) {
-      setError("Agent phone number is required.");
+      setError("Phone Number is required.");
+      return;
+    }
+    if (!formData.password.trim()) {
+      setError("Password is required.");
       return;
     }
 
@@ -90,8 +101,8 @@ export default function AdminAgentsPage() {
       const json = await res.json();
 
       if (json.success) {
-        setSuccess(`✅ Field Agent "${formData.name || formData.phone}" registered successfully!`);
-        setFormData({ name: "", email: "", phone: "", password: "" });
+        setSuccess(`✅ Agent "${formData.name}" (Username: ${formData.username}) created successfully!`);
+        setFormData({ name: "", username: "", phone: "", password: "" });
         await fetchAgents();
       } else {
         setError(json.error || "Failed to create agent.");
@@ -118,7 +129,7 @@ export default function AdminAgentsPage() {
               </h1>
             </div>
             <p className="text-xs text-neutral-400 mt-1">
-              Onboard and Manage Field Agents for Doorstep Pickups & Instant UPI Verification
+              Onboard Field Agents with Full Name, User Name, Phone & Password for Portal Access
             </p>
           </div>
 
@@ -156,7 +167,7 @@ export default function AdminAgentsPage() {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* NAME */}
+              {/* AGENT FULL NAME */}
               <div>
                 <label className="block text-xs font-bold text-neutral-300 mb-1">Agent Full Name</label>
                 <div className="relative">
@@ -164,7 +175,7 @@ export default function AdminAgentsPage() {
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Rahul Sharma"
+                    placeholder="e.g. HYDER ALI"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-9 pr-3 py-2.5 focus:outline-none focus:border-yellow-400 transition"
@@ -172,24 +183,25 @@ export default function AdminAgentsPage() {
                 </div>
               </div>
 
-              {/* EMAIL */}
+              {/* USER NAME */}
               <div>
-                <label className="block text-xs font-bold text-neutral-300 mb-1">Email Address</label>
+                <label className="block text-xs font-bold text-neutral-300 mb-1">User Name (For Login)</label>
                 <div className="relative">
-                  <Mail className="w-4 h-4 text-neutral-400 absolute left-3 top-3" />
+                  <UserPlus className="w-4 h-4 text-neutral-400 absolute left-3 top-3" />
                   <input
-                    type="email"
-                    placeholder="agent@cashall.in"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    type="text"
+                    required
+                    placeholder="e.g. hyderali or HYDER ALI"
+                    value={formData.username}
+                    onChange={(e) => setFormData({ ...formData, username: e.target.value })}
                     className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-9 pr-3 py-2.5 focus:outline-none focus:border-yellow-400 transition"
                   />
                 </div>
               </div>
 
-              {/* PHONE */}
+              {/* PHONE NUMBER */}
               <div>
-                <label className="block text-xs font-bold text-neutral-300 mb-1">Phone Number (Required)</label>
+                <label className="block text-xs font-bold text-neutral-300 mb-1">Phone Number</label>
                 <div className="relative">
                   <Phone className="w-4 h-4 text-neutral-400 absolute left-3 top-3" />
                   <input
@@ -210,6 +222,7 @@ export default function AdminAgentsPage() {
                   <Lock className="w-4 h-4 text-neutral-400 absolute left-3 top-3" />
                   <input
                     type={showPassword ? "text" : "password"}
+                    required
                     placeholder="Login Password for Agent Portal"
                     value={formData.password}
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -239,14 +252,16 @@ export default function AdminAgentsPage() {
           {/* AGENTS LIST TABLE */}
           <div className="lg:col-span-2 bg-neutral-800 border border-neutral-700 p-6 rounded-3xl shadow-xl space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-neutral-700">
-              <h2 className="text-base font-extrabold text-white">Active Field Agents ({agents.length})</h2>
-              <span className="text-xs text-neutral-400">Supabase & Prisma Verified</span>
+              <h2 className="text-base font-extrabold text-white">
+                Active Field Agents ({agents.length})
+              </h2>
+              <span className="text-[11px] text-neutral-400">Supabase & Prisma Verified</span>
             </div>
 
             {loading ? (
               <div className="py-12 text-center">
                 <Loader2 className="w-6 h-6 animate-spin text-yellow-400 mx-auto mb-2" />
-                <span className="text-xs text-neutral-400">Loading field agent accounts...</span>
+                <span className="text-xs text-neutral-400">Loading registered agents...</span>
               </div>
             ) : agents.length === 0 ? (
               <div className="py-12 text-center text-neutral-400 text-xs">
@@ -257,41 +272,35 @@ export default function AdminAgentsPage() {
                 <table className="w-full text-left text-xs border-collapse">
                   <thead>
                     <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider">
-                      <th className="py-3 px-3">Agent Name</th>
-                      <th className="py-3 px-3">Contact Details</th>
-                      <th className="py-3 px-3">Assigned Orders</th>
+                      <th className="py-3 px-3">Agent Full Name</th>
+                      <th className="py-3 px-3">Mobile Number</th>
                       <th className="py-3 px-3">Status</th>
+                      <th className="py-3 px-3">Leads Assigned</th>
+                      <th className="py-3 px-3">Date Registered</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-neutral-700/60">
-                    {agents.map((ag) => (
-                      <tr key={ag.id} className="hover:bg-neutral-750/50 transition">
-                        <td className="py-3.5 px-3">
-                          <div className="font-bold text-white text-sm">{ag.name || "Field Agent"}</div>
-                          <div className="text-[10px] text-neutral-400 font-mono">ID: {ag.id.substring(0, 8)}...</div>
-                        </td>
-                        <td className="py-3.5 px-3 space-y-0.5">
-                          <div className="text-neutral-300 font-medium flex items-center gap-1">
-                            <Phone className="w-3 h-3 text-yellow-400" />
-                            <span>{ag.phone}</span>
-                          </div>
-                          {ag.email && (
-                            <div className="text-neutral-400 text-[11px] flex items-center gap-1">
-                              <Mail className="w-3 h-3 text-neutral-500" />
-                              <span>{ag.email}</span>
-                            </div>
-                          )}
-                        </td>
-                        <td className="py-3.5 px-3">
-                          <div className="inline-flex items-center gap-1.5 bg-yellow-400/10 text-yellow-400 border border-yellow-400/20 font-black px-2.5 py-1 rounded-xl">
-                            <ShoppingBag className="w-3 h-3" />
-                            <span>{ag._count?.assignedOrders ?? 0} Orders</span>
+                    {agents.map((agent) => (
+                      <tr key={agent.id} className="hover:bg-neutral-750/50 transition">
+                        <td className="py-3.5 px-3 font-bold text-white">
+                          <div className="flex items-center gap-2">
+                            <User className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
+                            <span>{agent.name || "Field Agent"}</span>
                           </div>
                         </td>
+                        <td className="py-3.5 px-3 text-neutral-300 font-mono">
+                          {agent.phone || "—"}
+                        </td>
                         <td className="py-3.5 px-3">
-                          <span className="bg-emerald-950 text-emerald-400 border border-emerald-800 text-[10px] font-black px-2.5 py-1 rounded-full uppercase">
-                            {ag.status || "ACTIVE"}
+                          <span className="bg-emerald-950 text-emerald-400 border border-emerald-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">
+                            {agent.status || "ACTIVE"}
                           </span>
+                        </td>
+                        <td className="py-3.5 px-3 font-bold text-yellow-400">
+                          {agent._count?.assignedOrders ?? 0} Orders
+                        </td>
+                        <td className="py-3.5 px-3 text-neutral-400">
+                          {new Date(agent.createdAt).toLocaleDateString("en-IN")}
                         </td>
                       </tr>
                     ))}
