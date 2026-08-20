@@ -8,21 +8,56 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const agentId = searchParams.get("agentId");
     const phone = searchParams.get("phone");
+    const name = searchParams.get("name");
 
+    let targetAgentUser: any = null;
+
+    if (agentId && agentId !== "undefined") {
+      targetAgentUser = await prisma.user.findUnique({ where: { id: agentId } });
+    }
+    if (!targetAgentUser && phone) {
+      targetAgentUser = await prisma.user.findFirst({
+        where: { phone, role: "AGENT", deletedAt: null },
+      });
+    }
+    if (!targetAgentUser && name) {
+      targetAgentUser = await prisma.user.findFirst({
+        where: { name: { equals: name, mode: "insensitive" }, role: "AGENT", deletedAt: null },
+      });
+    }
+
+    const whereOrConditions: any[] = [];
+
+    if (agentId && agentId !== "undefined") {
+      whereOrConditions.push({ agentId });
+    }
+    if (targetAgentUser?.id) {
+      whereOrConditions.push({ agentId: targetAgentUser.id });
+    }
+    if (targetAgentUser?.name) {
+      whereOrConditions.push({
+        pickups: {
+          some: {
+            notes: { contains: targetAgentUser.name, mode: "insensitive" },
+          },
+        },
+      });
+    }
+    if (name) {
+      whereOrConditions.push({
+        pickups: {
+          some: {
+            notes: { contains: name, mode: "insensitive" },
+          },
+        },
+      });
+    }
+
+    // Build query to fetch assigned lead orders for this field agent
     const where: any = {
       deletedAt: null,
+      ...(whereOrConditions.length > 0 ? { OR: whereOrConditions } : {}),
     };
-
-    if (agentId) {
-      where.agentId = agentId;
-    } else if (phone) {
-      const agentUser = await prisma.user.findFirst({
-        where: { phone, role: "AGENT" },
-      });
-      if (agentUser) {
-        where.agentId = agentUser.id;
-      }
-    }
 
     const orders = await prisma.order.findMany({
       where,
@@ -53,7 +88,21 @@ export async function GET(req: NextRequest) {
 
     const formatted = orders.map((ord: any) => {
       let deviceName = "Mobile Device";
-      if (ord.quote?.variant?.model) {
+      if (ord.quote?.breakdownJson) {
+        try {
+          const bd = JSON.parse(ord.quote.breakdownJson);
+          if (bd && typeof bd === "object" && !Array.isArray(bd) && bd.deviceName) {
+            deviceName = bd.deviceName;
+          }
+        } catch {}
+      }
+      if (deviceName === "Mobile Device" && ord.quote?.selectedAnswersJson) {
+        try {
+          const sa = JSON.parse(ord.quote.selectedAnswersJson);
+          if (sa?.device && sa.device !== "Customer Mobile Device") deviceName = sa.device;
+        } catch {}
+      }
+      if (deviceName === "Mobile Device" && ord.quote?.variant?.model) {
         const m = ord.quote.variant.model;
         deviceName = m.brand ? `${m.brand.name} ${m.name}` : m.name;
       }

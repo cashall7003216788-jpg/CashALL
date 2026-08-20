@@ -70,7 +70,8 @@ export default function AgentDashboardPage() {
     try {
       const agentId = agentSession?.id || "";
       const phone = agentSession?.phone || "";
-      const res = await fetch(`/api/v1/agent/orders?agentId=${agentId}&phone=${phone}`);
+      const name = encodeURIComponent(agentSession?.name || "");
+      const res = await fetch(`/api/v1/agent/orders?agentId=${agentId}&phone=${phone}&name=${name}`);
       const json = await res.json();
       if (json.success && Array.isArray(json.orders)) {
         setOrders(json.orders);

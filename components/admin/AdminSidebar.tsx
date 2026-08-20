@@ -54,7 +54,6 @@ export function AdminSidebar() {
     { label: "Agent Management", href: "/admin/agents", icon: UserCheck },
     { label: "Reports & Analytics", href: "/admin/reports", icon: BarChart3 },
     { label: "Physical Inspections", href: "/admin/inspections", icon: ClipboardCheck },
-    { label: "Pickup Dispatcher", href: "/admin/pickups", icon: Truck },
     { label: "Service Areas (PINs)", href: "/admin/service-areas", icon: MapPin },
   ];
 
