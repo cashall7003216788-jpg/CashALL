@@ -31,21 +31,47 @@ export async function GET() {
     });
 
     const reportEntries = orders.map((ord: any) => {
+      // 1. Unified Multi-Stage deviceName resolution
       let deviceName = "Mobile Device";
-      if (ord.quote?.variant?.model) {
+      if (ord.quote?.breakdownJson) {
+        try {
+          const bd = JSON.parse(ord.quote.breakdownJson);
+          if (bd && typeof bd === "object" && !Array.isArray(bd) && bd.deviceName) {
+            deviceName = bd.deviceName;
+          }
+        } catch {}
+      }
+      if (deviceName === "Mobile Device" && ord.quote?.selectedAnswersJson) {
+        try {
+          const sa = JSON.parse(ord.quote.selectedAnswersJson);
+          if (sa?.device && sa.device !== "Customer Mobile Device") deviceName = sa.device;
+        } catch {}
+      }
+      if (deviceName === "Mobile Device" && ord.quote?.variant?.model) {
         const m = ord.quote.variant.model;
         deviceName = m.brand ? `${m.brand.name} ${m.name}` : m.name;
       }
 
+      // 2. Correct IST Date Formatting (Asia/Kolkata)
+      const d = new Date(ord.createdAt);
+      const istDate = d.toLocaleDateString("en-IN", {
+        timeZone: "Asia/Kolkata",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }).split("/").reverse().join("-");
+
       const activePayment = ord.payments?.find((p: any) => p.status === "PAID") || ord.payments?.[0];
       const paymentStatus = activePayment?.status === "PAID" || ord.status === "COMPLETED" ? "PAID" : "PENDING";
       const urn = ord.urn || activePayment?.transactionRef || "N/A";
-      const agentName = ord.agent?.name || ord.pickups?.[0]?.notes || "In-House Agent";
+      const notes = ord.pickups?.[0]?.notes || "";
+      const isValidNotesAgent = notes && notes !== "Doorstep pickup order confirmed." && notes !== "Order synced to database automatically.";
+      const agentName = ord.agent?.name || (isValidNotesAgent ? notes : (ord.pickups?.[0]?.partner?.name || "In-House Agent"));
 
       return {
         id: ord.id,
         orderNumber: ord.orderNumber,
-        date: ord.createdAt.toISOString().split("T")[0],
+        date: istDate,
         customerName: ord.user?.name || "Customer",
         customerPhone: ord.user?.phone || "—",
         customerEmail: ord.user?.email || "—",
