@@ -36,6 +36,17 @@ export default function AdminBillPage() {
   const [bill, setBill] = useState<BillData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [downloadingPdf, setDownloadingPdf] = useState(false);
+
+  useEffect(() => {
+    // Load html2pdf.js bundle dynamically for direct PDF download
+    if (typeof window !== "undefined" && !(window as any).html2pdf) {
+      const script = document.createElement("script");
+      script.src = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
 
   useEffect(() => {
     const fetchBill = async () => {
@@ -120,9 +131,9 @@ export default function AdminBillPage() {
 
         const generatedBillNum = `${ord.orderNumber}_${currentYear}`;
 
-        // Automatically set document.title so browser "Save as PDF" defaults to CAXXXXX_2026.pdf
+        // Set document.title WITHOUT .pdf extension so Chrome pre-fills Save dialog with CAXXXXX_2026
         if (typeof document !== "undefined") {
-          document.title = `${generatedBillNum}.pdf`;
+          document.title = generatedBillNum;
         }
 
         setBill({
@@ -161,9 +172,41 @@ export default function AdminBillPage() {
 
   const handlePrint = () => {
     if (bill && typeof document !== "undefined") {
-      document.title = `${bill.billNumber}.pdf`;
+      document.title = `${bill.orderNumber}_2026`;
     }
     window.print();
+  };
+
+  const handleSavePdf = async () => {
+    if (!bill) return;
+    setDownloadingPdf(true);
+    const pdfFilename = `${bill.orderNumber}_2026.pdf`;
+
+    try {
+      if (typeof window !== "undefined" && (window as any).html2pdf && billRef.current) {
+        const element = billRef.current;
+        const opt = {
+          margin: 0.15,
+          filename: pdfFilename,
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true },
+          jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+        };
+        await (window as any).html2pdf().set(opt).from(element).save();
+      } else {
+        if (typeof document !== "undefined") {
+          document.title = `${bill.orderNumber}_2026`;
+        }
+        window.print();
+      }
+    } catch (e) {
+      if (typeof document !== "undefined") {
+        document.title = `${bill.orderNumber}_2026`;
+      }
+      window.print();
+    } finally {
+      setDownloadingPdf(false);
+    }
   };
 
   if (loading) return (
@@ -190,11 +233,12 @@ export default function AdminBillPage() {
           Print Bill
         </button>
         <button
-          onClick={handlePrint}
-          className="flex items-center gap-2 bg-yellow-400 text-black font-bold text-xs px-4 py-2 rounded-xl hover:bg-yellow-300 transition"
+          onClick={handleSavePdf}
+          disabled={downloadingPdf}
+          className="flex items-center gap-2 bg-yellow-400 text-black font-bold text-xs px-4 py-2 rounded-xl hover:bg-yellow-300 transition shadow-md disabled:opacity-60"
         >
           <Download className="w-4 h-4" />
-          Save as PDF ({bill.billNumber}.pdf)
+          {downloadingPdf ? "Generating PDF..." : `Save as PDF (${bill.orderNumber}_2026.pdf)`}
         </button>
       </div>
 
