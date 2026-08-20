@@ -93,7 +93,7 @@ export default function AdminLoginPage() {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="e.g. SANGEET SHAW or Ankit Gupta"
+                placeholder="Enter Operator Name"
                 autoComplete="off"
                 required
                 className="w-full pl-10 pr-3 py-2.5 text-xs bg-neutral-800 border border-neutral-700 rounded-xl text-white focus:outline-none focus:border-brand-yellow"

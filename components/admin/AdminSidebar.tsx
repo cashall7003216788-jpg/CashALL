@@ -17,6 +17,7 @@ import {
   MapPin,
   Users,
   LogOut,
+  Headset,
 } from "lucide-react";
 
 export function AdminSidebar() {
@@ -52,6 +53,7 @@ export function AdminSidebar() {
     { label: "Quotes Repository", href: "/admin/quotes", icon: FileText },
     { label: "Order Management", href: "/admin/orders", icon: ShoppingBag },
     { label: "Agent Management", href: "/admin/agents", icon: UserCheck },
+    { label: "Support Team Portal", href: "/support/dashboard", icon: Headset },
     { label: "Reports & Analytics", href: "/admin/reports", icon: BarChart3 },
     { label: "Physical Inspections", href: "/admin/inspections", icon: ClipboardCheck },
     { label: "Service Areas (PINs)", href: "/admin/service-areas", icon: MapPin },

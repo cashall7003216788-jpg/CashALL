@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { apiWrapper } from "@/lib/utils/api-wrapper";
 import { AppError } from "@/lib/utils/AppError";
+import { prisma } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
@@ -36,6 +37,27 @@ export const POST = apiWrapper(async (req: NextRequest) => {
   // Exact-case password matching
   if (!matchedAdmin || inputPassword !== ADMIN_PASSWORD) {
     throw new AppError("Invalid operator name or password.", 401);
+  }
+
+  // Record Admin Login Event in Database
+  try {
+    const ip = req.headers.get("x-forwarded-for") || "127.0.0.1";
+    await prisma.auditLog.create({
+      data: {
+        actorId: "00000000-0000-0000-0000-000000000000",
+        actorRole: "ADMIN",
+        action: "ADMIN_LOGIN",
+        tableName: "AdminSession",
+        recordId: "00000000-0000-0000-0000-000000000000",
+        newValuesJson: JSON.stringify({
+          adminName: matchedAdmin,
+          loginTimeIST: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+          ipAddress: ip,
+        }),
+      },
+    });
+  } catch (logErr) {
+    console.warn("Could not log admin login event:", logErr);
   }
 
   const slugifiedId = `admin_${matchedAdmin.toLowerCase().replace(/\s+/g, "_")}`;
