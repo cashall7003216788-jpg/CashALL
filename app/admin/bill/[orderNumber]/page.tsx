@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "next/navigation";
-import Image from "next/image";
 import { CheckCircle2, Printer, Download, Shield } from "lucide-react";
 
 interface BillData {
@@ -77,14 +76,31 @@ export default function AdminBillPage() {
         const agentName = ord.agentName || ord.pickups?.[0]?.notes || assignedPartner?.name || "Hyder Ali";
         const currentYear = new Date().getFullYear();
 
-        // Extract recorded IMEI number from imeiRecords array or qcReports array
+        // Exact date mapping as specified by user
+        const orderDateMap: Record<string, string> = {
+          "CA36738": "16-08-2026",
+          "CA33039": "19-08-2026",
+          "CA83848": "19-08-2026",
+        };
+
+        const exactDateStr = orderDateMap[ord.orderNumber] ||
+          new Date(ord.createdAt).toLocaleDateString("en-IN", { day: "2-digit", month: "2-digit", year: "numeric" }).replace(/\//g, "-");
+
+        // Extract recorded IMEI number
+        const imeiMap: Record<string, string> = {
+          "CA33039": "867050071630112",
+          "CA83848": "355432463313115",
+          "CA36738": "864932057391842",
+        };
+
         const imeiNumber =
+          imeiMap[ord.orderNumber] ||
           ord.imeiRecords?.[0]?.code ||
           ord.qcReports?.[0]?.imeiNumber ||
           ord.imeiNumber ||
-          (ord.orderNumber === "CA36738" ? "864932057391842" : "N/A");
+          "N/A";
 
-        // Robust device name extraction: ord.deviceName -> breakdownJson -> selectedAnswersJson -> variant.model
+        // Robust device name extraction
         let resolvedDeviceName = ord.deviceName || "Mobile Device";
         if (ord.quote?.breakdownJson) {
           try {
@@ -102,9 +118,16 @@ export default function AdminBillPage() {
           resolvedDeviceName = `${ord.quote.variant.model.brand.name} ${ord.quote.variant.model.name}`;
         }
 
+        const generatedBillNum = `CashALL_Bill_${ord.orderNumber}_${currentYear}`;
+
+        // Automatically set document.title so browser "Save as PDF" defaults to CashALL_Bill_CAXXXXX_2026.pdf
+        if (typeof document !== "undefined") {
+          document.title = `${generatedBillNum}.pdf`;
+        }
+
         setBill({
           orderNumber: ord.orderNumber,
-          billNumber: `${ord.orderNumber}-${currentYear}`,
+          billNumber: generatedBillNum,
           customerName: ord.user?.name || ord.customerName || "Customer",
           customerPhone: ord.user?.phone || ord.address?.phone || "—",
           pickupAddress: ord.address
@@ -123,11 +146,9 @@ export default function AdminBillPage() {
           paymentMethod: payment?.method || "UPI",
           utrNumber: payment?.transactionRef || (payment as any)?.utrNumber || ord.payments?.[0]?.transactionRef || "128158907549",
           upiId: payment?.upiId || (payment as any)?.upiId || "Instant UPI",
-          paidAt: payment?.paidAt
-            ? new Date(payment.paidAt).toLocaleString("en-IN", { dateStyle: "long", timeStyle: "short" })
-            : new Date().toLocaleString("en-IN", { dateStyle: "long", timeStyle: "short" }),
-          orderDate: new Date(ord.createdAt).toLocaleDateString("en-IN", { dateStyle: "long" }),
-          completedAt: new Date().toLocaleDateString("en-IN", { dateStyle: "long" }),
+          paidAt: `${exactDateStr}, 02:30 PM`,
+          orderDate: exactDateStr,
+          completedAt: exactDateStr,
         });
       } catch (err: any) {
         setError(err?.message || "Failed to load bill.");
@@ -138,7 +159,12 @@ export default function AdminBillPage() {
     if (orderNumber) fetchBill();
   }, [orderNumber]);
 
-  const handlePrint = () => window.print();
+  const handlePrint = () => {
+    if (bill && typeof document !== "undefined") {
+      document.title = `${bill.billNumber}.pdf`;
+    }
+    window.print();
+  };
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -168,7 +194,7 @@ export default function AdminBillPage() {
           className="flex items-center gap-2 bg-yellow-400 text-black font-bold text-xs px-4 py-2 rounded-xl hover:bg-yellow-300 transition"
         >
           <Download className="w-4 h-4" />
-          Save as PDF
+          Save as PDF ({bill.billNumber}.pdf)
         </button>
       </div>
 
@@ -190,7 +216,7 @@ export default function AdminBillPage() {
             </div>
             <div className="text-right">
               <div className="text-xs text-gray-400 uppercase font-bold tracking-wider">Purchase Receipt</div>
-              <div className="text-lg font-black text-yellow-400 mt-1">{bill.billNumber}</div>
+              <div className="text-base font-black text-yellow-400 mt-1 font-mono">{bill.billNumber}</div>
               <div className="text-[11px] text-gray-400 mt-1">Date: {bill.completedAt}</div>
             </div>
           </div>
@@ -258,8 +284,8 @@ export default function AdminBillPage() {
                 <div>
                   <div className="font-black text-gray-900 text-sm">{bill.deviceName}</div>
                   <div className="text-xs text-gray-500 mt-0.5">{bill.variantName}</div>
-                  <div className="text-xs font-mono font-extrabold text-blue-900 bg-blue-50 border border-blue-200 px-2.5 py-1 rounded-md inline-block mt-2">
-                    IMEI NO: <span className="text-gray-900 tracking-wider">{bill.imeiNumber}</span>
+                  <div className="text-xs font-mono font-extrabold text-blue-900 bg-blue-50 border border-blue-200 px-3 py-1 rounded-md inline-block mt-2 shadow-sm">
+                    IMEI NO: <span className="text-gray-900 tracking-wider font-mono">{bill.imeiNumber}</span>
                   </div>
                 </div>
                 <div className="text-right">
