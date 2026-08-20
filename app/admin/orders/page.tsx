@@ -19,7 +19,8 @@ import {
   Calendar,
   CheckCircle2,
   Clock,
-  Upload
+  Upload,
+  Barcode
 } from "lucide-react";
 
 interface Order {
@@ -44,6 +45,7 @@ interface Order {
   agentId?: string;
   agentName?: string;
   utr?: string;
+  imeiNumber?: string;
 }
 
 function getAdminToken() {
@@ -588,10 +590,17 @@ export default function AdminOrdersPage() {
                 {/* COLUMN 2: DEVICE & OFFER VALUATION */}
                 <div className="space-y-2">
                   <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">Device Purchased & Valuation</div>
-                  <div className="flex items-center gap-2">
-                    <Smartphone className="w-4 h-4 text-yellow-400" />
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <Smartphone className="w-4 h-4 text-yellow-400 shrink-0" />
                     <span className="font-bold text-white text-sm">{ord.deviceName}</span>
                   </div>
+
+                  {(ord.imeiNumber || (ord as any).imeiRecords?.[0]?.code || (ord as any).qcReports?.[0]?.imeiNumber) && (
+                    <div className="inline-flex items-center gap-1.5 bg-neutral-900 border border-neutral-700/80 px-2.5 py-1 rounded-xl text-xs font-mono font-bold text-yellow-400">
+                      <Barcode className="w-3.5 h-3.5 text-neutral-400" />
+                      <span>IMEI: {ord.imeiNumber || (ord as any).imeiRecords?.[0]?.code || (ord as any).qcReports?.[0]?.imeiNumber}</span>
+                    </div>
+                  )}
 
                   <div className="bg-black/50 p-3 rounded-2xl border border-neutral-700 space-y-1.5">
                     {ord.estimatedPrice ? (
