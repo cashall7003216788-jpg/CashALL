@@ -303,11 +303,9 @@ export default function AgentDashboardPage() {
                     <div className="bg-black text-yellow-400 text-base font-black px-4 py-1.5 rounded-xl border border-yellow-400/20 font-price">
                       #{ord.orderNumber}
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs font-semibold text-neutral-300">
-                      <Calendar className="w-3.5 h-3.5 text-yellow-400" />
-                      <span>
-                        {ord.pickupDate} ({ord.pickupTimeSlot})
-                      </span>
+                    <div className="flex items-center gap-1.5 text-xs font-extrabold text-yellow-300 bg-yellow-950/50 border border-yellow-500/40 px-3 py-1.5 rounded-xl">
+                      <Calendar className="w-4 h-4 text-yellow-400 shrink-0" />
+                      <span>Scheduled Visit: {ord.pickupDate} ({ord.pickupTimeSlot})</span>
                     </div>
                   </div>
 

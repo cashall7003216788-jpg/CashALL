@@ -14,6 +14,12 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     prisma.quote.findMany({
       where: { deletedAt: null },
       include: {
+        orders: {
+          include: {
+            user: true,
+            address: true,
+          },
+        },
         variant: {
           include: {
             model: { include: { brand: true } },
@@ -38,15 +44,39 @@ export const GET = apiWrapper(async (req: NextRequest) => {
         if (bd.deviceName) deviceName = bd.deviceName;
       } catch (e) {}
     }
+    if (deviceName === "Mobile Device" && q.selectedAnswersJson) {
+      try {
+        const sa = JSON.parse(q.selectedAnswersJson);
+        if (sa?.device && sa.device !== "Customer Mobile Device") deviceName = sa.device;
+      } catch (e) {}
+    }
+
+    const relatedOrder = q.orders?.[0];
+    const customerName = relatedOrder?.user?.name || "Customer Lead";
+    const customerPhone = relatedOrder?.user?.phone || relatedOrder?.address?.phone || "—";
+
+    let status = "UNCOMPLETED (PENDING CALL)";
+    if (relatedOrder?.status === "COMPLETED") {
+      status = "COMPLETED";
+    } else if (relatedOrder) {
+      status = "ORDERED";
+    } else if (q.status === "ORDERED" || q.status === "COMPLETED") {
+      status = q.status;
+    }
 
     return {
       id: q.id,
       quoteNumber: q.quoteNumber || `CAQ-${q.id.slice(0, 6).toUpperCase()}`,
+      customerName,
+      customerPhone,
       deviceName,
       basePrice: q.basePrice,
       estimatedPrice: q.estimatedPrice,
-      status: q.status,
+      status,
       createdAt: q.createdAt.toISOString(),
+      orderNumber: relatedOrder?.orderNumber || null,
+      pickupDate: relatedOrder?.pickupDate || null,
+      pickupTimeSlot: relatedOrder?.pickupTimeSlot || null,
     };
   });
 
