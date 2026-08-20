@@ -118,9 +118,9 @@ export default function AdminBillPage() {
           resolvedDeviceName = `${ord.quote.variant.model.brand.name} ${ord.quote.variant.model.name}`;
         }
 
-        const generatedBillNum = `CashALL_Bill_${ord.orderNumber}_${currentYear}`;
+        const generatedBillNum = `${ord.orderNumber}_${currentYear}`;
 
-        // Automatically set document.title so browser "Save as PDF" defaults to CashALL_Bill_CAXXXXX_2026.pdf
+        // Automatically set document.title so browser "Save as PDF" defaults to CAXXXXX_2026.pdf
         if (typeof document !== "undefined") {
           document.title = `${generatedBillNum}.pdf`;
         }
