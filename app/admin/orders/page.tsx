@@ -141,19 +141,14 @@ export default function AdminOrdersPage() {
       console.warn("Could not fetch DB orders, falling back to local state:", err);
     }
 
-    // 2. Add local storage orders if present & purge blacklisted test entries
+    // 2. Filter local storage to strictly keep only main active orders
     if (typeof window !== "undefined") {
       try {
-        const BLACKLIST_NUMS = new Set(["CA25844", "CA97538", "CA80419"]);
-        const BLACKLIST_PHONES = new Set(["8128492403"]);
+        const ALLOWED_MAIN_NUMS = new Set(["CA83848", "CA33039", "CA36738"]);
 
         const rawLocal = JSON.parse(localStorage.getItem("cashall_all_orders") || "[]");
         if (Array.isArray(rawLocal) && rawLocal.length > 0) {
-          const cleanedLocal = rawLocal.filter(
-            (o: any) =>
-              !BLACKLIST_NUMS.has(o.orderNumber) &&
-              !BLACKLIST_PHONES.has(String(o.customerPhone || "").replace(/\D/g, ""))
-          );
+          const cleanedLocal = rawLocal.filter((o: any) => ALLOWED_MAIN_NUMS.has(o.orderNumber));
           localStorage.setItem("cashall_all_orders", JSON.stringify(cleanedLocal));
 
           cleanedLocal.forEach((item: any) => {
