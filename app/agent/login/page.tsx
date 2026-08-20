@@ -93,7 +93,7 @@ export default function AgentLoginPage() {
             </div>
           )}
 
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleLogin} autoComplete="off" className="space-y-4">
             {/* NAME, EMAIL OR PHONE */}
             <div>
               <label className="block text-xs font-bold text-neutral-300 mb-1.5">
@@ -104,7 +104,8 @@ export default function AgentLoginPage() {
                 <input
                   type="text"
                   required
-                  placeholder="e.g. SANGEET SHAW, 7003216788 or agent@cashall.in"
+                  autoComplete="off"
+                  placeholder="Enter Agent Name, Mobile Number or Email"
                   value={emailOrPhone}
                   onChange={(e) => setEmailOrPhone(e.target.value)}
                   className="w-full bg-neutral-950 border border-neutral-800 text-white text-xs rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:border-yellow-400 transition"
@@ -121,7 +122,9 @@ export default function AgentLoginPage() {
                 <Lock className="w-4 h-4 text-neutral-500 absolute left-3.5 top-3.5" />
                 <input
                   type={showPassword ? "text" : "password"}
-                  placeholder="••••••••"
+                  required
+                  autoComplete="new-password"
+                  placeholder="Enter Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full bg-neutral-950 border border-neutral-800 text-white text-xs rounded-xl pl-10 pr-10 py-3 focus:outline-none focus:border-yellow-400 transition"
