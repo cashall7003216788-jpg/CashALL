@@ -233,7 +233,7 @@ export default function AdminReportsPage() {
                   <span className="font-bold text-white">{ap.completedLeads} Lead(s)</span>
                 </div>
                 <div className="flex justify-between text-xs">
-                  <span className="text-neutral-400">Total Value Collected:</span>
+                  <span className="text-neutral-400">Total Value:</span>
                   <span className="font-black text-green-400 font-price">₹{ap.totalPayout.toLocaleString("en-IN")}</span>
                 </div>
               </div>
