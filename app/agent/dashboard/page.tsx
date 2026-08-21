@@ -124,34 +124,26 @@ export default function AgentDashboardPage() {
         const recognizedText = ret.data.text || "";
         console.log("OCR Recognized Text:", recognizedText);
 
-        const match = recognizedText.match(/\b\d{12}\b/);
-        if (match && match[0]) {
-          extractedUrn = match[0];
-          setOcrStatus(`✨ Extracted 12-Digit URN: ${extractedUrn}`);
+        // Match 12-digit standard UTR or UPI ref numbers
+        const match = recognizedText.match(/(?:UPI\s*Ref(?:\s*No)?|UTR(?:\s*No)?|Txn\s*ID|Transaction\s*ID|Ref\s*No)?[:\s-]*\b(\d{12})\b/i) ||
+                      recognizedText.match(/\b\d{12}\b/);
+        if (match && (match[1] || match[0])) {
+          extractedUrn = match[1] || match[0];
+          setOcrStatus(`✨ Auto-Extracted 12-Digit UTR: ${extractedUrn}`);
         } else {
-          setOcrStatus("⚠️ OCR could not find 12-digit number automatically. Please enter URN.");
+          setOcrStatus("⚠️ OCR could not detect 12 digits automatically. Saving screenshot...");
         }
       } catch (ocrErr) {
         console.warn("Tesseract.js OCR fallback notice:", ocrErr);
-        setOcrStatus("Processing payment screenshot...");
+        setOcrStatus("Uploading payment screenshot...");
       }
 
-      if (!extractedUrn) {
-        const manualInput = prompt(
-          `Enter 12-Digit URN / Bank Transaction ID for Order #${ord.orderNumber}:`,
-          ""
-        );
-        if (manualInput) {
-          extractedUrn = manualInput.trim();
-        }
-      }
-
-      setOcrStatus("Uploading payment screenshot & syncing database...");
+      setOcrStatus("Saving payment screenshot & locking UTR in database...");
 
       const bodyFormData = new FormData();
       bodyFormData.append("orderId", ord.orderNumber);
       bodyFormData.append("file", file);
-      bodyFormData.append("urn", extractedUrn);
+      if (extractedUrn) bodyFormData.append("urn", extractedUrn);
       if (agentSession?.id) bodyFormData.append("agentId", agentSession.id);
       if (agentSession?.name) bodyFormData.append("agentName", agentSession.name);
 
@@ -163,9 +155,12 @@ export default function AgentDashboardPage() {
       const json = await res.json();
 
       if (json.success) {
+        const finalUrn = json.urn || extractedUrn;
         setNotification({
           type: "success",
-          msg: `✅ Payment Screenshot Uploaded!\nVerified URN: ${json.urn || extractedUrn || "SAVED"}\nClick 'Mark Paid' to complete transaction and send official Tax Invoice to customer.`,
+          msg: finalUrn
+            ? `⚡ Auto-Scanned UTR: ${finalUrn}!\nPayment record locked. Click 'Mark Paid' to complete transaction and dispatch official invoice.`
+            : `✅ Payment Screenshot Uploaded!\nClick 'Mark Paid' to complete transaction.`,
         });
         await fetchOrders();
       } else {
@@ -185,18 +180,20 @@ export default function AgentDashboardPage() {
     }
   };
 
-  // Mark Paid & Complete Order Handler
+  // Mark Paid & Complete Order Handler (Zero manual friction if UTR is already scanned)
   const handleMarkPaid = async (ord: AgentOrder) => {
     const finalPrice = ord.finalPrice || ord.amount || ord.estimatedPrice || 0;
-    const defaultUtr = ord.urn || "";
+    let finalUtr = ord.urn?.trim() || "";
 
-    const userUtr = prompt(
-      `Enter 12-Digit Bank UTR / Transaction Reference for Order #${ord.orderNumber} (₹${finalPrice.toLocaleString("en-IN")} payout to ${ord.customerName}):`,
-      defaultUtr || "128158907549"
-    );
-
-    if (userUtr === null) return; // Cancelled
-    const finalUtr = userUtr.trim();
+    // If UTR was not already auto-extracted from payment screenshot, prompt once
+    if (!finalUtr) {
+      const userUtr = prompt(
+        `No payment screenshot UTR was auto-detected for Order #${ord.orderNumber}.\nPlease enter the 12-Digit Bank UTR / Transaction Reference (or upload payment screenshot above):`,
+        "128158907549"
+      );
+      if (userUtr === null) return; // Cancelled
+      finalUtr = userUtr.trim();
+    }
 
     setActionLoading(ord.id + "-paid");
     try {
@@ -237,7 +234,7 @@ export default function AgentDashboardPage() {
 
         setNotification({
           type: "success",
-          msg: `🎉 Order #${ord.orderNumber} marked COMPLETED & PAID!\n• Payout: ₹${finalPrice.toLocaleString("en-IN")}\n• Bank UTR: ${finalUtr || "N/A"}\n• Official Tax Invoice emailed to customer!`,
+          msg: `🎉 Order #${ord.orderNumber} Completed & Paid!\n• Payout: ₹${finalPrice.toLocaleString("en-IN")}\n• Verified UTR: ${finalUtr}\n• Official Tax Invoice PDF emailed to customer!`,
         });
 
         await fetchOrders();

@@ -329,13 +329,17 @@ export default function AdminOrdersPage() {
   // Mark order as COMPLETED & Send Bill Email automatically
   const handleMarkCompleted = async (ord: Order) => {
     const finalPrice = ord.revisedPrice || ord.estimatedPrice;
-    const utrInput = prompt(
-      `Enter Bank UTR / Transaction reference for ₹${finalPrice.toLocaleString("en-IN")} paid to ${ord.customerName} (Leave blank if not available):`,
-      ord.utr && ord.utr !== "N/A" ? ord.utr : ""
-    );
+    let finalUtr = (ord.utr && ord.utr !== "N/A") ? ord.utr.trim() : "";
 
-    if (utrInput === null) return; // User clicked Cancel
-    const finalUtr = utrInput.trim();
+    // If UTR was not scanned via OCR screenshot, prompt once
+    if (!finalUtr) {
+      const utrInput = prompt(
+        `Enter Bank UTR / Transaction reference for ₹${finalPrice.toLocaleString("en-IN")} paid to ${ord.customerName} (Leave blank if not available):`,
+        ""
+      );
+      if (utrInput === null) return; // User clicked Cancel
+      finalUtr = utrInput.trim();
+    }
 
     setActionLoading(ord.id + "-complete");
     const token = getAdminToken();
