@@ -55,35 +55,57 @@ export default function QuoteResultPage() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const stored = localStorage.getItem(`cashall_quote_${quoteId}`) || localStorage.getItem("cashall_latest_quote");
+      let activeQuote: QuoteData | null = null;
       if (stored) {
         try {
-          setQuote(JSON.parse(stored));
-          return;
+          activeQuote = JSON.parse(stored);
         } catch (e) {
           console.error(e);
         }
       }
 
-      // Fallback demo quote
-      const fallbackQuote: QuoteData = {
-        id: quoteId,
-        quoteNumber: "CAQ-984210",
-        variantId: "v-ip15-128",
-        selectedAnswersJson: JSON.stringify([]),
-        basePrice: 32000,
-        totalDeductions: 1200,
-        estimatedPrice: 31400,
-        breakdownJson: JSON.stringify([
-          { category: "BASIC", title: "Does phone power on?", selection: "Turns ON normally", amount: 0 },
-          { category: "SCREEN", title: "Screen condition", selection: "Minor Scratches", amount: -1200 },
-          { category: "BODY", title: "Body condition", selection: "Flawless Body", amount: 300 },
-          { category: "ACCESSORIES", title: "Accessories", selection: "Original Box + Charger", amount: 600 },
-        ]),
-        expiresAt: new Date(Date.now() + 48 * 60 * 60 * 1000).toISOString(),
-        status: "ACTIVE",
-        createdAt: new Date().toISOString(),
-      };
-      setQuote(fallbackQuote);
+      if (!activeQuote) {
+        activeQuote = {
+          id: quoteId,
+          quoteNumber: "CAQ-984210",
+          variantId: "v-ip15-128",
+          selectedAnswersJson: JSON.stringify([]),
+          basePrice: 32000,
+          totalDeductions: 1200,
+          estimatedPrice: 31400,
+          breakdownJson: JSON.stringify({
+            deviceName: "Apple iPhone 15 (128 GB)",
+            basePrice: 32000,
+            estimatedPrice: 31400,
+            summary: "Standard valuation",
+          }),
+          expiresAt: new Date(Date.now() + 48 * 60 * 60 * 1000).toISOString(),
+          status: "ACTIVE",
+          createdAt: new Date().toISOString(),
+        };
+      }
+
+      setQuote(activeQuote);
+
+      // Get logged-in user details if available
+      let cName = "";
+      let cPhone = "";
+      try {
+        const u = JSON.parse(localStorage.getItem("cashall_user") || "{}");
+        if (u?.name) cName = u.name;
+        if (u?.phone) cPhone = u.phone;
+      } catch (e) {}
+
+      // Persist quote to Supabase PostgreSQL database
+      fetch("/api/v1/quotes/save", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...activeQuote,
+          customerName: cName,
+          customerPhone: cPhone,
+        }),
+      }).catch((err) => console.error("Error syncing quote to DB:", err));
     }
   }, [quoteId]);
 
@@ -156,6 +178,19 @@ export default function QuoteResultPage() {
     if (typeof window !== "undefined") {
       localStorage.setItem("cashall_user", JSON.stringify(userObj));
       document.cookie = `cashall_user_phone=${clean}; path=/; max-age=31536000`;
+    }
+
+    if (quote) {
+      // Sync customer details to DB
+      fetch("/api/v1/quotes/save", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...quote,
+          customerName: userObj.name,
+          customerPhone: userObj.phone,
+        }),
+      }).catch((err) => console.error("Error saving customer info to quote DB:", err));
     }
 
     setLoading(false);

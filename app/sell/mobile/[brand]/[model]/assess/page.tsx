@@ -317,10 +317,29 @@ export default function ConditionAssessmentPage() {
       createdAt: new Date().toISOString(),
     };
 
+    let userCustomerName = "";
+    let userCustomerPhone = "";
     if (typeof window !== "undefined") {
       localStorage.setItem(`cashall_quote_${quoteId}`, JSON.stringify(newQuote));
       localStorage.setItem("cashall_latest_quote", JSON.stringify(newQuote));
+      try {
+        const u = JSON.parse(localStorage.getItem("cashall_user") || "{}");
+        if (u?.name) userCustomerName = u.name;
+        if (u?.phone) userCustomerPhone = u.phone;
+      } catch (e) {}
     }
+
+    // Persist directly to Supabase PostgreSQL database
+    fetch("/api/v1/quotes/save", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ...newQuote,
+        customerName: userCustomerName,
+        customerPhone: userCustomerPhone,
+        deviceName: deviceFullName,
+      }),
+    }).catch((err) => console.error("Quote DB save error:", err));
 
     router.push(`/quote/${quoteId}`);
   };

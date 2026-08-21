@@ -52,8 +52,26 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     }
 
     const relatedOrder = q.orders?.[0];
-    const customerName = relatedOrder?.user?.name || "Customer Lead";
-    const customerPhone = relatedOrder?.user?.phone || relatedOrder?.address?.phone || "—";
+    let customerName = relatedOrder?.user?.name || "";
+    let customerPhone = relatedOrder?.user?.phone || relatedOrder?.address?.phone || "";
+
+    if (!customerName && q.breakdownJson) {
+      try {
+        const bd = JSON.parse(q.breakdownJson);
+        if (bd.customerName) customerName = bd.customerName;
+        if (bd.customerPhone && !customerPhone) customerPhone = bd.customerPhone;
+      } catch (e) {}
+    }
+    if (!customerName && q.selectedAnswersJson) {
+      try {
+        const sa = JSON.parse(q.selectedAnswersJson);
+        if (sa.customerName) customerName = sa.customerName;
+        if (sa.customerPhone && !customerPhone) customerPhone = sa.customerPhone;
+      } catch (e) {}
+    }
+
+    if (!customerName) customerName = "Customer Lead";
+    if (!customerPhone) customerPhone = "—";
 
     let status = "UNCOMPLETED (PENDING CALL)";
     if (relatedOrder?.status === "COMPLETED") {
