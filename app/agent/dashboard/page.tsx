@@ -356,7 +356,7 @@ export default function AgentDashboardPage() {
                       <div className="text-[11px] text-neutral-400">Final Settled Payout:</div>
                       <div className="text-xl font-black text-emerald-400 font-price flex items-center gap-1">
                         <IndianRupee className="w-4 h-4" />
-                        <span>{ord.amount.toLocaleString("en-IN")}</span>
+                        <span>{(ord.amount ?? (ord as any).finalPrice ?? (ord as any).estimatedPrice ?? 0).toLocaleString("en-IN")}</span>
                       </div>
                     </div>
                   </div>
