@@ -234,6 +234,25 @@ export default function AdminOrdersPage() {
               : item
           )
         );
+
+        if (typeof window !== "undefined") {
+          const storedStr = localStorage.getItem(`cashall_order_${ord.orderNumber}`);
+          if (storedStr) {
+            try {
+              const parsed = JSON.parse(storedStr);
+              parsed.agentId = selectedAgentId;
+              parsed.assignedPartnerName = agentName;
+              parsed.agentName = agentName;
+              parsed.status = "PARTNER_ASSIGNED";
+              localStorage.setItem(`cashall_order_${ord.orderNumber}`, JSON.stringify(parsed));
+            } catch (e) {}
+          }
+        }
+
+        await fetchOrders();
+      } else {
+        const json = await res.json().catch(() => ({}));
+        alert(`Failed to assign agent: ${json.error || "Server error"}`);
       }
     } catch (err: any) {
       alert(`Error assigning agent: ${err.message}`);

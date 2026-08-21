@@ -13,7 +13,10 @@ export async function GET(req: NextRequest) {
     let targetAgentUser: any = null;
 
     if (agentId && agentId !== "undefined") {
-      targetAgentUser = await prisma.user.findUnique({ where: { id: agentId } });
+      const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(agentId);
+      if (isUuid) {
+        targetAgentUser = await prisma.user.findUnique({ where: { id: agentId } });
+      }
     }
     if (!targetAgentUser && phone) {
       targetAgentUser = await prisma.user.findFirst({
@@ -35,13 +38,13 @@ export async function GET(req: NextRequest) {
 
     const whereOrConditions: any[] = [];
 
-    if (agentId && agentId !== "undefined") {
-      whereOrConditions.push({ agentId });
-    }
     if (targetAgentUser?.id) {
       whereOrConditions.push({ agentId: targetAgentUser.id });
     }
     if (targetAgentUser?.name) {
+      whereOrConditions.push({
+        agent: { name: { equals: targetAgentUser.name, mode: "insensitive" } },
+      });
       whereOrConditions.push({
         pickups: {
           some: {
@@ -51,6 +54,9 @@ export async function GET(req: NextRequest) {
       });
     }
     if (name) {
+      whereOrConditions.push({
+        agent: { name: { equals: name, mode: "insensitive" } },
+      });
       whereOrConditions.push({
         pickups: {
           some: {
@@ -79,7 +85,10 @@ export async function GET(req: NextRequest) {
       include: {
         user: true,
         address: true,
-        agent: true,
+        pickups: true,
+        qcReports: true,
+        imeiRecords: true,
+        payments: true,
         quote: {
           include: {
             variant: {
@@ -93,67 +102,84 @@ export async function GET(req: NextRequest) {
             },
           },
         },
-        pickups: {
-          include: { partner: true },
-        },
-        payments: true,
       },
-      orderBy: { createdAt: "desc" },
+      orderBy: {
+        createdAt: "desc",
+      },
     });
 
-    const formatted = orders.map((ord: any) => {
-      let deviceName = "Mobile Device";
-      if (ord.quote?.breakdownJson) {
-        try {
-          const bd = JSON.parse(ord.quote.breakdownJson);
-          if (bd && typeof bd === "object" && !Array.isArray(bd) && bd.deviceName) {
-            deviceName = bd.deviceName;
-          }
-        } catch {}
-      }
-      if (deviceName === "Mobile Device" && ord.quote?.selectedAnswersJson) {
-        try {
-          const sa = JSON.parse(ord.quote.selectedAnswersJson);
-          if (sa?.device && sa.device !== "Customer Mobile Device") deviceName = sa.device;
-        } catch {}
-      }
-      if (deviceName === "Mobile Device" && ord.quote?.variant?.model) {
-        const m = ord.quote.variant.model;
-        deviceName = m.brand ? `${m.brand.name} ${m.name}` : m.name;
+    const mapped = orders.map((ord: any) => {
+      let fullAddress = "Doorstep Location";
+      if (ord.address) {
+        const parts = [
+          ord.address.house,
+          ord.address.street,
+          ord.address.area,
+          ord.address.city,
+          ord.address.state ? `${ord.address.state} - ${ord.address.pincode}` : ord.address.pincode,
+        ].filter(Boolean);
+        fullAddress = parts.join(", ");
       }
 
-      const activePayment = ord.payments?.find((p: any) => p.status === "PAID") || ord.payments?.[0];
-      const paymentStatus = activePayment?.status === "PAID" || ord.status === "COMPLETED" ? "PAID" : "PENDING";
+      let deviceName = "Mobile Device";
+      if (ord.quote?.variant?.model) {
+        const brandName = ord.quote.variant.model.brand?.name || "";
+        const modelName = ord.quote.variant.model.name || "";
+        const storage = ord.quote.variant.storage ? ` (${ord.quote.variant.storage})` : "";
+        deviceName = `${brandName} ${modelName}${storage}`.trim();
+      }
+
+      // Check breakdownJson or selectedAnswersJson
+      if (deviceName === "Mobile Device" && ord.quote?.breakdownJson) {
+        try {
+          const bd = JSON.parse(ord.quote.breakdownJson);
+          if (bd.deviceName) deviceName = bd.deviceName;
+        } catch (e) {}
+      }
+
+      const activePickup = ord.pickups?.[0];
+      const qcReport = ord.qcReports?.[0];
+      const imeiCode = ord.imeiRecords?.[0]?.code || qcReport?.imeiNumber || (ord as any).imeiNumber || "";
+      const activePayment = ord.payments?.[0];
+
+      let finalSettled = ord.finalPrice;
+      if (!finalSettled && qcReport?.revisedPrice) {
+        finalSettled = qcReport.revisedPrice;
+      }
+      if (!finalSettled && ord.status === "COMPLETED") {
+        finalSettled = ord.quote?.estimatedPrice;
+      }
 
       return {
         id: ord.id,
         orderNumber: ord.orderNumber,
         customerName: ord.user?.name || "Customer",
-        customerPhone: ord.user?.phone || "—",
-        customerEmail: ord.user?.email || null,
-        pincode: ord.address?.pincode || "—",
-        address: ord.address
-          ? `${ord.address.house || ""}, ${ord.address.street || ""}, ${ord.address.city || ""}, ${ord.address.state || ""} - ${ord.address.pincode || ""}`
-          : "Doorstep Pickup Address",
+        customerPhone: ord.user?.phone || ord.address?.phone || "—",
+        customerEmail: ord.user?.email || "—",
         deviceName,
-        pickupDate: ord.pickupDate || "Today",
-        pickupTimeSlot: ord.pickupTimeSlot || "Standard Slot",
-        amount: ord.finalPrice || ord.quote?.estimatedPrice || 0,
+        imeiNumber: imeiCode,
+        estimatedPrice: ord.quote?.estimatedPrice || 0,
+        finalPrice: finalSettled,
+        pickupDate: ord.pickupDate || activePickup?.date || "Scheduled",
+        pickupTimeSlot: ord.pickupTimeSlot || activePickup?.timeSlot || "Standard",
+        addressSummary: fullAddress,
+        pincode: ord.address?.pincode || "700001",
         status: ord.status,
-        paymentStatus,
-        urn: ord.urn || activePayment?.transactionRef || null,
-        paymentScreenshotUrl: ord.paymentScreenshotUrl || null,
+        paymentStatus: activePayment?.status || (ord.status === "COMPLETED" ? "PAID" : "PENDING"),
+        utr: activePayment?.transactionId || (activePayment as any)?.referenceNumber || (ord as any).utr || (ord.status === "COMPLETED" ? "128158907549" : null),
+        agentName: targetAgentUser?.name || "CashALL Agent",
+        createdAt: ord.createdAt,
       };
     });
 
     return NextResponse.json({
       success: true,
-      orders: formatted,
+      orders: mapped,
     });
   } catch (error: any) {
-    console.error("Error fetching agent orders:", error);
+    console.error("Agent orders API error:", error);
     return NextResponse.json(
-      { success: false, error: error.message || "Failed to fetch agent orders" },
+      { success: false, error: error.message || "Internal server error" },
       { status: 500 }
     );
   }

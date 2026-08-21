@@ -6,6 +6,8 @@ import { AppError } from "@/lib/utils/AppError";
 import { logger } from "@/lib/utils/logger";
 import { z } from "zod";
 
+export const dynamic = "force-dynamic";
+
 const assignPickupSchema = z.object({
   partnerId: z.string().optional(),
   partnerName: z.string().optional(),
@@ -27,12 +29,14 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
 
   const { partnerId: rawPartnerId, partnerName: rawPartnerName, pickupDate: rawDate, pickupTimeSlot: rawTime } = validation.data;
 
+  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(orderIdentifier);
+  const cleanOrderNum = orderIdentifier.replace(/^#/, "");
+
   const order = await prisma.order.findFirst({
     where: {
-      OR: [
-        { id: orderIdentifier },
-        { orderNumber: orderIdentifier },
-      ],
+      OR: isUuid
+        ? [{ id: orderIdentifier }, { orderNumber: cleanOrderNum }]
+        : [{ orderNumber: cleanOrderNum }, { orderNumber: `#${cleanOrderNum}` }],
       deletedAt: null,
     },
   });
@@ -45,10 +49,25 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   const pickupTimeSlot = rawTime || order.pickupTimeSlot || "10 AM - 1 PM";
   const agentName = rawPartnerName || "CashALL In-House Agent";
 
+  // Find agent in User table
+  let agentUser = null;
+  if (agentName) {
+    agentUser = await prisma.user.findFirst({
+      where: {
+        name: { equals: agentName, mode: "insensitive" },
+        role: "AGENT",
+        deletedAt: null,
+      },
+    });
+  }
+
   // Find or Create Default In-House Partner in DB
   let partner = null;
   if (rawPartnerId && rawPartnerId !== "p-inhouse-custom") {
-    partner = await prisma.partner.findUnique({ where: { id: rawPartnerId } });
+    const isPartnerUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(rawPartnerId);
+    if (isPartnerUuid) {
+      partner = await prisma.partner.findUnique({ where: { id: rawPartnerId } });
+    }
   }
 
   if (!partner) {
@@ -109,6 +128,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     return tx.order.update({
       where: { id: order.id },
       data: {
+        agentId: agentUser?.id || order.agentId || null,
         status: "PARTNER_ASSIGNED",
         pickupDate,
         pickupTimeSlot,

@@ -47,27 +47,8 @@ function PickupCheckoutContent() {
 
   const ALL_INDIAN_STATES = [
     "West Bengal",
-    "Gujarat",
-    "Maharashtra",
-    "Delhi NCR",
-    "Karnataka",
-    "Tamil Nadu",
-    "Telangana",
-    "Uttar Pradesh",
-    "Bihar",
-    "Rajasthan",
-    "Madhya Pradesh",
-    "Punjab",
-    "Haryana",
-    "Odisha",
-    "Assam",
-    "Andhra Pradesh",
-    "Kerala",
     "Jharkhand",
-    "Chhattisgarh",
-    "Goa",
-    "Himachal Pradesh",
-    "Other State",
+    "Uttar Pradesh",
   ];
 
   const resolveStateFromPincode = (pin: string): { city: string; state: string } => {
@@ -209,6 +190,7 @@ function PickupCheckoutContent() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             quoteId: quote?.id || quoteId,
+            quoteNumber: quote?.quoteNumber || "",
             fullName: finalName,
             phone: finalPhone,
             email: finalEmail,

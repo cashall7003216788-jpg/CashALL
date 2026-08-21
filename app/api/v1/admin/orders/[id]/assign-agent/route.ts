@@ -3,18 +3,22 @@ import { apiWrapper } from "@/lib/utils/api-wrapper";
 import { prisma } from "@/lib/db";
 import { AppError } from "@/lib/utils/AppError";
 
+export const dynamic = "force-dynamic";
+
 export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { id: string } }) => {
   const orderIdentifier = params.id;
   const body = await req.json().catch(() => ({}));
 
   const { agentId, agentName } = body;
 
+  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(orderIdentifier);
+  const cleanOrderNum = orderIdentifier.replace(/^#/, "");
+
   const order = await prisma.order.findFirst({
     where: {
-      OR: [
-        { id: orderIdentifier },
-        { orderNumber: orderIdentifier },
-      ],
+      OR: isUuid
+        ? [{ id: orderIdentifier }, { orderNumber: cleanOrderNum }]
+        : [{ orderNumber: cleanOrderNum }, { orderNumber: `#${cleanOrderNum}` }],
       deletedAt: null,
     },
   });
@@ -23,12 +27,32 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     throw new AppError("Order not found.", 404);
   }
 
+  let resolvedAgentId = agentId;
   let selectedAgentName = agentName;
+
   if (agentId) {
-    const agentUser = await prisma.user.findUnique({
-      where: { id: agentId },
+    const isAgentUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(agentId);
+    if (isAgentUuid) {
+      const agentUser = await prisma.user.findUnique({
+        where: { id: agentId },
+      });
+      if (agentUser?.name) {
+        selectedAgentName = agentUser.name;
+        resolvedAgentId = agentUser.id;
+      }
+    }
+  }
+
+  if (!resolvedAgentId && selectedAgentName) {
+    const agentUser = await prisma.user.findFirst({
+      where: {
+        name: { equals: selectedAgentName, mode: "insensitive" },
+        role: "AGENT",
+        deletedAt: null,
+      },
     });
-    if (agentUser?.name) {
+    if (agentUser) {
+      resolvedAgentId = agentUser.id;
       selectedAgentName = agentUser.name;
     }
   }
@@ -64,7 +88,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     return tx.order.update({
       where: { id: order.id },
       data: {
-        agentId: agentId || null,
+        agentId: resolvedAgentId || null,
         status: "PARTNER_ASSIGNED",
       },
       include: {

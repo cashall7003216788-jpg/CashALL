@@ -76,19 +76,27 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // 2. Find or Create Quote (100% Guaranteed Resolution with Valid DB UUID)
+    // 2. Find or Create Quote (100% Guaranteed Resolution with Exact Quote ID & Quote Number)
     let quote = null;
-    if (data.quoteId) {
-      const quoteIdStr = String(data.quoteId);
-      const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(quoteIdStr);
+    const incomingQuoteNum = (data.quoteNumber || body.quoteNumber || "").trim();
+    const incomingQuoteId = (data.quoteId || body.quoteId || "").trim();
+
+    if (incomingQuoteNum) {
+      quote = await prisma.quote.findFirst({
+        where: { quoteNumber: incomingQuoteNum },
+      });
+    }
+
+    if (!quote && incomingQuoteId) {
+      const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(incomingQuoteId);
       try {
         if (isUuid) {
           quote = await prisma.quote.findUnique({
-            where: { id: quoteIdStr },
+            where: { id: incomingQuoteId },
           });
         } else {
           quote = await prisma.quote.findFirst({
-            where: { quoteNumber: quoteIdStr },
+            where: { quoteNumber: incomingQuoteId },
           });
         }
       } catch (e) {
@@ -96,17 +104,29 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    if (quote && estimatedPrice > 0 && quote.estimatedPrice !== estimatedPrice) {
+    // If still not found, check if an active quote was recently created for this device/valuation
+    if (!quote) {
+      quote = await prisma.quote.findFirst({
+        where: {
+          estimatedPrice: estimatedPrice,
+          deletedAt: null,
+        },
+        orderBy: { createdAt: "desc" },
+      });
+    }
+
+    if (quote) {
       try {
         quote = await prisma.quote.update({
           where: { id: quote.id },
           data: {
-            estimatedPrice: estimatedPrice,
-            basePrice: Math.max(quote.basePrice, estimatedPrice),
+            status: "ORDERED",
+            estimatedPrice: estimatedPrice || quote.estimatedPrice,
+            basePrice: Math.max(quote.basePrice, estimatedPrice || 0),
           },
         });
       } catch (e) {
-        logger.warn("Failed to update quote estimated price:", e);
+        logger.warn("Failed to update quote status to ORDERED:", e);
       }
     }
 
@@ -138,14 +158,14 @@ export async function POST(req: NextRequest) {
         });
       }
 
-      const generatedQuoteNumber = `Q${Math.floor(100000 + Math.random() * 900000)}-${Date.now().toString().slice(-4)}`;
+      const generatedQuoteNumber = incomingQuoteNum || `CAQ-${Math.floor(100000 + Math.random() * 900000)}`;
 
       try {
         quote = await prisma.quote.create({
           data: {
             quoteNumber: generatedQuoteNumber,
             variantId: variant.id,
-            selectedAnswersJson: JSON.stringify({ device: deviceName }),
+            selectedAnswersJson: JSON.stringify({ device: deviceName, customerName: fullName, customerPhone: cleanPhone }),
             basePrice: Math.max(variant.basePrice, estimatedPrice),
             totalDeductions: 0,
             estimatedPrice: estimatedPrice,
@@ -153,6 +173,8 @@ export async function POST(req: NextRequest) {
               deviceName: deviceName,
               basePrice: estimatedPrice,
               estimatedPrice: estimatedPrice,
+              customerName: fullName,
+              customerPhone: cleanPhone,
               summary: "Customer declared valuation",
             }),
             status: "ORDERED",
