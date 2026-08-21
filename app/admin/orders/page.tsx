@@ -116,6 +116,7 @@ export default function AdminOrdersPage() {
             customerName: ord.user?.name || ord.customerName || "Customer",
             customerPhone: ord.user?.phone || ord.customerPhone || "—",
             customerEmail: ord.user?.email || ord.customerEmail || "",
+            imeiNumber: ord.imeiRecords?.[0]?.code || ord.qcReports?.[0]?.imeiNumber || (ord as any).imeiNumber || "",
             pincode: ord.address?.pincode || ord.pincode || "—",
             location: ord.address
               ? `${ord.address.house || ""}, ${ord.address.city || ""}, ${ord.address.state || ""} - ${ord.address.pincode || ""}`
@@ -127,10 +128,10 @@ export default function AdminOrdersPage() {
             pickupDate: ord.pickupDate || "—",
             pickupTimeSlot: ord.pickupTimeSlot || "—",
             estimatedPrice: ord.quote?.estimatedPrice ?? 0,
-            revisedPrice: ord.finalPrice ?? ord.revisedPrice ?? null,
+            revisedPrice: ord.finalPrice ?? ord.qcReports?.[0]?.revisedPrice ?? ord.revisedPrice ?? null,
             status,
             identityStatus: ord.identityVerifications?.[0]?.status || "PENDING",
-            imeiStatus: ord.imeiVerifications?.[0]?.status || "PENDING",
+            imeiStatus: ord.imeiRecords?.length ? "VERIFIED" : (ord.imeiVerifications?.[0]?.status || "PENDING"),
             esignStatus: ord.signatures?.some((s: any) => s.status === "ESIGNED") ? "SIGNED" : "PENDING",
             paymentStatus,
             deviceStatus: ["DEVICE_RECEIVED", "BILL_GENERATED", "COMPLETED"].includes(status) ? "RECEIVED" : "NOT RECEIVED",

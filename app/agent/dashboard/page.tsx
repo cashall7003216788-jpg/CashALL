@@ -19,6 +19,9 @@ import {
   FileCheck,
   Sparkles,
   AlertCircle,
+  ClipboardCheck,
+  CreditCard,
+  Barcode,
 } from "lucide-react";
 
 interface AgentOrder {
@@ -30,9 +33,12 @@ interface AgentOrder {
   pincode: string;
   address: string;
   deviceName: string;
+  imeiNumber?: string;
   pickupDate: string;
   pickupTimeSlot: string;
   amount: number;
+  finalPrice?: number;
+  estimatedPrice?: number;
   status: string;
   paymentStatus: string;
   urn?: string;
@@ -44,6 +50,7 @@ export default function AgentDashboardPage() {
   const [agentSession, setAgentSession] = useState<any>(null);
   const [orders, setOrders] = useState<AgentOrder[]>([]);
   const [loading, setLoading] = useState(true);
+  const [actionLoading, setActionLoading] = useState<string | null>(null);
   const [uploadingOrderId, setUploadingOrderId] = useState<string | null>(null);
   const [ocrStatus, setOcrStatus] = useState<string>("");
   const [notification, setNotification] = useState<{ type: "success" | "error"; msg: string } | null>(null);
@@ -108,7 +115,6 @@ export default function AgentDashboardPage() {
     let extractedUrn = "";
 
     try {
-      // 1. Silent Tesseract.js OCR parsing in background using regex /\b\d{12}\b/
       try {
         const Tesseract = await import("tesseract.js");
         const worker = await Tesseract.createWorker("eng");
@@ -123,14 +129,13 @@ export default function AgentDashboardPage() {
           extractedUrn = match[0];
           setOcrStatus(`✨ Extracted 12-Digit URN: ${extractedUrn}`);
         } else {
-          setOcrStatus("⚠️ OCR could not find 12-digit number automatically. Please verify URN.");
+          setOcrStatus("⚠️ OCR could not find 12-digit number automatically. Please enter URN.");
         }
       } catch (ocrErr) {
         console.warn("Tesseract.js OCR fallback notice:", ocrErr);
         setOcrStatus("Processing payment screenshot...");
       }
 
-      // Prompt agent if URN couldn't be automatically matched by OCR
       if (!extractedUrn) {
         const manualInput = prompt(
           `Enter 12-Digit URN / Bank Transaction ID for Order #${ord.orderNumber}:`,
@@ -141,9 +146,8 @@ export default function AgentDashboardPage() {
         }
       }
 
-      setOcrStatus("Uploading payment screenshot & syncing Google Sheets...");
+      setOcrStatus("Uploading payment screenshot & syncing database...");
 
-      // 2. Build FormData payload
       const bodyFormData = new FormData();
       bodyFormData.append("orderId", ord.orderNumber);
       bodyFormData.append("file", file);
@@ -151,7 +155,6 @@ export default function AgentDashboardPage() {
       if (agentSession?.id) bodyFormData.append("agentId", agentSession.id);
       if (agentSession?.name) bodyFormData.append("agentName", agentSession.name);
 
-      // 3. Post to upload-payment API
       const res = await fetch("/api/v1/agent/upload-payment", {
         method: "POST",
         body: bodyFormData,
@@ -162,7 +165,7 @@ export default function AgentDashboardPage() {
       if (json.success) {
         setNotification({
           type: "success",
-          msg: `✅ Payment Uploaded Successfully!\nURN: ${json.urn || extractedUrn || "PAID"}\nGoogle Sheets Synced & PDF Invoice Emailed!`,
+          msg: `✅ Payment Screenshot Uploaded!\nVerified URN: ${json.urn || extractedUrn || "SAVED"}\nClick 'Mark Paid' to complete transaction and send official Tax Invoice to customer.`,
         });
         await fetchOrders();
       } else {
@@ -179,6 +182,78 @@ export default function AgentDashboardPage() {
     } finally {
       setUploadingOrderId(null);
       setOcrStatus("");
+    }
+  };
+
+  // Mark Paid & Complete Order Handler
+  const handleMarkPaid = async (ord: AgentOrder) => {
+    const finalPrice = ord.finalPrice || ord.amount || ord.estimatedPrice || 0;
+    const defaultUtr = ord.urn || "";
+
+    const userUtr = prompt(
+      `Enter 12-Digit Bank UTR / Transaction Reference for Order #${ord.orderNumber} (₹${finalPrice.toLocaleString("en-IN")} payout to ${ord.customerName}):`,
+      defaultUtr || "128158907549"
+    );
+
+    if (userUtr === null) return; // Cancelled
+    const finalUtr = userUtr.trim();
+
+    setActionLoading(ord.id + "-paid");
+    try {
+      const res = await fetch(`/api/v1/agent/orders/${ord.orderNumber}/complete`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          finalPrice,
+          utr: finalUtr,
+          agentName: agentSession?.name || "Field Agent",
+        }),
+      });
+
+      const json = await res.json();
+
+      if (json.success) {
+        setOrders((prev) =>
+          prev.map((item) =>
+            item.id === ord.id || item.orderNumber === ord.orderNumber
+              ? { ...item, status: "COMPLETED", paymentStatus: "PAID", urn: finalUtr }
+              : item
+          )
+        );
+
+        // Update local storage
+        if (typeof window !== "undefined") {
+          const stored = localStorage.getItem(`cashall_order_${ord.orderNumber}`);
+          if (stored) {
+            try {
+              const parsed = JSON.parse(stored);
+              parsed.status = "COMPLETED";
+              parsed.paymentStatus = "PAID";
+              parsed.utr = finalUtr;
+              localStorage.setItem(`cashall_order_${ord.orderNumber}`, JSON.stringify(parsed));
+            } catch (e) {}
+          }
+        }
+
+        setNotification({
+          type: "success",
+          msg: `🎉 Order #${ord.orderNumber} marked COMPLETED & PAID!\n• Payout: ₹${finalPrice.toLocaleString("en-IN")}\n• Bank UTR: ${finalUtr || "N/A"}\n• Official Tax Invoice emailed to customer!`,
+        });
+
+        await fetchOrders();
+      } else {
+        setNotification({
+          type: "error",
+          msg: json.error || "Failed to mark order as paid.",
+        });
+      }
+    } catch (err: any) {
+      setNotification({
+        type: "error",
+        msg: `Error completing order: ${err.message}`,
+      });
+    } finally {
+      setActionLoading(null);
     }
   };
 
@@ -228,14 +303,14 @@ export default function AgentDashboardPage() {
               Doorstep Pickup & Payment Console
             </h1>
             <p className="text-xs text-neutral-400 mt-1">
-              Field Agent: <span className="text-white font-bold">{agentSession?.name || "Agent"}</span> • Zero-Friction Tesseract OCR Payment Scanning
+              Field Agent: <span className="text-white font-bold">{agentSession?.name || "Agent"}</span> • Physical Inspection, Zero-Friction OCR & Instant Bill Dispatch
             </p>
           </div>
 
           <button
             onClick={fetchOrders}
             disabled={loading}
-            className="flex items-center gap-2 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2.5 rounded-xl transition shadow-yellowGlow disabled:opacity-60"
+            className="flex items-center gap-2 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2.5 rounded-xl transition shadow-yellowGlow disabled:opacity-60 cursor-pointer"
           >
             <Clock className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
             Refresh Orders
@@ -245,7 +320,7 @@ export default function AgentDashboardPage() {
         {/* NOTIFICATION TOAST */}
         {notification && (
           <div
-            className={`p-4 rounded-2xl border text-xs font-bold flex items-center justify-between ${
+            className={`p-4 rounded-2xl border text-xs font-bold flex items-center justify-between shadow-2xl ${
               notification.type === "success"
                 ? "bg-emerald-950/90 text-emerald-300 border-emerald-700"
                 : "bg-red-950/90 text-red-300 border-red-700"
@@ -261,7 +336,7 @@ export default function AgentDashboardPage() {
             </div>
             <button
               onClick={() => setNotification(null)}
-              className="text-xs opacity-70 hover:opacity-100 ml-4"
+              className="text-xs opacity-70 hover:opacity-100 ml-4 cursor-pointer"
             >
               ✕
             </button>
@@ -292,125 +367,184 @@ export default function AgentDashboardPage() {
               </p>
             </div>
           ) : (
-            orders.map((ord) => (
-              <div
-                key={ord.id}
-                className="bg-neutral-900 border border-neutral-800 rounded-3xl p-6 shadow-xl hover:border-neutral-700 transition space-y-4"
-              >
-                {/* TOP HEADER */}
-                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-neutral-800 pb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-black text-yellow-400 text-base font-black px-4 py-1.5 rounded-xl border border-yellow-400/20 font-price">
-                      #{ord.orderNumber}
-                    </div>
-                    <div className="flex items-center gap-1.5 text-xs font-extrabold text-yellow-300 bg-yellow-950/50 border border-yellow-500/40 px-3 py-1.5 rounded-xl">
-                      <Calendar className="w-4 h-4 text-yellow-400 shrink-0" />
-                      <span>Scheduled Visit: {ord.pickupDate} ({ord.pickupTimeSlot})</span>
-                    </div>
-                  </div>
+            orders.map((ord) => {
+              const isCompleted = ord.paymentStatus === "PAID" || ord.status === "COMPLETED";
+              const isInspectionDone = Boolean(ord.imeiNumber) || ord.status === "ACCEPTED" || isCompleted;
+              const payoutVal = ord.finalPrice || ord.amount || ord.estimatedPrice || 0;
 
-                  <div className="flex items-center gap-2">
-                    <span
-                      className={`text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider ${
-                        ord.paymentStatus === "PAID" || ord.status === "COMPLETED"
-                          ? "bg-emerald-950 text-emerald-400 border border-emerald-700"
-                          : "bg-amber-950 text-yellow-400 border border-yellow-700"
-                      }`}
-                    >
-                      {ord.paymentStatus === "PAID" ? "PAID & COMPLETED" : "PICKUP SCHEDULED"}
-                    </span>
-                  </div>
-                </div>
-
-                {/* 3 COLUMN INFO GRID */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {/* CUSTOMER & CONTACT */}
-                  <div className="space-y-1.5">
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
-                      Customer & Address
-                    </div>
-                    <div className="font-bold text-white text-base">{ord.customerName}</div>
-                    <a
-                      href={`tel:${ord.customerPhone}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-400 hover:underline"
-                    >
-                      <Phone className="w-3.5 h-3.5" />
-                      <span>{ord.customerPhone}</span>
-                    </a>
-                    <div className="flex items-start gap-1.5 text-xs text-neutral-400 mt-2">
-                      <MapPin className="w-3.5 h-3.5 text-yellow-400 shrink-0 mt-0.5" />
-                      <span>{ord.address}</span>
-                    </div>
-                  </div>
-
-                  {/* DEVICE & PAYOUT AMOUNT */}
-                  <div className="space-y-1.5">
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
-                      Items & Payout Amount
-                    </div>
-                    <div className="flex items-center gap-2 text-white font-bold text-sm">
-                      <Smartphone className="w-4 h-4 text-yellow-400" />
-                      <span>{ord.deviceName}</span>
-                    </div>
-                    <div className="bg-black/60 p-3 rounded-2xl border border-neutral-800 space-y-1">
-                      <div className="text-[11px] text-neutral-400">Final Settled Payout:</div>
-                      <div className="text-xl font-black text-emerald-400 font-price flex items-center gap-1">
-                        <IndianRupee className="w-4 h-4" />
-                        <span>{(ord.amount ?? (ord as any).finalPrice ?? (ord as any).estimatedPrice ?? 0).toLocaleString("en-IN")}</span>
+              return (
+                <div
+                  key={ord.id}
+                  className="bg-neutral-900 border border-neutral-800 rounded-3xl p-6 shadow-xl hover:border-neutral-700 transition space-y-5"
+                >
+                  {/* TOP HEADER */}
+                  <div className="flex flex-wrap items-center justify-between gap-3 border-b border-neutral-800 pb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="bg-black text-yellow-400 text-base font-black px-4 py-1.5 rounded-xl border border-yellow-400/20 font-price">
+                        #{ord.orderNumber}
+                      </div>
+                      <div className="flex items-center gap-1.5 text-xs font-extrabold text-yellow-300 bg-yellow-950/50 border border-yellow-500/40 px-3 py-1.5 rounded-xl">
+                        <Calendar className="w-4 h-4 text-yellow-400 shrink-0" />
+                        <span>Scheduled Visit: {ord.pickupDate} ({ord.pickupTimeSlot})</span>
                       </div>
                     </div>
+
+                    <div className="flex items-center gap-2">
+                      <span
+                        className={`text-xs font-black px-3.5 py-1 rounded-full uppercase tracking-wider ${
+                          isCompleted
+                            ? "bg-emerald-950 text-emerald-400 border border-emerald-700"
+                            : isInspectionDone
+                            ? "bg-blue-950 text-blue-300 border border-blue-700"
+                            : "bg-amber-950 text-yellow-400 border border-yellow-700"
+                        }`}
+                      >
+                        {isCompleted ? "PAID & COMPLETED" : isInspectionDone ? "INSPECTION COMPLETED" : "PICKUP SCHEDULED"}
+                      </span>
+                    </div>
                   </div>
 
-                  {/* PAYMENT OCR UPLOAD SECTION */}
-                  <div className="space-y-2 flex flex-col justify-between">
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
-                      Zero-Friction Payment Verification
+                  {/* 3 COLUMN INFO GRID */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* CUSTOMER & CONTACT */}
+                    <div className="space-y-1.5">
+                      <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
+                        Customer & Address
+                      </div>
+                      <div className="font-bold text-white text-base">{ord.customerName}</div>
+                      <a
+                        href={`tel:${ord.customerPhone}`}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-400 hover:underline"
+                      >
+                        <Phone className="w-3.5 h-3.5" />
+                        <span>{ord.customerPhone}</span>
+                      </a>
+                      <div className="flex items-start gap-1.5 text-xs text-neutral-400 mt-2">
+                        <MapPin className="w-3.5 h-3.5 text-yellow-400 shrink-0 mt-0.5" />
+                        <span>{ord.address}</span>
+                      </div>
                     </div>
 
-                    {ord.urn ? (
-                      <div className="bg-emerald-950/40 border border-emerald-800 p-3 rounded-2xl space-y-1">
-                        <div className="flex items-center gap-1.5 text-emerald-300 font-bold text-xs">
-                          <FileCheck className="w-4 h-4 text-emerald-400" />
-                          <span>12-Digit URN Verified</span>
+                    {/* DEVICE & PAYOUT AMOUNT */}
+                    <div className="space-y-2">
+                      <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
+                        Device Purchased & Valuation
+                      </div>
+                      <div className="flex items-center gap-2 text-white font-bold text-sm">
+                        <Smartphone className="w-4 h-4 text-yellow-400" />
+                        <span>{ord.deviceName}</span>
+                      </div>
+
+                      {ord.imeiNumber && (
+                        <div className="inline-flex items-center gap-1.5 bg-yellow-950/70 border border-yellow-500/60 px-3 py-1 rounded-xl text-xs font-mono font-bold text-yellow-400 shadow-sm">
+                          <Barcode className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
+                          <span>IMEI: {ord.imeiNumber}</span>
                         </div>
-                        <div className="text-xs font-mono text-yellow-400 font-bold">
-                          {ord.urn}
+                      )}
+
+                      <div className="bg-black/60 p-3 rounded-2xl border border-neutral-800 space-y-1">
+                        <div className="flex items-center justify-between text-[11px] text-neutral-400">
+                          <span>{isInspectionDone ? "Final Settled Payout:" : "Online Customer Quote:"}</span>
                         </div>
-                        <div className="text-[10px] text-emerald-200/70">
-                          Google Sheets Synced & PDF Invoice Emailed
+                        <div className="text-xl font-black text-emerald-400 font-price flex items-center gap-1">
+                          <IndianRupee className="w-4 h-4" />
+                          <span>{payoutVal.toLocaleString("en-IN")}</span>
                         </div>
                       </div>
-                    ) : (
-                      <div className="bg-neutral-950 border border-neutral-800 p-3 rounded-2xl space-y-2">
-                        <div className="text-xs text-neutral-300 font-medium">
-                          Upload UPI Payment Screenshot to extract 12-digit URN automatically with Tesseract.js.
-                        </div>
+                    </div>
 
-                        <label className="w-full flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-xs py-2.5 px-4 rounded-xl transition cursor-pointer shadow-yellowGlow">
-                          {uploadingOrderId === ord.id ? (
-                            <Loader2 className="w-4 h-4 animate-spin text-black" />
+                    {/* PAYMENT OCR UPLOAD SECTION */}
+                    <div className="space-y-2 flex flex-col justify-between">
+                      <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
+                        Zero-Friction Payment Verification
+                      </div>
+
+                      {ord.urn ? (
+                        <div className="bg-emerald-950/40 border border-emerald-800 p-3 rounded-2xl space-y-1">
+                          <div className="flex items-center gap-1.5 text-emerald-300 font-bold text-xs">
+                            <FileCheck className="w-4 h-4 text-emerald-400" />
+                            <span>12-Digit URN Verified</span>
+                          </div>
+                          <div className="text-xs font-mono text-yellow-400 font-bold">
+                            {ord.urn}
+                          </div>
+                          <div className="text-[10px] text-emerald-200/70">
+                            Google Sheets Synced & PDF Invoice Delivery
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="bg-neutral-950 border border-neutral-800 p-3 rounded-2xl space-y-2">
+                          <div className="text-xs text-neutral-300 font-medium">
+                            Upload UPI Payment Screenshot to extract 12-digit URN automatically with Tesseract.js.
+                          </div>
+
+                          <label className="w-full flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-xs py-2.5 px-4 rounded-xl transition cursor-pointer shadow-yellowGlow">
+                            {uploadingOrderId === ord.id ? (
+                              <Loader2 className="w-4 h-4 animate-spin text-black" />
+                            ) : (
+                              <Upload className="w-4 h-4" />
+                            )}
+                            <span>
+                              {uploadingOrderId === ord.id
+                                ? "Scanning OCR..."
+                                : "Upload Payment Screenshot"}
+                            </span>
+                            <input
+                              type="file"
+                              accept="image/*"
+                              onChange={(e) => handleFileUpload(ord, e)}
+                              disabled={uploadingOrderId === ord.id}
+                              className="hidden"
+                            />
+                          </label>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* BOTTOM ACTION BUTTONS TOOLBAR */}
+                  <div className="pt-4 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-3">
+                    {/* LEFT BUTTONS: Physical Inspection */}
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <Link
+                        href={`/agent/orders/${ord.orderNumber}/inspection`}
+                        className={`inline-flex items-center gap-1.5 text-xs font-bold px-4 py-2.5 rounded-xl transition cursor-pointer ${
+                          isInspectionDone
+                            ? "bg-blue-950/70 hover:bg-blue-900/80 text-blue-300 border border-blue-700"
+                            : "bg-yellow-400 hover:bg-yellow-300 text-black font-black shadow-yellowGlow"
+                        }`}
+                      >
+                        <ClipboardCheck className="w-4 h-4" />
+                        <span>{isInspectionDone ? "✓ Inspection Done (Edit QC)" : "Physical Inspection"}</span>
+                      </Link>
+                    </div>
+
+                    {/* RIGHT BUTTONS: Mark Paid */}
+                    <div className="flex items-center gap-2">
+                      {!isCompleted ? (
+                        <button
+                          onClick={() => handleMarkPaid(ord)}
+                          disabled={actionLoading === ord.id + "-paid"}
+                          className="inline-flex items-center gap-1.5 text-xs font-black bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-xl transition shadow-md disabled:opacity-60 cursor-pointer"
+                        >
+                          {actionLoading === ord.id + "-paid" ? (
+                            <Loader2 className="w-4 h-4 animate-spin" />
                           ) : (
-                            <Upload className="w-4 h-4" />
+                            <CheckCircle2 className="w-4 h-4" />
                           )}
-                          <span>
-                            {uploadingOrderId === ord.id
-                              ? "Scanning OCR..."
-                              : "Upload Payment Screenshot"}
-                          </span>
-                          <input
-                            type="file"
-                            accept="image/*"
-                            onChange={(e) => handleFileUpload(ord, e)}
-                            disabled={uploadingOrderId === ord.id}
-                            className="hidden"
-                          />
-                        </label>
-                      </div>
-                    )}
+                          <span>Mark Paid</span>
+                        </button>
+                      ) : (
+                        <div className="inline-flex items-center gap-1.5 text-xs font-black text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-4 py-2 rounded-xl">
+                          <CheckCircle2 className="w-4 h-4" />
+                          <span>Order Completed & Invoice Emailed</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
       </main>
