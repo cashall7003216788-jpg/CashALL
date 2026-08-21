@@ -22,36 +22,47 @@ export async function POST(req: Request) {
       );
     }
 
-    // Default support master account or user created in DB
-    const isMasterSupport = (inputName.toLowerCase() === "support agent" || inputName.toLowerCase() === "support") && inputPassword === "Ank933967@";
+    // Exact master password check
+    if (inputPassword !== "Ank933967@") {
+      return NextResponse.json(
+        { success: false, error: "Invalid Support password." },
+        { status: 401 }
+      );
+    }
+
+    // Check if test master user (SANGEET SHAW / SUPPORT AGENT / SUPPORT)
+    const isTestMaster =
+      inputName.toLowerCase() === "sangeet shaw" ||
+      inputName.toLowerCase() === "support agent" ||
+      inputName.toLowerCase() === "support";
 
     let supportUser = null;
-    if (!isMasterSupport) {
+    if (!isTestMaster) {
       supportUser = await prisma.user.findFirst({
         where: {
-          name: { equals: inputName, mode: "insensitive" },
+          OR: [
+            { name: { equals: inputName, mode: "insensitive" } },
+            { email: { equals: `${inputName.toLowerCase().replace(/\s+/g, ".")}@cashall.in`, mode: "insensitive" } },
+            { phone: inputName },
+          ],
           deletedAt: null,
         },
       });
     }
 
-    if (!isMasterSupport && (!supportUser || inputPassword !== "Ank933967@")) {
-      return NextResponse.json(
-        { success: false, error: "Invalid Support user name or password." },
-        { status: 401 }
-      );
-    }
+    const resolvedName = isTestMaster
+      ? (inputName.toLowerCase() === "sangeet shaw" ? "SANGEET SHAW" : "Support Agent")
+      : (supportUser?.name || inputName);
 
-    const name = isMasterSupport ? "Support Agent" : (supportUser?.name || inputName);
     const token = `tok_support_${Date.now()}`;
 
     return NextResponse.json({
       success: true,
       token,
       supportUser: {
-        id: supportUser?.id || "support_master_1",
-        name,
-        email: "support@cashall.in",
+        id: supportUser?.id || `support_${resolvedName.toLowerCase().replace(/\s+/g, "_")}`,
+        name: resolvedName,
+        email: supportUser?.email || `${resolvedName.toLowerCase().replace(/\s+/g, ".")}@cashall.in`,
         role: "SUPPORT",
       },
     });

@@ -54,7 +54,7 @@ export function AdminSidebar() {
     { label: "Quotes Repository", href: "/admin/quotes", icon: FileText },
     { label: "Order Management", href: "/admin/orders", icon: ShoppingBag },
     { label: "Agent Management", href: "/admin/agents", icon: UserCheck },
-    { label: "Support Team Portal", href: "/support/dashboard", icon: Headset },
+    { label: "Support Team Management", href: "/admin/support", icon: Headset },
     { label: "Transaction Audit Ledger", href: "/admin/ledger", icon: Receipt },
     { label: "Reports & Analytics", href: "/admin/reports", icon: BarChart3 },
     { label: "Physical Inspections", href: "/admin/inspections", icon: ClipboardCheck },
