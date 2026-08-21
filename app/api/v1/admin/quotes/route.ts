@@ -12,10 +12,7 @@ export const GET = apiWrapper(async (req: NextRequest) => {
 
   const [quotes, total] = await Promise.all([
     prisma.quote.findMany({
-      where: {
-        deletedAt: null,
-        quoteNumber: { in: ["Q569571-6808", "Q593558-6690", "CAQ-367384"] },
-      },
+      where: { deletedAt: null },
       include: {
         orders: {
           include: {

@@ -17,14 +17,14 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     completedSales,
     recentOrdersRaw,
   ] = await Promise.all([
-    prisma.quote.count({ where: { deletedAt: null, quoteNumber: { in: MAIN_QUOTES } } }),
-    prisma.order.count({ where: { deletedAt: null, orderNumber: { in: MAIN_ORDERS } } }),
-    prisma.order.count({ where: { status: "PICKUP_SCHEDULED", deletedAt: null, orderNumber: { in: MAIN_ORDERS } } }),
-    prisma.order.count({ where: { status: "INSPECTION_STARTED", deletedAt: null, orderNumber: { in: MAIN_ORDERS } } }),
+    prisma.quote.count({ where: { deletedAt: null } }),
+    prisma.order.count({ where: { deletedAt: null } }),
+    prisma.order.count({ where: { status: "PICKUP_SCHEDULED", deletedAt: null } }),
+    prisma.order.count({ where: { status: "INSPECTION_STARTED", deletedAt: null } }),
     prisma.payment.count({ where: { status: "PENDING" } }),
-    prisma.order.count({ where: { status: "COMPLETED", deletedAt: null, orderNumber: { in: MAIN_ORDERS } } }),
+    prisma.order.count({ where: { status: "COMPLETED", deletedAt: null } }),
     prisma.order.findMany({
-      where: { deletedAt: null, orderNumber: { in: MAIN_ORDERS } },
+      where: { deletedAt: null },
       include: {
         user: { select: { name: true, phone: true } },
         quote: true,

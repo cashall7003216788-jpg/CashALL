@@ -105,8 +105,7 @@ function AdminInspectionsContent() {
             updatedAt: ord.updatedAt || new Date().toISOString(),
           }));
 
-          const filteredMapped = mapped.filter((o) => ["CA33039", "CA83848", "CA36738"].includes(o.orderNumber));
-          setAllOrders(filteredMapped);
+          setAllOrders(mapped);
 
           // Update active order if selected
           if (orderIdParam) {
