@@ -9,7 +9,12 @@ export function SupportWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  if (pathname?.startsWith("/admin") || pathname?.startsWith("/partner")) {
+  if (
+    pathname?.startsWith("/admin") ||
+    pathname?.startsWith("/support") ||
+    pathname?.startsWith("/agent") ||
+    pathname?.startsWith("/partner")
+  ) {
     return null;
   }
 
