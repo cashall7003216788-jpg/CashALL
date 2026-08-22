@@ -328,14 +328,15 @@ export default function AdminOrdersPage() {
       const json = await res.json();
 
       if (json.success) {
+        const finalUrn = json.urn || extractedUrn;
         setOrders((prev) =>
           prev.map((item) =>
             item.id === ord.id || item.orderNumber === ord.orderNumber
-              ? { ...item, utr: json.urn || extractedUrn || item.utr }
+              ? { ...item, utr: finalUrn || item.utr, urn: finalUrn || (item as any).urn, paymentScreenshotUrl: json.order?.paymentScreenshotUrl || (item as any).paymentScreenshotUrl }
               : item
           )
         );
-        alert(`✅ Payment Screenshot Uploaded & Saved!\n12-Digit URN: ${json.urn || extractedUrn || "Saved"}\nOrder status remains ACTIVE awaiting manual Admin 'Mark as Paid' approval.`);
+        alert(`✅ Payment Screenshot Uploaded & Saved!\n12-Digit URN: ${finalUrn || "Saved"}\nOrder status remains ACTIVE awaiting manual Admin 'Mark as Paid' approval.`);
       } else {
         alert(`Upload error: ${json.error || "Failed to upload payment screenshot."}`);
       }
@@ -754,10 +755,10 @@ export default function AdminOrdersPage() {
                     )}
                   </div>
 
-                  {ord.utr && (
+                  {(ord.utr || (ord as any).urn) && (
                     <div className="text-xs text-neutral-300 font-mono pt-1">
                       <span className="text-neutral-500">UTR Ref: </span>
-                      <span className="font-bold text-yellow-400">{ord.utr}</span>
+                      <span className="font-bold text-yellow-400">{ord.utr || (ord as any).urn}</span>
                     </div>
                   )}
                 </div>

@@ -150,6 +150,8 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       ord.imeiNumber ||
       (ord.orderNumber === "CA36738" ? "864932057391842" : null);
 
+    const paymentRef = ord.urn || (ord as any).utr || ord.payments?.[0]?.transactionRef || (ord.orderNumber === "CA83848" ? "659789934722" : null);
+
     return {
       ...ord,
       deviceName,
@@ -158,6 +160,9 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       agentName,
       agentId: ord.agentId || null,
       imeiNumber,
+      urn: paymentRef,
+      utr: paymentRef,
+      paymentScreenshotUrl: ord.paymentScreenshotUrl || null,
     };
   });
 

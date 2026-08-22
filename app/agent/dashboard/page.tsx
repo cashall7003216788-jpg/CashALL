@@ -184,6 +184,13 @@ export default function AgentDashboardPage() {
 
       if (json.success) {
         const finalUrn = json.urn || extractedUrn;
+        setOrders((prev) =>
+          prev.map((item) =>
+            item.id === ord.id || item.orderNumber === ord.orderNumber
+              ? { ...item, urn: finalUrn || item.urn, paymentScreenshotUrl: json.order?.paymentScreenshotUrl || item.paymentScreenshotUrl }
+              : item
+          )
+        );
         setNotification({
           type: "success",
           msg: finalUrn
@@ -484,14 +491,14 @@ export default function AgentDashboardPage() {
                         Zero-Friction Payment Verification
                       </div>
 
-                      {ord.urn ? (
+                      {(ord.urn || (ord as any).utr) ? (
                         <div className="bg-emerald-950/40 border border-emerald-800 p-3 rounded-2xl space-y-1">
                           <div className="flex items-center gap-1.5 text-emerald-300 font-bold text-xs">
                             <FileCheck className="w-4 h-4 text-emerald-400" />
                             <span>12-Digit URN Verified</span>
                           </div>
                           <div className="text-xs font-mono text-yellow-400 font-bold">
-                            {ord.urn}
+                            {ord.urn || (ord as any).utr}
                           </div>
                           <div className="text-[10px] text-emerald-200/70">
                             Google Sheets Synced & PDF Invoice Delivery

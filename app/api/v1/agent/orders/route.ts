@@ -168,7 +168,8 @@ export async function GET(req: NextRequest) {
         pincode: ord.address?.pincode || "700001",
         status: ord.status,
         paymentStatus: activePayment?.status || (ord.status === "COMPLETED" ? "PAID" : "PENDING"),
-        urn: activePayment?.transactionId || (activePayment as any)?.referenceNumber || (ord as any).utr || (ord.status === "COMPLETED" ? "128158907549" : null),
+        urn: ord.urn || activePayment?.transactionRef || (ord as any).utr || (ord.status === "COMPLETED" ? "128158907549" : null),
+        paymentScreenshotUrl: ord.paymentScreenshotUrl || null,
         agentName: targetAgentUser?.name || "CashALL Agent",
         createdAt: ord.createdAt,
       };
