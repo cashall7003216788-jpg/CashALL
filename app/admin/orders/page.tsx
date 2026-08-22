@@ -279,10 +279,30 @@ export default function AdminOrdersPage() {
         await worker.terminate();
 
         const recognizedText = ret.data.text || "";
-        const match = recognizedText.match(/\b\d{12}\b/);
-        if (match && match[0]) {
-          extractedUrn = match[0];
-        }
+
+        // Robust 12-Digit UPI / UTR / Transaction ID Extraction
+        const extractUtr = (text: string): string => {
+          if (!text) return "";
+          const labelMatch = text.match(/(?:UPI\s*Ref(?:\s*No)?|UTR(?:\s*No)?|Txn\s*ID|Transaction\s*ID|Ref\s*No|Order\s*ID|Reference(?:\s*No)?)[:\s-]*([0-9\s-]{12,20})/i);
+          if (labelMatch && labelMatch[1]) {
+            const digits = labelMatch[1].replace(/\D/g, "");
+            if (digits.length >= 12) return digits.substring(0, 12);
+          }
+          const directMatch = text.match(/\b\d{12}\b/);
+          if (directMatch) return directMatch[0];
+          const spacedMatch = text.match(/\b\d{3,6}[\s-]+\d{3,6}[\s-]+\d{3,6}\b/);
+          if (spacedMatch) {
+            const digits = spacedMatch[0].replace(/\D/g, "");
+            if (digits.length === 12) return digits;
+          }
+          for (const line of text.split('\n')) {
+            const d = line.replace(/\D/g, "");
+            if (d.length === 12) return d;
+          }
+          return "";
+        };
+
+        extractedUrn = extractUtr(recognizedText);
       } catch (ocrErr) {
         console.warn("Tesseract.js OCR fallback notice:", ocrErr);
       }

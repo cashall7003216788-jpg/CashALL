@@ -124,11 +124,31 @@ export default function AgentDashboardPage() {
         const recognizedText = ret.data.text || "";
         console.log("OCR Recognized Text:", recognizedText);
 
-        // Match 12-digit standard UTR or UPI ref numbers
-        const match = recognizedText.match(/(?:UPI\s*Ref(?:\s*No)?|UTR(?:\s*No)?|Txn\s*ID|Transaction\s*ID|Ref\s*No)?[:\s-]*\b(\d{12})\b/i) ||
-                      recognizedText.match(/\b\d{12}\b/);
-        if (match && (match[1] || match[0])) {
-          extractedUrn = match[1] || match[0];
+        // Robust 12-Digit UPI / UTR / Transaction ID Extraction
+        const extractUtr = (text: string): string => {
+          if (!text) return "";
+          const labelMatch = text.match(/(?:UPI\s*Ref(?:\s*No)?|UTR(?:\s*No)?|Txn\s*ID|Transaction\s*ID|Ref\s*No|Order\s*ID|Reference(?:\s*No)?)[:\s-]*([0-9\s-]{12,20})/i);
+          if (labelMatch && labelMatch[1]) {
+            const digits = labelMatch[1].replace(/\D/g, "");
+            if (digits.length >= 12) return digits.substring(0, 12);
+          }
+          const directMatch = text.match(/\b\d{12}\b/);
+          if (directMatch) return directMatch[0];
+          const spacedMatch = text.match(/\b\d{3,6}[\s-]+\d{3,6}[\s-]+\d{3,6}\b/);
+          if (spacedMatch) {
+            const digits = spacedMatch[0].replace(/\D/g, "");
+            if (digits.length === 12) return digits;
+          }
+          for (const line of text.split('\n')) {
+            const d = line.replace(/\D/g, "");
+            if (d.length === 12) return d;
+          }
+          return "";
+        };
+
+        extractedUrn = extractUtr(recognizedText);
+
+        if (extractedUrn) {
           setOcrStatus(`✨ Auto-Extracted 12-Digit UTR: ${extractedUrn}`);
         } else {
           setOcrStatus("⚠️ OCR could not detect 12 digits automatically. Saving screenshot...");
@@ -136,6 +156,14 @@ export default function AgentDashboardPage() {
       } catch (ocrErr) {
         console.warn("Tesseract.js OCR fallback notice:", ocrErr);
         setOcrStatus("Uploading payment screenshot...");
+      }
+
+      if (!extractedUrn) {
+        const manualInput = prompt(
+          `Enter 12-Digit URN / Bank UTR / Transaction ID for Order #${ord.orderNumber}:`,
+          ord.urn || ""
+        );
+        if (manualInput) extractedUrn = manualInput.trim();
       }
 
       setOcrStatus("Saving payment screenshot & locking UTR in database...");

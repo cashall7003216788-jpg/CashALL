@@ -31,12 +31,14 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
 
   const data = validation.data;
 
+  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(orderIdentifier);
+  const cleanOrderNum = orderIdentifier.replace(/^#/, "");
+
   const order = await prisma.order.findFirst({
     where: {
-      OR: [
-        { id: orderIdentifier },
-        { orderNumber: orderIdentifier },
-      ],
+      OR: isUuid
+        ? [{ id: orderIdentifier }, { orderNumber: cleanOrderNum }]
+        : [{ orderNumber: cleanOrderNum }, { orderNumber: `#${cleanOrderNum}` }],
       deletedAt: null,
     },
   });

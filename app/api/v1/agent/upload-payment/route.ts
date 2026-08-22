@@ -17,10 +17,15 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Find target order
+    const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(orderId);
+    const cleanOrderNum = orderId.replace(/^#/, "");
+
+    // Find target order safely without Prisma UUID cast error
     const order = await prisma.order.findFirst({
       where: {
-        OR: [{ id: orderId }, { orderNumber: orderId }],
+        OR: isUuid
+          ? [{ id: orderId }, { orderNumber: cleanOrderNum }]
+          : [{ orderNumber: cleanOrderNum }, { orderNumber: `#${cleanOrderNum}` }],
         deletedAt: null,
       },
       include: {

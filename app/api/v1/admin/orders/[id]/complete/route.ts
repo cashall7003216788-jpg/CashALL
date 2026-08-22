@@ -13,12 +13,14 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   const body = await req.json().catch(() => ({}));
   const { finalPrice, utr } = body;
 
+  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(params.id);
+  const cleanOrderNum = params.id.replace(/^#/, "");
+
   const order = await prisma.order.findFirst({
     where: {
-      OR: [
-        { id: params.id },
-        { orderNumber: params.id },
-      ],
+      OR: isUuid
+        ? [{ id: params.id }, { orderNumber: cleanOrderNum }]
+        : [{ orderNumber: cleanOrderNum }, { orderNumber: `#${cleanOrderNum}` }],
       deletedAt: null,
     },
     include: {
