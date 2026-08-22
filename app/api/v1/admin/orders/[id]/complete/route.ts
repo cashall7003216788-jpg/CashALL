@@ -100,7 +100,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     logger.warn(`Google Sheets auto-sync notice on completion for order #${order.orderNumber}: ${syncErr.message}`)
   );
 
-  // 4. Send PDF Invoice (with NO UTR) to customer via Resend API
+  // 4. Send PDF Invoice to customer via Hostinger Domain SMTP
   const customerEmail = order.user?.email || (order as any).customerEmail;
   if (customerEmail && customerEmail.includes("@")) {
     let deviceName = "Mobile Device";
@@ -109,17 +109,21 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
       deviceName = m.brand ? `${m.brand.name} ${m.name}` : m.name;
     }
 
-    EmailService.sendInvoicePdfEmail({
-      to: customerEmail,
-      orderNumber: order.orderNumber,
-      customerName: order.user?.name || "Customer",
-      customerPhone: phoneStr,
-      customerAddress: customerAddressStr,
-      deviceName,
-      finalPrice: price,
-      urn: transactionRef,
-      agentName,
-    }).catch((emailErr) => logger.error(`Failed to send PDF invoice email to ${customerEmail}:`, emailErr));
+    try {
+      await EmailService.sendInvoicePdfEmail({
+        to: customerEmail,
+        orderNumber: order.orderNumber,
+        customerName: order.user?.name || "Customer",
+        customerPhone: phoneStr,
+        customerAddress: customerAddressStr,
+        deviceName,
+        finalPrice: price,
+        urn: transactionRef,
+        agentName,
+      });
+    } catch (emailErr: any) {
+      logger.error(`Failed to send PDF invoice email to ${customerEmail}:`, emailErr);
+    }
   }
 
   logger.info(`[ORDER COMPLETED] #${order.orderNumber} completed by Admin. Sheets synced & PDF invoice dispatched.`);

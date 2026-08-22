@@ -120,17 +120,21 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
         deviceName = m.brand ? `${m.brand.name} ${m.name}` : m.name;
       }
 
-      EmailService.sendInvoicePdfEmail({
-        to: customerEmail,
-        orderNumber: order.orderNumber,
-        customerName: order.user?.name || "Customer",
-        customerPhone: phoneStr,
-        customerAddress: customerAddressStr,
-        deviceName,
-        finalPrice: price,
-        urn: transactionRef,
-        agentName: activeAgentName,
-      }).catch((emailErr) => logger.error(`Failed to send PDF invoice email to ${customerEmail}:`, emailErr));
+      try {
+        await EmailService.sendInvoicePdfEmail({
+          to: customerEmail,
+          orderNumber: order.orderNumber,
+          customerName: order.user?.name || "Customer",
+          customerPhone: phoneStr,
+          customerAddress: customerAddressStr,
+          deviceName,
+          finalPrice: price,
+          urn: transactionRef,
+          agentName: activeAgentName,
+        });
+      } catch (emailErr: any) {
+        logger.error(`Failed to send PDF invoice email to ${customerEmail}:`, emailErr);
+      }
     }
 
     logger.info(`[AGENT COMPLETED ORDER] #${order.orderNumber} marked COMPLETED & PAID by ${activeAgentName}. Sheets synced & PDF invoice dispatched.`);

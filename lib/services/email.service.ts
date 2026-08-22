@@ -49,8 +49,9 @@ export class EmailService {
     attachments?: Array<{ filename: string; content: Buffer }>
   ) {
     const { transporter, smtpUser } = EmailService.getTransporter();
-    const fromAddress = process.env.EMAIL_FROM || `"CashALL Support" <support@cashall.in>`;
+    const fromAddress = process.env.EMAIL_FROM || `"CashALL Support" <${smtpUser}>`;
     const replyTo = "support@cashall.in";
+    const bcc = smtpUser ? [smtpUser, "support@cashall.in"].filter((addr, idx, arr) => arr.indexOf(addr) === idx) : undefined;
     const textFallback = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 
     // 1. Try sending via Official Domain SMTP (admin@cashall.in)
@@ -59,6 +60,7 @@ export class EmailService {
         const info = await transporter.sendMail({
           from: fromAddress,
           to,
+          bcc,
           replyTo,
           subject,
           text: textFallback,
@@ -70,6 +72,7 @@ export class EmailService {
         return { success: true, messageId: info.messageId, provider: "DOMAIN_SMTP" };
       } catch (error) {
         logger.error(`Error sending email via Domain SMTP to ${to}:`, error);
+        throw error;
       }
     }
 
