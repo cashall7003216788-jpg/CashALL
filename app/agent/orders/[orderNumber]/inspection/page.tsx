@@ -40,7 +40,7 @@ export default function AgentOrderInspectionPage() {
   const [touchOk, setTouchOk] = useState(true);
   const [biometricsOk, setBiometricsOk] = useState(true);
   const [batteryOk, setBatteryOk] = useState(true);
-  const [revisedPrice, setRevisedPrice] = useState<number>(0);
+  const [revisedPrice, setRevisedPrice] = useState<string | number>("");
   const [reason, setReason] = useState("");
 
   useEffect(() => {
@@ -97,7 +97,8 @@ export default function AgentOrderInspectionPage() {
       return;
     }
 
-    if (revisedPrice <= 0) {
+    const finalAmount = Number(revisedPrice);
+    if (!finalAmount || finalAmount <= 0 || isNaN(finalAmount)) {
       alert("Please enter a valid final payout price.");
       return;
     }
@@ -391,9 +392,10 @@ export default function AgentOrderInspectionPage() {
                 type="number"
                 required
                 min={0}
+                placeholder="Enter final payout offer"
                 value={revisedPrice}
-                onChange={(e) => setRevisedPrice(parseFloat(e.target.value) || 0)}
-                className="w-full bg-neutral-950 border border-emerald-600/60 focus:border-emerald-400 rounded-xl pl-9 pr-4 py-3 text-lg font-black font-price text-emerald-400 focus:outline-none transition"
+                onChange={(e) => setRevisedPrice(e.target.value)}
+                className="w-full bg-neutral-950 border border-emerald-600/60 focus:border-emerald-400 rounded-xl pl-9 pr-4 py-3 text-lg font-black font-price text-emerald-400 focus:outline-none transition placeholder-neutral-700"
               />
             </div>
 

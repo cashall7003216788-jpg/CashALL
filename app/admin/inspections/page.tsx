@@ -31,7 +31,7 @@ function AdminInspectionsContent() {
   const [customerEmail, setCustomerEmail] = useState("");
   const [screenFinding, setScreenFinding] = useState("Flawless Screen");
   const [bodyFinding, setBodyFinding] = useState("Flawless Body");
-  const [revisedPrice, setRevisedPrice] = useState(0);
+  const [revisedPrice, setRevisedPrice] = useState<string | number>("");
   const [reason, setReason] = useState("");
   const [saved, setSaved] = useState(false);
 
@@ -58,13 +58,13 @@ function AdminInspectionsContent() {
       const match = initialList.find((o) => o.orderNumber === orderIdParam || o.id === orderIdParam);
       if (match) {
         setOrder(match);
-        setRevisedPrice(match.revisedPrice || match.estimatedPrice || 0);
+        setRevisedPrice(match.revisedPrice || match.estimatedPrice || "");
         setImei(match.imeiNumber || "");
         setCustomerEmail(match.customerEmail || "");
       }
     } else if (initialList.length > 0) {
       setOrder(initialList[0]);
-      setRevisedPrice(initialList[0].revisedPrice || initialList[0].estimatedPrice || 0);
+      setRevisedPrice(initialList[0].revisedPrice || initialList[0].estimatedPrice || "");
       setImei(initialList[0].imeiNumber || "");
       setCustomerEmail(initialList[0].customerEmail || "");
     }
@@ -112,7 +112,7 @@ function AdminInspectionsContent() {
             const matched = mapped.find((o) => o.orderNumber === orderIdParam || o.id === orderIdParam);
             if (matched) {
               setOrder(matched);
-              setRevisedPrice(matched.revisedPrice || matched.estimatedPrice || 0);
+              setRevisedPrice(matched.revisedPrice || matched.estimatedPrice || "");
               setImei(matched.imeiNumber || "");
               setCustomerEmail(matched.customerEmail || "");
             }
@@ -124,7 +124,7 @@ function AdminInspectionsContent() {
 
   const handleSelectOrder = (selectedOrd: OrderData) => {
     setOrder(selectedOrd);
-    setRevisedPrice(selectedOrd.revisedPrice || selectedOrd.estimatedPrice || 0);
+    setRevisedPrice(selectedOrd.revisedPrice || selectedOrd.estimatedPrice || "");
     setImei(selectedOrd.imeiNumber || "");
     setCustomerEmail(selectedOrd.customerEmail || "");
     setSaved(false);
@@ -138,6 +138,8 @@ function AdminInspectionsContent() {
     setSaving(true);
     const token = getAdminToken();
 
+    const finalValuation = Number(revisedPrice) || 0;
+
     try {
       // 1. Post inspection result to DB dedicated inspection route
       const res = await fetch(`/api/v1/admin/orders/${order.orderNumber}/inspection`, {
@@ -147,7 +149,7 @@ function AdminInspectionsContent() {
           imei: imei.trim(),
           screenFinding,
           bodyFinding,
-          revisedPrice,
+          revisedPrice: finalValuation,
           reason,
           customerEmail: customerEmail.trim(),
         }),
@@ -163,7 +165,7 @@ function AdminInspectionsContent() {
         ...order,
         imeiNumber: imei.trim(),
         customerEmail: customerEmail.trim(),
-        revisedPrice,
+        revisedPrice: finalValuation,
         priceDifferenceReason: reason,
         status: "INSPECTION_COMPLETED",
         updatedAt: new Date().toISOString(),
@@ -314,11 +316,12 @@ function AdminInspectionsContent() {
                     </label>
                     <input
                       type="number"
+                      placeholder="e.g. 25000"
                       value={revisedPrice}
-                      onChange={(e) => setRevisedPrice(Number(e.target.value))}
+                      onChange={(e) => setRevisedPrice(e.target.value)}
                       required
                       min={0}
-                      className="w-full px-4 py-2.5 text-lg font-black text-green-400 bg-neutral-800 rounded-xl border border-neutral-700 focus:outline-none focus:border-yellow-400 font-price"
+                      className="w-full px-4 py-2.5 text-lg font-black text-green-400 bg-neutral-800 rounded-xl border border-neutral-700 focus:outline-none focus:border-yellow-400 font-price placeholder-neutral-600"
                     />
                   </div>
 

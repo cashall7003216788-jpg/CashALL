@@ -230,8 +230,9 @@ export default function AdminPricingPage() {
               <span className="text-xs font-extrabold text-gray-500">Sample Base Price: ₹</span>
               <input
                 type="number"
-                value={sampleBasePrice}
-                onChange={(e) => setSampleBasePrice(Math.max(1000, Number(e.target.value)))}
+                value={sampleBasePrice === 0 ? "" : sampleBasePrice}
+                placeholder="10000"
+                onChange={(e) => setSampleBasePrice(e.target.value === "" ? 0 : Number(e.target.value))}
                 className="w-28 text-sm font-extrabold bg-transparent border-none focus:outline-none text-brand-black"
               />
             </div>
@@ -292,8 +293,9 @@ export default function AdminPricingPage() {
                                 type="number"
                                 min="0"
                                 max="100"
-                                value={currentVal}
-                                onChange={(e) => rule && handleRuleChange(rule.id, Math.max(0, Number(e.target.value)))}
+                                placeholder="0"
+                                value={currentVal === 0 ? "" : currentVal}
+                                onChange={(e) => rule && handleRuleChange(rule.id, e.target.value === "" ? 0 : Number(e.target.value))}
                                 className="w-24 pl-3 pr-6 py-1.5 text-xs font-extrabold bg-white rounded-xl border border-gray-300 focus:outline-none focus:border-brand-yellow shadow-sm"
                               />
                               <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs font-black text-gray-400">
