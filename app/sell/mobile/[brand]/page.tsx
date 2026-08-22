@@ -16,10 +16,19 @@ export default function ModelSelectionPage() {
   const [search, setSearch] = useState("");
   const [selectedSeriesId, setSelectedSeriesId] = useState<string | null>(null);
 
-  const brand = INITIAL_BRANDS.find((b) => b.slug === brandSlug) || INITIAL_BRANDS[0];
+  const brand = INITIAL_BRANDS.find(
+    (b) => b.slug.toLowerCase() === brandSlug.toLowerCase()
+  ) || {
+    id: `b-${brandSlug}`,
+    name: brandSlug.toUpperCase(),
+    slug: brandSlug,
+    category: "MOBILE",
+  };
 
   const brandModels = INITIAL_MODELS.filter(
-    (m) => m.brandId === brand.id && m.category === "MOBILE"
+    (m) =>
+      (m.brandId === brand.id || m.brandSlug?.toLowerCase() === brandSlug.toLowerCase()) &&
+      (m.category === "MOBILE" || !m.category)
   );
 
   const availableSeries = getSeriesForBrand(brand.slug);

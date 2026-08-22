@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { INITIAL_BRANDS, BrandData } from "@/lib/store";
+import { INITIAL_BRANDS, INITIAL_MODELS, BrandData } from "@/lib/store";
 import { Search, ChevronRight } from "lucide-react";
 import { BrandIcon } from "@/components/common/BrandIcon";
 
@@ -15,7 +15,7 @@ export default function BrandSelectionPage() {
   useEffect(() => {
     async function loadBrands() {
       try {
-        const res = await fetch("/api/v1/catalog");
+        const res = await fetch("/api/v1/catalog?category=MOBILE");
         const json = await res.json();
         if (json.success && Array.isArray(json.data?.brands) && json.data.brands.length > 0) {
           const apiBrands = json.data.brands;
@@ -35,7 +35,16 @@ export default function BrandSelectionPage() {
   }, []);
 
   const mobileBrands = brands.filter(
-    (b) => b.category === "MOBILE" || b.category === "BOTH"
+    (b) =>
+      b.category === "MOBILE" ||
+      b.category === "BOTH" ||
+      b.category === "ALL" ||
+      b.category === "MOBILE_TABLET" ||
+      INITIAL_MODELS.some(
+        (m) =>
+          (m.brandId === b.id || m.brandSlug?.toLowerCase() === b.slug?.toLowerCase()) &&
+          m.category === "MOBILE"
+      )
   );
 
   const filteredBrands = mobileBrands.filter((b) =>
