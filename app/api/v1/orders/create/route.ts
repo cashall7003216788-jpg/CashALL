@@ -230,8 +230,24 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    // 4. Create Order Record
-    const orderNumber = `CA${Math.floor(10000 + Math.random() * 90000)}`;
+    // 4. Create Order Record with matching Order ID (CAQ12345 -> CA12345)
+    let orderNumber = "";
+    if (quote?.quoteNumber) {
+      const digits = quote.quoteNumber.replace(/^(CAQ|Q)-?/i, "").replace(/[^0-9]/g, "");
+      if (digits) {
+        orderNumber = `CA${digits}`;
+      }
+    }
+    if (!orderNumber) {
+      orderNumber = `CA${Math.floor(10000 + Math.random() * 90000)}`;
+    }
+
+    // Avoid collision if order already exists with this orderNumber
+    const existingOrder = await prisma.order.findUnique({ where: { orderNumber } });
+    if (existingOrder) {
+      orderNumber = `CA${Math.floor(10000 + Math.random() * 90000)}`;
+    }
+
     const order = await prisma.order.create({
       data: {
         orderNumber,
@@ -244,6 +260,14 @@ export async function POST(req: NextRequest) {
         finalPrice: estimatedPrice,
       },
     });
+
+    // Mark Quote as CONVERTED
+    try {
+      await prisma.quote.update({
+        where: { id: quote.id },
+        data: { status: "CONVERTED" },
+      });
+    } catch (e) {}
 
     // 5. Create Pickup Schedule
     await prisma.pickup.create({

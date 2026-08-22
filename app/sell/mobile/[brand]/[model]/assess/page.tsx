@@ -18,6 +18,7 @@ import {
   INITIAL_PRICING_RULES,
   QuoteData,
 } from "@/lib/store";
+import { saveQuoteToCart } from "@/lib/cart";
 import {
   ChevronLeft,
   ChevronRight,
@@ -280,7 +281,8 @@ export default function ConditionAssessmentPage() {
     }
 
     const quoteId = `quote-${Date.now()}`;
-    const quoteNumber = `CAQ-${Math.floor(100000 + Math.random() * 900000)}`;
+    const random5Digits = Math.floor(10000 + Math.random() * 90000);
+    const quoteNumber = `CAQ${random5Digits}`;
 
     const selectedAnswersSummary = {
       callsWorking: callsWorking ? "Yes" : "No",
@@ -327,6 +329,25 @@ export default function ConditionAssessmentPage() {
         if (u?.name) userCustomerName = u.name;
         if (u?.phone) userCustomerPhone = u.phone;
       } catch (e) {}
+
+      // Save into customer Cart Drawer
+      saveQuoteToCart({
+        quoteId,
+        quoteNumber,
+        variantId: variant.id,
+        brandName: brand.name,
+        modelName: model.name,
+        storage: variant.storage,
+        imageUrl: model.imageUrl,
+        category: "MOBILE",
+        estimatedPrice: currentPrice,
+        basePrice: variant.basePrice,
+        customerName: userCustomerName,
+        customerPhone: userCustomerPhone,
+        selectedAnswersJson: newQuote.selectedAnswersJson,
+        breakdownJson: newQuote.breakdownJson,
+        createdAt: newQuote.createdAt,
+      });
     }
 
     // Persist directly to Supabase PostgreSQL database

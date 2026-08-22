@@ -15,6 +15,7 @@ import {
   INITIAL_PRICING_RULES,
   QuoteData,
 } from "@/lib/store";
+import { saveQuoteToCart } from "@/lib/cart";
 import {
   ChevronRight,
   ShieldCheck,
@@ -209,7 +210,8 @@ export default function TabletConditionAssessmentPage() {
     }
 
     const quoteId = `quote-${Date.now()}`;
-    const quoteNumber = `CAQ-${Math.floor(100000 + Math.random() * 900000)}`;
+    const random5Digits = Math.floor(10000 + Math.random() * 90000);
+    const quoteNumber = `CAQ${random5Digits}`;
 
     const selectedAnswersSummary = {
       callsWorking: callsWorking ? "Yes" : "No",
@@ -247,8 +249,33 @@ export default function TabletConditionAssessmentPage() {
       createdAt: new Date().toISOString(),
     };
 
+    let userCustomerName = "";
+    let userCustomerPhone = "";
     if (typeof window !== "undefined") {
       localStorage.setItem("cashall_quote", JSON.stringify(newQuote));
+      try {
+        const u = JSON.parse(localStorage.getItem("cashall_user") || "{}");
+        if (u?.name) userCustomerName = u.name;
+        if (u?.phone) userCustomerPhone = u.phone;
+      } catch (e) {}
+
+      saveQuoteToCart({
+        quoteId,
+        quoteNumber,
+        variantId: variant.id,
+        brandName: brand.name,
+        modelName: model.name,
+        storage: variant.storage,
+        imageUrl: model.imageUrl,
+        category: "TABLET",
+        estimatedPrice: currentPrice,
+        basePrice: variant.basePrice,
+        customerName: userCustomerName,
+        customerPhone: userCustomerPhone,
+        selectedAnswersJson: newQuote.selectedAnswersJson,
+        breakdownJson: newQuote.breakdownJson,
+        createdAt: newQuote.createdAt,
+      });
     }
 
     fetch("/api/v1/quotes/save", {
@@ -265,6 +292,8 @@ export default function TabletConditionAssessmentPage() {
         deviceName: deviceFullName,
         deviceImageUrl: model.imageUrl,
         category: "TABLET",
+        customerName: userCustomerName,
+        customerPhone: userCustomerPhone,
       }),
     }).catch((err) => console.error("Error saving tablet quote:", err));
 

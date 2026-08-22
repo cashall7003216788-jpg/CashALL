@@ -15,6 +15,7 @@ import {
   AlertCircle,
   Download,
   Printer,
+  CheckCircle2,
 } from "lucide-react";
 
 interface Quote {
@@ -37,6 +38,65 @@ export default function AdminQuotesPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [successToast, setSuccessToast] = useState("");
+
+  const [quoteToConvert, setQuoteToConvert] = useState<Quote | null>(null);
+  const [convertForm, setConvertForm] = useState({
+    customerName: "",
+    customerPhone: "",
+    house: "158, Ghughupara Road",
+    street: "Bhattanagar, Liluah",
+    area: "Howrah",
+    landmark: "Near Railway Station",
+    city: "Howrah",
+    state: "West Bengal",
+    pincode: "711203",
+    pickupDate: "Tomorrow",
+    pickupTimeSlot: "10 AM - 1 PM",
+    agentNotes: "Converted from admin console leads pipeline.",
+  });
+  const [convertingOrder, setConvertingOrder] = useState(false);
+
+  const handleConvertSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!quoteToConvert) return;
+
+    setConvertingOrder(true);
+    try {
+      const res = await fetch("/api/v1/admin/quotes/convert", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          quoteNumber: quoteToConvert.quoteNumber,
+          customerName: convertForm.customerName || quoteToConvert.customerName,
+          customerPhone: convertForm.customerPhone || quoteToConvert.customerPhone,
+          house: convertForm.house,
+          street: convertForm.street,
+          area: convertForm.area,
+          landmark: convertForm.landmark,
+          city: convertForm.city,
+          state: convertForm.state,
+          pincode: convertForm.pincode,
+          pickupDate: convertForm.pickupDate,
+          pickupTimeSlot: convertForm.pickupTimeSlot,
+          agentNotes: convertForm.agentNotes,
+        }),
+      });
+
+      const json = await res.json();
+      if (json.success) {
+        setSuccessToast(`🎉 SUCCESS! Quote ${quoteToConvert.quoteNumber} converted to Order ${json.data?.orderNumber}!`);
+        setQuoteToConvert(null);
+        await fetchQuotes();
+      } else {
+        alert(json.error || "Failed to convert quote to order.");
+      }
+    } catch (err: any) {
+      alert(err.message || "Error converting quote to order.");
+    } finally {
+      setConvertingOrder(false);
+    }
+  };
 
   const fetchQuotes = useCallback(async () => {
     setLoading(true);
@@ -227,6 +287,7 @@ export default function AdminQuotesPage() {
                     <th className="py-3 px-3">Scheduled Agent Visit</th>
                     <th className="py-3 px-3">Booking Status</th>
                     <th className="py-3 px-3">Generated Date</th>
+                    <th className="py-3 px-3">Action</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-neutral-700/60">
@@ -283,7 +344,7 @@ export default function AdminQuotesPage() {
                         <span className={`text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider ${
                           q.status === "COMPLETED"
                             ? "bg-green-950 text-green-400 border border-green-700"
-                            : q.status === "ORDERED"
+                            : q.status === "ORDERED" || q.status === "CONVERTED"
                             ? "bg-blue-950 text-blue-400 border border-blue-700"
                             : "bg-amber-950 text-amber-400 border border-amber-700"
                         }`}>
@@ -295,6 +356,29 @@ export default function AdminQuotesPage() {
                       <td className="py-4 px-3 text-neutral-400 text-[11px]">
                         {new Date(q.createdAt).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" })}
                       </td>
+
+                      {/* ACTION CONVERT */}
+                      <td className="py-4 px-3">
+                        {q.status !== "ORDERED" && q.status !== "COMPLETED" && q.status !== "CONVERTED" ? (
+                          <button
+                            onClick={() => {
+                              setQuoteToConvert(q);
+                              setConvertForm((prev) => ({
+                                ...prev,
+                                customerName: q.customerName || "",
+                                customerPhone: q.customerPhone || "",
+                              }));
+                            }}
+                            className="inline-flex items-center gap-1.5 bg-yellow-400 hover:bg-yellow-300 text-black font-black text-xs px-3 py-1.5 rounded-xl transition shadow-yellowGlow"
+                            title="Convert Quote into Order (CA...)"
+                          >
+                            <CheckCircle2 className="w-3.5 h-3.5" />
+                            <span>Convert (CA...)</span>
+                          </button>
+                        ) : (
+                          <span className="text-neutral-500 text-[11px] font-bold">Converted</span>
+                        )}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -303,6 +387,181 @@ export default function AdminQuotesPage() {
           )}
         </div>
       </main>
+
+      {/* CONVERT QUOTE TO ORDER MODAL */}
+      {quoteToConvert && (
+        <div className="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-neutral-900 border border-neutral-700 w-full max-w-xl rounded-3xl p-6 shadow-2xl space-y-5 my-8">
+            <div className="flex items-center justify-between border-b border-neutral-800 pb-3">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-yellow-400" />
+                <h3 className="text-base font-extrabold text-white">Convert Lead Quote to Confirmed Order</h3>
+              </div>
+              <button
+                onClick={() => setQuoteToConvert(null)}
+                className="text-neutral-400 hover:text-white text-xs font-bold"
+              >
+                ✕ Close
+              </button>
+            </div>
+
+            {/* QUOTE & CONVERTED ORDER ID SUMMARY */}
+            <div className="bg-neutral-950 p-4 rounded-2xl border border-neutral-800 space-y-2 text-xs">
+              <div className="flex justify-between items-center">
+                <span className="text-neutral-400">Incoming Quote ID:</span>
+                <span className="font-mono font-bold text-yellow-400 bg-yellow-400/10 px-2 py-0.5 rounded border border-yellow-400/20">
+                  {quoteToConvert.quoteNumber}
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-neutral-400">Target Generated Order ID:</span>
+                <span className="font-mono font-black text-green-400 bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20 text-sm">
+                  {`CA${quoteToConvert.quoteNumber.replace(/^(CAQ|Q)-?/i, "").replace(/[^0-9]/g, "")}`}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-neutral-400">Device:</span>
+                <span className="font-bold text-white">{quoteToConvert.deviceName}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-neutral-400">Final Agreed Payout:</span>
+                <span className="font-black text-green-400 font-price text-sm">
+                  ₹{quoteToConvert.estimatedPrice.toLocaleString("en-IN")}
+                </span>
+              </div>
+            </div>
+
+            <form onSubmit={handleConvertSubmit} className="space-y-4 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-neutral-300 font-bold mb-1">Customer Full Name</label>
+                  <input
+                    type="text"
+                    required
+                    value={convertForm.customerName}
+                    onChange={(e) => setConvertForm({ ...convertForm, customerName: e.target.value })}
+                    className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-neutral-300 font-bold mb-1">Customer Mobile Number</label>
+                  <input
+                    type="tel"
+                    required
+                    value={convertForm.customerPhone}
+                    onChange={(e) => setConvertForm({ ...convertForm, customerPhone: e.target.value })}
+                    className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none font-mono"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-3 pt-2 border-t border-neutral-800">
+                <span className="text-neutral-400 font-extrabold uppercase text-[10px] block">Doorstep Pickup Address</span>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-neutral-400 text-[11px] mb-1">Flat / House No.</label>
+                    <input
+                      type="text"
+                      required
+                      value={convertForm.house}
+                      onChange={(e) => setConvertForm({ ...convertForm, house: e.target.value })}
+                      className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-neutral-400 text-[11px] mb-1">Street / Locality</label>
+                    <input
+                      type="text"
+                      required
+                      value={convertForm.street}
+                      onChange={(e) => setConvertForm({ ...convertForm, street: e.target.value })}
+                      className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-3">
+                  <div>
+                    <label className="block text-neutral-400 text-[11px] mb-1">City</label>
+                    <input
+                      type="text"
+                      required
+                      value={convertForm.city}
+                      onChange={(e) => setConvertForm({ ...convertForm, city: e.target.value })}
+                      className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-neutral-400 text-[11px] mb-1">State</label>
+                    <input
+                      type="text"
+                      required
+                      value={convertForm.state}
+                      onChange={(e) => setConvertForm({ ...convertForm, state: e.target.value })}
+                      className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-neutral-400 text-[11px] mb-1">Pincode</label>
+                    <input
+                      type="text"
+                      required
+                      value={convertForm.pincode}
+                      onChange={(e) => setConvertForm({ ...convertForm, pincode: e.target.value })}
+                      className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none font-mono"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 pt-2 border-t border-neutral-800">
+                <div>
+                  <label className="block text-neutral-300 font-bold mb-1">Pickup Date</label>
+                  <select
+                    value={convertForm.pickupDate}
+                    onChange={(e) => setConvertForm({ ...convertForm, pickupDate: e.target.value })}
+                    className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                  >
+                    <option value="Today">Today</option>
+                    <option value="Tomorrow">Tomorrow</option>
+                    <option value="Day After Tomorrow">Day After Tomorrow</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-neutral-300 font-bold mb-1">Pickup Time Slot</label>
+                  <select
+                    value={convertForm.pickupTimeSlot}
+                    onChange={(e) => setConvertForm({ ...convertForm, pickupTimeSlot: e.target.value })}
+                    className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                  >
+                    <option value="10 AM - 1 PM">10 AM - 1 PM</option>
+                    <option value="1 PM - 4 PM">1 PM - 4 PM</option>
+                    <option value="4 PM - 7 PM">4 PM - 7 PM</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 pt-4 border-t border-neutral-800">
+                <button
+                  type="button"
+                  onClick={() => setQuoteToConvert(null)}
+                  className="w-1/2 py-3 bg-neutral-800 hover:bg-neutral-700 text-white font-bold rounded-xl transition"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={convertingOrder}
+                  className="w-1/2 flex items-center justify-center gap-2 py-3 bg-yellow-400 hover:bg-yellow-300 text-black font-black rounded-xl transition shadow-yellowGlow disabled:opacity-60"
+                >
+                  {convertingOrder ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle2 className="w-4 h-4" />}
+                  <span>CONFIRM &amp; BOOK ORDER</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -64,6 +64,24 @@ export default function SupportDashboardPage() {
   const [submittingCall, setSubmittingCall] = useState(false);
   const [successToast, setSuccessToast] = useState("");
 
+  // Modal State for Quote to Order Conversion
+  const [quoteToConvert, setQuoteToConvert] = useState<QuoteLead | null>(null);
+  const [convertForm, setConvertForm] = useState({
+    customerName: "",
+    customerPhone: "",
+    house: "158, Ghughupara Road",
+    street: "Bhattanagar, Liluah",
+    area: "Howrah",
+    landmark: "Near Railway Station",
+    city: "Howrah",
+    state: "West Bengal",
+    pincode: "711203",
+    pickupDate: "Tomorrow",
+    pickupTimeSlot: "10 AM - 1 PM",
+    agentNotes: "Confirmed and booked by Support Agent over phone.",
+  });
+  const [convertingOrder, setConvertingOrder] = useState(false);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("cashall_support_session");
@@ -150,6 +168,47 @@ export default function SupportDashboardPage() {
       alert(err.message || "Error logging call");
     } finally {
       setSubmittingCall(false);
+    }
+  };
+
+  const handleConvertSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!quoteToConvert) return;
+
+    setConvertingOrder(true);
+    try {
+      const res = await fetch("/api/v1/admin/quotes/convert", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          quoteNumber: quoteToConvert.quoteNumber,
+          customerName: convertForm.customerName || quoteToConvert.customerName,
+          customerPhone: convertForm.customerPhone || quoteToConvert.customerPhone,
+          house: convertForm.house,
+          street: convertForm.street,
+          area: convertForm.area,
+          landmark: convertForm.landmark,
+          city: convertForm.city,
+          state: convertForm.state,
+          pincode: convertForm.pincode,
+          pickupDate: convertForm.pickupDate,
+          pickupTimeSlot: convertForm.pickupTimeSlot,
+          agentNotes: convertForm.agentNotes,
+        }),
+      });
+
+      const json = await res.json();
+      if (json.success) {
+        setSuccessToast(`🎉 SUCCESS! Quote ${quoteToConvert.quoteNumber} converted to Order ${json.data?.orderNumber}!`);
+        setQuoteToConvert(null);
+        await fetchData();
+      } else {
+        alert(json.error || "Failed to convert quote to order.");
+      }
+    } catch (err: any) {
+      alert(err.message || "Error converting quote to order.");
+    } finally {
+      setConvertingOrder(false);
     }
   };
 
@@ -341,17 +400,36 @@ export default function SupportDashboardPage() {
                     </td>
 
                     <td className="py-4 px-3">
-                      <button
-                        onClick={() => {
-                          setSelectedQuote(q);
-                          setCallOutcome("CUSTOMER_INTERESTED");
-                          setCallNotes("");
-                        }}
-                        className="inline-flex items-center gap-1.5 bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl transition shadow-md"
-                      >
-                        <PhoneCall className="w-3.5 h-3.5" />
-                        <span>Log Call</span>
-                      </button>
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => {
+                            setSelectedQuote(q);
+                            setCallOutcome("CUSTOMER_INTERESTED");
+                            setCallNotes("");
+                          }}
+                          className="inline-flex items-center gap-1.5 bg-neutral-800 hover:bg-neutral-700 text-white font-extrabold text-xs px-3 py-2 rounded-xl transition shadow-md border border-neutral-700"
+                          title="Log Call"
+                        >
+                          <PhoneCall className="w-3.5 h-3.5 text-yellow-400" />
+                          <span>Log Call</span>
+                        </button>
+
+                        <button
+                          onClick={() => {
+                            setQuoteToConvert(q);
+                            setConvertForm((prev) => ({
+                              ...prev,
+                              customerName: q.customerName || "",
+                              customerPhone: q.customerPhone || "",
+                            }));
+                          }}
+                          className="inline-flex items-center gap-1.5 bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-xs px-3 py-2 rounded-xl transition shadow-yellowGlow"
+                          title="Convert quote into confirmed order"
+                        >
+                          <CheckCircle2 className="w-3.5 h-3.5" />
+                          <span>Convert (CA...)</span>
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -390,28 +468,25 @@ export default function SupportDashboardPage() {
               </thead>
               <tbody className="divide-y divide-neutral-800/60">
                 {callLogs.map((log) => (
-                  <tr key={log.id} className="hover:bg-neutral-850/50 transition">
-                    <td className="py-3.5 px-3 font-bold text-white">
-                      {log.supportPersonName}
+                  <tr key={log.id} className="hover:bg-neutral-800/40 transition">
+                    <td className="py-3 px-3 font-bold text-white flex items-center gap-1.5">
+                      <User className="w-3.5 h-3.5 text-blue-400" />
+                      <span>{log.supportPersonName}</span>
                     </td>
-                    <td className="py-3.5 px-3 font-mono font-bold text-yellow-400">
-                      {log.quoteId}
-                    </td>
-                    <td className="py-3.5 px-3 text-neutral-300">
+                    <td className="py-3 px-3 font-mono font-bold text-yellow-400">{log.quoteId}</td>
+                    <td className="py-3 px-3 text-neutral-300">
                       <div>{log.customerName}</div>
-                      <div className="text-[11px] text-neutral-400 font-mono">{log.customerPhone}</div>
+                      <div className="text-[11px] text-neutral-500 font-mono">{log.customerPhone}</div>
                     </td>
-                    <td className="py-3.5 px-3">
-                      <span className="bg-blue-950 text-blue-300 border border-blue-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">
+                    <td className="py-3 px-3">
+                      <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-neutral-800 text-neutral-300 border border-neutral-700">
                         {log.callOutcome.replace(/_/g, " ")}
                       </span>
                     </td>
-                    <td className="py-3.5 px-3 text-neutral-300 max-w-xs truncate">
+                    <td className="py-3 px-3 text-neutral-300 max-w-xs truncate" title={log.callNotes}>
                       {log.callNotes}
                     </td>
-                    <td className="py-3.5 px-3 text-neutral-400 text-[11px]">
-                      {log.callTimeIST}
-                    </td>
+                    <td className="py-3 px-3 text-neutral-400 font-mono text-[11px]">{log.callTimeIST}</td>
                   </tr>
                 ))}
               </tbody>
@@ -419,6 +494,181 @@ export default function SupportDashboardPage() {
           </div>
         )}
       </div>
+
+      {/* CONVERT QUOTE TO ORDER MODAL */}
+      {quoteToConvert && (
+        <div className="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-neutral-900 border border-neutral-700 w-full max-w-xl rounded-3xl p-6 shadow-2xl space-y-5 my-8">
+            <div className="flex items-center justify-between border-b border-neutral-800 pb-3">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-yellow-400" />
+                <h3 className="text-base font-extrabold text-white">Convert Quote into Confirmed Order</h3>
+              </div>
+              <button
+                onClick={() => setQuoteToConvert(null)}
+                className="text-neutral-400 hover:text-white text-xs font-bold"
+              >
+                ✕ Close
+              </button>
+            </div>
+
+            {/* QUOTE & CONVERTED ORDER ID SUMMARY */}
+            <div className="bg-neutral-950 p-4 rounded-2xl border border-neutral-800 space-y-2 text-xs">
+              <div className="flex justify-between items-center">
+                <span className="text-neutral-400">Incoming Quote ID:</span>
+                <span className="font-mono font-bold text-yellow-400 bg-yellow-400/10 px-2 py-0.5 rounded border border-yellow-400/20">
+                  {quoteToConvert.quoteNumber}
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-neutral-400">Target Generated Order ID:</span>
+                <span className="font-mono font-black text-green-400 bg-green-400/10 px-2 py-0.5 rounded border border-green-400/20 text-sm">
+                  {`CA${quoteToConvert.quoteNumber.replace(/^(CAQ|Q)-?/i, "").replace(/[^0-9]/g, "")}`}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-neutral-400">Device:</span>
+                <span className="font-bold text-white">{quoteToConvert.deviceName}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-neutral-400">Final Agreed Payout:</span>
+                <span className="font-black text-green-400 font-price text-sm">
+                  ₹{quoteToConvert.estimatedPrice.toLocaleString("en-IN")}
+                </span>
+              </div>
+            </div>
+
+            <form onSubmit={handleConvertSubmit} className="space-y-4 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-neutral-300 font-bold mb-1">Customer Full Name</label>
+                  <input
+                    type="text"
+                    required
+                    value={convertForm.customerName}
+                    onChange={(e) => setConvertForm({ ...convertForm, customerName: e.target.value })}
+                    className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-neutral-300 font-bold mb-1">Customer Mobile Number</label>
+                  <input
+                    type="tel"
+                    required
+                    value={convertForm.customerPhone}
+                    onChange={(e) => setConvertForm({ ...convertForm, customerPhone: e.target.value })}
+                    className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none font-mono"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-3 pt-2 border-t border-neutral-800">
+                <span className="text-neutral-400 font-extrabold uppercase text-[10px] block">Doorstep Pickup Address</span>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-neutral-400 text-[11px] mb-1">Flat / House No.</label>
+                    <input
+                      type="text"
+                      required
+                      value={convertForm.house}
+                      onChange={(e) => setConvertForm({ ...convertForm, house: e.target.value })}
+                      className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-neutral-400 text-[11px] mb-1">Street / Locality</label>
+                    <input
+                      type="text"
+                      required
+                      value={convertForm.street}
+                      onChange={(e) => setConvertForm({ ...convertForm, street: e.target.value })}
+                      className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-3">
+                  <div>
+                    <label className="block text-neutral-400 text-[11px] mb-1">City</label>
+                    <input
+                      type="text"
+                      required
+                      value={convertForm.city}
+                      onChange={(e) => setConvertForm({ ...convertForm, city: e.target.value })}
+                      className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-neutral-400 text-[11px] mb-1">State</label>
+                    <input
+                      type="text"
+                      required
+                      value={convertForm.state}
+                      onChange={(e) => setConvertForm({ ...convertForm, state: e.target.value })}
+                      className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-neutral-400 text-[11px] mb-1">Pincode</label>
+                    <input
+                      type="text"
+                      required
+                      value={convertForm.pincode}
+                      onChange={(e) => setConvertForm({ ...convertForm, pincode: e.target.value })}
+                      className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none font-mono"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3 pt-2 border-t border-neutral-800">
+                <div>
+                  <label className="block text-neutral-300 font-bold mb-1">Pickup Date</label>
+                  <select
+                    value={convertForm.pickupDate}
+                    onChange={(e) => setConvertForm({ ...convertForm, pickupDate: e.target.value })}
+                    className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                  >
+                    <option value="Today">Today</option>
+                    <option value="Tomorrow">Tomorrow</option>
+                    <option value="Day After Tomorrow">Day After Tomorrow</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-neutral-300 font-bold mb-1">Pickup Time Slot</label>
+                  <select
+                    value={convertForm.pickupTimeSlot}
+                    onChange={(e) => setConvertForm({ ...convertForm, pickupTimeSlot: e.target.value })}
+                    className="w-full bg-neutral-950 border border-neutral-800 text-white rounded-xl p-2.5 focus:border-yellow-400 focus:outline-none"
+                  >
+                    <option value="10 AM - 1 PM">10 AM - 1 PM</option>
+                    <option value="1 PM - 4 PM">1 PM - 4 PM</option>
+                    <option value="4 PM - 7 PM">4 PM - 7 PM</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 pt-4 border-t border-neutral-800">
+                <button
+                  type="button"
+                  onClick={() => setQuoteToConvert(null)}
+                  className="w-1/2 py-3 bg-neutral-800 hover:bg-neutral-700 text-white font-bold rounded-xl transition"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={convertingOrder}
+                  className="w-1/2 flex items-center justify-center gap-2 py-3 bg-yellow-400 hover:bg-yellow-300 text-black font-black rounded-xl transition shadow-yellowGlow disabled:opacity-60"
+                >
+                  {convertingOrder ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle2 className="w-4 h-4" />}
+                  <span>CONFIRM &amp; BOOK ORDER</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* LOG CALL MODAL */}
       {selectedQuote && (

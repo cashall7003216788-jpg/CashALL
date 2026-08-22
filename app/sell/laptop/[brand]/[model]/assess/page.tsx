@@ -3,12 +3,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useParams, useSearchParams } from "next/navigation";
+import { useParams, useSearchParams, useRouter } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { PriceUnlockModal } from "@/components/common/PriceUnlockModal";
-import { INITIAL_BRANDS, INITIAL_MODELS, INITIAL_VARIANTS } from "@/lib/store";
+import { INITIAL_BRANDS, INITIAL_MODELS, INITIAL_VARIANTS, QuoteData } from "@/lib/store";
+import { saveQuoteToCart } from "@/lib/cart";
 import {
   ChevronRight,
   CheckCircle2,
@@ -97,6 +98,7 @@ function LaptopBodyDefectIcon() {
 }
 
 export default function LaptopAssessmentPage() {
+  const router = useRouter();
   const params = useParams();
   const searchParams = useSearchParams();
 
@@ -188,6 +190,99 @@ export default function LaptopAssessmentPage() {
   };
 
   const finalPrice = calculateFinalPrice();
+
+  const handleGenerateLaptopQuote = () => {
+    const quoteId = `quote-${Date.now()}`;
+    const random5Digits = Math.floor(10000 + Math.random() * 90000);
+    const quoteNumber = `CAQ${random5Digits}`;
+
+    const selectedAnswersSummary = {
+      turnsOn,
+      warranty,
+      hasCharger,
+      hasBill,
+      screenDefects,
+      hardwareDefects,
+      bodyCondition,
+      accessories,
+    };
+
+    const deviceFullName = `${brand.name} ${model?.name || "Laptop"}${variant?.storage ? " (" + variant.storage + ")" : ""}`;
+
+    const newQuote: QuoteData = {
+      id: quoteId,
+      quoteNumber,
+      variantId: variant?.id || "",
+      selectedAnswersJson: JSON.stringify(selectedAnswersSummary),
+      basePrice: basePrice,
+      totalDeductions: basePrice - finalPrice,
+      estimatedPrice: finalPrice,
+      breakdownJson: JSON.stringify({
+        basePrice: basePrice,
+        deductions: basePrice - finalPrice,
+        finalEstimate: finalPrice,
+        brandName: brand.name,
+        modelName: model?.name || "Laptop",
+        storage: variant?.storage,
+        imageUrl: model?.imageUrl,
+        category: "LAPTOP",
+      }),
+      expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
+      status: "ACTIVE",
+      createdAt: new Date().toISOString(),
+    };
+
+    let userCustomerName = "";
+    let userCustomerPhone = "";
+    if (typeof window !== "undefined") {
+      localStorage.setItem("cashall_quote", JSON.stringify(newQuote));
+      localStorage.setItem("cashall_latest_quote", JSON.stringify(newQuote));
+      try {
+        const u = JSON.parse(localStorage.getItem("cashall_user") || "{}");
+        if (u?.name) userCustomerName = u.name;
+        if (u?.phone) userCustomerPhone = u.phone;
+      } catch (e) {}
+
+      saveQuoteToCart({
+        quoteId,
+        quoteNumber,
+        variantId: variant?.id,
+        brandName: brand.name,
+        modelName: model?.name || "Laptop",
+        storage: variant?.storage,
+        imageUrl: model?.imageUrl || undefined,
+        category: "LAPTOP",
+        estimatedPrice: finalPrice,
+        basePrice: basePrice,
+        customerName: userCustomerName,
+        customerPhone: userCustomerPhone,
+        selectedAnswersJson: newQuote.selectedAnswersJson,
+        breakdownJson: newQuote.breakdownJson,
+        createdAt: newQuote.createdAt,
+      });
+    }
+
+    fetch("/api/v1/quotes/save", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        quoteNumber,
+        variantId: variant?.id,
+        selectedAnswersJson: JSON.stringify(selectedAnswersSummary),
+        basePrice: basePrice,
+        totalDeductions: basePrice - finalPrice,
+        estimatedPrice: finalPrice,
+        breakdownJson: newQuote.breakdownJson,
+        deviceName: deviceFullName,
+        deviceImageUrl: model?.imageUrl,
+        category: "LAPTOP",
+        customerName: userCustomerName,
+        customerPhone: userCustomerPhone,
+      }),
+    }).catch((err) => console.error("Error saving laptop quote:", err));
+
+    router.push(`/checkout/pickup?quoteId=${quoteNumber}`);
+  };
 
   const toggleMultiSelect = (item: string, list: string[], setList: (l: string[]) => void) => {
     if (item === "none") {
@@ -560,9 +655,7 @@ export default function LaptopAssessmentPage() {
                     <Button
                       variant="primary"
                       size="lg"
-                      onClick={() => {
-                        alert("Order placed successfully! Our pickup partner will contact you shortly.");
-                      }}
+                      onClick={handleGenerateLaptopQuote}
                       className="font-black px-8 py-4 text-sm shadow-yellowGlow shrink-0"
                     >
                       BOOK FREE PICKUP &rarr;

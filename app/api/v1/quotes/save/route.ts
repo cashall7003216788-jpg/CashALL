@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
       status,
     } = body;
 
-    const cleanQuoteNumber = (quoteNumber || `CAQ-${Math.floor(100000 + Math.random() * 900000)}`).trim();
+    const cleanQuoteNumber = (quoteNumber || `CAQ${Math.floor(10000 + Math.random() * 90000)}`).trim();
     const finalBasePrice = Number(basePrice) || 30000;
     const finalEstPrice = Number(estimatedPrice) || finalBasePrice;
     const finalDeductions = Number(totalDeductions) || Math.max(0, finalBasePrice - finalEstPrice);

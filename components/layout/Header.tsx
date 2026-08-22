@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Menu, X, User, ChevronDown, HelpCircle, LogIn, LogOut } from "lucide-react";
+import { MapPin, Menu, X, User, ChevronDown, HelpCircle, LogIn, LogOut, ShoppingBag, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { DeviceChoiceModal } from "@/components/common/DeviceChoiceModal";
 import { CustomerAuthModal } from "@/components/common/CustomerAuthModal";
 import { LocationModal } from "@/components/common/LocationModal";
 import { NeedHelpModal } from "@/components/common/NeedHelpModal";
+import { CartDrawer } from "@/components/cart/CartDrawer";
+import { getCartQuotes, CART_UPDATED_EVENT } from "@/lib/cart";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,10 +18,29 @@ export function Header() {
   const [needHelpModalOpen, setNeedHelpModalOpen] = useState(false);
   const [deviceChoiceOpen, setDeviceChoiceOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
   
   const [selectedLocation, setSelectedLocation] = useState<{ city: string; state: string } | null>(null);
   
   const [user, setUser] = useState<{ name?: string; phone?: string; email?: string } | null>(null);
+
+  useEffect(() => {
+    const updateCartCount = () => {
+      const quotes = getCartQuotes();
+      setCartCount(quotes.length);
+    };
+    updateCartCount();
+
+    if (typeof window !== "undefined") {
+      window.addEventListener(CART_UPDATED_EVENT, updateCartCount);
+      window.addEventListener("storage", updateCartCount);
+      return () => {
+        window.removeEventListener(CART_UPDATED_EVENT, updateCartCount);
+        window.removeEventListener("storage", updateCartCount);
+      };
+    }
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -144,6 +165,21 @@ export function Header() {
             {/* RIGHT ACTION BUTTONS */}
             <div className="hidden sm:flex items-center space-x-3">
               
+              {/* SAVED QUOTES CART BUTTON */}
+              <button
+                onClick={() => setCartDrawerOpen(true)}
+                className="relative flex items-center gap-2 text-xs font-bold text-gray-200 hover:text-brand-yellow px-3.5 py-2 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-brand-yellow/40 transition-all shadow-sm"
+                title="View Saved Quotes Cart"
+              >
+                <ShoppingCart className="w-4 h-4 text-brand-yellow" />
+                <span>Cart</span>
+                {cartCount > 0 && (
+                  <span className="bg-brand-yellow text-brand-black text-[10px] font-black px-1.5 py-0.5 rounded-full">
+                    {cartCount}
+                  </span>
+                )}
+              </button>
+
               {/* MY ORDERS — ONLY SHOWN IF AUTHENTICATED */}
               {user && (
                 <Link
@@ -195,28 +231,42 @@ export function Header() {
 
             {/* MOBILE TRIGGER & CTAs */}
             <div className="flex sm:hidden items-center space-x-2">
+              {/* MOBILE CART BUTTON */}
+              <button
+                onClick={() => setCartDrawerOpen(true)}
+                className="relative p-2 rounded-lg bg-neutral-900 border border-neutral-800 text-brand-yellow text-xs font-bold flex items-center justify-center"
+                title="Cart"
+              >
+                <ShoppingCart className="w-4 h-4" />
+                {cartCount > 0 && (
+                  <span className="absolute -top-1.5 -right-1.5 bg-brand-yellow text-brand-black text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center">
+                    {cartCount}
+                  </span>
+                )}
+              </button>
+
               <button
                 onClick={() => setLocationModalOpen(true)}
                 className="p-1.5 rounded-lg bg-neutral-900 border border-neutral-800 text-brand-yellow text-xs font-bold flex items-center gap-1"
               >
                 <MapPin className="w-3.5 h-3.5" />
-                <span className="max-w-[100px] truncate">{selectedLocation ? selectedLocation.state : "State"}</span>
+                <span className="max-w-[70px] truncate">{selectedLocation ? selectedLocation.state : "State"}</span>
               </button>
 
               <Button
                 onClick={() => setDeviceChoiceOpen(true)}
                 variant="primary"
                 size="sm"
-                className="font-bold text-xs shadow-yellowGlow px-3"
+                className="font-bold text-xs shadow-yellowGlow px-2.5 py-1"
               >
                 SELL NOW
               </Button>
 
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-gray-300 hover:text-white rounded-lg focus:outline-none"
+                className="p-1.5 text-gray-300 hover:text-white rounded-lg focus:outline-none"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
 
@@ -341,6 +391,11 @@ export function Header() {
       <NeedHelpModal
         isOpen={needHelpModalOpen}
         onClose={() => setNeedHelpModalOpen(false)}
+      />
+
+      <CartDrawer
+        isOpen={cartDrawerOpen}
+        onClose={() => setCartDrawerOpen(false)}
       />
     </>
   );

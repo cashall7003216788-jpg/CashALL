@@ -8,6 +8,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { INITIAL_SERVICE_AREAS, OrderData, QuoteData, INITIAL_VARIANTS, INITIAL_MODELS, INITIAL_BRANDS } from "@/lib/store";
+import { removeQuoteFromCart } from "@/lib/cart";
 import {
   MapPin,
   Calendar,
@@ -117,13 +118,43 @@ function PickupCheckoutContent() {
         }
       }
 
-      const storedQuote = localStorage.getItem(`cashall_quote_${quoteId}`) || localStorage.getItem("cashall_latest_quote");
+      let foundQuote: QuoteData | null = null;
+      const storedQuote = localStorage.getItem(`cashall_quote_${quoteId}`) || localStorage.getItem("cashall_active_quote") || localStorage.getItem("cashall_latest_quote");
       if (storedQuote) {
         try {
-          setQuote(JSON.parse(storedQuote));
+          foundQuote = JSON.parse(storedQuote);
         } catch (e) {
           console.error(e);
         }
+      }
+
+      if (!foundQuote) {
+        try {
+          const cart = JSON.parse(localStorage.getItem("cashall_cart_quotes") || "[]");
+          const item = cart.find((c: any) => c.quoteNumber === quoteId || c.quoteId === quoteId);
+          if (item) {
+            foundQuote = {
+              id: item.quoteId,
+              quoteNumber: item.quoteNumber,
+              variantId: item.variantId || "",
+              estimatedPrice: item.estimatedPrice,
+              basePrice: item.basePrice || item.estimatedPrice,
+              totalDeductions: (item.basePrice || item.estimatedPrice) - item.estimatedPrice,
+              breakdownJson: item.breakdownJson || JSON.stringify({ deviceName: `${item.brandName} ${item.modelName}` }),
+              selectedAnswersJson: item.selectedAnswersJson || "{}",
+              expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
+              status: "ACTIVE",
+              createdAt: item.createdAt,
+            };
+            if (item.brandName && item.modelName) {
+              setResolvedDeviceName(`${item.brandName} ${item.modelName}${item.storage ? " (" + item.storage + ")" : ""}`);
+            }
+          }
+        } catch (e) {}
+      }
+
+      if (foundQuote) {
+        setQuote(foundQuote);
       }
 
       // Pre-load current variant for device name resolution
@@ -271,6 +302,14 @@ function PickupCheckoutContent() {
         phone: finalPhone,
         email: finalEmail,
       }));
+
+      // Remove converted quote from customer Cart
+      if (quote?.quoteNumber) {
+        removeQuoteFromCart(quote.quoteNumber);
+      }
+      if (quoteId) {
+        removeQuoteFromCart(quoteId);
+      }
     }
 
     setTimeout(() => {
