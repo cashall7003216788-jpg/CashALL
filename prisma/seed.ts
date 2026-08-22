@@ -46,6 +46,9 @@ async function main() {
   await prisma.category.create({
     data: { name: "Laptop", slug: "laptop", sortOrder: 2, active: true },
   });
+  await prisma.category.create({
+    data: { name: "Tablet", slug: "tablet", sortOrder: 3, active: true },
+  });
 
   // 3. Create Brands
   console.log(`Seeding ${INITIAL_BRANDS.length} brands...`);

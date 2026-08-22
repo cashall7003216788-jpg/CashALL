@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Smartphone, Laptop, ArrowRight } from "lucide-react";
+import { Smartphone, Laptop, Tablet, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 
 export function CategoryCards() {
@@ -18,18 +18,28 @@ export function CategoryCards() {
     {
       id: "laptop",
       title: "Laptop",
-      subtitle: "Sell MacBook, Dell, HP, Lenovo & Asus",
+      subtitle: "Sell MacBook, Dell, HP, Lenovo, Asus & Acer",
       icon: Laptop,
       status: "AVAILABLE",
       available: true,
       href: "/sell/laptop",
       btnText: "Sell Laptop",
     },
+    {
+      id: "tablet",
+      title: "Tablet / iPad",
+      subtitle: "Sell Apple iPad, Galaxy Tab & Lenovo Pad",
+      icon: Tablet,
+      status: "AVAILABLE",
+      available: true,
+      href: "/sell/tablet",
+      btnText: "Sell Tablet",
+    },
   ];
 
   return (
     <section className="py-16 bg-brand-bg">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-xl mx-auto mb-10">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-black">
             Sell Your Device
@@ -39,7 +49,7 @@ export function CategoryCards() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((cat) => {
             const Icon = cat.icon;
             return (

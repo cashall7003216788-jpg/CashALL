@@ -25,7 +25,7 @@ export function Hero() {
 
           {/* SUPPORTING TEXT */}
           <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Get an instant estimated price for your mobile phone or laptop with CashALL. Enjoy fast doorstep pickup and secure payment.
+            Get an instant estimated price for your mobile phone, laptop, or tablet with CashALL. Enjoy fast doorstep pickup and secure payment.
           </p>
 
           {/* FULLY VISIBLE ADVERTISEMENT AUTO SIDE-SCROLL CAROUSEL RIGHT AFTER HEADING & SUBTITLE */}
@@ -34,21 +34,26 @@ export function Hero() {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
             <Link href="/sell" className="w-full sm:w-auto">
               <Button variant="primary" size="lg" fullWidth className="text-base font-extrabold px-8 shadow-yellowGlow">
-                Sell My Phone or Laptop
+                Sell Any Device
               </Button>
             </Link>
             <div className="flex items-center gap-2 w-full sm:w-auto">
-              <Link href="/sell/mobile" className="w-1/2 sm:w-auto">
-                <Button variant="tertiary" size="lg" className="w-full text-xs font-bold bg-neutral-900 text-white border-neutral-700 hover:bg-neutral-800">
+              <Link href="/sell/mobile" className="flex-1 sm:w-auto">
+                <Button variant="tertiary" size="lg" className="w-full text-xs font-bold bg-neutral-900 text-white border-neutral-700 hover:bg-neutral-800 px-4">
                   Sell Phone
                 </Button>
               </Link>
-              <Link href="/sell/laptop" className="w-1/2 sm:w-auto">
-                <Button variant="tertiary" size="lg" className="w-full text-xs font-bold bg-neutral-900 text-white border-neutral-700 hover:bg-neutral-800">
+              <Link href="/sell/laptop" className="flex-1 sm:w-auto">
+                <Button variant="tertiary" size="lg" className="w-full text-xs font-bold bg-neutral-900 text-white border-neutral-700 hover:bg-neutral-800 px-4">
                   Sell Laptop
+                </Button>
+              </Link>
+              <Link href="/sell/tablet" className="flex-1 sm:w-auto">
+                <Button variant="tertiary" size="lg" className="w-full text-xs font-bold bg-neutral-900 text-white border-neutral-700 hover:bg-neutral-800 px-4">
+                  Sell Tablet
                 </Button>
               </Link>
             </div>

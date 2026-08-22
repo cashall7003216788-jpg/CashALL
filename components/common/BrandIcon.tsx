@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { Smartphone, Laptop } from "lucide-react";
+import { Smartphone, Laptop, Tablet } from "lucide-react";
 
 interface BrandIconProps {
   name: string;
   logoUrl?: string | null;
   className?: string;
   imageClassName?: string;
-  fallbackType?: "MOBILE" | "LAPTOP";
+  fallbackType?: "MOBILE" | "LAPTOP" | "TABLET";
 }
 
 export function BrandIcon({
@@ -99,6 +99,8 @@ export function BrandIcon({
       <div className="flex flex-col items-center justify-center">
         {fallbackType === "LAPTOP" ? (
           <Laptop className="w-8 h-8 sm:w-10 sm:h-10 text-brand-black group-hover:scale-110 transition-transform" />
+        ) : fallbackType === "TABLET" ? (
+          <Tablet className="w-8 h-8 sm:w-10 sm:h-10 text-brand-black group-hover:scale-110 transition-transform" />
         ) : (
           <Smartphone className="w-8 h-8 sm:w-10 sm:h-10 text-brand-black group-hover:scale-110 transition-transform" />
         )}

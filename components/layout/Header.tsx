@@ -136,6 +136,9 @@ export function Header() {
               <Link href="/sell/laptop" className="hover:text-brand-yellow transition-colors">
                 Sell Laptop
               </Link>
+              <Link href="/sell/tablet" className="hover:text-brand-yellow transition-colors">
+                Sell Tablet
+              </Link>
             </nav>
 
             {/* RIGHT ACTION BUTTONS */}
@@ -290,7 +293,7 @@ export function Header() {
               }}
               className="block w-full text-left py-2 text-base font-bold text-white hover:text-brand-yellow"
             >
-              Sell Device (Phone or Laptop)
+              Sell Device (Phone, Laptop or Tablet)
             </button>
             <Link
               href="/sell/mobile"
@@ -305,6 +308,13 @@ export function Header() {
               className="block py-2 text-base font-semibold text-gray-200 hover:text-brand-yellow"
             >
               Sell Laptop
+            </Link>
+            <Link
+              href="/sell/tablet"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-2 text-base font-semibold text-gray-200 hover:text-brand-yellow"
+            >
+              Sell Tablet
             </Link>
           </div>
         )}
