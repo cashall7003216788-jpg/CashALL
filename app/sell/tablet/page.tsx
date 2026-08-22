@@ -33,18 +33,12 @@ export default function TabletBrandSelectionPage() {
     loadBrands();
   }, []);
 
-  const tabletBrands = brands.filter(
-    (b) =>
-      b.category === "TABLET" ||
-      b.category === "ALL" ||
-      b.category === "MOBILE_TABLET" ||
-      b.category === "LAPTOP_TABLET" ||
-      b.category === "BOTH" ||
-      INITIAL_MODELS.some(
-        (m) =>
-          (m.brandId === b.id || m.brandSlug?.toLowerCase() === b.slug?.toLowerCase()) &&
-          m.category === "TABLET"
-      )
+  const tabletBrands = brands.filter((b) =>
+    INITIAL_MODELS.some(
+      (m) =>
+        (m.brandId === b.id || m.brandSlug?.toLowerCase() === b.slug?.toLowerCase()) &&
+        m.category === "TABLET"
+    )
   );
 
   const filteredBrands = tabletBrands.filter((b) =>

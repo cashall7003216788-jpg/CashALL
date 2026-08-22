@@ -6,7 +6,9 @@ BASE_DIR = r'c:\Users\DELL\OneDrive\Desktop\CashALL'
 MOBILES_TXT = os.path.join(BASE_DIR, 'dataset used', 'final_mobiles.txt')
 LAPTOPS_TXT = os.path.join(BASE_DIR, 'dataset used', 'final_laptops.txt')
 TABLETS_TXT = os.path.join(BASE_DIR, 'dataset used', 'final_tablets.txt')
-REAL_IMAGES_JSON = os.path.join(BASE_DIR, 'dataset used', 'real_cashify_images.json')
+REAL_MOBILE_IMAGES_JSON = os.path.join(BASE_DIR, 'dataset used', 'real_cashify_images.json')
+REAL_TABLET_IMAGES_JSON = os.path.join(BASE_DIR, 'dataset used', 'cashify_tablet_images.json')
+REAL_LAPTOP_IMAGES_JSON = os.path.join(BASE_DIR, 'dataset used', 'cashify_laptop_images.json')
 STORE_TS = os.path.join(BASE_DIR, 'lib', 'store.ts')
 DATASET_JSON = os.path.join(BASE_DIR, 'dataset used', 'dataset.json')
 DATASET_JS = os.path.join(BASE_DIR, 'dataset used', 'dataset.js')
@@ -31,7 +33,7 @@ BRAND_LOGOS = {
     "Tecno": "https://s3n.cashify.in/cashify/brand/img/xhdpi/55424ad4-0400.jpg?w=200",
     "iQOO": "https://s3n.cashify.in/cashify/brand/img/xhdpi/e1b13cbc-ef06.jpg?w=200",
     "Nothing": "https://s3n.cashify.in/cashify/brand/img/xhdpi/06bc74db-4d38.jpg?w=200",
-    "Huawei": "https://s3n.cashify.in/cashify/brand/img/xhdpi/71ceb6bc-6f4e.jpg?w=200",
+    "Huawei": "/brands/huawei.svg",
     "Dell": "https://s3n.cashify.in/cashify/brand/img/xhdpi/d3b4fdda-2d57.jpg?w=200",
     "HP": "https://s3n.cashify.in/cashify/brand/img/xhdpi/f78db5fb-857c.jpg?w=200",
     "Acer": "https://s3n.cashify.in/cashify/brand/img/xhdpi/2c350ab6-da4f.jpg?w=200",
@@ -72,6 +74,36 @@ BRAND_DISPLAY_NAMES = {
     "OTHER LAPTOP": "Other Laptop",
 }
 
+# Dedicated brand-specific high-resolution tablet images
+BRAND_TABLET_FALLBACKS = {
+    "apple": "https://s3ng.cashify.in/cashify/product/img/xhdpi/57301cf3a2212.jpg?w=800",
+    "samsung": "https://s3ng.cashify.in/cashify/product/img/xhdpi/57304044b7d3a.jpg?w=800",
+    "oneplus": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f0e60602-d7f5.jpg?w=800",
+    "lenovo": "https://s3ng.cashify.in/cashify/product/img/xhdpi/57303c6218f3a.jpg?w=800",
+    "motorola": "https://s3ng.cashify.in/cashify/product/img/xhdpi/57302d6be6bb8.jpg?w=800",
+    "xiaomi": "https://s3ng.cashify.in/cashify/product/img/xhdpi/88b855d7-6df0.jpg?w=800",
+    "realme": "https://s3ng.cashify.in/cashify/product/img/xhdpi/57303940f1918.jpg?w=800",
+    "huawei": "https://s3ng.cashify.in/cashify/product/img/xhdpi/57302d6be6bb8.jpg?w=800",
+    "honor": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f0e60602-d7f5.jpg?w=800",
+    "nokia": "https://s3ng.cashify.in/cashify/product/img/xhdpi/57303c6218f3a.jpg?w=800",
+    "oppo": "https://s3ng.cashify.in/cashify/product/img/xhdpi/57301cf3a2212.jpg?w=800",
+    "poco": "https://s3ng.cashify.in/cashify/product/img/xhdpi/88b855d7-6df0.jpg?w=800",
+}
+
+# Dedicated brand-specific high-resolution laptop images
+BRAND_LAPTOP_FALLBACKS = {
+    "apple": "https://s3ng.cashify.in/cashify/product/img/xhdpi/585091ff79a1a.jpg?w=800",
+    "dell": "https://s3ng.cashify.in/cashify/product/img/xhdpi/584f938d8170c.jpg?w=800",
+    "hp": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5850e051c2262.jpg?w=800",
+    "lenovo": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5850ebd0aa6b2.jpg?w=800",
+    "asus": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5850937a505b2.jpg?w=800",
+    "acer": "https://s3ng.cashify.in/cashify/product/img/xhdpi/585091ff79a1a.jpg?w=800",
+    "microsoft": "https://s3ng.cashify.in/cashify/product/img/xhdpi/584f938d8170c.jpg?w=800",
+    "msi": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5850937a505b2.jpg?w=800",
+    "avita": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5850e051c2262.jpg?w=800",
+    "other-laptop": "https://s3ng.cashify.in/cashify/product/img/xhdpi/da0de74d-0f4d.jpg?w=200",
+}
+
 def clean_slug(s):
     s = s.lower()
     s = re.sub(r'[^\w\s-]', '', s)
@@ -81,20 +113,6 @@ def clean_slug(s):
 def clean_model_name(name):
     name = re.sub(r'\s+', ' ', name).strip()
     return name
-
-def natural_sort_key(item):
-    name = item['name']
-    brand = item.get('brandSlug', '')
-    tokens = []
-    for token in re.split(r'(\d+|\b[A-Za-z]+\b)', name):
-        t_low = token.lower().strip()
-        if not t_low:
-            continue
-        if token.isdigit():
-            tokens.append((0, float(int(token))))
-        else:
-            tokens.append((1, t_low))
-    return (brand, tokens)
 
 def parse_dataset_file(filepath, category_name):
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -153,7 +171,6 @@ def parse_dataset_file(filepath, category_name):
                 })
 
             if not variants_list:
-                # Default standard variant if none parsed
                 variants_list.append({
                     'name': 'Standard',
                     'storage': 'Standard',
@@ -173,12 +190,24 @@ def parse_dataset_file(filepath, category_name):
     return models_result
 
 def main():
-    print("Loading image cache...")
-    real_images = {}
-    if os.path.exists(REAL_IMAGES_JSON):
-        with open(REAL_IMAGES_JSON, 'r', encoding='utf-8') as f:
-            real_images = json.load(f)
-    print(f"Loaded {len(real_images)} image entries.")
+    print("Loading image caches for Mobile, Tablet, and Laptop...")
+    mobile_images = {}
+    if os.path.exists(REAL_MOBILE_IMAGES_JSON):
+        with open(REAL_MOBILE_IMAGES_JSON, 'r', encoding='utf-8') as f:
+            mobile_images = json.load(f)
+    print(f"Loaded {len(mobile_images)} mobile image entries.")
+
+    tablet_images = {}
+    if os.path.exists(REAL_TABLET_IMAGES_JSON):
+        with open(REAL_TABLET_IMAGES_JSON, 'r', encoding='utf-8') as f:
+            tablet_images = json.load(f)
+    print(f"Loaded {len(tablet_images)} tablet image entries.")
+
+    laptop_images = {}
+    if os.path.exists(REAL_LAPTOP_IMAGES_JSON):
+        with open(REAL_LAPTOP_IMAGES_JSON, 'r', encoding='utf-8') as f:
+            laptop_images = json.load(f)
+    print(f"Loaded {len(laptop_images)} laptop image entries.")
 
     print("\nParsing datasets...")
     mobile_models_raw = parse_dataset_file(MOBILES_TXT, 'MOBILE')
@@ -259,7 +288,6 @@ def main():
         cat = m['category']
         
         base_slug = clean_slug(m_name)
-        # Ensure unique model slug within category
         m_slug = base_slug
         slug_key = f"{cat.lower()}-{b_slug}-{m_slug}"
         dedup_counter = 2
@@ -272,11 +300,11 @@ def main():
         prefix_id = "m" if cat == "MOBILE" else ("m-laptop" if cat == "LAPTOP" else "m-tablet")
         m_id = f"{prefix_id}-{b_slug}-{m_slug}"
 
-        # Resolve image
+        # Resolve image strictly within the category dictionary
         img_url = None
         candidates = [
-            m_slug,
             m_name.lower(),
+            m_slug,
             f"{b_slug}-{m_slug}",
             f"{b_name.lower()} {m_name.lower()}",
             clean_slug(f"{b_name} {m_name}"),
@@ -285,33 +313,37 @@ def main():
             f"sell-old-{m_slug}",
         ]
         if m.get('url'):
-            url_part = m['url'].split('/')[-1]
+            url_part = m['url'].split('/')[-1].lower()
             candidates.append(url_part)
             candidates.append(url_part.replace('used-', ''))
 
+        target_cache = mobile_images if cat == "MOBILE" else (tablet_images if cat == "TABLET" else laptop_images)
+
         for cand in candidates:
-            if cand in real_images and real_images[cand] and 'builder' not in real_images[cand]:
-                img_url = real_images[cand]
+            if cand in target_cache and target_cache[cand] and 'builder' not in target_cache[cand]:
+                img_url = target_cache[cand]
                 break
 
         if not img_url:
-            clean_tokens = [t for t in re.split(r'[^a-z0-9]', m_name.lower()) if t and t not in [b_slug.lower(), 'samsung', 'apple', 'xiaomi', 'realme', 'oppo', 'vivo', 'oneplus', 'poco', 'motorola', '5g', '4g', 'phone', 'mobile', 'tablet', 'ipad', 'laptop']]
+            # Fuzzy match only inside target cache
+            clean_tokens = [t for t in re.split(r'[^a-z0-9]', m_name.lower()) if t and t not in [b_slug.lower(), 'samsung', 'apple', 'xiaomi', 'realme', 'oppo', 'vivo', 'oneplus', 'poco', 'motorola', '5g', '4g', 'phone', 'mobile', 'tablet', 'ipad', 'laptop', 'gen', 'wifi', 'cellular', 'lte', 'inch']]
             if clean_tokens:
                 core_key = clean_tokens[0]
-                for rk, rval in real_images.items():
+                for rk, rval in target_cache.items():
                     if rval and 'builder' not in rval and b_slug.lower() in rk and core_key in rk:
                         img_url = rval
                         break
 
+        # Fallback to category & brand accurate image
         if not img_url:
-            if cat == "LAPTOP":
-                img_url = "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop"
-            elif cat == "TABLET":
-                img_url = "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&auto=format&fit=crop"
+            if cat == "TABLET":
+                img_url = BRAND_TABLET_FALLBACKS.get(b_slug, BRAND_TABLET_FALLBACKS["apple"])
+            elif cat == "LAPTOP":
+                img_url = BRAND_LAPTOP_FALLBACKS.get(b_slug, BRAND_LAPTOP_FALLBACKS["dell"])
             else:
-                img_url = "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80"
+                img_url = "https://s3ng.cashify.in/cashify/product/img/xhdpi/csh-qp4ba4sq-aeny.png?w=800"
 
-        # Release year & popularity heuristics
+        # Release year
         release_year = 2024
         year_match = re.search(r'\b(201[5-9]|202[0-9])\b', m_name)
         if year_match:
@@ -338,56 +370,38 @@ def main():
         store_models.append(model_entry)
 
         # Process Variants
-        processed_vars = []
         for v_idx, v in enumerate(m['variants'], 1):
-            v_title = v['name']
-            v_slug = clean_slug(v_title) or f"v{v_idx}"
-            v_id = f"v-{prefix_id}-{b_slug}-{m_slug}-{v_slug}"
-            v_count = 2
-            while v_id in seen_variant_ids:
-                v_id = f"v-{prefix_id}-{b_slug}-{m_slug}-{v_slug}-{v_count}"
-                v_count += 1
-            seen_variant_ids.add(v_id)
-
-            price_val = v['price']
-            if price_val <= 0:
-                price_val = 15000
+            storage_slug = clean_slug(v['storage'])
+            ram_part = f"-{clean_slug(v['ram'])}" if v.get('ram') else ""
+            var_base_id = f"v-{prefix_id}-{b_slug}-{m_slug}-{storage_slug}{ram_part}"
+            var_id = var_base_id
+            v_dedup = 2
+            while var_id in seen_variant_ids:
+                var_id = f"{var_base_id}-{v_dedup}"
+                v_dedup += 1
+            seen_variant_ids.add(var_id)
 
             variant_entry = {
-                "id": v_id,
+                "id": var_id,
                 "modelId": m_id,
-                "ram": v['ram'],
                 "storage": v['storage'],
-                "basePrice": price_val,
+                "basePrice": v['price'],
                 "active": True
             }
+            if v.get('ram'):
+                variant_entry["ram"] = v['ram']
+
             store_variants.append(variant_entry)
 
-            processed_vars.append({
-                "id": v_id,
-                "modelId": m_id,
-                "name": v_title,
-                "ram": v['ram'],
-                "storage": v['storage'],
-                "price": f"₹{price_val:,}",
-                "priceNum": price_val,
-                "basePrice": price_val,
-                "active": True
-            })
-
-        prices = [pv['priceNum'] for pv in processed_vars]
         dataset_json_items.append({
-            "id": idx,
             "brand": b_name,
-            "brandSlug": b_slug,
+            "brand_slug": b_slug,
             "category": cat,
-            "model": m_name,
-            "slug": m_slug,
-            "minPrice": min(prices) if prices else 0,
-            "maxPrice": max(prices) if prices else 0,
-            "image": img_url,
-            "brandLogo": BRAND_LOGOS.get(b_name, BRAND_LOGOS["Other Laptop"]),
-            "variants": processed_vars
+            "model_name": m_name,
+            "model_slug": m_slug,
+            "image_url": img_url,
+            "cashify_url": m.get('url', ''),
+            "variants": m['variants']
         })
 
     print(f"\nFinal Totals:")
@@ -395,88 +409,227 @@ def main():
     print(f"Total Models: {len(store_models)}")
     print(f"Total Variants: {len(store_variants)}")
 
-    # Write dataset.json and dataset.js
+    # Save dataset.json & dataset.js
     with open(DATASET_JSON, 'w', encoding='utf-8') as f:
-        json.dump(dataset_json_items, f, indent=2)
+        json.dump(dataset_json_items, f, indent=2, ensure_ascii=False)
+
     with open(DATASET_JS, 'w', encoding='utf-8') as f:
-        f.write('const FULL_CATALOG_DATASET = ' + json.dumps(dataset_json_items, indent=2) + ';\n')
+        f.write("module.exports = " + json.dumps(dataset_json_items, indent=2, ensure_ascii=False) + ";\n")
     print("Saved dataset.json and dataset.js.")
 
-    # Generate updated lib/store.ts
+    # Read existing lib/store.ts to preserve INITIAL_QUESTIONS and INITIAL_PRICING_RULES
     with open(STORE_TS, 'r', encoding='utf-8') as f:
         existing_store = f.read()
 
-    # Split existing store at INITIAL_BRANDS and INITIAL_QUESTIONS
-    brands_pos = existing_store.find("export const INITIAL_BRANDS")
-    questions_pos = existing_store.find("export const INITIAL_QUESTIONS")
+    # Extract INITIAL_QUESTIONS and INITIAL_PRICING_RULES
+    questions_match = re.search(r'export const INITIAL_QUESTIONS: QuestionData\[\] = (\[[\s\S]*?\]);\s*export const INITIAL_PRICING_RULES', existing_store)
+    pricing_rules_match = re.search(r'export const INITIAL_PRICING_RULES: PricingRuleData\[\] = (\[[\s\S]*?\]);\s*export const INITIAL_QUOTES', existing_store)
 
-    head_code = existing_store[:brands_pos]
-    tail_code = existing_store[questions_pos:]
+    if not questions_match or not pricing_rules_match:
+        print("Warning: Could not extract questions or pricing rules via regex, falling back to position search...")
+        q_start = existing_store.find('export const INITIAL_QUESTIONS:')
+        preserved_tail = existing_store[q_start:]
+    else:
+        preserved_tail = existing_store[existing_store.find('export const INITIAL_QUESTIONS:'):]
 
-    # Update interfaces if needed
-    head_code = head_code.replace(
-        'category: "MOBILE" | "LAPTOP" | "BOTH";',
-        'category: "MOBILE" | "LAPTOP" | "TABLET" | "BOTH" | "ALL" | string;'
-    ).replace(
-        'category?: "MOBILE" | "LAPTOP";',
-        'category?: "MOBILE" | "LAPTOP" | "TABLET" | string;'
-    )
-
-    # Chunk models and variants to keep TypeScript compiler happy
+    # Split Models and Variants into chunks of 300 to avoid TS2590 union complexity limit
     CHUNK_SIZE = 300
     mobile_models = [m for m in store_models if m['category'] == 'MOBILE']
     laptop_models = [m for m in store_models if m['category'] == 'LAPTOP']
     tablet_models = [m for m in store_models if m['category'] == 'TABLET']
 
-    mobile_variants = [v for v in store_variants if not v['id'].startswith('v-m-laptop-') and not v['id'].startswith('v-m-tablet-')]
+    mobile_variants = [v for v in store_variants if v['id'].startswith('v-m-')]
     laptop_variants = [v for v in store_variants if v['id'].startswith('v-m-laptop-')]
     tablet_variants = [v for v in store_variants if v['id'].startswith('v-m-tablet-')]
 
     print(f"Split Models: {len(mobile_models)} Mobile, {len(laptop_models)} Laptop, {len(tablet_models)} Tablet")
     print(f"Split Variants: {len(mobile_variants)} Mobile, {len(laptop_variants)} Laptop, {len(tablet_variants)} Tablet")
 
-    # Format Brands
-    brands_ts = "export const INITIAL_BRANDS: BrandData[] = " + json.dumps(final_brands, indent=2) + ";\n\n"
+    # Generate TypeScript chunks
+    ts_code_parts = []
+    
+    # Imports & Interfaces
+    ts_header = """// CashALL Unified Catalog Store
+// Mobiles, Laptops, and Tablets (+5% Increased Final Prices)
 
-    # Format Models Chunks
-    models_ts = ""
-    m_chunk_names = []
-    for cat_name, m_list in [('MOBILE', mobile_models), ('LAPTOP', laptop_models), ('TABLET', tablet_models)]:
-        chunks = [m_list[i:i + CHUNK_SIZE] for i in range(0, len(m_list), CHUNK_SIZE)]
-        for c_idx, chunk in enumerate(chunks, 1):
-            var_name = f"{cat_name}_MODELS_PART_{c_idx}"
-            m_chunk_names.append(var_name)
-            models_ts += f"const {var_name}: DeviceModelData[] = [\n"
-            for m in chunk:
-                models_ts += "  " + json.dumps(m) + ",\n"
-            models_ts += "];\n\n"
+export interface BrandData {
+  id: string;
+  name: string;
+  slug: string;
+  logoUrl?: string | null;
+  category: "MOBILE" | "LAPTOP" | "TABLET" | "BOTH" | "ALL" | "MOBILE_TABLET" | "LAPTOP_TABLET" | string;
+  sortOrder: number;
+  active: boolean;
+}
 
-    all_m_spread = ", ".join([f"...{name}" for name in m_chunk_names])
-    models_ts += f"export const INITIAL_MODELS: DeviceModelData[] = [{all_m_spread}];\n\n"
+export interface DeviceModelData {
+  id: string;
+  brandId: string;
+  brandSlug?: string;
+  name: string;
+  slug: string;
+  imageUrl?: string | null;
+  releaseYear?: number;
+  popular: boolean;
+  active: boolean;
+  contactForPrice?: boolean;
+  category?: "MOBILE" | "LAPTOP" | "TABLET" | string;
+}
 
-    # Format Variants Chunks
-    vars_ts = ""
-    v_chunk_names = []
-    for cat_name, v_list in [('MOBILE', mobile_variants), ('LAPTOP', laptop_variants), ('TABLET', tablet_variants)]:
-        chunks = [v_list[i:i + CHUNK_SIZE] for i in range(0, len(v_list), CHUNK_SIZE)]
-        for c_idx, chunk in enumerate(chunks, 1):
-            var_name = f"{cat_name}_VARIANTS_PART_{c_idx}"
-            v_chunk_names.append(var_name)
-            vars_ts += f"const {var_name}: DeviceVariantData[] = [\n"
-            for v in chunk:
-                clean_v = {k: val for k, val in v.items() if val is not None}
-                vars_ts += "  " + json.dumps(clean_v) + ",\n"
-            vars_ts += "];\n\n"
+export interface DeviceVariantData {
+  id: string;
+  modelId: string;
+  ram?: string;
+  storage: string;
+  basePrice: number;
+  active: boolean;
+}
 
-    all_v_spread = ", ".join([f"...{name}" for name in v_chunk_names])
-    vars_ts += f"export const INITIAL_VARIANTS: DeviceVariantData[] = [{all_v_spread}];\n\n"
+export interface QuestionOptionData {
+  id: string;
+  label: string;
+  description?: string;
+  iconName?: string;
+  sortOrder: number;
+}
 
-    new_store_code = head_code + brands_ts + models_ts + vars_ts + tail_code
+export interface QuestionData {
+  id: string;
+  title: string;
+  subtitle?: string;
+  group: "BASIC" | "SCREEN" | "BODY" | "FUNCTIONAL" | "REPAIR" | "ACCESSORIES";
+  type: "SINGLE" | "MULTIPLE";
+  sortOrder: number;
+  options: QuestionOptionData[];
+}
 
+export interface PricingRuleData {
+  id: string;
+  questionId: string;
+  optionId: string;
+  adjustmentType: "FIXED_DEDUCTION" | "PERCENTAGE_DEDUCTION" | "FIXED_BONUS" | "PERCENTAGE_BONUS";
+  adjustmentValue: number;
+}
+
+export interface QuoteData {
+  id: string;
+  quoteNumber: string;
+  variantId: string;
+  selectedAnswersJson: string;
+  basePrice: number;
+  totalDeductions: number;
+  estimatedPrice: number;
+  breakdownJson: string;
+  expiresAt: string;
+  status: "ACTIVE" | "ORDERED" | "EXPIRED";
+  createdAt: string;
+}
+
+export interface OrderData {
+  id: string;
+  orderNumber: string;
+  quoteId: string;
+  userId: string;
+  customerName: string;
+  customerPhone: string;
+  customerEmail?: string;
+  deviceName?: string;
+  addressId?: string;
+  addressSummary?: string;
+  pincode: string;
+  pickupDate: string;
+  pickupTimeSlot: string;
+  status: string;
+  assignedPartnerId?: string;
+  assignedPartnerName?: string;
+  assignedPartnerPhone?: string;
+  assignedPartnerBusiness?: string;
+  estimatedPrice?: number;
+  revisedPrice?: number;
+  priceDifferenceReason?: string;
+  declaredConditionSummary?: string;
+  inspectedConditionSummary?: string;
+  imeiNumber?: string;
+  paymentStatus?: "PENDING" | "PROCESSING" | "PAID" | "FAILED";
+  paymentTxRef?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface ServiceAreaData {
+  id: string;
+  pincode: string;
+  city: string;
+  state: string;
+  active: boolean;
+  pickupAvailable: boolean;
+}
+
+export interface PartnerData {
+  id: string;
+  name: string;
+  phone: string;
+  email: string;
+  businessName: string;
+  city: string;
+  status: "ACTIVE" | "PENDING" | "SUSPENDED";
+  rating: number;
+  completedPickups: number;
+}
+
+export interface FAQData {
+  id: string;
+  question: string;
+  answer: string;
+  category: string;
+}
+
+// SEEDED INITIAL DATA
+
+export const INITIAL_BRANDS: BrandData[] = """ + json.dumps(final_brands, indent=2) + ";\n\n"
+
+    ts_code_parts.append(ts_header)
+
+    # Chunk Model Arrays
+    def chunk_array(arr, name_prefix):
+        chunks = []
+        for i in range(0, len(arr), CHUNK_SIZE):
+            chunk = arr[i:i + CHUNK_SIZE]
+            chunk_name = f"{name_prefix}_PART_{len(chunks) + 1}"
+            chunks.append((chunk_name, chunk))
+        return chunks
+
+    mobile_m_chunks = chunk_array(mobile_models, "MOBILE_MODELS")
+    laptop_m_chunks = chunk_array(laptop_models, "LAPTOP_MODELS")
+    tablet_m_chunks = chunk_array(tablet_models, "TABLET_MODELS")
+
+    for cname, cdata in mobile_m_chunks + laptop_m_chunks + tablet_m_chunks:
+        ts_code_parts.append(f"const {cname}: DeviceModelData[] = {json.dumps(cdata, indent=2)};\n\n")
+
+    # Combine models
+    all_m_spreads = ", ".join([f"...{c[0]}" for c in mobile_m_chunks + laptop_m_chunks + tablet_m_chunks])
+    ts_code_parts.append(f"export const INITIAL_MODELS: DeviceModelData[] = [{all_m_spreads}];\n\n")
+
+    # Chunk Variant Arrays
+    mobile_v_chunks = chunk_array(mobile_variants, "MOBILE_VARIANTS")
+    laptop_v_chunks = chunk_array(laptop_variants, "LAPTOP_VARIANTS")
+    tablet_v_chunks = chunk_array(tablet_variants, "TABLET_VARIANTS")
+
+    for cname, cdata in mobile_v_chunks + laptop_v_chunks + tablet_v_chunks:
+        ts_code_parts.append(f"const {cname}: DeviceVariantData[] = {json.dumps(cdata, indent=2)};\n\n")
+
+    # Combine variants
+    all_v_spreads = ", ".join([f"...{c[0]}" for c in mobile_v_chunks + laptop_v_chunks + tablet_v_chunks])
+    ts_code_parts.append(f"export const INITIAL_VARIANTS: DeviceVariantData[] = [{all_v_spreads}];\n\n")
+
+    # Append Tail
+    ts_code_parts.append(preserved_tail)
+
+    full_ts_code = "".join(ts_code_parts)
     with open(STORE_TS, 'w', encoding='utf-8') as f:
-        f.write(new_store_code)
+        f.write(full_ts_code)
 
-    print("Updated lib/store.ts successfully with full catalog!")
+    print("Updated lib/store.ts successfully with real, dedicated category images!")
 
 if __name__ == '__main__':
     main()

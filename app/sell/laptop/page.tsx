@@ -33,17 +33,12 @@ export default function LaptopBrandSelectionPage() {
     loadBrands();
   }, []);
 
-  const laptopBrands = brands.filter(
-    (b) =>
-      b.category === "LAPTOP" ||
-      b.category === "BOTH" ||
-      b.category === "ALL" ||
-      b.category === "LAPTOP_TABLET" ||
-      INITIAL_MODELS.some(
-        (m) =>
-          (m.brandId === b.id || m.brandSlug?.toLowerCase() === b.slug?.toLowerCase()) &&
-          m.category === "LAPTOP"
-      )
+  const laptopBrands = brands.filter((b) =>
+    INITIAL_MODELS.some(
+      (m) =>
+        (m.brandId === b.id || m.brandSlug?.toLowerCase() === b.slug?.toLowerCase()) &&
+        m.category === "LAPTOP"
+    )
   );
 
   const filteredBrands = laptopBrands.filter((b) =>

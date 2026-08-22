@@ -34,17 +34,12 @@ export default function BrandSelectionPage() {
     loadBrands();
   }, []);
 
-  const mobileBrands = brands.filter(
-    (b) =>
-      b.category === "MOBILE" ||
-      b.category === "BOTH" ||
-      b.category === "ALL" ||
-      b.category === "MOBILE_TABLET" ||
-      INITIAL_MODELS.some(
-        (m) =>
-          (m.brandId === b.id || m.brandSlug?.toLowerCase() === b.slug?.toLowerCase()) &&
-          m.category === "MOBILE"
-      )
+  const mobileBrands = brands.filter((b) =>
+    INITIAL_MODELS.some(
+      (m) =>
+        (m.brandId === b.id || m.brandSlug?.toLowerCase() === b.slug?.toLowerCase()) &&
+        m.category === "MOBILE"
+    )
   );
 
   const filteredBrands = mobileBrands.filter((b) =>
