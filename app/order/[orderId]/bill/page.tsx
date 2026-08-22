@@ -108,8 +108,11 @@ export default function CustomerBillPage() {
                   <div className="text-sm font-extrabold text-brand-black mt-2">
                     {billData?.billNumber || `${orderId}-${new Date().getFullYear()}`}
                   </div>
-                  <div className="text-xs text-brand-muted">
-                    Date: {new Date().toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
+                  <div className="text-[11px] text-gray-500 mt-0.5">
+                    Order Placed: {billData?.orderDate ? new Date(billData.orderDate).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : "—"}
+                  </div>
+                  <div className="text-[11px] text-green-700 font-bold">
+                    Completed: {billData?.completionDate ? new Date(billData.completionDate).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : "—"}
                   </div>
                 </div>
               </div>

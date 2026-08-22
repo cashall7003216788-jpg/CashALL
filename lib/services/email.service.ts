@@ -122,6 +122,8 @@ export class EmailService {
     deviceName,
     finalPrice,
     urn,
+    orderDate,
+    completedDate,
     agentName,
   }: {
     to: string;
@@ -132,6 +134,8 @@ export class EmailService {
     deviceName: string;
     finalPrice: number;
     urn: string;
+    orderDate?: string;
+    completedDate?: string;
     agentName?: string;
   }) {
     let pdfBuffer: Buffer | null = null;
@@ -147,6 +151,8 @@ export class EmailService {
         amountPaid: finalPrice,
         urn,
         agentName,
+        orderDate,
+        completedDate,
       });
     } catch (pdfErr) {
       logger.error("Error building PDF invoice buffer:", pdfErr);
@@ -157,7 +163,9 @@ export class EmailService {
       finalPrice,
       urn,
       customerName,
-      deviceName
+      deviceName,
+      orderDate,
+      completedDate
     );
     const subject = `CashALL Official Invoice #${orderNumber} — ₹${finalPrice.toLocaleString("en-IN")}`;
 
@@ -222,7 +230,15 @@ export class EmailService {
   /**
    * Compiles HTML template for Final Settled Payout & Tax Receipt.
    */
-  static compilePayoutTemplate(orderNumber: string, amount: number, referenceId: string, customerName?: string, deviceName?: string) {
+  static compilePayoutTemplate(
+    orderNumber: string,
+    amount: number,
+    referenceId: string,
+    customerName?: string,
+    deviceName?: string,
+    orderDate?: string,
+    completedDate?: string
+  ) {
     return `
       <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 24px; color: #111; max-width: 600px; margin: 0 auto; border: 1px solid #e5e7eb; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
         
@@ -243,13 +259,21 @@ export class EmailService {
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px;">
           <tr style="background-color: #f9fafb;">
             <td style="padding: 10px 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #374151;">Order ID</td>
-            <td style="padding: 10px 14px; border: 1px solid #e5e7eb; color: #111827; font-weight: 600;">${orderNumber}</td>
+            <td style="padding: 10px 14px; border: 1px solid #e5e7eb; color: #111827; font-weight: 600;">#${orderNumber}</td>
           </tr>
           ${deviceName ? `
           <tr>
             <td style="padding: 10px 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #374151;">Device Purchased</td>
             <td style="padding: 10px 14px; border: 1px solid #e5e7eb; color: #111827; font-weight: 600;">${deviceName}</td>
           </tr>` : ""}
+          <tr style="background-color: #f9fafb;">
+            <td style="padding: 10px 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #374151;">Order Placed Time</td>
+            <td style="padding: 10px 14px; border: 1px solid #e5e7eb; color: #111827; font-weight: 600;">${orderDate || "—"}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #374151;">Order Completion & Payout</td>
+            <td style="padding: 10px 14px; border: 1px solid #e5e7eb; color: #111827; font-weight: 600;">${completedDate || new Date().toLocaleString("en-IN")}</td>
+          </tr>
           <tr style="background-color: #f9fafb;">
             <td style="padding: 10px 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #374151;">Final Price Paid</td>
             <td style="padding: 10px 14px; border: 1px solid #e5e7eb; color: #16a34a; font-weight: 800; font-size: 16px;">₹${amount.toLocaleString('en-IN')}</td>

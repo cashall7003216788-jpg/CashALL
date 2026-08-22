@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "next/navigation";
 import { CheckCircle2, Printer, Download, Shield } from "lucide-react";
+import { cleanDeviceName } from "@/lib/device";
 
 interface BillData {
   orderNumber: string;
@@ -148,7 +149,7 @@ export default function AdminBillPage() {
           buyerGstin: "19AVPPG9800JIZ3",
           buyerAddress: "Howrah, West Bengal",
           agentName: agentName,
-          deviceName: resolvedDeviceName,
+          deviceName: cleanDeviceName(resolvedDeviceName),
           variantName: ord.quote?.variant?.name || ord.quote?.variant?.storage || "Doorstep Verified Device",
           imeiNumber,
           quoteNumber: ord.quote?.quoteNumber || `CAQ-${ord.id?.slice(0, 6).toUpperCase()}`,
@@ -157,9 +158,9 @@ export default function AdminBillPage() {
           paymentMethod: payment?.method || "UPI",
           utrNumber: payment?.transactionRef || (payment as any)?.utrNumber || ord.payments?.[0]?.transactionRef || "128158907549",
           upiId: payment?.upiId || (payment as any)?.upiId || "Instant UPI",
-          paidAt: `${exactDateStr}, 02:30 PM`,
-          orderDate: exactDateStr,
-          completedAt: exactDateStr,
+          paidAt: ord.updatedAt ? new Date(ord.updatedAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : `${exactDateStr}, 02:30 PM`,
+          orderDate: ord.createdAt ? new Date(ord.createdAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : `${exactDateStr}, 11:15 AM`,
+          completedAt: ord.updatedAt ? new Date(ord.updatedAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : `${exactDateStr}, 02:30 PM`,
         });
       } catch (err: any) {
         setError(err?.message || "Failed to load bill.");

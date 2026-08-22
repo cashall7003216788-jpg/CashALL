@@ -108,6 +108,8 @@ export interface InvoicePdfProps {
   urn: string;
   agentName?: string;
   date?: string;
+  orderDate?: string;
+  completedDate?: string;
 }
 
 export function InvoicePdfDocument({
@@ -121,8 +123,12 @@ export function InvoicePdfDocument({
   urn,
   agentName,
   date,
+  orderDate,
+  completedDate,
 }: InvoicePdfProps) {
   const formattedDate = date || new Date().toISOString().split("T")[0];
+  const formattedOrderDate = orderDate || formattedDate;
+  const formattedCompletedDate = completedDate || formattedDate;
 
   return (
     <Document>
@@ -151,8 +157,13 @@ export function InvoicePdfDocument({
         </View>
 
         <View style={styles.row}>
-          <Text style={styles.rowLabel}>Transaction Date</Text>
-          <Text style={styles.rowVal}>{formattedDate}</Text>
+          <Text style={styles.rowLabel}>Order Placed Time</Text>
+          <Text style={styles.rowVal}>{formattedOrderDate}</Text>
+        </View>
+
+        <View style={styles.row}>
+          <Text style={styles.rowLabel}>Order Completion & Payout</Text>
+          <Text style={styles.rowVal}>{formattedCompletedDate}</Text>
         </View>
 
         <View style={styles.row}>

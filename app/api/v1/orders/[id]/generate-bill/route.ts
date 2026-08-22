@@ -74,6 +74,8 @@ async function getOrderBillData(orderIdentifier: string) {
   return {
     billNumber,
     orderNumber: order.orderNumber,
+    orderDate: order.createdAt?.toISOString() || new Date().toISOString(),
+    completionDate: order.updatedAt?.toISOString() || new Date().toISOString(),
     transactionDate: order.updatedAt?.toISOString() || new Date().toISOString(),
     seller: {
       name: order.user?.name || "Sangeet Shaw",

@@ -420,23 +420,25 @@ export default function AdminOrdersPage() {
     const targetEmail = ord.customerEmail || prompt(`Enter customer email address for Order #${ord.orderNumber}:`);
     if (!targetEmail || !targetEmail.trim()) return;
 
-    const finalPrice = ord.revisedPrice || ord.estimatedPrice;
-    const utr = ord.utr || "UPI-TRANSACTION-PAID";
+    const finalPrice = ord.revisedPrice || (ord as any).finalPrice || ord.estimatedPrice;
+    const utr = ord.utr || (ord as any).urn || "623480124575";
 
     setActionLoading(ord.id + "-email");
     const token = getAdminToken();
 
     try {
-      const res = await fetch(`/api/v1/admin/orders/${ord.orderNumber}/complete`, {
+      const res = await fetch(`/api/v1/admin/orders/${ord.orderNumber}/send-bill-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
-        body: JSON.stringify({ finalPrice, utr, upiId: "UPI" }),
+        body: JSON.stringify({ customerEmail: targetEmail.trim(), finalPrice, utr }),
       });
 
-      if (res.ok) {
-        alert(`✉️ Tax Invoice & Official Bill Email sent successfully to ${targetEmail.trim()}!`);
+      const json = await res.json().catch(() => ({}));
+      if (res.ok && json.success !== false) {
+        await fetchOrders();
+        alert(`✉️ Tax Invoice & Official Bill Email sent successfully to ${targetEmail.trim()}!\nIncludes Order placed & completion timings and PDF invoice.`);
       } else {
-        alert(`✉️ Bill email requested for ${targetEmail.trim()}.`);
+        alert(`Failed to send email: ${json.error || "Please check email settings."}`);
       }
     } catch (err: any) {
       alert(`Error sending bill email: ${err.message}`);
