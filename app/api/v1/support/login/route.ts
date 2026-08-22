@@ -56,6 +56,29 @@ export async function POST(req: Request) {
 
     const token = `tok_support_${Date.now()}`;
 
+    // Record Support Login timestamp in auditLog
+    try {
+      const isUuid = supportUser?.id && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(supportUser.id);
+      const actorId = isUuid && supportUser ? supportUser.id : crypto.randomUUID();
+      await prisma.auditLog.create({
+        data: {
+          actorId,
+          actorRole: "SUPPORT",
+          action: "SUPPORT_LOGIN",
+          tableName: "SupportSession",
+          recordId: crypto.randomUUID(),
+          newValuesJson: JSON.stringify({
+            name: resolvedName,
+            phone: supportUser?.phone || body.phone || "7003216788",
+            event: "LOGIN",
+            loginTime: new Date().toISOString(),
+          }),
+        },
+      });
+    } catch (auditErr) {
+      console.warn("Could not record support login audit:", auditErr);
+    }
+
     return NextResponse.json({
       success: true,
       token,

@@ -98,6 +98,21 @@ export default function SupportDashboardPage() {
     }
   }, [router]);
 
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/v1/support/logout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: supportSession?.name || "Support Agent",
+          phone: supportSession?.phone || "",
+        }),
+      });
+    } catch (e) {}
+    localStorage.removeItem("cashall_support_session");
+    router.push("/support/login");
+  };
+
   const fetchData = useCallback(async () => {
     setLoading(true);
     setError("");
@@ -128,13 +143,6 @@ export default function SupportDashboardPage() {
       fetchData();
     }
   }, [supportSession, fetchData]);
-
-  const handleLogout = () => {
-    if (typeof window !== "undefined") {
-      localStorage.removeItem("cashall_support_session");
-    }
-    router.replace("/support/login");
-  };
 
   const handleLogCallSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

@@ -127,7 +127,7 @@ export default function AdminQuotesPage() {
 
   const handleDownloadCSV = () => {
     if (filteredQuotes.length === 0) return;
-    const headers = ["Quote ID", "Customer Name", "Customer Phone", "Device Purchased", "Estimated Price (INR)", "Scheduled Visit", "Booking Status", "Generated Date"];
+    const headers = ["Quote ID", "Customer Name", "Customer Phone", "Device Purchased", "Estimated Price (INR)", "Scheduled Visit", "Booking Status", "Generated Date & Time"];
     const rows = filteredQuotes.map((q) => [
       q.quoteNumber,
       `"${(q.customerName || "Customer Lead").replace(/"/g, '""')}"`,
@@ -136,7 +136,7 @@ export default function AdminQuotesPage() {
       q.estimatedPrice,
       q.pickupDate ? `"${q.pickupDate} (${q.pickupTimeSlot || "Standard"})"` : "Not Scheduled",
       q.status,
-      new Date(q.createdAt).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }),
+      `"${new Date(q.createdAt).toLocaleString("en-IN")}"`,
     ]);
     const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map((e) => e.join(","))].join("\n");
     const encodedUri = encodeURI(csvContent);
@@ -286,7 +286,7 @@ export default function AdminQuotesPage() {
                     <th className="py-3 px-3">Device Purchased & Valuation</th>
                     <th className="py-3 px-3">Scheduled Agent Visit</th>
                     <th className="py-3 px-3">Booking Status</th>
-                    <th className="py-3 px-3">Generated Date</th>
+                    <th className="py-3 px-3">Generated Date & Time</th>
                     <th className="py-3 px-3">Action</th>
                   </tr>
                 </thead>
@@ -352,9 +352,9 @@ export default function AdminQuotesPage() {
                         </span>
                       </td>
 
-                      {/* GENERATED DATE */}
-                      <td className="py-4 px-3 text-neutral-400 text-[11px]">
-                        {new Date(q.createdAt).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" })}
+                      {/* GENERATED DATE & TIME */}
+                      <td className="py-4 px-3 text-neutral-300 font-mono text-[11px] whitespace-nowrap">
+                        {new Date(q.createdAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })}
                       </td>
 
                       {/* ACTION CONVERT */}

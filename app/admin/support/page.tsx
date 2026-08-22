@@ -31,10 +31,23 @@ interface SupportStaff {
   status: string;
   createdAt: string;
   callsCount?: number;
+  lastLoginTime?: string;
+  lastLogoutTime?: string;
+  sessionStatus?: string;
+}
+
+interface SupportSessionLog {
+  id: string;
+  action: string;
+  staffName: string;
+  phone: string;
+  event: string;
+  timestamp: string;
 }
 
 export default function AdminSupportManagementPage() {
   const [supportStaff, setSupportStaff] = useState<SupportStaff[]>([]);
+  const [sessionLogs, setSessionLogs] = useState<SupportSessionLog[]>([]);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -57,6 +70,7 @@ export default function AdminSupportManagementPage() {
       const json = await res.json();
       if (json.success) {
         setSupportStaff(json.supportStaff || []);
+        setSessionLogs(json.sessionLogs || []);
       } else {
         setError(json.error || "Failed to fetch support staff");
       }
@@ -355,11 +369,11 @@ export default function AdminSupportManagementPage() {
                   <thead>
                     <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider font-extrabold print:text-black print:border-gray-300">
                       <th className="py-3 px-3">Staff Name</th>
-                      <th className="py-3 px-3">Phone</th>
-                      <th className="py-3 px-3">User Name / Email</th>
+                      <th className="py-3 px-3">Phone & Email</th>
+                      <th className="py-3 px-3">Session Status</th>
+                      <th className="py-3 px-3">Last Log In</th>
+                      <th className="py-3 px-3">Last Log Out</th>
                       <th className="py-3 px-3">Calls Logged</th>
-                      <th className="py-3 px-3">Status</th>
-                      <th className="py-3 px-3">Created</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-neutral-700/60 print:divide-gray-200">
@@ -371,29 +385,31 @@ export default function AdminSupportManagementPage() {
                             <span>{staff.name}</span>
                           </div>
                         </td>
-                        <td className="py-4 px-3 text-neutral-300 font-mono print:text-gray-800">
-                          {staff.phone}
+                        <td className="py-4 px-3">
+                          <div className="text-neutral-300 font-mono text-xs">{staff.phone}</div>
+                          <div className="text-neutral-400 text-[11px]">{staff.email}</div>
                         </td>
-                        <td className="py-4 px-3 text-neutral-400 text-[11px] print:text-gray-700">
-                          {staff.email}
+                        <td className="py-4 px-3">
+                          <span className={`inline-flex items-center gap-1 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
+                            staff.sessionStatus === "ONLINE"
+                              ? "bg-emerald-950 text-emerald-400 border border-emerald-700"
+                              : "bg-neutral-800 text-neutral-400 border border-neutral-700"
+                          }`}>
+                            <span className={`w-1.5 h-1.5 rounded-full ${staff.sessionStatus === "ONLINE" ? "bg-emerald-400 animate-pulse" : "bg-neutral-500"}`} />
+                            <span>{staff.sessionStatus || "OFFLINE"}</span>
+                          </span>
+                        </td>
+                        <td className="py-4 px-3 text-green-400 font-medium text-[11px] whitespace-nowrap">
+                          {staff.lastLoginTime || "—"}
+                        </td>
+                        <td className="py-4 px-3 text-neutral-400 text-[11px] whitespace-nowrap">
+                          {staff.lastLogoutTime || "—"}
                         </td>
                         <td className="py-4 px-3">
                           <div className="inline-flex items-center gap-1 bg-blue-950/80 border border-blue-800 text-blue-300 px-2.5 py-1 rounded-xl text-xs font-bold font-mono">
                             <MessageSquare className="w-3 h-3 text-blue-400" />
                             <span>{staff.callsCount || 0} Calls</span>
                           </div>
-                        </td>
-                        <td className="py-4 px-3">
-                          <span className="bg-green-950 text-green-400 border border-green-700 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">
-                            ACTIVE
-                          </span>
-                        </td>
-                        <td className="py-4 px-3 text-neutral-400 text-[11px] print:text-gray-600">
-                          {new Date(staff.createdAt).toLocaleDateString("en-IN", {
-                            day: "2-digit",
-                            month: "short",
-                            year: "numeric",
-                          })}
                         </td>
                       </tr>
                     ))}
@@ -402,6 +418,74 @@ export default function AdminSupportManagementPage() {
               </div>
             )}
           </div>
+        </div>
+
+        {/* SUPPORT LOGIN & LOGOUT ATTENDANCE AUDIT LOG */}
+        <div className="bg-neutral-800 border border-neutral-700 p-6 rounded-3xl shadow-xl space-y-4 print:hidden">
+          <div className="flex items-center justify-between border-b border-neutral-700 pb-3">
+            <div>
+              <h2 className="text-base font-extrabold text-white flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5 text-yellow-400" />
+                <span>Support Team Attendance & Session Audit Log ({sessionLogs.length})</span>
+              </h2>
+              <p className="text-xs text-neutral-400 mt-0.5">
+                Exact log in and log out timestamps recorded for support staff members
+              </p>
+            </div>
+            <button
+              onClick={fetchStaff}
+              disabled={loading}
+              className="flex items-center gap-1.5 text-xs text-yellow-400 bg-yellow-400/10 hover:bg-yellow-400/20 px-3 py-1.5 rounded-xl border border-yellow-400/20 transition"
+            >
+              <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
+              <span>Refresh Sessions</span>
+            </button>
+          </div>
+
+          {sessionLogs.length === 0 ? (
+            <div className="text-center py-8 text-neutral-500 text-xs">
+              No recent session logs recorded. Activity will automatically log when staff signs in or signs out.
+            </div>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider font-extrabold">
+                    <th className="py-3 px-3">Staff Name</th>
+                    <th className="py-3 px-3">Session Event</th>
+                    <th className="py-3 px-3">Date & Time</th>
+                    <th className="py-3 px-3">Contact Phone</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-neutral-700/60">
+                  {sessionLogs.map((log) => (
+                    <tr key={log.id} className="hover:bg-neutral-750/50 transition">
+                      <td className="py-3.5 px-3 font-bold text-white flex items-center gap-2">
+                        <User className="w-3.5 h-3.5 text-yellow-400" />
+                        <span>{log.staffName}</span>
+                      </td>
+                      <td className="py-3.5 px-3">
+                        <span className={`inline-flex items-center gap-1.5 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider ${
+                          log.action === "SUPPORT_LOGIN"
+                            ? "bg-green-950 text-green-400 border border-green-700"
+                            : "bg-neutral-800 text-neutral-300 border border-neutral-600"
+                        }`}>
+                          <span className={`w-1.5 h-1.5 rounded-full ${log.action === "SUPPORT_LOGIN" ? "bg-green-400 animate-pulse" : "bg-neutral-400"}`} />
+                          <span>{log.event}</span>
+                        </span>
+                      </td>
+                      <td className="py-3.5 px-3 text-neutral-200 font-mono text-xs">
+                        {log.timestamp}
+                      </td>
+                      <td className="py-3.5 px-3 text-neutral-400 font-mono">
+                        {log.phone}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
       </main>
     </div>

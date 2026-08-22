@@ -48,6 +48,9 @@ interface Order {
   agentName?: string;
   utr?: string;
   imeiNumber?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  completedAt?: string;
 }
 
 function getAdminToken() {
@@ -138,6 +141,9 @@ export default function AdminOrdersPage() {
             agentId: ord.agentId || ord.agent?.id,
             agentName: ord.agent?.name || assignedPartnerName,
             utr: transactionRef,
+            createdAt: ord.createdAt,
+            updatedAt: ord.updatedAt,
+            completedAt: ["COMPLETED", "PAID", "BILL_GENERATED"].includes(status) ? (ord.updatedAt || activePayment?.createdAt) : undefined,
           };
         });
         combinedOrders.push(...mapped);
@@ -524,9 +530,29 @@ export default function AdminOrdersPage() {
 
   const handleDownloadCSV = () => {
     if (orders.length === 0) return;
-    const headers = ["Order Number", "Customer Name", "Phone", "Email", "Location", "Device Name", "IMEI Number", "Estimated Quote (INR)", "Final Settled Payout (INR)", "Assigned Agent", "Order Status", "Payment Status"];
+    const headers = [
+      "Order Number",
+      "Order Placed Date & Time",
+      "Pickup Date & Slot",
+      "Order Completed Date & Time",
+      "Customer Name",
+      "Phone",
+      "Email",
+      "Location",
+      "Device Name",
+      "IMEI Number",
+      "Estimated Quote (INR)",
+      "Final Settled Payout (INR)",
+      "Bank UTR",
+      "Assigned Agent",
+      "Order Status",
+      "Payment Status",
+    ];
     const rows = orders.map((ord) => [
       ord.orderNumber,
+      ord.createdAt ? `"${new Date(ord.createdAt).toLocaleString("en-IN")}"` : "—",
+      `"${ord.pickupDate} (${ord.pickupTimeSlot})"`,
+      ord.completedAt ? `"${new Date(ord.completedAt).toLocaleString("en-IN")}"` : "—",
       `"${(ord.customerName || "Customer").replace(/"/g, '""')}"`,
       ord.customerPhone || "—",
       ord.customerEmail || "—",
@@ -535,6 +561,7 @@ export default function AdminOrdersPage() {
       ord.imeiNumber || (ord as any).imeiRecords?.[0]?.code || "864932057391842",
       ord.estimatedPrice || 0,
       ord.revisedPrice || (ord as any).finalPrice || ord.estimatedPrice || 0,
+      ord.utr || "—",
       `"${(ord.agentName || "Assigned Agent").replace(/"/g, '""')}"`,
       ord.status,
       ord.paymentStatus || "PAID",
@@ -626,16 +653,31 @@ export default function AdminOrdersPage() {
               key={ord.id}
               className="bg-neutral-800 border border-neutral-700 rounded-3xl p-6 shadow-xl hover:border-neutral-600 transition-all space-y-4"
             >
-              {/* ROW 1: TOP BADGES & IDENTIFIERS */}
+              {/* ROW 1: TOP BADGES & TIMESTAMPS */}
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-neutral-700 pb-4">
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <div className="bg-black text-yellow-400 text-base font-black px-4 py-1.5 rounded-xl border border-yellow-400/20 font-price">
                     #{ord.orderNumber}
                   </div>
+                  
+                  {ord.createdAt && (
+                    <div className="flex items-center gap-1.5 text-xs text-neutral-400">
+                      <Clock className="w-3.5 h-3.5 text-neutral-500" />
+                      <span>Placed: <strong className="text-white font-medium">{new Date(ord.createdAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })}</strong></span>
+                    </div>
+                  )}
+
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-neutral-300">
                     <Calendar className="w-3.5 h-3.5 text-yellow-400" />
-                    <span>{ord.pickupDate} ({ord.pickupTimeSlot})</span>
+                    <span>Pickup: {ord.pickupDate} ({ord.pickupTimeSlot})</span>
                   </div>
+
+                  {ord.completedAt && (
+                    <div className="flex items-center gap-1.5 text-xs text-green-400 bg-green-950/60 border border-green-800/60 px-2.5 py-0.5 rounded-lg">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-green-400" />
+                      <span>Completed: {new Date(ord.completedAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })}</span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex items-center gap-2 flex-wrap">

@@ -19,6 +19,8 @@ interface LedgerEntry {
   id: string;
   orderNumber: string;
   date: string;
+  orderPlacedAt?: string;
+  settledAt?: string;
   customerName: string;
   customerPhone: string;
   customerEmail: string;
@@ -73,10 +75,34 @@ export default function AdminLedgerPage() {
   const handleDownloadCSV = () => {
     if (filteredEntries.length === 0) return;
     const headers = [
-      "Order Number", "Date", "Customer Name", "Customer Phone", "Pincode", "Address", "Device Name", "Disbursed Amount (INR)", "Payment Status", "Bank UTR / Ref", "Assigned Agent", "Order Status"
+      "Order Number",
+      "Order Placed Date & Time",
+      "Payout Settled Date & Time",
+      "Customer Name",
+      "Customer Phone",
+      "Pincode",
+      "Address",
+      "Device Name",
+      "Disbursed Amount (INR)",
+      "Payment Status",
+      "Bank UTR / Ref",
+      "Assigned Agent",
+      "Order Status",
     ];
     const rows = filteredEntries.map((item) => [
-      item.orderNumber, item.date, `"${item.customerName.replace(/"/g, '""')}"`, item.customerPhone, item.pincode, `"${item.address.replace(/"/g, '""')}"`, `"${item.deviceName.replace(/"/g, '""')}"`, item.amountPaid, item.paymentStatus, item.urn, `"${item.agentName.replace(/"/g, '""')}"`, item.status
+      item.orderNumber,
+      `"${item.orderPlacedAt || item.date}"`,
+      `"${item.settledAt || "—"}"`,
+      `"${item.customerName.replace(/"/g, '""')}"`,
+      item.customerPhone,
+      item.pincode,
+      `"${item.address.replace(/"/g, '""')}"`,
+      `"${item.deviceName.replace(/"/g, '""')}"`,
+      item.amountPaid,
+      item.paymentStatus,
+      item.urn,
+      `"${item.agentName.replace(/"/g, '""')}"`,
+      item.status,
     ]);
     const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map((e) => e.join(","))].join("\n");
     const encodedUri = encodeURI(csvContent);
@@ -211,8 +237,9 @@ export default function AdminLedgerPage() {
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
                   <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider font-extrabold print:text-black print:border-gray-300">
-                    <th className="py-3 px-3">Order Number</th>
-                    <th className="py-3 px-3">Date</th>
+                    <th className="py-3 px-3">Order ID</th>
+                    <th className="py-3 px-3">Order Placed</th>
+                    <th className="py-3 px-3">Payout Settled</th>
                     <th className="py-3 px-3">Customer & Phone</th>
                     <th className="py-3 px-3">Device Name</th>
                     <th className="py-3 px-3">Disbursed Amount</th>
@@ -224,8 +251,13 @@ export default function AdminLedgerPage() {
                 <tbody className="divide-y divide-neutral-700/60 print:divide-gray-200">
                   {filteredEntries.map((item) => (
                     <tr key={item.id} className="hover:bg-neutral-750/50 transition">
-                      <td className="py-4 px-3 font-mono font-black text-yellow-400 print:text-black">{item.orderNumber}</td>
-                      <td className="py-4 px-3 text-neutral-300 print:text-gray-800">{item.date}</td>
+                      <td className="py-4 px-3 font-mono font-black text-yellow-400 print:text-black">#{item.orderNumber}</td>
+                      <td className="py-4 px-3 text-neutral-300 font-medium print:text-gray-800 text-[11px] whitespace-nowrap">
+                        {item.orderPlacedAt || item.date}
+                      </td>
+                      <td className="py-4 px-3 text-green-400 font-bold print:text-gray-800 text-[11px] whitespace-nowrap">
+                        {item.settledAt || "—"}
+                      </td>
                       <td className="py-4 px-3">
                         <div className="font-bold text-white print:text-black">{item.customerName}</div>
                         <div className="text-[11px] text-neutral-400 font-mono print:text-gray-600">{item.customerPhone}</div>

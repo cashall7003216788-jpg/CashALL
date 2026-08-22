@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { cleanDeviceName } from "@/lib/device";
 
 export const dynamic = "force-dynamic";
 
@@ -62,6 +63,7 @@ export async function GET() {
         const m = ord.quote.variant.model;
         deviceName = m.brand ? `${m.brand.name} ${m.name}` : m.name;
       }
+      deviceName = cleanDeviceName(deviceName);
 
       const d = new Date(ord.createdAt);
       const istDate = d.toLocaleDateString("en-IN", {
@@ -73,7 +75,7 @@ export async function GET() {
 
       const activePayment = ord.payments?.find((p: any) => p.status === "PAID") || ord.payments?.[0];
       const paymentStatus = activePayment?.status === "PAID" || ord.status === "COMPLETED" ? "PAID" : "PENDING";
-      const urn = ord.urn || activePayment?.transactionRef || "N/A";
+      const urn = ord.urn || activePayment?.transactionRef || (ord as any).utr || "N/A";
       const notes = ord.pickups?.[0]?.notes || "";
       const isValidNotesAgent = notes && notes !== "Doorstep pickup order confirmed." && notes !== "Order synced to database automatically.";
 
@@ -92,10 +94,20 @@ export async function GET() {
       if (ord.orderNumber === "CA33039") agentName = "HYDER ALI";
       if (ord.orderNumber === "CA83848") agentName = "Aryan Jaiswal";
 
+      const orderPlacedAt = ord.createdAt
+        ? new Date(ord.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })
+        : istDate;
+
+      const settledAt = ["COMPLETED", "PAID"].includes(ord.status) || paymentStatus === "PAID"
+        ? (ord.updatedAt ? new Date(ord.updatedAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : istDate)
+        : "—";
+
       return {
         id: ord.id,
         orderNumber: ord.orderNumber,
         date: istDate,
+        orderPlacedAt,
+        settledAt,
         customerName: ord.user?.name || "Customer",
         customerPhone: ord.user?.phone || "—",
         customerEmail: ord.user?.email || "—",
