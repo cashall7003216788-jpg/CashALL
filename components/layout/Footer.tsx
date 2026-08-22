@@ -135,6 +135,11 @@ export function Footer() {
                   Sell Laptop
                 </Link>
               </li>
+              <li>
+                <Link href="/sell/tablet" className="hover:text-brand-yellow transition-colors">
+                  Sell Tablet / iPad
+                </Link>
+              </li>
             </ul>
           </div>
 
