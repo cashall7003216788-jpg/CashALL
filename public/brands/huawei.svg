@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <g transform="translate(150, 115)">
+    <!-- Central petal -->
+    <path d="M 0 -75 C -11 -45 -11 -10 0 0 C 11 -10 11 -45 0 -75 Z" fill="#E4002B" />
+    
+    <!-- Inner left petal -->
+    <path d="M 0 0 C -18 -12 -38 -36 -28 -68 C -15 -62 -4 -42 0 0 Z" fill="#E4002B" />
+    <!-- Inner right petal -->
+    <path d="M 0 0 C 18 -12 38 -36 28 -68 C 15 -62 4 -42 0 0 Z" fill="#E4002B" />
+    
+    <!-- Mid left petal -->
+    <path d="M 0 0 C -28 -8 -58 -22 -52 -54 C -38 -52 -18 -32 0 0 Z" fill="#E4002B" />
+    <!-- Mid right petal -->
+    <path d="M 0 0 C 28 -8 58 -22 52 -54 C 38 -52 18 -32 0 0 Z" fill="#E4002B" />
+    
+    <!-- Outer left petal -->
+    <path d="M 0 0 C -34 -2 -70 -6 -68 -36 C -54 -38 -28 -20 0 0 Z" fill="#E4002B" />
+    <!-- Outer right petal -->
+    <path d="M 0 0 C 34 -2 70 -6 68 -36 C 54 -38 28 -20 0 0 Z" fill="#E4002B" />
+    
+    <!-- Far outer left petal -->
+    <path d="M 0 0 C -36 4 -74 12 -75 -15 C -62 -22 -34 -8 0 0 Z" fill="#E4002B" />
+    <!-- Far outer right petal -->
+    <path d="M 0 0 C 36 4 74 12 75 -15 C 62 -22 34 -8 0 0 Z" fill="#E4002B" />
+  </g>
+  <text x="150" y="240" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="34" font-weight="900" text-anchor="middle" letter-spacing="4" fill="#000000">HUAWEI</text>
+</svg>

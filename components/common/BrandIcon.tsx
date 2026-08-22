@@ -95,6 +95,28 @@ export function BrandIcon({
       return <span className="bg-orange-500 text-white px-2 py-0.5 rounded text-xs sm:text-sm font-black tracking-wider font-sans">mi</span>;
     }
 
+    // 13. HUAWEI
+    if (brandUpper.includes("HUAWEI")) {
+      return (
+        <div className="flex flex-col items-center justify-center">
+          <svg className="w-8 h-8 sm:w-10 sm:h-10" viewBox="0 0 300 300">
+            <g transform="translate(150, 115)">
+              <path d="M 0 -75 C -11 -45 -11 -10 0 0 C 11 -10 11 -45 0 -75 Z" fill="#E4002B" />
+              <path d="M 0 0 C -18 -12 -38 -36 -28 -68 C -15 -62 -4 -42 0 0 Z" fill="#E4002B" />
+              <path d="M 0 0 C 18 -12 38 -36 28 -68 C 15 -62 4 -42 0 0 Z" fill="#E4002B" />
+              <path d="M 0 0 C -28 -8 -58 -22 -52 -54 C -38 -52 -18 -32 0 0 Z" fill="#E4002B" />
+              <path d="M 0 0 C 28 -8 58 -22 52 -54 C 38 -52 18 -32 0 0 Z" fill="#E4002B" />
+              <path d="M 0 0 C -34 -2 -70 -6 -68 -36 C -54 -38 -28 -20 0 0 Z" fill="#E4002B" />
+              <path d="M 0 0 C 34 -2 70 -6 68 -36 C 54 -38 28 -20 0 0 Z" fill="#E4002B" />
+              <path d="M 0 0 C -36 4 -74 12 -75 -15 C -62 -22 -34 -8 0 0 Z" fill="#E4002B" />
+              <path d="M 0 0 C 36 4 74 12 75 -15 C 62 -22 34 -8 0 0 Z" fill="#E4002B" />
+            </g>
+            <text x="150" y="240" fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif" fontSize="34" fontWeight="900" textAnchor="middle" letterSpacing="4" fill="#000000">HUAWEI</text>
+          </svg>
+        </div>
+      );
+    }
+
     return (
       <div className="flex flex-col items-center justify-center">
         {fallbackType === "LAPTOP" ? (

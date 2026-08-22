@@ -281,7 +281,7 @@ export const INITIAL_BRANDS: BrandData[] = [
     "id": "b-huawei",
     "name": "Huawei",
     "slug": "huawei",
-    "logoUrl": "https://s3n.cashify.in/cashify/brand/img/xhdpi/71ceb6bc-6f4e.jpg?w=200",
+    "logoUrl": "/brands/huawei.svg",
     "category": "MOBILE_TABLET",
     "sortOrder": 17,
     "active": true
