@@ -17,7 +17,7 @@ export default function CustomerBillPage() {
   useEffect(() => {
     const fetchBill = async () => {
       try {
-        const res = await fetch(`/api/v1/orders/${orderId}/generate-bill`, { method: "POST" });
+        const res = await fetch(`/api/v1/orders/${orderId}/generate-bill`);
         if (res.ok) {
           const data = await res.json();
           setBillData(data.data?.billData || null);
@@ -99,16 +99,16 @@ export default function CustomerBillPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                 <div className="p-4 bg-gray-50 rounded-2xl border border-gray-100 space-y-1">
                   <span className="text-gray-400 font-bold uppercase block text-[10px]">Seller Details</span>
-                  <div className="font-extrabold text-brand-black text-sm">{billData?.seller?.name || "CashALL Seller"}</div>
-                  <div className="text-gray-600">{billData?.seller?.phoneMasked || "+91 98****3210"}</div>
-                  <div className="text-gray-500 text-[11px] mt-1">{billData?.seller?.address || "Kolkata, West Bengal"}</div>
+                  <div className="font-extrabold text-brand-black text-sm">{billData?.seller?.name || "Customer"}</div>
+                  <div className="text-gray-600">{billData?.seller?.phoneMasked || "—"}</div>
+                  <div className="text-gray-500 text-[11px] mt-1">{billData?.seller?.address || "Howrah, West Bengal"}</div>
                 </div>
 
                 <div className="p-4 bg-gray-50 rounded-2xl border border-gray-100 space-y-1">
                   <span className="text-gray-400 font-bold uppercase block text-[10px]">Device Specifications</span>
-                  <div className="font-extrabold text-brand-black text-sm">{billData?.device?.brand || "Apple"} {billData?.device?.model || "iPhone 15 Pro Max"}</div>
-                  <div className="text-gray-600">Storage / Variant: {billData?.device?.variant || "256GB"}</div>
-                  <div className="text-gray-500 font-mono text-[11px]">IMEI 1: {billData?.device?.imei1 || "864502049281745"}</div>
+                  <div className="font-extrabold text-brand-black text-sm">{billData?.device?.deviceName || `${billData?.device?.brand || "Apple"} ${billData?.device?.model || "iPhone 15"}`}</div>
+                  <div className="text-gray-600">Storage / Variant: {billData?.device?.variant || "128 GB"}</div>
+                  <div className="text-gray-500 font-mono text-[11px]">IMEI 1: {billData?.device?.imei1 || "—"}</div>
                 </div>
               </div>
 
@@ -117,17 +117,17 @@ export default function CustomerBillPage() {
                 <div className="flex items-center justify-between border-b border-neutral-800 pb-3">
                   <span className="text-xs font-bold text-gray-400 uppercase">Final Agreed Purchase Price</span>
                   <span className="text-2xl font-black text-brand-yellow font-price">
-                    ₹{(billData?.financials?.finalPurchasePrice || 49500).toLocaleString("en-IN")}
+                    ₹{(billData?.financials?.finalPurchasePrice || 0).toLocaleString("en-IN")}
                   </span>
                 </div>
                 <div className="grid grid-cols-2 gap-2 text-xs text-gray-300">
                   <div>
                     <span className="text-[10px] text-gray-400 block uppercase">Payment Method</span>
-                    <span className="font-bold text-white">Manual UPI Payout ({billData?.financials?.paymentMethod || "UPI"})</span>
+                    <span className="font-bold text-white">{billData?.financials?.paymentMethod || "Instant UPI / Bank Transfer"}</span>
                   </div>
                   <div>
                     <span className="text-[10px] text-gray-400 block uppercase">Bank UTR Reference</span>
-                    <span className="font-bold font-mono text-brand-yellow">{billData?.financials?.utrNumber || "423891049281"}</span>
+                    <span className="font-bold font-mono text-brand-yellow">{billData?.financials?.utrNumber || "—"}</span>
                   </div>
                 </div>
               </div>

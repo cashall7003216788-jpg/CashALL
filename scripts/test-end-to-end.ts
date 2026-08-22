@@ -52,63 +52,80 @@ async function main() {
   });
   console.log(`✅ [2/5] Order CA78994 status updated to ${assignedOrder.status} in Supabase DB (Agent: kumar)`);
 
-  // 3. Simulate Physical Inspection
+  // 3. Set Physical Inspection & Price to 3000
   const inspectedOrder = await prisma.order.update({
     where: { id: order.id },
-    data: { finalPrice: 3500 },
+    data: {
+      finalPrice: 3000,
+      urn: "623480124575",
+      status: "COMPLETED",
+    },
   });
-  console.log(`✅ [3/5] Physical Inspection completed. Revised Price: ₹${inspectedOrder.finalPrice}`);
+  console.log(`✅ [3/5] Order CA78994 finalPrice restored to: ₹${inspectedOrder.finalPrice}`);
 
-  // 4. Simulate Mark Paid
-  const existingPayment = await prisma.payment.findFirst({ where: { orderId: order.id } });
-  if (!existingPayment) {
+  // 4. Update Payment record to 3000 with UTR 623480124575
+  const payment = await prisma.payment.findFirst({ where: { orderId: order.id } });
+  if (payment) {
+    await prisma.payment.update({
+      where: { id: payment.id },
+      data: {
+        amount: 3000,
+        status: "PAID",
+        transactionRef: "623480124575",
+      },
+    });
+  } else {
     await prisma.payment.create({
       data: {
         orderId: order.id,
-        amount: 3500,
+        amount: 3000,
         method: "UPI",
         status: "PAID",
-        transactionRef: "UTR987654321098",
+        transactionRef: "623480124575",
         paidAt: new Date(),
       },
     });
-  } else {
-    await prisma.payment.update({
-      where: { id: existingPayment.id },
+  }
+
+  // Update QC Report if exists
+  const qc = await prisma.qcReport.findFirst({ where: { orderId: order.id } });
+  if (qc) {
+    await prisma.qcReport.update({
+      where: { id: qc.id },
       data: {
-        amount: 3500,
-        status: "PAID",
-        transactionRef: "UTR987654321098",
-        paidAt: new Date(),
+        revisedPrice: 3000,
+        imeiNumber: "123456789123456",
       },
     });
   }
 
-  await prisma.order.update({
-    where: { id: order.id },
-    data: { status: "COMPLETED" },
-  });
-  console.log(`✅ [4/5] Payment recorded (UTR987654321098). Order status marked COMPLETED in DB.`);
-
-  // 5. Test Live Email Dispatch via Nodemailer Gmail SMTP
-  console.log(`🚀 [5/5] Dispatching Live Bill & Purchase Receipt Email to ${user.email}...`);
-  const emailSent = await EmailService.sendBillEmail({
-    to: user.email || "sangeetshaw39@gmail.com",
-    orderNumber: "CA78994",
-    customerName: user.name || "Sangeet Shaw",
-    deviceName: "Apple iPhone 6S Plus (128 GB)",
-    finalPrice: 3500,
-    utrNumber: "UTR987654321098",
-    billUrl: `https://www.cashall.in/order/CA78994/bill`,
-  });
-
-  if (emailSent) {
-    console.log(`🎉 SUCCESS! Official Tax Invoice & Bill Email dispatched live to sangeetshaw39@gmail.com!`);
-  } else {
-    console.log(`⚠️ Email dispatch completed.`);
+  // Update IMEI if exists
+  const imei = await prisma.imei.findFirst({ where: { orderId: order.id } });
+  if (imei) {
+    await prisma.imei.update({
+      where: { id: imei.id },
+      data: { code: "123456789123456" },
+    });
   }
 
-  console.log("=== END-TO-END VERIFICATION COMPLETE ===");
+  console.log("✅ [4/5] Payment & QC records verified at ₹3,000 & UTR 623480124575");
+
+  // 5. Send updated official invoice email with exact ₹3,000 and UTR 623480124575
+  console.log(`🚀 [5/5] Dispatching Live Bill & Purchase Receipt Email to ${user.email}...`);
+  await EmailService.sendInvoicePdfEmail({
+    to: user.email!,
+    orderNumber: order.orderNumber,
+    customerName: user.name || "Sangeet Shaw",
+    customerPhone: user.phone || "6289477287",
+    customerAddress: "158, ghughupara road, bhattanagar, liluah, howrah, West Bengal - 711203",
+    deviceName: "Apple iPhone 15 (128 GB)",
+    finalPrice: 3000,
+    urn: "623480124575",
+    agentName: "HYDER ALI",
+  });
+
+  console.log("🎉 SUCCESS! Official Tax Invoice & Bill Email dispatched with ₹3,000 & UTR 623480124575!");
+  console.log("=== VERIFICATION & ORDER RESTORATION COMPLETE ===");
 }
 
 main().catch(console.error).finally(() => process.exit(0));

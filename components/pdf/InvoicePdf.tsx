@@ -167,6 +167,13 @@ export function InvoicePdfDocument({
           <Text style={styles.rowVal}>Instant Bank Transfer / UPI</Text>
         </View>
 
+        {urn ? (
+          <View style={styles.row}>
+            <Text style={styles.rowLabel}>Bank UTR Reference</Text>
+            <Text style={[styles.rowVal, styles.urnVal]}>{urn}</Text>
+          </View>
+        ) : null}
+
         {/* CUSTOMER DETAILS */}
         <Text style={[styles.sectionTitle, { marginTop: 16 }]}>
           Customer & Seller Details
