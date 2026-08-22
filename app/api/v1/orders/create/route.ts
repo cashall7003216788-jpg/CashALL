@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { WhatsAppService } from "@/lib/services/whatsapp.service";
 import { logger } from "@/lib/utils/logger";
+import { cleanDeviceName } from "@/lib/device";
 import { z } from "zod";
 
 const createOrderSchema = z.object({
@@ -40,7 +41,7 @@ export async function POST(req: NextRequest) {
     const pincode = data.pincode ? String(data.pincode).trim() : "700001";
     const pickupDate = data.pickupDate ? String(data.pickupDate).trim() : "Tomorrow";
     const pickupTimeSlot = data.pickupTimeSlot ? String(data.pickupTimeSlot).trim() : "10 AM - 1 PM";
-    const deviceName = data.deviceName ? String(data.deviceName).trim() : "Customer Mobile Device";
+    const deviceName = cleanDeviceName(data.deviceName ? String(data.deviceName).trim() : "Customer Mobile Device");
     
     const rawEstPrice = data.estimatedPrice;
     const estimatedPrice = typeof rawEstPrice === "number" 

@@ -24,6 +24,7 @@ import {
   clearCart,
   CART_UPDATED_EVENT,
 } from "@/lib/cart";
+import { formatDeviceName } from "@/lib/device";
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -130,7 +131,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                   className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-black text-xs px-6 py-3 rounded-xl transition shadow-yellowGlow"
                 >
                   <PlusCircle className="w-4 h-4" />
-                  <span>Sell Device & Get Quote</span>
+                  <span>Sell Device</span>
                 </Link>
               </div>
             ) : (
@@ -149,7 +150,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                           {item.quoteNumber}
                         </span>
                         <h4 className="font-bold text-white text-sm mt-1">
-                          {item.brandName} {item.modelName}
+                          {formatDeviceName(item.brandName, item.modelName)}
                         </h4>
                         <div className="text-xs text-neutral-400">
                           {item.storage ? `Storage: ${item.storage}` : "Assessed Device"}

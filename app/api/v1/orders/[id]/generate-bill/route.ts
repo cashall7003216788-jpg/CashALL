@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { formatDeviceName, cleanDeviceName } from "@/lib/device";
 
 async function getOrderBillData(orderIdentifier: string) {
   const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(orderIdentifier);
@@ -36,24 +37,26 @@ async function getOrderBillData(orderIdentifier: string) {
 
   if (!order) return null;
 
+  let explicitDeviceName = "";
+  if (order.quote?.breakdownJson) {
+    try {
+      const bd = JSON.parse(order.quote.breakdownJson);
+      if (bd?.deviceName) explicitDeviceName = bd.deviceName;
+    } catch {}
+  }
+  if (!explicitDeviceName && order.quote?.selectedAnswersJson) {
+    try {
+      const sa = JSON.parse(order.quote.selectedAnswersJson);
+      if (sa?.device) explicitDeviceName = sa.device;
+    } catch {}
+  }
+
   let brandName = order.quote?.variant?.model?.brand?.name || "";
   let modelName = order.quote?.variant?.model?.name || "";
   let variantStorage = order.quote?.variant?.storage || "";
 
-  if (!modelName && order.quote?.breakdownJson) {
-    try {
-      const bd = JSON.parse(order.quote.breakdownJson);
-      if (bd?.deviceName) modelName = bd.deviceName;
-    } catch {}
-  }
-
-  let fullDeviceName = modelName || "Mobile Device";
-  if (brandName && !fullDeviceName.toLowerCase().startsWith(brandName.toLowerCase())) {
-    fullDeviceName = `${brandName} ${fullDeviceName}`;
-  }
-  if (variantStorage && !fullDeviceName.toLowerCase().includes(variantStorage.toLowerCase())) {
-    fullDeviceName = `${fullDeviceName} (${variantStorage})`;
-  }
+  let fullDeviceName = explicitDeviceName || formatDeviceName(brandName, modelName, variantStorage);
+  fullDeviceName = cleanDeviceName(fullDeviceName);
 
   const payment = order.payments?.find((p) => p.status === "PAID") || order.payments?.[0];
   const finalPrice = order.finalPrice || order.qcReports?.[0]?.revisedPrice || order.quote?.estimatedPrice || 0;

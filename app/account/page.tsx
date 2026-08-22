@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { OrderData } from "@/lib/store";
 import { User, Smartphone, ArrowRight, Clock } from "lucide-react";
+import { cleanDeviceName } from "@/lib/device";
 
 export default function CustomerAccountPage() {
   const [user, setUser] = useState<{ name: string; phone: string } | null>(null);
@@ -129,7 +130,7 @@ export default function CustomerAccountPage() {
 
                       <div className="text-base font-black text-brand-black flex items-center gap-2">
                         <Smartphone className="w-4 h-4 text-brand-yellow" />
-                        <span>{ord.deviceName || "Apple iPhone 13 (128 GB)"}</span>
+                        <span>{cleanDeviceName(ord.deviceName || "Apple iPhone 13 (128 GB)")}</span>
                       </div>
 
                       <div className="text-xs text-brand-muted flex flex-wrap items-center gap-3">

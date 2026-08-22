@@ -5,6 +5,7 @@ import { prisma } from "@/lib/db";
 import { AppError } from "@/lib/utils/AppError";
 import { EmailService } from "@/lib/services/email.service";
 import { logger } from "@/lib/utils/logger";
+import { formatDeviceName, cleanDeviceName } from "@/lib/device";
 
 export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { id: string } }) => {
   const decodedUser = await verifyAuthToken(req);
@@ -104,10 +105,24 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   const customerEmail = order.user?.email || (order as any).customerEmail;
   if (customerEmail && customerEmail.includes("@")) {
     let deviceName = "Mobile Device";
-    if (order.quote?.variant?.model) {
-      const m = order.quote.variant.model;
-      deviceName = m.brand ? `${m.brand.name} ${m.name}` : m.name;
+    if (order.quote?.breakdownJson) {
+      try {
+        const bd = JSON.parse(order.quote.breakdownJson);
+        if (bd?.deviceName) deviceName = bd.deviceName;
+      } catch {}
     }
+    if (deviceName === "Mobile Device" && order.quote?.selectedAnswersJson) {
+      try {
+        const sa = JSON.parse(order.quote.selectedAnswersJson);
+        if (sa?.device) deviceName = sa.device;
+      } catch {}
+    }
+    if (deviceName === "Mobile Device" && order.quote?.variant?.model) {
+      const m = order.quote.variant.model;
+      const b = m.brand?.name || "";
+      deviceName = formatDeviceName(b, m.name, order.quote.variant.storage);
+    }
+    deviceName = cleanDeviceName(deviceName);
 
     try {
       await EmailService.sendInvoicePdfEmail({

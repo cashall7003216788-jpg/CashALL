@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 import { WhatsAppService } from "@/lib/services/whatsapp.service";
 import { EmailService } from "@/lib/services/email.service";
 import { logger } from "@/lib/utils/logger";
+import { formatDeviceName, cleanDeviceName } from "@/lib/device";
 
 export async function POST(req: NextRequest) {
   try {
@@ -142,7 +143,7 @@ export async function POST(req: NextRequest) {
     });
 
     const deviceName = quote.variant
-      ? `${quote.variant.model.brand.name} ${quote.variant.model.name}${quote.variant.storage ? " (" + quote.variant.storage + ")" : ""}`
+      ? formatDeviceName(quote.variant.model.brand.name, quote.variant.model.name, quote.variant.storage)
       : "Assessed Device";
 
     const fullAddress = `${house || ""}, ${street || ""}, ${area || city}, ${state} - ${pincode}`;

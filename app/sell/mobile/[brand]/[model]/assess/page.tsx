@@ -19,6 +19,7 @@ import {
   QuoteData,
 } from "@/lib/store";
 import { saveQuoteToCart } from "@/lib/cart";
+import { formatDeviceName } from "@/lib/device";
 import {
   ChevronLeft,
   ChevronRight,
@@ -295,7 +296,7 @@ export default function ConditionAssessmentPage() {
       accessories: selectedAccessories,
     };
 
-    const deviceFullName = `${brand.name} ${model.name}${variant.storage ? " (" + variant.storage + ")" : ""}`;
+    const deviceFullName = formatDeviceName(brand.name, model.name, variant.storage);
 
     const newQuote: QuoteData = {
       id: quoteId,

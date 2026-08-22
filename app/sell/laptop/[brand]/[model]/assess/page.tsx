@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { PriceUnlockModal } from "@/components/common/PriceUnlockModal";
 import { INITIAL_BRANDS, INITIAL_MODELS, INITIAL_VARIANTS, QuoteData } from "@/lib/store";
 import { saveQuoteToCart } from "@/lib/cart";
+import { formatDeviceName } from "@/lib/device";
 import {
   ChevronRight,
   CheckCircle2,
@@ -207,7 +208,7 @@ export default function LaptopAssessmentPage() {
       accessories,
     };
 
-    const deviceFullName = `${brand.name} ${model?.name || "Laptop"}${variant?.storage ? " (" + variant.storage + ")" : ""}`;
+    const deviceFullName = formatDeviceName(brand.name, model?.name || "Laptop", variant?.storage);
 
     const newQuote: QuoteData = {
       id: quoteId,
