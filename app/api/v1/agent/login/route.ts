@@ -16,8 +16,14 @@ export async function POST(req: Request) {
       );
     }
 
+    const normalize = (str?: string | null) =>
+      (str || "").toLowerCase().replace(/[^a-z0-9]/g, "").trim();
+
+    const inputNormalized = normalize(inputName);
+    const cleanPhone = inputName.replace(/\D/g, "");
+
     // 1. Dedicated agent login check for SANGEET SHAW
-    if (inputName.toLowerCase() === "sangeet shaw" && (inputPassword === "Ank933967@" || !inputPassword)) {
+    if ((inputNormalized === "sangeetshaw" || cleanPhone === "6289477287") && (inputPassword === "Ank933967@" || !inputPassword)) {
       let agent = await prisma.user.findFirst({
         where: {
           role: "AGENT",
@@ -44,25 +50,35 @@ export async function POST(req: Request) {
       });
     }
 
-    // 2. Query Prisma DB strictly for user with role: "AGENT" by Name, Email, or Phone
-    const cleanPhone = inputName.replace(/\D/g, "");
-    const agent = await prisma.user.findFirst({
+    // 2. Fetch all active AGENT users to allow fuzzy/punctuation-tolerant matching (e.g. 'md samir beg' -> 'Md. Samir Beg')
+    const allAgents = await prisma.user.findMany({
       where: {
         role: "AGENT",
-        OR: [
-          { name: { equals: inputName, mode: "insensitive" } },
-          { email: { equals: inputName, mode: "insensitive" } },
-          ...(cleanPhone ? [{ phone: cleanPhone }] : []),
-        ],
         deletedAt: null,
       },
+    });
+
+    const agent = allAgents.find((a) => {
+      const aNameNorm = normalize(a.name);
+      const aEmailNorm = normalize(a.email?.split("@")[0]);
+      const aFullEmail = (a.email || "").toLowerCase().trim();
+      const aPhoneClean = (a.phone || "").replace(/\D/g, "");
+
+      return (
+        (inputNormalized && aNameNorm === inputNormalized) ||
+        (inputNormalized && aEmailNorm === inputNormalized) ||
+        (inputName && aFullEmail === inputName.toLowerCase()) ||
+        (cleanPhone && aPhoneClean === cleanPhone)
+      );
     });
 
     if (agent) {
       const agentPhoneDigits = (agent.phone || "").replace(/\D/g, "");
       const inputPassDigits = (inputPassword || "").replace(/\D/g, "");
 
-      const isPhoneMatch = agentPhoneDigits && (inputPassword?.trim() === agent.phone?.trim() || inputPassDigits === agentPhoneDigits);
+      const isPhoneMatch =
+        agentPhoneDigits &&
+        (inputPassword?.trim() === agent.phone?.trim() || inputPassDigits === agentPhoneDigits);
       const isMasterMatch = inputPassword === "Ank933967@";
 
       if (!isPhoneMatch && !isMasterMatch) {

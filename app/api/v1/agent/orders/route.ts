@@ -24,15 +24,15 @@ export async function GET(req: NextRequest) {
       });
     }
     if (!targetAgentUser && name) {
-      targetAgentUser = await prisma.user.findFirst({
-        where: {
-          OR: [
-            { name: { equals: name, mode: "insensitive" } },
-            { email: { equals: `${name.toLowerCase().replace(/\s+/g, ".")}@cashall.in`, mode: "insensitive" } },
-          ],
-          role: "AGENT",
-          deletedAt: null,
-        },
+      const normalize = (str?: string | null) => (str || "").toLowerCase().replace(/[^a-z0-9]/g, "").trim();
+      const normInput = normalize(name);
+
+      const allAgents = await prisma.user.findMany({
+        where: { role: "AGENT", deletedAt: null },
+      });
+
+      targetAgentUser = allAgents.find((a) => {
+        return normalize(a.name) === normInput || normalize(a.email?.split("@")[0]) === normInput;
       });
     }
 
