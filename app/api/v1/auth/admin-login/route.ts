@@ -48,8 +48,9 @@ export const POST = apiWrapper(async (req: NextRequest) => {
       },
     });
 
-    if (adminUser) {
-      matchedAdmin = ALLOWED_ADMINS.find((a) => a.toLowerCase() === adminUser.name.toLowerCase()) || adminUser.name;
+    if (adminUser?.name) {
+      const uName = adminUser.name;
+      matchedAdmin = ALLOWED_ADMINS.find((a) => a.toLowerCase() === uName.toLowerCase()) || uName;
     }
   }
 
