@@ -29,10 +29,29 @@ export const POST = apiWrapper(async (req: NextRequest) => {
     throw new AppError("Password is required.", 400);
   }
 
-  // Case-insensitive operator name matching (capital, small, mixed letters)
-  const matchedAdmin = ALLOWED_ADMINS.find(
+  // Case-insensitive operator name matching (capital, small, mixed letters) or Admin phone/email
+  let matchedAdmin = ALLOWED_ADMINS.find(
     (adminName) => adminName.toLowerCase() === inputName.toLowerCase()
   );
+
+  if (!matchedAdmin) {
+    const cleanPhone = inputName.replace(/\D/g, "");
+    const adminUser = await prisma.user.findFirst({
+      where: {
+        role: "ADMIN",
+        OR: [
+          ...(cleanPhone ? [{ phone: cleanPhone }] : []),
+          { email: { equals: inputName, mode: "insensitive" } },
+          { name: { equals: inputName, mode: "insensitive" } },
+        ],
+        deletedAt: null,
+      },
+    });
+
+    if (adminUser) {
+      matchedAdmin = ALLOWED_ADMINS.find((a) => a.toLowerCase() === adminUser.name.toLowerCase()) || adminUser.name;
+    }
+  }
 
   // Exact-case password matching
   if (!matchedAdmin || inputPassword !== ADMIN_PASSWORD) {
