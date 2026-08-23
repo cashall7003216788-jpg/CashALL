@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { formatDeviceName, cleanDeviceName } from "@/lib/device";
 
 export const dynamic = "force-dynamic";
 
@@ -121,21 +122,27 @@ export async function GET(req: NextRequest) {
         fullAddress = parts.join(", ");
       }
 
-      let deviceName = "Mobile Device";
-      if (ord.quote?.variant?.model) {
-        const brandName = ord.quote.variant.model.brand?.name || "";
-        const modelName = ord.quote.variant.model.name || "";
-        const storage = ord.quote.variant.storage ? ` (${ord.quote.variant.storage})` : "";
-        deviceName = `${brandName} ${modelName}${storage}`.trim();
-      }
-
-      // Check breakdownJson or selectedAnswersJson
-      if (deviceName === "Mobile Device" && ord.quote?.breakdownJson) {
+      // Resolve accurate clean device name (priority on evaluated breakdownJson/selectedAnswersJson)
+      let explicitDeviceName = "";
+      if (ord.quote?.breakdownJson) {
         try {
           const bd = JSON.parse(ord.quote.breakdownJson);
-          if (bd.deviceName) deviceName = bd.deviceName;
-        } catch (e) {}
+          if (bd?.deviceName) explicitDeviceName = bd.deviceName;
+        } catch {}
       }
+      if (!explicitDeviceName && ord.quote?.selectedAnswersJson) {
+        try {
+          const sa = JSON.parse(ord.quote.selectedAnswersJson);
+          if (sa?.device && sa.device !== "Customer Mobile Device") explicitDeviceName = sa.device;
+        } catch {}
+      }
+
+      let brandName = ord.quote?.variant?.model?.brand?.name || "";
+      let modelName = ord.quote?.variant?.model?.name || "";
+      let storage = ord.quote?.variant?.storage || "";
+
+      let deviceName = explicitDeviceName || formatDeviceName(brandName, modelName, storage) || "Mobile Device";
+      deviceName = cleanDeviceName(deviceName);
 
       const activePickup = ord.pickups?.[0];
       const qcReport = ord.qcReports?.[0];
