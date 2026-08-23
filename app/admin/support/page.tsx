@@ -138,20 +138,50 @@ export default function AdminSupportManagementPage() {
 
   const handleDownloadCSV = () => {
     if (supportStaff.length === 0) return;
-    const headers = ["Support Staff Name", "Email / User Name", "Phone", "Status", "Customer Calls Logged", "Created Date"];
+    const headers = [
+      "Support Staff Name",
+      "Email / User Name",
+      "Phone Number",
+      "Session Status",
+      "Last Log In (Date & Time)",
+      "Last Log Out (Date & Time)",
+      "Customer Calls Logged",
+      "Created Date",
+    ];
     const rows = supportStaff.map((s) => [
-      `"${s.name.replace(/"/g, '""')}"`,
-      `"${s.email.replace(/"/g, '""')}"`,
-      s.phone,
-      s.status,
+      `"${(s.name || "").replace(/"/g, '""')}"`,
+      `"${(s.email || "").replace(/"/g, '""')}"`,
+      `"=""${s.phone || ""}"""`,
+      `"${s.sessionStatus || "OFFLINE"}"`,
+      `"${(s.lastLoginTime || "—").replace(/"/g, '""')}"`,
+      `"${(s.lastLogoutTime || "—").replace(/"/g, '""')}"`,
       s.callsCount || 0,
-      new Date(s.createdAt).toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata", day: "2-digit", month: "short", year: "numeric" }),
+      `"${new Date(s.createdAt).toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata", day: "2-digit", month: "short", year: "numeric" })}"`,
     ]);
-    const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map((e) => e.join(","))].join("\n");
+    const csvContent = "data:text/csv;charset=utf-8,\uFEFF" + [headers.join(","), ...rows.map((e) => e.join(","))].join("\n");
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
     link.setAttribute("download", `CashALL_Support_Team_${new Date().toISOString().slice(0, 10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleDownloadSessionLogsCSV = () => {
+    if (sessionLogs.length === 0) return;
+    const headers = ["Staff Name", "Session Event", "Date & Time (IST)", "Contact Phone"];
+    const rows = sessionLogs.map((l) => [
+      `"${(l.staffName || "").replace(/"/g, '""')}"`,
+      `"${(l.event || "").replace(/"/g, '""')}"`,
+      `"${(l.timestamp || "").replace(/"/g, '""')}"`,
+      `"=""${l.phone || ""}"""`,
+    ]);
+    const csvContent = "data:text/csv;charset=utf-8,\uFEFF" + [headers.join(","), ...rows.map((e) => e.join(","))].join("\n");
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `CashALL_Support_Attendance_Audit_${new Date().toISOString().slice(0, 10)}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -432,14 +462,24 @@ export default function AdminSupportManagementPage() {
                 Exact log in and log out timestamps recorded for support staff members
               </p>
             </div>
-            <button
-              onClick={fetchStaff}
-              disabled={loading}
-              className="flex items-center gap-1.5 text-xs text-yellow-400 bg-yellow-400/10 hover:bg-yellow-400/20 px-3 py-1.5 rounded-xl border border-yellow-400/20 transition"
-            >
-              <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
-              <span>Refresh Sessions</span>
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleDownloadSessionLogsCSV}
+                disabled={sessionLogs.length === 0}
+                className="flex items-center gap-1.5 text-xs text-blue-400 bg-blue-500/10 hover:bg-blue-500/20 px-3 py-1.5 rounded-xl border border-blue-500/20 transition disabled:opacity-50"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>Export Attendance CSV</span>
+              </button>
+              <button
+                onClick={fetchStaff}
+                disabled={loading}
+                className="flex items-center gap-1.5 text-xs text-yellow-400 bg-yellow-400/10 hover:bg-yellow-400/20 px-3 py-1.5 rounded-xl border border-yellow-400/20 transition"
+              >
+                <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
+                <span>Refresh Sessions</span>
+              </button>
+            </div>
           </div>
 
           {sessionLogs.length === 0 ? (
