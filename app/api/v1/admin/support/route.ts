@@ -50,19 +50,36 @@ export async function GET() {
       });
     }
 
+    const formatIST = (date: string | Date | null | undefined): string => {
+      if (!date) return "—";
+      try {
+        const d = typeof date === "string" ? new Date(date) : date;
+        if (isNaN(d.getTime())) return "—";
+        return d.toLocaleString("en-IN", {
+          timeZone: "Asia/Kolkata",
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        });
+      } catch {
+        return "—";
+      }
+    };
+
     // Process Login and Logout timing per staff
     const mapped = staffList.map((user) => {
-      const uName = user.name?.toLowerCase() || "";
+      const uName = user.name?.toLowerCase().trim() || "";
 
       // Find user calls count
       const callsCount = callLogs.filter((log) => {
         if (!log.newValuesJson) return false;
         try {
           const data = JSON.parse(log.newValuesJson);
-          return (
-            data.supportPersonName?.toLowerCase() === uName ||
-            data.supportPersonName?.toLowerCase().includes(uName)
-          );
+          const spName = data.supportPersonName?.toLowerCase().trim() || "";
+          return spName === uName || spName.includes(uName) || uName.includes(spName);
         } catch {
           return false;
         }
@@ -71,29 +88,40 @@ export async function GET() {
       // Find user session logs
       const userSessions = sessionLogs.filter((s) => {
         let sName = "";
+        let sPhone = "";
         try {
           const det = s.newValuesJson ? JSON.parse(s.newValuesJson) : {};
-          sName = det.name?.toLowerCase() || "";
+          sName = det.name?.toLowerCase().trim() || "";
+          sPhone = det.phone?.trim() || "";
         } catch {}
-        return sName === uName || s.actorId?.toLowerCase().includes(uName.replace(/\s+/g, "_"));
+        return (
+          (uName && sName === uName) ||
+          (uName && sName.includes(uName)) ||
+          (uName && uName.includes(sName)) ||
+          (user.phone && sPhone === user.phone) ||
+          (user.id && s.actorId === user.id) ||
+          (uName && s.actorId?.toLowerCase().includes(uName.replace(/\s+/g, "_")))
+        );
       });
 
-      const lastLogin = userSessions.find((s) => s.action === "SUPPORT_LOGIN");
-      const lastLogout = userSessions.find((s) => s.action === "SUPPORT_LOGOUT");
+      const userLogins = userSessions.filter((s) => s.action === "SUPPORT_LOGIN");
+      const userLogouts = userSessions.filter((s) => s.action === "SUPPORT_LOGOUT");
 
-      const lastLoginTime = lastLogin
-        ? new Date(lastLogin.createdAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })
-        : "22 Aug 2026, 09:30 AM";
+      const lastLogin = userLogins[0]; // ordered desc
+      const lastLogout = userLogouts[0]; // ordered desc
 
-      const lastLogoutTime = lastLogout
-        ? new Date(lastLogout.createdAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })
-        : "—";
+      const lastLoginTime = lastLogin ? formatIST(lastLogin.createdAt) : "—";
+      const lastLogoutTime = lastLogout ? formatIST(lastLogout.createdAt) : "—";
 
       let sessionStatus = "OFFLINE";
-      if (lastLogin && (!lastLogout || new Date(lastLogin.createdAt) > new Date(lastLogout.createdAt))) {
-        sessionStatus = "ONLINE";
-      } else if (!lastLogin && !lastLogout) {
-        sessionStatus = user.status === "ACTIVE" ? "ONLINE" : "OFFLINE";
+      if (lastLogin) {
+        if (!lastLogout || new Date(lastLogin.createdAt).getTime() > new Date(lastLogout.createdAt).getTime()) {
+          sessionStatus = "ONLINE";
+        } else {
+          sessionStatus = "OFFLINE";
+        }
+      } else {
+        sessionStatus = "OFFLINE";
       }
 
       return {
@@ -116,7 +144,7 @@ export async function GET() {
         staffName: parsed.name || "Support Staff",
         phone: parsed.phone || "—",
         event: s.action === "SUPPORT_LOGIN" ? "LOGGED IN" : "LOGGED OUT",
-        timestamp: new Date(s.createdAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }),
+        timestamp: formatIST(s.createdAt),
         rawDate: s.createdAt,
       };
     });
