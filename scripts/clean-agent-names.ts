@@ -8,10 +8,10 @@ async function cleanAgentNames() {
     where: { role: "AGENT" },
   });
 
-  const hyder = agents.find((a) => a.name.toLowerCase().includes("hyder"));
-  const sadiq = agents.find((a) => a.name.toLowerCase().includes("sadiq") || a.name.toLowerCase().includes("shadik"));
-  const aryan = agents.find((a) => a.name.toLowerCase().includes("aryan"));
-  const wasim = agents.find((a) => a.name.toLowerCase().includes("wasim"));
+  const hyder = agents.find((a) => (a.name || "").toLowerCase().includes("hyder"));
+  const sadiq = agents.find((a) => (a.name || "").toLowerCase().includes("sadiq") || (a.name || "").toLowerCase().includes("shadik"));
+  const aryan = agents.find((a) => (a.name || "").toLowerCase().includes("aryan"));
+  const wasim = agents.find((a) => (a.name || "").toLowerCase().includes("wasim"));
 
   // 1. Update pickups with notes = "Shadik" to "Sadiq Sayyed" and link sadiq.id
   if (sadiq) {
