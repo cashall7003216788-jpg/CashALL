@@ -34,8 +34,13 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   });
   if (!order) throw new AppError("Order not found.", 404);
 
-  const price = finalPrice || order.finalPrice || order.quote?.estimatedPrice || 0;
-  const transactionRef = utr || order.urn || `PAID-${Date.now()}`;
+  const price = typeof finalPrice === "number" 
+    ? finalPrice 
+    : (parseFloat(String(finalPrice)) || order.finalPrice || order.quote?.estimatedPrice || 0);
+
+  const cleanUtr = typeof utr === "string" ? utr.trim() : "";
+  const transactionRef = cleanUtr && !cleanUtr.startsWith("PAID-") ? cleanUtr : (order.urn && !order.urn.startsWith("PAID-") ? order.urn : null);
+  const customerEmail = order.user?.email || (order as any).customerEmail || "";
 
   // 1. Create or update payment record
   const existingPayment = await prisma.payment.findFirst({ where: { orderId: order.id } });
@@ -101,51 +106,59 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     logger.warn(`Google Sheets auto-sync notice on completion for order #${order.orderNumber}: ${syncErr.message}`)
   );
 
-  // 4. Send PDF Invoice to customer via Hostinger Domain SMTP
-  const customerEmail = order.user?.email || (order as any).customerEmail;
-  if (customerEmail && customerEmail.includes("@")) {
-    let deviceName = "Mobile Device";
-    if (order.quote?.breakdownJson) {
+    let emailSent = false;
+    let emailProvider: string | null = null;
+    let emailError: string | null = null;
+
+    if (customerEmail && customerEmail.includes("@")) {
+      let deviceName = "Mobile Device";
+      if (order.quote?.breakdownJson) {
+        try {
+          const bd = JSON.parse(order.quote.breakdownJson);
+          if (bd?.deviceName) deviceName = bd.deviceName;
+        } catch {}
+      }
+      if (deviceName === "Mobile Device" && order.quote?.selectedAnswersJson) {
+        try {
+          const sa = JSON.parse(order.quote.selectedAnswersJson);
+          if (sa?.device) deviceName = sa.device;
+        } catch {}
+      }
+      if (deviceName === "Mobile Device" && order.quote?.variant?.model) {
+        const m = order.quote.variant.model;
+        const b = m.brand?.name || "";
+        deviceName = formatDeviceName(b, m.name, order.quote.variant.storage);
+      }
+      deviceName = cleanDeviceName(deviceName);
+
       try {
-        const bd = JSON.parse(order.quote.breakdownJson);
-        if (bd?.deviceName) deviceName = bd.deviceName;
-      } catch {}
+        const mailRes = await EmailService.sendInvoicePdfEmail({
+          to: customerEmail,
+          orderNumber: order.orderNumber,
+          customerName: order.user?.name || "Customer",
+          customerPhone: phoneStr,
+          customerAddress: customerAddressStr,
+          deviceName,
+          finalPrice: price,
+          urn: transactionRef || "",
+          agentName,
+        });
+        emailSent = mailRes.success;
+        emailProvider = mailRes.provider || null;
+      } catch (emailErr: any) {
+        emailError = emailErr.message || String(emailErr);
+        logger.error(`Failed to send PDF invoice email to ${customerEmail}:`, emailErr);
+      }
     }
-    if (deviceName === "Mobile Device" && order.quote?.selectedAnswersJson) {
-      try {
-        const sa = JSON.parse(order.quote.selectedAnswersJson);
-        if (sa?.device) deviceName = sa.device;
-      } catch {}
-    }
-    if (deviceName === "Mobile Device" && order.quote?.variant?.model) {
-      const m = order.quote.variant.model;
-      const b = m.brand?.name || "";
-      deviceName = formatDeviceName(b, m.name, order.quote.variant.storage);
-    }
-    deviceName = cleanDeviceName(deviceName);
 
-    try {
-      await EmailService.sendInvoicePdfEmail({
-        to: customerEmail,
-        orderNumber: order.orderNumber,
-        customerName: order.user?.name || "Customer",
-        customerPhone: phoneStr,
-        customerAddress: customerAddressStr,
-        deviceName,
-        finalPrice: price,
-        urn: transactionRef,
-        agentName,
-      });
-    } catch (emailErr: any) {
-      logger.error(`Failed to send PDF invoice email to ${customerEmail}:`, emailErr);
-    }
-  }
+    logger.info(`[ORDER COMPLETED] #${order.orderNumber} completed by Admin. Sheets synced & PDF invoice: ${emailSent ? "Sent via " + emailProvider : "Failed: " + emailError}`);
 
-  logger.info(`[ORDER COMPLETED] #${order.orderNumber} completed by Admin. Sheets synced & PDF invoice dispatched.`);
-
-  return NextResponse.json({
-    success: true,
-    message: `Order ${order.orderNumber} marked as COMPLETED & PAID. Google Sheets synced & PDF invoice emailed.`,
-    data: updatedOrder,
-  });
+    return NextResponse.json({
+      success: true,
+      message: `Order #${order.orderNumber} marked as COMPLETED & PAID.${emailSent ? ` PDF invoice emailed to ${customerEmail} via ${emailProvider}.` : emailError ? ` (Email issue: ${emailError})` : ""}`,
+      emailSent,
+      emailProvider,
+      emailError,
+      data: updatedOrder,
+    });
 });

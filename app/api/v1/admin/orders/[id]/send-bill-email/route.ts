@@ -97,7 +97,8 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       ? body.finalPrice
       : (order.finalPrice || order.qcReports?.[0]?.revisedPrice || order.quote?.estimatedPrice || 0);
 
-    const utr = body.utr || order.urn || payment?.transactionRef || (order as any).utr || "623480124575";
+    const rawUtr = body.utr || order.urn || payment?.transactionRef || (order as any).utr || "";
+    const utr = rawUtr && !rawUtr.startsWith("PAID-") && rawUtr !== "623480124575" ? rawUtr : "";
     const agentName = order.agent?.name || order.pickups?.[0]?.notes || "HYDER ALI";
 
     const customerAddress = order.address
@@ -112,8 +113,8 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       ? new Date(order.updatedAt || payment?.createdAt || Date.now()).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })
       : new Date().toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
 
-    // Send PDF invoice email via domain SMTP (admin@cashall.in)
-    await EmailService.sendInvoicePdfEmail({
+    // Send PDF invoice email via multi-tier SMTP
+    const mailRes = await EmailService.sendInvoicePdfEmail({
       to: recipientEmail,
       orderNumber: order.orderNumber,
       customerName: order.user?.name || "Customer",
@@ -127,11 +128,13 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       agentName,
     });
 
-    logger.info(`[SEND BILL EMAIL] Dispatched PDF invoice for order #${order.orderNumber} to ${recipientEmail}`);
+    logger.info(`[SEND BILL EMAIL] Dispatched PDF invoice for order #${order.orderNumber} to ${recipientEmail} via ${mailRes.provider}`);
 
     return NextResponse.json({
       success: true,
       message: `Tax Invoice & Official Bill Email sent successfully to ${recipientEmail}!`,
+      provider: mailRes.provider,
+      messageId: mailRes.messageId,
     });
   } catch (error: any) {
     logger.error("Send bill email error:", error);

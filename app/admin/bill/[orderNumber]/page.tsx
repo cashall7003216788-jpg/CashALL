@@ -156,7 +156,10 @@ export default function AdminBillPage() {
           estimatedPrice: ord.quote?.estimatedPrice ?? 0,
           finalPrice: payment?.amount ?? ord.finalPrice ?? 0,
           paymentMethod: payment?.method || "UPI",
-          utrNumber: payment?.transactionRef || (payment as any)?.utrNumber || ord.payments?.[0]?.transactionRef || "128158907549",
+          utrNumber: (() => {
+            const raw = payment?.transactionRef || (payment as any)?.utrNumber || ord.payments?.[0]?.transactionRef || ord.urn || "";
+            return raw && !raw.startsWith("PAID-") && raw !== "128158907549" && raw !== "623480124575" ? raw : "";
+          })(),
           upiId: payment?.upiId || (payment as any)?.upiId || "Instant UPI",
           paidAt: ord.updatedAt ? new Date(ord.updatedAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : `${exactDateStr}, 02:30 PM`,
           orderDate: ord.createdAt ? new Date(ord.createdAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : `${exactDateStr}, 11:15 AM`,
@@ -379,10 +382,12 @@ export default function AdminBillPage() {
                   <span className="font-bold text-gray-900">{bill.upiId}</span>
                 </div>
               )}
-              <div>
-                <span className="text-gray-500">Bank UTR / Ref: </span>
-                <span className="font-mono font-bold text-gray-900">{bill.utrNumber}</span>
-              </div>
+              {bill.utrNumber ? (
+                <div>
+                  <span className="text-gray-500">Bank UTR / Ref: </span>
+                  <span className="font-mono font-bold text-gray-900">{bill.utrNumber}</span>
+                </div>
+              ) : null}
             </div>
           </div>
 

@@ -23,6 +23,7 @@ import {
   Barcode,
   Download,
   Printer,
+  FileSpreadsheet,
 } from "lucide-react";
 
 interface Order {
@@ -427,7 +428,8 @@ export default function AdminOrdersPage() {
     if (!targetEmail || !targetEmail.trim()) return;
 
     const finalPrice = ord.revisedPrice || (ord as any).finalPrice || ord.estimatedPrice;
-    const utr = ord.utr || (ord as any).urn || "623480124575";
+    const rawUtr = ord.utr || (ord as any).urn || "";
+    const utr = rawUtr && !rawUtr.startsWith("PAID-") && rawUtr !== "623480124575" ? rawUtr : "";
 
     setActionLoading(ord.id + "-email");
     const token = getAdminToken();
@@ -528,7 +530,8 @@ export default function AdminOrdersPage() {
     }
   };
 
-  const handleDownloadCSV = () => {
+  // 1. Export Admin Data CSV (Complete raw operational dataset)
+  const handleDownloadAdminDataCSV = () => {
     if (orders.length === 0) return;
     const headers = [
       "Order Number",
@@ -558,10 +561,10 @@ export default function AdminOrdersPage() {
       ord.customerEmail || "—",
       `"${(ord.location || "—").replace(/"/g, '""')}"`,
       `"${ord.deviceName.replace(/"/g, '""')}"`,
-      ord.imeiNumber || (ord as any).imeiRecords?.[0]?.code || "864932057391842",
+      ord.imeiNumber || (ord as any).imeiRecords?.[0]?.code || "—",
       ord.estimatedPrice || 0,
       ord.revisedPrice || (ord as any).finalPrice || ord.estimatedPrice || 0,
-      ord.utr || "—",
+      ord.utr && !ord.utr.startsWith("PAID-") && ord.utr !== "623480124575" ? ord.utr : "—",
       `"${(ord.agentName || "Assigned Agent").replace(/"/g, '""')}"`,
       ord.status,
       ord.paymentStatus || "PAID",
@@ -570,7 +573,38 @@ export default function AdminOrdersPage() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `CashALL_Orders_Management_${new Date().toISOString().slice(0, 10)}.csv`);
+    link.setAttribute("download", `CashALL_Admin_Data_${new Date().toISOString().slice(0, 10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // 2. Export Cleaned Data CSV (Specific clean business fields)
+  const handleDownloadCleanedDataCSV = () => {
+    if (orders.length === 0) return;
+    const headers = [
+      "ORDER NUMBER",
+      "ORDER COMPLETED DATE & TIME",
+      "DEVICE NAME",
+      "IMEI/SERIAL NUMBER",
+      "ESTIMATED QUOTE (INR)",
+      "FINAL SETTLED PAYOUT (INR)",
+      "ASSIGNED AGENT",
+    ];
+    const rows = orders.map((ord) => [
+      ord.orderNumber,
+      ord.completedAt ? `"${new Date(ord.completedAt).toLocaleString("en-IN")}"` : (ord.status === "COMPLETED" && ord.createdAt ? `"${new Date(ord.createdAt).toLocaleString("en-IN")}"` : "—"),
+      `"${(ord.deviceName || "Mobile Device").replace(/"/g, '""')}"`,
+      ord.imeiNumber || (ord as any).imeiRecords?.[0]?.code || "—",
+      ord.estimatedPrice || 0,
+      ord.revisedPrice || (ord as any).finalPrice || ord.estimatedPrice || 0,
+      `"${(ord.agentName && ord.agentName !== "CashALL Logistics" ? ord.agentName : "—").replace(/"/g, '""')}"`,
+    ]);
+    const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map((e) => e.join(","))].join("\n");
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `CashALL_Cleaned_Data_${new Date().toISOString().slice(0, 10)}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -598,12 +632,23 @@ export default function AdminOrdersPage() {
           </div>
           <div className="flex items-center gap-3 flex-wrap">
             <button
-              onClick={handleDownloadCSV}
+              onClick={handleDownloadAdminDataCSV}
               disabled={orders.length === 0}
+              title="Download Full Raw Admin Data CSV"
               className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2 rounded-xl transition shadow-lg disabled:opacity-50"
             >
               <Download className="w-4 h-4" />
-              <span>Download CSV</span>
+              <span>Admin Data</span>
+            </button>
+
+            <button
+              onClick={handleDownloadCleanedDataCSV}
+              disabled={orders.length === 0}
+              title="Download Cleaned Summary CSV"
+              className="flex items-center gap-2 bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold px-4 py-2 rounded-xl transition shadow-lg disabled:opacity-50"
+            >
+              <FileSpreadsheet className="w-4 h-4" />
+              <span>Cleaned Data</span>
             </button>
 
             <button
@@ -799,12 +844,18 @@ export default function AdminOrdersPage() {
                     )}
                   </div>
 
-                  {(ord.utr || (ord as any).urn) && (
-                    <div className="text-xs text-neutral-300 font-mono pt-1">
-                      <span className="text-neutral-500">UTR Ref: </span>
-                      <span className="font-bold text-yellow-400">{ord.utr || (ord as any).urn}</span>
-                    </div>
-                  )}
+                  {(() => {
+                    const rawUtr = ord.utr || (ord as any).urn;
+                    if (rawUtr && !rawUtr.startsWith("PAID-") && rawUtr !== "623480124575") {
+                      return (
+                        <div className="text-xs text-neutral-300 font-mono pt-1">
+                          <span className="text-neutral-500">UTR Ref: </span>
+                          <span className="font-bold text-yellow-400">{rawUtr}</span>
+                        </div>
+                      );
+                    }
+                    return null;
+                  })()}
                 </div>
               </div>
 

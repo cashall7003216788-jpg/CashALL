@@ -7,40 +7,66 @@ export const resend = resendApiKey && !resendApiKey.startsWith("re_mock") ? new 
 
 export class EmailService {
   /**
-   * Helper to create Gmail SMTP transporter dynamically at runtime.
+   * Verified Gmail Fallback Credentials
    */
-  private static getTransporter() {
-    const smtpUser = process.env.SMTP_USER || process.env.GMAIL_USER || "admin@cashall.in";
-    const smtpPass = (process.env.SMTP_PASS || process.env.GMAIL_APP_PASSWORD || process.env.SMTP_PASSWORD || "Ank933967@").trim();
-    const smtpHost = process.env.SMTP_HOST || (smtpUser.endsWith("@cashall.in") ? "smtp.hostinger.com" : undefined);
-    const smtpPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 465;
+  private static readonly BACKUP_GMAIL_USER = "cashall7003216788@gmail.com";
+  private static readonly BACKUP_GMAIL_PASS = "lkba sysu psuq cclk";
 
-    if (smtpPass) {
-      const config: any = smtpHost
+  /**
+   * Helper to create SMTP transporters dynamically at runtime.
+   */
+  private static getTransporters() {
+    const list: Array<{ name: string; user: string; transporter: nodemailer.Transporter; from: string }> = [];
+
+    const envUser = process.env.SMTP_USER || process.env.GMAIL_USER;
+    const envPass = (process.env.SMTP_PASS || process.env.GMAIL_APP_PASSWORD || process.env.SMTP_PASSWORD || "").trim();
+    const envHost = process.env.SMTP_HOST || (envUser?.endsWith("@cashall.in") ? "smtp.hostinger.com" : undefined);
+    const envPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 465;
+
+    // 1. Primary Custom / Domain SMTP if explicitly configured and not default unauthenticated
+    if (envUser && envPass && envUser !== EmailService.BACKUP_GMAIL_USER) {
+      const config: any = envHost
         ? {
-            host: smtpHost,
-            port: smtpPort,
-            secure: smtpPort === 465,
-            auth: { user: smtpUser, pass: smtpPass },
+            host: envHost,
+            port: envPort,
+            secure: envPort === 465,
+            auth: { user: envUser, pass: envPass },
+            connectionTimeout: 10000,
           }
         : {
             service: "gmail",
-            auth: { user: smtpUser, pass: smtpPass },
+            auth: { user: envUser, pass: envPass },
+            connectionTimeout: 10000,
           };
-
-      return {
+      list.push({
+        name: `Primary SMTP (${envUser} on ${envHost || "gmail"})`,
+        user: envUser,
+        from: process.env.EMAIL_FROM || `"CashALL Support" <support@cashall.in>`,
         transporter: nodemailer.createTransport(config),
-        smtpUser,
-      };
+      });
     }
-    return { transporter: null, smtpUser };
+
+    // 2. High-Reliability Gmail Transporter (Verified active app password)
+    const backupUser = process.env.GMAIL_BACKUP_USER || EmailService.BACKUP_GMAIL_USER;
+    const backupPass = (process.env.GMAIL_BACKUP_PASS || EmailService.BACKUP_GMAIL_PASS).trim();
+    if (backupUser && backupPass) {
+      list.push({
+        name: `Verified Gmail Relay (${backupUser})`,
+        user: backupUser,
+        from: `"CashALL" <${backupUser}>`,
+        transporter: nodemailer.createTransport({
+          service: "gmail",
+          auth: { user: backupUser, pass: backupPass },
+          connectionTimeout: 10000,
+        }),
+      });
+    }
+
+    return list;
   }
 
   /**
-   * Sends an email using Nodemailer (Gmail), Resend, or logs clean trace.
-   */
-  /**
-   * Sends an email using Nodemailer (Gmail), Resend, or logs clean trace.
+   * Sends an email using multi-tier fallback: Domain SMTP -> Verified Gmail SMTP -> Resend API.
    */
   static async sendEmail(
     to: string,
@@ -48,17 +74,17 @@ export class EmailService {
     html: string,
     attachments?: Array<{ filename: string; content: Buffer }>
   ) {
-    const { transporter, smtpUser } = EmailService.getTransporter();
-    const fromAddress = process.env.EMAIL_FROM || `"CashALL Support" <${smtpUser}>`;
+    const transporters = EmailService.getTransporters();
     const replyTo = "support@cashall.in";
-    const bcc = smtpUser ? [smtpUser, "support@cashall.in"].filter((addr, idx, arr) => arr.indexOf(addr) === idx) : undefined;
     const textFallback = html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    const errors: string[] = [];
 
-    // 1. Try sending via Official Domain SMTP (admin@cashall.in)
-    if (transporter) {
+    // Attempt all configured SMTP transporters in order
+    for (const { name, user, from, transporter } of transporters) {
       try {
+        const bcc = [user, "support@cashall.in"].filter((addr, idx, arr) => arr.indexOf(addr) === idx);
         const info = await transporter.sendMail({
-          from: fromAddress,
+          from,
           to,
           bcc,
           replyTo,
@@ -67,16 +93,19 @@ export class EmailService {
           html,
           attachments,
         });
-        logger.info(`Email sent via Domain SMTP (${smtpUser}) to ${to}. MessageId: ${info.messageId}`);
-        console.log(`\n✅ LIVE EMAIL SENT VIA DOMAIN SMTP (${smtpUser}) to ${to} (MessageId: ${info.messageId})\n`);
-        return { success: true, messageId: info.messageId, provider: "DOMAIN_SMTP" };
-      } catch (error) {
-        logger.error(`Error sending email via Domain SMTP to ${to}:`, error);
-        throw error;
+
+        logger.info(`✅ Email successfully sent via [${name}] to ${to}. MessageId: ${info.messageId}`);
+        console.log(`\n✅ LIVE EMAIL SENT VIA [${name}] to ${to} (MessageId: ${info.messageId})\n`);
+        return { success: true, messageId: info.messageId, provider: name };
+      } catch (err: any) {
+        const errMsg = `Failed via [${name}]: ${err.message || err}`;
+        logger.warn(errMsg);
+        console.warn(`⚠️ ${errMsg}`);
+        errors.push(errMsg);
       }
     }
 
-    // 2. Try sending via Resend API if Resend Key is configured
+    // Try sending via Resend API if configured
     if (resend) {
       try {
         const resendAttachments = attachments?.map((att) => ({
@@ -85,29 +114,31 @@ export class EmailService {
         }));
 
         const data = await resend.emails.send({
-          from: fromAddress,
+          from: process.env.EMAIL_FROM || "CashALL <notifications@cashall.in>",
           to,
+          replyTo,
           subject,
           html,
           attachments: resendAttachments,
         });
-        logger.info(`Email sent via Resend API to ${to}. Resend ID: ${data.data?.id}`);
+
+        if (data.error) {
+          throw new Error(data.error.message);
+        }
+
+        logger.info(`✅ Email sent via Resend API to ${to}. Resend ID: ${data.data?.id}`);
         return { success: true, id: data.data?.id, provider: "RESEND" };
-      } catch (error) {
-        logger.error(`Error sending email via Resend API to ${to}:`, error);
+      } catch (err: any) {
+        const errMsg = `Failed via Resend: ${err.message || err}`;
+        logger.warn(errMsg);
+        errors.push(errMsg);
       }
     }
 
-    // 3. Simulated trace in development
-    logger.info(`[EMAIL SERVICE] Sending from ${smtpUser} to ${to}: "${subject}"`);
-    console.log(`\n============================ CASHALL DOMAIN DISPATCH TRACE ============================`);
-    console.log(`FROM: ${fromAddress}`);
-    console.log(`TO: ${to}`);
-    console.log(`SUBJECT: ${subject}`);
-    console.log(`ATTACHMENTS: ${attachments?.length || 0} files`);
-    console.log(`TIMESTAMP: ${new Date().toISOString()}`);
-    console.log(`======================================================================================\n`);
-    return { success: true, simulated: true, senderEmail: smtpUser };
+    // If all providers failed, throw explicit error with full diagnostics
+    const combinedError = `All email dispatch channels failed for ${to}. Details: ${errors.join(" | ")}`;
+    logger.error(combinedError);
+    throw new Error(combinedError);
   }
 
   /**
@@ -282,10 +313,11 @@ export class EmailService {
             <td style="padding: 10px 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #374151;">Payment Mode</td>
             <td style="padding: 10px 14px; border: 1px solid #e5e7eb; color: #111827;">Instant UPI / Bank Transfer</td>
           </tr>
+          ${referenceId && !referenceId.startsWith("PAID-") && referenceId !== "N/A" && referenceId !== "623480124575" ? `
           <tr style="background-color: #f9fafb;">
             <td style="padding: 10px 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #374151;">UTR / Transaction Ref</td>
             <td style="padding: 10px 14px; border: 1px solid #e5e7eb; color: #111827; font-family: monospace; font-weight: 600;">${referenceId}</td>
-          </tr>
+          </tr>` : ""}
         </table>
 
         <div style="text-align: center; margin: 24px 0;">

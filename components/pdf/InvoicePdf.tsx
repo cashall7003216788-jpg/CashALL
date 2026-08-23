@@ -178,7 +178,7 @@ export function InvoicePdfDocument({
           <Text style={styles.rowVal}>Instant Bank Transfer / UPI</Text>
         </View>
 
-        {urn ? (
+        {urn && !urn.startsWith("PAID-") && urn !== "N/A" && urn !== "623480124575" ? (
           <View style={styles.row}>
             <Text style={styles.rowLabel}>Bank UTR Reference</Text>
             <Text style={[styles.rowVal, styles.urnVal]}>{urn}</Text>

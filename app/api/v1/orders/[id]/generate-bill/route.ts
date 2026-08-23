@@ -60,7 +60,8 @@ async function getOrderBillData(orderIdentifier: string) {
 
   const payment = order.payments?.find((p) => p.status === "PAID") || order.payments?.[0];
   const finalPrice = order.finalPrice || order.qcReports?.[0]?.revisedPrice || order.quote?.estimatedPrice || 0;
-  const utrNumber = order.urn || payment?.transactionRef || (order as any).utr || "623480124575";
+  const rawUtr = order.urn || payment?.transactionRef || (order as any).utr || "";
+  const utrNumber = rawUtr && !rawUtr.startsWith("PAID-") && rawUtr !== "623480124575" ? rawUtr : "";
   const imeiCode = order.imeiRecords?.[0]?.code || order.qcReports?.[0]?.imeiNumber || (order as any).imeiNumber || "123456789123456";
   const agentName = order.agent?.name || order.pickups?.[0]?.notes || "HYDER ALI";
 

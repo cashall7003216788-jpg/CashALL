@@ -172,10 +172,12 @@ export default function CustomerBillPage() {
                       <span className="text-[10px] text-gray-400 block uppercase">Payment Method</span>
                       <span className="font-bold text-white">{billData?.financials?.paymentMethod || "Instant UPI / Bank Transfer"}</span>
                     </div>
-                    <div>
-                      <span className="text-[10px] text-gray-400 block uppercase">Bank UTR Reference</span>
-                      <span className="font-bold font-mono text-brand-yellow">{billData?.financials?.utrNumber || "—"}</span>
-                    </div>
+                    {billData?.financials?.utrNumber && !billData.financials.utrNumber.startsWith("PAID-") && billData.financials.utrNumber !== "128158907549" && billData.financials.utrNumber !== "623480124575" && billData.financials.utrNumber !== "—" ? (
+                      <div>
+                        <span className="text-[10px] text-gray-400 block uppercase">Bank UTR Reference</span>
+                        <span className="font-bold font-mono text-brand-yellow">{billData.financials.utrNumber}</span>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </div>

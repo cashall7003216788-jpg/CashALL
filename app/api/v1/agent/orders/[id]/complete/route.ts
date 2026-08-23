@@ -41,7 +41,8 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
     const price = typeof finalPrice === "number" 
       ? finalPrice 
       : (parseFloat(String(finalPrice)) || order.finalPrice || order.qcReports?.[0]?.revisedPrice || order.quote?.estimatedPrice || 0);
-    const transactionRef = utr || order.urn || `PAID-${Date.now()}`;
+    const cleanUtr = typeof utr === "string" ? utr.trim() : "";
+    const transactionRef = cleanUtr && !cleanUtr.startsWith("PAID-") ? cleanUtr : (order.urn && !order.urn.startsWith("PAID-") ? order.urn : null);
 
     // 1. Create or update payment record
     const existingPayment = await prisma.payment.findFirst({ where: { orderId: order.id } });
@@ -112,8 +113,11 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       logger.warn(`Google Sheets auto-sync notice on completion for order #${order.orderNumber}: ${syncErr.message}`)
     );
 
-    // 4. Send PDF Tax Invoice & Bill Email to Customer
-    const customerEmail = order.user?.email || (order as any).customerEmail;
+    const customerEmail = order.user?.email || (order as any).customerEmail || "";
+    let emailSent = false;
+    let emailProvider: string | null = null;
+    let emailError: string | null = null;
+
     if (customerEmail && customerEmail.includes("@")) {
       let deviceName = "Mobile Device";
       if (order.quote?.breakdownJson) {
@@ -136,7 +140,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       deviceName = cleanDeviceName(deviceName);
 
       try {
-        await EmailService.sendInvoicePdfEmail({
+        const mailRes = await EmailService.sendInvoicePdfEmail({
           to: customerEmail,
           orderNumber: order.orderNumber,
           customerName: order.user?.name || "Customer",
@@ -144,19 +148,25 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
           customerAddress: customerAddressStr,
           deviceName,
           finalPrice: price,
-          urn: transactionRef,
+          urn: transactionRef || "",
           agentName: activeAgentName,
         });
+        emailSent = mailRes.success;
+        emailProvider = mailRes.provider || null;
       } catch (emailErr: any) {
+        emailError = emailErr.message || String(emailErr);
         logger.error(`Failed to send PDF invoice email to ${customerEmail}:`, emailErr);
       }
     }
 
-    logger.info(`[AGENT COMPLETED ORDER] #${order.orderNumber} marked COMPLETED & PAID by ${activeAgentName}. Sheets synced & PDF invoice dispatched.`);
+    logger.info(`[AGENT COMPLETED ORDER] #${order.orderNumber} marked COMPLETED & PAID by ${activeAgentName}. Sheets synced & PDF invoice: ${emailSent ? "Sent via " + emailProvider : "Failed: " + emailError}.`);
 
     return NextResponse.json({
       success: true,
-      message: `Order #${order.orderNumber} marked as COMPLETED & PAID. Tax Invoice email sent to ${customerEmail || "customer"}.`,
+      message: `Order #${order.orderNumber} marked as COMPLETED & PAID.${emailSent ? ` Tax Invoice email sent to ${customerEmail} via ${emailProvider}.` : emailError ? ` (Email issue: ${emailError})` : ""}`,
+      emailSent,
+      emailProvider,
+      emailError,
       order: updatedOrder,
     });
   } catch (error: any) {

@@ -215,20 +215,12 @@ export default function AgentDashboardPage() {
     }
   };
 
-  // Mark Paid & Complete Order Handler (Zero manual friction if UTR is already scanned)
+  // Mark Paid & Complete Order Handler (Instant 1-Click completion)
   const handleMarkPaid = async (ord: AgentOrder) => {
     const finalPrice = ord.finalPrice || ord.amount || ord.estimatedPrice || 0;
-    let finalUtr = ord.urn?.trim() || "";
-
-    // If UTR was not already auto-extracted from payment screenshot, prompt once
-    if (!finalUtr) {
-      const userUtr = prompt(
-        `No payment screenshot UTR was auto-detected for Order #${ord.orderNumber}.\nPlease enter the 12-Digit Bank UTR / Transaction Reference (or upload payment screenshot above):`,
-        "128158907549"
-      );
-      if (userUtr === null) return; // Cancelled
-      finalUtr = userUtr.trim();
-    }
+    const rawUrn = ord.urn?.trim() || "";
+    // If OCR extracted URN from uploaded screenshot, use it; otherwise leave blank ("")
+    const finalUtr = rawUrn && !rawUrn.startsWith("PAID-") && rawUrn !== "128158907549" && rawUrn !== "623480124575" ? rawUrn : "";
 
     setActionLoading(ord.id + "-paid");
     try {
@@ -248,7 +240,7 @@ export default function AgentDashboardPage() {
         setOrders((prev) =>
           prev.map((item) =>
             item.id === ord.id || item.orderNumber === ord.orderNumber
-              ? { ...item, status: "COMPLETED", paymentStatus: "PAID", urn: finalUtr }
+              ? { ...item, status: "COMPLETED", paymentStatus: "PAID", urn: finalUtr || null }
               : item
           )
         );
@@ -261,7 +253,7 @@ export default function AgentDashboardPage() {
               const parsed = JSON.parse(stored);
               parsed.status = "COMPLETED";
               parsed.paymentStatus = "PAID";
-              parsed.utr = finalUtr;
+              parsed.utr = finalUtr || null;
               localStorage.setItem(`cashall_order_${ord.orderNumber}`, JSON.stringify(parsed));
             } catch (e) {}
           }
@@ -269,7 +261,7 @@ export default function AgentDashboardPage() {
 
         setNotification({
           type: "success",
-          msg: `🎉 Order #${ord.orderNumber} Completed & Paid!\n• Payout: ₹${finalPrice.toLocaleString("en-IN")}\n• Verified UTR: ${finalUtr}\n• Official Tax Invoice PDF emailed to customer!`,
+          msg: `🎉 Order #${ord.orderNumber} Completed & Paid!\n• Payout: ₹${finalPrice.toLocaleString("en-IN")}\n• Official Tax Invoice PDF emailed to customer!${finalUtr ? `\n• Verified UTR: ${finalUtr}` : ""}`,
         });
 
         await fetchOrders();
@@ -491,46 +483,69 @@ export default function AgentDashboardPage() {
                         Zero-Friction Payment Verification
                       </div>
 
-                      {(ord.urn || (ord as any).utr) ? (
-                        <div className="bg-emerald-950/40 border border-emerald-800 p-3 rounded-2xl space-y-1">
-                          <div className="flex items-center gap-1.5 text-emerald-300 font-bold text-xs">
-                            <FileCheck className="w-4 h-4 text-emerald-400" />
-                            <span>12-Digit URN Verified</span>
-                          </div>
-                          <div className="text-xs font-mono text-yellow-400 font-bold">
-                            {ord.urn || (ord as any).utr}
-                          </div>
-                          <div className="text-[10px] text-emerald-200/70">
-                            Google Sheets Synced & PDF Invoice Delivery
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="bg-neutral-950 border border-neutral-800 p-3 rounded-2xl space-y-2">
-                          <div className="text-xs text-neutral-300 font-medium">
-                            Upload UPI Payment Screenshot to extract 12-digit URN automatically with Tesseract.js.
-                          </div>
+                      {(() => {
+                        const rawUrn = ord.urn || (ord as any).utr;
+                        const hasRealUrn = Boolean(rawUrn && !String(rawUrn).startsWith("PAID-") && rawUrn !== "623480124575");
 
-                          <label className="w-full flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-xs py-2.5 px-4 rounded-xl transition cursor-pointer shadow-yellowGlow">
-                            {uploadingOrderId === ord.id ? (
-                              <Loader2 className="w-4 h-4 animate-spin text-black" />
-                            ) : (
-                              <Upload className="w-4 h-4" />
-                            )}
-                            <span>
-                              {uploadingOrderId === ord.id
-                                ? "Scanning OCR..."
-                                : "Upload Payment Screenshot"}
-                            </span>
-                            <input
-                              type="file"
-                              accept="image/*"
-                              onChange={(e) => handleFileUpload(ord, e)}
-                              disabled={uploadingOrderId === ord.id}
-                              className="hidden"
-                            />
-                          </label>
-                        </div>
-                      )}
+                        if (hasRealUrn) {
+                          return (
+                            <div className="bg-emerald-950/40 border border-emerald-800 p-3 rounded-2xl space-y-1">
+                              <div className="flex items-center gap-1.5 text-emerald-300 font-bold text-xs">
+                                <FileCheck className="w-4 h-4 text-emerald-400" />
+                                <span>12-Digit URN Verified</span>
+                              </div>
+                              <div className="text-xs font-mono text-yellow-400 font-bold">
+                                {rawUrn}
+                              </div>
+                              <div className="text-[10px] text-emerald-200/70">
+                                Google Sheets Synced & PDF Invoice Delivery
+                              </div>
+                            </div>
+                          );
+                        }
+
+                        if (isCompleted) {
+                          return (
+                            <div className="bg-neutral-900 border border-neutral-800 p-3 rounded-2xl space-y-1">
+                              <div className="flex items-center gap-1.5 text-neutral-300 font-bold text-xs">
+                                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                                <span>Payment Completed</span>
+                              </div>
+                              <div className="text-xs font-mono text-neutral-400 italic">
+                                UTR: — (Left Blank)
+                              </div>
+                            </div>
+                          );
+                        }
+
+                        return (
+                          <div className="bg-neutral-950 border border-neutral-800 p-3 rounded-2xl space-y-2">
+                            <div className="text-xs text-neutral-300 font-medium">
+                              Upload UPI Payment Screenshot to extract 12-digit URN automatically with Tesseract.js.
+                            </div>
+
+                            <label className="w-full flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-xs py-2.5 px-4 rounded-xl transition cursor-pointer shadow-yellowGlow">
+                              {uploadingOrderId === ord.id ? (
+                                <Loader2 className="w-4 h-4 animate-spin text-black" />
+                              ) : (
+                                <Upload className="w-4 h-4" />
+                              )}
+                              <span>
+                                {uploadingOrderId === ord.id
+                                  ? "Scanning OCR..."
+                                  : "Upload Payment Screenshot"}
+                              </span>
+                              <input
+                                type="file"
+                                accept="image/*"
+                                onChange={(e) => handleFileUpload(ord, e)}
+                                disabled={uploadingOrderId === ord.id}
+                                className="hidden"
+                              />
+                            </label>
+                          </div>
+                        );
+                      })()}
                     </div>
                   </div>
 
