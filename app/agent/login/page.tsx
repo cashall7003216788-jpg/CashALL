@@ -124,7 +124,7 @@ export default function AgentLoginPage() {
                   type={showPassword ? "text" : "password"}
                   required
                   autoComplete="new-password"
-                  placeholder="Enter Password"
+                  placeholder="Enter 10-Digit Mobile Number as Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full bg-neutral-950 border border-neutral-800 text-white text-xs rounded-xl pl-10 pr-10 py-3 focus:outline-none focus:border-yellow-400 transition"
