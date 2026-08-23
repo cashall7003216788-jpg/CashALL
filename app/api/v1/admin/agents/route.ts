@@ -55,9 +55,10 @@ export async function POST(req: Request) {
     const cleanPhone = phone ? phone.trim() : `99${Date.now().toString().slice(-8)}`;
     const autoEmail = `${cleanUsername.toLowerCase().replace(/\s+/g, ".")}@cashall.in`;
 
-    // Check if phone or email or name already exists in database
-    const existingUser = await prisma.user.findFirst({
+    // Check if an AGENT with this phone, email, or name already exists in database
+    const existingAgent = await prisma.user.findFirst({
       where: {
+        role: "AGENT",
         OR: [
           { phone: cleanPhone },
           { email: autoEmail },
@@ -67,20 +68,21 @@ export async function POST(req: Request) {
       },
     });
 
-    if (existingUser) {
-      // If user exists, update their role to AGENT
+    if (existingAgent) {
+      // Update existing agent
       const updated = await prisma.user.update({
-        where: { id: existingUser.id },
+        where: { id: existingAgent.id },
         data: {
-          role: "AGENT",
           name: fullName,
-          email: existingUser.email || autoEmail,
+          email: existingAgent.email || autoEmail,
+          phone: cleanPhone,
+          status: "ACTIVE",
         },
       });
 
       return NextResponse.json({
         success: true,
-        message: "User registered/updated as AGENT successfully",
+        message: "Agent registered/updated successfully",
         agent: updated,
       });
     }

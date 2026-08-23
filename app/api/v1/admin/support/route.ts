@@ -180,9 +180,10 @@ export async function POST(req: Request) {
     const cleanPhone = phone ? phone.trim() : `98${Date.now().toString().slice(-8)}`;
     const autoEmail = `${cleanUsername.toLowerCase().replace(/\s+/g, ".")}@cashall.in`;
 
-    // Check if user already exists
+    // Check if support user already exists
     const existingUser = await prisma.user.findFirst({
       where: {
+        role: "EMPLOYEE",
         OR: [
           { phone: cleanPhone },
           { email: autoEmail },
@@ -196,9 +197,9 @@ export async function POST(req: Request) {
       const updated = await prisma.user.update({
         where: { id: existingUser.id },
         data: {
-          role: "EMPLOYEE",
           name: fullName,
           email: existingUser.email || autoEmail,
+          phone: cleanPhone,
           status: "ACTIVE",
         },
       });
