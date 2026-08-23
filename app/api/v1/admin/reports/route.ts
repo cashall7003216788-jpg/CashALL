@@ -89,10 +89,17 @@ export async function GET() {
         agentName = ord.pickups[0].partner.name;
       }
 
-      // Hardcoded mapping for main orders if needed
-      if (ord.orderNumber === "CA36738") agentName = "Shadik";
-      if (ord.orderNumber === "CA33039") agentName = "HYDER ALI";
-      if (ord.orderNumber === "CA83848") agentName = "Aryan Jaiswal";
+      // Normalize any legacy aliases to exact active registered agent names
+      const aLower = agentName.toLowerCase().trim();
+      if (aLower === "shadik" || aLower === "sadiq sayyed" || aLower === "sadiq") {
+        agentName = "Sadiq Sayyed";
+      } else if (aLower === "hyder ali") {
+        agentName = "Hyder Ali";
+      } else if (aLower === "aryan jaiswal" || aLower === "aryan") {
+        agentName = "Aryan Jaiswal";
+      } else if (aLower === "wasim shirazi") {
+        agentName = "Wasim Shirazi";
+      }
 
       const orderPlacedAt = ord.createdAt
         ? new Date(ord.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })
@@ -124,23 +131,39 @@ export async function GET() {
       };
     });
 
-    // Aggregate Agent Performance & Completed Leads
+    // Aggregate Agent Performance for REAL recorded active agents
+    const registeredAgents = await prisma.user.findMany({
+      where: { role: "AGENT", deletedAt: null },
+      select: { name: true },
+    });
+
     const agentMap: Record<string, { agentName: string; completedLeads: number; uncompletedLeads: number; totalPayout: number }> = {};
 
-    reportEntries.forEach((entry) => {
-      const aName = entry.agentName;
-      if (!agentMap[aName]) {
-        agentMap[aName] = { agentName: aName, completedLeads: 0, uncompletedLeads: 0, totalPayout: 0 };
-      }
-      if (entry.status === "COMPLETED" || entry.paymentStatus === "PAID") {
-        agentMap[aName].completedLeads += 1;
-        agentMap[aName].totalPayout += entry.amountPaid;
-      } else {
-        agentMap[aName].uncompletedLeads += 1;
+    registeredAgents.forEach((a) => {
+      if (a.name && a.name !== "Field Agent" && a.name !== "Shadik" && a.name !== "HYDER ALI") {
+        agentMap[a.name] = { agentName: a.name, completedLeads: 0, uncompletedLeads: 0, totalPayout: 0 };
       }
     });
 
-    const agentPerformance = Object.values(agentMap);
+    reportEntries.forEach((entry) => {
+      let aName = entry.agentName;
+      if (aName === "Shadik") aName = "Sadiq Sayyed";
+      if (aName.toUpperCase() === "HYDER ALI") aName = "Hyder Ali";
+
+      if (aName && aName !== "Field Agent") {
+        if (!agentMap[aName]) {
+          agentMap[aName] = { agentName: aName, completedLeads: 0, uncompletedLeads: 0, totalPayout: 0 };
+        }
+        if (entry.status === "COMPLETED" || entry.paymentStatus === "PAID") {
+          agentMap[aName].completedLeads += 1;
+          agentMap[aName].totalPayout += entry.amountPaid;
+        } else {
+          agentMap[aName].uncompletedLeads += 1;
+        }
+      }
+    });
+
+    const agentPerformance = Object.values(agentMap).filter((a) => a.completedLeads > 0 || a.uncompletedLeads > 0);
 
     // Format recent admin logins
     const adminLogins = loginLogs.map((log) => {
