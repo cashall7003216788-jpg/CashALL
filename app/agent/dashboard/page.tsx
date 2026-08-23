@@ -41,8 +41,8 @@ interface AgentOrder {
   estimatedPrice?: number;
   status: string;
   paymentStatus: string;
-  urn?: string;
-  paymentScreenshotUrl?: string;
+  urn?: string | null;
+  paymentScreenshotUrl?: string | null;
 }
 
 export default function AgentDashboardPage() {

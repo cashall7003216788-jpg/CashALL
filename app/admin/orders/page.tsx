@@ -45,10 +45,10 @@ interface Order {
   esignStatus: string;
   paymentStatus: string;
   deviceStatus: string;
-  agentId?: string;
-  agentName?: string;
-  utr?: string;
-  imeiNumber?: string;
+  agentId?: string | null;
+  agentName?: string | null;
+  utr?: string | null;
+  imeiNumber?: string | null;
   createdAt?: string;
   updatedAt?: string;
   completedAt?: string;
