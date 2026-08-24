@@ -146,8 +146,8 @@ def parse_dataset_file(filepath, category_name):
                 v_lines = v_block.splitlines()
                 v_title = v_lines[0].strip()
 
-                # Final 5% increased price
-                price_m = re.search(r'\*\s*FINAL PRICE\s*\(\+5%\)\s*:\s*₹?([\d,]+)', v_block)
+                # Final increased price (+1% or +5%)
+                price_m = re.search(r'\*\s*FINAL PRICE[^\n:]*:\s*₹?([\d,]+)', v_block)
                 if price_m:
                     price_num = int(price_m.group(1).replace(',', ''))
                 else:
@@ -155,7 +155,7 @@ def parse_dataset_file(filepath, category_name):
                     if not price_base_m:
                         price_base_m = re.search(r'\*\s*Cashify Price\s*:\s*₹?([\d,]+)', v_block)
                     if price_base_m:
-                        price_num = round(int(price_base_m.group(1).replace(',', '')) * 1.05)
+                        price_num = round(int(price_base_m.group(1).replace(',', '')) * 1.01)
                     else:
                         price_num = 0
 

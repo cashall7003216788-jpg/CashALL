@@ -1,9 +1,9 @@
 ================================================================================
-  FINAL BEST PRICE COMPARISON (+5% INCREASED): LAPTOPS
+  FINAL BEST PRICE COMPARISON (+1% INCREASED): LAPTOPS
   Platforms Compared : Cashify & Cashkr
   Generated On       : 2026-08-22 08:31:50
   Pricing Logic      : 1. Compares Cashify vs Cashkr, picks the higher price as Base Best Price.
-                       2. Applies a +5% increase to compute the FINAL PRICING.
+                       2. Applies a +1% increase to compute the FINAL PRICING.
                        3. Single available price used if listed on only one platform.
 ================================================================================
 
@@ -24,7 +24,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,000
-      * FINAL PRICE (+5%): ₹17,850
+      * FINAL PRICE (+1%): ₹17,170
 
 
   -----------------------------------------------------------------
@@ -38,7 +38,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹15,000
-      * FINAL PRICE (+5%): ₹15,750
+      * FINAL PRICE (+1%): ₹15,150
 
 
   -----------------------------------------------------------------
@@ -52,7 +52,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹19,000
-      * FINAL PRICE (+5%): ₹19,950
+      * FINAL PRICE (+1%): ₹19,190
 
 
   -----------------------------------------------------------------
@@ -66,7 +66,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹7,670
-      * FINAL PRICE (+5%): ₹8,054
+      * FINAL PRICE (+1%): ₹7,747
 
 
   -----------------------------------------------------------------
@@ -80,7 +80,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹3,570
-      * FINAL PRICE (+5%): ₹3,748
+      * FINAL PRICE (+1%): ₹3,606
 
 
   -----------------------------------------------------------------
@@ -94,7 +94,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹9,240
-      * FINAL PRICE (+5%): ₹9,702
+      * FINAL PRICE (+1%): ₹9,332
 
 
   -----------------------------------------------------------------
@@ -108,7 +108,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹13,740
-      * FINAL PRICE (+5%): ₹14,427
+      * FINAL PRICE (+1%): ₹13,877
 
 
   -----------------------------------------------------------------
@@ -122,7 +122,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,320
-      * FINAL PRICE (+5%): ₹8,736
+      * FINAL PRICE (+1%): ₹8,403
 
 
   -----------------------------------------------------------------
@@ -136,7 +136,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹13,980
-      * FINAL PRICE (+5%): ₹14,679
+      * FINAL PRICE (+1%): ₹14,120
 
 
   -----------------------------------------------------------------
@@ -150,7 +150,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹11,070
-      * FINAL PRICE (+5%): ₹11,624
+      * FINAL PRICE (+1%): ₹11,181
 
 
   -----------------------------------------------------------------
@@ -164,7 +164,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹13,320
-      * FINAL PRICE (+5%): ₹13,986
+      * FINAL PRICE (+1%): ₹13,453
 
 
   -----------------------------------------------------------------
@@ -178,7 +178,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹11,070
-      * FINAL PRICE (+5%): ₹11,624
+      * FINAL PRICE (+1%): ₹11,181
 
 
   -----------------------------------------------------------------
@@ -192,7 +192,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹3,860
-      * FINAL PRICE (+5%): ₹4,053
+      * FINAL PRICE (+1%): ₹3,899
 
 
   -----------------------------------------------------------------
@@ -206,7 +206,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹11,640
-      * FINAL PRICE (+5%): ₹12,222
+      * FINAL PRICE (+1%): ₹11,756
 
 
   -----------------------------------------------------------------
@@ -220,7 +220,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹15,390
-      * FINAL PRICE (+5%): ₹16,160
+      * FINAL PRICE (+1%): ₹15,544
 
 
   -----------------------------------------------------------------
@@ -234,7 +234,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,140
-      * FINAL PRICE (+5%): ₹17,997
+      * FINAL PRICE (+1%): ₹17,311
 
 
   -----------------------------------------------------------------
@@ -248,7 +248,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹20,930
-      * FINAL PRICE (+5%): ₹21,976
+      * FINAL PRICE (+1%): ₹21,139
 
 
   -----------------------------------------------------------------
@@ -262,7 +262,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹19,610
-      * FINAL PRICE (+5%): ₹20,590
+      * FINAL PRICE (+1%): ₹19,806
 
 
   -----------------------------------------------------------------
@@ -290,7 +290,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹9,170
-      * FINAL PRICE (+5%): ₹9,628
+      * FINAL PRICE (+1%): ₹9,262
 
 
   -----------------------------------------------------------------
@@ -304,7 +304,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹15,100
-      * FINAL PRICE (+5%): ₹15,855
+      * FINAL PRICE (+1%): ₹15,251
 
 
   -----------------------------------------------------------------
@@ -318,7 +318,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹4,240
-      * FINAL PRICE (+5%): ₹4,452
+      * FINAL PRICE (+1%): ₹4,282
 
 
   -----------------------------------------------------------------
@@ -332,7 +332,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹9,840
-      * FINAL PRICE (+5%): ₹10,332
+      * FINAL PRICE (+1%): ₹9,938
 
 
   -----------------------------------------------------------------
@@ -346,7 +346,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹11,620
-      * FINAL PRICE (+5%): ₹12,201
+      * FINAL PRICE (+1%): ₹11,736
 
 
   -----------------------------------------------------------------
@@ -360,7 +360,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,320
-      * FINAL PRICE (+5%): ₹8,736
+      * FINAL PRICE (+1%): ₹8,403
 
 
   -----------------------------------------------------------------
@@ -374,7 +374,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹16,860
-      * FINAL PRICE (+5%): ₹17,703
+      * FINAL PRICE (+1%): ₹17,029
 
 
   -----------------------------------------------------------------
@@ -388,7 +388,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹15,910
-      * FINAL PRICE (+5%): ₹16,706
+      * FINAL PRICE (+1%): ₹16,069
 
 
   -----------------------------------------------------------------
@@ -402,7 +402,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,240
-      * FINAL PRICE (+5%): ₹18,102
+      * FINAL PRICE (+1%): ₹17,412
 
 
   -----------------------------------------------------------------
@@ -416,7 +416,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹18,920
-      * FINAL PRICE (+5%): ₹19,866
+      * FINAL PRICE (+1%): ₹19,109
 
 
   -----------------------------------------------------------------
@@ -430,7 +430,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹18,190
-      * FINAL PRICE (+5%): ₹19,100
+      * FINAL PRICE (+1%): ₹18,372
 
 
   -----------------------------------------------------------------
@@ -444,7 +444,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹21,510
-      * FINAL PRICE (+5%): ₹22,586
+      * FINAL PRICE (+1%): ₹21,725
 
 
   -----------------------------------------------------------------
@@ -458,7 +458,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹26,730
-      * FINAL PRICE (+5%): ₹28,066
+      * FINAL PRICE (+1%): ₹26,997
 
 
   -----------------------------------------------------------------
@@ -472,7 +472,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹28,290
-      * FINAL PRICE (+5%): ₹29,704
+      * FINAL PRICE (+1%): ₹28,573
 
 
   -----------------------------------------------------------------
@@ -486,7 +486,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹30,670
-      * FINAL PRICE (+5%): ₹32,204
+      * FINAL PRICE (+1%): ₹30,977
 
 
   -----------------------------------------------------------------
@@ -500,7 +500,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹31,780
-      * FINAL PRICE (+5%): ₹33,369
+      * FINAL PRICE (+1%): ₹32,098
 
 
   -----------------------------------------------------------------
@@ -514,7 +514,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹18,760
-      * FINAL PRICE (+5%): ₹19,698
+      * FINAL PRICE (+1%): ₹18,948
 
 
   -----------------------------------------------------------------
@@ -528,7 +528,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹21,130
-      * FINAL PRICE (+5%): ₹22,186
+      * FINAL PRICE (+1%): ₹21,341
 
 
   -----------------------------------------------------------------
@@ -542,7 +542,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹21,500
-      * FINAL PRICE (+5%): ₹22,575
+      * FINAL PRICE (+1%): ₹21,715
 
 
   -----------------------------------------------------------------
@@ -556,7 +556,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹24,230
-      * FINAL PRICE (+5%): ₹25,442
+      * FINAL PRICE (+1%): ₹24,472
 
 
   -----------------------------------------------------------------
@@ -570,7 +570,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹23,730
-      * FINAL PRICE (+5%): ₹24,916
+      * FINAL PRICE (+1%): ₹23,967
 
 
   -----------------------------------------------------------------
@@ -584,7 +584,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹28,100
-      * FINAL PRICE (+5%): ₹29,505
+      * FINAL PRICE (+1%): ₹28,381
 
 
   -----------------------------------------------------------------
@@ -598,7 +598,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,710
-      * FINAL PRICE (+5%): ₹18,596
+      * FINAL PRICE (+1%): ₹17,887
 
 
   -----------------------------------------------------------------
@@ -612,7 +612,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹18,660
-      * FINAL PRICE (+5%): ₹19,593
+      * FINAL PRICE (+1%): ₹18,847
 
 
   -----------------------------------------------------------------
@@ -626,7 +626,7 @@ Total Models in this Brand: 44
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹4,240
-      * FINAL PRICE (+5%): ₹4,452
+      * FINAL PRICE (+1%): ₹4,282
 
 
 ===========================================================================
@@ -645,7 +645,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹70,000
-      * FINAL PRICE (+5%): ₹73,500
+      * FINAL PRICE (+1%): ₹70,700
 
 
   -----------------------------------------------------------------
@@ -659,7 +659,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹95,000
-      * FINAL PRICE (+5%): ₹99,750
+      * FINAL PRICE (+1%): ₹95,950
 
 
   -----------------------------------------------------------------
@@ -673,7 +673,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹36,000
-      * FINAL PRICE (+5%): ₹37,800
+      * FINAL PRICE (+1%): ₹36,360
 
 
   -----------------------------------------------------------------
@@ -687,7 +687,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹70,000
-      * FINAL PRICE (+5%): ₹73,500
+      * FINAL PRICE (+1%): ₹70,700
 
 
   -----------------------------------------------------------------
@@ -701,7 +701,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹65,000
-      * FINAL PRICE (+5%): ₹68,250
+      * FINAL PRICE (+1%): ₹65,650
 
 
   -----------------------------------------------------------------
@@ -715,7 +715,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹70,000
-      * FINAL PRICE (+5%): ₹73,500
+      * FINAL PRICE (+1%): ₹70,700
 
 
   -----------------------------------------------------------------
@@ -729,7 +729,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹62,000
-      * FINAL PRICE (+5%): ₹65,100
+      * FINAL PRICE (+1%): ₹62,620
 
 
   -----------------------------------------------------------------
@@ -743,7 +743,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹43,640
-      * FINAL PRICE (+5%): ₹45,822
+      * FINAL PRICE (+1%): ₹44,076
 
 
   -----------------------------------------------------------------
@@ -757,7 +757,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹60,000
-      * FINAL PRICE (+5%): ₹63,000
+      * FINAL PRICE (+1%): ₹60,600
 
 
   -----------------------------------------------------------------
@@ -771,7 +771,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹35,450
-      * FINAL PRICE (+5%): ₹37,222
+      * FINAL PRICE (+1%): ₹35,804
 
 
   -----------------------------------------------------------------
@@ -785,7 +785,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹42,000
-      * FINAL PRICE (+5%): ₹44,100
+      * FINAL PRICE (+1%): ₹42,420
 
 
   -----------------------------------------------------------------
@@ -799,7 +799,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹36,070
-      * FINAL PRICE (+5%): ₹37,874
+      * FINAL PRICE (+1%): ₹36,431
 
 
   -----------------------------------------------------------------
@@ -813,7 +813,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹35,450
-      * FINAL PRICE (+5%): ₹37,222
+      * FINAL PRICE (+1%): ₹35,804
 
 
   -----------------------------------------------------------------
@@ -827,7 +827,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹33,310
-      * FINAL PRICE (+5%): ₹34,976
+      * FINAL PRICE (+1%): ₹33,643
 
 
   -----------------------------------------------------------------
@@ -841,7 +841,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹36,160
-      * FINAL PRICE (+5%): ₹37,968
+      * FINAL PRICE (+1%): ₹36,522
 
 
   -----------------------------------------------------------------
@@ -855,7 +855,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹32,920
-      * FINAL PRICE (+5%): ₹34,566
+      * FINAL PRICE (+1%): ₹33,249
 
 
   -----------------------------------------------------------------
@@ -869,7 +869,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹27,860
-      * FINAL PRICE (+5%): ₹29,253
+      * FINAL PRICE (+1%): ₹28,139
 
 
   -----------------------------------------------------------------
@@ -883,7 +883,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹26,170
-      * FINAL PRICE (+5%): ₹27,478
+      * FINAL PRICE (+1%): ₹26,432
 
 
   -----------------------------------------------------------------
@@ -897,7 +897,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹27,860
-      * FINAL PRICE (+5%): ₹29,253
+      * FINAL PRICE (+1%): ₹28,139
 
 
   -----------------------------------------------------------------
@@ -911,7 +911,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹25,320
-      * FINAL PRICE (+5%): ₹26,586
+      * FINAL PRICE (+1%): ₹25,573
 
 
   -----------------------------------------------------------------
@@ -925,7 +925,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹24,890
-      * FINAL PRICE (+5%): ₹26,134
+      * FINAL PRICE (+1%): ₹25,139
 
 
   -----------------------------------------------------------------
@@ -939,7 +939,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹15,000
-      * FINAL PRICE (+5%): ₹15,750
+      * FINAL PRICE (+1%): ₹15,150
 
 
   -----------------------------------------------------------------
@@ -953,7 +953,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹18,440
-      * FINAL PRICE (+5%): ₹19,362
+      * FINAL PRICE (+1%): ₹18,624
 
 
   -----------------------------------------------------------------
@@ -967,7 +967,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹14,510
-      * FINAL PRICE (+5%): ₹15,236
+      * FINAL PRICE (+1%): ₹14,655
 
 
   -----------------------------------------------------------------
@@ -981,7 +981,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹13,930
-      * FINAL PRICE (+5%): ₹14,626
+      * FINAL PRICE (+1%): ₹14,069
 
 
   -----------------------------------------------------------------
@@ -995,7 +995,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹54,350
-      * FINAL PRICE (+5%): ₹57,068
+      * FINAL PRICE (+1%): ₹54,894
 
 
   -----------------------------------------------------------------
@@ -1009,7 +1009,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹48,520
-      * FINAL PRICE (+5%): ₹50,946
+      * FINAL PRICE (+1%): ₹49,005
 
 
   -----------------------------------------------------------------
@@ -1023,7 +1023,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹35,650
-      * FINAL PRICE (+5%): ₹37,432
+      * FINAL PRICE (+1%): ₹36,006
 
 
   -----------------------------------------------------------------
@@ -1037,7 +1037,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹60,000
-      * FINAL PRICE (+5%): ₹63,000
+      * FINAL PRICE (+1%): ₹60,600
 
 
   -----------------------------------------------------------------
@@ -1051,7 +1051,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹26,750
-      * FINAL PRICE (+5%): ₹28,088
+      * FINAL PRICE (+1%): ₹27,018
 
 
   -----------------------------------------------------------------
@@ -1065,7 +1065,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹23,030
-      * FINAL PRICE (+5%): ₹24,182
+      * FINAL PRICE (+1%): ₹23,260
 
 
   -----------------------------------------------------------------
@@ -1079,7 +1079,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,720
-      * FINAL PRICE (+5%): ₹18,606
+      * FINAL PRICE (+1%): ₹17,897
 
 
   -----------------------------------------------------------------
@@ -1093,7 +1093,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹14,510
-      * FINAL PRICE (+5%): ₹15,236
+      * FINAL PRICE (+1%): ₹14,655
 
 
   -----------------------------------------------------------------
@@ -1107,7 +1107,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹11,400
-      * FINAL PRICE (+5%): ₹11,970
+      * FINAL PRICE (+1%): ₹11,514
 
 
   -----------------------------------------------------------------
@@ -1121,7 +1121,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹11,400
-      * FINAL PRICE (+5%): ₹11,970
+      * FINAL PRICE (+1%): ₹11,514
 
 
   -----------------------------------------------------------------
@@ -1135,7 +1135,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹18,420
-      * FINAL PRICE (+5%): ₹19,341
+      * FINAL PRICE (+1%): ₹18,604
 
 
   -----------------------------------------------------------------
@@ -1149,7 +1149,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹15,540
-      * FINAL PRICE (+5%): ₹16,317
+      * FINAL PRICE (+1%): ₹15,695
 
 
   -----------------------------------------------------------------
@@ -1163,7 +1163,7 @@ Total Models in this Brand: 38
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹13,810
-      * FINAL PRICE (+5%): ₹14,500
+      * FINAL PRICE (+1%): ₹13,948
 
 
 ===========================================================================
@@ -1182,7 +1182,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹5,690
-      * FINAL PRICE (+5%): ₹5,974
+      * FINAL PRICE (+1%): ₹5,747
 
 
   -----------------------------------------------------------------
@@ -1196,7 +1196,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹9,250
-      * FINAL PRICE (+5%): ₹9,712
+      * FINAL PRICE (+1%): ₹9,342
 
 
   -----------------------------------------------------------------
@@ -1210,7 +1210,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹10,140
-      * FINAL PRICE (+5%): ₹10,647
+      * FINAL PRICE (+1%): ₹10,241
 
 
   -----------------------------------------------------------------
@@ -1224,7 +1224,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹5,540
-      * FINAL PRICE (+5%): ₹5,817
+      * FINAL PRICE (+1%): ₹5,595
 
 
   -----------------------------------------------------------------
@@ -1238,7 +1238,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹4,290
-      * FINAL PRICE (+5%): ₹4,504
+      * FINAL PRICE (+1%): ₹4,333
 
 
   -----------------------------------------------------------------
@@ -1252,7 +1252,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹18,560
-      * FINAL PRICE (+5%): ₹19,488
+      * FINAL PRICE (+1%): ₹18,746
 
 
   -----------------------------------------------------------------
@@ -1266,7 +1266,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹3,090
-      * FINAL PRICE (+5%): ₹3,244
+      * FINAL PRICE (+1%): ₹3,121
 
 
   -----------------------------------------------------------------
@@ -1280,7 +1280,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹7,770
-      * FINAL PRICE (+5%): ₹8,158
+      * FINAL PRICE (+1%): ₹7,848
 
 
   -----------------------------------------------------------------
@@ -1294,7 +1294,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹7,040
-      * FINAL PRICE (+5%): ₹7,392
+      * FINAL PRICE (+1%): ₹7,110
 
 
   -----------------------------------------------------------------
@@ -1308,7 +1308,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹10,240
-      * FINAL PRICE (+5%): ₹10,752
+      * FINAL PRICE (+1%): ₹10,342
 
 
   -----------------------------------------------------------------
@@ -1322,7 +1322,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -1336,7 +1336,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹9,080
-      * FINAL PRICE (+5%): ₹9,534
+      * FINAL PRICE (+1%): ₹9,171
 
 
   -----------------------------------------------------------------
@@ -1350,7 +1350,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹7,830
-      * FINAL PRICE (+5%): ₹8,222
+      * FINAL PRICE (+1%): ₹7,908
 
 
   -----------------------------------------------------------------
@@ -1364,7 +1364,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹5,540
-      * FINAL PRICE (+5%): ₹5,817
+      * FINAL PRICE (+1%): ₹5,595
 
 
   -----------------------------------------------------------------
@@ -1378,7 +1378,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹6,210
-      * FINAL PRICE (+5%): ₹6,520
+      * FINAL PRICE (+1%): ₹6,272
 
 
   -----------------------------------------------------------------
@@ -1392,7 +1392,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹9,080
-      * FINAL PRICE (+5%): ₹9,534
+      * FINAL PRICE (+1%): ₹9,171
 
 
   -----------------------------------------------------------------
@@ -1406,7 +1406,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹5,590
-      * FINAL PRICE (+5%): ₹5,870
+      * FINAL PRICE (+1%): ₹5,646
 
 
   -----------------------------------------------------------------
@@ -1420,7 +1420,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹28,400
-      * FINAL PRICE (+5%): ₹29,820
+      * FINAL PRICE (+1%): ₹28,684
 
 
   -----------------------------------------------------------------
@@ -1434,7 +1434,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹12,920
-      * FINAL PRICE (+5%): ₹13,566
+      * FINAL PRICE (+1%): ₹13,049
 
 
   -----------------------------------------------------------------
@@ -1448,7 +1448,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹4,290
-      * FINAL PRICE (+5%): ₹4,504
+      * FINAL PRICE (+1%): ₹4,333
 
 
   -----------------------------------------------------------------
@@ -1462,7 +1462,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹15,800
-      * FINAL PRICE (+5%): ₹16,590
+      * FINAL PRICE (+1%): ₹15,958
 
 
   -----------------------------------------------------------------
@@ -1476,7 +1476,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹2,140
-      * FINAL PRICE (+5%): ₹2,247
+      * FINAL PRICE (+1%): ₹2,161
 
 
   -----------------------------------------------------------------
@@ -1490,7 +1490,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹10,920
-      * FINAL PRICE (+5%): ₹11,466
+      * FINAL PRICE (+1%): ₹11,029
 
 
   -----------------------------------------------------------------
@@ -1504,7 +1504,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,370
-      * FINAL PRICE (+5%): ₹18,238
+      * FINAL PRICE (+1%): ₹17,544
 
 
   -----------------------------------------------------------------
@@ -1518,7 +1518,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹7,550
-      * FINAL PRICE (+5%): ₹7,928
+      * FINAL PRICE (+1%): ₹7,626
 
 
   -----------------------------------------------------------------
@@ -1532,7 +1532,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,220
-      * FINAL PRICE (+5%): ₹8,631
+      * FINAL PRICE (+1%): ₹8,302
 
 
   -----------------------------------------------------------------
@@ -1546,7 +1546,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹5,540
-      * FINAL PRICE (+5%): ₹5,817
+      * FINAL PRICE (+1%): ₹5,595
 
 
   -----------------------------------------------------------------
@@ -1560,7 +1560,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹5,540
-      * FINAL PRICE (+5%): ₹5,817
+      * FINAL PRICE (+1%): ₹5,595
 
 
   -----------------------------------------------------------------
@@ -1574,7 +1574,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹12,920
-      * FINAL PRICE (+5%): ₹13,566
+      * FINAL PRICE (+1%): ₹13,049
 
 
   -----------------------------------------------------------------
@@ -1588,7 +1588,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,220
-      * FINAL PRICE (+5%): ₹8,631
+      * FINAL PRICE (+1%): ₹8,302
 
 
   -----------------------------------------------------------------
@@ -1602,7 +1602,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹26,050
-      * FINAL PRICE (+5%): ₹27,352
+      * FINAL PRICE (+1%): ₹26,310
 
 
   -----------------------------------------------------------------
@@ -1616,7 +1616,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹32,920
-      * FINAL PRICE (+5%): ₹34,566
+      * FINAL PRICE (+1%): ₹33,249
 
 
   -----------------------------------------------------------------
@@ -1630,7 +1630,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹4,290
-      * FINAL PRICE (+5%): ₹4,504
+      * FINAL PRICE (+1%): ₹4,333
 
 
   -----------------------------------------------------------------
@@ -1644,7 +1644,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹26,830
-      * FINAL PRICE (+5%): ₹28,172
+      * FINAL PRICE (+1%): ₹27,098
 
 
   -----------------------------------------------------------------
@@ -1658,7 +1658,7 @@ Total Models in this Brand: 35
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹4,290
-      * FINAL PRICE (+5%): ₹4,504
+      * FINAL PRICE (+1%): ₹4,333
 
 
 ===========================================================================
@@ -1677,7 +1677,7 @@ Total Models in this Brand: 6
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹3,520
-      * FINAL PRICE (+5%): ₹3,696
+      * FINAL PRICE (+1%): ₹3,555
 
 
   -----------------------------------------------------------------
@@ -1691,7 +1691,7 @@ Total Models in this Brand: 6
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,130
-      * FINAL PRICE (+5%): ₹8,536
+      * FINAL PRICE (+1%): ₹8,211
 
 
   -----------------------------------------------------------------
@@ -1705,7 +1705,7 @@ Total Models in this Brand: 6
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹7,360
-      * FINAL PRICE (+5%): ₹7,728
+      * FINAL PRICE (+1%): ₹7,434
 
 
   -----------------------------------------------------------------
@@ -1719,7 +1719,7 @@ Total Models in this Brand: 6
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,390
-      * FINAL PRICE (+5%): ₹8,810
+      * FINAL PRICE (+1%): ₹8,474
 
 
   -----------------------------------------------------------------
@@ -1733,7 +1733,7 @@ Total Models in this Brand: 6
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹1,870
-      * FINAL PRICE (+5%): ₹1,964
+      * FINAL PRICE (+1%): ₹1,889
 
 
   -----------------------------------------------------------------
@@ -1747,7 +1747,7 @@ Total Models in this Brand: 6
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹10,810
-      * FINAL PRICE (+5%): ₹11,350
+      * FINAL PRICE (+1%): ₹10,918
 
 
 ===========================================================================
@@ -1766,7 +1766,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹22,000
-      * FINAL PRICE (+5%): ₹23,100
+      * FINAL PRICE (+1%): ₹22,220
 
 
   -----------------------------------------------------------------
@@ -1780,7 +1780,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹20,000
-      * FINAL PRICE (+5%): ₹21,000
+      * FINAL PRICE (+1%): ₹20,200
 
 
   -----------------------------------------------------------------
@@ -1794,7 +1794,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹12,500
-      * FINAL PRICE (+5%): ₹13,125
+      * FINAL PRICE (+1%): ₹12,625
 
 
   -----------------------------------------------------------------
@@ -1808,7 +1808,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹13,500
-      * FINAL PRICE (+5%): ₹14,175
+      * FINAL PRICE (+1%): ₹13,635
 
 
   -----------------------------------------------------------------
@@ -1823,7 +1823,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹16,000)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -1837,7 +1837,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹9,000
-      * FINAL PRICE (+5%): ₹9,450
+      * FINAL PRICE (+1%): ₹9,090
 
 
   -----------------------------------------------------------------
@@ -1851,7 +1851,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹10,500
-      * FINAL PRICE (+5%): ₹11,025
+      * FINAL PRICE (+1%): ₹10,605
 
 
   -----------------------------------------------------------------
@@ -1866,7 +1866,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹18,500)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -1880,7 +1880,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹18,500
-      * FINAL PRICE (+5%): ₹19,425
+      * FINAL PRICE (+1%): ₹18,685
 
 
   -----------------------------------------------------------------
@@ -1894,7 +1894,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,000
-      * FINAL PRICE (+5%): ₹17,850
+      * FINAL PRICE (+1%): ₹17,170
 
 
   -----------------------------------------------------------------
@@ -1908,7 +1908,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹12,690
-      * FINAL PRICE (+5%): ₹13,324
+      * FINAL PRICE (+1%): ₹12,817
 
 
   -----------------------------------------------------------------
@@ -1922,7 +1922,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹10,400
-      * FINAL PRICE (+5%): ₹10,920
+      * FINAL PRICE (+1%): ₹10,504
 
 
   -----------------------------------------------------------------
@@ -1936,7 +1936,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,500
-      * FINAL PRICE (+5%): ₹8,925
+      * FINAL PRICE (+1%): ₹8,585
 
 
   -----------------------------------------------------------------
@@ -1950,7 +1950,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹10,600
-      * FINAL PRICE (+5%): ₹11,130
+      * FINAL PRICE (+1%): ₹10,706
 
 
   -----------------------------------------------------------------
@@ -1964,7 +1964,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹10,800
-      * FINAL PRICE (+5%): ₹11,340
+      * FINAL PRICE (+1%): ₹10,908
 
 
   -----------------------------------------------------------------
@@ -1978,7 +1978,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹13,200
-      * FINAL PRICE (+5%): ₹13,860
+      * FINAL PRICE (+1%): ₹13,332
 
 
   -----------------------------------------------------------------
@@ -1992,7 +1992,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹14,000
-      * FINAL PRICE (+5%): ₹14,700
+      * FINAL PRICE (+1%): ₹14,140
 
 
   -----------------------------------------------------------------
@@ -2006,7 +2006,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹6,500
-      * FINAL PRICE (+5%): ₹6,825
+      * FINAL PRICE (+1%): ₹6,565
 
 
   -----------------------------------------------------------------
@@ -2020,7 +2020,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹9,800
-      * FINAL PRICE (+5%): ₹10,290
+      * FINAL PRICE (+1%): ₹9,898
 
 
   -----------------------------------------------------------------
@@ -2034,7 +2034,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹11,590
-      * FINAL PRICE (+5%): ₹12,170
+      * FINAL PRICE (+1%): ₹11,706
 
 
   -----------------------------------------------------------------
@@ -2049,7 +2049,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹20,210)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -2063,7 +2063,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹9,000
-      * FINAL PRICE (+5%): ₹9,450
+      * FINAL PRICE (+1%): ₹9,090
 
 
   -----------------------------------------------------------------
@@ -2077,7 +2077,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹7,000
-      * FINAL PRICE (+5%): ₹7,350
+      * FINAL PRICE (+1%): ₹7,070
 
 
   -----------------------------------------------------------------
@@ -2091,7 +2091,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹12,000
-      * FINAL PRICE (+5%): ₹12,600
+      * FINAL PRICE (+1%): ₹12,120
 
 
   -----------------------------------------------------------------
@@ -2105,7 +2105,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹11,000
-      * FINAL PRICE (+5%): ₹11,550
+      * FINAL PRICE (+1%): ₹11,110
 
 
   -----------------------------------------------------------------
@@ -2119,7 +2119,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹12,500
-      * FINAL PRICE (+5%): ₹13,125
+      * FINAL PRICE (+1%): ₹12,625
 
 
   -----------------------------------------------------------------
@@ -2133,7 +2133,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹9,500
-      * FINAL PRICE (+5%): ₹9,975
+      * FINAL PRICE (+1%): ₹9,595
 
 
   -----------------------------------------------------------------
@@ -2147,7 +2147,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹11,100
-      * FINAL PRICE (+5%): ₹11,655
+      * FINAL PRICE (+1%): ₹11,211
 
 
   -----------------------------------------------------------------
@@ -2161,7 +2161,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,000
-      * FINAL PRICE (+5%): ₹8,400
+      * FINAL PRICE (+1%): ₹8,080
 
 
   -----------------------------------------------------------------
@@ -2176,7 +2176,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹17,000)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -2190,7 +2190,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹19,000
-      * FINAL PRICE (+5%): ₹19,950
+      * FINAL PRICE (+1%): ₹19,190
 
 
   -----------------------------------------------------------------
@@ -2204,7 +2204,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹22,620
-      * FINAL PRICE (+5%): ₹23,751
+      * FINAL PRICE (+1%): ₹22,846
 
 
   -----------------------------------------------------------------
@@ -2218,7 +2218,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹5,760
-      * FINAL PRICE (+5%): ₹6,048
+      * FINAL PRICE (+1%): ₹5,818
 
 
   -----------------------------------------------------------------
@@ -2232,7 +2232,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,700
-      * FINAL PRICE (+5%): ₹18,585
+      * FINAL PRICE (+1%): ₹17,877
 
 
   -----------------------------------------------------------------
@@ -2246,7 +2246,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹3,070
-      * FINAL PRICE (+5%): ₹3,224
+      * FINAL PRICE (+1%): ₹3,101
 
 
   -----------------------------------------------------------------
@@ -2260,7 +2260,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹25,220
-      * FINAL PRICE (+5%): ₹26,481
+      * FINAL PRICE (+1%): ₹25,472
 
 
   -----------------------------------------------------------------
@@ -2274,7 +2274,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹16,920
-      * FINAL PRICE (+5%): ₹17,766
+      * FINAL PRICE (+1%): ₹17,089
 
 
   -----------------------------------------------------------------
@@ -2288,7 +2288,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹16,780
-      * FINAL PRICE (+5%): ₹17,619
+      * FINAL PRICE (+1%): ₹16,948
 
 
   -----------------------------------------------------------------
@@ -2302,7 +2302,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹11,840
-      * FINAL PRICE (+5%): ₹12,432
+      * FINAL PRICE (+1%): ₹11,958
 
 
   -----------------------------------------------------------------
@@ -2316,7 +2316,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹1,270
-      * FINAL PRICE (+5%): ₹1,334
+      * FINAL PRICE (+1%): ₹1,283
 
 
   -----------------------------------------------------------------
@@ -2330,7 +2330,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -2344,7 +2344,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹50,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹50,000
-      * FINAL PRICE (+5%): ₹52,500
+      * FINAL PRICE (+1%): ₹50,500
 
 
   -----------------------------------------------------------------
@@ -2358,7 +2358,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -2372,7 +2372,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -2386,7 +2386,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹50,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹50,000
-      * FINAL PRICE (+5%): ₹52,500
+      * FINAL PRICE (+1%): ₹50,500
 
 
   -----------------------------------------------------------------
@@ -2400,7 +2400,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹60,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹60,000
-      * FINAL PRICE (+5%): ₹63,000
+      * FINAL PRICE (+1%): ₹60,600
 
 
   -----------------------------------------------------------------
@@ -2414,7 +2414,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -2428,7 +2428,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -2442,7 +2442,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -2456,7 +2456,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹50,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹50,000
-      * FINAL PRICE (+5%): ₹52,500
+      * FINAL PRICE (+1%): ₹50,500
 
 
   -----------------------------------------------------------------
@@ -2470,7 +2470,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -2484,7 +2484,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -2498,7 +2498,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -2512,7 +2512,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -2526,7 +2526,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -2540,7 +2540,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -2554,7 +2554,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -2568,7 +2568,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹50,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹50,000
-      * FINAL PRICE (+5%): ₹52,500
+      * FINAL PRICE (+1%): ₹50,500
 
 
   -----------------------------------------------------------------
@@ -2582,7 +2582,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -2596,7 +2596,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -2610,7 +2610,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹2,500
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹2,500
-      * FINAL PRICE (+5%): ₹2,625
+      * FINAL PRICE (+1%): ₹2,525
 
 
   -----------------------------------------------------------------
@@ -2624,7 +2624,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -2638,7 +2638,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -2652,7 +2652,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -2666,7 +2666,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -2680,7 +2680,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -2694,7 +2694,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -2708,7 +2708,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -2722,7 +2722,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹29,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹29,000
-      * FINAL PRICE (+5%): ₹30,450
+      * FINAL PRICE (+1%): ₹29,290
 
 
   -----------------------------------------------------------------
@@ -2736,7 +2736,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -2750,7 +2750,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -2764,7 +2764,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -2778,7 +2778,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -2792,7 +2792,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹20,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹20,000
-      * FINAL PRICE (+5%): ₹21,000
+      * FINAL PRICE (+1%): ₹20,200
 
 
   -----------------------------------------------------------------
@@ -2806,7 +2806,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹20,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹20,000
-      * FINAL PRICE (+5%): ₹21,000
+      * FINAL PRICE (+1%): ₹20,200
 
 
   -----------------------------------------------------------------
@@ -2820,7 +2820,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -2834,7 +2834,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -2848,7 +2848,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹20,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹20,000
-      * FINAL PRICE (+5%): ₹21,000
+      * FINAL PRICE (+1%): ₹20,200
 
 
   -----------------------------------------------------------------
@@ -2862,7 +2862,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹20,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹20,000
-      * FINAL PRICE (+5%): ₹21,000
+      * FINAL PRICE (+1%): ₹20,200
 
 
   -----------------------------------------------------------------
@@ -2876,7 +2876,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹20,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹20,000
-      * FINAL PRICE (+5%): ₹21,000
+      * FINAL PRICE (+1%): ₹20,200
 
 
   -----------------------------------------------------------------
@@ -2890,7 +2890,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹20,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹20,000
-      * FINAL PRICE (+5%): ₹21,000
+      * FINAL PRICE (+1%): ₹20,200
 
 
   -----------------------------------------------------------------
@@ -2904,7 +2904,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -2918,7 +2918,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -2932,7 +2932,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -2946,7 +2946,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -2960,7 +2960,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -2974,7 +2974,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -2988,7 +2988,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3002,7 +3002,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3016,7 +3016,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3030,7 +3030,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3044,7 +3044,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3058,7 +3058,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3072,7 +3072,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3086,7 +3086,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3100,7 +3100,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3114,7 +3114,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3128,7 +3128,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3142,7 +3142,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3156,7 +3156,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹50,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹50,000
-      * FINAL PRICE (+5%): ₹52,500
+      * FINAL PRICE (+1%): ₹50,500
 
 
   -----------------------------------------------------------------
@@ -3170,7 +3170,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3184,7 +3184,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3198,7 +3198,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3212,7 +3212,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3226,7 +3226,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3240,7 +3240,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3254,7 +3254,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3268,7 +3268,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3282,7 +3282,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3296,7 +3296,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3310,7 +3310,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3324,7 +3324,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3338,7 +3338,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3352,7 +3352,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3366,7 +3366,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹46,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹46,000
-      * FINAL PRICE (+5%): ₹48,300
+      * FINAL PRICE (+1%): ₹46,460
 
 
   -----------------------------------------------------------------
@@ -3380,7 +3380,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹50,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹50,000
-      * FINAL PRICE (+5%): ₹52,500
+      * FINAL PRICE (+1%): ₹50,500
 
 
   -----------------------------------------------------------------
@@ -3394,7 +3394,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹51,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹51,000
-      * FINAL PRICE (+5%): ₹53,550
+      * FINAL PRICE (+1%): ₹51,510
 
 
   -----------------------------------------------------------------
@@ -3408,7 +3408,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3422,7 +3422,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3436,7 +3436,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3450,7 +3450,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3464,7 +3464,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3478,7 +3478,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3492,7 +3492,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3506,7 +3506,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3520,7 +3520,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3534,7 +3534,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹60,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹60,000
-      * FINAL PRICE (+5%): ₹63,000
+      * FINAL PRICE (+1%): ₹60,600
 
 
   -----------------------------------------------------------------
@@ -3548,7 +3548,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹60,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹60,000
-      * FINAL PRICE (+5%): ₹63,000
+      * FINAL PRICE (+1%): ₹60,600
 
 
   -----------------------------------------------------------------
@@ -3562,7 +3562,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹60,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹60,000
-      * FINAL PRICE (+5%): ₹63,000
+      * FINAL PRICE (+1%): ₹60,600
 
 
   -----------------------------------------------------------------
@@ -3576,7 +3576,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3590,7 +3590,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3604,7 +3604,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3618,7 +3618,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹50,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹50,000
-      * FINAL PRICE (+5%): ₹52,500
+      * FINAL PRICE (+1%): ₹50,500
 
 
   -----------------------------------------------------------------
@@ -3632,7 +3632,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹50,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹50,000
-      * FINAL PRICE (+5%): ₹52,500
+      * FINAL PRICE (+1%): ₹50,500
 
 
   -----------------------------------------------------------------
@@ -3646,7 +3646,7 @@ Total Models in this Brand: 135
       * Cashkr Price     : ₹50,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹50,000
-      * FINAL PRICE (+5%): ₹52,500
+      * FINAL PRICE (+1%): ₹50,500
 
 
 ===========================================================================
@@ -3665,7 +3665,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹35,000
-      * FINAL PRICE (+5%): ₹36,750
+      * FINAL PRICE (+1%): ₹35,350
 
 
   -----------------------------------------------------------------
@@ -3679,7 +3679,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3693,7 +3693,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3707,7 +3707,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3721,7 +3721,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3735,7 +3735,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -3750,7 +3750,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹38,320)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3765,7 +3765,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹31,610)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3780,7 +3780,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹33,790)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3795,7 +3795,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹19,300)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3810,7 +3810,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹14,970)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3825,7 +3825,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹22,170)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3840,7 +3840,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹32,390)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3855,7 +3855,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹33,290)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3870,7 +3870,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹38,690)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3885,7 +3885,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹33,900)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3900,7 +3900,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹28,220)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3915,7 +3915,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹27,870)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3930,7 +3930,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹25,850)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -3945,7 +3945,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹60,000
       * Comparison       : Cashkr (Higher by ₹44,140)
       * Base Best Price  : ₹60,000
-      * FINAL PRICE (+5%): ₹63,000
+      * FINAL PRICE (+1%): ₹60,600
 
 
   -----------------------------------------------------------------
@@ -3960,7 +3960,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹35,410)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3975,7 +3975,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹34,080)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -3989,7 +3989,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹2,610
-      * FINAL PRICE (+5%): ₹2,740
+      * FINAL PRICE (+1%): ₹2,636
 
 
   -----------------------------------------------------------------
@@ -4004,7 +4004,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹7,270)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4019,7 +4019,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹21,720)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -4033,7 +4033,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹2,650
-      * FINAL PRICE (+5%): ₹2,782
+      * FINAL PRICE (+1%): ₹2,676
 
 
   -----------------------------------------------------------------
@@ -4048,7 +4048,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹40,000
       * Comparison       : Cashkr (Higher by ₹16,050)
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -4063,7 +4063,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹40,310)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -4077,7 +4077,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹60,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹60,000
-      * FINAL PRICE (+5%): ₹63,000
+      * FINAL PRICE (+1%): ₹60,600
 
 
   -----------------------------------------------------------------
@@ -4091,7 +4091,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹50,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹50,000
-      * FINAL PRICE (+5%): ₹52,500
+      * FINAL PRICE (+1%): ₹50,500
 
 
   -----------------------------------------------------------------
@@ -4105,7 +4105,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -4119,7 +4119,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4133,7 +4133,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -4147,7 +4147,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -4161,7 +4161,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4175,7 +4175,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -4189,7 +4189,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -4203,7 +4203,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4217,7 +4217,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -4231,7 +4231,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4245,7 +4245,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4259,7 +4259,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4273,7 +4273,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4287,7 +4287,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4301,7 +4301,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4315,7 +4315,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4329,7 +4329,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4343,7 +4343,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4357,7 +4357,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4371,7 +4371,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4385,7 +4385,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4399,7 +4399,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4413,7 +4413,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4427,7 +4427,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4441,7 +4441,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4455,7 +4455,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4469,7 +4469,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4483,7 +4483,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4497,7 +4497,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -4511,7 +4511,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4525,7 +4525,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4539,7 +4539,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4553,7 +4553,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4567,7 +4567,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹35,900
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹35,900
-      * FINAL PRICE (+5%): ₹37,695
+      * FINAL PRICE (+1%): ₹36,259
 
 
   -----------------------------------------------------------------
@@ -4581,7 +4581,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4595,7 +4595,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -4609,7 +4609,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4623,7 +4623,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4637,7 +4637,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4651,7 +4651,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4665,7 +4665,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4679,7 +4679,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4693,7 +4693,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4707,7 +4707,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4721,7 +4721,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4735,7 +4735,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4749,7 +4749,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4763,7 +4763,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4777,7 +4777,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -4791,7 +4791,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4805,7 +4805,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4819,7 +4819,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4833,7 +4833,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4847,7 +4847,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4861,7 +4861,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4875,7 +4875,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -4889,7 +4889,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4903,7 +4903,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4917,7 +4917,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -4931,7 +4931,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4945,7 +4945,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -4959,7 +4959,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -4973,7 +4973,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -4987,7 +4987,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5001,7 +5001,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -5015,7 +5015,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5029,7 +5029,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5043,7 +5043,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -5057,7 +5057,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5071,7 +5071,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5085,7 +5085,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -5099,7 +5099,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -5113,7 +5113,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5127,7 +5127,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5141,7 +5141,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5155,7 +5155,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5169,7 +5169,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -5183,7 +5183,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -5197,7 +5197,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5211,7 +5211,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5225,7 +5225,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -5239,7 +5239,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5253,7 +5253,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5267,7 +5267,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5281,7 +5281,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5295,7 +5295,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -5309,7 +5309,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5323,7 +5323,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5337,7 +5337,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹3,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹3,000
-      * FINAL PRICE (+5%): ₹3,150
+      * FINAL PRICE (+1%): ₹3,030
 
 
   -----------------------------------------------------------------
@@ -5351,7 +5351,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -5365,7 +5365,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5379,7 +5379,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5393,7 +5393,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5407,7 +5407,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹60,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹60,000
-      * FINAL PRICE (+5%): ₹63,000
+      * FINAL PRICE (+1%): ₹60,600
 
 
   -----------------------------------------------------------------
@@ -5421,7 +5421,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -5435,7 +5435,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5449,7 +5449,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5463,7 +5463,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹32,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹32,000
-      * FINAL PRICE (+5%): ₹33,600
+      * FINAL PRICE (+1%): ₹32,320
 
 
   -----------------------------------------------------------------
@@ -5477,7 +5477,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -5491,7 +5491,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5505,7 +5505,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -5519,7 +5519,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹35,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹35,000
-      * FINAL PRICE (+5%): ₹36,750
+      * FINAL PRICE (+1%): ₹35,350
 
 
   -----------------------------------------------------------------
@@ -5533,7 +5533,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -5547,7 +5547,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5561,7 +5561,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5575,7 +5575,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5589,7 +5589,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5603,7 +5603,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5617,7 +5617,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5631,7 +5631,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹20,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹20,000
-      * FINAL PRICE (+5%): ₹21,000
+      * FINAL PRICE (+1%): ₹20,200
 
 
   -----------------------------------------------------------------
@@ -5645,7 +5645,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5659,7 +5659,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5673,7 +5673,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5687,7 +5687,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5701,7 +5701,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -5715,7 +5715,7 @@ Total Models in this Brand: 146
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
 ===========================================================================
@@ -5734,7 +5734,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹12,500
-      * FINAL PRICE (+5%): ₹13,125
+      * FINAL PRICE (+1%): ₹12,625
 
 
   -----------------------------------------------------------------
@@ -5749,7 +5749,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹3,500)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5764,7 +5764,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹40,000
       * Comparison       : Cashkr (Higher by ₹12,430)
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -5779,7 +5779,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashify (Higher by ₹5,000)
       * Base Best Price  : ₹35,000
-      * FINAL PRICE (+5%): ₹36,750
+      * FINAL PRICE (+1%): ₹35,350
 
 
   -----------------------------------------------------------------
@@ -5794,7 +5794,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹1,000)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -5809,7 +5809,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashify (Higher by ₹8,000)
       * Base Best Price  : ₹38,000
-      * FINAL PRICE (+5%): ₹39,900
+      * FINAL PRICE (+1%): ₹38,380
 
 
   -----------------------------------------------------------------
@@ -5824,7 +5824,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹40,000
       * Comparison       : Cashify (Higher by ₹3,000)
       * Base Best Price  : ₹43,000
-      * FINAL PRICE (+5%): ₹45,150
+      * FINAL PRICE (+1%): ₹43,430
 
 
   -----------------------------------------------------------------
@@ -5839,7 +5839,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹40,000
       * Comparison       : Both Equal (₹0 difference)
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -5853,7 +5853,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹39,000
-      * FINAL PRICE (+5%): ₹40,950
+      * FINAL PRICE (+1%): ₹39,390
 
 
   -----------------------------------------------------------------
@@ -5868,7 +5868,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashify (Higher by ₹20,000)
       * Base Best Price  : ₹50,000
-      * FINAL PRICE (+5%): ₹52,500
+      * FINAL PRICE (+1%): ₹50,500
 
 
   -----------------------------------------------------------------
@@ -5882,7 +5882,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹11,480
-      * FINAL PRICE (+5%): ₹12,054
+      * FINAL PRICE (+1%): ₹11,595
 
 
   -----------------------------------------------------------------
@@ -5896,7 +5896,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹6,310
-      * FINAL PRICE (+5%): ₹6,626
+      * FINAL PRICE (+1%): ₹6,373
 
 
   -----------------------------------------------------------------
@@ -5910,7 +5910,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹6,050
-      * FINAL PRICE (+5%): ₹6,352
+      * FINAL PRICE (+1%): ₹6,110
 
 
   -----------------------------------------------------------------
@@ -5924,7 +5924,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹4,970
-      * FINAL PRICE (+5%): ₹5,218
+      * FINAL PRICE (+1%): ₹5,020
 
 
   -----------------------------------------------------------------
@@ -5938,7 +5938,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹5,540
-      * FINAL PRICE (+5%): ₹5,817
+      * FINAL PRICE (+1%): ₹5,595
 
 
   -----------------------------------------------------------------
@@ -5952,7 +5952,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹10,020
-      * FINAL PRICE (+5%): ₹10,521
+      * FINAL PRICE (+1%): ₹10,120
 
 
   -----------------------------------------------------------------
@@ -5966,7 +5966,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,690
-      * FINAL PRICE (+5%): ₹9,124
+      * FINAL PRICE (+1%): ₹8,777
 
 
   -----------------------------------------------------------------
@@ -5980,7 +5980,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹18,780
-      * FINAL PRICE (+5%): ₹19,719
+      * FINAL PRICE (+1%): ₹18,968
 
 
   -----------------------------------------------------------------
@@ -5994,7 +5994,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹6,700
-      * FINAL PRICE (+5%): ₹7,035
+      * FINAL PRICE (+1%): ₹6,767
 
 
   -----------------------------------------------------------------
@@ -6008,7 +6008,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹11,880
-      * FINAL PRICE (+5%): ₹12,474
+      * FINAL PRICE (+1%): ₹11,999
 
 
   -----------------------------------------------------------------
@@ -6022,7 +6022,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,330
-      * FINAL PRICE (+5%): ₹18,196
+      * FINAL PRICE (+1%): ₹17,503
 
 
   -----------------------------------------------------------------
@@ -6036,7 +6036,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹6,380
-      * FINAL PRICE (+5%): ₹6,699
+      * FINAL PRICE (+1%): ₹6,444
 
 
   -----------------------------------------------------------------
@@ -6050,7 +6050,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹7,330
-      * FINAL PRICE (+5%): ₹7,696
+      * FINAL PRICE (+1%): ₹7,403
 
 
   -----------------------------------------------------------------
@@ -6064,7 +6064,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹5,110
-      * FINAL PRICE (+5%): ₹5,366
+      * FINAL PRICE (+1%): ₹5,161
 
 
   -----------------------------------------------------------------
@@ -6079,7 +6079,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹24,310)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6094,7 +6094,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹28,130)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -6109,7 +6109,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹25,510)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6124,7 +6124,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹26,020)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6138,7 +6138,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹10,340
-      * FINAL PRICE (+5%): ₹10,857
+      * FINAL PRICE (+1%): ₹10,443
 
 
   -----------------------------------------------------------------
@@ -6152,7 +6152,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹20,110
-      * FINAL PRICE (+5%): ₹21,116
+      * FINAL PRICE (+1%): ₹20,311
 
 
   -----------------------------------------------------------------
@@ -6167,7 +6167,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹39,510)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -6182,7 +6182,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹34,660)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -6196,7 +6196,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹5,950
-      * FINAL PRICE (+5%): ₹6,248
+      * FINAL PRICE (+1%): ₹6,010
 
 
   -----------------------------------------------------------------
@@ -6211,7 +6211,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹38,540)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -6226,7 +6226,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹38,020)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -6240,7 +6240,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹4,680
-      * FINAL PRICE (+5%): ₹4,914
+      * FINAL PRICE (+1%): ₹4,727
 
 
   -----------------------------------------------------------------
@@ -6255,7 +6255,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹39,410)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -6269,7 +6269,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹21,860
-      * FINAL PRICE (+5%): ₹22,953
+      * FINAL PRICE (+1%): ₹22,079
 
 
   -----------------------------------------------------------------
@@ -6283,7 +6283,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹22,250
-      * FINAL PRICE (+5%): ₹23,362
+      * FINAL PRICE (+1%): ₹22,472
 
 
   -----------------------------------------------------------------
@@ -6297,7 +6297,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹5,850
-      * FINAL PRICE (+5%): ₹6,142
+      * FINAL PRICE (+1%): ₹5,908
 
 
   -----------------------------------------------------------------
@@ -6311,7 +6311,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹7,620
-      * FINAL PRICE (+5%): ₹8,001
+      * FINAL PRICE (+1%): ₹7,696
 
 
   -----------------------------------------------------------------
@@ -6326,7 +6326,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹26,020)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6340,7 +6340,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹2,880
-      * FINAL PRICE (+5%): ₹3,024
+      * FINAL PRICE (+1%): ₹2,909
 
 
   -----------------------------------------------------------------
@@ -6354,7 +6354,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹6,080
-      * FINAL PRICE (+5%): ₹6,384
+      * FINAL PRICE (+1%): ₹6,141
 
 
   -----------------------------------------------------------------
@@ -6369,7 +6369,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Cashkr (Higher by ₹34,480)
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -6383,7 +6383,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹32,850
-      * FINAL PRICE (+5%): ₹34,492
+      * FINAL PRICE (+1%): ₹33,178
 
 
   -----------------------------------------------------------------
@@ -6397,7 +6397,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹1,320
-      * FINAL PRICE (+5%): ₹1,386
+      * FINAL PRICE (+1%): ₹1,333
 
 
   -----------------------------------------------------------------
@@ -6411,7 +6411,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹4,410
-      * FINAL PRICE (+5%): ₹4,630
+      * FINAL PRICE (+1%): ₹4,454
 
 
   -----------------------------------------------------------------
@@ -6426,7 +6426,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹40,000
       * Comparison       : Cashify (Higher by ₹20,000)
       * Base Best Price  : ₹60,000
-      * FINAL PRICE (+5%): ₹63,000
+      * FINAL PRICE (+1%): ₹60,600
 
 
   -----------------------------------------------------------------
@@ -6441,7 +6441,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹5,000)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6456,7 +6456,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Both Equal (₹0 difference)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6471,7 +6471,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashkr (Higher by ₹4,000)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6486,7 +6486,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashify (Higher by ₹5,000)
       * Base Best Price  : ₹35,000
-      * FINAL PRICE (+5%): ₹36,750
+      * FINAL PRICE (+1%): ₹35,350
 
 
   -----------------------------------------------------------------
@@ -6501,7 +6501,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashify (Higher by ₹10,000)
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -6516,7 +6516,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashify (Higher by ₹8,000)
       * Base Best Price  : ₹38,000
-      * FINAL PRICE (+5%): ₹39,900
+      * FINAL PRICE (+1%): ₹38,380
 
 
   -----------------------------------------------------------------
@@ -6531,7 +6531,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Cashify (Higher by ₹20,000)
       * Base Best Price  : ₹50,000
-      * FINAL PRICE (+5%): ₹52,500
+      * FINAL PRICE (+1%): ₹50,500
 
 
   -----------------------------------------------------------------
@@ -6545,7 +6545,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹55,000
-      * FINAL PRICE (+5%): ₹57,750
+      * FINAL PRICE (+1%): ₹55,550
 
 
   -----------------------------------------------------------------
@@ -6560,7 +6560,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Both Equal (₹0 difference)
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6574,7 +6574,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6588,7 +6588,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -6602,7 +6602,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6616,7 +6616,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6630,7 +6630,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6644,7 +6644,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹8,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹8,000
-      * FINAL PRICE (+5%): ₹8,400
+      * FINAL PRICE (+1%): ₹8,080
 
 
   -----------------------------------------------------------------
@@ -6658,7 +6658,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6672,7 +6672,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -6686,7 +6686,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -6700,7 +6700,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6714,7 +6714,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹20,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹20,000
-      * FINAL PRICE (+5%): ₹21,000
+      * FINAL PRICE (+1%): ₹20,200
 
 
   -----------------------------------------------------------------
@@ -6728,7 +6728,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -6742,7 +6742,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -6756,7 +6756,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6770,7 +6770,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6784,7 +6784,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6798,7 +6798,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6812,7 +6812,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6826,7 +6826,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6840,7 +6840,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6854,7 +6854,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6868,7 +6868,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6882,7 +6882,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6896,7 +6896,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6910,7 +6910,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -6924,7 +6924,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6938,7 +6938,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6952,7 +6952,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6966,7 +6966,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6980,7 +6980,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -6994,7 +6994,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -7008,7 +7008,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -7022,7 +7022,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -7036,7 +7036,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7050,7 +7050,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7064,7 +7064,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7078,7 +7078,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -7092,7 +7092,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -7106,7 +7106,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7120,7 +7120,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7134,7 +7134,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7148,7 +7148,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7162,7 +7162,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7176,7 +7176,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7190,7 +7190,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7204,7 +7204,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7218,7 +7218,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -7232,7 +7232,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7246,7 +7246,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7260,7 +7260,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7274,7 +7274,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7288,7 +7288,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7302,7 +7302,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7316,7 +7316,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -7330,7 +7330,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -7344,7 +7344,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7358,7 +7358,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7372,7 +7372,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹25,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹25,000
-      * FINAL PRICE (+5%): ₹26,250
+      * FINAL PRICE (+1%): ₹25,250
 
 
   -----------------------------------------------------------------
@@ -7386,7 +7386,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7400,7 +7400,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7414,7 +7414,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7428,7 +7428,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7442,7 +7442,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -7456,7 +7456,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹45,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -7470,7 +7470,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹40,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -7484,7 +7484,7 @@ Total Models in this Brand: 124
       * Cashkr Price     : ₹30,000
       * Comparison       : Available Only on Cashkr
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
 ===========================================================================
@@ -7503,7 +7503,7 @@ Total Models in this Brand: 2
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹6,110
-      * FINAL PRICE (+5%): ₹6,416
+      * FINAL PRICE (+1%): ₹6,171
 
 
   -----------------------------------------------------------------
@@ -7517,7 +7517,7 @@ Total Models in this Brand: 2
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,500
-      * FINAL PRICE (+5%): ₹8,925
+      * FINAL PRICE (+1%): ₹8,585
 
 
 ===========================================================================
@@ -7536,7 +7536,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹7,520
-      * FINAL PRICE (+5%): ₹7,896
+      * FINAL PRICE (+1%): ₹7,595
 
 
   -----------------------------------------------------------------
@@ -7550,7 +7550,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹12,810
-      * FINAL PRICE (+5%): ₹13,450
+      * FINAL PRICE (+1%): ₹12,938
 
 
   -----------------------------------------------------------------
@@ -7564,7 +7564,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹4,800
-      * FINAL PRICE (+5%): ₹5,040
+      * FINAL PRICE (+1%): ₹4,848
 
 
   -----------------------------------------------------------------
@@ -7578,7 +7578,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹12,350
-      * FINAL PRICE (+5%): ₹12,968
+      * FINAL PRICE (+1%): ₹12,474
 
 
   -----------------------------------------------------------------
@@ -7592,7 +7592,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹10,270
-      * FINAL PRICE (+5%): ₹10,784
+      * FINAL PRICE (+1%): ₹10,373
 
 
   -----------------------------------------------------------------
@@ -7606,7 +7606,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹14,260
-      * FINAL PRICE (+5%): ₹14,973
+      * FINAL PRICE (+1%): ₹14,403
 
 
   -----------------------------------------------------------------
@@ -7620,7 +7620,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹3,560
-      * FINAL PRICE (+5%): ₹3,738
+      * FINAL PRICE (+1%): ₹3,596
 
 
   -----------------------------------------------------------------
@@ -7634,7 +7634,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹14,130
-      * FINAL PRICE (+5%): ₹14,836
+      * FINAL PRICE (+1%): ₹14,271
 
 
   -----------------------------------------------------------------
@@ -7648,7 +7648,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹14,260
-      * FINAL PRICE (+5%): ₹14,973
+      * FINAL PRICE (+1%): ₹14,403
 
 
   -----------------------------------------------------------------
@@ -7662,7 +7662,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,400
-      * FINAL PRICE (+5%): ₹8,820
+      * FINAL PRICE (+1%): ₹8,484
 
 
   -----------------------------------------------------------------
@@ -7676,7 +7676,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,420
-      * FINAL PRICE (+5%): ₹18,291
+      * FINAL PRICE (+1%): ₹17,594
 
 
   -----------------------------------------------------------------
@@ -7690,7 +7690,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹4,890
-      * FINAL PRICE (+5%): ₹5,134
+      * FINAL PRICE (+1%): ₹4,939
 
 
   -----------------------------------------------------------------
@@ -7704,7 +7704,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹5,490
-      * FINAL PRICE (+5%): ₹5,764
+      * FINAL PRICE (+1%): ₹5,545
 
 
   -----------------------------------------------------------------
@@ -7718,7 +7718,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹16,330
-      * FINAL PRICE (+5%): ₹17,146
+      * FINAL PRICE (+1%): ₹16,493
 
 
   -----------------------------------------------------------------
@@ -7732,7 +7732,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹19,340
-      * FINAL PRICE (+5%): ₹20,307
+      * FINAL PRICE (+1%): ₹19,533
 
 
   -----------------------------------------------------------------
@@ -7746,7 +7746,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹19,970
-      * FINAL PRICE (+5%): ₹20,968
+      * FINAL PRICE (+1%): ₹20,170
 
 
   -----------------------------------------------------------------
@@ -7760,7 +7760,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹12,350
-      * FINAL PRICE (+5%): ₹12,968
+      * FINAL PRICE (+1%): ₹12,474
 
 
   -----------------------------------------------------------------
@@ -7774,7 +7774,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,420
-      * FINAL PRICE (+5%): ₹18,291
+      * FINAL PRICE (+1%): ₹17,594
 
 
   -----------------------------------------------------------------
@@ -7788,7 +7788,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹23,170
-      * FINAL PRICE (+5%): ₹24,328
+      * FINAL PRICE (+1%): ₹23,402
 
 
   -----------------------------------------------------------------
@@ -7802,7 +7802,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,880
-      * FINAL PRICE (+5%): ₹9,324
+      * FINAL PRICE (+1%): ₹8,969
 
 
   -----------------------------------------------------------------
@@ -7816,7 +7816,7 @@ Total Models in this Brand: 21
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹10,720
-      * FINAL PRICE (+5%): ₹11,256
+      * FINAL PRICE (+1%): ₹10,827
 
 
 ===========================================================================
@@ -7849,7 +7849,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹23,690
-      * FINAL PRICE (+5%): ₹24,874
+      * FINAL PRICE (+1%): ₹23,927
 
 
   -----------------------------------------------------------------
@@ -7863,7 +7863,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹20,820
-      * FINAL PRICE (+5%): ₹21,861
+      * FINAL PRICE (+1%): ₹21,028
 
 
   -----------------------------------------------------------------
@@ -7877,7 +7877,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹21,730
-      * FINAL PRICE (+5%): ₹22,816
+      * FINAL PRICE (+1%): ₹21,947
 
 
   -----------------------------------------------------------------
@@ -7891,7 +7891,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹23,690
-      * FINAL PRICE (+5%): ₹24,874
+      * FINAL PRICE (+1%): ₹23,927
 
 
   -----------------------------------------------------------------
@@ -7905,7 +7905,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹24,660
-      * FINAL PRICE (+5%): ₹25,893
+      * FINAL PRICE (+1%): ₹24,907
 
 
   -----------------------------------------------------------------
@@ -7919,7 +7919,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹21,730
-      * FINAL PRICE (+5%): ₹22,816
+      * FINAL PRICE (+1%): ₹21,947
 
 
   -----------------------------------------------------------------
@@ -7933,7 +7933,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹20,820
-      * FINAL PRICE (+5%): ₹21,861
+      * FINAL PRICE (+1%): ₹21,028
 
 
   -----------------------------------------------------------------
@@ -7947,7 +7947,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹20,820
-      * FINAL PRICE (+5%): ₹21,861
+      * FINAL PRICE (+1%): ₹21,028
 
 
   -----------------------------------------------------------------
@@ -7961,7 +7961,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,250
-      * FINAL PRICE (+5%): ₹18,112
+      * FINAL PRICE (+1%): ₹17,422
 
 
   -----------------------------------------------------------------
@@ -7975,7 +7975,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹19,970
-      * FINAL PRICE (+5%): ₹20,968
+      * FINAL PRICE (+1%): ₹20,170
 
 
   -----------------------------------------------------------------
@@ -7989,7 +7989,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,950
-      * FINAL PRICE (+5%): ₹9,398
+      * FINAL PRICE (+1%): ₹9,040
 
 
   -----------------------------------------------------------------
@@ -8003,7 +8003,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,950
-      * FINAL PRICE (+5%): ₹18,848
+      * FINAL PRICE (+1%): ₹18,130
 
 
   -----------------------------------------------------------------
@@ -8017,7 +8017,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,950
-      * FINAL PRICE (+5%): ₹9,398
+      * FINAL PRICE (+1%): ₹9,040
 
 
   -----------------------------------------------------------------
@@ -8031,7 +8031,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,950
-      * FINAL PRICE (+5%): ₹9,398
+      * FINAL PRICE (+1%): ₹9,040
 
 
   -----------------------------------------------------------------
@@ -8045,7 +8045,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,950
-      * FINAL PRICE (+5%): ₹9,398
+      * FINAL PRICE (+1%): ₹9,040
 
 
   -----------------------------------------------------------------
@@ -8059,7 +8059,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹8,950
-      * FINAL PRICE (+5%): ₹9,398
+      * FINAL PRICE (+1%): ₹9,040
 
 
   -----------------------------------------------------------------
@@ -8073,7 +8073,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,950
-      * FINAL PRICE (+5%): ₹18,848
+      * FINAL PRICE (+1%): ₹18,130
 
 
   -----------------------------------------------------------------
@@ -8087,7 +8087,7 @@ Total Models in this Brand: 19
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹27,130
-      * FINAL PRICE (+5%): ₹28,486
+      * FINAL PRICE (+1%): ₹27,401
 
 
 ===========================================================================
@@ -8106,7 +8106,7 @@ Total Models in this Brand: 1
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹17,110
-      * FINAL PRICE (+5%): ₹17,966
+      * FINAL PRICE (+1%): ₹17,281
 
 
 ===========================================================================
@@ -8125,7 +8125,7 @@ Total Models in this Brand: 1
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹3,030
-      * FINAL PRICE (+5%): ₹3,182
+      * FINAL PRICE (+1%): ₹3,060
 
 
 ===========================================================================
@@ -8144,7 +8144,7 @@ Total Models in this Brand: 2
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹25,120
-      * FINAL PRICE (+5%): ₹26,376
+      * FINAL PRICE (+1%): ₹25,371
 
 
   -----------------------------------------------------------------
@@ -8158,7 +8158,7 @@ Total Models in this Brand: 2
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹18,240
-      * FINAL PRICE (+5%): ₹19,152
+      * FINAL PRICE (+1%): ₹18,422
 
 
 ===========================================================================
@@ -8177,7 +8177,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹10,860
-      * FINAL PRICE (+5%): ₹11,403
+      * FINAL PRICE (+1%): ₹10,969
 
 
   -----------------------------------------------------------------
@@ -8191,7 +8191,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹21,990
-      * FINAL PRICE (+5%): ₹23,090
+      * FINAL PRICE (+1%): ₹22,210
 
 
   -----------------------------------------------------------------
@@ -8205,7 +8205,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹27,340
-      * FINAL PRICE (+5%): ₹28,707
+      * FINAL PRICE (+1%): ₹27,613
 
 
   -----------------------------------------------------------------
@@ -8219,7 +8219,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹29,060
-      * FINAL PRICE (+5%): ₹30,513
+      * FINAL PRICE (+1%): ₹29,351
 
 
   -----------------------------------------------------------------
@@ -8233,7 +8233,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹29,490
-      * FINAL PRICE (+5%): ₹30,964
+      * FINAL PRICE (+1%): ₹29,785
 
 
   -----------------------------------------------------------------
@@ -8247,7 +8247,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -8261,7 +8261,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹33,000
-      * FINAL PRICE (+5%): ₹34,650
+      * FINAL PRICE (+1%): ₹33,330
 
 
   -----------------------------------------------------------------
@@ -8275,7 +8275,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹55,000
-      * FINAL PRICE (+5%): ₹57,750
+      * FINAL PRICE (+1%): ₹55,550
 
 
   -----------------------------------------------------------------
@@ -8289,7 +8289,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹40,000
-      * FINAL PRICE (+5%): ₹42,000
+      * FINAL PRICE (+1%): ₹40,400
 
 
   -----------------------------------------------------------------
@@ -8303,7 +8303,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹29,830
-      * FINAL PRICE (+5%): ₹31,322
+      * FINAL PRICE (+1%): ₹30,128
 
 
   -----------------------------------------------------------------
@@ -8317,7 +8317,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹31,470
-      * FINAL PRICE (+5%): ₹33,044
+      * FINAL PRICE (+1%): ₹31,785
 
 
   -----------------------------------------------------------------
@@ -8331,7 +8331,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹30,870
-      * FINAL PRICE (+5%): ₹32,414
+      * FINAL PRICE (+1%): ₹31,179
 
 
   -----------------------------------------------------------------
@@ -8345,7 +8345,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹45,000
-      * FINAL PRICE (+5%): ₹47,250
+      * FINAL PRICE (+1%): ₹45,450
 
 
   -----------------------------------------------------------------
@@ -8359,7 +8359,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹50,000
-      * FINAL PRICE (+5%): ₹52,500
+      * FINAL PRICE (+1%): ₹50,500
 
 
   -----------------------------------------------------------------
@@ -8373,7 +8373,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹30,000
-      * FINAL PRICE (+5%): ₹31,500
+      * FINAL PRICE (+1%): ₹30,300
 
 
   -----------------------------------------------------------------
@@ -8387,7 +8387,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹42,100
-      * FINAL PRICE (+5%): ₹44,205
+      * FINAL PRICE (+1%): ₹42,521
 
 
   -----------------------------------------------------------------
@@ -8401,7 +8401,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹43,460
-      * FINAL PRICE (+5%): ₹45,633
+      * FINAL PRICE (+1%): ₹43,895
 
 
   -----------------------------------------------------------------
@@ -8415,7 +8415,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹46,680
-      * FINAL PRICE (+5%): ₹49,014
+      * FINAL PRICE (+1%): ₹47,147
 
 
   -----------------------------------------------------------------
@@ -8429,7 +8429,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹49,900
-      * FINAL PRICE (+5%): ₹52,395
+      * FINAL PRICE (+1%): ₹50,399
 
 
   -----------------------------------------------------------------
@@ -8443,7 +8443,7 @@ Total Models in this Brand: 20
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹4,030
-      * FINAL PRICE (+5%): ₹4,232
+      * FINAL PRICE (+1%): ₹4,070
 
 
 ===========================================================================
@@ -8462,7 +8462,7 @@ Total Models in this Brand: 4
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹16,030
-      * FINAL PRICE (+5%): ₹16,832
+      * FINAL PRICE (+1%): ₹16,190
 
 
   -----------------------------------------------------------------
@@ -8476,7 +8476,7 @@ Total Models in this Brand: 4
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹9,100
-      * FINAL PRICE (+5%): ₹9,555
+      * FINAL PRICE (+1%): ₹9,191
 
 
   -----------------------------------------------------------------
@@ -8490,7 +8490,7 @@ Total Models in this Brand: 4
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹12,470
-      * FINAL PRICE (+5%): ₹13,094
+      * FINAL PRICE (+1%): ₹12,595
 
 
   -----------------------------------------------------------------
@@ -8504,7 +8504,7 @@ Total Models in this Brand: 4
       * Cashkr Price     : Not Listed
       * Comparison       : Available Only on Cashify
       * Base Best Price  : ₹13,850
-      * FINAL PRICE (+5%): ₹14,542
+      * FINAL PRICE (+1%): ₹13,988
 
 ================================================================================
   LAPTOPS COMPARISON SUMMARY
