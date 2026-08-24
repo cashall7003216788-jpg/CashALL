@@ -18,7 +18,12 @@ export function cleanDeviceName(name: string = ""): string {
   return clean;
 }
 
-export function formatDeviceName(brandName: string = "", modelName: string = "", storage?: string | null): string {
+export function formatDeviceName(
+  brandName: string = "",
+  modelName: string = "",
+  storage?: string | null,
+  ram?: string | null
+): string {
   const b = (brandName || "").trim();
   let m = (modelName || "").trim();
 
@@ -30,8 +35,15 @@ export function formatDeviceName(brandName: string = "", modelName: string = "",
   const fullName = b ? (m ? `${b} ${m}` : b) : m;
   let cleaned = cleanDeviceName(fullName);
 
-  if (storage && storage.trim() && !cleaned.toLowerCase().includes(storage.trim().toLowerCase())) {
-    return `${cleaned} (${storage.trim()})`;
+  let variantPart = "";
+  if (ram && storage && ram.toLowerCase() !== storage.toLowerCase()) {
+    variantPart = `${ram.trim()} / ${storage.trim()}`;
+  } else if (storage && storage.trim()) {
+    variantPart = storage.trim();
+  }
+
+  if (variantPart && !cleaned.toLowerCase().includes(variantPart.toLowerCase())) {
+    return `${cleaned} (${variantPart})`;
   }
   return cleaned;
 }

@@ -1183,21 +1183,21 @@ module.exports = [
         "price": 41559
       },
       {
-        "name": "iPhone 16e 8 GB / 512 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 42000
       },
       {
-        "name": "iPhone 16e 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 38850
       },
       {
-        "name": "iPhone 16e 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 36750
       }
     ]
@@ -1253,21 +1253,21 @@ module.exports = [
         "price": 90300
       },
       {
-        "name": "iPhone Air 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 90825
       },
       {
-        "name": "iPhone Air 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 80325
       },
       {
-        "name": "iPhone Air 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 70875
       }
     ]
@@ -1300,21 +1300,21 @@ module.exports = [
         "price": 115500
       },
       {
-        "name": "iPhone 17 Pro 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 126000
       },
       {
-        "name": "iPhone 17 Pro 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 115500
       },
       {
-        "name": "iPhone 17 Pro 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 108150
       }
     ]
@@ -1353,27 +1353,27 @@ module.exports = [
         "price": 131250
       },
       {
-        "name": "iPhone 17 Pro Max 12 GB / 2 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 2 TB",
+        "storage": "2 TB",
+        "ram": "12 GB",
         "price": 136500
       },
       {
-        "name": "iPhone 17 Pro Max 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 127050
       },
       {
-        "name": "iPhone 17 Pro Max 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 122850
       },
       {
-        "name": "iPhone 17 Pro Max 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 115500
       }
     ]
@@ -1400,15 +1400,15 @@ module.exports = [
         "price": 54810
       },
       {
-        "name": "iPhone 17e 8 GB / 512 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 55125
       },
       {
-        "name": "iPhone 17e 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 46200
       }
     ]
@@ -1423,21 +1423,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-asus-zenfone-5z",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3854
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4137
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 4305
       }
     ]
@@ -1452,15 +1452,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-asus-zenfone-max-pro-m1",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2110
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2289
       }
     ]
@@ -1475,21 +1475,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-asus-zenfone-max-pro-m2",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2194
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2478
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2667
       }
     ]
@@ -1504,21 +1504,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-asus-6z",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 5943
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6206
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 6500
       }
     ]
@@ -1533,9 +1533,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-asus-rog-phone-zs600kl-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5733
       }
     ]
@@ -1550,15 +1550,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-asus-rog-phone-ii-zs660kl",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7371
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 7822
       }
     ]
@@ -1573,21 +1573,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-asus-rog-phone-3",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8799
       },
       {
-        "name": "12 GB/128 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "12 GB",
         "price": 9261
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 9786
       }
     ]
@@ -1602,9 +1602,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-asus-8z-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7696
       }
     ]
@@ -1631,15 +1631,15 @@ module.exports = [
         "price": 4536
       },
       {
-        "name": "Google Pixel 3 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5250
       },
       {
-        "name": "Google Pixel 3 3 GB / 64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 4200
       }
     ]
@@ -1654,15 +1654,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-google-pixel-3a-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3938
       },
       {
-        "name": "Google Pixel 3a 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5250
       }
     ]
@@ -1677,21 +1677,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-google-pixel-4a-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4536
       },
       {
-        "name": "Google Pixel 4a 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6510
       },
       {
-        "name": "Google Pixel 4a 6 GB / 64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 5775
       }
     ]
@@ -1706,15 +1706,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-google-pixel-6a-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 11088
       },
       {
-        "name": "Google Pixel 6a 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11025
       }
     ]
@@ -1741,15 +1741,15 @@ module.exports = [
         "price": 16054
       },
       {
-        "name": "Google Pixel 7 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 16800
       },
       {
-        "name": "Google Pixel 7 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15750
       }
     ]
@@ -1776,15 +1776,15 @@ module.exports = [
         "price": 20496
       },
       {
-        "name": "Google Pixel 7 Pro 12 GB / 128 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "12 GB",
         "price": 16800
       },
       {
-        "name": "Google Pixel 7 Pro 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 17850
       }
     ]
@@ -1799,15 +1799,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-google-pixel-7a-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 19246
       },
       {
-        "name": "Google Pixel 7a 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 19215
       }
     ]
@@ -1834,9 +1834,9 @@ module.exports = [
         "price": 26964
       },
       {
-        "name": "Google Pixel 8 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 25200
       }
     ]
@@ -1869,21 +1869,21 @@ module.exports = [
         "price": 34776
       },
       {
-        "name": "Google Pixel 8 Pro 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 35805
       },
       {
-        "name": "Google Pixel 8 Pro 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 35385
       },
       {
-        "name": "Google Pixel 8 Pro 12 GB / 128 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "12 GB",
         "price": 33075
       }
     ]
@@ -1910,15 +1910,15 @@ module.exports = [
         "price": 25725
       },
       {
-        "name": "Google Pixel 8a 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 24570
       },
       {
-        "name": "Google Pixel 8a 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 24255
       }
     ]
@@ -1933,15 +1933,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-google-pixel-9-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 39816
       },
       {
-        "name": "Google Pixel 9 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 39900
       }
     ]
@@ -1968,15 +1968,15 @@ module.exports = [
         "price": 58968
       },
       {
-        "name": "Google Pixel 9 Pro Xl 16 GB / 512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 60060
       },
       {
-        "name": "Google Pixel 9 Pro Xl 16 GB / 256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 57750
       }
     ]
@@ -1991,15 +1991,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-google-pixel-9-pro-fold-16-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 71169
       },
       {
-        "name": "Google Pixel 9 Pro Fold 16 GB / 256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 71400
       }
     ]
@@ -2014,15 +2014,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-google-pixel-9-pro-16-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 52616
       },
       {
-        "name": "Google Pixel 9 Pro 16 GB / 256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 52500
       }
     ]
@@ -2037,15 +2037,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-google-pixel-9a-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 28780
       },
       {
-        "name": "Google Pixel 9a 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 29400
       }
     ]
@@ -2060,15 +2060,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-google-pixel-10-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 48374
       },
       {
-        "name": "Google Pixel 10 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 49350
       }
     ]
@@ -2083,15 +2083,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-google-pixel-10-pro-16-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 67725
       },
       {
-        "name": "Google Pixel 10 Pro 16 GB / 256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 68250
       }
     ]
@@ -2106,15 +2106,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-google-pixel-10-pro-xl-16-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 74130
       },
       {
-        "name": "Google Pixel 10 Pro Xl 16 GB / 256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 75600
       }
     ]
@@ -2129,15 +2129,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-google-pixel-10-pro-fold-16-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 100800
       },
       {
-        "name": "Google Pixel 10 Pro Fold 16 GB / 256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 101850
       }
     ]
@@ -2152,15 +2152,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-google-pixel-10a-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 34870
       },
       {
-        "name": "Google Pixel 10a 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 35490
       }
     ]
@@ -2175,9 +2175,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Google Pixel 11 Pro Fold 16 GB / 512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 105000
       }
     ]
@@ -2192,15 +2192,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Google Pixel 11 Pro Xl 512 GB / 16 GB",
-        "storage": "512 GB",
-        "ram": null,
+        "name": "512 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "512 GB",
         "price": 99750
       },
       {
-        "name": "Google Pixel 11 Pro Xl 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 94500
       }
     ]
@@ -2215,15 +2215,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Google Pixel 11 Pro 16 GB / 512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 78750
       },
       {
-        "name": "Google Pixel 11 Pro 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 73500
       }
     ]
@@ -2238,15 +2238,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Google Pixel 11 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 54600
       },
       {
-        "name": "Google Pixel 11 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 52500
       }
     ]
@@ -2261,21 +2261,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Google Pixel 6 Pro 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 18900
       },
       {
-        "name": "Google Pixel 6 Pro 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 16800
       },
       {
-        "name": "Google Pixel 6 Pro 12 GB / 128 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "12 GB",
         "price": 15750
       }
     ]
@@ -2290,15 +2290,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Google Pixel 6 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 14700
       },
       {
-        "name": "Google Pixel 6 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13650
       }
     ]
@@ -2313,9 +2313,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Google Pixel 5 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8925
       }
     ]
@@ -2330,9 +2330,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Google Pixel 5a 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8400
       }
     ]
@@ -2347,9 +2347,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Google Pixel 3a Xl 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6300
       }
     ]
@@ -2364,15 +2364,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Google Pixel 3 Xl 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5250
       },
       {
-        "name": "Google Pixel 3 Xl 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4725
       }
     ]
@@ -2387,21 +2387,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-honor-8x",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2258
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2572
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 2688
       }
     ]
@@ -2416,15 +2416,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-honor-play",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2142
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2216
       }
     ]
@@ -2439,21 +2439,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-honor-9n",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1953
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2110
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 2415
       }
     ]
@@ -2468,9 +2468,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-honor-10-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 2646
       }
     ]
@@ -2485,9 +2485,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-honor-7a-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1722
       }
     ]
@@ -2502,9 +2502,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-honor-view-10-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3003
       }
     ]
@@ -2519,15 +2519,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-honor-9-lite",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1680
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1953
       }
     ]
@@ -2542,9 +2542,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-honor-holly-4-plus-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1008
       }
     ]
@@ -2559,9 +2559,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-honor-9i-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1974
       }
     ]
@@ -2599,9 +2599,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-honor-8-4-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 1596
       }
     ]
@@ -2616,15 +2616,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-honor-8-pro",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2814
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3160
       }
     ]
@@ -2662,27 +2662,27 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-honor-10-lite",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2048
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2888
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2415
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3118
       }
     ]
@@ -2697,21 +2697,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-honor-view-20",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3843
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4641
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 5166
       }
     ]
@@ -2726,9 +2726,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-honor-20i-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 2604
       }
     ]
@@ -2743,9 +2743,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-honor-20-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 2888
       }
     ]
@@ -2760,9 +2760,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-honor-9x-pro-6-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "6 GB",
         "price": 3318
       }
     ]
@@ -2777,9 +2777,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-honor-9a-3-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 2184
       }
     ]
@@ -2794,9 +2794,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-honor-9s-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2016
       }
     ]
@@ -2811,15 +2811,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-honor-200-5g",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 12652
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 15130
       }
     ]
@@ -2834,9 +2834,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-honor-200-pro-5g-12-gb-512-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 22071
       }
     ]
@@ -2851,9 +2851,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-honor-200-lite-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 8526
       }
     ]
@@ -2868,21 +2868,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-honor-90",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 10910
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 12044
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 12968
       }
     ]
@@ -2897,9 +2897,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-nova-3i-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3392
       }
     ]
@@ -2914,9 +2914,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-p20-pro-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3854
       }
     ]
@@ -2931,9 +2931,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-p20-lite-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3034
       }
     ]
@@ -2948,9 +2948,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-mate-20-pro-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4588
       }
     ]
@@ -2965,7 +2965,7 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-p30-pro",
     "variants": [
       {
-        "name": "Standard / Base",
+        "name": "8 GB",
         "storage": "8 GB",
         "ram": null,
         "price": 8169
@@ -2982,15 +2982,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-p30-lite",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4137
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4284
       }
     ]
@@ -3005,9 +3005,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-mate-10-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3759
       }
     ]
@@ -3022,9 +3022,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-mate-20-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3759
       }
     ]
@@ -3039,9 +3039,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-y9-prime-2019-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3854
       }
     ]
@@ -3056,9 +3056,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-huawei-mate-30-pro-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 8620
       }
     ]
@@ -3073,9 +3073,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-zero-5-6-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2320
       }
     ]
@@ -3090,9 +3090,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-s3x-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1407
       }
     ]
@@ -3107,9 +3107,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-5-stylus-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1690
       }
     ]
@@ -3124,9 +3124,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-7-pro-6-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2142
       }
     ]
@@ -3141,15 +3141,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-p-infinix-note-5",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1082
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1176
       }
     ]
@@ -3164,15 +3164,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-p-infinix-s4",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1522
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1827
       }
     ]
@@ -3187,15 +3187,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-2",
     "variants": [
       {
-        "name": "2 GB/16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 872
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1050
       }
     ]
@@ -3210,15 +3210,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-p-infinix-hot-s3",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1354
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1754
       }
     ]
@@ -3233,9 +3233,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-4-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1060
       }
     ]
@@ -3250,9 +3250,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-zero-5-pro-6-GB-128-GB",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 2352
       }
     ]
@@ -3267,9 +3267,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-6-pro-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2048
       }
     ]
@@ -3284,9 +3284,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-7-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1974
       }
     ]
@@ -3301,9 +3301,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-8-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2499
       }
     ]
@@ -3318,9 +3318,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-s5-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2090
       }
     ]
@@ -3335,9 +3335,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-s5-pro-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2688
       }
     ]
@@ -3352,9 +3352,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-s5-lite-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1953
       }
     ]
@@ -3369,9 +3369,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-9-pro-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2961
       }
     ]
@@ -3386,9 +3386,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-7-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2930
       }
     ]
@@ -3403,9 +3403,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-hd-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 1869
       }
     ]
@@ -3420,15 +3420,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-10",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3056
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3696
       }
     ]
@@ -3443,9 +3443,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-zero-8i-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4126
       }
     ]
@@ -3460,9 +3460,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-5-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2236
       }
     ]
@@ -3477,15 +3477,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-10-play",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2604
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3056
       }
     ]
@@ -3500,15 +3500,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-10s",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2888
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3118
       }
     ]
@@ -3523,15 +3523,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-10",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3003
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3276
       }
     ]
@@ -3546,9 +3546,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-10-pro-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 4420
       }
     ]
@@ -3563,9 +3563,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-11-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3076
       }
     ]
@@ -3580,15 +3580,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-11s",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3308
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3465
       }
     ]
@@ -3603,15 +3603,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-11s",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3350
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 3570
       }
     ]
@@ -3626,15 +3626,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-11",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3350
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3738
       }
     ]
@@ -3649,9 +3649,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-zero-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5691
       }
     ]
@@ -3666,9 +3666,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-4-plus-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2258
       }
     ]
@@ -3683,9 +3683,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-12-play-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3675
       }
     ]
@@ -3700,9 +3700,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-9-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2730
       }
     ]
@@ -3717,9 +3717,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-11s-free-fire-edition-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4095
       }
     ]
@@ -3734,9 +3734,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-11-2022-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2804
       }
     ]
@@ -3751,9 +3751,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-4-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 1596
       }
     ]
@@ -3768,9 +3768,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-12-turbo-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 3980
       }
     ]
@@ -3785,15 +3785,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-12",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4252
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4452
       }
     ]
@@ -3808,9 +3808,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-12-pro-4g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 5061
       }
     ]
@@ -3825,9 +3825,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-12-pro-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6195
       }
     ]
@@ -3842,9 +3842,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-12-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3423
       }
     ]
@@ -3859,9 +3859,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-6-2-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "2 GB",
         "price": 2478
       }
     ]
@@ -3876,9 +3876,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-12-5g-6-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4410
       }
     ]
@@ -3893,9 +3893,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-6-plus-3-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 2510
       }
     ]
@@ -3910,15 +3910,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-12-pro",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3350
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 3706
       }
     ]
@@ -3933,9 +3933,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-6-hd-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2184
       }
     ]
@@ -3950,9 +3950,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-zero-ultra-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 8967
       }
     ]
@@ -3967,9 +3967,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-zero-20-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4714
       }
     ]
@@ -3984,15 +3984,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-20",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4284
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4599
       }
     ]
@@ -4007,9 +4007,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-20-play-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3034
       }
     ]
@@ -4024,9 +4024,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-12i-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3034
       }
     ]
@@ -4041,15 +4041,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-7",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2184
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 2415
       }
     ]
@@ -4064,9 +4064,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-zero-5g-2023-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5691
       }
     ]
@@ -4081,9 +4081,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-zero-5g-2023-turbo-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 6237
       }
     ]
@@ -4098,9 +4098,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-7-hd-2-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "2 GB",
         "price": 1942
       }
     ]
@@ -4115,15 +4115,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-30i",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3350
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5218
       }
     ]
@@ -4138,9 +4138,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-gt-10-pro-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 9933
       }
     ]
@@ -4155,15 +4155,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-30-5g",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 6405
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 8746
       }
     ]
@@ -4178,15 +4178,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-30-5g",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5408
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6500
       }
     ]
@@ -4201,9 +4201,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-8-hd-3-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 2992
       }
     ]
@@ -4218,9 +4218,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-8-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3182
       }
     ]
@@ -4235,9 +4235,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-40-pro-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 9818
       }
     ]
@@ -4252,15 +4252,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-gt-20-pro",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 10342
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 10710
       }
     ]
@@ -4275,9 +4275,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-40i-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 4326
       }
     ]
@@ -4292,9 +4292,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-40-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 7203
       }
     ]
@@ -4309,9 +4309,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-40-pro-plus-5g-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 10185
       }
     ]
@@ -4326,9 +4326,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-zero-flip-5g-8-gb-512-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 20066
       }
     ]
@@ -4343,15 +4343,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-40x-5g",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 6069
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 6636
       }
     ]
@@ -4389,15 +4389,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-50-5g",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4420
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5618
       }
     ]
@@ -4412,15 +4412,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-note-50x-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6615
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7360
       }
     ]
@@ -4435,9 +4435,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-60i-5g-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 6394
       }
     ]
@@ -4452,9 +4452,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-hot-60-5g-plus-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7360
       }
     ]
@@ -4469,9 +4469,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-9-hd-3-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 4326
       }
     ]
@@ -4486,9 +4486,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-infinix-smart-10-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4326
       }
     ]
@@ -4526,21 +4526,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-7-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10059
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 10258
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 10416
       }
     ]
@@ -4555,15 +4555,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-7-legend-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11686
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 11928
       }
     ]
@@ -4578,21 +4578,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z3-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7875
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8190
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 8673
       }
     ]
@@ -4607,15 +4607,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z5-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8568
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 8830
       }
     ]
@@ -4630,15 +4630,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-9",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11529
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 11928
       }
     ]
@@ -4653,15 +4653,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-9-pro",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 16464
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 17420
       }
     ]
@@ -4676,15 +4676,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-9-se",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12222
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 12327
       }
     ]
@@ -4699,21 +4699,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z6-pro",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8106
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8505
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 8988
       }
     ]
@@ -4728,21 +4728,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z6-5g",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7634
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8190
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8631
       }
     ]
@@ -4757,21 +4757,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z6-4g",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5806
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6279
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6678
       }
     ]
@@ -4786,15 +4786,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-neo6",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11456
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 11686
       }
     ]
@@ -4809,15 +4809,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-9t-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 14952
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 16107
       }
     ]
@@ -4832,9 +4832,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-3-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 7518
       }
     ]
@@ -4849,15 +4849,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z6-lite-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6122
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7686
       }
     ]
@@ -4872,15 +4872,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-11-5g",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 18532
       },
       {
-        "name": "16 GB/256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 19246
       }
     ]
@@ -4895,15 +4895,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-neo7",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11655
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 12327
       }
     ]
@@ -4918,15 +4918,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z7",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9418
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9902
       }
     ]
@@ -4941,15 +4941,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z7s-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8432
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9230
       }
     ]
@@ -4964,15 +4964,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-neo-7-pro",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 17703
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 17955
       }
     ]
@@ -4987,15 +4987,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z7-pro",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13440
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 16548
       }
     ]
@@ -5010,21 +5010,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-12-5g",
     "variants": [
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 26450
       },
       {
-        "name": "16 GB/256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 28298
       },
       {
-        "name": "16 GB/512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 29222
       }
     ]
@@ -5039,21 +5039,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-neo-9-pro",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 17798
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 20580
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 21357
       }
     ]
@@ -5091,21 +5091,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z9x",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 8074
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8852
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9208
       }
     ]
@@ -5120,15 +5120,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z9-lite-5g",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7718
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8284
       }
     ]
@@ -5143,21 +5143,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z9s-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13744
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 14049
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 14616
       }
     ]
@@ -5172,21 +5172,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z9s-pro-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13786
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 14406
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 14920
       }
     ]
@@ -5201,15 +5201,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-13-5g",
     "variants": [
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 30870
       },
       {
-        "name": "16 GB/512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 32760
       }
     ]
@@ -5224,21 +5224,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-neo-10r",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 18218
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 20948
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 21420
       }
     ]
@@ -5253,21 +5253,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z10",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16538
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 17850
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 18690
       }
     ]
@@ -5282,21 +5282,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z10x",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10500
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11550
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 12180
       }
     ]
@@ -5311,27 +5311,27 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-neo-10",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 21788
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 25788
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 26775
       },
       {
-        "name": "16 GB/512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 27825
       }
     ]
@@ -5346,27 +5346,27 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z10-lite-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7560
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7980
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8768
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 9450
       }
     ]
@@ -5381,21 +5381,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z10r",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15225
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 16275
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 16800
       }
     ]
@@ -5410,15 +5410,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-15-5g",
     "variants": [
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 42000
       },
       {
-        "name": "16 GB/512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 43680
       }
     ]
@@ -5433,21 +5433,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-15r-5g",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 30660
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 32760
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 34125
       }
     ]
@@ -5462,21 +5462,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-iqoo-z11x-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 15068
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15960
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 17010
       }
     ]
@@ -5491,15 +5491,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lenovo-k10-note",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1512
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 1586
       }
     ]
@@ -5514,9 +5514,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lenovo-k10-plus-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2037
       }
     ]
@@ -5531,9 +5531,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lenovo-z6-pro-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5523
       }
     ]
@@ -5548,9 +5548,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-g7-plus-thinq-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3591
       }
     ]
@@ -5565,9 +5565,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-v40-thinq-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4042
       }
     ]
@@ -5582,9 +5582,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-g7-thinq-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3129
       }
     ]
@@ -5599,9 +5599,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-w10-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2300
       }
     ]
@@ -5616,9 +5616,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-w30-pro-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3129
       }
     ]
@@ -5633,9 +5633,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-g8s-thinq-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4588
       }
     ]
@@ -5650,9 +5650,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-g8x-thinq-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4767
       }
     ]
@@ -5667,9 +5667,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-q60-3-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 2846
       }
     ]
@@ -5684,9 +5684,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-wing-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6426
       }
     ]
@@ -5701,15 +5701,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-velvet",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5134
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5586
       }
     ]
@@ -5724,9 +5724,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-w31-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2930
       }
     ]
@@ -5741,9 +5741,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-k42-3-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 3034
       }
     ]
@@ -5758,15 +5758,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-w30",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2667
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2846
       }
     ]
@@ -5781,9 +5781,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-w31-plus-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3297
       }
     ]
@@ -5798,9 +5798,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-w41-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3129
       }
     ]
@@ -5815,9 +5815,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-lg-w11-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1932
       }
     ]
@@ -5832,9 +5832,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-one-power-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2226
       }
     ]
@@ -5849,9 +5849,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-moto-g6-plus-6-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 1984
       }
     ]
@@ -5866,9 +5866,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-z2-force-6-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 1754
       }
     ]
@@ -5883,15 +5883,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g6",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1270
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1774
       }
     ]
@@ -5906,9 +5906,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g7-power-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2068
       }
     ]
@@ -5923,9 +5923,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g7-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1827
       }
     ]
@@ -5940,9 +5940,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-one-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2068
       }
     ]
@@ -5957,9 +5957,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-one-vision-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 2310
       }
     ]
@@ -5974,9 +5974,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-one-action-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 2667
       }
     ]
@@ -5991,9 +5991,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-e6s-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2110
       }
     ]
@@ -6008,9 +6008,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-one-macro-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2068
       }
     ]
@@ -6025,9 +6025,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-edge-plus-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 8348
       }
     ]
@@ -6042,9 +6042,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g8-power-lite-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2824
       }
     ]
@@ -6059,9 +6059,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-razr-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9944
       }
     ]
@@ -6076,9 +6076,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-one-fusion-plus-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4830
       }
     ]
@@ -6093,9 +6093,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g9-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2898
       }
     ]
@@ -6110,9 +6110,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-e7-plus-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2782
       }
     ]
@@ -6127,9 +6127,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-razr-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 13514
       }
     ]
@@ -6144,9 +6144,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g9-power-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2982
       }
     ]
@@ -6161,9 +6161,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g-5g-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5208
       }
     ]
@@ -6178,9 +6178,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g30-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3339
       }
     ]
@@ -6195,9 +6195,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g10-power-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3182
       }
     ]
@@ -6212,15 +6212,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-e7-power",
     "variants": [
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2310
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2740
       }
     ]
@@ -6235,9 +6235,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g60-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5691
       }
     ]
@@ -6252,9 +6252,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-edge-20-pro-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8190
       }
     ]
@@ -6269,15 +6269,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g40-fusion",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4294
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5565
       }
     ]
@@ -6292,15 +6292,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-edge-20-fusion",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6962
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7192
       }
     ]
@@ -6315,9 +6315,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-edge-20-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7234
       }
     ]
@@ -6332,15 +6332,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g31",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4022
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4336
       }
     ]
@@ -6355,9 +6355,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g51-5g-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5607
       }
     ]
@@ -6372,9 +6372,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-e40-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3738
       }
     ]
@@ -6389,9 +6389,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-edge-30-pro-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9460
       }
     ]
@@ -6406,15 +6406,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-edge-30",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8904
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9723
       }
     ]
@@ -6429,15 +6429,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g52",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4095
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5502
       }
     ]
@@ -6452,9 +6452,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g71-5g-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7266
       }
     ]
@@ -6469,15 +6469,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g82-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7518
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8306
       }
     ]
@@ -6492,9 +6492,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g22-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3938
       }
     ]
@@ -6509,9 +6509,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g42-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3622
       }
     ]
@@ -6526,15 +6526,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g32",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4294
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5008
       }
     ]
@@ -6549,9 +6549,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-edge-30-fusion-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10532
       }
     ]
@@ -6566,15 +6566,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-edge-30-ultra-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13125
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 13755
       }
     ]
@@ -6589,9 +6589,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g72-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5166
       }
     ]
@@ -6606,15 +6606,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g62-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7035
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7392
       }
     ]
@@ -6629,15 +6629,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-e32s",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2740
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3024
       }
     ]
@@ -6652,21 +6652,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-e13",
     "variants": [
       {
-        "name": "2 GB/64 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "2 GB",
         "price": 4022
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4431
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4683
       }
     ]
@@ -6681,9 +6681,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-e32-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3297
       }
     ]
@@ -6698,9 +6698,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-g73-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8211
       }
     ]
@@ -6715,9 +6715,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-motorola-moto-e22s-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3360
       }
     ]
@@ -6732,15 +6732,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-6-1-plus",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2373
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2499
       }
     ]
@@ -6755,21 +6755,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-5-1-plus",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1838
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2236
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2510
       }
     ]
@@ -6784,9 +6784,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-8-sirocco-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3896
       }
     ]
@@ -6801,9 +6801,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-7-plus-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2258
       }
     ]
@@ -6818,15 +6818,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-8-1",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2342
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 2804
       }
     ]
@@ -6841,9 +6841,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-7-1-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2110
       }
     ]
@@ -6858,15 +6858,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-3-2",
     "variants": [
       {
-        "name": "2 GB/16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1480
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1638
       }
     ]
@@ -6881,9 +6881,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-4-2-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1754
       }
     ]
@@ -6898,15 +6898,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-2-2",
     "variants": [
       {
-        "name": "2 GB/16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 903
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1092
       }
     ]
@@ -6921,15 +6921,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-7-2",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2415
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2846
       }
     ]
@@ -6944,9 +6944,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-6-2-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2300
       }
     ]
@@ -6961,15 +6961,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-5-3",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3045
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3224
       }
     ]
@@ -6984,9 +6984,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-2-4-3-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 2415
       }
     ]
@@ -7001,9 +7001,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-3-4-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2499
       }
     ]
@@ -7018,15 +7018,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-5-4",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2772
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3234
       }
     ]
@@ -7041,9 +7041,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-g20-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2846
       }
     ]
@@ -7058,15 +7058,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-c20-plus",
     "variants": [
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 1754
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2026
       }
     ]
@@ -7104,9 +7104,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-g10-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2636
       }
     ]
@@ -7121,15 +7121,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-c30",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2352
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2646
       }
     ]
@@ -7144,9 +7144,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-xr20-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7287
       }
     ]
@@ -7161,15 +7161,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-g21",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2888
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3664
       }
     ]
@@ -7184,15 +7184,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-c21-plus",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2604
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2804
       }
     ]
@@ -7207,9 +7207,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-g60-5g-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6626
       }
     ]
@@ -7224,9 +7224,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-c12-2-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "2 GB",
         "price": 2110
       }
     ]
@@ -7241,9 +7241,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-x30-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 8180
       }
     ]
@@ -7258,21 +7258,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-c12-pro",
     "variants": [
       {
-        "name": "2 GB/64 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "2 GB",
         "price": 2216
       },
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 2415
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2572
       }
     ]
@@ -7287,15 +7287,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-c31",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2342
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2730
       }
     ]
@@ -7310,21 +7310,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-c32",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2499
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 2730
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 2930
       }
     ]
@@ -7339,21 +7339,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-c22",
     "variants": [
       {
-        "name": "2 GB/64 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "2 GB",
         "price": 2236
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2499
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3108
       }
     ]
@@ -7368,21 +7368,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-g42",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3843
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5092
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 5492
       }
     ]
@@ -7397,9 +7397,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nokia-g11-plus-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2730
       }
     ]
@@ -7414,21 +7414,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nothing-phone-1",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13450
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 14154
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 14595
       }
     ]
@@ -7443,21 +7443,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nothing-phone-2",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 20223
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 21567
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 21766
       }
     ]
@@ -7472,21 +7472,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nothing-phone-2a",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 17210
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 17934
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 18596
       }
     ]
@@ -7501,15 +7501,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-cmf-by-nothing-phone-1",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 11025
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12002
       }
     ]
@@ -7524,15 +7524,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nothing-phone-2a-plus",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 18669
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 19173
       }
     ]
@@ -7570,21 +7570,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nothing-phone-3a-pro",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 21032
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 23362
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 23846
       }
     ]
@@ -7622,15 +7622,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nothing-phone-3",
     "variants": [
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 32025
       },
       {
-        "name": "16 GB/512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 34178
       }
     ]
@@ -7668,21 +7668,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nothing-phone-4a",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 25725
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 27394
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 28350
       }
     ]
@@ -7697,21 +7697,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-nothing-phone-4a-pro",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 29925
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 32025
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 34125
       }
     ]
@@ -7726,21 +7726,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-6t",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8295
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9240
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 9345
       }
     ]
@@ -7755,21 +7755,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-6",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 6930
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7140
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 7245
       }
     ]
@@ -7784,15 +7784,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-5t",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 5250
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5460
       }
     ]
@@ -7807,15 +7807,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-5",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4830
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5355
       }
     ]
@@ -7853,9 +7853,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-3-6-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 1712
       }
     ]
@@ -7870,15 +7870,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-6t-mclaren-10-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "10 GB",
-        "ram": null,
+        "name": "10 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "10 GB",
         "price": 6006
       },
       {
-        "name": "Oneplus 6t Mclaren 10 GB / 256 GB",
-        "storage": "10 GB",
-        "ram": null,
+        "name": "10 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "10 GB",
         "price": 9450
       }
     ]
@@ -7893,15 +7893,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-7",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9345
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 10290
       }
     ]
@@ -7916,21 +7916,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-7-pro",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 12600
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 13650
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 13860
       }
     ]
@@ -7957,15 +7957,15 @@ module.exports = [
         "price": 7392
       },
       {
-        "name": "Oneplus 7t 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 10605
       },
       {
-        "name": "Oneplus 7t 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10290
       }
     ]
@@ -7980,15 +7980,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-7t-pro",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 13650
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 14070
       }
     ]
@@ -8003,21 +8003,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-8",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 15540
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16275
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 17115
       }
     ]
@@ -8032,15 +8032,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-8-pro",
     "variants": [
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 20265
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 19425
       }
     ]
@@ -8055,15 +8055,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-7tpro-mclaren-edition-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 9544
       },
       {
-        "name": "Oneplus 7t Pro Mclaren Edition 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 15750
       }
     ]
@@ -8078,21 +8078,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-nord",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 9975
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10500
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 11025
       }
     ]
@@ -8107,15 +8107,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-8t",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15225
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 15750
       }
     ]
@@ -8130,15 +8130,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-9",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 14700
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 15750
       }
     ]
@@ -8153,15 +8153,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-9r",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15120
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 15960
       }
     ]
@@ -8176,15 +8176,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-9-pro-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 17850
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 18900
       }
     ]
@@ -8199,21 +8199,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-nord-ce-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 11550
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11760
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 12390
       }
     ]
@@ -8228,21 +8228,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-nord-2-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 12600
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12915
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 13125
       }
     ]
@@ -8257,15 +8257,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-9rt",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15750
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 16800
       }
     ]
@@ -8280,15 +8280,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-nord-ce-2-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 12600
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13650
       }
     ]
@@ -8303,15 +8303,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-10-pro",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 20790
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 23100
       }
     ]
@@ -8326,15 +8326,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-nord-ce-2-lite",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 11550
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12390
       }
     ]
@@ -8349,15 +8349,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-10r",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15540
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 16590
       }
     ]
@@ -8372,15 +8372,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-nord-2t",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13650
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 14910
       }
     ]
@@ -8395,21 +8395,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-10t",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 20265
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 22050
       },
       {
-        "name": "16 GB/256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 23100
       }
     ]
@@ -8424,15 +8424,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-11",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 24150
       },
       {
-        "name": "16 GB/256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 26250
       }
     ]
@@ -8447,15 +8447,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-11-5g-marble-edition-16-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 27962
       },
       {
-        "name": "Oneplus 11 5g Marble Edition 16 GB / 256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 28035
       }
     ]
@@ -8470,21 +8470,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-11r",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 21798
       },
       {
-        "name": "16 GB/256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 22218
       },
       {
-        "name": "18 GB/512 GB",
-        "storage": "18 GB",
-        "ram": null,
+        "name": "18 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "18 GB",
         "price": 23362
       }
     ]
@@ -8511,15 +8511,15 @@ module.exports = [
         "price": 13828
       },
       {
-        "name": "Oneplus Nord Ce 3 Lite 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 13755
       },
       {
-        "name": "Oneplus Nord Ce 3 Lite 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12705
       }
     ]
@@ -8534,15 +8534,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-nord-3-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15960
       },
       {
-        "name": "16 GB/256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 16380
       }
     ]
@@ -8557,15 +8557,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-nord-ce-3-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 14878
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 15624
       }
     ]
@@ -8580,21 +8580,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-open-16-gb-512-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 55514
       },
       {
-        "name": "Oneplus Open 16 GB / 1 TB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "16 GB",
         "price": 63000
       },
       {
-        "name": "Oneplus Open 16 GB / 512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 57225
       }
     ]
@@ -8609,15 +8609,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-12",
     "variants": [
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 35700
       },
       {
-        "name": "16 GB/512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 40142
       }
     ]
@@ -8632,21 +8632,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-12r",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 26040
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 27856
       },
       {
-        "name": "16 GB/256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 28308
       }
     ]
@@ -8696,15 +8696,15 @@ module.exports = [
         "price": 14574
       },
       {
-        "name": "Oneplus Nord Ce4 Lite 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 14070
       },
       {
-        "name": "Oneplus Nord Ce4 Lite 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 14700
       }
     ]
@@ -8719,21 +8719,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-nord-4",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 18826
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 20968
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 21766
       }
     ]
@@ -8748,21 +8748,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-13",
     "variants": [
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 43260
       },
       {
-        "name": "16 GB/512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 46200
       },
       {
-        "name": "24 GB/1 TB",
-        "storage": "24 GB",
-        "ram": null,
+        "name": "24 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "24 GB",
         "price": 53025
       }
     ]
@@ -8777,15 +8777,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-13r",
     "variants": [
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 31731
       },
       {
-        "name": "16 GB/512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 32130
       }
     ]
@@ -8823,21 +8823,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-nord-5",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 24465
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 25484
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 27300
       }
     ]
@@ -8852,21 +8852,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-nord-ce-5-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 18690
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 19845
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 20318
       }
     ]
@@ -8881,15 +8881,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-15",
     "variants": [
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 58790
       },
       {
-        "name": "16 GB/512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 60375
       }
     ]
@@ -8916,15 +8916,15 @@ module.exports = [
         "price": 38115
       },
       {
-        "name": "Oneplus 15r 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 38325
       },
       {
-        "name": "Oneplus 15r 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 37485
       }
     ]
@@ -8939,15 +8939,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-nord-6-5g",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 28350
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 29925
       }
     ]
@@ -8974,15 +8974,15 @@ module.exports = [
         "price": 24150
       },
       {
-        "name": "Oneplus Nord Ce 6 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 24150
       },
       {
-        "name": "Oneplus Nord Ce 6 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 22365
       }
     ]
@@ -8997,21 +8997,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-nord-ce-6-lite-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 16275
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 18375
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 20475
       }
     ]
@@ -9026,15 +9026,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oneplus-n6",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 15750
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 17325
       }
     ]
@@ -9049,15 +9049,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Oneplus 15 5g 16 GB / 512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 60900
       },
       {
-        "name": "Oneplus 15 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 58800
       }
     ]
@@ -9072,21 +9072,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Oneplus 13 5g 24 GB / 1 TB",
-        "storage": "24 GB",
-        "ram": null,
+        "name": "24 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "24 GB",
         "price": 53025
       },
       {
-        "name": "Oneplus 13 5g 16 GB / 512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 46200
       },
       {
-        "name": "Oneplus 13 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 43050
       }
     ]
@@ -9101,21 +9101,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Oneplus 11r 16 GB / 512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 25200
       },
       {
-        "name": "Oneplus 11r 16 GB / 256 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "16 GB",
         "price": 24150
       },
       {
-        "name": "Oneplus 11r 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 23100
       }
     ]
@@ -9130,15 +9130,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Oneplus 13s 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 39585
       },
       {
-        "name": "Oneplus 13s 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 37800
       }
     ]
@@ -9153,15 +9153,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Oneplus 13r 5g 16 GB / 512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 32130
       },
       {
-        "name": "Oneplus 13r 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 31710
       }
     ]
@@ -9176,27 +9176,27 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Oneplus Nord 5 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 27300
       },
       {
-        "name": "Oneplus Nord 5 5g 8 GB / 512 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 26775
       },
       {
-        "name": "Oneplus Nord 5 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 25725
       },
       {
-        "name": "Oneplus Nord 5 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 24675
       }
     ]
@@ -9211,21 +9211,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Oneplus Nord 4 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 21840
       },
       {
-        "name": "Oneplus Nord 4 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 21210
       },
       {
-        "name": "Oneplus Nord 4 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 18900
       }
     ]
@@ -9240,21 +9240,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Oneplus Nord Ce5 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 20370
       },
       {
-        "name": "Oneplus Nord Ce5 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 19845
       },
       {
-        "name": "Oneplus Nord Ce5 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 18900
       }
     ]
@@ -9269,15 +9269,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Oneplus Nord Ce4 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 16800
       },
       {
-        "name": "Oneplus Nord Ce4 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15225
       }
     ]
@@ -9292,15 +9292,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Oneplus N6x 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 11550
       },
       {
-        "name": "Oneplus N6x 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 10500
       }
     ]
@@ -9315,15 +9315,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a7",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2636
       },
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 2142
       }
     ]
@@ -9338,15 +9338,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f9-pro",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2740
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3118
       }
     ]
@@ -9361,9 +9361,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f9-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2772
       }
     ]
@@ -9378,21 +9378,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a3s",
     "variants": [
       {
-        "name": "2 GB/16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1869
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2026
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2226
       }
     ]
@@ -9407,9 +9407,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-find-x-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 7192
       }
     ]
@@ -9447,15 +9447,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f7",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2426
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 2730
       }
     ]
@@ -9470,21 +9470,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a83",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1428
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1754
       },
       {
-        "name": "2 GB/16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1312
       }
     ]
@@ -9499,9 +9499,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f5-youth-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1712
       }
     ]
@@ -9516,15 +9516,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f5",
     "variants": [
       {
-        "name": "4 GB/32 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 1785
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 1953
       }
     ]
@@ -9539,9 +9539,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a71-3-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "3 GB",
         "price": 1029
       }
     ]
@@ -9556,9 +9556,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-r11-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2310
       }
     ]
@@ -9573,9 +9573,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-r11-plus-6-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3266
       }
     ]
@@ -9590,9 +9590,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a77-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1512
       }
     ]
@@ -9607,9 +9607,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f3-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1512
       }
     ]
@@ -9624,15 +9624,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f3-plus",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1953
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2268
       }
     ]
@@ -9647,9 +9647,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a57-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1586
       }
     ]
@@ -9664,15 +9664,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f1s",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1197
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1354
       }
     ]
@@ -9687,9 +9687,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f1-plus-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1323
       }
     ]
@@ -9704,9 +9704,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-r17-pro-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4536
       }
     ]
@@ -9721,9 +9721,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-r17-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4378
       }
     ]
@@ -9738,15 +9738,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-p-oppo-k1",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3182
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3339
       }
     ]
@@ -9784,21 +9784,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a5s",
     "variants": [
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2226
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2541
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3003
       }
     ]
@@ -9813,9 +9813,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a1k-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2384
       }
     ]
@@ -9830,15 +9830,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f11",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3423
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3854
       }
     ]
@@ -9853,9 +9853,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5166
       }
     ]
@@ -9870,15 +9870,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno-10-x-zoom",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5691
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 5922
       }
     ]
@@ -9893,9 +9893,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-r15-pro-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4210
       }
     ]
@@ -9910,15 +9910,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-p-oppo-k3",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4294
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4494
       }
     ]
@@ -9933,9 +9933,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a9-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4210
       }
     ]
@@ -9950,9 +9950,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno2z-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 6478
       }
     ]
@@ -9967,9 +9967,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno-2-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 6206
       }
     ]
@@ -9984,27 +9984,27 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a5-2020",
     "variants": [
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 3224
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3381
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3538
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3696
       }
     ]
@@ -10019,15 +10019,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a9-2020",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4294
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4200
       }
     ]
@@ -10042,15 +10042,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno2-f",
     "variants": [
       {
-        "name": "6 GB/256 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "6 GB",
         "price": 5324
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6300
       }
     ]
@@ -10065,15 +10065,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f15",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4872
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5250
       }
     ]
@@ -10088,9 +10088,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a71-2018-3-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "3 GB",
         "price": 1113
       }
     ]
@@ -10105,15 +10105,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a31",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4106
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4767
       }
     ]
@@ -10128,15 +10128,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a12",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3150
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3528
       }
     ]
@@ -10151,21 +10151,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a52",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4494
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4736
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5008
       }
     ]
@@ -10180,9 +10180,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-find-x2-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 11655
       }
     ]
@@ -10197,9 +10197,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a11k-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2583
       }
     ]
@@ -10214,15 +10214,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno3-pro",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6122
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 6279
       }
     ]
@@ -10237,9 +10237,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno-4-pro-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7119
       }
     ]
@@ -10254,15 +10254,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a53",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4610
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5470
       }
     ]
@@ -10277,9 +10277,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f17-pro-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5848
       }
     ]
@@ -10294,15 +10294,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f17",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5366
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5660
       }
     ]
@@ -10317,9 +10317,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a33-2020-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3297
       }
     ]
@@ -10334,15 +10334,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a15",
     "variants": [
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 3066
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3423
       }
     ]
@@ -10357,15 +10357,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a15s",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3822
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4568
       }
     ]
@@ -10380,9 +10380,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno5-pro-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9712
       }
     ]
@@ -10420,9 +10420,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f19-pro-plus-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8074
       }
     ]
@@ -10437,9 +10437,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f19-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5922
       }
     ]
@@ -10454,21 +10454,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a54",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4568
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4893
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5408
       }
     ]
@@ -10483,15 +10483,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a53s-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7581
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8074
       }
     ]
@@ -10506,9 +10506,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a74-5g-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8589
       }
     ]
@@ -10523,9 +10523,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno6-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8830
       }
     ]
@@ -10540,9 +10540,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno6-pro-5g-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 10101
       }
     ]
@@ -10557,9 +10557,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f19s-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5324
       }
     ]
@@ -10574,21 +10574,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a55",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4966
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5092
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5775
       }
     ]
@@ -10603,9 +10603,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a16-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4809
       }
     ]
@@ -10620,15 +10620,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a16k",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2898
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3696
       }
     ]
@@ -10643,9 +10643,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno7-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 9303
       }
     ]
@@ -10660,9 +10660,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno7-pro-5g-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 11288
       }
     ]
@@ -10677,9 +10677,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a76-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5492
       }
     ]
@@ -10694,15 +10694,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-k10",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5166
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5324
       }
     ]
@@ -10717,15 +10717,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a16e",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3224
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4284
       }
     ]
@@ -10740,9 +10740,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f21-pro-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7192
       }
     ]
@@ -10757,9 +10757,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f21-pro-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8558
       }
     ]
@@ -10774,9 +10774,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a96-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5786
       }
     ]
@@ -10791,15 +10791,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-k10-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6804
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7644
       }
     ]
@@ -10814,8 +10814,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno8-5g-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
+        "name": "128 GB",
+        "storage": "128 GB",
         "ram": null,
         "price": 10248
       }
@@ -10831,9 +10831,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno8-pro-5g-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 11529
       }
     ]
@@ -10848,9 +10848,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a57-2022-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4494
       }
     ]
@@ -10865,9 +10865,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f21s-pro-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6804
       }
     ]
@@ -10882,9 +10882,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f21s-pro-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8474
       }
     ]
@@ -10922,9 +10922,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a17k-3-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 3738
       }
     ]
@@ -10939,9 +10939,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a77s-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5796
       }
     ]
@@ -10956,9 +10956,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a78-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11140
       }
     ]
@@ -10973,9 +10973,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno8t-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12086
       }
     ]
@@ -10990,9 +10990,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-find-n2-flip-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 19089
       }
     ]
@@ -11007,9 +11007,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f23-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 12999
       }
     ]
@@ -11024,9 +11024,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno10-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 17378
       }
     ]
@@ -11041,9 +11041,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno10-pro-5g-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 20150
       }
     ]
@@ -11058,9 +11058,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno10-pro-plus-5g-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 21304
       }
     ]
@@ -11075,9 +11075,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a78-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8505
       }
     ]
@@ -11092,9 +11092,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-find-n3-flip-5g-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 25106
       }
     ]
@@ -11109,9 +11109,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a58-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6993
       }
     ]
@@ -11126,9 +11126,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a38-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 6468
       }
     ]
@@ -11143,9 +11143,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a17-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4095
       }
     ]
@@ -11183,9 +11183,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a79-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11088
       }
     ]
@@ -11200,15 +11200,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a59-5g",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9796
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10584
       }
     ]
@@ -11246,9 +11246,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno11-pro-5g-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 20370
       }
     ]
@@ -11332,9 +11332,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno12-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 18417
       }
     ]
@@ -11395,15 +11395,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-k12x",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9429
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 9566
       }
     ]
@@ -11441,9 +11441,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a3-5g-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10752
       }
     ]
@@ -11481,15 +11481,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-find-x8-5g",
     "variants": [
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 33957
       },
       {
-        "name": "16 GB/512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 37558
       }
     ]
@@ -11504,9 +11504,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-find-x8-pro-5g-16-gb-512-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 48363
       }
     ]
@@ -11521,21 +11521,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno13",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 20612
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 21000
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 21210
       }
     ]
@@ -11596,21 +11596,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f29-pro",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16800
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 17482
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 19215
       }
     ]
@@ -11648,15 +11648,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a5-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10983
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11624
       }
     ]
@@ -11671,21 +11671,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a5x-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7875
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9660
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9922
       }
     ]
@@ -11723,21 +11723,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-k13x",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 8032
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9292
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9818
       }
     ]
@@ -11752,21 +11752,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno14",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 25305
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 27195
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 29925
       }
     ]
@@ -11827,21 +11827,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f31-pro-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 19110
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 20643
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 21430
       }
     ]
@@ -11856,15 +11856,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-k13-turbo-pro",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 21262
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 22050
       }
     ]
@@ -11879,15 +11879,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-k13-turbo",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 17588
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 18375
       }
     ]
@@ -11925,15 +11925,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f31-pro-plus-5g",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 22732
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 23205
       }
     ]
@@ -11948,15 +11948,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-find-x9-5g",
     "variants": [
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 45150
       },
       {
-        "name": "16 GB/512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 49875
       }
     ]
@@ -11971,9 +11971,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-find-x9-pro-16-gb-512-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 65100
       }
     ]
@@ -11988,21 +11988,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a6x-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 9314
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9650
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 11078
       }
     ]
@@ -12017,21 +12017,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno15",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 29736
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 32319
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 33810
       }
     ]
@@ -12115,15 +12115,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno-15c",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 23678
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 23835
       }
     ]
@@ -12138,21 +12138,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-k14x-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 9975
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 11434
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 12012
       }
     ]
@@ -12167,21 +12167,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a6-5g",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 13965
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 15068
       },
       {
-        "name": "6 GB/256 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "6 GB",
         "price": 15908
       }
     ]
@@ -12196,21 +12196,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-k14",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 12390
       },
       {
-        "name": "6 GB/256 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "6 GB",
         "price": 13440
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 15225
       }
     ]
@@ -12225,15 +12225,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-a6s-5g",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 12758
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 14984
       }
     ]
@@ -12248,21 +12248,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f33-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 20286
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 0
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 25568
       }
     ]
@@ -12277,15 +12277,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-f33-pro-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 22890
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 25756
       }
     ]
@@ -12323,9 +12323,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-find-x9-ultra-12-gb-512-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 82950
       }
     ]
@@ -12340,15 +12340,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-oppo-reno16",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 38850
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 44100
       }
     ]
@@ -12363,21 +12363,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-poco-f1",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3297
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3454
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 3780
       }
     ]
@@ -12392,21 +12392,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-poco-x2",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4452
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4736
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 4966
       }
     ]
@@ -12421,21 +12421,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m2-pro",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4578
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 5092
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5250
       }
     ]
@@ -12450,21 +12450,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m2",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4042
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4410
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4568
       }
     ]
@@ -12479,15 +12479,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-c3",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3392
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3496
       }
     ]
@@ -12502,21 +12502,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-x3",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4809
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5166
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5408
       }
     ]
@@ -12531,21 +12531,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m3",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4452
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4694
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4851
       }
     ]
@@ -12560,15 +12560,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-x3-pro",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5544
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5848
       }
     ]
@@ -12583,15 +12583,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m3-pro-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6048
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6909
       }
     ]
@@ -12606,21 +12606,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-f3-gt",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8274
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8547
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 8904
       }
     ]
@@ -12635,9 +12635,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m2-reloaded-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3182
       }
     ]
@@ -12652,15 +12652,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-c31",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3560
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3938
       }
     ]
@@ -12675,21 +12675,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m4-pro-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6279
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7192
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7476
       }
     ]
@@ -12704,21 +12704,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m4-pro",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 5134
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5638
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5848
       }
     ]
@@ -12733,21 +12733,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-x4-pro",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 7035
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8190
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8390
       }
     ]
@@ -12762,15 +12762,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m4-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6153
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6279
       }
     ]
@@ -12785,21 +12785,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-f4-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7392
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7634
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 8232
       }
     ]
@@ -12814,15 +12814,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m5",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4011
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4210
       }
     ]
@@ -12837,15 +12837,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-x5-pro",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 11330
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 11676
       }
     ]
@@ -12860,15 +12860,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-c50",
     "variants": [
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 4462
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 4988
       }
     ]
@@ -12883,15 +12883,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-c55",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5092
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5554
       }
     ]
@@ -12906,15 +12906,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-x5",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10416
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 10804
       }
     ]
@@ -12929,15 +12929,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-c51",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4840
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5040
       }
     ]
@@ -12952,15 +12952,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-f5",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 13388
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 13682
       }
     ]
@@ -12975,27 +12975,27 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m6-pro-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6804
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 8410
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8830
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 9009
       }
     ]
@@ -13010,21 +13010,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-c65",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5040
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5302
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 5817
       }
     ]
@@ -13039,21 +13039,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-x6-5g",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 11456
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 11834
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 13020
       }
     ]
@@ -13068,15 +13068,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-x6-pro",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 16054
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 16212
       }
     ]
@@ -13091,27 +13091,27 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m6",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5901
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 6248
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6436
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 6584
       }
     ]
@@ -13126,15 +13126,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-c61",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4988
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5355
       }
     ]
@@ -13149,21 +13149,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-f6",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 14406
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 15130
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 15540
       }
     ]
@@ -13178,15 +13178,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-x6-neo",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8904
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 9366
       }
     ]
@@ -13224,15 +13224,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m7-pro-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8925
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 9292
       }
     ]
@@ -13247,9 +13247,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-c75-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5870
       },
       {
@@ -13270,15 +13270,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-x7-pro",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 15004
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 16810
       }
     ]
@@ -13293,15 +13293,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m6-plus-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6720
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6930
       }
     ]
@@ -13316,15 +13316,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m7-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6195
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6878
       }
     ]
@@ -13339,15 +13339,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-c71",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4042
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4546
       }
     ]
@@ -13385,21 +13385,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m7-plus-5g",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 8180
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9534
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9608
       }
     ]
@@ -13414,21 +13414,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-c85-5g",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 8032
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8925
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9765
       }
     ]
@@ -13443,21 +13443,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-m8-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 14364
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 14700
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 16275
       }
     ]
@@ -13472,15 +13472,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-c85x-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7822
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 8610
       }
     ]
@@ -13495,15 +13495,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-x8-pro",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 22470
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 24308
       }
     ]
@@ -13541,9 +13541,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-poco-c81-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7612
       }
     ]
@@ -13558,21 +13558,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-2-pro",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2625
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2824
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 3098
       }
     ]
@@ -13587,15 +13587,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-c1-2019",
     "variants": [
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 1911
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2110
       }
     ]
@@ -13610,9 +13610,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-c1-2-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1827
       }
     ]
@@ -13627,15 +13627,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-2",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2268
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2898
       }
     ]
@@ -13650,21 +13650,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-1",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2184
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2342
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3098
       }
     ]
@@ -13679,21 +13679,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-u1",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2436
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2835
       },
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 2552
       }
     ]
@@ -13708,21 +13708,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-3",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2478
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3066
       },
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 2740
       }
     ]
@@ -13737,21 +13737,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-3-pro",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3748
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3801
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4011
       }
     ]
@@ -13766,21 +13766,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-c2",
     "variants": [
       {
-        "name": "2 GB/16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 2026
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2510
       },
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2310
       }
     ]
@@ -13795,15 +13795,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-p-realme-x",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5250
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5565
       }
     ]
@@ -13818,15 +13818,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-3i",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2468
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2898
       }
     ]
@@ -13841,21 +13841,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-5",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2982
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3297
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3696
       }
     ]
@@ -13870,21 +13870,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-5-pro",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3980
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4179
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4336
       }
     ]
@@ -13899,21 +13899,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-xt",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4809
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 5050
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5292
       }
     ]
@@ -13951,21 +13951,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-x2-pro",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4893
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5324
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 5838
       }
     ]
@@ -13980,27 +13980,27 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-x2",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4294
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4904
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5250
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 5596
       }
     ]
@@ -14015,15 +14015,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-5i",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4148
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4378
       }
     ]
@@ -14038,15 +14038,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-c3",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3948
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3140
       }
     ]
@@ -14061,21 +14061,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-x50-pro",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6836
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7035
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 7780
       }
     ]
@@ -14090,27 +14090,27 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-6",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4694
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 5092
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5292
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5523
       }
     ]
@@ -14125,21 +14125,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-6-pro",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4736
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5208
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5470
       }
     ]
@@ -14154,9 +14154,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-narzo-10-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4210
       }
     ]
@@ -14171,15 +14171,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-narzo-10a",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3486
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3696
       }
     ]
@@ -14194,15 +14194,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-x3",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5754
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6080
       }
     ]
@@ -14217,21 +14217,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-x3-superzoom",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5324
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 6048
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 6206
       }
     ]
@@ -14246,9 +14246,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-c11-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2824
       }
     ]
@@ -14263,15 +14263,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-c12",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3266
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3770
       }
     ]
@@ -14286,15 +14286,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-6i",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4294
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4694
       }
     ]
@@ -14309,15 +14309,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-7-pro",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5922
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6405
       }
     ]
@@ -14332,21 +14332,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-c15",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3266
       },
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 3654
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4011
       }
     ]
@@ -14361,15 +14361,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-7",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 5114
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5649
       }
     ]
@@ -14384,15 +14384,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-narzo-20-pro",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4494
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4988
       }
     ]
@@ -14430,15 +14430,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-narzo-20a",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3570
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4011
       }
     ]
@@ -14476,15 +14476,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-c15-qualcomm-edition",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3182
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3496
       }
     ]
@@ -14499,15 +14499,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-x7-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7592
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7833
       }
     ]
@@ -14522,9 +14522,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-x7-pro-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8032
       }
     ]
@@ -14539,15 +14539,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-narzo-30a",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3980
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4358
       }
     ]
@@ -14562,15 +14562,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-narzo-30-pro-5g",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 7592
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7749
       }
     ]
@@ -14585,21 +14585,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-8",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5607
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5764
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6248
       }
     ]
@@ -14614,15 +14614,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-8-pro",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6352
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6636
       }
     ]
@@ -14637,15 +14637,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-c21",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3266
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3580
       }
     ]
@@ -14660,9 +14660,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-c20-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2698
       }
     ]
@@ -14677,15 +14677,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-c25",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3423
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3854
       }
     ]
@@ -14700,15 +14700,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-realme-x7-max-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8746
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 9146
       }
     ]
@@ -14746,27 +14746,27 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a14-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7770
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 8505
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8925
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9450
       }
     ]
@@ -14781,21 +14781,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a13",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4095
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4452
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5050
       }
     ]
@@ -14810,15 +14810,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a03",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2478
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2824
       }
     ]
@@ -14833,9 +14833,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a03-core-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2342
       }
     ]
@@ -14850,15 +14850,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a03s",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3360
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4410
       }
     ]
@@ -14873,9 +14873,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a10-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2058
       }
     ]
@@ -14890,15 +14890,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a10s",
     "variants": [
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2940
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3045
       }
     ]
@@ -14913,21 +14913,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a12",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5565
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5250
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5880
       }
     ]
@@ -14942,9 +14942,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a20-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2667
       }
     ]
@@ -14959,15 +14959,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a20s",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3675
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4200
       }
     ]
@@ -14982,21 +14982,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a21s",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5040
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 5355
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5775
       }
     ]
@@ -15011,15 +15011,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a22",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5250
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6300
       }
     ]
@@ -15034,15 +15034,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a22-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9135
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9765
       }
     ]
@@ -15057,15 +15057,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a23",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6720
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7350
       }
     ]
@@ -15080,15 +15080,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a30-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2824
       },
       {
-        "name": "Samsung Galaxy A30 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3990
       }
     ]
@@ -15115,15 +15115,15 @@ module.exports = [
         "price": 2667
       },
       {
-        "name": "Samsung Galaxy A30s 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4095
       },
       {
-        "name": "Samsung Galaxy A30s 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3885
       }
     ]
@@ -15138,15 +15138,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a31-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3980
       },
       {
-        "name": "Samsung Galaxy A31 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5250
       }
     ]
@@ -15161,15 +15161,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a32",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7455
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7770
       }
     ]
@@ -15184,9 +15184,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a5-2017-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1134
       }
     ]
@@ -15201,21 +15201,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a50",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4410
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5040
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4830
       }
     ]
@@ -15230,15 +15230,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a50s",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4200
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4410
       }
     ]
@@ -15253,15 +15253,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a51",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5775
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6300
       }
     ]
@@ -15276,15 +15276,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a52",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8295
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8505
       }
     ]
@@ -15299,15 +15299,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a52s-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 11340
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11865
       }
     ]
@@ -15322,33 +15322,33 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a53-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9555
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10500
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 11025
       },
       {
-        "name": "Samsung Galaxy A53 5g 6 GB / 256 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "6 GB",
         "price": 10710
       },
       {
-        "name": "Samsung Galaxy A53 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 8925
       }
     ]
@@ -15363,21 +15363,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a6",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2100
       },
       {
-        "name": "4 GB/32 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 2310
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2625
       }
     ]
@@ -15392,21 +15392,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a6-plus",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2415
       },
       {
-        "name": "4 GB/32 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 2520
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2625
       }
     ]
@@ -15421,9 +15421,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a7-2016-3-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "3 GB",
         "price": 1270
       }
     ]
@@ -15438,9 +15438,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a7-2017-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1428
       }
     ]
@@ -15455,21 +15455,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a7-2018",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2940
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 2110
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3570
       }
     ]
@@ -15484,9 +15484,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a70-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4190
       }
     ]
@@ -15501,15 +15501,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a70s",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5250
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5460
       }
     ]
@@ -15524,15 +15524,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a71",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6090
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6615
       }
     ]
@@ -15559,15 +15559,15 @@ module.exports = [
         "price": 7340
       },
       {
-        "name": "Samsung Galaxy A72 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 10185
       },
       {
-        "name": "Samsung Galaxy A72 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9450
       }
     ]
@@ -15594,15 +15594,15 @@ module.exports = [
         "price": 10101
       },
       {
-        "name": "Samsung Galaxy A73 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 14595
       },
       {
-        "name": "Samsung Galaxy A73 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13860
       }
     ]
@@ -15617,9 +15617,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a8-plus-6-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2415
       }
     ]
@@ -15634,9 +15634,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a8-star-6-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 1869
       }
     ]
@@ -15651,9 +15651,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a80-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5208
       }
     ]
@@ -15668,15 +15668,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a9-2018",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3675
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 3885
       }
     ]
@@ -15691,9 +15691,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-a9-pro-4-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 1512
       }
     ]
@@ -15720,15 +15720,15 @@ module.exports = [
         "price": 2110
       },
       {
-        "name": "Samsung Galaxy C5 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2730
       },
       {
-        "name": "Samsung Galaxy C5 4 GB / 32 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 2629
       }
     ]
@@ -15743,15 +15743,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-c5-pro-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2142
       },
       {
-        "name": "Samsung Galaxy C5 Pro 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5040
       }
     ]
@@ -15766,15 +15766,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-c7-pro-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2216
       },
       {
-        "name": "Samsung Galaxy C7 Pro 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5040
       }
     ]
@@ -15789,15 +15789,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-c9-pro-6-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2258
       },
       {
-        "name": "Samsung Galaxy C9 Pro 6 GB / 64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 5250
       }
     ]
@@ -15812,15 +15812,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-f02s",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3990
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4095
       }
     ]
@@ -15835,15 +15835,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-f12",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5355
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4725
       }
     ]
@@ -15870,15 +15870,15 @@ module.exports = [
         "price": 4336
       },
       {
-        "name": "Samsung Galaxy F13 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5985
       },
       {
-        "name": "Samsung Galaxy F13 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5670
       }
     ]
@@ -15893,15 +15893,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-samsung-galaxy-f22",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5250
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5565
       }
     ]
@@ -15916,21 +15916,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Fold8 Ultra 16 GB / 1 TB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "16 GB",
         "price": 148050
       },
       {
-        "name": "Samsung Galaxy Z Fold8 Ultra 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 136500
       },
       {
-        "name": "Samsung Galaxy Z Fold8 Ultra 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 131250
       }
     ]
@@ -15945,21 +15945,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Fold8 16 GB / 1 TB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "16 GB",
         "price": 126000
       },
       {
-        "name": "Samsung Galaxy Z Fold8 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 120750
       },
       {
-        "name": "Samsung Galaxy Z Fold8 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 115500
       }
     ]
@@ -15974,21 +15974,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Fold7 16 GB / 1 TB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "16 GB",
         "price": 108150
       },
       {
-        "name": "Samsung Galaxy Z Fold7 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 103950
       },
       {
-        "name": "Samsung Galaxy Z Fold7 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 101850
       }
     ]
@@ -16003,21 +16003,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S26 Ultra 5g 16 GB / 1 TB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "16 GB",
         "price": 111300
       },
       {
-        "name": "Samsung Galaxy S26 Ultra 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 94500
       },
       {
-        "name": "Samsung Galaxy S26 Ultra 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 89250
       }
     ]
@@ -16032,21 +16032,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S25 Ultra 5g 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 79800
       },
       {
-        "name": "Samsung Galaxy S25 Ultra 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 77700
       },
       {
-        "name": "Samsung Galaxy S25 Ultra 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 74550
       }
     ]
@@ -16061,15 +16061,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Flip 8 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 68250
       },
       {
-        "name": "Samsung Galaxy Z Flip 8 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 65625
       }
     ]
@@ -16084,15 +16084,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Flip7 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 60375
       },
       {
-        "name": "Samsung Galaxy Z Flip7 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 59850
       }
     ]
@@ -16107,15 +16107,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S25 Edge 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 54075
       },
       {
-        "name": "Samsung Galaxy S25 Edge 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 48300
       }
     ]
@@ -16130,21 +16130,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A17 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 14280
       },
       {
-        "name": "Samsung Galaxy A17 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13388
       },
       {
-        "name": "Samsung Galaxy A17 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 12390
       }
     ]
@@ -16159,15 +16159,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Flip7 Fe 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 55650
       },
       {
-        "name": "Samsung Galaxy Z Flip7 Fe 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 53550
       }
     ]
@@ -16182,15 +16182,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S25 Plus 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 55125
       },
       {
-        "name": "Samsung Galaxy S25 Plus 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 51450
       }
     ]
@@ -16205,21 +16205,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A37 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 34650
       },
       {
-        "name": "Samsung Galaxy A37 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 30450
       },
       {
-        "name": "Samsung Galaxy A37 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 26775
       }
     ]
@@ -16234,21 +16234,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A56 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 27825
       },
       {
-        "name": "Samsung Galaxy A56 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 26250
       },
       {
-        "name": "Samsung Galaxy A56 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 24150
       }
     ]
@@ -16263,15 +16263,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S22 Plus 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 24675
       },
       {
-        "name": "Samsung Galaxy S22 Plus 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 23520
       }
     ]
@@ -16286,15 +16286,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S22 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 23625
       },
       {
-        "name": "Samsung Galaxy S22 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 22050
       }
     ]
@@ -16309,15 +16309,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S26 Plus 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 71400
       },
       {
-        "name": "Samsung Galaxy S26 Plus 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 68250
       }
     ]
@@ -16332,15 +16332,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S26 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 65100
       },
       {
-        "name": "Samsung Galaxy S26 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 55650
       }
     ]
@@ -16355,21 +16355,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S25 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 45675
       },
       {
-        "name": "Samsung Galaxy S25 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 44100
       },
       {
-        "name": "Samsung Galaxy S25 5g 12 GB / 128 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "12 GB",
         "price": 42420
       }
     ]
@@ -16384,15 +16384,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A57 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 42000
       },
       {
-        "name": "Samsung Galaxy A57 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 38325
       }
     ]
@@ -16407,21 +16407,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S25 Fe 8 GB / 512 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 42000
       },
       {
-        "name": "Samsung Galaxy S25 Fe 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 37800
       },
       {
-        "name": "Samsung Galaxy S25 Fe 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 33915
       }
     ]
@@ -16436,15 +16436,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Fold3 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 34125
       },
       {
-        "name": "Samsung Galaxy Z Fold3 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 33600
       }
     ]
@@ -16459,9 +16459,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Fold2 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 27300
       }
     ]
@@ -16476,15 +16476,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S24 Fe 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 24150
       },
       {
-        "name": "Samsung Galaxy S24 Fe 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 26250
       }
     ]
@@ -16499,9 +16499,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Note 20 Ultra 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 23100
       }
     ]
@@ -16516,9 +16516,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Flip 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 19950
       }
     ]
@@ -16533,9 +16533,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S20 Plus 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 14490
       }
     ]
@@ -16550,9 +16550,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S20 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13335
       }
     ]
@@ -16567,21 +16567,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F36 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 14595
       },
       {
-        "name": "Samsung Galaxy F36 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13440
       },
       {
-        "name": "Samsung Galaxy F36 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 12285
       }
     ]
@@ -16596,15 +16596,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A07 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 11970
       },
       {
-        "name": "Samsung Galaxy A07 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 10605
       }
     ]
@@ -16619,15 +16619,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M17e 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 11130
       },
       {
-        "name": "Samsung Galaxy M17e 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9555
       }
     ]
@@ -16642,15 +16642,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Flip3 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 23100
       },
       {
-        "name": "Samsung Galaxy Z Flip3 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 22050
       }
     ]
@@ -16665,9 +16665,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Fold 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 18900
       }
     ]
@@ -16682,15 +16682,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F56 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 19530
       },
       {
-        "name": "Samsung Galaxy F56 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16905
       }
     ]
@@ -16705,15 +16705,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Note 10 Plus 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 17325
       },
       {
-        "name": "Samsung Galaxy Note 10 Plus 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 16275
       }
     ]
@@ -16728,15 +16728,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M56 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 18060
       },
       {
-        "name": "Samsung Galaxy M56 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15750
       }
     ]
@@ -16751,21 +16751,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S10 Plus 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 16170
       },
       {
-        "name": "Samsung Galaxy S10 Plus 8 GB / 512 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 14910
       },
       {
-        "name": "Samsung Galaxy S10 Plus 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12705
       }
     ]
@@ -16780,15 +16780,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M17 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 11235
       },
       {
-        "name": "Samsung Galaxy M17 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9870
       }
     ]
@@ -16803,15 +16803,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F70e 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10290
       },
       {
-        "name": "Samsung Galaxy F70e 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9240
       }
     ]
@@ -16826,21 +16826,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M15 5g Prime Edition 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9240
       },
       {
-        "name": "Samsung Galaxy M15 5g Prime Edition 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8190
       },
       {
-        "name": "Samsung Galaxy M15 5g Prime Edition 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7350
       }
     ]
@@ -16855,21 +16855,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A13 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5145
       },
       {
-        "name": "Samsung Galaxy A13 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4620
       },
       {
-        "name": "Samsung Galaxy A13 5g 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4095
       }
     ]
@@ -16884,21 +16884,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A36 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 20895
       },
       {
-        "name": "Samsung Galaxy A36 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 19845
       },
       {
-        "name": "Samsung Galaxy A36 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 18900
       }
     ]
@@ -16913,15 +16913,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S21 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 19215
       },
       {
-        "name": "Samsung Galaxy S21 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 18060
       }
     ]
@@ -16936,21 +16936,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A55 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 19530
       },
       {
-        "name": "Samsung Galaxy A55 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 18375
       },
       {
-        "name": "Samsung Galaxy A55 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 17325
       }
     ]
@@ -16965,21 +16965,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M47 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 18900
       },
       {
-        "name": "Samsung Galaxy M47 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16800
       },
       {
-        "name": "Samsung Galaxy M47 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 16274
       }
     ]
@@ -16994,21 +16994,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A27 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 19634
       },
       {
-        "name": "Samsung Galaxy A27 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16800
       },
       {
-        "name": "Samsung Galaxy A27 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 15750
       }
     ]
@@ -17023,21 +17023,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M55 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 15855
       },
       {
-        "name": "Samsung Galaxy M55 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 14805
       },
       {
-        "name": "Samsung Galaxy M55 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13755
       }
     ]
@@ -17052,21 +17052,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F70 Pro 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 18374
       },
       {
-        "name": "Samsung Galaxy F70 Pro 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15750
       },
       {
-        "name": "Samsung Galaxy F70 Pro 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 13650
       }
     ]
@@ -17081,15 +17081,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A35 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 14280
       },
       {
-        "name": "Samsung Galaxy A35 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13440
       }
     ]
@@ -17104,21 +17104,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A25 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 12495
       },
       {
-        "name": "Samsung Galaxy A25 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12285
       },
       {
-        "name": "Samsung Galaxy A25 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10815
       }
     ]
@@ -17133,21 +17133,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A26 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 14070
       },
       {
-        "name": "Samsung Galaxy A26 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13335
       },
       {
-        "name": "Samsung Galaxy A26 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 12285
       }
     ]
@@ -17162,15 +17162,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A16 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 11970
       },
       {
-        "name": "Samsung Galaxy A16 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10395
       }
     ]
@@ -17185,15 +17185,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M55s 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 13125
       },
       {
-        "name": "Samsung Galaxy M55s 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11970
       }
     ]
@@ -17208,21 +17208,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M36 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 13230
       },
       {
-        "name": "Samsung Galaxy M36 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12810
       },
       {
-        "name": "Samsung Galaxy M36 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 11235
       }
     ]
@@ -17237,15 +17237,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S20 Fe 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 11445
       },
       {
-        "name": "Samsung Galaxy S20 Fe 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10500
       }
     ]
@@ -17260,21 +17260,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M35 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 11025
       },
       {
-        "name": "Samsung Galaxy M35 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10710
       },
       {
-        "name": "Samsung Galaxy M35 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10395
       }
     ]
@@ -17289,15 +17289,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F17 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10605
       },
       {
-        "name": "Samsung Galaxy F17 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9345
       }
     ]
@@ -17312,15 +17312,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Note 9 8 GB / 512 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 9975
       },
       {
-        "name": "Samsung Galaxy Note 9 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9240
       }
     ]
@@ -17335,21 +17335,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S9 Plus 6 GB / 256 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "6 GB",
         "price": 7665
       },
       {
-        "name": "Samsung Galaxy S9 Plus 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7350
       },
       {
-        "name": "Samsung Galaxy S9 Plus 6 GB / 64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 7035
       }
     ]
@@ -17364,21 +17364,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S9 4 GB / 256 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "4 GB",
         "price": 7560
       },
       {
-        "name": "Samsung Galaxy S9 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7245
       },
       {
-        "name": "Samsung Galaxy S9 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6930
       }
     ]
@@ -17393,15 +17393,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A05 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5670
       },
       {
-        "name": "Samsung Galaxy A05 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5250
       }
     ]
@@ -17416,21 +17416,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F55 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 14175
       },
       {
-        "name": "Samsung Galaxy F55 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 13125
       },
       {
-        "name": "Samsung Galaxy F55 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11865
       }
     ]
@@ -17445,21 +17445,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A16 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 11865
       },
       {
-        "name": "Samsung Galaxy A16 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11340
       },
       {
-        "name": "Samsung Galaxy A16 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10605
       }
     ]
@@ -17474,15 +17474,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M52 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10500
       },
       {
-        "name": "Samsung Galaxy M52 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10290
       }
     ]
@@ -17497,21 +17497,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A15 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 10395
       },
       {
-        "name": "Samsung Galaxy A15 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9870
       },
       {
-        "name": "Samsung Galaxy A15 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9765
       }
     ]
@@ -17526,15 +17526,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F42 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10500
       },
       {
-        "name": "Samsung Galaxy F42 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9450
       }
     ]
@@ -17549,21 +17549,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F16 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10290
       },
       {
-        "name": "Samsung Galaxy F16 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9555
       },
       {
-        "name": "Samsung Galaxy F16 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9240
       }
     ]
@@ -17578,21 +17578,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M16 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10290
       },
       {
-        "name": "Samsung Galaxy M16 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9240
       },
       {
-        "name": "Samsung Galaxy M16 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 8715
       }
     ]
@@ -17607,21 +17607,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M15 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8505
       },
       {
-        "name": "Samsung Galaxy M15 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8085
       },
       {
-        "name": "Samsung Galaxy M15 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7665
       }
     ]
@@ -17636,15 +17636,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F14 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7560
       },
       {
-        "name": "Samsung Galaxy F14 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7245
       }
     ]
@@ -17659,15 +17659,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F62 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7350
       },
       {
-        "name": "Samsung Galaxy F62 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6930
       }
     ]
@@ -17682,9 +17682,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Note Fan Edition 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6825
       }
     ]
@@ -17699,15 +17699,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M51 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6825
       },
       {
-        "name": "Samsung Galaxy M51 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6510
       }
     ]
@@ -17722,21 +17722,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A06 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8085
       },
       {
-        "name": "Samsung Galaxy A06 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7245
       },
       {
-        "name": "Samsung Galaxy A06 5g 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6300
       }
     ]
@@ -17751,9 +17751,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A07 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5880
       }
     ]
@@ -17768,15 +17768,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A05s 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6195
       },
       {
-        "name": "Samsung Galaxy A05s 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5670
       }
     ]
@@ -17791,21 +17791,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M06 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6615
       },
       {
-        "name": "Samsung Galaxy M06 5g 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6300
       },
       {
-        "name": "Samsung Galaxy M06 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5670
       }
     ]
@@ -17820,21 +17820,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F06 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6720
       },
       {
-        "name": "Samsung Galaxy F06 5g 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5985
       },
       {
-        "name": "Samsung Galaxy F06 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5460
       }
     ]
@@ -17849,9 +17849,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F07 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5460
       }
     ]
@@ -17866,15 +17866,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M12 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5775
       },
       {
-        "name": "Samsung Galaxy M12 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5460
       }
     ]
@@ -17889,15 +17889,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M32 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6195
       },
       {
-        "name": "Samsung Galaxy M32 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5250
       }
     ]
@@ -17912,21 +17912,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A06 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5670
       },
       {
-        "name": "Samsung Galaxy A06 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5460
       },
       {
-        "name": "Samsung Galaxy A06 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5040
       }
     ]
@@ -17941,21 +17941,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M30s 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5145
       },
       {
-        "name": "Samsung Galaxy M30s 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4830
       },
       {
-        "name": "Samsung Galaxy M30s 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4725
       }
     ]
@@ -17970,9 +17970,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M05 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4620
       }
     ]
@@ -17987,9 +17987,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F05 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4410
       }
     ]
@@ -18004,15 +18004,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M11 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4305
       },
       {
-        "name": "Samsung Galaxy M11 3 GB / 32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3885
       }
     ]
@@ -18027,15 +18027,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M02s 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4200
       },
       {
-        "name": "Samsung Galaxy M02s 3 GB / 32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3570
       }
     ]
@@ -18050,15 +18050,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A04s 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3675
       },
       {
-        "name": "Samsung Galaxy A04s 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3465
       }
     ]
@@ -18073,21 +18073,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A04 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3990
       },
       {
-        "name": "Samsung Galaxy A04 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3255
       },
       {
-        "name": "Samsung Galaxy A04 3 GB / 32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2625
       }
     ]
@@ -18102,15 +18102,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M01 Core 2 GB / 32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2208
       },
       {
-        "name": "Samsung Galaxy M01 Core 2 GB / 16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1995
       }
     ]
@@ -18125,15 +18125,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A33 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9555
       },
       {
-        "name": "Samsung Galaxy A33 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9135
       }
     ]
@@ -18148,21 +18148,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A34 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 11865
       },
       {
-        "name": "Samsung Galaxy A34 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11130
       },
       {
-        "name": "Samsung Galaxy A34 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10815
       }
     ]
@@ -18177,21 +18177,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy A54 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 15015
       },
       {
-        "name": "Samsung Galaxy A54 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13860
       },
       {
-        "name": "Samsung Galaxy A54 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 13650
       }
     ]
@@ -18206,9 +18206,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F04 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4200
       }
     ]
@@ -18223,21 +18223,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F15 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9765
       },
       {
-        "name": "Samsung Galaxy F15 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9030
       },
       {
-        "name": "Samsung Galaxy F15 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7875
       }
     ]
@@ -18252,15 +18252,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F23 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9240
       },
       {
-        "name": "Samsung Galaxy F23 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9135
       }
     ]
@@ -18275,15 +18275,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F34 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9975
       },
       {
-        "name": "Samsung Galaxy F34 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9450
       }
     ]
@@ -18298,15 +18298,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F41 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5460
       },
       {
-        "name": "Samsung Galaxy F41 6 GB / 64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4830
       }
     ]
@@ -18321,9 +18321,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy F54 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 11340
       }
     ]
@@ -18338,21 +18338,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Flip4 8 GB / 512 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 24150
       },
       {
-        "name": "Samsung Galaxy Z Flip4 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 23730
       },
       {
-        "name": "Samsung Galaxy Z Flip4 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 23415
       }
     ]
@@ -18367,15 +18367,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Flip5 8 GB / 512 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 30450
       },
       {
-        "name": "Samsung Galaxy Z Flip5 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 28875
       }
     ]
@@ -18390,21 +18390,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Fold4 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 44625
       },
       {
-        "name": "Samsung Galaxy Z Fold4 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 42000
       },
       {
-        "name": "Samsung Galaxy Z Fold4 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 39900
       }
     ]
@@ -18419,21 +18419,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Fold5 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 57750
       },
       {
-        "name": "Samsung Galaxy Z Fold5 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 55650
       },
       {
-        "name": "Samsung Galaxy Z Fold5 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 53550
       }
     ]
@@ -18448,21 +18448,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Fold6 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 76650
       },
       {
-        "name": "Samsung Galaxy Z Fold6 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 75600
       },
       {
-        "name": "Samsung Galaxy Z Fold6 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 73500
       }
     ]
@@ -18477,15 +18477,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M02 3 GB / 32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3990
       },
       {
-        "name": "Samsung Galaxy M02 2 GB / 32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 3675
       }
     ]
@@ -18500,15 +18500,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M04 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5250
       },
       {
-        "name": "Samsung Galaxy M04 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5040
       }
     ]
@@ -18523,15 +18523,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M10 3 GB / 32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3675
       },
       {
-        "name": "Samsung Galaxy M10 3 GB / 16 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "3 GB",
         "price": 3150
       }
     ]
@@ -18546,15 +18546,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M13 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6405
       },
       {
-        "name": "Samsung Galaxy M13 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5985
       }
     ]
@@ -18569,15 +18569,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M13 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7875
       },
       {
-        "name": "Samsung Galaxy M13 5g 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7665
       }
     ]
@@ -18592,21 +18592,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M14 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7980
       },
       {
-        "name": "Samsung Galaxy M14 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7875
       },
       {
-        "name": "Samsung Galaxy M14 5g 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7665
       }
     ]
@@ -18621,15 +18621,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M20 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3360
       },
       {
-        "name": "Samsung Galaxy M20 3 GB / 32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3150
       }
     ]
@@ -18644,15 +18644,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M21 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5250
       },
       {
-        "name": "Samsung Galaxy M21 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4725
       }
     ]
@@ -18667,15 +18667,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M21 2021 Edition 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5040
       },
       {
-        "name": "Samsung Galaxy M21 2021 Edition 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4725
       }
     ]
@@ -18690,21 +18690,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M30 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4200
       },
       {
-        "name": "Samsung Galaxy M30 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3989
       },
       {
-        "name": "Samsung Galaxy M30 3 GB / 32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3675
       }
     ]
@@ -18719,21 +18719,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M31 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5145
       },
       {
-        "name": "Samsung Galaxy M31 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4935
       },
       {
-        "name": "Samsung Galaxy M31 6 GB / 64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4515
       }
     ]
@@ -18748,15 +18748,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M31s 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5775
       },
       {
-        "name": "Samsung Galaxy M31s 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4935
       }
     ]
@@ -18771,15 +18771,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M32 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8715
       },
       {
-        "name": "Samsung Galaxy M32 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8190
       }
     ]
@@ -18794,15 +18794,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M32 Prime Edition 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5460
       },
       {
-        "name": "Samsung Galaxy M32 Prime Edition 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5670
       }
     ]
@@ -18817,15 +18817,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M33 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9975
       },
       {
-        "name": "Samsung Galaxy M33 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9660
       }
     ]
@@ -18840,21 +18840,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M34 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 9765
       },
       {
-        "name": "Samsung Galaxy M34 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9450
       },
       {
-        "name": "Samsung Galaxy M34 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9030
       }
     ]
@@ -18869,15 +18869,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M42 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9030
       },
       {
-        "name": "Samsung Galaxy M42 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8715
       }
     ]
@@ -18892,9 +18892,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy M53 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9975
       }
     ]
@@ -18909,15 +18909,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Note 10 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 13650
       },
       {
-        "name": "Samsung Galaxy Note 10 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13125
       }
     ]
@@ -18932,15 +18932,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Note 10 Lite 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9135
       },
       {
-        "name": "Samsung Galaxy Note 10 Lite 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8925
       }
     ]
@@ -18955,9 +18955,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Note 10 Plus 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 16800
       }
     ]
@@ -18972,9 +18972,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Note 20 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 14175
       }
     ]
@@ -18989,21 +18989,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Note 8 6 GB / 256 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "6 GB",
         "price": 9030
       },
       {
-        "name": "Samsung Galaxy Note 8 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8400
       },
       {
-        "name": "Samsung Galaxy Note 8 6 GB / 64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 8085
       }
     ]
@@ -19018,9 +19018,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy On8 2018 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3150
       }
     ]
@@ -19035,15 +19035,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S10 8 GB / 512 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 11340
       },
       {
-        "name": "Samsung Galaxy S10 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11025
       }
     ]
@@ -19058,15 +19058,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S10 Lite 8 GB / 512 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 10920
       },
       {
-        "name": "Samsung Galaxy S10 Lite 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10605
       }
     ]
@@ -19081,9 +19081,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S20 Fe 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 13230
       }
     ]
@@ -19098,15 +19098,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S20 Ultra 5g 12 GB / 128 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "12 GB",
         "price": 19425
       },
       {
-        "name": "Samsung Galaxy S20 Ultra 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 19950
       }
     ]
@@ -19121,15 +19121,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S21 Fe 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 16800
       },
       {
-        "name": "Samsung Galaxy S21 Fe 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15750
       }
     ]
@@ -19144,15 +19144,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S21 Plus 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 17325
       },
       {
-        "name": "Samsung Galaxy S21 Plus 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16800
       }
     ]
@@ -19167,15 +19167,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S21 Ultra 5g 16 GB / 512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 30450
       },
       {
-        "name": "Samsung Galaxy S21 Ultra 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 28350
       }
     ]
@@ -19190,21 +19190,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S22 Ultra 5g 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 40950
       },
       {
-        "name": "Samsung Galaxy S22 Ultra 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 38325
       },
       {
-        "name": "Samsung Galaxy S22 Ultra 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 36750
       }
     ]
@@ -19219,15 +19219,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S23 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 29925
       },
       {
-        "name": "Samsung Galaxy S23 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 28875
       }
     ]
@@ -19242,15 +19242,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S23 Fe 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 23100
       },
       {
-        "name": "Samsung Galaxy S23 Fe 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 21000
       }
     ]
@@ -19265,15 +19265,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S23 Plus 5g 8 GB / 512 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 36225
       },
       {
-        "name": "Samsung Galaxy S23 Plus 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 34965
       }
     ]
@@ -19288,21 +19288,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S23 Ultra 5g 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 50400
       },
       {
-        "name": "Samsung Galaxy S23 Ultra 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 48300
       },
       {
-        "name": "Samsung Galaxy S23 Ultra 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 45150
       }
     ]
@@ -19317,21 +19317,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S24 5g 8 GB / 512 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 37800
       },
       {
-        "name": "Samsung Galaxy S24 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 36750
       },
       {
-        "name": "Samsung Galaxy S24 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 31395
       }
     ]
@@ -19346,15 +19346,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S24 Plus 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 38640
       },
       {
-        "name": "Samsung Galaxy S24 Plus 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 38325
       }
     ]
@@ -19369,21 +19369,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S24 Ultra 5g 12 GB / 1021 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1021 GB",
+        "storage": "1021 GB",
+        "ram": "12 GB",
         "price": 67725
       },
       {
-        "name": "Samsung Galaxy S24 Ultra 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 67200
       },
       {
-        "name": "Samsung Galaxy S24 Ultra 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 66360
       }
     ]
@@ -19398,15 +19398,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S8 Plus 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6615
       },
       {
-        "name": "Samsung Galaxy S8 Plus 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6510
       }
     ]
@@ -19421,15 +19421,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Flip 6 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 43050
       },
       {
-        "name": "Samsung Galaxy Z Flip 6 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 38850
       }
     ]
@@ -19444,9 +19444,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Z Fold 6 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 81900
       }
     ]
@@ -19461,15 +19461,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-4",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1880
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2068
       }
     ]
@@ -19484,15 +19484,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-12-air",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2110
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2247
       }
     ]
@@ -19507,9 +19507,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-15-pro-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3444
       }
     ]
@@ -19524,9 +19524,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-15-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2530
       }
     ]
@@ -19541,9 +19541,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-5-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2026
       }
     ]
@@ -19558,21 +19558,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-6-air",
     "variants": [
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 1754
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1932
       },
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 2110
       }
     ]
@@ -19587,9 +19587,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-5-pro-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2510
       }
     ]
@@ -19604,9 +19604,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-power-2-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2384
       }
     ]
@@ -19621,9 +19621,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-power-2-air-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2216
       }
     ]
@@ -19638,9 +19638,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-16-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2804
       }
     ]
@@ -19655,15 +19655,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2762
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 2898
       }
     ]
@@ -19678,9 +19678,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-16-premier-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4042
       }
     ]
@@ -19695,15 +19695,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-7-pro",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2667
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3087
       }
     ]
@@ -19718,9 +19718,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-17-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3528
       }
     ]
@@ -19735,15 +19735,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova-2",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3045
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3224
       }
     ]
@@ -19758,9 +19758,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-8-2-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "2 GB",
         "price": 2310
       }
     ]
@@ -19775,9 +19775,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-8t-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2866
       }
     ]
@@ -19792,9 +19792,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-18-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3580
       }
     ]
@@ -19809,9 +19809,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-8-pro-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3045
       }
     ]
@@ -19826,9 +19826,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4893
       }
     ]
@@ -19843,9 +19843,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova-neo-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3098
       }
     ]
@@ -19860,9 +19860,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-phantom-x-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 5492
       }
     ]
@@ -19877,15 +19877,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova-3",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3496
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3654
       }
     ]
@@ -19900,9 +19900,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-8p-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2961
       }
     ]
@@ -19917,15 +19917,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-9",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2772
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3045
       }
     ]
@@ -19940,9 +19940,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-19-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3832
       }
     ]
@@ -19957,7 +19957,7 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-19-neo-6-gb-128",
     "variants": [
       {
-        "name": "Standard / Base",
+        "name": "6 GB",
         "storage": "6 GB",
         "ram": null,
         "price": 3696
@@ -19997,9 +19997,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-20-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 7192
       }
     ]
@@ -20014,15 +20014,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-20-premier",
     "variants": [
       {
-        "name": "8 GB/512 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "8 GB",
         "price": 9450
       },
       {
-        "name": "16 GB/512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 10290
       }
     ]
@@ -20037,15 +20037,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-20-pro",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 9975
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9156
       }
     ]
@@ -20083,9 +20083,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-phantom-x2-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 13125
       }
     ]
@@ -20100,9 +20100,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-phantom-x2-pro-5g-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 14910
       }
     ]
@@ -20117,9 +20117,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova-4-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 3969
       }
     ]
@@ -20134,21 +20134,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-10-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5964
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6510
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 7718
       }
     ]
@@ -20163,9 +20163,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-7p-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 2856
       }
     ]
@@ -20180,9 +20180,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-go-2023-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3990
       }
     ]
@@ -20197,9 +20197,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-go-3-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6174
       }
     ]
@@ -20214,9 +20214,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-30-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 13020
       }
     ]
@@ -20231,9 +20231,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-30-premier-5g-12-gb-512-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 15225
       }
     ]
@@ -20248,15 +20248,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova-7-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7822
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 8820
       }
     ]
@@ -20271,15 +20271,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova-7-pro",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10500
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 11025
       }
     ]
@@ -20294,21 +20294,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova-curve-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8746
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10311
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 11550
       }
     ]
@@ -20323,15 +20323,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-30c-5g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 0
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 6290
       }
     ]
@@ -20346,9 +20346,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-camon-20s-pro-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9261
       }
     ]
@@ -20363,9 +20363,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-phantom-v-flip2-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 16065
       }
     ]
@@ -20380,9 +20380,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-phantom-v-fold2-5g-12-gb-512-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 31500
       }
     ]
@@ -20397,9 +20397,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova-slim-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12285
       }
     ]
@@ -20414,9 +20414,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-go-5g-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5901
       }
     ]
@@ -20431,9 +20431,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-phantom-v-flip-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 13755
       }
     ]
@@ -20448,9 +20448,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova-6-pro-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 8085
       }
     ]
@@ -20465,15 +20465,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova-6-neo-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6846
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 7665
       }
     ]
@@ -20488,15 +20488,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-spark-20-pro-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7718
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 0
       }
     ]
@@ -20511,15 +20511,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova-5-pro",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6825
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 7508
       }
     ]
@@ -20534,9 +20534,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pop-x-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5618
       }
     ]
@@ -20551,15 +20551,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-tecno-pova-curve-2-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 17535
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 19110
       }
     ]
@@ -20574,15 +20574,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v9-pro",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3182
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3297
       }
     ]
@@ -20597,9 +20597,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v11-pro-6-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4053
       }
     ]
@@ -20614,9 +20614,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v11-6-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3549
       }
     ]
@@ -20631,9 +20631,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y83-pro-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2782
       }
     ]
@@ -20648,9 +20648,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-nex-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4694
       }
     ]
@@ -20665,9 +20665,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y71i-2-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1354
       }
     ]
@@ -20682,15 +20682,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y81",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1869
       },
       {
-        "name": "4 GB/32 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 2184
       }
     ]
@@ -20705,9 +20705,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y83-4-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 2373
       }
     ]
@@ -20722,9 +20722,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v9-youth-4-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 2342
       }
     ]
@@ -20739,21 +20739,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y71",
     "variants": [
       {
-        "name": "3 GB/16 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "3 GB",
         "price": 1396
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1564
       },
       {
-        "name": "4 GB/32 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 1754
       }
     ]
@@ -20768,9 +20768,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x21-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3822
       }
     ]
@@ -20785,9 +20785,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v9-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2898
       }
     ]
@@ -20802,9 +20802,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v7-4-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 2184
       }
     ]
@@ -20819,9 +20819,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v7-plus-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2268
       }
     ]
@@ -20836,9 +20836,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y69-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1606
       }
     ]
@@ -20876,9 +20876,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x9s-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2446
       }
     ]
@@ -20893,9 +20893,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x9s-plus-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2678
       }
     ]
@@ -20910,9 +20910,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y55s-3-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "3 GB",
         "price": 1102
       }
     ]
@@ -20927,9 +20927,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y66-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1564
       }
     ]
@@ -20944,15 +20944,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v5-plus",
     "variants": [
       {
-        "name": "4 GB/32 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 2110
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2310
       }
     ]
@@ -20967,9 +20967,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v5-4-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 1638
       }
     ]
@@ -20984,9 +20984,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v3-max-4-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 1638
       }
     ]
@@ -21001,9 +21001,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y95-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3266
       }
     ]
@@ -21018,15 +21018,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y93",
     "variants": [
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 2656
       },
       {
-        "name": "4 GB/32 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 2625
       }
     ]
@@ -21041,9 +21041,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y81i-2-gb-16gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1354
       }
     ]
@@ -21058,9 +21058,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-z10-4-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 2625
       }
     ]
@@ -21075,15 +21075,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y91",
     "variants": [
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2184
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2404
       }
     ]
@@ -21098,15 +21098,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v15-pro",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4988
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5124
       }
     ]
@@ -21121,21 +21121,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y91i",
     "variants": [
       {
-        "name": "2 GB/16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1670
       },
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 1922
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2079
       }
     ]
@@ -21150,15 +21150,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-p-vivo-v15",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4536
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4694
       }
     ]
@@ -21173,9 +21173,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y17-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5030
       }
     ]
@@ -21190,9 +21190,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y15-2019-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3958
       }
     ]
@@ -21207,15 +21207,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y12",
     "variants": [
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 3738
       },
       {
-        "name": "4 GB/32 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 4064
       }
     ]
@@ -21230,27 +21230,27 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-z1-pro",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3560
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3622
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 3780
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4137
       }
     ]
@@ -21265,21 +21265,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-p-vivo-s1",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4410
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4284
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4526
       }
     ]
@@ -21294,9 +21294,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y90-2-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 2110
       }
     ]
@@ -21311,27 +21311,27 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-z1x",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 3938
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4137
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4294
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 4536
       }
     ]
@@ -21346,9 +21346,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v17-pro-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6248
       }
     ]
@@ -21363,21 +21363,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-u10",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3034
       },
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 3182
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3507
       }
     ]
@@ -21392,9 +21392,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y19-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4536
       }
     ]
@@ -21409,21 +21409,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-u20",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3717
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3822
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 3980
       }
     ]
@@ -21438,9 +21438,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v17-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6122
       }
     ]
@@ -21455,9 +21455,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-s1-pro-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5124
       }
     ]
@@ -21472,9 +21472,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y11-2019-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2940
       }
     ]
@@ -21512,9 +21512,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y50-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5408
       }
     ]
@@ -21529,15 +21529,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y30",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4851
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5145
       }
     ]
@@ -21575,9 +21575,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x50-pro-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 9586
       }
     ]
@@ -21615,9 +21615,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y20i-3-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 3854
       }
     ]
@@ -21632,15 +21632,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y20",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4557
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4798
       }
     ]
@@ -21655,9 +21655,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v20-se-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6048
       }
     ]
@@ -21672,9 +21672,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v20-pro-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8589
       }
     ]
@@ -21689,9 +21689,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y51-2020-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5618
       }
     ]
@@ -21706,15 +21706,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y20g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4588
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5418
       }
     ]
@@ -21729,15 +21729,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v20-2021",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5806
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 5964
       }
     ]
@@ -21752,15 +21752,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y51a",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4767
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5166
       }
     ]
@@ -21775,9 +21775,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y20a-3-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 4053
       }
     ]
@@ -21792,9 +21792,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y31-2021-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5092
       }
     ]
@@ -21809,15 +21809,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x60",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9975
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 10700
       }
     ]
@@ -21832,9 +21832,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x60-pro-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 12327
       }
     ]
@@ -21849,9 +21849,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x60-pro-plus-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 13976
       }
     ]
@@ -21912,9 +21912,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y73-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6363
       }
     ]
@@ -21929,9 +21929,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y72-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8148
       }
     ]
@@ -21946,9 +21946,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y12s-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3938
       }
     ]
@@ -21963,15 +21963,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y1s",
     "variants": [
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2510
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2740
       }
     ]
@@ -21986,9 +21986,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y53s-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5848
       }
     ]
@@ -22003,15 +22003,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y12g",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3507
       },
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 3906
       }
     ]
@@ -22026,9 +22026,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y33s-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5848
       }
     ]
@@ -22066,21 +22066,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x70-pro",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 14994
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 15582
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 16622
       }
     ]
@@ -22095,9 +22095,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y3s-2021-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2961
       }
     ]
@@ -22112,9 +22112,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y20t-6-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 5166
       }
     ]
@@ -22129,15 +22129,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v23-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10038
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 11088
       }
     ]
@@ -22152,15 +22152,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v23-pro-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10804
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 12148
       }
     ]
@@ -22175,9 +22175,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y21t-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5124
       }
     ]
@@ -22192,21 +22192,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-t1",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7371
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8032
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8368
       }
     ]
@@ -22221,9 +22221,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v23e-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9230
       }
     ]
@@ -22238,9 +22238,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y75-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8222
       }
     ]
@@ -22255,9 +22255,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y21e-3-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 4158
       }
     ]
@@ -22272,9 +22272,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y21a-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4378
       }
     ]
@@ -22289,9 +22289,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y33t-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5806
       }
     ]
@@ -22306,9 +22306,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y15s-2021-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3182
       }
     ]
@@ -22323,9 +22323,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y21g-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4578
       }
     ]
@@ -22340,9 +22340,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x70-pro-plus-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 18364
       }
     ]
@@ -22357,15 +22357,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x80",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16096
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 17692
       }
     ]
@@ -22380,9 +22380,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x80-pro-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 21346
       }
     ]
@@ -22397,15 +22397,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-t1-pro-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9040
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9261
       }
     ]
@@ -22420,21 +22420,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-t1-44w",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5628
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6048
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6478
       }
     ]
@@ -22449,9 +22449,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y75-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6310
       }
     ]
@@ -22466,9 +22466,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y01-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2782
       }
     ]
@@ -22483,21 +22483,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-t1x-4g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4652
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5050
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5450
       }
     ]
@@ -22512,15 +22512,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v25-pro-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12674
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 13282
       }
     ]
@@ -22535,21 +22535,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y22-2022",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4851
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5366
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5702
       }
     ]
@@ -22564,15 +22564,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v25-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10048
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 11025
       }
     ]
@@ -22587,27 +22587,27 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y16",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3790
       },
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 4190
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4442
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4893
       }
     ]
@@ -22622,9 +22622,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y35-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5670
       }
     ]
@@ -22639,9 +22639,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y02-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3150
       }
     ]
@@ -22656,9 +22656,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y100-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11392
       }
     ]
@@ -22673,15 +22673,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y56",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9471
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10784
       }
     ]
@@ -22696,21 +22696,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v27-pro",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 18795
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 19456
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 20002
       }
     ]
@@ -22725,15 +22725,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v27",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16600
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 19173
       }
     ]
@@ -22748,9 +22748,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y01a-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2740
       }
     ]
@@ -22765,15 +22765,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x90-5g",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 24644
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 25462
       }
     ]
@@ -22788,9 +22788,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x90-pro-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 29736
       }
     ]
@@ -22828,9 +22828,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y02t-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4946
       }
     ]
@@ -22845,15 +22845,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-t2",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 11204
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11550
       }
     ]
@@ -22868,21 +22868,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-t2x",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9628
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10720
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11014
       }
     ]
@@ -22920,9 +22920,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y27-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7476
       }
     ]
@@ -22937,9 +22937,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y36-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8610
       }
     ]
@@ -22954,15 +22954,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v29",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 18176
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 18784
       }
     ]
@@ -22977,15 +22977,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v29-pro",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 20265
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 20674
       }
     ]
@@ -23023,15 +23023,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y17s",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5974
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 6468
       }
     ]
@@ -23046,15 +23046,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y200",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12831
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 13923
       }
     ]
@@ -23069,21 +23069,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y28-5g",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9807
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10216
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10647
       }
     ]
@@ -23098,15 +23098,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x100",
     "variants": [
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 28508
       },
       {
-        "name": "16 GB/512 GB",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 29326
       }
     ]
@@ -23121,9 +23121,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x100-pro-16-gb-512-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 33957
       }
     ]
@@ -23138,21 +23138,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v30",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 19866
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 20748
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 20968
       }
     ]
@@ -23167,15 +23167,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v30-pro",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 22344
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 23762
       }
     ]
@@ -23190,15 +23190,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y200e-5g",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 12044
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12663
       }
     ]
@@ -23213,21 +23213,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-t3x",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9513
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10868
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11266
       }
     ]
@@ -23311,9 +23311,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y18e-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5218
       }
     ]
@@ -23328,9 +23328,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y200-pro-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 14774
       }
     ]
@@ -23345,9 +23345,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-x-fold-3-pro-16-gb-512-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "16 GB",
-        "ram": null,
+        "name": "16 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "16 GB",
         "price": 62559
       }
     ]
@@ -23362,15 +23362,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-t3-lite",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 6626
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7906
       }
     ]
@@ -23385,21 +23385,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y28s-5g",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 10028
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10290
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10500
       }
     ]
@@ -23414,9 +23414,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y18i-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5218
       }
     ]
@@ -23454,21 +23454,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v40",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 21094
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 22544
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 22922
       }
     ]
@@ -23483,15 +23483,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-v40-pro",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 26544
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 28402
       }
     ]
@@ -23506,9 +23506,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-y58-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12002
       }
     ]
@@ -23569,21 +23569,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-vivo-t3-ultra",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 17913
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 19688
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 20412
       }
     ]
@@ -23598,15 +23598,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-note-6-pro",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3129
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 3444
       }
     ]
@@ -23621,15 +23621,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-mi-a2",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2667
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 2982
       }
     ]
@@ -23667,15 +23667,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-6-pro",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2278
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2426
       }
     ]
@@ -23713,15 +23713,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-y2",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2247
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2436
       }
     ]
@@ -23736,21 +23736,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-redmi-5",
     "variants": [
       {
-        "name": "2 GB/16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1796
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1869
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2236
       }
     ]
@@ -23765,15 +23765,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-redmi-note-5-pro",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2625
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 2940
       }
     ]
@@ -23788,15 +23788,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-redmi-note-5",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1869
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2247
       }
     ]
@@ -23811,15 +23811,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-redmi-5a",
     "variants": [
       {
-        "name": "2 GB/16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1270
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1428
       }
     ]
@@ -23834,15 +23834,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-redmi-y1",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1365
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 1480
       }
     ]
@@ -23857,9 +23857,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-y1-lite-2-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1113
       }
     ]
@@ -23874,9 +23874,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-mi-mix-2-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 2982
       }
     ]
@@ -23920,15 +23920,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-note-7",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2793
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3454
       }
     ]
@@ -23943,21 +23943,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-note-7-pro",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3948
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4473
       },
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4095
       }
     ]
@@ -23995,27 +23995,27 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-7",
     "variants": [
       {
-        "name": "2 GB/16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 2541
       },
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2625
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2698
       },
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 2898
       }
     ]
@@ -24030,15 +24030,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-note-7s",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3580
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3706
       }
     ]
@@ -24053,15 +24053,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-y3",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2541
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2625
       }
     ]
@@ -24076,15 +24076,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-black-shark-2",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5250
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 6164
       }
     ]
@@ -24122,15 +24122,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-k20-pro",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6206
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 6573
       }
     ]
@@ -24145,21 +24145,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-7a",
     "variants": [
       {
-        "name": "2 GB/16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1533
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1827
       },
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 1690
       }
     ]
@@ -24174,15 +24174,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-mi-a3",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4232
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4568
       }
     ]
@@ -24197,15 +24197,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-8a",
     "variants": [
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2468
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2583
       }
     ]
@@ -24220,9 +24220,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-8-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3622
       }
     ]
@@ -24237,21 +24237,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-note-8",
     "variants": [
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3738
       },
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4106
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4420
       }
     ]
@@ -24266,21 +24266,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-note-8-pro",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4746
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4893
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5366
       }
     ]
@@ -24295,21 +24295,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-note-9-pro",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4893
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5271
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5492
       }
     ]
@@ -24324,21 +24324,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-8a-dual",
     "variants": [
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2919
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3024
       },
       {
-        "name": "3 GB/64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 3266
       }
     ]
@@ -24353,21 +24353,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-note-9-pro-max",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 5208
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5817
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6184
       }
     ]
@@ -24382,21 +24382,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-note-9",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4484
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4893
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5324
       }
     ]
@@ -24457,15 +24457,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-9a",
     "variants": [
       {
-        "name": "2 GB/32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2940
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3224
       }
     ]
@@ -24503,15 +24503,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-mi-10t",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7707
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8043
       }
     ]
@@ -24526,9 +24526,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-mi-10t-pro-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8032
       }
     ]
@@ -24543,21 +24543,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-mi-10i",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 7140
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8032
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8306
       }
     ]
@@ -24572,21 +24572,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-9-power",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3822
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4074
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 4442
       }
     ]
@@ -24601,15 +24601,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-note-10",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4694
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5271
       }
     ]
@@ -24624,21 +24624,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-note-10-pro",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 4767
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5628
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6237
       }
     ]
@@ -24653,21 +24653,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-redmi-note-10-pro-max",
     "variants": [
       {
-        "name": "6 GB/64 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "6 GB",
         "price": 5250
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6080
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6636
       }
     ]
@@ -24705,9 +24705,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-mi-11-ultra-12-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 18238
       }
     ]
@@ -24722,15 +24722,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-mi-11x",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8127
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8631
       }
     ]
@@ -24745,15 +24745,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-mobile-phone/used-xiaomi-mi-11-lite",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6016
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6363
       }
     ]
@@ -24768,8 +24768,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-travelmate-p4-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 17850
       }
@@ -24785,8 +24785,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-travelmate-p2-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 15750
       }
@@ -24802,8 +24802,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-travelmate-p6-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 19950
       }
@@ -24819,8 +24819,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-aspire-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8054
       }
@@ -24836,8 +24836,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-aspire-one-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 3748
       }
@@ -24853,8 +24853,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-aspire-e-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9702
       }
@@ -24870,8 +24870,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-aspire-5-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 14427
       }
@@ -24887,8 +24887,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-aspire-3-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8736
       }
@@ -24904,8 +24904,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-predator-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 14679
       }
@@ -24921,8 +24921,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-switch-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 11624
       }
@@ -24938,8 +24938,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-nitro-spin-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 13986
       }
@@ -24955,8 +24955,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-spin-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 11624
       }
@@ -24972,8 +24972,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-acer-chromebook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 4053
       }
@@ -24989,8 +24989,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-swift-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 12222
       }
@@ -25006,8 +25006,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-nitro-5-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 16160
       }
@@ -25023,8 +25023,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-aspire-7-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 17997
       }
@@ -25040,8 +25040,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-predator-helios-300-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21976
       }
@@ -25057,8 +25057,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-swift-5-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 20590
       }
@@ -25074,8 +25074,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-extensa-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 0
       }
@@ -25091,8 +25091,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-swift-3-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9628
       }
@@ -25108,8 +25108,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-nitro-5-spin-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 15855
       }
@@ -25125,8 +25125,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-spin-1-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 4452
       }
@@ -25142,8 +25142,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-spin-5-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 10332
       }
@@ -25159,8 +25159,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-switch-5-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 12201
       }
@@ -25176,8 +25176,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-spin-3-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8736
       }
@@ -25193,8 +25193,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-predator-15-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 17703
       }
@@ -25210,8 +25210,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-nitro-7-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 16706
       }
@@ -25227,8 +25227,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-spin-7-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 18102
       }
@@ -25244,8 +25244,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-swift-7-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 19866
       }
@@ -25261,8 +25261,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-swift-x-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 19100
       }
@@ -25278,8 +25278,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-swift-3x-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 22586
       }
@@ -25295,8 +25295,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-conceptd-3-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 28066
       }
@@ -25312,8 +25312,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-conceptd-5-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 29704
       }
@@ -25329,8 +25329,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-conceptd-7-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 32204
       }
@@ -25346,8 +25346,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-conceptd-9-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 33369
       }
@@ -25363,8 +25363,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-predator-triton-300-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 19698
       }
@@ -25380,8 +25380,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-predator-triton-500-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 22186
       }
@@ -25397,8 +25397,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-predator-triton-700-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 22575
       }
@@ -25414,8 +25414,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-predator-triton-900-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 25442
       }
@@ -25431,8 +25431,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-predator-helios-500-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 24916
       }
@@ -25448,8 +25448,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-predator-helios-700-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 29505
       }
@@ -25465,8 +25465,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-predator-17-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 18596
       }
@@ -25482,8 +25482,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-predator-21x-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 19593
       }
@@ -25499,8 +25499,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-other-acer-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 4452
       }
@@ -25516,8 +25516,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-air-2025",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 73500
       }
@@ -25533,8 +25533,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-2025",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 99750
       }
@@ -25550,8 +25550,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-neo-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 37800
       }
@@ -25567,8 +25567,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-air-2026",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 73500
       }
@@ -25584,8 +25584,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-2024",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 68250
       }
@@ -25601,8 +25601,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-2023",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 73500
       }
@@ -25618,8 +25618,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-2022",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 65100
       }
@@ -25635,8 +25635,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-2020-touch-bar-four-thunderbolt-3-ports",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 45822
       }
@@ -25652,8 +25652,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-2021",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 63000
       }
@@ -25669,8 +25669,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-2020-touch-bar-two-thunderbolt-3-ports",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 37222
       }
@@ -25686,8 +25686,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-2020",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 44100
       }
@@ -25703,8 +25703,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-2019",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 37874
       }
@@ -25720,8 +25720,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-2019-touch-bar-four-thunderbolt-3-ports",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 37222
       }
@@ -25737,8 +25737,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-2019-touch-bar-two-thunderbolt-3-ports",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 34976
       }
@@ -25754,8 +25754,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-2019-touch-bar",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 37968
       }
@@ -25771,8 +25771,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-mid-2018-touch-bar-four-thunderbolt-3-ports",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 34566
       }
@@ -25788,8 +25788,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-mid-2017-touch-bar-four-thunderbolt-3-ports",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 29253
       }
@@ -25805,8 +25805,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-mid-2017-two-thunderbolt-3-ports",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 27478
       }
@@ -25822,8 +25822,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-late-2016-touch-bar-four-thunderbolt-3-ports",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 29253
       }
@@ -25839,8 +25839,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-late-2016-two-thunderbolt-3-ports",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26586
       }
@@ -25856,8 +25856,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-retina-mid-2015",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26134
       }
@@ -25873,8 +25873,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-retina-early-2015",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 15750
       }
@@ -25890,8 +25890,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-retina-mid-2014",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 19362
       }
@@ -25907,8 +25907,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-retina-late-2013",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 15236
       }
@@ -25924,8 +25924,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-pro-retina-early-2013",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 14626
       }
@@ -25941,8 +25941,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-air-2023",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 57068
       }
@@ -25958,8 +25958,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-air-2022",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 50946
       }
@@ -25975,8 +25975,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-air-2020",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 37432
       }
@@ -25992,8 +25992,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-air-2024",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 63000
       }
@@ -26009,8 +26009,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-air-2019",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 28088
       }
@@ -26026,8 +26026,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-air-2018",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 24182
       }
@@ -26043,8 +26043,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-air-mid-2017",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 18606
       }
@@ -26060,8 +26060,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-air-early-2015",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 15236
       }
@@ -26077,8 +26077,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-air-early-2014",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 11970
       }
@@ -26094,8 +26094,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-air-mid-2013",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 11970
       }
@@ -26111,8 +26111,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-retina-mid-2017",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 19341
       }
@@ -26128,8 +26128,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-retina-early-2016",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 16317
       }
@@ -26145,8 +26145,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-macbook-retina-early-2015",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 14500
       }
@@ -26162,8 +26162,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-x-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 5974
       }
@@ -26179,8 +26179,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-vivobook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9712
       }
@@ -26196,8 +26196,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-k-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 10647
       }
@@ -26213,8 +26213,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-r-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 5817
       }
@@ -26230,8 +26230,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-e-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 4504
       }
@@ -26247,8 +26247,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-rog-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 19488
       }
@@ -26264,8 +26264,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-eeebook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 3244
       }
@@ -26281,8 +26281,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-a-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8158
       }
@@ -26298,8 +26298,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-vivobook-s-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 7392
       }
@@ -26315,8 +26315,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-f-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 10752
       }
@@ -26332,8 +26332,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-tuf-gaming-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -26349,8 +26349,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-zenbook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9534
       }
@@ -26366,8 +26366,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-gaming-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8222
       }
@@ -26383,8 +26383,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-q-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 5817
       }
@@ -26400,8 +26400,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-n-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 6520
       }
@@ -26417,8 +26417,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-vivobook-pro-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9534
       }
@@ -26434,8 +26434,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-fx-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 5870
       }
@@ -26451,8 +26451,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-rog-strix-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 29820
       }
@@ -26468,8 +26468,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asuspro-p-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 13566
       }
@@ -26485,8 +26485,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-zenbook-u-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 4504
       }
@@ -26502,8 +26502,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-zenbook-flip-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 16590
       }
@@ -26519,8 +26519,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-chromebook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 2247
       }
@@ -26536,8 +26536,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-vivobook-flip-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 11466
       }
@@ -26553,8 +26553,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-chromebook-flip-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 18238
       }
@@ -26570,8 +26570,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-b-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 7928
       }
@@ -26587,8 +26587,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-nx-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8631
       }
@@ -26604,8 +26604,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-p-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 5817
       }
@@ -26621,8 +26621,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-zenbook-s-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 5817
       }
@@ -26638,8 +26638,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asuspro-b-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 13566
       }
@@ -26655,8 +26655,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-fz-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8631
       }
@@ -26672,8 +26672,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-zenbook-pro-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 27352
       }
@@ -26689,8 +26689,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-rog-zephyrus-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 34566
       }
@@ -26706,8 +26706,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-asus-v-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 4504
       }
@@ -26723,8 +26723,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-proart-studiobook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 28172
       }
@@ -26740,8 +26740,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-other-asus-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 4504
       }
@@ -26757,8 +26757,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-essential-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 3696
       }
@@ -26774,8 +26774,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-liber-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8536
       }
@@ -26791,8 +26791,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-pura-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 7728
       }
@@ -26808,8 +26808,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-cosmos-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8810
       }
@@ -26825,8 +26825,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-magus-lite",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 1964
       }
@@ -26842,8 +26842,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-admiror-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 11350
       }
@@ -26859,8 +26859,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-G15-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 23100
       }
@@ -26876,8 +26876,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-G16-Series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21000
       }
@@ -26893,8 +26893,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-vostro-3000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 13125
       }
@@ -26910,8 +26910,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-vostro-5000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 14175
       }
@@ -26927,8 +26927,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-vostro-7000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -26944,8 +26944,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-3000-2-in-1-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9450
       }
@@ -26961,8 +26961,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-5000-2-in-1-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 11025
       }
@@ -26978,8 +26978,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-7000-2-in-1-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -26995,8 +26995,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-9000-2-in-1-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 19425
       }
@@ -27012,8 +27012,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-dell-15-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 17850
       }
@@ -27029,8 +27029,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-inspiron-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 13324
       }
@@ -27046,8 +27046,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-inspiron-3000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 10920
       }
@@ -27063,8 +27063,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-inspiron-3000-2-in-1-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8925
       }
@@ -27080,8 +27080,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-inspiron-5000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 11130
       }
@@ -27097,8 +27097,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-inspiron-5000-2-in-1-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 11340
       }
@@ -27114,8 +27114,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-inspiron-7000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 13860
       }
@@ -27131,8 +27131,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-inspiron-7000-2-in-1-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 14700
       }
@@ -27148,8 +27148,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-inspiron-n5000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 6825
       }
@@ -27165,8 +27165,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-inspiron-gaming-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 10290
       }
@@ -27182,8 +27182,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-vostro-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 12170
       }
@@ -27199,8 +27199,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -27216,8 +27216,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-e3000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9450
       }
@@ -27233,8 +27233,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-e4000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 7350
       }
@@ -27250,8 +27250,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-e5000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 12600
       }
@@ -27267,8 +27267,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-e6000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 11550
       }
@@ -27284,8 +27284,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-e7000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 13125
       }
@@ -27301,8 +27301,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-3000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9975
       }
@@ -27318,8 +27318,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-5000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 11655
       }
@@ -27335,8 +27335,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-6000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8400
       }
@@ -27352,8 +27352,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-7000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -27369,8 +27369,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-latitude-9000-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 19950
       }
@@ -27386,8 +27386,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-precision-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 23751
       }
@@ -27403,8 +27403,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-studio-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 6048
       }
@@ -27420,8 +27420,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-alienware-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 18585
       }
@@ -27437,8 +27437,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-dell-chromebook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 3224
       }
@@ -27454,8 +27454,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-g7-gaming-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26481
       }
@@ -27471,8 +27471,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-g5-gaming-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 17766
       }
@@ -27488,8 +27488,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-g3-gaming-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 17619
       }
@@ -27505,8 +27505,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-xps-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 12432
       }
@@ -27522,8 +27522,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-other-dell-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 1334
       }
@@ -27539,8 +27539,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -27556,8 +27556,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52500
       }
@@ -27573,8 +27573,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -27590,8 +27590,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -27607,8 +27607,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52500
       }
@@ -27624,8 +27624,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 63000
       }
@@ -27641,8 +27641,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -27658,8 +27658,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -27675,8 +27675,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -27692,8 +27692,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52500
       }
@@ -27709,8 +27709,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -27726,8 +27726,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -27743,8 +27743,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -27760,8 +27760,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -27777,8 +27777,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -27794,8 +27794,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -27811,8 +27811,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -27828,8 +27828,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52500
       }
@@ -27845,8 +27845,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -27862,8 +27862,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -27879,8 +27879,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 2625
       }
@@ -27896,8 +27896,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -27913,8 +27913,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -27930,8 +27930,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -27947,8 +27947,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -27964,8 +27964,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -27981,8 +27981,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -27998,8 +27998,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -28015,8 +28015,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 30450
       }
@@ -28032,8 +28032,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -28049,8 +28049,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -28066,8 +28066,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -28083,8 +28083,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -28100,8 +28100,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21000
       }
@@ -28117,8 +28117,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21000
       }
@@ -28134,8 +28134,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -28151,8 +28151,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -28168,8 +28168,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21000
       }
@@ -28185,8 +28185,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21000
       }
@@ -28202,8 +28202,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21000
       }
@@ -28219,8 +28219,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21000
       }
@@ -28236,8 +28236,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -28253,8 +28253,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -28270,8 +28270,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28287,8 +28287,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28304,8 +28304,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28321,8 +28321,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28338,8 +28338,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28355,8 +28355,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28372,8 +28372,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28389,8 +28389,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28406,8 +28406,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28423,8 +28423,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -28440,8 +28440,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28457,8 +28457,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28474,8 +28474,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28491,8 +28491,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -28508,8 +28508,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -28525,8 +28525,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -28542,8 +28542,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52500
       }
@@ -28559,8 +28559,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -28576,8 +28576,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -28593,8 +28593,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -28610,8 +28610,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28627,8 +28627,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -28644,8 +28644,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -28661,8 +28661,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28678,8 +28678,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28695,8 +28695,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28712,8 +28712,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28729,8 +28729,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28746,8 +28746,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -28763,8 +28763,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28780,8 +28780,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28797,8 +28797,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 48300
       }
@@ -28814,8 +28814,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52500
       }
@@ -28831,8 +28831,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 53550
       }
@@ -28848,8 +28848,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28865,8 +28865,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28882,8 +28882,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28899,8 +28899,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28916,8 +28916,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28933,8 +28933,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28950,8 +28950,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -28967,8 +28967,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -28984,8 +28984,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29001,8 +29001,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 63000
       }
@@ -29018,8 +29018,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 63000
       }
@@ -29035,8 +29035,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 63000
       }
@@ -29052,8 +29052,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -29069,8 +29069,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29086,8 +29086,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -29103,8 +29103,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52500
       }
@@ -29120,8 +29120,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52500
       }
@@ -29137,8 +29137,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52500
       }
@@ -29154,8 +29154,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-zbook-8-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 36750
       }
@@ -29171,8 +29171,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-zbook-firefly-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -29188,8 +29188,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-zbook-fury-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29205,8 +29205,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-zbook-power-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29222,8 +29222,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-zbook-studio-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29239,8 +29239,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-zbook-x-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -29256,8 +29256,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-pavilion-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29273,8 +29273,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-hp-15-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29290,8 +29290,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-hp-notebook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29307,8 +29307,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-probook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29324,8 +29324,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-elitebook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29341,8 +29341,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-g-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29358,8 +29358,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-envy-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29375,8 +29375,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-hp-14-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29392,8 +29392,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-pavilion-power-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29409,8 +29409,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-hp-300-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29426,8 +29426,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-spectre-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29443,8 +29443,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-split-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29460,8 +29460,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-hp-chromebook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29477,8 +29477,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-omen-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 63000
       }
@@ -29494,8 +29494,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-200-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29511,8 +29511,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-hp-17-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29528,8 +29528,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-stream-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 2740
       }
@@ -29545,8 +29545,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-zbook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29562,8 +29562,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-pavilion-gaming-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29579,8 +29579,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-slatebook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 2782
       }
@@ -29596,8 +29596,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-victus-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -29613,8 +29613,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-other-hp-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29630,8 +29630,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 63000
       }
@@ -29647,8 +29647,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52500
       }
@@ -29664,8 +29664,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -29681,8 +29681,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29698,8 +29698,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -29715,8 +29715,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -29732,8 +29732,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29749,8 +29749,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -29766,8 +29766,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -29783,8 +29783,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29800,8 +29800,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -29817,8 +29817,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29834,8 +29834,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29851,8 +29851,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29868,8 +29868,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29885,8 +29885,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29902,8 +29902,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29919,8 +29919,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29936,8 +29936,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29953,8 +29953,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29970,8 +29970,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -29987,8 +29987,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30004,8 +30004,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30021,8 +30021,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30038,8 +30038,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30055,8 +30055,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30072,8 +30072,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30089,8 +30089,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30106,8 +30106,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30123,8 +30123,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30140,8 +30140,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -30157,8 +30157,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30174,8 +30174,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30191,8 +30191,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30208,8 +30208,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30225,8 +30225,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 37695
       }
@@ -30242,8 +30242,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30259,8 +30259,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -30276,8 +30276,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30293,8 +30293,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30310,8 +30310,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30327,8 +30327,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30344,8 +30344,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30361,8 +30361,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30378,8 +30378,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30395,8 +30395,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30412,8 +30412,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30429,8 +30429,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30446,8 +30446,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30463,8 +30463,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30480,8 +30480,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -30497,8 +30497,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30514,8 +30514,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30531,8 +30531,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30548,8 +30548,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30565,8 +30565,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30582,8 +30582,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30599,8 +30599,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -30616,8 +30616,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30633,8 +30633,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30650,8 +30650,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -30667,8 +30667,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30684,8 +30684,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -30701,8 +30701,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -30718,8 +30718,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30735,8 +30735,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30752,8 +30752,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -30769,8 +30769,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30786,8 +30786,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30803,8 +30803,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -30820,8 +30820,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30837,8 +30837,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30854,8 +30854,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -30871,8 +30871,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -30888,8 +30888,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30905,8 +30905,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30922,8 +30922,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30939,8 +30939,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -30956,8 +30956,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -30973,8 +30973,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -30990,8 +30990,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31007,8 +31007,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31024,8 +31024,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -31041,8 +31041,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31058,8 +31058,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31075,8 +31075,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31092,8 +31092,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31109,8 +31109,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -31126,8 +31126,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31143,8 +31143,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31160,8 +31160,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 3150
       }
@@ -31177,8 +31177,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -31194,8 +31194,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31211,8 +31211,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31228,8 +31228,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31245,8 +31245,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 63000
       }
@@ -31262,8 +31262,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -31279,8 +31279,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31296,8 +31296,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31313,8 +31313,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 33600
       }
@@ -31330,8 +31330,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -31347,8 +31347,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31364,8 +31364,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -31381,8 +31381,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 36750
       }
@@ -31398,8 +31398,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -31415,8 +31415,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31432,8 +31432,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31449,8 +31449,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31466,8 +31466,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31483,8 +31483,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31500,8 +31500,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31517,8 +31517,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21000
       }
@@ -31534,8 +31534,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31551,8 +31551,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31568,8 +31568,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31585,8 +31585,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31602,8 +31602,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -31619,8 +31619,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31636,8 +31636,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ideaPad-5-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 13125
       }
@@ -31653,8 +31653,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-yoga-slim-7-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31670,8 +31670,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-lenovo-loq-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -31687,8 +31687,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-legion-5i-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 36750
       }
@@ -31704,8 +31704,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-legion-slim-5-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -31721,8 +31721,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-legion-slim-5i-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 39900
       }
@@ -31738,8 +31738,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-legion-5i-pro-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 45150
       }
@@ -31755,8 +31755,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-legion-pro-5-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -31772,8 +31772,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-legion-pro-5i-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 40950
       }
@@ -31789,8 +31789,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-legion-pro-7i-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52500
       }
@@ -31806,8 +31806,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ideapad-300-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 12054
       }
@@ -31823,8 +31823,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ideapad-500-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 6626
       }
@@ -31840,8 +31840,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-thinkpad-t-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 6352
       }
@@ -31857,8 +31857,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ideapad-100-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 5218
       }
@@ -31874,8 +31874,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ideapad-s-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 5817
       }
@@ -31891,8 +31891,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-yoga-500-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 10521
       }
@@ -31908,8 +31908,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-thinkpad-l-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9124
       }
@@ -31925,8 +31925,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-lenovo-y-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 19719
       }
@@ -31942,8 +31942,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ideapad-flex-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 7035
       }
@@ -31959,8 +31959,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-thinkpad-e-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 12474
       }
@@ -31976,8 +31976,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ideapad-slim-3i-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 18196
       }
@@ -31993,8 +31993,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-lenovo-v-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 6699
       }
@@ -32010,8 +32010,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-thinkpad-x-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 7696
       }
@@ -32027,8 +32027,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-thinkpad-edge-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 5366
       }
@@ -32044,8 +32044,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-lenovo-300e-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32061,8 +32061,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-legion-y-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -32078,8 +32078,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-lenovo-n-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32095,8 +32095,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-lenovo-500e-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32112,8 +32112,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-yoga-700-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 10857
       }
@@ -32129,8 +32129,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ideapad-gaming-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21116
       }
@@ -32146,8 +32146,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-thinkpad-a-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -32163,8 +32163,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-yoga-900-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -32180,8 +32180,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ideapad-d-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 6248
       }
@@ -32197,8 +32197,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-thinkpad-twist-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -32214,8 +32214,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ideapad-700-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -32231,8 +32231,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-yoga-c-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 4914
       }
@@ -32248,8 +32248,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-thinkpad-11e-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -32265,8 +32265,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-legion-5-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 22953
       }
@@ -32282,8 +32282,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ideapad-slim-5i-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 23362
       }
@@ -32299,8 +32299,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-thinkbook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 6142
       }
@@ -32316,8 +32316,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-thinkpad-p-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8001
       }
@@ -32333,8 +32333,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-lenovo-100e-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32350,8 +32350,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-lenovo-11e-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 3024
       }
@@ -32367,8 +32367,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-thinkpad-helix-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 6384
       }
@@ -32384,8 +32384,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ideapad-900-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -32401,8 +32401,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-legion-7-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 34492
       }
@@ -32418,8 +32418,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-student-chromebooks",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 1386
       }
@@ -32435,8 +32435,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-other-lenovo-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 4630
       }
@@ -32452,8 +32452,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-legion-9i-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 63000
       }
@@ -32469,8 +32469,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-yoga-6-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32486,8 +32486,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-yoga-slim-6i-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32503,8 +32503,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-yoga-7-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32520,8 +32520,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-yoga-7i-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 36750
       }
@@ -32537,8 +32537,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-yoga-pro-7i-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -32554,8 +32554,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-yoga-slim-7i-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 39900
       }
@@ -32571,8 +32571,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-yoga-9i-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52500
       }
@@ -32588,8 +32588,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-yoga-book-9i-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 57750
       }
@@ -32605,8 +32605,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-thinkpad-x1-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32622,8 +32622,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32639,8 +32639,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -32656,8 +32656,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32673,8 +32673,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32690,8 +32690,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32707,8 +32707,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8400
       }
@@ -32724,8 +32724,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32741,8 +32741,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -32758,8 +32758,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -32775,8 +32775,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32792,8 +32792,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21000
       }
@@ -32809,8 +32809,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -32826,8 +32826,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -32843,8 +32843,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32860,8 +32860,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32877,8 +32877,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32894,8 +32894,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32911,8 +32911,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32928,8 +32928,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32945,8 +32945,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32962,8 +32962,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32979,8 +32979,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -32996,8 +32996,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33013,8 +33013,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33030,8 +33030,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -33047,8 +33047,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33064,8 +33064,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33081,8 +33081,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33098,8 +33098,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33115,8 +33115,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33132,8 +33132,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33149,8 +33149,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33166,8 +33166,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33183,8 +33183,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33200,8 +33200,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33217,8 +33217,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33234,8 +33234,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33251,8 +33251,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -33268,8 +33268,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33285,8 +33285,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33302,8 +33302,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33319,8 +33319,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33336,8 +33336,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33353,8 +33353,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33370,8 +33370,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33387,8 +33387,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33404,8 +33404,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33421,8 +33421,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33438,8 +33438,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33455,8 +33455,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33472,8 +33472,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33489,8 +33489,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33506,8 +33506,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33523,8 +33523,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33540,8 +33540,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33557,8 +33557,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33574,8 +33574,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33591,8 +33591,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26250
       }
@@ -33608,8 +33608,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33625,8 +33625,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33642,8 +33642,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33659,8 +33659,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33676,8 +33676,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33693,8 +33693,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -33710,8 +33710,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -33727,8 +33727,8 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -33744,8 +33744,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-other-lg-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 6416
       }
@@ -33761,8 +33761,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-lg-gram-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8925
       }
@@ -33778,8 +33778,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-pro-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 7896
       }
@@ -33795,8 +33795,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-pro-4-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 13450
       }
@@ -33812,8 +33812,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 5040
       }
@@ -33829,8 +33829,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-book-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 12968
       }
@@ -33846,8 +33846,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-pro-3-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 10784
       }
@@ -33863,8 +33863,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-book-2-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 14973
       }
@@ -33880,8 +33880,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-go-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 3738
       }
@@ -33897,8 +33897,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-pro-5-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 14836
       }
@@ -33914,8 +33914,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-laptop-2-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 14973
       }
@@ -33931,8 +33931,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-pro-2-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 8820
       }
@@ -33948,8 +33948,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-laptop-3-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 18291
       }
@@ -33965,8 +33965,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-2-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 5134
       }
@@ -33982,8 +33982,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-3-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 5764
       }
@@ -33999,8 +33999,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-pro-6-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 17146
       }
@@ -34016,8 +34016,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-laptop-4-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 20307
       }
@@ -34033,8 +34033,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-pro-7-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 20968
       }
@@ -34050,8 +34050,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-laptop-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 12968
       }
@@ -34067,8 +34067,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-book-3-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 18291
       }
@@ -34084,8 +34084,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-pro-x-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 24328
       }
@@ -34101,8 +34101,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-surface-go-2-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9324
       }
@@ -34118,8 +34118,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-other-microsoft-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 11256
       }
@@ -34135,8 +34135,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-msi-crosshair-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 0
       }
@@ -34152,8 +34152,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-gl-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 24874
       }
@@ -34169,8 +34169,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-gf-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21861
       }
@@ -34186,8 +34186,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-modern-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 22816
       }
@@ -34203,8 +34203,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-gp-leopard-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 24874
       }
@@ -34220,8 +34220,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ge-raider-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 25893
       }
@@ -34237,8 +34237,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-prestige-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 22816
       }
@@ -34254,8 +34254,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-gs-steath-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21861
       }
@@ -34271,8 +34271,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-gt-titan-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 21861
       }
@@ -34288,8 +34288,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-msi-alpha-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 18112
       }
@@ -34305,8 +34305,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-creator-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 20968
       }
@@ -34322,8 +34322,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-wp-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9398
       }
@@ -34339,8 +34339,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-delta-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 18848
       }
@@ -34356,8 +34356,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-wt-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9398
       }
@@ -34373,8 +34373,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-ws-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9398
       }
@@ -34390,8 +34390,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-wf-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9398
       }
@@ -34407,8 +34407,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-we-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9398
       }
@@ -34424,8 +34424,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-bravo-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 18848
       }
@@ -34441,8 +34441,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-summit-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 28486
       }
@@ -34458,8 +34458,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-nokia-purebook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 17966
       }
@@ -34475,8 +34475,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-other-laptop-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 3182
       }
@@ -34492,8 +34492,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-book-prime-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 26376
       }
@@ -34509,8 +34509,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-book-slim-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 19152
       }
@@ -34526,8 +34526,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book-go-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 11403
       }
@@ -34543,8 +34543,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book2-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 23090
       }
@@ -34560,8 +34560,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book2-360-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 28707
       }
@@ -34577,8 +34577,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book2-pro-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 30513
       }
@@ -34594,8 +34594,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book2-pro-360-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 30964
       }
@@ -34611,8 +34611,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book3-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -34628,8 +34628,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book3-360-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 34650
       }
@@ -34645,8 +34645,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book3-ultra-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 57750
       }
@@ -34662,8 +34662,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxybook3-pro-360-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 42000
       }
@@ -34679,8 +34679,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book4-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31322
       }
@@ -34696,8 +34696,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book4-360-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 33044
       }
@@ -34713,8 +34713,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book4-pro-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 32414
       }
@@ -34730,8 +34730,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book4-pro-360-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 47250
       }
@@ -34747,8 +34747,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book4-ultra-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52500
       }
@@ -34764,8 +34764,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book-4-edge-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 31500
       }
@@ -34781,8 +34781,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book-5-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 44205
       }
@@ -34798,8 +34798,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book-5-360-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 45633
       }
@@ -34815,8 +34815,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book-5-pro-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 49014
       }
@@ -34832,8 +34832,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-galaxy-book-5-pro-360-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 52395
       }
@@ -34849,8 +34849,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-others-samsung-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 4232
       }
@@ -34866,8 +34866,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-mi-notebook",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 16832
       }
@@ -34883,8 +34883,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-mi-air-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 9555
       }
@@ -34900,8 +34900,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-mi-pro-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 13094
       }
@@ -34917,8 +34917,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-laptop/used-redmibook-series",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "Standard / Base",
+        "name": "Standard",
+        "storage": "Standard",
         "ram": null,
         "price": 14542
       }
@@ -36386,25 +36386,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 11 Inch 2nd Gen Wi Fi 2020 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 32550
       },
       {
-        "name": "iPad Pro 11 Inch 2nd Gen Wi Fi 2020 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 29400
       },
       {
-        "name": "iPad Pro 11 Inch 2nd Gen Wi Fi 2020 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 26250
       },
       {
-        "name": "iPad Pro 11 Inch 2nd Gen Wi Fi 2020 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 24150
@@ -36421,27 +36421,27 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 13 Inch M5 Cellular 12 GB / 2 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 2 TB",
+        "storage": "2 TB",
+        "ram": "12 GB",
         "price": 134400
       },
       {
-        "name": "iPad Pro 13 Inch M5 Cellular 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 123900
       },
       {
-        "name": "iPad Pro 13 Inch M5 Cellular 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 115500
       },
       {
-        "name": "iPad Pro 13 Inch M5 Cellular 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 105000
       }
     ]
@@ -36456,27 +36456,27 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 13 Inch M5 Wifi 12 GB / 2 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 2 TB",
+        "storage": "2 TB",
+        "ram": "12 GB",
         "price": 123375
       },
       {
-        "name": "iPad Pro 13 Inch M5 Wifi 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 112350
       },
       {
-        "name": "iPad Pro 13 Inch M5 Wifi 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 101850
       },
       {
-        "name": "iPad Pro 13 Inch M5 Wifi 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 90300
       }
     ]
@@ -36491,27 +36491,27 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 11 Inch M5 Wifi Cellular 12 GB / 2 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 2 TB",
+        "storage": "2 TB",
+        "ram": "12 GB",
         "price": 117600
       },
       {
-        "name": "iPad Pro 11 Inch M5 Wifi Cellular 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 104790
       },
       {
-        "name": "iPad Pro 11 Inch M5 Wifi Cellular 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 94500
       },
       {
-        "name": "iPad Pro 11 Inch M5 Wifi Cellular 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 84000
       }
     ]
@@ -36526,25 +36526,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 13 Inch M4 Wi Fi 2024 2 TB",
+        "name": "2 TB",
         "storage": "2 TB",
         "ram": null,
         "price": 87150
       },
       {
-        "name": "iPad Pro 13 Inch M4 Wi Fi 2024 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 81900
       },
       {
-        "name": "iPad Pro 13 Inch M4 Wi Fi 2024 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 77175
       },
       {
-        "name": "iPad Pro 13 Inch M4 Wi Fi 2024 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 71400
@@ -36561,27 +36561,27 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air M4 13 Inch Cellular 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 95550
       },
       {
-        "name": "iPad Air M4 13 Inch Cellular 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 84000
       },
       {
-        "name": "iPad Air M4 13 Inch Cellular 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 76650
       },
       {
-        "name": "iPad Air M4 13 Inch Cellular 12 GB / 128 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "12 GB",
         "price": 71400
       }
     ]
@@ -36596,27 +36596,27 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 11 Inch M5 Wifi Only 12 GB / 2 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 2 TB",
+        "storage": "2 TB",
+        "ram": "12 GB",
         "price": 107100
       },
       {
-        "name": "iPad Pro 11 Inch M5 Wifi Only 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 96600
       },
       {
-        "name": "iPad Pro 11 Inch M5 Wifi Only 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 78750
       },
       {
-        "name": "iPad Pro 11 Inch M5 Wifi Only 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 69300
       }
     ]
@@ -36631,25 +36631,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air M2 13 Inch Wifi Cellular 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 64050
       },
       {
-        "name": "iPad Air M2 13 Inch Wifi Cellular 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 62475
       },
       {
-        "name": "iPad Air M2 13 Inch Wifi Cellular 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 60900
       },
       {
-        "name": "iPad Air M2 13 Inch Wifi Cellular 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 57750
@@ -36666,27 +36666,27 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air M4 13 Inch Wifi 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 80850
       },
       {
-        "name": "iPad Air M4 13 Inch Wifi 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 70875
       },
       {
-        "name": "iPad Air M4 13 Inch Wifi 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 60900
       },
       {
-        "name": "iPad Air M4 13 Inch Wifi 12 GB / 128 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "12 GB",
         "price": 57225
       }
     ]
@@ -36701,31 +36701,31 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 12 9 Inch 6th Gen M2 Wi Fi 2022 2 TB",
+        "name": "2 TB",
         "storage": "2 TB",
         "ram": null,
         "price": 69300
       },
       {
-        "name": "iPad Pro 12 9 Inch 6th Gen M2 Wi Fi 2022 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 63000
       },
       {
-        "name": "iPad Pro 12 9 Inch 6th Gen M2 Wi Fi 2022 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 59850
       },
       {
-        "name": "iPad Pro 12 9 Inch 6th Gen M2 Wi Fi 2022 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 56700
       },
       {
-        "name": "iPad Pro 12 9 Inch 6th Gen M2 Wi Fi 2022 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 52500
@@ -36742,25 +36742,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 11 Inch M4 Wi Fi 2 TB",
+        "name": "2 TB",
         "storage": "2 TB",
         "ram": null,
         "price": 73500
       },
       {
-        "name": "iPad Pro 11 Inch M4 Wi Fi 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 67200
       },
       {
-        "name": "iPad Pro 11 Inch M4 Wi Fi 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 61425
       },
       {
-        "name": "iPad Pro 11 Inch M4 Wi Fi 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 55125
@@ -36777,27 +36777,27 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air M4 11 Inch Cellular 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 80850
       },
       {
-        "name": "iPad Air M4 11 Inch Cellular 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 69300
       },
       {
-        "name": "iPad Air M4 11 Inch Cellular 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 58800
       },
       {
-        "name": "iPad Air M4 11 Inch Cellular 12 GB / 128 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "12 GB",
         "price": 53550
       }
     ]
@@ -36812,25 +36812,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air M3 11 Inch Wifi Cellular 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 67200
       },
       {
-        "name": "iPad Air M3 11 Inch Wifi Cellular 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 60375
       },
       {
-        "name": "iPad Air M3 11 Inch Wifi Cellular 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 54600
       },
       {
-        "name": "iPad Air M3 11 Inch Wifi Cellular 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 50715
@@ -36847,27 +36847,27 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air M4 11 Inch Wifi 12 GB / 1 TB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 1 TB",
+        "storage": "1 TB",
+        "ram": "12 GB",
         "price": 74550
       },
       {
-        "name": "iPad Air M4 11 Inch Wifi 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 61950
       },
       {
-        "name": "iPad Air M4 11 Inch Wifi 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 52500
       },
       {
-        "name": "iPad Air M4 11 Inch Wifi 12 GB / 128 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "12 GB",
         "price": 47250
       }
     ]
@@ -36882,25 +36882,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air M2 13 Inch Wifi 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 54600
       },
       {
-        "name": "iPad Air M2 13 Inch Wifi 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 52500
       },
       {
-        "name": "iPad Air M2 13 Inch Wifi 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 47880
       },
       {
-        "name": "iPad Air M2 13 Inch Wifi 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 44100
@@ -36917,25 +36917,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air M3 11 Inch Wifi 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 57750
       },
       {
-        "name": "iPad Air M3 11 Inch Wifi 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 50400
       },
       {
-        "name": "iPad Air M3 11 Inch Wifi 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 45150
       },
       {
-        "name": "iPad Air M3 11 Inch Wifi 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 39900
@@ -36952,25 +36952,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air M2 11 Inch Wifi 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 45150
       },
       {
-        "name": "iPad Air M2 11 Inch Wifi 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 42000
       },
       {
-        "name": "iPad Air M2 11 Inch Wifi 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 38850
       },
       {
-        "name": "iPad Air M2 11 Inch Wifi 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 35700
@@ -36987,19 +36987,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 11th Gen Wifi 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 34125
       },
       {
-        "name": "iPad 11th Gen Wifi 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 29400
       },
       {
-        "name": "iPad 11th Gen Wifi 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 24150
@@ -37016,25 +37016,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air M3 13 Inch Wifi Cellular 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 80850
       },
       {
-        "name": "iPad Air M3 13 Inch Wifi Cellular 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 74550
       },
       {
-        "name": "iPad Air M3 13 Inch Wifi Cellular 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 67200
       },
       {
-        "name": "iPad Air M3 13 Inch Wifi Cellular 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 64050
@@ -37051,25 +37051,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air M3 13 Inch Wifi 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 71400
       },
       {
-        "name": "iPad Air M3 13 Inch Wifi 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 65100
       },
       {
-        "name": "iPad Air M3 13 Inch Wifi 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 54600
       },
       {
-        "name": "iPad Air M3 13 Inch Wifi 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 52500
@@ -37086,31 +37086,31 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 11 Inch 4th Gen M2 Cellular 2022 2 TB",
+        "name": "2 TB",
         "storage": "2 TB",
         "ram": null,
         "price": 60900
       },
       {
-        "name": "iPad Pro 11 Inch 4th Gen M2 Cellular 2022 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 56700
       },
       {
-        "name": "iPad Pro 11 Inch 4th Gen M2 Cellular 2022 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 55650
       },
       {
-        "name": "iPad Pro 11 Inch 4th Gen M2 Cellular 2022 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 52500
       },
       {
-        "name": "iPad Pro 11 Inch 4th Gen M2 Cellular 2022 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 49350
@@ -37127,31 +37127,31 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 12 9 Inch 5th Gen Cellular 2021 2 TB",
+        "name": "2 TB",
         "storage": "2 TB",
         "ram": null,
         "price": 57750
       },
       {
-        "name": "iPad Pro 12 9 Inch 5th Gen Cellular 2021 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 55650
       },
       {
-        "name": "iPad Pro 12 9 Inch 5th Gen Cellular 2021 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 50400
       },
       {
-        "name": "iPad Pro 12 9 Inch 5th Gen Cellular 2021 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 48825
       },
       {
-        "name": "iPad Pro 12 9 Inch 5th Gen Cellular 2021 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 46200
@@ -37168,31 +37168,31 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 11 Inch 4th Gen M2 Wi Fi 2022 2 TB",
+        "name": "2 TB",
         "storage": "2 TB",
         "ram": null,
         "price": 59850
       },
       {
-        "name": "iPad Pro 11 Inch 4th Gen M2 Wi Fi 2022 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 54600
       },
       {
-        "name": "iPad Pro 11 Inch 4th Gen M2 Wi Fi 2022 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 49350
       },
       {
-        "name": "iPad Pro 11 Inch 4th Gen M2 Wi Fi 2022 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 46200
       },
       {
-        "name": "iPad Pro 11 Inch 4th Gen M2 Wi Fi 2022 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 44100
@@ -37209,25 +37209,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air M2 11 Inch Wifi Cellular 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 51450
       },
       {
-        "name": "iPad Air M2 11 Inch Wifi Cellular 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 48300
       },
       {
-        "name": "iPad Air M2 11 Inch Wifi Cellular 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 45150
       },
       {
-        "name": "iPad Air M2 11 Inch Wifi Cellular 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 43050
@@ -37244,31 +37244,31 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 12 9 Inch 5th Gen Wi Fi 2021 2 TB",
+        "name": "2 TB",
         "storage": "2 TB",
         "ram": null,
         "price": 55650
       },
       {
-        "name": "iPad Pro 12 9 Inch 5th Gen Wi Fi 2021 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 54600
       },
       {
-        "name": "iPad Pro 12 9 Inch 5th Gen Wi Fi 2021 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 47250
       },
       {
-        "name": "iPad Pro 12 9 Inch 5th Gen Wi Fi 2021 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 44100
       },
       {
-        "name": "iPad Pro 12 9 Inch 5th Gen Wi Fi 2021 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 42000
@@ -37285,19 +37285,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Mini 7th Gen Cellular 2024 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 45150
       },
       {
-        "name": "iPad Mini 7th Gen Cellular 2024 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 40425
       },
       {
-        "name": "iPad Mini 7th Gen Cellular 2024 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 37485
@@ -37314,31 +37314,31 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 11 Inch 3rd Gen Wi Fi 2021 2 TB",
+        "name": "2 TB",
         "storage": "2 TB",
         "ram": null,
         "price": 49350
       },
       {
-        "name": "iPad Pro 11 Inch 3rd Gen Wi Fi 2021 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 46200
       },
       {
-        "name": "iPad Pro 11 Inch 3rd Gen Wi Fi 2021 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 43050
       },
       {
-        "name": "iPad Pro 11 Inch 3rd Gen Wi Fi 2021 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 38850
       },
       {
-        "name": "iPad Pro 11 Inch 3rd Gen Wi Fi 2021 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 35700
@@ -37355,25 +37355,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 12 9 Inch 4th Gen Cellular 2020 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 39900
       },
       {
-        "name": "iPad Pro 12 9 Inch 4th Gen Cellular 2020 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 36750
       },
       {
-        "name": "iPad Pro 12 9 Inch 4th Gen Cellular 2020 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 33600
       },
       {
-        "name": "iPad Pro 12 9 Inch 4th Gen Cellular 2020 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 31500
@@ -37390,25 +37390,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 12 9 Inch 4th Gen Wi Fi 2020 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 38850
       },
       {
-        "name": "iPad Pro 12 9 Inch 4th Gen Wi Fi 2020 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 35700
       },
       {
-        "name": "iPad Pro 12 9 Inch 4th Gen Wi Fi 2020 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 31500
       },
       {
-        "name": "iPad Pro 12 9 Inch 4th Gen Wi Fi 2020 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 30450
@@ -37425,19 +37425,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Mini 7th Gen Wi Fi 2024 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 37800
       },
       {
-        "name": "iPad Mini 7th Gen Wi Fi 2024 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 32025
       },
       {
-        "name": "iPad Mini 7th Gen Wi Fi 2024 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 27930
@@ -37454,19 +37454,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 11th Gen Wifi Cellular 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 40950
       },
       {
-        "name": "iPad 11th Gen Wifi Cellular 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 35175
       },
       {
-        "name": "iPad 11th Gen Wifi Cellular 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 26250
@@ -37483,13 +37483,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 10.9 10th Gen Cellular 2022 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 25200
       },
       {
-        "name": "iPad 10.9 10th Gen Cellular 2022 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 22050
@@ -37506,13 +37506,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 10 9 10th Gen Wi Fi 2022 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 21525
       },
       {
-        "name": "iPad 10 9 10th Gen Wi Fi 2022 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 17850
@@ -37529,13 +37529,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air 5th Gen Cellular 2022 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 33075
       },
       {
-        "name": "iPad Air 5th Gen Cellular 2022 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 30240
@@ -37552,25 +37552,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 11 Inch 2nd Gen Cellular 2020 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 34650
       },
       {
-        "name": "iPad Pro 11 Inch 2nd Gen Cellular 2020 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 31500
       },
       {
-        "name": "iPad Pro 11 Inch 2nd Gen Cellular 2020 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 29400
       },
       {
-        "name": "iPad Pro 11 Inch 2nd Gen Cellular 2020 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 26250
@@ -37587,13 +37587,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air 5th Gen Wi Fi 2022 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 26775
       },
       {
-        "name": "iPad Air 5th Gen Wi Fi 2022 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 24675
@@ -37610,13 +37610,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 9th Gen Cellular 2021 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 16800
       },
       {
-        "name": "iPad 9th Gen Cellular 2021 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 15750
@@ -37633,13 +37633,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 9th Gen Wi Fi 2021 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 15225
       },
       {
-        "name": "iPad 9th Gen Wi Fi 2021 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 14175
@@ -37656,19 +37656,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 12 9 Inch 2nd Gen Cellular 2017 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 14700
       },
       {
-        "name": "iPad Pro 12 9 Inch 2nd Gen Cellular 2017 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 13650
       },
       {
-        "name": "iPad Pro 12 9 Inch 2nd Gen Cellular 2017 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 12600
@@ -37685,19 +37685,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 10 5 Inch Cellular 2017 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 13650
       },
       {
-        "name": "iPad Pro 10 5 Inch Cellular 2017 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 12600
       },
       {
-        "name": "iPad Pro 10 5 Inch Cellular 2017 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 11550
@@ -37714,13 +37714,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 8th Gen Cellular 2020 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 12600
       },
       {
-        "name": "iPad 8th Gen Cellular 2020 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 11550
@@ -37737,13 +37737,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 8th Gen Wi Fi 2020 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 11550
       },
       {
-        "name": "iPad 8th Gen Wi Fi 2020 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 11025
@@ -37760,13 +37760,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 6th Gen Wi Fi 2018 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 10500
       },
       {
-        "name": "iPad 6th Gen Wi Fi 2018 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 9975
@@ -37783,19 +37783,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 9 7 Inch Wi Fi 2016 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 8925
       },
       {
-        "name": "iPad Pro 9 7 Inch Wi Fi 2016 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 8400
       },
       {
-        "name": "iPad Pro 9 7 Inch Wi Fi 2016 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 7875
@@ -37812,25 +37812,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Mini Cellular 2012 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 1995
       },
       {
-        "name": "iPad Mini Cellular 2012 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 1911
       },
       {
-        "name": "iPad Mini Cellular 2012 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 1890
       },
       {
-        "name": "iPad Mini Cellular 2012 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 1785
@@ -37847,19 +37847,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Mini Wi Fi 2012 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 1785
       },
       {
-        "name": "iPad Mini Wi Fi 2012 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 1628
       },
       {
-        "name": "iPad Mini Wi Fi 2012 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 1575
@@ -37876,13 +37876,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 5th Gen Cellular 2017 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 9450
       },
       {
-        "name": "iPad 5th Gen Cellular 2017 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 8400
@@ -37899,13 +37899,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 5th Gen Wi Fi 2017 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 8925
       },
       {
-        "name": "iPad 5th Gen Wi Fi 2017 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 7875
@@ -37922,13 +37922,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 6th Gen Cellular 2018 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 9975
       },
       {
-        "name": "iPad 6th Gen Cellular 2018 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 9450
@@ -37945,13 +37945,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 7th Gen Cellular 2019 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 12075
       },
       {
-        "name": "iPad 7th Gen Cellular 2019 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 11025
@@ -37968,13 +37968,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad 7th Gen Wi Fi 2019 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 11550
       },
       {
-        "name": "iPad 7th Gen Wi Fi 2019 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 10500
@@ -37991,25 +37991,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air 2 Cellular 2014 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 4410
       },
       {
-        "name": "iPad Air 2 Cellular 2014 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 3990
       },
       {
-        "name": "iPad Air 2 Cellular 2014 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 3780
       },
       {
-        "name": "iPad Air 2 Cellular 2014 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 3675
@@ -38026,25 +38026,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air 2 Wi Fi 2014 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 4200
       },
       {
-        "name": "iPad Air 2 Wi Fi 2014 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 3885
       },
       {
-        "name": "iPad Air 2 Wi Fi 2014 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 3675
       },
       {
-        "name": "iPad Air 2 Wi Fi 2014 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 3360
@@ -38061,25 +38061,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air Cellular 2013 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 3675
       },
       {
-        "name": "iPad Air Cellular 2013 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 3465
       },
       {
-        "name": "iPad Air Cellular 2013 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 3360
       },
       {
-        "name": "iPad Air Cellular 2013 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 3150
@@ -38096,25 +38096,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Air Wi Fi 2013 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 2625
       },
       {
-        "name": "iPad Air Wi Fi 2013 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 2520
       },
       {
-        "name": "iPad Air Wi Fi 2013 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 2415
       },
       {
-        "name": "iPad Air Wi Fi 2013 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 2310
@@ -38131,25 +38131,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Mini 2 Cellular 2013 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 2100
       },
       {
-        "name": "iPad Mini 2 Cellular 2013 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 1995
       },
       {
-        "name": "iPad Mini 2 Cellular 2013 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 1890
       },
       {
-        "name": "iPad Mini 2 Cellular 2013 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 1838
@@ -38166,25 +38166,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Mini 2 Wi Fi 2013 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 1995
       },
       {
-        "name": "iPad Mini 2 Wi Fi 2013 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 1890
       },
       {
-        "name": "iPad Mini 2 Wi Fi 2013 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 1785
       },
       {
-        "name": "iPad Mini 2 Wi Fi 2013 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 1680
@@ -38201,19 +38201,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Mini 3 Cellular 2014 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 3675
       },
       {
-        "name": "iPad Mini 3 Cellular 2014 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 3150
       },
       {
-        "name": "iPad Mini 3 Cellular 2014 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 2100
@@ -38230,19 +38230,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Mini 3 Wi Fi 2014 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 4200
       },
       {
-        "name": "iPad Mini 3 Wi Fi 2014 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 3150
       },
       {
-        "name": "iPad Mini 3 Wi Fi 2014 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 2625
@@ -38259,25 +38259,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Mini 4 Cellular 2015 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 7875
       },
       {
-        "name": "iPad Mini 4 Cellular 2015 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 7350
       },
       {
-        "name": "iPad Mini 4 Cellular 2015 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 6825
       },
       {
-        "name": "iPad Mini 4 Cellular 2015 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 6300
@@ -38294,25 +38294,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Mini 4 Wi Fi 2015 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 7350
       },
       {
-        "name": "iPad Mini 4 Wi Fi 2015 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 6825
       },
       {
-        "name": "iPad Mini 4 Wi Fi 2015 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 6300
       },
       {
-        "name": "iPad Mini 4 Wi Fi 2015 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 5775
@@ -38329,19 +38329,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 10 5 Inch Wi Fi 2017 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 12600
       },
       {
-        "name": "iPad Pro 10 5 Inch Wi Fi 2017 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 11550
       },
       {
-        "name": "iPad Pro 10 5 Inch Wi Fi 2017 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 10500
@@ -38358,31 +38358,31 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 11 Inch 3rd Gen Cellular 2021 2 TB",
+        "name": "2 TB",
         "storage": "2 TB",
         "ram": null,
         "price": 50400
       },
       {
-        "name": "iPad Pro 11 Inch 3rd Gen Cellular 2021 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 47250
       },
       {
-        "name": "iPad Pro 11 Inch 3rd Gen Cellular 2021 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 43050
       },
       {
-        "name": "iPad Pro 11 Inch 3rd Gen Cellular 2021 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 40950
       },
       {
-        "name": "iPad Pro 11 Inch 3rd Gen Cellular 2021 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 38850
@@ -38399,25 +38399,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 11 Inch M4 Cellular 2 TB",
+        "name": "2 TB",
         "storage": "2 TB",
         "ram": null,
         "price": 79800
       },
       {
-        "name": "iPad Pro 11 Inch M4 Cellular 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 74970
       },
       {
-        "name": "iPad Pro 11 Inch M4 Cellular 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 69300
       },
       {
-        "name": "iPad Pro 11 Inch M4 Cellular 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 61950
@@ -38434,25 +38434,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 11 Inch Cellular 2018 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 26880
       },
       {
-        "name": "iPad Pro 11 Inch Cellular 2018 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 24360
       },
       {
-        "name": "iPad Pro 11 Inch Cellular 2018 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 22050
       },
       {
-        "name": "iPad Pro 11 Inch Cellular 2018 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 19950
@@ -38469,25 +38469,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 11 Inch Wi Fi 2018 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 24675
       },
       {
-        "name": "iPad Pro 11 Inch Wi Fi 2018 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 21525
       },
       {
-        "name": "iPad Pro 11 Inch Wi Fi 2018 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 18900
       },
       {
-        "name": "iPad Pro 11 Inch Wi Fi 2018 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 17850
@@ -38504,19 +38504,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 12 9 Inch 2nd Gen Wi Fi 2017 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 14700
       },
       {
-        "name": "iPad Pro 12 9 Inch 2nd Gen Wi Fi 2017 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 13650
       },
       {
-        "name": "iPad Pro 12 9 Inch 2nd Gen Wi Fi 2017 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 12600
@@ -38533,25 +38533,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 12 9 Inch 3rd Gen Cellular 2018 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 30450
       },
       {
-        "name": "iPad Pro 12 9 Inch 3rd Gen Cellular 2018 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 28350
       },
       {
-        "name": "iPad Pro 12 9 Inch 3rd Gen Cellular 2018 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 26775
       },
       {
-        "name": "iPad Pro 12 9 Inch 3rd Gen Cellular 2018 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 23100
@@ -38568,25 +38568,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 12 9 Inch 3rd Gen Wi Fi 2018 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 29400
       },
       {
-        "name": "iPad Pro 12 9 Inch 3rd Gen Wi Fi 2018 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 25200
       },
       {
-        "name": "iPad Pro 12 9 Inch 3rd Gen Wi Fi 2018 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 21000
       },
       {
-        "name": "iPad Pro 12 9 Inch 3rd Gen Wi Fi 2018 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 19950
@@ -38603,31 +38603,31 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 12 9 Inch 6th Gen M2 Cellular 2022 2 TB",
+        "name": "2 TB",
         "storage": "2 TB",
         "ram": null,
         "price": 73500
       },
       {
-        "name": "iPad Pro 12 9 Inch 6th Gen M2 Cellular 2022 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 70350
       },
       {
-        "name": "iPad Pro 12 9 Inch 6th Gen M2 Cellular 2022 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 68250
       },
       {
-        "name": "iPad Pro 12 9 Inch 6th Gen M2 Cellular 2022 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 63000
       },
       {
-        "name": "iPad Pro 12 9 Inch 6th Gen M2 Cellular 2022 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 58800
@@ -38644,19 +38644,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 12 9 Inch Cellular 2015 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 11550
       },
       {
-        "name": "iPad Pro 12 9 Inch Cellular 2015 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 11025
       },
       {
-        "name": "iPad Pro 12 9 Inch Cellular 2015 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 10500
@@ -38673,19 +38673,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 12 9 Inch Wi Fi 2015 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 10500
       },
       {
-        "name": "iPad Pro 12 9 Inch Wi Fi 2015 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 9975
       },
       {
-        "name": "iPad Pro 12 9 Inch Wi Fi 2015 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 9450
@@ -38702,25 +38702,25 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 13 Inch M4 Cellular 2024 2 TB",
+        "name": "2 TB",
         "storage": "2 TB",
         "ram": null,
         "price": 94500
       },
       {
-        "name": "iPad Pro 13 Inch M4 Cellular 2024 1 TB",
+        "name": "1 TB",
         "storage": "1 TB",
         "ram": null,
         "price": 90825
       },
       {
-        "name": "iPad Pro 13 Inch M4 Cellular 2024 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 86625
       },
       {
-        "name": "iPad Pro 13 Inch M4 Cellular 2024 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 77700
@@ -38737,19 +38737,19 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "iPad Pro 9 7 Inch Cellular 2016 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 10500
       },
       {
-        "name": "iPad Pro 9 7 Inch Cellular 2016 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 9450
       },
       {
-        "name": "iPad Pro 9 7 Inch Cellular 2016 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 8400
@@ -38766,9 +38766,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-mediapad-t3-10-16gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1754
       }
     ]
@@ -38783,9 +38783,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-mediapad-t3-10-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1785
       }
     ]
@@ -38800,9 +38800,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-mediapad-t3-8-0-16gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1302
       }
     ]
@@ -38817,9 +38817,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-mediapad-t3-8-0-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1575
       }
     ]
@@ -38834,9 +38834,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-pad-5-10-1-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3476
       }
     ]
@@ -38851,9 +38851,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-pad-5-10-1-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3770
       }
     ]
@@ -38868,9 +38868,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-pad-5-8-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2110
       }
     ]
@@ -38885,9 +38885,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-pad-5-8-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2604
       }
     ]
@@ -38902,9 +38902,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-tab-5-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 1932
       }
     ]
@@ -38919,9 +38919,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-tab-5-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2762
       }
     ]
@@ -38936,9 +38936,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-pad-8-4-gb-128-gb-wifi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5996
       }
     ]
@@ -38953,9 +38953,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-pad-8-6-gb-128-gb-wifi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6436
       }
     ]
@@ -38970,9 +38970,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-pad-x8-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3644
       }
     ]
@@ -38987,9 +38987,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-pad-x8-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4326
       }
     ]
@@ -39004,9 +39004,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-pad-9-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 9502
       }
     ]
@@ -39021,9 +39021,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-pad-x9-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5996
       }
     ]
@@ -39038,9 +39038,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-pad-x9-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7130
       }
     ]
@@ -39055,9 +39055,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-honor-pad-x8a-4-gb-128-gb-wifi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4179
       }
     ]
@@ -39072,9 +39072,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-huawei-mediapad-m5-lite-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3633
       }
     ]
@@ -39089,9 +39089,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-huawei-mediapad-m5-lite-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3906
       }
     ]
@@ -39106,9 +39106,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-huawei-mediapad-t5-16gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 2520
       }
     ]
@@ -39123,9 +39123,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-huawei-mediapad-t5-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2594
       }
     ]
@@ -39140,9 +39140,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-huawei-matepad-t8-lte-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 4914
       }
     ]
@@ -39157,9 +39157,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-huawei-matepad-t8-wifi-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 3948
       }
     ]
@@ -39174,15 +39174,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-huawei-mediapad-t3-7-0",
     "variants": [
       {
-        "name": "1 GB/8 GB",
-        "storage": "1 GB",
-        "ram": null,
+        "name": "1 GB / 8 GB",
+        "storage": "8 GB",
+        "ram": "1 GB",
         "price": 1575
       },
       {
-        "name": "2 GB/16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1869
       }
     ]
@@ -39197,15 +39197,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-huawei-mediapad-t3-10",
     "variants": [
       {
-        "name": "2 GB/16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1764
       },
       {
-        "name": "3 GB/32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2320
       }
     ]
@@ -39220,9 +39220,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-7-essential-8-gb-7-inch-wi-fi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "1 GB",
-        "ram": null,
+        "name": "1 GB / 8 GB",
+        "storage": "8 GB",
+        "ram": "1 GB",
         "price": 746
       }
     ]
@@ -39237,8 +39237,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-yoga-10-tablet-10-16gb-3gpluswifi",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "16GB",
+        "name": "16 GB",
+        "storage": "16 GB",
         "ram": null,
         "price": 1176
       }
@@ -39254,9 +39254,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-4-8-16-gb-wi-fi-plus-4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1365
       }
     ]
@@ -39271,9 +39271,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-3-8-0-1-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "1 GB",
-        "ram": null,
+        "name": "1 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "1 GB",
         "price": 861
       }
     ]
@@ -39288,9 +39288,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-7-16-gb-wifi-cellular",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "1 GB",
-        "ram": null,
+        "name": "1 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "1 GB",
         "price": 976
       }
     ]
@@ -39305,9 +39305,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-4-8-16-gb-wi-fi-4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "3 GB",
         "price": 2100
       }
     ]
@@ -39322,9 +39322,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-4-8-plus-64-gb-wi-fi-4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2636
       }
     ]
@@ -39339,9 +39339,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m10-hd-wifi-only-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2835
       }
     ]
@@ -39356,9 +39356,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m10-hd-wifi-4g-2-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 2930
       }
     ]
@@ -39373,9 +39373,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m10-hd-wifi-4g-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 3328
       }
     ]
@@ -39390,9 +39390,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m10-hd-wifi-4g-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3664
       }
     ]
@@ -39407,9 +39407,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m10-wifi-only-2-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 2446
       }
     ]
@@ -39424,9 +39424,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m10-wifi-4g-2-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 2636
       }
     ]
@@ -39441,9 +39441,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m10-wifi-4g-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 3518
       }
     ]
@@ -39458,9 +39458,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m10-wifi-only-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3224
       }
     ]
@@ -39475,9 +39475,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m10-wifi-4g-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3518
       }
     ]
@@ -39492,9 +39492,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m8-2nd-gen-wifi-only-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2541
       }
     ]
@@ -39509,9 +39509,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m8-2nd-gen-wifi-4g-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2740
       }
     ]
@@ -39526,8 +39526,8 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m8-2nd-gen-wifi-only-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "64GB",
+        "name": "64 GB",
+        "storage": "64 GB",
         "ram": null,
         "price": 3140
       }
@@ -39543,9 +39543,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m7-2nd-gen-wifi-only-1-gb-8-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "1 GB",
-        "ram": null,
+        "name": "1 GB / 8 GB",
+        "storage": "8 GB",
+        "ram": "1 GB",
         "price": 1470
       }
     ]
@@ -39560,9 +39560,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m7-2nd-gen-wifi-only-1-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "1 GB",
-        "ram": null,
+        "name": "1 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "1 GB",
         "price": 1596
       }
     ]
@@ -39577,9 +39577,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-v7-wifi-only-2-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1764
       }
     ]
@@ -39594,9 +39594,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-v7-wifi-4g-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2404
       }
     ]
@@ -39611,9 +39611,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-v7-wifi-4g-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2772
       }
     ]
@@ -39628,9 +39628,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-p10-wifi-4g-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2930
       }
     ]
@@ -39645,9 +39645,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-p10-wifi-4g-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3476
       }
     ]
@@ -39662,9 +39662,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-4-10-wifi-only-16gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1858
       }
     ]
@@ -39679,9 +39679,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-4-10-wifi-4g-16gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 2394
       }
     ]
@@ -39696,9 +39696,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-4-10-plus-wifi-4g-16gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "3 GB",
         "price": 2594
       }
     ]
@@ -39713,9 +39713,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-4-10-plus-wifi-4g-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2740
       }
     ]
@@ -39730,9 +39730,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-7-essential-wifi-4g-16gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "1 GB",
-        "ram": null,
+        "name": "1 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "1 GB",
         "price": 903
       }
     ]
@@ -39747,9 +39747,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-yoga-tab-3-8-wifi-only-2-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 777
       }
     ]
@@ -39764,9 +39764,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-yoga-tab-3-8-wifi-4g-2-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 956
       }
     ]
@@ -39781,9 +39781,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-yoga-tab-3-pro-wifi-4g-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2835
       }
     ]
@@ -39798,9 +39798,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-yoga-tab-3-pro-wifi-4g-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 2982
       }
     ]
@@ -39815,9 +39815,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-yoga-smart-tab-wifi-4g-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3864
       }
     ]
@@ -39832,9 +39832,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m10-plus-wi-fi-4g-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 4641
       }
     ]
@@ -39849,9 +39849,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m10-plus-wi-fi-4g-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3812
       }
     ]
@@ -39866,9 +39866,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-10-1-gb-16-gb-10-1-inch-wi-fi",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "1 GB",
-        "ram": null,
+        "name": "1 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "1 GB",
         "price": 1134
       }
     ]
@@ -39883,9 +39883,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-2-a850-1-gb-16-gb-8-inch-wi-fi-4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "1 GB",
-        "ram": null,
+        "name": "1 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "1 GB",
         "price": 1774
       }
     ]
@@ -39900,9 +39900,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-e8-1-gb-16-gb-8-inch-wi-fi",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "1 GB",
-        "ram": null,
+        "name": "1 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "1 GB",
         "price": 903
       }
     ]
@@ -39917,9 +39917,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-e8-2-gb-16-gb-8-inch-wi-fi",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1071
       }
     ]
@@ -39934,9 +39934,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m10-hd-2nd-gen-4-gb-64-gb-10-1-inch-wi-fi-4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4252
       }
     ]
@@ -39951,9 +39951,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab3-8-plus-3-gb-16-gb-8-inch-wi-fi-4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "3 GB",
         "price": 2100
       }
     ]
@@ -39968,9 +39968,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-p11-pro-wi-fi-lte-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7140
       }
     ]
@@ -39985,9 +39985,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m7-2nd-gen-wifi-only-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 1953
       }
     ]
@@ -40002,9 +40002,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m7-2nd-gen-wifi-lte-1-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "1 GB",
-        "ram": null,
+        "name": "1 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "1 GB",
         "price": 1659
       }
     ]
@@ -40019,9 +40019,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-lenovo-tab-m7-2nd-gen-wifi-lte-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2016
       }
     ]
@@ -40036,15 +40036,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Idea Tab Pro Gen 2 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 24675
       },
       {
-        "name": "Lenovo Idea Tab Pro Gen 2 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 22050
       }
     ]
@@ -40059,9 +40059,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab K11 Gen 2 4g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 11550
       }
     ]
@@ -40076,9 +40076,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab K11 Wi Fi 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8400
       }
     ]
@@ -40093,9 +40093,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab P11 2nd Gen 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7875
       }
     ]
@@ -40110,15 +40110,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab K11 Lte 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7770
       },
       {
-        "name": "Lenovo Tab K11 Lte 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8610
       }
     ]
@@ -40133,15 +40133,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8085
       },
       {
-        "name": "Lenovo Tab M10 5g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7875
       }
     ]
@@ -40156,9 +40156,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tablet M9 Wi Fi 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7350
       }
     ]
@@ -40173,7 +40173,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Smart Tab M10 Hd Plus 10 3 Lte 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 6300
@@ -40190,9 +40190,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Yoga Tab 11 Wifi 4g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6300
       }
     ]
@@ -40207,9 +40207,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tablet M9 4g 3 GB / 32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 5775
       }
     ]
@@ -40224,9 +40224,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 Gen 3 Lte 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5460
       }
     ]
@@ -40241,7 +40241,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab K10 Fhd 10 3 Lte 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 4830
@@ -40258,15 +40258,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab P12 Wi Fi 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 10080
       },
       {
-        "name": "Lenovo Tab P12 Wi Fi 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9555
       }
     ]
@@ -40281,15 +40281,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M11 Lte 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7245
       },
       {
-        "name": "Lenovo Tab M11 Lte 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 6825
       }
     ]
@@ -40304,15 +40304,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab Plus Wifi 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 8085
       },
       {
-        "name": "Lenovo Tab Plus Wifi 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 7140
       }
     ]
@@ -40327,7 +40327,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Yoga Tab 11 4g 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 6300
@@ -40344,9 +40344,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 Plus 3rd Gen Lte 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5985
       }
     ]
@@ -40361,9 +40361,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 Plus 4g 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5670
       }
     ]
@@ -40378,9 +40378,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M11 Wifi 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 5670
       }
     ]
@@ -40395,9 +40395,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 Plus 3rd Gen Wifi 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5565
       }
     ]
@@ -40412,9 +40412,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M9 Lte 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5460
       }
     ]
@@ -40429,7 +40429,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 Hd 2nd Gen 10 1 Inch 4g 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 5250
@@ -40446,7 +40446,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab P10 4g 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 4935
@@ -40463,7 +40463,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 Hd 2nd Gen 10.1 Wifi 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 4725
@@ -40480,7 +40480,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 Fhd Plus 10.3 Lte 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 4620
@@ -40497,9 +40497,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 Fhd Plus Wifi 2 GB / 32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 4200
       }
     ]
@@ -40514,9 +40514,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Yoga Smart Tab 4g 2 GB / 64 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "2 GB",
         "price": 3990
       }
     ]
@@ -40531,9 +40531,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 Gen 3 Wifi 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3675
       }
     ]
@@ -40548,9 +40548,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M8 2nd Gen Wi Fi 3 GB / 64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 3675
       }
     ]
@@ -40565,7 +40565,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 Wi Fi 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 3675
@@ -40582,7 +40582,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M8 2nd Gen 4g 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 3675
@@ -40599,7 +40599,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 4g 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 3570
@@ -40616,7 +40616,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab V7 4g 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 3150
@@ -40633,13 +40633,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Yoga Tab 3 Pro 4g 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3150
       },
       {
-        "name": "Lenovo Yoga Tab 3 Pro 4g 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 2835
@@ -40656,7 +40656,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 Hd 4g 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 3150
@@ -40673,15 +40673,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M8 2nd Gen Wifi 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 3675
       },
       {
-        "name": "Lenovo Tab M8 2nd Gen Wifi 2 GB / 32 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 3150
       }
     ]
@@ -40696,7 +40696,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M10 Hd Wi Fi 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 2940
@@ -40713,7 +40713,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab 4 10 4g 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 2415
@@ -40730,7 +40730,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M7 2nd Gen Lte 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 2310
@@ -40747,7 +40747,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab4 8 Plus 4g 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 2310
@@ -40764,7 +40764,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab3 8 Plus 4g 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 2205
@@ -40781,7 +40781,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo A7 50 Tablet 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 2126
@@ -40798,7 +40798,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Idea Tab A3000 Tablet 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 2126
@@ -40815,7 +40815,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab A10 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 2126
@@ -40832,7 +40832,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab4 8 4g 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 2100
@@ -40849,7 +40849,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab M7 2nd Gen Wi Fi 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 1890
@@ -40866,7 +40866,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo A8 50 Tablet 3g 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 1754
@@ -40883,7 +40883,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Yoga Tab 3 8 4g 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 1418
@@ -40900,7 +40900,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Yoga Tab 3 8 Inch Wi Fi 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 1365
@@ -40917,7 +40917,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab P11 Pro Lte 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 7560
@@ -40934,9 +40934,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab 10 10 1 Inch Wi Fi 2 GB / 16 GB",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 1575
       }
     ]
@@ -40951,7 +40951,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab 4 10 Plus 4g 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 2835
@@ -40968,7 +40968,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab 4 10 Wi Fi 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 3150
@@ -40985,7 +40985,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab 7 Essential 4g 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 1785
@@ -41002,7 +41002,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab 7 Essential Wi Fi 8 GB",
+        "name": "8 GB",
         "storage": "8 GB",
         "ram": null,
         "price": 1575
@@ -41019,7 +41019,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Lenovo Tab V7 Wi Fi 16 GB",
+        "name": "16 GB",
         "storage": "16 GB",
         "ram": null,
         "price": 2625
@@ -41036,9 +41036,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-motorola-moto-tab-g20-wi-fi-only-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 4652
       }
     ]
@@ -41053,9 +41053,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-motorola-moto-tab-g7-lte-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 8074
       }
     ]
@@ -41070,9 +41070,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-motorola-moto-tab-g62-64gb-wifi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5922
       }
     ]
@@ -41087,9 +41087,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-motorola-moto-tab-g62-64gb-wifi-4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6405
       }
     ]
@@ -41104,9 +41104,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-motorola-moto-tab-g70-lte-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8463
       }
     ]
@@ -41121,9 +41121,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-motorola-moto-tab-g62-128-gb-wi-fi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 6405
       }
     ]
@@ -41138,9 +41138,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-motorola-moto-tab-g62-128-gb-wi-fi-4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 6804
       }
     ]
@@ -41155,15 +41155,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-motorola-moto-pad-60-pro-wi-fi-only",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 14322
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 15204
       }
     ]
@@ -41178,9 +41178,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-motorola-moto-pad-60-neo-wi-fi-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10322
       }
     ]
@@ -41195,9 +41195,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-motorola-moto-pad-60-neo-wi-fi-only-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9828
       }
     ]
@@ -41212,9 +41212,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-nokia-tab-t20-wi-fi-only-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 5082
       }
     ]
@@ -41229,9 +41229,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-nokia-tab-t20-wi-fi-only-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5428
       }
     ]
@@ -41246,9 +41246,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-nokia-tab-t20-wi-fi-4g-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5576
       }
     ]
@@ -41263,9 +41263,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-nokia-tab-t10-32gb-wi-fi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 4252
       }
     ]
@@ -41280,9 +41280,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-nokia-tab-t10-64gb-wi-fi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4599
       }
     ]
@@ -41297,9 +41297,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-nokia-tab-t10-32gb-wi-fi-4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 4452
       }
     ]
@@ -41314,9 +41314,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-nokia-tab-t10-64gb-wi-fi-4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4988
       }
     ]
@@ -41331,9 +41331,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-nokia-tab-t21-64gb-wi-fi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5870
       }
     ]
@@ -41348,9 +41348,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-nokia-tab-t21-64gb-wi-fi-4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6405
       }
     ]
@@ -41365,9 +41365,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oneplus-pad-128gb-wi-fi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11886
       }
     ]
@@ -41382,9 +41382,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oneplus-pad-256gb-wi-fi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 13052
       }
     ]
@@ -41399,9 +41399,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oneplus-pad-go-128gb-wi-fi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8410
       }
     ]
@@ -41416,9 +41416,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oneplus-pad-go-128gb-lte",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9345
       }
     ]
@@ -41433,9 +41433,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oneplus-pad-go-256gb-lte",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 9786
       }
     ]
@@ -41450,15 +41450,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oneplus-pad-2-wi-fi-only",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16380
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 17650
       }
     ]
@@ -41473,9 +41473,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oneplus-pad-lite-wi-fi-only-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9723
       }
     ]
@@ -41490,9 +41490,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oneplus-pad-lite-lte-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10920
       }
     ]
@@ -41507,15 +41507,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oneplus-pad-3-wi-fi-only",
     "variants": [
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 27184
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 30177
       }
     ]
@@ -41530,15 +41530,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oneplus-pad-go-2-wi-fi-only",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16412
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 18207
       }
     ]
@@ -41553,9 +41553,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oneplus-pad-go-2-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 20002
       }
     ]
@@ -41570,15 +41570,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oneplus-pad-4-wi-fi-only",
     "variants": [
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 32918
       },
       {
-        "name": "12 GB/512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 35910
       }
     ]
@@ -41593,9 +41593,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oppo-pad-air-64gb-wi-fi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5481
       }
     ]
@@ -41610,9 +41610,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oppo-pad-air-128gb-wi-fi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 6069
       }
     ]
@@ -41627,15 +41627,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oppo-pad-se-lte",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8211
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8704
       }
     ]
@@ -41650,9 +41650,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oppo-pad-se-4-gb-128-gb-wi-fi",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 7046
       }
     ]
@@ -41667,9 +41667,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oppo-pad-5-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 19950
       }
     ]
@@ -41684,9 +41684,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-oppo-pad-5-wi-fi-only-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16359
       }
     ]
@@ -41701,15 +41701,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-poco-pad-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 11098
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 12274
       }
     ]
@@ -41724,9 +41724,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-lte-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 5376
       }
     ]
@@ -41741,9 +41741,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-lte-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7035
       }
     ]
@@ -41758,9 +41758,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-wifi-only-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 5082
       }
     ]
@@ -41775,9 +41775,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-mini-wi-fi-only-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 3812
       }
     ]
@@ -41792,9 +41792,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-mini-wi-fi-only-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5040
       }
     ]
@@ -41809,9 +41809,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-mini-lte-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 4599
       }
     ]
@@ -41826,9 +41826,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-mini-lte-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5229
       }
     ]
@@ -41843,9 +41843,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-x-64gb-wifi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6258
       }
     ]
@@ -41860,9 +41860,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-x-64gb-5g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7581
       }
     ]
@@ -41877,9 +41877,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-x-128gb-5g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8894
       }
     ]
@@ -41894,9 +41894,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-lte-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7234
       }
     ]
@@ -41911,9 +41911,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-2-lte-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7287
       }
     ]
@@ -41928,9 +41928,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-2-lte-256gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 8064
       }
     ]
@@ -41945,9 +41945,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-2-lite-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 6258
       }
     ]
@@ -41962,9 +41962,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-2-lite-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6604
       }
     ]
@@ -41979,9 +41979,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-2-wi-fi-only-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5964
       }
     ]
@@ -41996,15 +41996,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-3-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 18008
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 19204
       }
     ]
@@ -42019,9 +42019,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-realme-pad-3-wi-fi-only-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16212
       }
     ]
@@ -42036,9 +42036,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a-7-0-2018",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "5 GB",
-        "ram": null,
+        "name": "5 GB / 8 GB",
+        "storage": "8 GB",
+        "ram": "5 GB",
         "price": 1964
       }
     ]
@@ -42053,9 +42053,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s3-9-7-32-gb-wifi-4g-lte",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "4 GB",
         "price": 3864
       }
     ]
@@ -42070,9 +42070,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a-10-5-3-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 5302
       }
     ]
@@ -42087,9 +42087,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s-84-wi-fiplus4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "3 GB",
         "price": 2300
       }
     ]
@@ -42104,9 +42104,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s-sm-t805-tablet-105-inches-16gb-wifi-3g-4g-lte",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "3 GB",
         "price": 3328
       }
     ]
@@ -42121,9 +42121,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a-t355ygrey-16-gb-3g-lte",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "5 GB",
-        "ram": null,
+        "name": "5 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "5 GB",
         "price": 2205
       }
     ]
@@ -42138,9 +42138,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s2-32gb-wifi-and-4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 2930
       }
     ]
@@ -42155,9 +42155,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a-97-16gb-wifiplus3g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "5 GB",
-        "ram": null,
+        "name": "5 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "5 GB",
         "price": 2446
       }
     ]
@@ -42172,9 +42172,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s-84-wi-fi",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "3 GB",
         "price": 2100
       }
     ]
@@ -42189,9 +42189,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s5e-lte-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6458
       }
     ]
@@ -42206,9 +42206,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-j-max-1-5-gb-16-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "5 GB",
-        "ram": null,
+        "name": "5 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "5 GB",
         "price": 1428
       }
     ]
@@ -42223,9 +42223,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-j-max-1-5-gb-8-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "5 GB",
-        "ram": null,
+        "name": "5 GB / 8 GB",
+        "storage": "8 GB",
+        "ram": "5 GB",
         "price": 1228
       }
     ]
@@ -42240,9 +42240,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a-2017-2-gb-2016",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 16 GB",
+        "storage": "16 GB",
+        "ram": "2 GB",
         "price": 2898
       }
     ]
@@ -42257,9 +42257,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a-10-1-wi-fi",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2720
       }
     ]
@@ -42274,9 +42274,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s6-lte-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9188
       }
     ]
@@ -42291,9 +42291,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a-8-0",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2940
       }
     ]
@@ -42308,9 +42308,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a-8-0-wi-fi",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 2950
       }
     ]
@@ -42325,9 +42325,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s6-wi-fi-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 8894
       }
     ]
@@ -42342,9 +42342,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s5e-wi-fi-4-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5964
       }
     ]
@@ -42359,9 +42359,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a-10-1-lte-2-gb-32-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "2 GB",
-        "ram": null,
+        "name": "2 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "2 GB",
         "price": 3066
       }
     ]
@@ -42376,9 +42376,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s6-lite-wifi-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7119
       }
     ]
@@ -42393,9 +42393,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s6-lite-lte-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7959
       }
     ]
@@ -42410,9 +42410,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s7-wifi-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 12904
       }
     ]
@@ -42427,9 +42427,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s7-lte-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 15645
       }
     ]
@@ -42444,9 +42444,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s7-plus-lte-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 17692
       }
     ]
@@ -42461,9 +42461,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a7-lte-3-gb-32-gb-10-4-inch-wi-fi-4g",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 4756
       }
     ]
@@ -42478,9 +42478,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a7-10-4-2020-wifi-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 4032
       }
     ]
@@ -42495,9 +42495,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s7-plus-wifi-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 16516
       }
     ]
@@ -42512,9 +42512,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s7-fe-wifi-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 10658
       }
     ]
@@ -42529,9 +42529,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s7-fe-lte-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 12904
       }
     ]
@@ -42546,9 +42546,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s7-fe-lte-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 15246
       }
     ]
@@ -42563,9 +42563,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a7-lite-wifi-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 4221
       }
     ]
@@ -42580,9 +42580,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a7-lite-lte-32gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 5008
       }
     ]
@@ -42597,9 +42597,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a7-10-4-2020-wifi-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 4515
       }
     ]
@@ -42614,9 +42614,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a-7-0-2016-wifi-8gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "5 GB",
-        "ram": null,
+        "name": "5 GB / 8 GB",
+        "storage": "8 GB",
+        "ram": "5 GB",
         "price": 1218
       }
     ]
@@ -42631,9 +42631,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s4-10-5-wifi-256gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "4 GB",
         "price": 5618
       }
     ]
@@ -42648,9 +42648,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s4-10-5-wifi-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5324
       }
     ]
@@ -42665,9 +42665,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s4-10-5-lte-64gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5964
       }
     ]
@@ -42682,9 +42682,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a8-10-5-2021-32gb-wifi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 5502
       }
     ]
@@ -42699,9 +42699,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a8-10-5-2021-64gb-wifi-only",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 5996
       }
     ]
@@ -42716,9 +42716,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a8-10-5-2021-32gb-lte",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 6878
       }
     ]
@@ -42733,9 +42733,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-a8-10-5-2021-64gb-lte",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7266
       }
     ]
@@ -42750,9 +42750,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s8-wifi-only-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 18322
       }
     ]
@@ -42767,9 +42767,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s8-5g-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 21063
       }
     ]
@@ -42784,9 +42784,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s8-plus-wifi-only-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 23604
       }
     ]
@@ -42801,9 +42801,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s8-plus-5g-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 27027
       }
     ]
@@ -42818,9 +42818,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s8-ultra-wifi-256gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 33380
       }
     ]
@@ -42835,9 +42835,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-samsung-galaxy-tab-s8-ultra-5g-256gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 36214
       }
     ]
@@ -42852,15 +42852,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S11 Ultra 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 66150
       },
       {
-        "name": "Samsung Galaxy Tab S11 Ultra 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 68250
       }
     ]
@@ -42875,7 +42875,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S9 Ultra 5g 512 GB",
+        "name": "512 GB",
         "storage": "512 GB",
         "ram": null,
         "price": 58275
@@ -42892,21 +42892,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S11 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 63000
       },
       {
-        "name": "Samsung Galaxy Tab S11 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 60900
       },
       {
-        "name": "Samsung Galaxy Tab S11 5g 12 GB / 128 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "12 GB",
         "price": 57750
       }
     ]
@@ -42921,7 +42921,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S9 Ultra 5g 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 54600
@@ -42938,15 +42938,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S10 Ultra 5g 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 56175
       },
       {
-        "name": "Samsung Galaxy Tab S10 Ultra 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 52500
       }
     ]
@@ -42961,21 +42961,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S11 Wifi 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 57750
       },
       {
-        "name": "Samsung Galaxy Tab S11 Wifi 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 53550
       },
       {
-        "name": "Samsung Galaxy Tab S11 Wifi 12 GB / 128 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "12 GB",
         "price": 51765
       }
     ]
@@ -42990,15 +42990,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S9 Ultra Wifi 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 50925
       },
       {
-        "name": "Samsung Galaxy Tab S9 Ultra Wifi 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 52185
       }
     ]
@@ -43013,7 +43013,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy S8 Ultra 5g 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 39690
@@ -43030,7 +43030,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S8 Ultra Wi Fi 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 34650
@@ -43047,15 +43047,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S10 Ultra Wifi 12 GB / 512 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 512 GB",
+        "storage": "512 GB",
+        "ram": "12 GB",
         "price": 55965
       },
       {
-        "name": "Samsung Galaxy Tab S10 Ultra Wifi 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 51450
       }
     ]
@@ -43070,9 +43070,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S9 Plus 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 40425
       }
     ]
@@ -43087,9 +43087,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S8 Ultra 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 40110
       }
     ]
@@ -43104,9 +43104,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S8 Ultra Wifi 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 37170
       }
     ]
@@ -43121,15 +43121,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S10 Fe Plus 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 41475
       },
       {
-        "name": "Samsung Galaxy Tab S10 Fe Plus 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 36225
       }
     ]
@@ -43144,7 +43144,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S8 Plus 5g 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 30135
@@ -43161,15 +43161,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S10 Fe 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 29925
       },
       {
-        "name": "Samsung Galaxy Tab S10 Fe 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 34020
       }
     ]
@@ -43184,9 +43184,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S9 Plus Wifi 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 29400
       }
     ]
@@ -43201,15 +43201,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S9 Wifi 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 29085
       },
       {
-        "name": "Samsung Galaxy Tab S9 Wifi 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 21630
       }
     ]
@@ -43224,15 +43224,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S10 Fe Wifi 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 32550
       },
       {
-        "name": "Samsung Galaxy Tab S10 Fe Wifi 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 27930
       }
     ]
@@ -43247,15 +43247,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S10 Fe Plus Wifi 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 28350
       },
       {
-        "name": "Samsung Galaxy Tab S10 Fe Plus Wifi 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 26250
       }
     ]
@@ -43270,7 +43270,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S8 Plus Wifi 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 26145
@@ -43287,15 +43287,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S9 Fe Plus 5g 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 25200
       },
       {
-        "name": "Samsung Galaxy Tab S9 Fe Plus 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 17325
       }
     ]
@@ -43310,7 +43310,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S8 5g 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 23730
@@ -43327,7 +43327,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S7 Plus Lte 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 19950
@@ -43344,9 +43344,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S7 Plus Wi Fi 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 18375
       }
     ]
@@ -43361,7 +43361,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S7 Lte 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 17850
@@ -43378,15 +43378,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab A11 Plus 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 16380
       },
       {
-        "name": "Samsung Galaxy Tab A11 Plus 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 17010
       }
     ]
@@ -43401,15 +43401,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S9 Fe Wifi Only 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 18900
       },
       {
-        "name": "Samsung Galaxy Tab S9 Fe Wifi Only 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 14805
       }
     ]
@@ -43424,7 +43424,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S7 Wi Fi 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 14700
@@ -43441,15 +43441,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S7 Fe Lte 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 14175
       },
       {
-        "name": "Samsung Galaxy Tab S7 Fe Lte 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 17325
       }
     ]
@@ -43464,15 +43464,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab A11 Plus Wifi 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 13860
       },
       {
-        "name": "Samsung Galaxy Tab A11 Plus Wifi 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15960
       }
     ]
@@ -43487,15 +43487,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S7 Fe Wi Fi 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 12600
       },
       {
-        "name": "Samsung Galaxy Tab S7 Fe Wi Fi 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 14700
       }
     ]
@@ -43510,15 +43510,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab A11 Wifi 4g 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 12075
       },
       {
-        "name": "Samsung Galaxy Tab A11 Wifi 4g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 12600
       }
     ]
@@ -43533,15 +43533,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S9 Fe Plus Wifi 12 GB / 256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 21000
       },
       {
-        "name": "Samsung Galaxy Tab S9 Fe Plus Wifi 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15225
       }
     ]
@@ -43556,7 +43556,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S6 Lte 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 10500
@@ -43573,7 +43573,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S6 Wi Fi 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 9975
@@ -43590,7 +43590,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S4 10 5 Lte 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 8715
@@ -43607,15 +43607,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S6 Lite Lte 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 10080
       },
       {
-        "name": "Samsung Galaxy Tab S6 Lite Lte 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 9030
       }
     ]
@@ -43630,15 +43630,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab A11 Wifi 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 10185
       },
       {
-        "name": "Samsung Galaxy Tab A11 Wifi 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 8820
       }
     ]
@@ -43653,9 +43653,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab A9 Lte 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7980
       }
     ]
@@ -43670,15 +43670,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S6 Lite Wi Fi 4 GB / 128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 8925
       },
       {
-        "name": "Samsung Galaxy Tab S6 Lite Wi Fi 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7980
       }
     ]
@@ -43693,9 +43693,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab A9 Wifi 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 6825
       }
     ]
@@ -43710,9 +43710,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S5e Wi Fi 3 GB / 64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 6825
       }
     ]
@@ -43727,13 +43727,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab A9 Plus Wi Fi 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 8085
       },
       {
-        "name": "Samsung Galaxy Tab A9 Plus Wi Fi 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 6615
@@ -43750,13 +43750,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab A8 Wi Fi 64 GB",
+        "name": "64 GB",
         "storage": "64 GB",
         "ram": null,
         "price": 7140
       },
       {
-        "name": "Samsung Galaxy Tab A8 Wi Fi 32 GB",
+        "name": "32 GB",
         "storage": "32 GB",
         "ram": null,
         "price": 6195
@@ -43773,9 +43773,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab A7 Lite Lte 3 GB / 32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 5565
       }
     ]
@@ -43790,9 +43790,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S5e Lte 3 GB / 64 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 7560
       }
     ]
@@ -43807,7 +43807,7 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S4 10 5 Wi Fi 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 7350
@@ -43824,9 +43824,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab A7 Lite Wifi 3 GB / 32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 5565
       }
     ]
@@ -43841,21 +43841,21 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab A9 Plus 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9450
       },
       {
-        "name": "Samsung Galaxy Tab A9 Plus 5g 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 8505
       },
       {
-        "name": "Samsung Galaxy Tab A9 Plus 5g 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 7665
       }
     ]
@@ -43870,9 +43870,9 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S8 Wifi 8 GB / 128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 20475
       }
     ]
@@ -43887,15 +43887,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab A8 Lte 4 GB / 64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 8190
       },
       {
-        "name": "Samsung Galaxy Tab A8 Lte 3 GB / 32 GB",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 32 GB",
+        "storage": "32 GB",
+        "ram": "3 GB",
         "price": 7875
       }
     ]
@@ -43910,13 +43910,13 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S9 5g 256 GB",
+        "name": "256 GB",
         "storage": "256 GB",
         "ram": null,
         "price": 39900
       },
       {
-        "name": "Samsung Galaxy Tab S9 5g 128 GB",
+        "name": "128 GB",
         "storage": "128 GB",
         "ram": null,
         "price": 33075
@@ -43933,15 +43933,15 @@ module.exports = [
     "cashify_url": "",
     "variants": [
       {
-        "name": "Samsung Galaxy Tab S9 Fe 5g 8 GB / 256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 22050
       },
       {
-        "name": "Samsung Galaxy Tab S9 Fe 5g 6 GB / 128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 16275
       }
     ]
@@ -43956,15 +43956,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-pad-5-wifi-only",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7822
       },
       {
-        "name": "6 GB/256 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "6 GB",
         "price": 8610
       }
     ]
@@ -43979,9 +43979,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-pad-6-128gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 9586
       }
     ]
@@ -43996,9 +43996,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-pad-6-256gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 10458
       }
     ]
@@ -44013,9 +44013,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-redmi-pad-3-gb-64-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "3 GB",
-        "ram": null,
+        "name": "3 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "3 GB",
         "price": 5376
       }
     ]
@@ -44030,9 +44030,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-redmi-pad-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 6164
       }
     ]
@@ -44047,9 +44047,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-redmi-pad-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 6752
       }
     ]
@@ -44064,21 +44064,21 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-redmi-pad-se-wifi-only",
     "variants": [
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5481
       },
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 5964
       },
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 6258
       }
     ]
@@ -44093,15 +44093,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-redmi-pad-se-4g",
     "variants": [
       {
-        "name": "4 GB/64 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 64 GB",
+        "storage": "64 GB",
+        "ram": "4 GB",
         "price": 4988
       },
       {
-        "name": "4 GB/128 GB",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 5576
       }
     ]
@@ -44116,9 +44116,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-redmi-pad-pro-wifi-only-6-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 7634
       }
     ]
@@ -44133,9 +44133,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-redmi-pad-pro-5g-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 9776
       }
     ]
@@ -44150,9 +44150,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-redmi-pad-pro-5g-8-gb-256-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 10468
       }
     ]
@@ -44167,15 +44167,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-pad-7",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 14080
       },
       {
-        "name": "12 GB/256 GB",
-        "storage": "12 GB",
-        "ram": null,
+        "name": "12 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "12 GB",
         "price": 15351
       }
     ]
@@ -44190,15 +44190,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-pad-2-pro-5g",
     "variants": [
       {
-        "name": "8 GB/128 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 16958
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 18154
       }
     ]
@@ -44213,15 +44213,15 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-redmi-pad-2-wifi-cellular",
     "variants": [
       {
-        "name": "6 GB/128 GB",
-        "storage": "6 GB",
-        "ram": null,
+        "name": "6 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "6 GB",
         "price": 10374
       },
       {
-        "name": "8 GB/256 GB",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 256 GB",
+        "storage": "256 GB",
+        "ram": "8 GB",
         "price": 11571
       }
     ]
@@ -44236,9 +44236,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-redmi-pad-2-pro-wi-fi-only-8-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "8 GB",
-        "ram": null,
+        "name": "8 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "8 GB",
         "price": 15162
       }
     ]
@@ -44253,9 +44253,9 @@ module.exports = [
     "cashify_url": "https://www.cashify.in/sell-old-tablet/used-xiaomi-redmi-pad-2-wifi-only-4-gb-128-gb",
     "variants": [
       {
-        "name": "Standard / Base",
-        "storage": "4 GB",
-        "ram": null,
+        "name": "4 GB / 128 GB",
+        "storage": "128 GB",
+        "ram": "4 GB",
         "price": 9177
       }
     ]

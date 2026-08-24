@@ -126,6 +126,7 @@ def parse_dataset_file(filepath, category_name):
         b_name_raw = lines[0].strip()
         b_display = BRAND_DISPLAY_NAMES.get(b_name_raw.upper(), b_name_raw.title())
         b_slug = clean_slug(b_display)
+        is_apple = (b_name_raw.upper() == 'APPLE')
 
         # Models inside brand
         m_blocks = re.split(r'-{20,}\s*\n\s*MODEL\s*:\s*', b_block)
@@ -145,26 +146,65 @@ def parse_dataset_file(filepath, category_name):
                 v_lines = v_block.splitlines()
                 v_title = v_lines[0].strip()
 
-                storage_m = re.search(r'\*\s*Storage\s*:\s*([^\n]+)', v_block)
-                ram_m = re.search(r'\*\s*RAM\s*:\s*([^\n]+)', v_block)
-                storage_val = storage_m.group(1).strip() if storage_m else v_title
-                ram_val = ram_m.group(1).strip() if ram_m else ''
-                if ram_val == 'N/A':
-                    ram_val = ''
-                if storage_val == 'N/A':
-                    storage_val = v_title
-
                 # Final 5% increased price
                 price_m = re.search(r'\*\s*FINAL PRICE\s*\(\+5%\)\s*:\s*₹?([\d,]+)', v_block)
-                if not price_m:
-                    price_m = re.search(r'\*\s*Base Best Price\s*:\s*₹?([\d,]+)', v_block)
-                if not price_m:
-                    price_m = re.search(r'\*\s*Cashify Price\s*:\s*₹?([\d,]+)', v_block)
+                if price_m:
+                    price_num = int(price_m.group(1).replace(',', ''))
+                else:
+                    price_base_m = re.search(r'\*\s*Base Best Price\s*:\s*₹?([\d,]+)', v_block)
+                    if not price_base_m:
+                        price_base_m = re.search(r'\*\s*Cashify Price\s*:\s*₹?([\d,]+)', v_block)
+                    if price_base_m:
+                        price_num = round(int(price_base_m.group(1).replace(',', '')) * 1.05)
+                    else:
+                        price_num = 0
 
-                price_num = int(price_m.group(1).replace(',', '')) if price_m else 0
+                ram_val = None
+                storage_val = None
+
+                # 1. Check v_title for RAM / ROM (e.g. 6 GB/64 GB, 8 GB / 128 GB, Pixel 3 4 GB / 128 GB)
+                m_rr = re.search(r'(\d+\s*(?:GB|TB|MB))\s*/\s*(\d+\s*(?:GB|TB|MB))', v_title, re.IGNORECASE)
+                if m_rr:
+                    ram_val = re.sub(r'(\d+)([A-Z]+)', r'\1 \2', m_rr.group(1).upper().replace(' ', ''))
+                    storage_val = re.sub(r'(\d+)([A-Z]+)', r'\1 \2', m_rr.group(2).upper().replace(' ', ''))
+
+                # 2. If non-Apple and not matched, check cashify_url or model name for RAM/ROM pattern (e.g. used-realme-c1-2-gb-16-gb)
+                if not storage_val and not is_apple:
+                    url_rr = re.search(r'[-_](\d+[-_]?(?:gb|tb))[-_](\d+[-_]?(?:gb|tb))', cashify_url, re.IGNORECASE)
+                    if not url_rr:
+                        url_rr = re.search(r'\(?(\d+\s*(?:gb|tb))\s*/\s*(\d+\s*(?:gb|tb))\)?', clean_m_name, re.IGNORECASE)
+                    if url_rr:
+                        ram_val = re.sub(r'(\d+)([A-Z]+)', r'\1 \2', url_rr.group(1).upper().replace('-', '').replace('_', '').replace(' ', ''))
+                        storage_val = re.sub(r'(\d+)([A-Z]+)', r'\1 \2', url_rr.group(2).upper().replace('-', '').replace('_', '').replace(' ', ''))
+
+                # 3. Check for single storage in v_title (e.g. 64 GB, 128 GB, 1 TB)
+                if not storage_val:
+                    m_s = re.search(r'(\b\d+\s*(?:GB|TB|MB)\b)', v_title, re.IGNORECASE)
+                    if m_s:
+                        storage_val = re.sub(r'(\d+)([A-Z]+)', r'\1 \2', m_s.group(1).upper().replace(' ', ''))
+
+                # 4. Check for single storage in cashify_url
+                if not storage_val:
+                    url_s = re.search(r'[-_](\d+[-_]?(?:gb|tb))(?![a-z0-9])', cashify_url, re.IGNORECASE)
+                    if url_s:
+                        storage_val = re.sub(r'(\d+)([A-Z]+)', r'\1 \2', url_s.group(1).upper().replace('-', '').replace('_', '').replace(' ', ''))
+
+                # 5. Check * Storage line in v_block
+                if not storage_val:
+                    st_m = re.search(r'\*\s*Storage\s*:\s*([^\n]+)', v_block)
+                    if st_m and st_m.group(1).strip() != 'N/A':
+                        storage_val = st_m.group(1).strip()
+                    else:
+                        storage_val = 'Standard'
+
+                # Formulate display name
+                if ram_val and storage_val and ram_val.lower() != storage_val.lower():
+                    var_display_name = f"{ram_val} / {storage_val}"
+                else:
+                    var_display_name = storage_val
 
                 variants_list.append({
-                    'name': v_title,
+                    'name': var_display_name,
                     'storage': storage_val,
                     'ram': ram_val if ram_val else None,
                     'price': price_num

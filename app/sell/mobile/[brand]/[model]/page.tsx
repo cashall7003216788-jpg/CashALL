@@ -72,6 +72,10 @@ export default function VariantSelectionPage() {
                       alt={model.name}
                       width={180}
                       height={180}
+                      unoptimized
+                      onError={(e) => {
+                        (e.target as HTMLElement).style.display = "none";
+                      }}
                       className="object-contain max-h-40"
                       priority
                     />
@@ -80,7 +84,9 @@ export default function VariantSelectionPage() {
                   )}
                 </div>
                 <h1 className="text-2xl font-black text-brand-black">
-                  {brand.name} {model.name}
+                  {model.name.toLowerCase().startsWith(brand.name.toLowerCase())
+                    ? model.name
+                    : `${brand.name} ${model.name}`}
                 </h1>
                 <p className="text-xs text-brand-muted mt-1 font-medium">
                   Up to <span className="font-bold text-brand-black">₹{Math.max(...fallbackVariants.map((v) => v.basePrice)).toLocaleString("en-IN")}</span> base valuation
@@ -95,7 +101,7 @@ export default function VariantSelectionPage() {
                       Choose Your Storage Variant
                     </h2>
                     <p className="text-xs text-brand-muted mt-0.5">
-                      Select the exact internal storage capacity of your phone
+                      Select the exact RAM and internal storage capacity of your phone
                     </p>
                   </div>
 
@@ -111,6 +117,10 @@ export default function VariantSelectionPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {fallbackVariants.map((variant) => {
                     const isSelected = selectedVariantId === variant.id;
+                    const variantLabel = variant.ram && variant.ram !== variant.storage 
+                      ? `${variant.ram} / ${variant.storage}` 
+                      : variant.storage;
+
                     return (
                       <button
                         key={variant.id}
@@ -127,10 +137,12 @@ export default function VariantSelectionPage() {
                           </div>
                           <div>
                             <div className="text-sm font-black text-brand-black">
-                              {variant.storage}
+                              {variantLabel}
                             </div>
-                            {variant.ram && (
-                              <div className="text-[11px] text-brand-muted">{variant.ram} RAM</div>
+                            {variant.ram && variant.ram !== variant.storage ? (
+                              <div className="text-[11px] text-brand-muted">{variant.ram} RAM • {variant.storage} ROM</div>
+                            ) : (
+                              <div className="text-[11px] text-brand-muted">{variant.storage} Storage</div>
                             )}
                           </div>
                         </div>
