@@ -279,6 +279,7 @@ export default function LaptopAssessmentPage() {
         category: "LAPTOP",
         customerName: userCustomerName,
         customerPhone: userCustomerPhone,
+        createdAt: newQuote.createdAt,
       }),
     }).catch((err) => console.error("Error saving laptop quote:", err));
 

@@ -294,8 +294,25 @@ export default function AdminQuotesPage() {
                   {filteredQuotes.map((q) => (
                     <tr key={q.id} className="hover:bg-neutral-750/50 transition">
                       {/* QUOTE ID */}
-                      <td className="py-4 px-3 font-mono font-black text-yellow-400">
-                        {q.quoteNumber}
+                      <td className="py-4 px-3">
+                        <div className="font-mono font-black text-yellow-400 text-sm">
+                          {q.quoteNumber}
+                        </div>
+                        <div className="text-[11px] text-neutral-400 flex items-center gap-1.5 mt-1 font-medium" title="Time when quote was generated">
+                          <Clock className="w-3 h-3 text-yellow-400/80 shrink-0" />
+                          <span>
+                            {q.createdAt
+                              ? new Date(q.createdAt).toLocaleString("en-IN", {
+                                  day: "2-digit",
+                                  month: "short",
+                                  year: "numeric",
+                                  hour: "2-digit",
+                                  minute: "2-digit",
+                                  hour12: true,
+                                })
+                              : "—"}
+                          </span>
+                        </div>
                       </td>
 
                       {/* CUSTOMER & PHONE */}

@@ -37,6 +37,8 @@ export async function POST(req: NextRequest) {
       bdObj = { ...breakdownJson };
     }
 
+    const generatedTimestamp = body.createdAt || body.generatedAt || new Date().toISOString();
+    if (!bdObj.generatedAt) bdObj.generatedAt = generatedTimestamp;
     if (deviceName && !bdObj.deviceName) bdObj.deviceName = deviceName;
     if (customerName && !bdObj.customerName) bdObj.customerName = customerName;
     if (customerPhone && !bdObj.customerPhone) bdObj.customerPhone = customerPhone;
@@ -53,6 +55,7 @@ export async function POST(req: NextRequest) {
       saObj = { ...selectedAnswersJson };
     }
 
+    if (!saObj.generatedAt) saObj.generatedAt = generatedTimestamp;
     if (customerName && !saObj.customerName) saObj.customerName = customerName;
     if (customerPhone && !saObj.customerPhone) saObj.customerPhone = customerPhone;
     if (deviceName && !saObj.device) saObj.device = deviceName;

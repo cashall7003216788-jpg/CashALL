@@ -11,6 +11,7 @@ import {
   Phone,
   Smartphone,
   Calendar,
+  Clock,
   CheckCircle2,
   AlertCircle,
   Loader2,
@@ -364,8 +365,25 @@ export default function SupportDashboardPage() {
               <tbody className="divide-y divide-neutral-800/60">
                 {filteredQuotes.map((q) => (
                   <tr key={q.id} className="hover:bg-neutral-850/50 transition">
-                    <td className="py-4 px-3 font-mono font-black text-yellow-400">
-                      {q.quoteNumber}
+                    <td className="py-4 px-3">
+                      <div className="font-mono font-black text-yellow-400 text-sm">
+                        {q.quoteNumber}
+                      </div>
+                      <div className="text-[11px] text-neutral-400 flex items-center gap-1.5 mt-1 font-medium" title="Time when quote was generated">
+                        <Clock className="w-3 h-3 text-yellow-400/80 shrink-0" />
+                        <span>
+                          {q.createdAt
+                            ? new Date(q.createdAt).toLocaleString("en-IN", {
+                                day: "2-digit",
+                                month: "short",
+                                year: "numeric",
+                                hour: "2-digit",
+                                minute: "2-digit",
+                                hour12: true,
+                              })
+                            : "—"}
+                        </span>
+                      </div>
                     </td>
 
                     <td className="py-4 px-3">
@@ -526,6 +544,22 @@ export default function SupportDashboardPage() {
                 <span className="text-neutral-400">Incoming Quote ID:</span>
                 <span className="font-mono font-bold text-yellow-400 bg-yellow-400/10 px-2 py-0.5 rounded border border-yellow-400/20">
                   {quoteToConvert.quoteNumber}
+                </span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-neutral-400">Quote Generated At:</span>
+                <span className="text-neutral-200 font-mono text-[11px] flex items-center gap-1">
+                  <Clock className="w-3 h-3 text-yellow-400 shrink-0" />
+                  {quoteToConvert.createdAt
+                    ? new Date(quoteToConvert.createdAt).toLocaleString("en-IN", {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        hour12: true,
+                      })
+                    : "—"}
                 </span>
               </div>
               <div className="flex justify-between items-center">
@@ -696,9 +730,25 @@ export default function SupportDashboardPage() {
             </div>
 
             <div className="bg-neutral-950 p-4 rounded-2xl border border-neutral-800 space-y-1.5 text-xs">
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center">
                 <span className="text-neutral-400">Quote ID:</span>
                 <span className="font-mono font-bold text-yellow-400">{selectedQuote.quoteNumber}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-neutral-400">Quote Generated At:</span>
+                <span className="text-neutral-200 font-mono text-[11px] flex items-center gap-1">
+                  <Clock className="w-3 h-3 text-yellow-400 shrink-0" />
+                  {selectedQuote.createdAt
+                    ? new Date(selectedQuote.createdAt).toLocaleString("en-IN", {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        hour12: true,
+                      })
+                    : "—"}
+                </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-neutral-400">Customer Name:</span>

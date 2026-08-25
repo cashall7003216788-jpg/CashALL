@@ -48,12 +48,16 @@ function PickupCheckoutContent() {
 
   const ALL_INDIAN_STATES = [
     "West Bengal",
+    "Bihar",
     "Jharkhand",
     "Uttar Pradesh",
   ];
 
   const resolveStateFromPincode = (pin: string): { city: string; state: string } => {
     const p = pin.trim();
+    if (p.startsWith("80") || p.startsWith("81") || p.startsWith("82") || p.startsWith("84") || p.startsWith("85")) {
+      return { city: "Patna", state: "Bihar" };
+    }
     if (p.startsWith("38") || p.startsWith("39")) return { city: "Ahmedabad", state: "Gujarat" };
     if (p.startsWith("40") || p.startsWith("41") || p.startsWith("42")) return { city: "Mumbai", state: "Maharashtra" };
     if (p.startsWith("11")) return { city: "New Delhi", state: "Delhi NCR" };
@@ -61,7 +65,6 @@ function PickupCheckoutContent() {
     if (p.startsWith("60") || p.startsWith("61") || p.startsWith("62")) return { city: "Chennai", state: "Tamil Nadu" };
     if (p.startsWith("50")) return { city: "Hyderabad", state: "Telangana" };
     if (p.startsWith("20") || p.startsWith("22")) return { city: "Lucknow", state: "Uttar Pradesh" };
-    if (p.startsWith("80") || p.startsWith("81")) return { city: "Patna", state: "Bihar" };
     if (p.startsWith("30") || p.startsWith("31")) return { city: "Jaipur", state: "Rajasthan" };
     if (p.startsWith("75")) return { city: "Bhubaneswar", state: "Odisha" };
     if (p.startsWith("78")) return { city: "Guwahati", state: "Assam" };

@@ -64791,8 +64791,9 @@ export const INITIAL_PRICING_RULES: PricingRuleData[] = [
   { id: "r-ac-no", questionId: "q-acc-charger", optionId: "o-ac-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 3 },
   { id: "r-aw-no", questionId: "q-acc-warranty", optionId: "o-aw-no", adjustmentType: "PERCENTAGE_DEDUCTION", adjustmentValue: 3 }];
 
-export const AVAILABLE_STATES = [
+export const INITIAL_SERVICE_STATES: string[] = [
   "West Bengal",
+  "Bihar",
   "Uttar Pradesh",
   "Jharkhand",
 ];
@@ -64801,6 +64802,9 @@ export const INITIAL_SERVICE_AREAS: ServiceAreaData[] = [
   // West Bengal (2 Cities: Kolkata, Barrackpore)
   { id: "sa-1", pincode: "700001", city: "Kolkata", state: "West Bengal", active: true, pickupAvailable: true },
   { id: "sa-2", pincode: "700120", city: "Barrackpore", state: "West Bengal", active: true, pickupAvailable: true },
+
+  // Bihar (1 City: Patna)
+  { id: "sa-6", pincode: "800001", city: "Patna", state: "Bihar", active: true, pickupAvailable: true },
 
   // Uttar Pradesh (2 Cities: Gorakhpur, Ballia)
   { id: "sa-3", pincode: "273001", city: "Gorakhpur", state: "Uttar Pradesh", active: true, pickupAvailable: true },

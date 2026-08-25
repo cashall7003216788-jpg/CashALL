@@ -295,6 +295,7 @@ export default function TabletConditionAssessmentPage() {
         category: "TABLET",
         customerName: userCustomerName,
         customerPhone: userCustomerPhone,
+        createdAt: newQuote.createdAt,
       }),
     }).catch((err) => console.error("Error saving tablet quote:", err));
 
