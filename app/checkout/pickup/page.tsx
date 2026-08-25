@@ -48,16 +48,12 @@ function PickupCheckoutContent() {
 
   const ALL_INDIAN_STATES = [
     "West Bengal",
-    "Bihar",
     "Jharkhand",
     "Uttar Pradesh",
   ];
 
   const resolveStateFromPincode = (pin: string): { city: string; state: string } => {
     const p = pin.trim();
-    if (p.startsWith("80") || p.startsWith("81") || p.startsWith("82") || p.startsWith("84") || p.startsWith("85")) {
-      return { city: "Patna", state: "Bihar" };
-    }
     if (p.startsWith("38") || p.startsWith("39")) return { city: "Ahmedabad", state: "Gujarat" };
     if (p.startsWith("40") || p.startsWith("41") || p.startsWith("42")) return { city: "Mumbai", state: "Maharashtra" };
     if (p.startsWith("11")) return { city: "New Delhi", state: "Delhi NCR" };

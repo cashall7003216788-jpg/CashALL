@@ -247,7 +247,6 @@ async function main() {
   const pincodes = [
     { pincode: "700001", city: "Kolkata", state: "West Bengal" },
     { pincode: "700120", city: "Barrackpore", state: "West Bengal" },
-    { pincode: "800001", city: "Patna", state: "Bihar" },
     { pincode: "273001", city: "Gorakhpur", state: "Uttar Pradesh" },
     { pincode: "277001", city: "Ballia", state: "Uttar Pradesh" },
     { pincode: "834001", city: "Ranchi", state: "Jharkhand" },
