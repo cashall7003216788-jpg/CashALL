@@ -14382,6 +14382,19 @@ const MOBILE_MODELS_PART_4: DeviceModelData[] = [
     "category": "MOBILE"
   },
   {
+    "id": "m-xiaomi-xiaomi-redmi-10-power",
+    "brandId": "b-xiaomi",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi 10 Power",
+    "slug": "xiaomi-redmi-10-power",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/57debd3f-ca29.jpg?w=800",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
     "id": "m-xiaomi-xiaomi-redmi-note-10",
     "brandId": "b-xiaomi",
     "brandSlug": "xiaomi",
@@ -44509,6 +44522,22 @@ const MOBILE_VARIANTS_PART_8: DeviceVariantData[] = [
     "modelId": "m-xiaomi-xiaomi-redmi-9-power",
     "storage": "128 GB",
     "basePrice": 4272,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-10-power-128-gb-8-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-10-power",
+    "storage": "128 GB",
+    "basePrice": 5700,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-10-power-128-gb-6-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-10-power",
+    "storage": "128 GB",
+    "basePrice": 5350,
     "active": true,
     "ram": "6 GB"
   },

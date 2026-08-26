@@ -19,8 +19,16 @@ export default function VariantSelectionPage() {
 
   const [notSureOpen, setNotSureOpen] = useState(false);
 
-  const brand = INITIAL_BRANDS.find((b) => b.slug === brandSlug) || INITIAL_BRANDS[0];
-  const model = INITIAL_MODELS.find((m) => m.slug === modelSlug) || INITIAL_MODELS.find((m) => m.slug === "iphone-15")!;
+  const brand = INITIAL_BRANDS.find((b) => b.slug.toLowerCase() === brandSlug.toLowerCase()) || INITIAL_BRANDS[0];
+  const cleanModelSlug = modelSlug.toLowerCase();
+  const model = INITIAL_MODELS.find(
+    (m) =>
+      m.slug.toLowerCase() === cleanModelSlug ||
+      m.slug.toLowerCase() === `${brandSlug.toLowerCase()}-${cleanModelSlug}` ||
+      m.slug.toLowerCase().replace(`${brandSlug.toLowerCase()}-`, "") === cleanModelSlug.replace(`${brandSlug.toLowerCase()}-`, "") ||
+      m.slug.toLowerCase().replace("note-", "") === cleanModelSlug.replace("note-", "") ||
+      m.name.toLowerCase().replace(/\s+/g, "-") === cleanModelSlug
+  ) || INITIAL_MODELS.find((m) => m.slug === "iphone-15")!;
 
   const variants = INITIAL_VARIANTS.filter((v) => v.modelId === model.id);
   const fallbackVariants = variants.length > 0 ? variants : [

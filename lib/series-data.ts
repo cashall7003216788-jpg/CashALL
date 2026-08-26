@@ -29,8 +29,8 @@ export const BRAND_SERIES_MAP: Record<string, SeriesItem[]> = {
     { id: "s-app-legacy", name: "iPhone 8 / 7 / 6 Series", matchPattern: ["iPhone 8", "iPhone 7", "iPhone 6"] },
   ],
   xiaomi: [
-    { id: "s-xio-note", name: "Redmi Note Series", matchPattern: ["Redmi Note", "Note"] },
-    { id: "s-xio-redmi", name: "Redmi Series", matchPattern: ["Redmi"] },
+    { id: "s-xio-note", name: "Redmi Note Series", matchPattern: ["Redmi Note", "Note", "10 Power"] },
+    { id: "s-xio-redmi", name: "Redmi Series", matchPattern: ["Redmi", "10 Power", "9 Power"] },
     { id: "s-xio-num", name: "Xiaomi Number Series", matchPattern: ["Xiaomi 14", "Xiaomi 13", "Xiaomi 12", "Xiaomi 11", "Xiaomi 15", "14 CIVI"] },
     { id: "s-xio-mi", name: "Mi Series", matchPattern: ["Mi 11", "Mi 10", "Mi Mix", "Mi "] },
     { id: "s-xio-k", name: "Redmi K Series", matchPattern: ["Redmi K"] },

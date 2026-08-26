@@ -117,7 +117,15 @@ export default function ConditionAssessmentPage() {
     active: true,
   };
 
-  const model = INITIAL_MODELS.find((m) => m.slug.toLowerCase() === modelSlug.toLowerCase()) || {
+  const cleanModelSlug = modelSlug.toLowerCase();
+  const model = INITIAL_MODELS.find(
+    (m) =>
+      m.slug.toLowerCase() === cleanModelSlug ||
+      m.slug.toLowerCase() === `${brandSlug.toLowerCase()}-${cleanModelSlug}` ||
+      m.slug.toLowerCase().replace(`${brandSlug.toLowerCase()}-`, "") === cleanModelSlug.replace(`${brandSlug.toLowerCase()}-`, "") ||
+      m.slug.toLowerCase().replace("note-", "") === cleanModelSlug.replace("note-", "") ||
+      m.name.toLowerCase().replace(/\s+/g, "-") === cleanModelSlug
+  ) || {
     id: `m-${modelSlug}`,
     brandId: brand.id,
     brandSlug: brand.slug,
