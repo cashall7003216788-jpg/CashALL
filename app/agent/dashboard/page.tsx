@@ -22,6 +22,8 @@ import {
   ClipboardCheck,
   CreditCard,
   Barcode,
+  Ban,
+  XCircle,
 } from "lucide-react";
 
 interface AgentOrder {
@@ -275,6 +277,57 @@ export default function AgentDashboardPage() {
       setNotification({
         type: "error",
         msg: `Error completing order: ${err.message}`,
+      });
+    } finally {
+      setActionLoading(null);
+    }
+  };
+
+  // Agent: Mark as Customer Rejected Offer / Cancel Order
+  const handleCustomerRejectedOffer = async (ord: AgentOrder) => {
+    const reason = prompt(
+      `Mark Order #${ord.orderNumber} as Customer Rejected Offer / Cancelled? Enter reason:`,
+      "Customer rejected doorstep inspection revised price"
+    );
+    if (reason === null) return;
+
+    setActionLoading(ord.id + "-reject");
+    try {
+      const res = await fetch(`/api/v1/orders/${ord.orderNumber}/cancel`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reason }),
+      });
+
+      const json = await res.json();
+      if (res.ok && json.success) {
+        if (typeof window !== "undefined") {
+          const storedStr = localStorage.getItem(`cashall_order_${ord.orderNumber}`);
+          if (storedStr) {
+            try {
+              const parsed = JSON.parse(storedStr);
+              parsed.status = "CANCELLED";
+              localStorage.setItem(`cashall_order_${ord.orderNumber}`, JSON.stringify(parsed));
+            } catch (e) {}
+          }
+        }
+
+        setNotification({
+          type: "success",
+          msg: `🛑 Order #${ord.orderNumber} marked as CANCELLED (Customer Rejected Offer). Doorstep pickup closed.`,
+        });
+
+        await fetchOrders();
+      } else {
+        setNotification({
+          type: "error",
+          msg: json.error || "Failed to cancel order.",
+        });
+      }
+    } catch (err: any) {
+      setNotification({
+        type: "error",
+        msg: `Error cancelling order: ${err.message}`,
       });
     } finally {
       setActionLoading(null);
@@ -566,21 +619,37 @@ export default function AgentDashboardPage() {
                       </Link>
                     </div>
 
-                    {/* RIGHT BUTTONS: Mark Paid */}
-                    <div className="flex items-center gap-2">
+                    {/* RIGHT BUTTONS: Mark Paid & Customer Rejected */}
+                    <div className="flex items-center gap-2 flex-wrap">
                       {!isCompleted ? (
-                        <button
-                          onClick={() => handleMarkPaid(ord)}
-                          disabled={actionLoading === ord.id + "-paid"}
-                          className="inline-flex items-center gap-1.5 text-xs font-black bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-xl transition shadow-md disabled:opacity-60 cursor-pointer"
-                        >
-                          {actionLoading === ord.id + "-paid" ? (
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                          ) : (
-                            <CheckCircle2 className="w-4 h-4" />
-                          )}
-                          <span>Mark Paid</span>
-                        </button>
+                        <>
+                          <button
+                            onClick={() => handleCustomerRejectedOffer(ord)}
+                            disabled={actionLoading === ord.id + "-reject"}
+                            className="inline-flex items-center gap-1.5 text-xs font-bold bg-red-950/80 hover:bg-red-900 text-red-300 border border-red-800 px-4 py-2.5 rounded-xl transition shadow-md disabled:opacity-60 cursor-pointer"
+                            title="Customer rejected offer or wants to cancel order"
+                          >
+                            {actionLoading === ord.id + "-reject" ? (
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                            ) : (
+                              <Ban className="w-4 h-4 text-red-400" />
+                            )}
+                            <span>Customer Rejected / Cancel</span>
+                          </button>
+
+                          <button
+                            onClick={() => handleMarkPaid(ord)}
+                            disabled={actionLoading === ord.id + "-paid"}
+                            className="inline-flex items-center gap-1.5 text-xs font-black bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-xl transition shadow-md disabled:opacity-60 cursor-pointer"
+                          >
+                            {actionLoading === ord.id + "-paid" ? (
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                            ) : (
+                              <CheckCircle2 className="w-4 h-4" />
+                            )}
+                            <span>Mark Paid</span>
+                          </button>
+                        </>
                       ) : (
                         <div className="inline-flex items-center gap-1.5 text-xs font-black text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-4 py-2 rounded-xl">
                           <CheckCircle2 className="w-4 h-4" />

@@ -16,6 +16,7 @@ import {
   Download,
   Printer,
   CheckCircle2,
+  Ban,
 } from "lucide-react";
 
 interface Quote {
@@ -95,6 +96,31 @@ export default function AdminQuotesPage() {
       alert(err.message || "Error converting quote to order.");
     } finally {
       setConvertingOrder(false);
+    }
+  };
+
+  const handleCancelQuoteAdmin = async (q: Quote) => {
+    const reason = prompt(
+      `Cancel Quote #${q.quoteNumber}? Enter reason:`,
+      "Quote cancelled / lead discarded by Admin"
+    );
+    if (reason === null) return;
+
+    try {
+      const res = await fetch(`/api/v1/quotes/${q.quoteNumber}/cancel`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reason }),
+      });
+      const json = await res.json();
+      if (json.success) {
+        setSuccessToast(`🛑 Quote ${q.quoteNumber} has been marked as CANCELLED!`);
+        await fetchQuotes();
+      } else {
+        alert(json.error || "Failed to cancel quote");
+      }
+    } catch (err: any) {
+      alert(err.message || "Error cancelling quote");
     }
   };
 
@@ -374,24 +400,39 @@ export default function AdminQuotesPage() {
                         {new Date(q.createdAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })}
                       </td>
 
-                      {/* ACTION CONVERT */}
+                      {/* ACTION CONVERT & CANCEL */}
                       <td className="py-4 px-3">
-                        {q.status !== "ORDERED" && q.status !== "COMPLETED" && q.status !== "CONVERTED" ? (
-                          <button
-                            onClick={() => {
-                              setQuoteToConvert(q);
-                              setConvertForm((prev) => ({
-                                ...prev,
-                                customerName: q.customerName || "",
-                                customerPhone: q.customerPhone || "",
-                              }));
-                            }}
-                            className="inline-flex items-center gap-1.5 bg-yellow-400 hover:bg-yellow-300 text-black font-black text-xs px-3 py-1.5 rounded-xl transition shadow-yellowGlow"
-                            title="Convert Quote into Order (CA...)"
-                          >
-                            <CheckCircle2 className="w-3.5 h-3.5" />
-                            <span>Convert (CA...)</span>
-                          </button>
+                        {q.status !== "ORDERED" && q.status !== "COMPLETED" && q.status !== "CONVERTED" && q.status !== "CANCELLED" ? (
+                          <div className="flex items-center gap-1.5 flex-wrap">
+                            <button
+                              onClick={() => {
+                                setQuoteToConvert(q);
+                                setConvertForm((prev) => ({
+                                  ...prev,
+                                  customerName: q.customerName || "",
+                                  customerPhone: q.customerPhone || "",
+                                }));
+                              }}
+                              className="inline-flex items-center gap-1.5 bg-yellow-400 hover:bg-yellow-300 text-black font-black text-xs px-3 py-1.5 rounded-xl transition shadow-yellowGlow"
+                              title="Convert Quote into Order (CA...)"
+                            >
+                              <CheckCircle2 className="w-3.5 h-3.5" />
+                              <span>Convert (CA...)</span>
+                            </button>
+
+                            <button
+                              onClick={() => handleCancelQuoteAdmin(q)}
+                              className="inline-flex items-center gap-1 bg-red-950/80 hover:bg-red-900 text-red-300 border border-red-800 font-bold text-xs px-2.5 py-1.5 rounded-xl transition shadow-sm"
+                              title="Cancel / Reject Quote"
+                            >
+                              <Ban className="w-3.5 h-3.5 text-red-400" />
+                              <span>Cancel</span>
+                            </button>
+                          </div>
+                        ) : q.status === "CANCELLED" ? (
+                          <span className="text-red-400 text-[11px] font-bold bg-red-950/60 border border-red-800 px-2 py-0.5 rounded-lg">
+                            CANCELLED
+                          </span>
                         ) : (
                           <span className="text-neutral-500 text-[11px] font-bold">Converted</span>
                         )}

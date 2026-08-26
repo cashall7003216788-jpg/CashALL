@@ -24,6 +24,9 @@ import {
   Download,
   Printer,
   FileSpreadsheet,
+  Ban,
+  XCircle,
+  AlertTriangle,
 } from "lucide-react";
 
 interface Order {
@@ -533,6 +536,42 @@ export default function AdminOrdersPage() {
     }
   };
 
+  // Cancel Order from Admin
+  const handleCancelOrderAdmin = async (ord: Order) => {
+    const reason = prompt(
+      `Cancel Order #${ord.orderNumber}? Enter cancellation reason:`,
+      "Customer rejected offer / order cancelled"
+    );
+    if (reason === null) return;
+
+    setActionLoading(ord.id + "-cancel");
+    try {
+      await fetch(`/api/v1/orders/${ord.orderNumber}/cancel`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reason }),
+      });
+
+      if (typeof window !== "undefined") {
+        const storedStr = localStorage.getItem(`cashall_order_${ord.orderNumber}`);
+        if (storedStr) {
+          try {
+            const parsed = JSON.parse(storedStr);
+            parsed.status = "CANCELLED";
+            localStorage.setItem(`cashall_order_${ord.orderNumber}`, JSON.stringify(parsed));
+          } catch (e) {}
+        }
+      }
+
+      await fetchOrders();
+      alert(`🛑 Order #${ord.orderNumber} has been marked as CANCELLED!`);
+    } catch (err: any) {
+      alert(`Error cancelling order: ${err.message}`);
+    } finally {
+      setActionLoading(null);
+    }
+  };
+
   // 1. Export Admin Data CSV (Complete raw operational dataset)
   const handleDownloadAdminDataCSV = () => {
     if (orders.length === 0) return;
@@ -935,6 +974,18 @@ export default function AdminOrdersPage() {
                     <FileText className="w-3.5 h-3.5" />
                     <span>View Bill</span>
                   </Link>
+
+                  {!["COMPLETED", "BILL_GENERATED", "CANCELLED", "REJECTED"].includes(ord.status) && (
+                    <button
+                      onClick={() => handleCancelOrderAdmin(ord)}
+                      disabled={actionLoading === ord.id + "-cancel"}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-red-300 bg-red-950/80 hover:bg-red-900 border border-red-800 px-3.5 py-2 rounded-xl transition shadow-md disabled:opacity-60"
+                      title="Cancel Order"
+                    >
+                      {actionLoading === ord.id + "-cancel" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Ban className="w-3.5 h-3.5 text-red-400" />}
+                      <span>Cancel Order</span>
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
