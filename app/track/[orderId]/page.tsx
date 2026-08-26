@@ -26,6 +26,8 @@ import {
   ChevronRight,
   ArrowRight,
   Printer,
+  XCircle,
+  Ban,
 } from "lucide-react";
 
 export default function OrderTrackingPage() {
@@ -35,6 +37,8 @@ export default function OrderTrackingPage() {
   const [order, setOrder] = useState<OrderData | null>(null);
   const [customerDecision, setCustomerDecision] = useState<"NONE" | "ACCEPTED" | "DECLINED">("NONE");
   const [handoverModalOpen, setHandoverModalOpen] = useState(false);
+  const [cancelModalOpen, setCancelModalOpen] = useState(false);
+  const [isCancelling, setIsCancelling] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -194,30 +198,43 @@ export default function OrderTrackingPage() {
     }
   };
 
-  const handleDeclineOffer = async () => {
+  const handleCancelOrder = async (reason = "Customer declined offer / cancelled order.") => {
+    setIsCancelling(true);
     try {
       setCustomerDecision("DECLINED");
-      await fetch(`/api/v1/orders/${order.id || order.orderNumber}/accept-offer`, {
+      await fetch(`/api/v1/orders/${order.id || order.orderNumber}/cancel`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ accept: false, declineReason: "Customer rejected final price." }),
-      });
+        body: JSON.stringify({ reason }),
+      }).catch(() => null);
 
       const updated: OrderData = {
         ...order,
-        status: "REJECTED",
+        status: "CANCELLED",
         updatedAt: new Date().toISOString(),
       };
       setOrder(updated);
       if (typeof window !== "undefined") {
         localStorage.setItem(`cashall_order_${order.orderNumber}`, JSON.stringify(updated));
+        const allSaved = JSON.parse(localStorage.getItem("cashall_all_orders") || "[]");
+        const nextSaved = allSaved.map((o: any) => o.orderNumber === order.orderNumber ? { ...o, status: "CANCELLED" } : o);
+        localStorage.setItem("cashall_all_orders", JSON.stringify(nextSaved));
       }
+      setCancelModalOpen(false);
     } catch (e) {
       console.error(e);
+    } finally {
+      setIsCancelling(false);
     }
   };
 
+  const handleDeclineOffer = async () => {
+    await handleCancelOrder("Customer declined final valuation offer.");
+  };
+
   const isRevised = order.priceDifferenceReason && order.declaredConditionSummary;
+  const isCancelled = order.status === "CANCELLED" || order.status === "REJECTED" || customerDecision === "DECLINED";
+  const isPaid = order.paymentStatus === "PAID" || order.status === "COMPLETED" || customerDecision === "ACCEPTED";
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg text-brand-black">
@@ -231,7 +248,9 @@ export default function OrderTrackingPage() {
               <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">
                 <span>Selling Order Tracker</span>
                 <span>•</span>
-                <Badge variant="yellow">{order.status.replace(/_/g, " ")}</Badge>
+                <Badge variant={isCancelled ? "danger" : isPaid ? "success" : "yellow"}>
+                  {isCancelled ? "CANCELLED" : order.status.replace(/_/g, " ")}
+                </Badge>
               </div>
               <h1 className="text-2xl font-black text-brand-black">
                 Order ID: {order.orderNumber}
@@ -245,18 +264,59 @@ export default function OrderTrackingPage() {
               <div>
                 <div className="text-xs font-bold text-gray-400 uppercase">CashALL Final Offer</div>
                 <div className="text-2xl sm:text-3xl font-black text-brand-black font-price">
-                  ₹{(order.revisedPrice || 31400).toLocaleString("en-IN")}
+                  ₹{(order.revisedPrice || order.estimatedPrice || 31400).toLocaleString("en-IN")}
                 </div>
               </div>
-              <div>
+              <div className="flex items-center sm:justify-end gap-2">
                 <Link href={`/order/${order.orderNumber}/bill`}>
                   <Button variant="outline" size="sm" className="font-extrabold text-xs">
                     <span>View Official Bill</span>
                   </Button>
                 </Link>
+                {!isPaid && !isCancelled && (
+                  <Button
+                    onClick={() => setCancelModalOpen(true)}
+                    variant="outline"
+                    size="sm"
+                    className="font-bold text-xs text-red-600 hover:bg-red-50 border-red-200"
+                  >
+                    <span>Cancel Order</span>
+                  </Button>
+                )}
               </div>
             </div>
           </div>
+
+          {/* CANCELLED STATUS BANNER */}
+          {isCancelled && (
+            <div className="bg-red-50 border-2 border-red-200 rounded-3xl p-6 sm:p-8 space-y-4 animate-fadeIn">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-red-100 flex items-center justify-center text-red-600 shrink-0">
+                  <XCircle className="w-7 h-7" />
+                </div>
+                <div className="space-y-1">
+                  <h2 className="text-xl font-black text-red-950">Order Cancelled</h2>
+                  <p className="text-xs text-red-800 leading-relaxed max-w-2xl">
+                    This order #{order.orderNumber} has been cancelled. Doorstep pickup and evaluation have been called off. No penalty or fee applies.
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <Link href="/sell/mobile">
+                  <Button variant="primary" size="sm" className="font-extrabold shadow-yellowGlow gap-1.5">
+                    <span>Sell Another Device / Re-quote</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+                <Link href="/account">
+                  <Button variant="outline" size="sm" className="font-bold">
+                    <span>Go to My Account</span>
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          )}
 
           {/* ASSIGNED PICKUP EXECUTIVE CARD */}
           {order.assignedPartnerName ? (
@@ -425,17 +485,18 @@ export default function OrderTrackingPage() {
                     </Button>
 
                     <Button
-                      onClick={handleDeclineOffer}
+                      onClick={() => setCancelModalOpen(true)}
                       variant="tertiary"
                       size="lg"
                       fullWidth
-                      className="font-bold text-red-600 hover:bg-red-50 border-red-200"
+                      className="font-bold text-red-600 hover:bg-red-50 border-red-200 gap-2"
                     >
-                      DECLINE OFFER
+                      <Ban className="w-4 h-4" />
+                      <span>DECLINE OFFER & CANCEL ORDER</span>
                     </Button>
                   </div>
                   <p className="text-[11px] text-center text-brand-muted">
-                    If you decline, your phone will be returned immediately at zero cost.
+                    If you decline, your phone will be returned immediately with zero cancellation fee.
                   </p>
                 </div>
               ) : customerDecision === "ACCEPTED" ? (
@@ -480,8 +541,9 @@ export default function OrderTrackingPage() {
                   </div>
                 </div>
               ) : (
-                <div className="bg-red-50 rounded-2xl p-4 border border-red-200 text-xs text-red-800">
-                  Offer declined. Device return initiated by pickup agent.
+                <div className="bg-red-50 rounded-2xl p-4 border border-red-200 text-xs text-red-800 flex items-center gap-2">
+                  <XCircle className="w-4 h-4 text-red-600 shrink-0" />
+                  <span>Offer declined. Order is marked as cancelled. No pickup or fee applies.</span>
                 </div>
               )}
 
@@ -490,6 +552,46 @@ export default function OrderTrackingPage() {
 
         </div>
       </main>
+
+      {/* CANCEL ORDER CONFIRMATION MODAL */}
+      <Modal
+        isOpen={cancelModalOpen}
+        onClose={() => !isCancelling && setCancelModalOpen(false)}
+        title="Cancel Order Confirmation"
+      >
+        <div className="space-y-4 text-xs">
+          <div className="flex items-start gap-3 p-4 bg-red-50 rounded-2xl border border-red-200 text-red-900">
+            <AlertTriangle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+            <div className="space-y-1">
+              <p className="font-bold text-sm">Are you sure you want to cancel this order?</p>
+              <p className="leading-relaxed">
+                If you cancel order <strong>#{order.orderNumber}</strong>, doorstep pickup and inspection will be called off immediately with zero cancellation fee.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-end gap-3 pt-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCancelModalOpen(false)}
+              disabled={isCancelling}
+              className="font-bold"
+            >
+              Keep Order Active
+            </Button>
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={() => handleCancelOrder("Customer declined offer / cancelled order")}
+              disabled={isCancelling}
+              className="font-extrabold bg-red-600 hover:bg-red-700 text-white border-transparent shadow-none"
+            >
+              {isCancelling ? "Cancelling..." : "Yes, Cancel Order"}
+            </Button>
+          </div>
+        </div>
+      </Modal>
 
       {/* IN-APP DEVICE HANDOVER RECORD MODAL (Section 37) */}
       <Modal

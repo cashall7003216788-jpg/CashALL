@@ -72,7 +72,7 @@ export interface QuoteData {
   estimatedPrice: number;
   breakdownJson: string;
   expiresAt: string;
-  status: "ACTIVE" | "ORDERED" | "EXPIRED";
+  status: "ACTIVE" | "ORDERED" | "EXPIRED" | "CANCELLED";
   createdAt: string;
 }
 

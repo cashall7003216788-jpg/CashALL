@@ -27,6 +27,8 @@ import {
   CheckCircle2,
   Lock,
   RefreshCw,
+  XCircle,
+  Ban,
 } from "lucide-react";
 
 
@@ -37,6 +39,8 @@ export default function QuoteResultPage() {
 
   const [quote, setQuote] = useState<QuoteData | null>(null);
   const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [cancelModalOpen, setCancelModalOpen] = useState(false);
+  const [isCancelling, setIsCancelling] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [otpSent, setOtpSent] = useState(false);
   const [otpCode, setOtpCode] = useState("");
@@ -44,6 +48,38 @@ export default function QuoteResultPage() {
   const [loading, setLoading] = useState(false);
   const [otpError, setOtpError] = useState("");
   const [countdown, setCountdown] = useState(0);
+
+  const handleCancelQuote = async (reason = "Customer declined quote.") => {
+    if (!quote) return;
+    setIsCancelling(true);
+    try {
+      await fetch(`/api/v1/quotes/${quote.id || quote.quoteNumber}/cancel`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reason }),
+      }).catch(() => null);
+
+      const updated: QuoteData = {
+        ...quote,
+        status: "CANCELLED",
+      };
+      setQuote(updated);
+      if (typeof window !== "undefined") {
+        localStorage.setItem(`cashall_quote_${quote.id}`, JSON.stringify(updated));
+        localStorage.setItem("cashall_latest_quote", JSON.stringify(updated));
+        const savedQuotes = JSON.parse(localStorage.getItem("cashall_quotes") || "[]");
+        const nextQuotes = savedQuotes.map((q: any) =>
+          q.id === quote.id || q.quoteNumber === quote.quoteNumber ? { ...q, status: "CANCELLED" } : q
+        );
+        localStorage.setItem("cashall_quotes", JSON.stringify(nextQuotes));
+      }
+      setCancelModalOpen(false);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setIsCancelling(false);
+    }
+  };
 
   // Countdown for resend
   useEffect(() => {
@@ -215,6 +251,8 @@ export default function QuoteResultPage() {
     setOtpError("");
   };
 
+  const isCancelled = quote.status === "CANCELLED";
+
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg text-brand-black">
       <Header />
@@ -227,14 +265,14 @@ export default function QuoteResultPage() {
 
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-dark border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Instant CashALL Valuation</span>
+              <span>{isCancelled ? "Cancelled Valuation" : "Instant CashALL Valuation"}</span>
             </div>
 
             <h1 className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-              YOUR ESTIMATED CASHALL VALUE
+              {isCancelled ? "VALUATION OFFER (CANCELLED)" : "YOUR ESTIMATED CASHALL VALUE"}
             </h1>
 
-            <div className="text-4xl sm:text-6xl font-black text-brand-yellow tracking-tight font-price">
+            <div className={`text-4xl sm:text-6xl font-black tracking-tight font-price ${isCancelled ? "text-gray-500 line-through" : "text-brand-yellow"}`}>
               ₹{quote.estimatedPrice.toLocaleString("en-IN")}
             </div>
 
@@ -243,12 +281,50 @@ export default function QuoteResultPage() {
               <span className="font-bold">{resolvedDeviceName}</span>
             </div>
 
-            {/* EXPIRY TIMER */}
-            <div className="pt-2 flex items-center justify-center gap-2 text-xs text-amber-400 bg-amber-950/40 border border-amber-800/60 rounded-full py-1.5 px-4 max-w-xs mx-auto">
-              <Clock className="w-3.5 h-3.5 shrink-0" />
-              <span>Quote valid for 48 hours</span>
-            </div>
+            {/* EXPIRY TIMER OR CANCELLED STATUS */}
+            {isCancelled ? (
+              <div className="pt-2 flex items-center justify-center gap-2 text-xs text-red-400 bg-red-950/40 border border-red-800/60 rounded-full py-1.5 px-4 max-w-xs mx-auto">
+                <Ban className="w-3.5 h-3.5 shrink-0" />
+                <span>Quote cancelled by customer</span>
+              </div>
+            ) : (
+              <div className="pt-2 flex items-center justify-center gap-2 text-xs text-amber-400 bg-amber-950/40 border border-amber-800/60 rounded-full py-1.5 px-4 max-w-xs mx-auto">
+                <Clock className="w-3.5 h-3.5 shrink-0" />
+                <span>Quote valid for 48 hours</span>
+              </div>
+            )}
           </div>
+
+          {/* CANCELLED STATUS BANNER */}
+          {isCancelled && (
+            <div className="bg-red-50 border-2 border-red-200 rounded-3xl p-6 sm:p-8 space-y-4 animate-fadeIn">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-red-100 flex items-center justify-center text-red-600 shrink-0">
+                  <XCircle className="w-7 h-7" />
+                </div>
+                <div className="space-y-1">
+                  <h2 className="text-xl font-black text-red-950">Quote Cancelled</h2>
+                  <p className="text-xs text-red-800 leading-relaxed max-w-2xl">
+                    This valuation quote #{quote.quoteNumber} has been marked as cancelled. No pickup will be scheduled. You can evaluate another device or restart anytime.
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <Link href="/sell/mobile">
+                  <Button variant="primary" size="sm" className="font-extrabold shadow-yellowGlow gap-1.5">
+                    <span>Calculate New Valuation</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+                <Link href="/account">
+                  <Button variant="outline" size="sm" className="font-bold">
+                    <span>Back to My Account</span>
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          )}
 
           {/* TRANSPARENT PRICE BREAKDOWN CARD */}
           <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-border shadow-premium space-y-6">
@@ -261,8 +337,8 @@ export default function QuoteResultPage() {
                   Line-item breakdown of how your estimated price was derived
                 </p>
               </div>
-              <span className="text-xs font-bold text-gray-400 bg-gray-100 px-2.5 py-1 rounded-lg">
-                Quote ID: {quote.quoteNumber}
+              <span className={`text-xs font-bold px-2.5 py-1 rounded-lg ${isCancelled ? "bg-red-100 text-red-700" : "bg-gray-100 text-gray-500"}`}>
+                {isCancelled ? "CANCELLED" : `Quote ID: ${quote.quoteNumber}`}
               </span>
             </div>
 
@@ -296,7 +372,7 @@ export default function QuoteResultPage() {
               {/* TOTAL ESTIMATED VALUE */}
               <div className="pt-4 pb-2 flex items-center justify-between font-black text-base sm:text-lg text-brand-black">
                 <span>Estimated CashALL Value</span>
-                <span className="text-xl sm:text-2xl font-price text-black">
+                <span className={`text-xl sm:text-2xl font-price ${isCancelled ? "text-gray-400 line-through" : "text-black"}`}>
                   ₹{quote.estimatedPrice.toLocaleString("en-IN")}
                 </span>
               </div>
@@ -319,18 +395,39 @@ export default function QuoteResultPage() {
             </div>
 
             {/* CTA */}
-            <div className="pt-4">
-              <Button
-                onClick={handleScheduleClick}
-                variant="primary"
-                size="lg"
-                fullWidth
-                className="font-black text-base py-4 gap-2 shadow-yellowGlow"
-              >
-                <span>SCHEDULE FAST PICKUP</span>
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-            </div>
+            {isCancelled ? (
+              <div className="pt-4">
+                <Link href="/sell/mobile" className="block w-full">
+                  <Button variant="primary" size="lg" fullWidth className="font-black text-base py-4 gap-2 shadow-yellowGlow">
+                    <span>START NEW VALUATION</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </Button>
+                </Link>
+              </div>
+            ) : (
+              <div className="pt-4 flex flex-col sm:flex-row items-center gap-3">
+                <Button
+                  onClick={handleScheduleClick}
+                  variant="primary"
+                  size="lg"
+                  fullWidth
+                  className="font-black text-base py-4 gap-2 shadow-yellowGlow"
+                >
+                  <span>SCHEDULE FAST PICKUP</span>
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+
+                <Button
+                  onClick={() => setCancelModalOpen(true)}
+                  variant="tertiary"
+                  size="lg"
+                  className="font-bold text-xs text-red-600 hover:bg-red-50 border border-red-200 shrink-0 px-5 py-4 gap-1.5"
+                >
+                  <Ban className="w-4 h-4" />
+                  <span>Decline Quote</span>
+                </Button>
+              </div>
+            )}
 
           </div>
 
@@ -456,6 +553,46 @@ export default function QuoteResultPage() {
             </div>
           </form>
         )}
+      </Modal>
+
+      {/* CANCEL QUOTE CONFIRMATION MODAL */}
+      <Modal
+        isOpen={cancelModalOpen}
+        onClose={() => !isCancelling && setCancelModalOpen(false)}
+        title="Decline / Cancel Quote Confirmation"
+      >
+        <div className="space-y-4 text-xs">
+          <div className="flex items-start gap-3 p-4 bg-red-50 rounded-2xl border border-red-200 text-red-900">
+            <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+            <div className="space-y-1">
+              <p className="font-bold text-sm">Decline this valuation offer?</p>
+              <p className="leading-relaxed">
+                If you decline this quote <strong>#{quote.quoteNumber}</strong>, this price valuation will be cancelled and closed. No pickup will be scheduled.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-end gap-3 pt-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCancelModalOpen(false)}
+              disabled={isCancelling}
+              className="font-bold"
+            >
+              Keep Quote
+            </Button>
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={() => handleCancelQuote("Customer declined quote")}
+              disabled={isCancelling}
+              className="font-extrabold bg-red-600 hover:bg-red-700 text-white border-transparent shadow-none"
+            >
+              {isCancelling ? "Cancelling..." : "Yes, Decline & Cancel Quote"}
+            </Button>
+          </div>
+        </div>
       </Modal>
 
       <Footer />
