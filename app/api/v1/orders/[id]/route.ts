@@ -19,6 +19,7 @@ export const GET = apiWrapper(async (req: NextRequest, { params }: { params: { i
     },
     include: {
       user: true,
+      agent: true,
       quote: {
         include: {
           variant: {
@@ -78,9 +79,11 @@ export const GET = apiWrapper(async (req: NextRequest, { params }: { params: { i
 
   const assignedPartner = order.pickups?.[0]?.partner;
   const pickup = order.pickups?.[0];
-  const assignedAgentName = (pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically.")
+  const assignedAgentName = order.agent?.name || ((pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically.")
     ? pickup.notes
-    : (assignedPartner?.name || assignedPartner?.businessName || null);
+    : (assignedPartner?.name || assignedPartner?.businessName || null));
+
+  const assignedAgentPhone = order.agent?.phone || assignedPartner?.phone || (assignedAgentName ? "7003216788" : null);
 
   const activePayment = order.payments?.find((p: any) => p.status === "PAID") || order.payments?.[0];
 
@@ -94,7 +97,9 @@ export const GET = apiWrapper(async (req: NextRequest, { params }: { params: { i
       customerPhone: order.user?.phone || "—",
       customerEmail: order.user?.email || null,
       assignedPartnerName: assignedAgentName,
-      assignedPartnerPhone: assignedPartner?.phone || "7003216788",
+      assignedPartnerPhone: assignedAgentPhone,
+      agentName: assignedAgentName,
+      agentPhone: assignedAgentPhone,
       assignedPartnerBusiness: assignedPartner?.businessName || "CashALL Express Logistics",
       utr: order.urn || activePayment?.transactionRef || "",
       urn: order.urn || activePayment?.transactionRef || "",

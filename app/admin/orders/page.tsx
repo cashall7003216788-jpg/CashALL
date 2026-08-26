@@ -225,6 +225,7 @@ export default function AdminOrdersPage() {
   const handleSelectAgent = async (ord: Order, selectedAgentId: string) => {
     const selectedObj = availableAgents.find((a) => a.id === selectedAgentId);
     const agentName = selectedObj ? selectedObj.name : "";
+    const agentPhone = selectedObj ? selectedObj.phone : "";
 
     setActionLoading(ord.id + "-agent");
     try {
@@ -250,7 +251,9 @@ export default function AdminOrdersPage() {
               const parsed = JSON.parse(storedStr);
               parsed.agentId = selectedAgentId;
               parsed.assignedPartnerName = agentName;
+              parsed.assignedPartnerPhone = agentPhone;
               parsed.agentName = agentName;
+              parsed.agentPhone = agentPhone;
               parsed.status = "PARTNER_ASSIGNED";
               localStorage.setItem(`cashall_order_${ord.orderNumber}`, JSON.stringify(parsed));
             } catch (e) {}

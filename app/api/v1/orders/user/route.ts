@@ -31,6 +31,7 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     },
     include: {
       user: true,
+      agent: true,
       address: true,
       quote: {
         include: {
@@ -43,7 +44,10 @@ export const GET = apiWrapper(async (req: NextRequest) => {
           },
         },
       },
-      pickups: true,
+      pickups: {
+        include: { partner: true },
+        orderBy: { createdAt: "desc" },
+      },
     },
     orderBy: {
       createdAt: "desc",
@@ -82,6 +86,8 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     const estimatedPrice = ord.quote?.estimatedPrice || ord.finalPrice || 0;
 
     const pickup = ord.pickups && ord.pickups.length > 0 ? ord.pickups[0] : null;
+    const assignedAgentName = ord.agent?.name || (pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically." ? pickup.notes : null);
+    const assignedAgentPhone = ord.agent?.phone || pickup?.partner?.phone || (assignedAgentName ? "7003216788" : null);
 
     return {
       id: ord.id,
@@ -98,7 +104,10 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       pickupDate: pickup?.date ? pickup.date : "Tomorrow",
       pickupTimeSlot: pickup?.timeSlot || "10 AM - 1 PM",
       status: ord.status,
-      assignedPartnerName: undefined,
+      assignedPartnerName: assignedAgentName,
+      assignedPartnerPhone: assignedAgentPhone,
+      agentName: assignedAgentName,
+      agentPhone: assignedAgentPhone,
       estimatedPrice,
       revisedPrice: ord.finalPrice || estimatedPrice,
       declaredConditionSummary: `${deviceName} - ₹${estimatedPrice.toLocaleString("en-IN")}`,

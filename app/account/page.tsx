@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { OrderData } from "@/lib/store";
-import { User, Smartphone, ArrowRight, Clock } from "lucide-react";
+import { User, Smartphone, ArrowRight, Clock, UserCheck, Phone } from "lucide-react";
 import { cleanDeviceName } from "@/lib/device";
 
 export default function CustomerAccountPage() {
@@ -139,6 +139,25 @@ export default function CustomerAccountPage() {
                           <span>Pickup: {ord.pickupDate} ({ord.pickupTimeSlot})</span>
                         </span>
                       </div>
+
+                      {ord.assignedPartnerName && (
+                        <div className="flex flex-wrap items-center gap-2 pt-1">
+                          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 border border-green-200 text-green-800 rounded-full text-xs font-bold">
+                            <UserCheck className="w-3.5 h-3.5 text-green-600 shrink-0" />
+                            <span>Executive: {ord.assignedPartnerName}</span>
+                          </div>
+                          {ord.assignedPartnerPhone && (
+                            <a
+                              href={`tel:${ord.assignedPartnerPhone}`}
+                              className="inline-flex items-center gap-1 px-2.5 py-1 bg-brand-yellow text-brand-black rounded-full text-xs font-black hover:bg-brand-yellowHover transition-colors shadow-xs"
+                              title={`Call ${ord.assignedPartnerName}`}
+                            >
+                              <Phone className="w-3 h-3" />
+                              <span>Call ({ord.assignedPartnerPhone})</span>
+                            </a>
+                          )}
+                        </div>
+                      )}
                     </div>
 
                     <div className="flex flex-col sm:items-end justify-between gap-3 border-t sm:border-t-0 pt-3 sm:pt-0 border-gray-100">
