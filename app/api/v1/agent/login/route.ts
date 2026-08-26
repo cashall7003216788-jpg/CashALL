@@ -50,7 +50,7 @@ export async function POST(req: Request) {
       });
     }
 
-    // 2. Fetch all active AGENT users to allow fuzzy/punctuation-tolerant matching (e.g. 'md samir beg' -> 'Md. Samir Beg')
+    // 2. Fetch all active AGENT users to allow fuzzy/punctuation-tolerant matching (e.g. 'md samim beg' -> 'Md. Samim Beg')
     const allAgents = await prisma.user.findMany({
       where: {
         role: "AGENT",
