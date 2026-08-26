@@ -62,15 +62,15 @@ async function getOrderBillData(orderIdentifier: string) {
   const finalPrice = order.finalPrice || order.qcReports?.[0]?.revisedPrice || order.quote?.estimatedPrice || 0;
   const rawUtr = order.urn || payment?.transactionRef || (order as any).utr || "";
   const utrNumber = rawUtr && !rawUtr.startsWith("PAID-") && rawUtr !== "623480124575" ? rawUtr : "";
-  const imeiCode = order.imeiRecords?.[0]?.code || order.qcReports?.[0]?.imeiNumber || (order as any).imeiNumber || "123456789123456";
-  const agentName = order.agent?.name || order.pickups?.[0]?.notes || "HYDER ALI";
+  const imeiCode = order.imeiRecords?.[0]?.code || order.qcReports?.[0]?.imeiNumber || (order as any).imeiNumber || "N/A";
+  const agentName = order.agent?.name || order.pickups?.[0]?.notes || "Hyder Ali";
 
   const customerAddress = order.address
     ? [order.address.house, order.address.street, order.address.area, order.address.city, order.address.state ? `${order.address.state} - ${order.address.pincode}` : order.address.pincode].filter(Boolean).join(", ")
-    : "158, ghughupara road, bhattanagar, liluah, howrah, West Bengal - 711203";
+    : "Howrah, West Bengal";
 
   const currentYear = new Date().getFullYear();
-  const billNumber = `${order.orderNumber}-${currentYear}`;
+  const billNumber = `${order.orderNumber}_${currentYear}`;
 
   return {
     billNumber,
@@ -79,8 +79,9 @@ async function getOrderBillData(orderIdentifier: string) {
     completionDate: order.updatedAt?.toISOString() || new Date().toISOString(),
     transactionDate: order.updatedAt?.toISOString() || new Date().toISOString(),
     seller: {
-      name: order.user?.name || "Sangeet Shaw",
-      phoneMasked: order.user?.phone ? `+91 ${order.user.phone.slice(0, 2)}****${order.user.phone.slice(-4)}` : "+91 62****7287",
+      name: order.user?.name || (order as any).customerName || "Customer",
+      phone: order.user?.phone || (order as any).customerPhone || "—",
+      phoneMasked: order.user?.phone || (order as any).customerPhone || "—",
       address: customerAddress,
     },
     buyer: {
@@ -91,8 +92,8 @@ async function getOrderBillData(orderIdentifier: string) {
       assignedAgent: agentName,
     },
     device: {
-      brand: brandName || "Apple",
-      model: modelName || "iPhone 15",
+      brand: brandName || "Mobile Device",
+      model: modelName || "",
       variant: variantStorage || "128 GB",
       deviceName: fullDeviceName,
       imei1: imeiCode,
@@ -101,12 +102,12 @@ async function getOrderBillData(orderIdentifier: string) {
     financials: {
       estimatedPrice: order.quote?.estimatedPrice || finalPrice,
       finalPurchasePrice: finalPrice,
-      paymentMethod: payment?.method || "Instant UPI / Bank Transfer",
+      paymentMethod: payment?.method || "UPI Transfer",
       utrNumber,
       paymentStatus: "PAID",
     },
     declarations: {
-      sellerDeclarationText: "I confirm I am the lawful owner or authorized seller of this device. The information supplied and IMEI numbers are accurate. The device has not knowingly been obtained through theft or fraud and is not subject to conflicting ownership claims. I authorize CashALL to purchase the device under agreed terms.",
+      sellerDeclarationText: "This is a computer-generated receipt issued by CashALL. The seller (named above) has voluntarily sold the device to CashALL at the agreed final price. This document serves as the legal sale agreement and payment confirmation.",
       eSignTimestamp: order.updatedAt?.toISOString() || new Date().toISOString(),
       documentHash: "sha256_verified_aarna_cashall",
     },

@@ -241,10 +241,19 @@ export default function OrderTrackingPage() {
               </p>
             </div>
 
-            <div className="text-left sm:text-right border-t sm:border-t-0 pt-3 sm:pt-0 border-gray-100">
-              <div className="text-xs font-bold text-gray-400 uppercase">CashALL Final Offer</div>
-              <div className="text-2xl sm:text-3xl font-black text-brand-black font-price">
-                ₹{(order.revisedPrice || 31400).toLocaleString("en-IN")}
+            <div className="text-left sm:text-right border-t sm:border-t-0 pt-3 sm:pt-0 border-gray-100 space-y-2">
+              <div>
+                <div className="text-xs font-bold text-gray-400 uppercase">CashALL Final Offer</div>
+                <div className="text-2xl sm:text-3xl font-black text-brand-black font-price">
+                  ₹{(order.revisedPrice || 31400).toLocaleString("en-IN")}
+                </div>
+              </div>
+              <div>
+                <Link href={`/order/${order.orderNumber}/bill`}>
+                  <Button variant="outline" size="sm" className="font-extrabold text-xs">
+                    <span>View Official Bill</span>
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

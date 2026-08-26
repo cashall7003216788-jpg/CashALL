@@ -168,12 +168,19 @@ export default function CustomerAccountPage() {
                         </div>
                       </div>
 
-                      <Link href={`/track/${ord.orderNumber}`}>
-                        <Button variant="primary" size="sm" className="font-extrabold gap-1.5 shadow-yellowGlow">
-                          <span>Track Order</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </Button>
-                      </Link>
+                      <div className="flex items-center gap-2">
+                        <Link href={`/track/${ord.orderNumber}`}>
+                          <Button variant="primary" size="sm" className="font-extrabold gap-1.5 shadow-yellowGlow">
+                            <span>Track Order</span>
+                            <ArrowRight className="w-4 h-4" />
+                          </Button>
+                        </Link>
+                        <Link href={`/order/${ord.orderNumber}/bill`}>
+                          <Button variant="outline" size="sm" className="font-extrabold gap-1.5">
+                            <span>View Bill</span>
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 ))}
