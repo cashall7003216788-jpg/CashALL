@@ -73,8 +73,15 @@ export async function GET() {
         day: "2-digit",
       }).split("/").reverse().join("-");
 
+      const isCancelled = ["CANCELLED", "REJECTED", "DECLINED"].includes(ord.status);
+      const isCompleted = ord.status === "COMPLETED" && !isCancelled;
       const activePayment = ord.payments?.find((p: any) => p.status === "PAID") || ord.payments?.[0];
-      const paymentStatus = activePayment?.status === "PAID" || ord.status === "COMPLETED" ? "PAID" : "PENDING";
+      const paymentStatus = isCancelled
+        ? "CANCELLED"
+        : isCompleted || activePayment?.status === "PAID"
+        ? "PAID"
+        : "PENDING";
+
       const urn = ord.urn || activePayment?.transactionRef || (ord as any).utr || "N/A";
       const notes = ord.pickups?.[0]?.notes || "";
       const isValidNotesAgent = notes && notes !== "Doorstep pickup order confirmed." && notes !== "Order synced to database automatically.";
@@ -105,7 +112,7 @@ export async function GET() {
         ? new Date(ord.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })
         : istDate;
 
-      const settledAt = ["COMPLETED", "PAID"].includes(ord.status) || paymentStatus === "PAID"
+      const settledAt = isCompleted
         ? (ord.updatedAt ? new Date(ord.updatedAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : istDate)
         : "—";
 
@@ -150,11 +157,13 @@ export async function GET() {
       if (aName === "Shadik") aName = "Sadiq Sayyed";
       if (aName.toUpperCase() === "HYDER ALI") aName = "Hyder Ali";
 
+      const isLeadCompleted = entry.status === "COMPLETED" && !["CANCELLED", "REJECTED", "DECLINED"].includes(entry.status);
+
       if (aName && aName !== "Field Agent") {
         if (!agentMap[aName]) {
           agentMap[aName] = { agentName: aName, completedLeads: 0, uncompletedLeads: 0, totalPayout: 0 };
         }
-        if (entry.status === "COMPLETED" || entry.paymentStatus === "PAID") {
+        if (isLeadCompleted) {
           agentMap[aName].completedLeads += 1;
           agentMap[aName].totalPayout += entry.amountPaid;
         } else {
