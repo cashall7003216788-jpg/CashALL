@@ -1,6 +1,8 @@
 // CashALL Unified Catalog Store
 // Mobiles, Laptops, and Tablets (+5% Increased Final Prices)
 
+import { SERVICEABLE_DISTRICTS } from "./serviceability";
+
 export interface BrandData {
   id: string;
   name: string;
@@ -64797,18 +64799,16 @@ export const INITIAL_SERVICE_STATES: string[] = [
   "Jharkhand",
 ];
 
-export const INITIAL_SERVICE_AREAS: ServiceAreaData[] = [
-  // West Bengal (2 Cities: Kolkata, Barrackpore)
-  { id: "sa-1", pincode: "700001", city: "Kolkata", state: "West Bengal", active: true, pickupAvailable: true },
-  { id: "sa-2", pincode: "700120", city: "Barrackpore", state: "West Bengal", active: true, pickupAvailable: true },
-
-  // Uttar Pradesh (2 Cities: Gorakhpur, Ballia)
-  { id: "sa-3", pincode: "273001", city: "Gorakhpur", state: "Uttar Pradesh", active: true, pickupAvailable: true },
-  { id: "sa-4", pincode: "277001", city: "Ballia", state: "Uttar Pradesh", active: true, pickupAvailable: true },
-
-  // Jharkhand (1 City: Ranchi)
-  { id: "sa-5", pincode: "834001", city: "Ranchi", state: "Jharkhand", active: true, pickupAvailable: true },
-];
+export const INITIAL_SERVICE_AREAS: ServiceAreaData[] = SERVICEABLE_DISTRICTS.flatMap((dist) =>
+  dist.pincodes.map((pin) => ({
+    id: `sa-${dist.id}-${pin}`,
+    pincode: pin,
+    city: dist.name,
+    state: dist.state,
+    active: true,
+    pickupAvailable: true,
+  }))
+);
 
 export const INITIAL_FAQS: FAQData[] = [
   {

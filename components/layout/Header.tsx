@@ -64,6 +64,9 @@ export function Header() {
         } catch (e) {
           console.error(e);
         }
+      } else {
+        // Auto-open Location Modal for new visitors so they fix their location first
+        setLocationModalOpen(true);
       }
 
       // Auto-sync any local storage orders to PostgreSQL database automatically
@@ -134,8 +137,8 @@ export function Header() {
                   className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-dark/90 border border-neutral-800 text-xs font-semibold text-gray-200 hover:text-white hover:border-brand-yellow/50 transition-all shadow-sm"
                 >
                   <MapPin className="w-3.5 h-3.5 text-brand-yellow shrink-0" />
-                  <span className="truncate max-w-[170px] font-bold">
-                    {selectedLocation ? `State: ${selectedLocation.state}` : "State"}
+                  <span className="truncate max-w-[200px] font-bold text-white">
+                    {selectedLocation ? `${selectedLocation.city}, ${selectedLocation.state}` : "Select Location"}
                   </span>
                   <ChevronDown className="w-3 h-3 text-gray-400 shrink-0" />
                 </button>
@@ -250,7 +253,7 @@ export function Header() {
                 className="p-1.5 rounded-lg bg-neutral-900 border border-neutral-800 text-brand-yellow text-xs font-bold flex items-center gap-1"
               >
                 <MapPin className="w-3.5 h-3.5" />
-                <span className="max-w-[70px] truncate">{selectedLocation ? selectedLocation.state : "State"}</span>
+                <span className="max-w-[85px] truncate">{selectedLocation ? selectedLocation.city : "Location"}</span>
               </button>
 
               <Button

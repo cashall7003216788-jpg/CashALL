@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { INITIAL_SERVICE_AREAS, OrderData, QuoteData, INITIAL_VARIANTS, INITIAL_MODELS, INITIAL_BRANDS } from "@/lib/store";
 import { removeQuoteFromCart } from "@/lib/cart";
+import { SERVICEABLE_DISTRICTS, isPincodeServiced, getPincodeDetails } from "@/lib/serviceability";
 import {
   MapPin,
   Calendar,
@@ -18,6 +19,8 @@ import {
   ArrowRight,
   ShieldCheck,
   Building,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
 function PickupCheckoutContent() {
@@ -28,6 +31,7 @@ function PickupCheckoutContent() {
   const [quote, setQuote] = useState<QuoteData | null>(null);
   const [pincode, setPincode] = useState("");
   const [serviceStatus, setServiceStatus] = useState<"IDLE" | "AVAILABLE" | "UNAVAILABLE">("IDLE");
+  const [expandedDistrict, setExpandedDistrict] = useState<string | null>(null);
   const [city, setCity] = useState("Kolkata");
   const [selectedState, setSelectedState] = useState("West Bengal");
   const [resolvedDeviceName, setResolvedDeviceName] = useState("");
@@ -52,55 +56,33 @@ function PickupCheckoutContent() {
     "Uttar Pradesh",
   ];
 
-  const resolveStateFromPincode = (pin: string): { city: string; state: string } => {
-    const p = pin.trim();
-    if (p.startsWith("38") || p.startsWith("39")) return { city: "Ahmedabad", state: "Gujarat" };
-    if (p.startsWith("40") || p.startsWith("41") || p.startsWith("42")) return { city: "Mumbai", state: "Maharashtra" };
-    if (p.startsWith("11")) return { city: "New Delhi", state: "Delhi NCR" };
-    if (p.startsWith("56") || p.startsWith("57")) return { city: "Bengaluru", state: "Karnataka" };
-    if (p.startsWith("60") || p.startsWith("61") || p.startsWith("62")) return { city: "Chennai", state: "Tamil Nadu" };
-    if (p.startsWith("50")) return { city: "Hyderabad", state: "Telangana" };
-    if (p.startsWith("20") || p.startsWith("22")) return { city: "Lucknow", state: "Uttar Pradesh" };
-    if (p.startsWith("30") || p.startsWith("31")) return { city: "Jaipur", state: "Rajasthan" };
-    if (p.startsWith("75")) return { city: "Bhubaneswar", state: "Odisha" };
-    if (p.startsWith("78")) return { city: "Guwahati", state: "Assam" };
-    if (p.startsWith("70") || p.startsWith("71") || p.startsWith("72") || p.startsWith("73") || p.startsWith("74")) {
-      return { city: p.startsWith("711") ? "Howrah" : "Kolkata", state: "West Bengal" };
-    }
-    return { city: "Local Area", state: "West Bengal" };
-  };
-
-  const checkPincode = async () => {
-    const pinStr = pincode.trim();
+  const checkPincode = (pinToCheck?: string) => {
+    const pinStr = (typeof pinToCheck === "string" ? pinToCheck : pincode).trim();
     if (!pinStr || pinStr.length !== 6) {
       setServiceStatus("UNAVAILABLE");
       return;
     }
 
-    // First try Indian Postal Pincode API for exact city & state
-    try {
-      const res = await fetch(`https://api.postalpincode.in/pincode/${pinStr}`);
-      if (res.ok) {
-        const data = await res.json();
-        if (Array.isArray(data) && data[0]?.Status === "Success" && data[0]?.PostOffice?.length > 0) {
-          const po = data[0].PostOffice[0];
-          const detectedCity = po.District || po.Name || "City";
-          const detectedState = po.State || "West Bengal";
-          setCity(detectedCity);
-          setSelectedState(detectedState);
-          setServiceStatus("AVAILABLE");
-          return;
-        }
+    if (isPincodeServiced(pinStr)) {
+      const details = getPincodeDetails(pinStr);
+      if (details) {
+        setCity(details.city);
+        setSelectedState(details.state);
       }
-    } catch (e) {
-      console.warn("Postal API lookup fallback:", e);
+      setServiceStatus("AVAILABLE");
+    } else {
+      setServiceStatus("UNAVAILABLE");
     }
+  };
 
-    // Fallback to internal lookup
-    const resolved = resolveStateFromPincode(pinStr);
-    setCity(resolved.city);
-    setSelectedState(resolved.state);
-    setServiceStatus("AVAILABLE");
+  const handlePincodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value.replace(/\D/g, "");
+    setPincode(val);
+    if (val.length === 6) {
+      checkPincode(val);
+    } else if (serviceStatus !== "IDLE") {
+      setServiceStatus("IDLE");
+    }
   };
 
   useEffect(() => {
@@ -174,8 +156,15 @@ function PickupCheckoutContent() {
     e.preventDefault();
 
     // Validate mandatory PIN code
-    if (!pincode.trim() || pincode.trim().length !== 6) {
+    const cleanPin = pincode.trim();
+    if (!cleanPin || cleanPin.length !== 6) {
       alert("Please enter a valid 6-digit PIN code for pickup.");
+      return;
+    }
+
+    if (!isPincodeServiced(cleanPin)) {
+      setServiceStatus("UNAVAILABLE");
+      alert(`Currently, we only serve Ballia, Gorakhpur, Kolkata, Barrackpore, and Ranchi. PIN code ${cleanPin} is outside our service area.`);
       return;
     }
 
@@ -371,41 +360,131 @@ function PickupCheckoutContent() {
               
               {/* STEP 1: SERVICEABILITY PIN CHECK */}
               <div className="bg-white rounded-3xl p-6 border border-brand-border shadow-subtleCard space-y-4">
-                <div className="flex items-center gap-2 border-b border-gray-100 pb-3">
-                  <MapPin className="w-5 h-5 text-brand-yellow shrink-0" />
-                  <h2 className="text-base font-bold text-brand-black">1. Pickup PIN Code & Serviceability <span className="text-red-500">*</span></h2>
+                <div className="flex items-center justify-between border-b border-gray-100 pb-3">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-brand-yellow shrink-0" />
+                    <h2 className="text-base font-bold text-brand-black">1. Pickup PIN Code & Serviceability <span className="text-red-500">*</span></h2>
+                  </div>
+                  <span className="text-[11px] font-semibold text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">
+                    5 Districts Serviced
+                  </span>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <input
                     type="text"
                     required
                     value={pincode}
-                    onChange={(e) => setPincode(e.target.value.replace(/\D/g, ""))}
+                    onChange={handlePincodeChange}
                     maxLength={6}
                     placeholder="Enter 6-digit PIN code *"
-                    className="w-48 px-3.5 py-2 text-xs font-bold bg-white rounded-xl border border-brand-border focus:outline-none focus:border-brand-yellow"
+                    className={`w-52 px-3.5 py-2.5 text-xs font-bold rounded-xl border focus:outline-none transition-colors ${
+                      serviceStatus === "AVAILABLE"
+                        ? "border-green-500 bg-green-50/30 text-green-900 focus:border-green-600"
+                        : serviceStatus === "UNAVAILABLE"
+                        ? "border-red-400 bg-red-50/30 text-red-900 focus:border-red-500"
+                        : "border-brand-border bg-white text-brand-black focus:border-brand-yellow"
+                    }`}
                   />
                   <button
                     type="button"
-                    onClick={checkPincode}
-                    className="px-4 py-2 bg-brand-black text-white text-xs font-bold rounded-xl hover:bg-brand-dark"
+                    onClick={() => checkPincode()}
+                    className="px-5 py-2.5 bg-brand-black text-white text-xs font-bold rounded-xl hover:bg-brand-dark transition-colors shadow-sm"
                   >
-                    Check Area
+                    Check Serviceability
                   </button>
                 </div>
 
                 {serviceStatus === "AVAILABLE" && (
-                  <div className="bg-green-50 p-3 rounded-xl border border-green-200 text-xs text-green-800 flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
-                    <span>Fast Doorstep Pickup is <strong>Available</strong> in {selectedState} ({pincode}).</span>
+                  <div className="bg-green-50/90 border border-green-200 rounded-2xl p-4 flex items-start gap-3 animate-fadeIn">
+                    <div className="w-8 h-8 rounded-xl bg-green-100 flex items-center justify-center shrink-0 text-green-700">
+                      <CheckCircle2 className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-extrabold text-green-900">
+                        Doorstep Pickup Available!
+                      </h3>
+                      <p className="text-xs text-green-800 mt-0.5">
+                        CashALL doorstep pickup is active in <strong className="font-bold">{city}, {selectedState}</strong> (PIN: <span className="font-mono font-bold">{pincode}</span>). Free doorstep verification & instant payment.
+                      </p>
+                    </div>
                   </div>
                 )}
 
                 {serviceStatus === "UNAVAILABLE" && (
-                  <div className="bg-amber-50 p-3 rounded-xl border border-amber-200 text-xs text-amber-900 flex items-center gap-2">
-                    <AlertCircle className="w-4 h-4 text-amber-600 shrink-0" />
-                    <span>CashALL isn&apos;t available in PIN code {pincode} yet.</span>
+                  <div className="bg-gradient-to-br from-red-50/90 to-amber-50/60 border border-red-200/90 rounded-2xl p-4 space-y-3.5 animate-fadeIn">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-xl bg-red-100 flex items-center justify-center shrink-0 text-red-600">
+                        <AlertCircle className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-sm font-extrabold text-red-900">
+                          We Don&apos;t Serve Here Yet
+                        </h3>
+                        <p className="text-xs text-red-700 mt-0.5 leading-relaxed">
+                          Sorry! CashALL doorstep pickup is currently not available for PIN code <strong className="font-mono font-bold underline decoration-red-400">{pincode || "entered"}</strong>.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="pt-3 border-t border-red-200/60">
+                      <div className="flex items-center justify-between mb-2">
+                        <p className="text-xs font-black text-brand-black flex items-center gap-1.5">
+                          <MapPin className="w-4 h-4 text-brand-yellow" />
+                          <span>Our Servicable Districts ({SERVICEABLE_DISTRICTS.length}):</span>
+                        </p>
+                        <span className="text-[10px] text-gray-500 font-medium">Click a district to view PINs</span>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {SERVICEABLE_DISTRICTS.map((dist) => {
+                          const isExpanded = expandedDistrict === dist.id;
+                          return (
+                            <div
+                              key={dist.id}
+                              className="bg-white/95 border border-red-200/70 hover:border-brand-yellow/60 rounded-xl p-3 shadow-xs transition-all"
+                            >
+                              <div className="flex items-center justify-between">
+                                <div>
+                                  <span className="text-xs font-black text-brand-black block">{dist.name}</span>
+                                  <span className="text-[11px] text-gray-500">{dist.state}</span>
+                                </div>
+                                <button
+                                  type="button"
+                                  onClick={() => setExpandedDistrict(isExpanded ? null : dist.id)}
+                                  className="text-[10px] font-extrabold px-2.5 py-1 bg-neutral-100 hover:bg-brand-yellow hover:text-brand-black text-gray-700 rounded-lg transition-colors flex items-center gap-1"
+                                >
+                                  <span>{dist.count} PINs</span>
+                                  {isExpanded ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+                                </button>
+                              </div>
+
+                              {isExpanded && (
+                                <div className="mt-2.5 pt-2.5 border-t border-gray-100 max-h-36 overflow-y-auto pr-1">
+                                  <p className="text-[10px] text-gray-400 font-semibold mb-1">Click a PIN code to test/select:</p>
+                                  <div className="flex flex-wrap gap-1">
+                                    {dist.pincodes.map((pin) => (
+                                      <button
+                                        type="button"
+                                        key={pin}
+                                        onClick={() => {
+                                          setPincode(pin);
+                                          checkPincode(pin);
+                                        }}
+                                        className="px-1.5 py-0.5 text-[10px] font-mono font-bold bg-neutral-100 hover:bg-brand-yellow text-brand-black rounded transition-colors"
+                                        title={`Select ${dist.name} - ${pin}`}
+                                      >
+                                        {pin}
+                                      </button>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>

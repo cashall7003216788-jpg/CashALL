@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { INITIAL_BRANDS, INITIAL_MODELS, INITIAL_VARIANTS } from "../lib/store";
+import { INITIAL_BRANDS, INITIAL_MODELS, INITIAL_VARIANTS, INITIAL_SERVICE_AREAS } from "../lib/store";
 
 const prisma = new PrismaClient();
 
@@ -244,15 +244,12 @@ async function main() {
   }
 
   // 8. Create Service Areas
-  const pincodes = [
-    { pincode: "700001", city: "Kolkata", state: "West Bengal" },
-    { pincode: "700120", city: "Barrackpore", state: "West Bengal" },
-    { pincode: "273001", city: "Gorakhpur", state: "Uttar Pradesh" },
-    { pincode: "277001", city: "Ballia", state: "Uttar Pradesh" },
-    { pincode: "834001", city: "Ranchi", state: "Jharkhand" },
-  ];
-  for (const p of pincodes) {
-    await prisma.serviceArea.create({ data: p });
+  for (const p of INITIAL_SERVICE_AREAS) {
+    await prisma.serviceArea.upsert({
+      where: { pincode: p.pincode },
+      create: { pincode: p.pincode, city: p.city, state: p.state },
+      update: { city: p.city, state: p.state },
+    });
   }
 
   // 9. Create FAQs

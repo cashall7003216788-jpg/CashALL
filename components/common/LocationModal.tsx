@@ -1,13 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { MapPin, X, ArrowLeft, Search, Check, Building2, AlertCircle } from "lucide-react";
-import { INITIAL_SERVICE_AREAS } from "@/lib/store";
-
-interface StateData {
-  name: string;
-  cities: { city: string; pincode: string }[];
-}
+import React, { useState } from "react";
+import { MapPin, X, Search, Check, Building2, AlertCircle, Sparkles } from "lucide-react";
+import { SERVICEABLE_DISTRICTS, isPincodeServiced, getPincodeDetails } from "@/lib/serviceability";
 
 interface LocationModalProps {
   isOpen: boolean;
@@ -22,264 +17,202 @@ export function LocationModal({
   selectedLocation,
   onSelectLocation,
 }: LocationModalProps) {
-  const [states, setStates] = useState<StateData[]>([]);
-  const [activeState, setActiveState] = useState<StateData | null>(null);
   const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    function loadLocations() {
-      let combinedAreas = [...INITIAL_SERVICE_AREAS];
-
-      if (typeof window !== "undefined") {
-        try {
-          const localAreas = JSON.parse(localStorage.getItem("cashall_service_areas") || "[]");
-          localAreas.forEach((item: any) => {
-            if (item && item.pincode && item.state && !combinedAreas.some((a) => a.pincode === item.pincode)) {
-              combinedAreas.push(item);
-            }
-          });
-        } catch (e) {
-          console.error(e);
-        }
-      }
-
-      const statesMap: Record<string, { city: string; pincode: string }[]> = {};
-      combinedAreas.forEach((area) => {
-        if (area.active === false) return;
-        if (!statesMap[area.state]) statesMap[area.state] = [];
-        if (!statesMap[area.state].some((c) => c.city.toLowerCase() === area.city.toLowerCase())) {
-          statesMap[area.state].push({ city: area.city, pincode: area.pincode });
-        }
-      });
-
-      const stList = Object.keys(statesMap).map((name) => ({
-        name,
-        cities: statesMap[name],
-      }));
-
-      setStates(stList);
-      setLoading(false);
-    }
-
-    if (isOpen) {
-      loadLocations();
-      setSearch("");
-    }
-  }, [isOpen]);
 
   if (!isOpen) return null;
 
-  const filteredCities = activeState
-    ? activeState.cities.filter((c) =>
-        c.city.toLowerCase().includes(search.toLowerCase().trim())
-      )
-    : [];
+  const query = search.trim().toLowerCase();
 
-  const filteredStates = states.filter((s) =>
-    s.name.toLowerCase().includes(search.toLowerCase().trim()) ||
-    s.cities.some((c) => c.city.toLowerCase().includes(search.toLowerCase().trim()))
-  );
+  // If search is a 6-digit PIN code
+  const isPinQuery = /^\d{6}$/.test(query);
+  const pinMatch = isPinQuery ? getPincodeDetails(query) : null;
+
+  // Filter districts based on search query (name, state, or containing pin code)
+  const filteredDistricts = SERVICEABLE_DISTRICTS.filter((d) => {
+    if (!query) return true;
+    if (d.name.toLowerCase().includes(query)) return true;
+    if (d.state.toLowerCase().includes(query)) return true;
+    if (d.pincodes.some((p) => p.includes(query))) return true;
+    return false;
+  });
+
+  const handleSelect = (city: string, state: string) => {
+    onSelectLocation({ city, state });
+    onClose();
+  };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-fadeIn">
-      <div className="bg-brand-black border border-neutral-800 rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl flex flex-col max-h-[85vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-md p-4 animate-fadeIn">
+      <div className="bg-[#121212] border border-neutral-800 rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl flex flex-col max-h-[85vh]">
         
         {/* MODAL HEADER */}
-        <div className="p-5 border-b border-neutral-800 flex items-center justify-between bg-neutral-900/80">
+        <div className="p-5 border-b border-neutral-800 flex items-center justify-between bg-neutral-900/90">
           <div className="flex items-center gap-3">
-            {activeState ? (
-              <button
-                onClick={() => {
-                  setActiveState(null);
-                  setSearch("");
-                }}
-                className="p-1.5 rounded-full hover:bg-neutral-800 text-gray-300 hover:text-white transition-colors"
-                title="Back to states"
-              >
-                <ArrowLeft className="w-5 h-5 text-brand-yellow" />
-              </button>
-            ) : (
-              <div className="w-9 h-9 rounded-full bg-brand-yellow/10 flex items-center justify-center border border-brand-yellow/30">
-                <MapPin className="w-5 h-5 text-brand-yellow" />
-              </div>
-            )}
+            <div className="w-10 h-10 rounded-2xl bg-brand-yellow/15 flex items-center justify-center border border-brand-yellow/30 text-brand-yellow shrink-0">
+              <MapPin className="w-5 h-5" />
+            </div>
             <div>
-              <h3 className="text-base font-extrabold text-white leading-tight">
-                {activeState ? activeState.name : "Select Your State"}
-              </h3>
-              <p className="text-xs text-gray-400">
-                {activeState
-                  ? `Select city/district in ${activeState.name}`
-                  : "Choose your state to view available delivery locations"}
+              <div className="flex items-center gap-2">
+                <h3 className="text-base font-black text-white leading-tight">
+                  Select Your Location
+                </h3>
+                <span className="text-[10px] font-extrabold uppercase tracking-wider bg-brand-yellow/20 text-brand-yellow border border-brand-yellow/40 px-2 py-0.5 rounded-full">
+                  5 Districts
+                </span>
+              </div>
+              <p className="text-xs text-gray-400 mt-0.5">
+                Fix your city/district for instant doorstep pickup & best valuation
               </p>
             </div>
           </div>
-          <button
-            onClick={onClose}
-            className="p-2 rounded-full text-gray-400 hover:text-white hover:bg-neutral-800 transition-colors"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          {selectedLocation && (
+            <button
+              onClick={onClose}
+              className="p-2 rounded-full text-gray-400 hover:text-white hover:bg-neutral-800 transition-colors"
+              title="Close modal"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          )}
         </div>
 
         {/* SEARCH BAR */}
-        <div className="p-4 border-b border-neutral-800 bg-brand-black">
+        <div className="p-4 border-b border-neutral-800 bg-[#121212]">
           <div className="relative">
             <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder={
-                activeState
-                  ? `Search city in ${activeState.name}...`
-                  : "Search state or city..."
-              }
-              className="w-full pl-10 pr-4 py-2.5 text-xs font-semibold bg-neutral-900 border border-neutral-800 text-white rounded-xl focus:outline-none focus:border-brand-yellow/60"
+              placeholder="Search district name or 6-digit PIN code..."
+              className="w-full pl-10 pr-4 py-2.5 text-xs font-semibold bg-neutral-900 border border-neutral-800 text-white rounded-xl focus:outline-none focus:border-brand-yellow/60 transition-colors"
+              autoFocus
             />
           </div>
         </div>
 
         {/* CONTENT AREA */}
-        <div className="p-4 flex-grow overflow-y-auto space-y-2">
-          {loading ? (
-            <div className="py-12 text-center text-xs text-gray-400 animate-pulse">
-              Loading serviceable locations...
+        <div className="p-5 flex-grow overflow-y-auto space-y-3.5">
+          {/* PINCODE MATCH BANNER */}
+          {isPinQuery && pinMatch && (
+            <div className="bg-green-500/10 border border-green-500/40 rounded-2xl p-3.5 flex items-center justify-between animate-fadeIn">
+              <div>
+                <div className="text-xs font-bold text-green-400">PIN Code {query} Matched!</div>
+                <div className="text-sm font-extrabold text-white">{pinMatch.city}, {pinMatch.state}</div>
+              </div>
+              <button
+                type="button"
+                onClick={() => handleSelect(pinMatch.city, pinMatch.state)}
+                className="px-3.5 py-1.5 bg-brand-yellow text-brand-black text-xs font-black rounded-xl hover:bg-brand-yellowHover transition-all shadow-sm"
+              >
+                Select & Proceed
+              </button>
             </div>
-          ) : activeState ? (
-            /* STEP 2: CITY SELECTION FOR ACTIVE STATE */
-            <>
-              <div className="text-[11px] font-bold text-brand-yellow uppercase tracking-wider px-2 pb-1">
-                Available Locations in {activeState.name}
-              </div>
-              {filteredCities.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {filteredCities.map((c) => {
-                    const isSelected =
-                      selectedLocation?.city.toLowerCase() === c.city.toLowerCase() &&
-                      selectedLocation?.state.toLowerCase() === activeState.name.toLowerCase();
+          )}
 
-                    return (
-                      <button
-                        key={c.city}
-                        onClick={() => {
-                          onSelectLocation({ city: c.city, state: activeState.name });
-                          onClose();
-                        }}
-                        className={`flex items-center justify-between p-3 rounded-2xl border text-left text-xs transition-all ${
-                          isSelected
-                            ? "bg-brand-yellow/15 border-brand-yellow text-brand-yellow font-extrabold"
-                            : "bg-neutral-900/70 border-neutral-800 text-gray-200 hover:border-brand-yellow/50 hover:bg-neutral-800"
-                        }`}
-                      >
-                        <div className="flex items-center gap-2">
-                          <Building2 className={`w-4 h-4 ${isSelected ? "text-brand-yellow" : "text-gray-400"}`} />
-                          <span>{c.city}</span>
-                        </div>
-                        {isSelected && <Check className="w-4 h-4 text-brand-yellow" />}
-                      </button>
-                    );
-                  })}
-                </div>
-              ) : (
-                <div className="p-8 text-center bg-neutral-900/50 rounded-2xl border border-neutral-800 text-gray-400">
-                  <AlertCircle className="w-8 h-8 text-brand-yellow/60 mx-auto mb-2" />
-                  <p className="text-xs font-bold text-white">Currently, we don&apos;t serve this location.</p>
-                  <p className="text-[11px] text-gray-400 mt-1">No matching city found in {activeState.name}.</p>
-                </div>
-              )}
-            </>
-          ) : (
-            /* STEP 1: STATE SELECTION LIST */
-            <>
-              <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider px-2 pb-1">
-                Serviceable States ({filteredStates.length})
+          {/* PINCODE NOT SERVICED WARNING */}
+          {isPinQuery && !pinMatch && (
+            <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-3.5 text-xs text-red-300 flex items-start gap-2.5 animate-fadeIn">
+              <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+              <div>
+                <strong className="text-white block font-bold">PIN Code {query} is Outside Service Area</strong>
+                <span>We currently only serve our 5 designated districts. Please choose from below:</span>
               </div>
-              {filteredStates.length > 0 ? (
-                <div className="space-y-2.5">
-                  {filteredStates.map((st) => {
-                    const isSelectedState =
-                      selectedLocation?.state.toLowerCase() === st.name.toLowerCase();
+            </div>
+          )}
 
-                    return (
+          <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider px-1 flex items-center justify-between">
+            <span>Available Serviceable Districts</span>
+            <span className="text-brand-yellow text-[10px]">100% Free Doorstep Pickup</span>
+          </div>
+
+          {filteredDistricts.length > 0 ? (
+            <div className="space-y-2.5">
+              {filteredDistricts.map((dist) => {
+                const isSelected =
+                  selectedLocation?.city.toLowerCase() === dist.name.toLowerCase() &&
+                  selectedLocation?.state.toLowerCase() === dist.state.toLowerCase();
+
+                return (
+                  <button
+                    key={dist.id}
+                    type="button"
+                    onClick={() => handleSelect(dist.name, dist.state)}
+                    className={`w-full flex items-center justify-between p-4 rounded-2xl border text-left transition-all group ${
+                      isSelected
+                        ? "bg-brand-yellow/15 border-brand-yellow text-brand-yellow font-extrabold shadow-yellowGlow"
+                        : "bg-neutral-900/80 border-neutral-800 text-gray-200 hover:border-brand-yellow/60 hover:bg-neutral-800"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3.5">
                       <div
-                        key={st.name}
-                        className={`w-full flex items-center justify-between p-3.5 rounded-2xl border text-left text-xs font-bold transition-all ${
-                          isSelectedState
-                            ? "bg-brand-yellow/10 border-brand-yellow/60 text-brand-yellow"
-                            : "bg-neutral-900/80 border-neutral-800 text-gray-200 hover:border-brand-yellow/50"
+                        className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border transition-colors ${
+                          isSelected
+                            ? "bg-brand-yellow text-brand-black border-brand-yellow font-black"
+                            : "bg-neutral-800 text-brand-yellow border-neutral-700 group-hover:border-brand-yellow/40"
                         }`}
                       >
-                        <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 rounded-xl bg-neutral-800 flex items-center justify-center text-brand-yellow shrink-0 border border-neutral-700">
-                            <MapPin className="w-4.5 h-4.5" />
-                          </div>
-                          <div>
-                            <div className="text-sm font-black text-white">{st.name}</div>
-                            <div className="text-[11px] text-gray-400 font-normal">
-                              {st.cities.length} {st.cities.length === 1 ? "location" : "locations"} available
-                            </div>
-                          </div>
+                        <Building2 className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-black text-white group-hover:text-brand-yellow transition-colors">
+                          {dist.name}
                         </div>
-
-                        <div className="flex items-center gap-2">
-                          <button
-                            type="button"
-                            onClick={() => {
-                              const defaultCity = st.cities[0]?.city || st.name;
-                              onSelectLocation({ city: defaultCity, state: st.name });
-                              onClose();
-                            }}
-                            className="px-3 py-1.5 rounded-xl bg-brand-yellow text-brand-black text-[11px] font-extrabold hover:bg-brand-yellowHover shadow-sm transition-all"
-                          >
-                            Select State
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setActiveState(st);
-                              setSearch("");
-                            }}
-                            className="px-2.5 py-1.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-gray-300 text-[11px] font-bold transition-colors"
-                            title="View cities in state"
-                          >
-                            Cities &rarr;
-                          </button>
+                        <div className="text-xs text-gray-400 font-medium">
+                          {dist.state} • <span className="text-gray-300 font-semibold">{dist.count} PIN Codes</span>
                         </div>
                       </div>
-                    );
-                  })}
-                </div>
-              ) : (
-                <div className="p-8 text-center bg-neutral-900/50 rounded-2xl border border-neutral-800 text-gray-400">
-                  <AlertCircle className="w-8 h-8 text-brand-yellow/60 mx-auto mb-2" />
-                  <p className="text-xs font-bold text-white">Currently, we don&apos;t serve this location.</p>
-                </div>
-              )}
-            </>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      {isSelected ? (
+                        <span className="flex items-center gap-1.5 text-xs font-black text-brand-yellow bg-brand-yellow/10 px-3 py-1.5 rounded-xl border border-brand-yellow/30">
+                          <Check className="w-4 h-4" /> Active
+                        </span>
+                      ) : (
+                        <span className="text-xs font-bold text-gray-400 group-hover:text-white bg-neutral-800 group-hover:bg-brand-yellow group-hover:text-brand-black px-3 py-1.5 rounded-xl transition-all">
+                          Select &rarr;
+                        </span>
+                      )}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="p-8 text-center bg-neutral-900/60 rounded-2xl border border-neutral-800 text-gray-400 space-y-3">
+              <AlertCircle className="w-8 h-8 text-amber-500 mx-auto" />
+              <div>
+                <p className="text-sm font-bold text-white">We don&apos;t serve this location yet.</p>
+                <p className="text-xs text-gray-400 mt-1">CashALL currently provides doorstep pickup in these 5 districts:</p>
+              </div>
+              <div className="flex flex-wrap justify-center gap-1.5 pt-2">
+                {SERVICEABLE_DISTRICTS.map((d) => (
+                  <button
+                    key={d.id}
+                    type="button"
+                    onClick={() => handleSelect(d.name, d.state)}
+                    className="px-2.5 py-1 bg-neutral-800 hover:bg-brand-yellow hover:text-brand-black border border-neutral-700 text-gray-200 rounded-lg text-xs font-semibold transition-colors"
+                  >
+                    {d.name} ({d.state})
+                  </button>
+                ))}
+              </div>
+            </div>
           )}
         </div>
 
         {/* MODAL FOOTER */}
-        <div className="p-4 border-t border-neutral-800 bg-neutral-900/80 flex items-center justify-between text-xs text-gray-400">
+        <div className="p-4 border-t border-neutral-800 bg-neutral-900/90 flex items-center justify-between text-xs text-gray-400">
           <span>
             Current Location:{" "}
             <strong className="text-brand-yellow">
               {selectedLocation ? `${selectedLocation.city}, ${selectedLocation.state}` : "None Selected"}
             </strong>
           </span>
-          {activeState && (
-            <button
-              onClick={() => {
-                setActiveState(null);
-                setSearch("");
-              }}
-              className="text-xs text-brand-yellow hover:underline font-semibold"
-            >
-              Change State
-            </button>
-          )}
+          <span className="text-[11px] text-gray-500">
+            Express verification active
+          </span>
         </div>
 
       </div>

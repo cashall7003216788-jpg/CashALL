@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 import { WhatsAppService } from "@/lib/services/whatsapp.service";
 import { logger } from "@/lib/utils/logger";
 import { cleanDeviceName } from "@/lib/device";
+import { isPincodeServiced, getPincodeDetails } from "@/lib/serviceability";
 import { z } from "zod";
 
 const createOrderSchema = z.object({
@@ -36,9 +37,22 @@ export async function POST(req: NextRequest) {
     const house = data.house ? String(data.house).trim() : "Customer Address";
     const street = data.street ? String(data.street).trim() : "Doorstep Location";
     const area = data.area ? String(data.area).trim() : "West Bengal";
-    const city = data.city ? String(data.city).trim() : "Kolkata";
-    const state = data.state ? String(data.state).trim() : "West Bengal";
-    const pincode = data.pincode ? String(data.pincode).trim() : "700001";
+    const pincode = data.pincode ? String(data.pincode).trim() : "";
+
+    // Strictly lock serviceability to the 5 designated districts
+    if (!pincode || !isPincodeServiced(pincode)) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: `Currently, we only serve Ballia, Gorakhpur, Kolkata, Barrackpore, and Ranchi. PIN code ${pincode || "provided"} is outside our service area.`,
+        },
+        { status: 400 }
+      );
+    }
+
+    const pinDetails = getPincodeDetails(pincode);
+    const city = data.city ? String(data.city).trim() : (pinDetails?.city || "Kolkata");
+    const state = data.state ? String(data.state).trim() : (pinDetails?.state || "West Bengal");
     const pickupDate = data.pickupDate ? String(data.pickupDate).trim() : "Tomorrow";
     const pickupTimeSlot = data.pickupTimeSlot ? String(data.pickupTimeSlot).trim() : "10 AM - 1 PM";
     const deviceName = cleanDeviceName(data.deviceName ? String(data.deviceName).trim() : "Customer Mobile Device");
