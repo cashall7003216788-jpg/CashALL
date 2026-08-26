@@ -284,25 +284,25 @@ export default function AgentDashboardPage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-white flex flex-col">
       {/* NAVBAR */}
-      <header className="bg-neutral-900 border-b border-neutral-800 px-4 sm:px-8 py-4 flex items-center justify-between sticky top-0 z-50">
-        <div className="flex items-center gap-3">
+      <header className="bg-neutral-900 border-b border-neutral-800 px-4 sm:px-8 py-3 sm:py-4 flex items-center justify-between sticky top-0 z-50">
+        <div className="flex items-center gap-2 sm:gap-3">
           <Link href="/">
             <Image
               src="/logo.png"
               alt="CashALL Logo"
-              width={140}
-              height={38}
-              className="h-8 w-auto object-contain"
+              width={110}
+              height={30}
+              className="h-6 sm:h-8 w-auto object-contain"
               priority
             />
           </Link>
-          <span className="bg-yellow-400/20 text-yellow-400 text-[10px] font-black px-2.5 py-1 rounded-md uppercase border border-yellow-400/30">
+          <span className="bg-yellow-400/20 text-yellow-400 text-[9px] sm:text-[10px] font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md uppercase border border-yellow-400/30">
             Agent Console
           </span>
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="hidden sm:flex items-center gap-2 bg-neutral-800 border border-neutral-700 px-3 py-1.5 rounded-xl text-xs">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <div className="hidden md:flex items-center gap-2 bg-neutral-800 border border-neutral-700 px-3 py-1.5 rounded-xl text-xs">
             <UserCheck className="w-4 h-4 text-yellow-400" />
             <span className="font-bold text-white">{agentSession?.name || "Agent"}</span>
             <span className="text-neutral-400 text-[10px]">({agentSession?.phone || ""})</span>
@@ -310,7 +310,7 @@ export default function AgentDashboardPage() {
 
           <button
             onClick={handleLogout}
-            className="flex items-center gap-1.5 text-xs font-bold text-neutral-400 hover:text-red-400 bg-neutral-800 hover:bg-red-950/50 px-3 py-2 rounded-xl border border-neutral-700 transition"
+            className="flex items-center gap-1.5 text-xs font-bold text-neutral-400 hover:text-red-400 bg-neutral-800 hover:bg-red-950/50 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl border border-neutral-700 transition"
           >
             <LogOut className="w-3.5 h-3.5" />
             <span>Logout</span>

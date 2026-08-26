@@ -232,19 +232,19 @@ export default function SupportDashboardPage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-white p-4 sm:p-6 lg:p-8 space-y-6">
       {/* HEADER */}
-      <div className="flex flex-wrap items-center justify-between gap-4 bg-neutral-900 border border-neutral-800 p-6 rounded-3xl shadow-xl">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-4 bg-neutral-900 border border-neutral-800 p-4 sm:p-6 rounded-3xl shadow-xl">
+        <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
           <Link href="/">
-            <Image src="/logo.png" alt="CashALL Logo" width={140} height={38} className="h-8 w-auto object-contain" />
+            <Image src="/logo.png" alt="CashALL Logo" width={110} height={30} className="h-6 sm:h-8 w-auto object-contain" />
           </Link>
-          <div className="h-6 w-px bg-neutral-800" />
-          <div className="flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 px-3 py-1 rounded-full text-xs font-bold uppercase">
-            <Headset className="w-3.5 h-3.5" />
-            <span>Support Calling Console</span>
+          <div className="h-5 w-px bg-neutral-800 hidden sm:block" />
+          <div className="flex items-center gap-1.5 bg-blue-500/10 border border-blue-500/30 text-blue-400 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase">
+            <Headset className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+            <span>Support Console</span>
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <div className="text-right hidden sm:block">
             <div className="text-xs font-extrabold text-white">{supportSession?.name || "Support Agent"}</div>
             <div className="text-[10px] text-neutral-400">Customer & Agent Support</div>

@@ -57,10 +57,10 @@ export default function AdminServiceAreasPage() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-bg flex">
+    <div className="min-h-screen bg-brand-bg flex flex-col lg:flex-row w-full max-w-full overflow-x-hidden">
       <AdminSidebar />
 
-      <main className="flex-grow p-8 overflow-y-auto space-y-8">
+      <main className="flex-1 w-full max-w-full p-4 sm:p-6 lg:p-8 overflow-x-hidden space-y-6 sm:space-y-8">
         <div>
           <h1 className="text-2xl font-black text-brand-black">
             Service Area PIN Code Management

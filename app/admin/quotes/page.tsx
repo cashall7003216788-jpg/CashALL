@@ -160,10 +160,10 @@ export default function AdminQuotesPage() {
   const completedCount = quotes.filter((q) => q.status === "COMPLETED").length;
 
   return (
-    <div className="min-h-screen bg-neutral-900 text-white flex">
+    <div className="min-h-screen bg-neutral-900 text-white flex flex-col lg:flex-row w-full max-w-full overflow-x-hidden">
       <AdminSidebar />
 
-      <main className="flex-grow p-4 sm:p-6 lg:p-8 overflow-y-auto space-y-6 max-w-full">
+      <main className="flex-1 w-full max-w-full p-4 sm:p-6 lg:p-8 overflow-x-hidden space-y-6">
         {/* HEADER */}
         <div className="flex flex-wrap items-center justify-between gap-4 bg-neutral-800 p-6 rounded-3xl border border-neutral-700 shadow-xl print:hidden">
           <div>
