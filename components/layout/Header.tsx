@@ -116,15 +116,15 @@ export function Header() {
             {/* LEFT LOGO & LOCATION */}
             <div className="flex items-center space-x-5 sm:space-x-8">
               
-              {/* CASHALL LOGO (MAXIMUM VISIBILITY ENLARGED DISPLAY) */}
+              {/* CASHALL LOGO (RESPONSIVE DYNAMIC SIZING) */}
               <Link href="/" className="flex items-center gap-2 group shrink-0">
-                <div className="relative h-16 sm:h-20 w-52 sm:w-64 flex items-center justify-start py-0.5">
+                <div className="relative h-10 sm:h-16 md:h-20 w-28 sm:w-48 md:w-64 flex items-center justify-start py-0.5">
                   <Image
                     src="/logo.png"
                     alt="CashALL Logo"
                     width={320}
                     height={90}
-                    className="object-contain object-left h-full max-h-16 sm:max-h-20 w-auto transition-transform group-hover:scale-105"
+                    className="object-contain object-left h-8 sm:h-16 md:h-20 w-auto transition-transform group-hover:scale-105"
                     priority
                   />
                 </div>
@@ -232,12 +232,12 @@ export function Header() {
               </Button>
             </div>
 
-            {/* MOBILE TRIGGER & CTAs */}
-            <div className="flex sm:hidden items-center space-x-2">
+            {/* MOBILE TRIGGER & CTAs (COMPACT FLUID LAYOUT) */}
+            <div className="flex sm:hidden items-center gap-1.5 shrink-0">
               {/* MOBILE CART BUTTON */}
               <button
                 onClick={() => setCartDrawerOpen(true)}
-                className="relative p-2 rounded-lg bg-neutral-900 border border-neutral-800 text-brand-yellow text-xs font-bold flex items-center justify-center"
+                className="relative p-1.5 rounded-lg bg-neutral-900 border border-neutral-800 text-brand-yellow text-xs font-bold flex items-center justify-center"
                 title="Cart"
               >
                 <ShoppingCart className="w-4 h-4" />
@@ -248,26 +248,31 @@ export function Header() {
                 )}
               </button>
 
+              {/* MOBILE LOCATION PILL */}
               <button
                 onClick={() => setLocationModalOpen(true)}
-                className="p-1.5 rounded-lg bg-neutral-900 border border-neutral-800 text-brand-yellow text-xs font-bold flex items-center gap-1"
+                className="p-1 px-2 rounded-lg bg-neutral-900 border border-neutral-800 text-brand-yellow text-[11px] font-bold flex items-center gap-1 max-w-[85px]"
+                title="Select Location"
               >
-                <MapPin className="w-3.5 h-3.5" />
-                <span className="max-w-[85px] truncate">{selectedLocation ? selectedLocation.city : "Location"}</span>
+                <MapPin className="w-3 h-3 shrink-0" />
+                <span className="truncate">{selectedLocation ? selectedLocation.city : "Location"}</span>
               </button>
 
+              {/* MOBILE SELL NOW BUTTON */}
               <Button
                 onClick={() => setDeviceChoiceOpen(true)}
                 variant="primary"
                 size="sm"
-                className="font-bold text-xs shadow-yellowGlow px-2.5 py-1"
+                className="font-extrabold text-[11px] shadow-yellowGlow px-2.5 py-1 h-8 rounded-lg whitespace-nowrap"
               >
                 SELL NOW
               </Button>
 
+              {/* MOBILE MENU TOGGLE */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-1.5 text-gray-300 hover:text-white rounded-lg focus:outline-none"
+                aria-label="Toggle Navigation"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>

@@ -19,11 +19,11 @@ export function SupportWidget() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
       
       {/* SUPPORT POPUP CARD */}
       {isOpen && (
-        <div className="mb-4 bg-white rounded-3xl p-6 border border-brand-border shadow-2xl w-80 sm:w-96 text-brand-black animate-fadeIn relative">
+        <div className="mb-3 bg-white rounded-3xl p-5 sm:p-6 border border-brand-border shadow-2xl w-[calc(100vw-2rem)] max-w-sm text-brand-black animate-fadeIn relative">
           
           <button
             onClick={() => setIsOpen(false)}
@@ -113,12 +113,12 @@ export function SupportWidget() {
       {/* FLOATING TRIGGER BUTTON */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-3.5 rounded-full bg-brand-black text-white border-2 border-brand-yellow shadow-2xl hover:bg-brand-dark transition-all duration-300 group"
+        className="flex items-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-4 sm:py-3.5 rounded-full bg-brand-black text-white border-2 border-brand-yellow shadow-2xl hover:bg-brand-dark transition-all duration-300 group"
       >
-        <div className="w-7 h-7 rounded-full bg-brand-yellow text-black flex items-center justify-center font-bold">
-          <Headphones className="w-4 h-4" />
+        <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-brand-yellow text-black flex items-center justify-center font-bold">
+          <Headphones className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         </div>
-        <span className="text-xs font-black tracking-wide pr-1">Need Help?</span>
+        <span className="text-[11px] sm:text-xs font-black tracking-wide pr-1">Need Help?</span>
       </button>
 
     </div>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { DeviceCardImage } from "@/components/common/DeviceCardImage";
 import { INITIAL_BRANDS, INITIAL_MODELS } from "@/lib/store";
 import { getSeriesForBrand, filterModelsBySeries } from "@/lib/series-data";
 import { Search, ChevronRight, Smartphone, Sparkles, Layers } from "lucide-react";
@@ -134,18 +135,13 @@ export default function ModelSelectionPage() {
                 href={`/sell/mobile/${brand.slug}/${model.slug}`}
                 className="bg-white rounded-2xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-premium transition-all duration-200 text-center group flex flex-col justify-between"
               >
-                <div className="w-full aspect-square bg-gray-50 rounded-xl mb-3 flex items-center justify-center p-2 border border-gray-100 group-hover:border-brand-yellow/30 relative">
-                  {model.imageUrl ? (
-                    <Image
-                      src={model.imageUrl}
-                      alt={model.name}
-                      width={120}
-                      height={120}
-                      className="object-contain max-h-24 group-hover:scale-105 transition-transform"
-                    />
-                  ) : (
-                    <Smartphone className="w-10 h-10 text-gray-400" />
-                  )}
+                <div className="w-full aspect-square bg-gray-50 rounded-xl mb-3 flex items-center justify-center p-2 border border-gray-100 group-hover:border-brand-yellow/30 relative overflow-hidden">
+                  <DeviceCardImage
+                    src={model.imageUrl}
+                    alt={model.name}
+                    category="MOBILE"
+                    className="object-contain max-h-24 w-auto group-hover:scale-105 transition-transform"
+                  />
                 </div>
 
                 <div>

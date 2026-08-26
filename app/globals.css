@@ -3,15 +3,27 @@
 @import "tailwindcss/utilities";
 
 @layer base {
+  *, ::before, ::after {
+    box-sizing: border-box;
+  }
+
   html {
     scroll-behavior: smooth;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
   }
 
   body {
     background-color: #F7F7F5;
     color: #050505;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 }
 

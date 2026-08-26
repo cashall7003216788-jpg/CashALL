@@ -18,13 +18,13 @@ export function Hero() {
         <div className="text-center max-w-4xl mx-auto space-y-6">
           
           {/* PRIMARY HEADLINE */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-snug sm:leading-tight">
             Sell Your Old Devices <br className="hidden sm:inline" />
-            <span className="text-brand-yellow underline decoration-brand-yellow/30 underline-offset-8">for the Best Value with CashALL.</span>
+            <span className="text-brand-yellow underline decoration-brand-yellow/30 underline-offset-4 sm:underline-offset-8">for the Best Value with CashALL.</span>
           </h1>
 
           {/* SUPPORTING TEXT */}
-          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed px-2">
             Get an instant estimated price for your mobile phone, laptop, or tablet with CashALL. Enjoy fast doorstep pickup and secure payment.
           </p>
 
