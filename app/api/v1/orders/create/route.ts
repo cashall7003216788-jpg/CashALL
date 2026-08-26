@@ -39,12 +39,13 @@ export async function POST(req: NextRequest) {
     const area = data.area ? String(data.area).trim() : "West Bengal";
     const pincode = data.pincode ? String(data.pincode).trim() : "";
 
-    // Strictly lock serviceability to the 5 designated districts
+    // Strictly lock serviceability to the designated districts
     if (!pincode || !isPincodeServiced(pincode)) {
+      const districtNames = SERVICEABLE_DISTRICTS.map((d) => d.name).join(", ");
       return NextResponse.json(
         {
           success: false,
-          error: `Currently, we only serve Ballia, Gorakhpur, Kolkata, Barrackpore, and Ranchi. PIN code ${pincode || "provided"} is outside our service area.`,
+          error: `Currently, we only serve ${districtNames}. PIN code ${pincode || "provided"} is outside our service area.`,
         },
         { status: 400 }
       );

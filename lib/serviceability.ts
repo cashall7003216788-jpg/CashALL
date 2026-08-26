@@ -6,66 +6,71 @@ export interface ServiceableDistrict {
   pincodes: string[];
 }
 
+// 1. Ballia, Uttar Pradesh (2 PIN codes)
 export const BALLIA_PINCODES: string[] = [
-  "221701", "221709", "221711", "221712", "221713", "221715", "221716", "221717", "221718",
-  "277001", "277121", "277123", "277124", "277201", "277202", "277203", "277204", "277205",
-  "277207", "277208", "277209", "277210", "277211", "277213", "277214", "277216", "277219",
-  "277301", "277302", "277303", "277304", "277401", "277402", "277403", "277501", "277502",
-  "277503", "277504", "277506"
+  "277001",
+  "277506"
 ];
 
-export const RANCHI_PINCODES: string[] = [
-  "829205", "829208", "829209", "829210", "834001", "834002", "834003", "834004", "834005",
-  "834006", "834008", "834009", "834010", "834011", "835101", "835102", "835103", "835202",
-  "835204", "835205", "835209", "835210", "835214", "835215", "835216", "835217", "835219",
-  "835221", "835222", "835225", "835227", "835234", "835301", "835303", "835325"
-];
-
+// 2. Gorakhpur, Uttar Pradesh (16 PIN codes: 273001 to 273017, excluding 273011)
 export const GORAKHPUR_PINCODES: string[] = [
-  "273001", "273002", "273003", "273004", "273005", "273006", "273007", "273008", "273009",
-  "273010", "273012", "273013", "273014", "273015", "273016", "273017", "273152", "273157",
-  "273158", "273163", "273165", "273201", "273202", "273203", "273209", "273211", "273212",
-  "273213", "273301", "273303", "273306", "273401", "273402", "273403", "273404", "273405",
-  "273406", "273407", "273408", "273409", "273411", "273412", "273413"
+  "273001", "273002", "273003", "273004", "273005", "273006", "273007", "273008",
+  "273009", "273010", "273012", "273013", "273014", "273015", "273016", "273017"
 ];
 
-export const KOLKATA_PINCODES: string[] = [
-  "700001", "700002", "700003", "700004", "700005", "700006", "700007", "700008", "700009",
-  "700010", "700011", "700012", "700013", "700014", "700015", "700016", "700017", "700018",
-  "700019", "700020", "700021", "700022", "700023", "700024", "700025", "700026", "700027",
-  "700028", "700029", "700030", "700031", "700032", "700033", "700034", "700035", "700036",
-  "700037", "700038", "700040", "700041", "700042", "700043", "700044", "700045", "700046",
-  "700047", "700050", "700052", "700053", "700054", "700060", "700061", "700062", "700063",
-  "700065", "700066", "700067", "700068", "700069", "700071", "700072", "700073", "700074",
-  "700075", "700077", "700078", "700080", "700082", "700085", "700086", "700087", "700088",
-  "700089", "700090", "700092", "700094", "700095", "700099", "700107", "700108"
+// 3. Kolkata, West Bengal (100 PIN codes: 700001 to 700108, excluding 700018, 700023, 700044, 700066, 700083, 700096, 700103, 700104)
+const kolkataExcluded = new Set([
+  "700018", "700023", "700044", "700066", "700083", "700096", "700103", "700104"
+]);
+export const KOLKATA_PINCODES: string[] = Array.from({ length: 108 }, (_, i) => {
+  const code = `700${String(i + 1).padStart(3, "0")}`;
+  return code;
+}).filter((code) => !kolkataExcluded.has(code));
+
+// 4. Barrackpore, West Bengal (9 PIN codes: 700109 to 700123, excluding 700111, 700112, 700113, 700118, 700121, 700122)
+const barrackporeExcluded = new Set([
+  "700111", "700112", "700113", "700118", "700121", "700122"
+]);
+export const BARRACKPORE_PINCODES: string[] = Array.from({ length: 15 }, (_, i) => {
+  const code = `700${String(109 + i).padStart(3, "0")}`;
+  return code;
+}).filter((code) => !barrackporeExcluded.has(code));
+
+// 5. Hooghly, West Bengal (16 PIN codes)
+export const HOOGHLY_PINCODES: string[] = [
+  "712101", "712103", "712104", "712105", "712123", "712124", "712125",
+  "712136", "712137", "712201", "712202", "712203", "712204", "712221",
+  "712223", "712224"
 ];
 
-export const BARRACKPORE_PINCODES: string[] = [
-  "700120", "700121", "700122", "700123"
+// 6. Howrah, West Bengal (15 PIN codes)
+export const HOWRAH_PINCODES: string[] = [
+  "711101", "711102", "711104", "711105", "711106", "711107", "711108",
+  "711109", "711110", "711111", "711112", "711113", "711183", "711302",
+  "711403"
 ];
 
 export const SERVICEABLE_DISTRICTS: ServiceableDistrict[] = [
-  {
-    id: "dist-ballia",
-    name: "Ballia",
-    state: "Uttar Pradesh",
-    count: BALLIA_PINCODES.length,
-    pincodes: BALLIA_PINCODES,
-  },
-  {
-    id: "dist-gorakhpur",
-    name: "Gorakhpur",
-    state: "Uttar Pradesh",
-    count: GORAKHPUR_PINCODES.length,
-    pincodes: GORAKHPUR_PINCODES,
-  },
   {
     id: "dist-kolkata",
     name: "Kolkata",
     state: "West Bengal",
     count: KOLKATA_PINCODES.length,
     pincodes: KOLKATA_PINCODES,
+  },
+  {
+    id: "dist-howrah",
+    name: "Howrah",
+    state: "West Bengal",
+    count: HOWRAH_PINCODES.length,
+    pincodes: HOWRAH_PINCODES,
+  },
+  {
+    id: "dist-hooghly",
+    name: "Hooghly",
+    state: "West Bengal",
+    count: HOOGHLY_PINCODES.length,
+    pincodes: HOOGHLY_PINCODES,
   },
   {
     id: "dist-barrackpore",
@@ -75,11 +80,18 @@ export const SERVICEABLE_DISTRICTS: ServiceableDistrict[] = [
     pincodes: BARRACKPORE_PINCODES,
   },
   {
-    id: "dist-ranchi",
-    name: "Ranchi",
-    state: "Jharkhand",
-    count: RANCHI_PINCODES.length,
-    pincodes: RANCHI_PINCODES,
+    id: "dist-gorakhpur",
+    name: "Gorakhpur",
+    state: "Uttar Pradesh",
+    count: GORAKHPUR_PINCODES.length,
+    pincodes: GORAKHPUR_PINCODES,
+  },
+  {
+    id: "dist-ballia",
+    name: "Ballia",
+    state: "Uttar Pradesh",
+    count: BALLIA_PINCODES.length,
+    pincodes: BALLIA_PINCODES,
   },
 ];
 

@@ -57,7 +57,7 @@ export function LocationModal({
                   Select Your Location
                 </h3>
                 <span className="text-[10px] font-extrabold uppercase tracking-wider bg-brand-yellow/20 text-brand-yellow border border-brand-yellow/40 px-2 py-0.5 rounded-full">
-                  5 Districts
+                  {SERVICEABLE_DISTRICTS.length} Districts
                 </span>
               </div>
               <p className="text-xs text-gray-400 mt-0.5">
@@ -116,7 +116,7 @@ export function LocationModal({
               <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
               <div>
                 <strong className="text-white block font-bold">PIN Code {query} is Outside Service Area</strong>
-                <span>We currently only serve our 5 designated districts. Please choose from below:</span>
+                <span>We currently only serve our {SERVICEABLE_DISTRICTS.length} designated districts. Please choose from below:</span>
               </div>
             </div>
           )}
@@ -184,7 +184,7 @@ export function LocationModal({
               <AlertCircle className="w-8 h-8 text-amber-500 mx-auto" />
               <div>
                 <p className="text-sm font-bold text-white">We don&apos;t serve this location yet.</p>
-                <p className="text-xs text-gray-400 mt-1">CashALL currently provides doorstep pickup in these 5 districts:</p>
+                <p className="text-xs text-gray-400 mt-1">CashALL currently provides doorstep pickup in these {SERVICEABLE_DISTRICTS.length} districts:</p>
               </div>
               <div className="flex flex-wrap justify-center gap-1.5 pt-2">
                 {SERVICEABLE_DISTRICTS.map((d) => (

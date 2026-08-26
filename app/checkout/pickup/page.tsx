@@ -52,7 +52,6 @@ function PickupCheckoutContent() {
 
   const ALL_INDIAN_STATES = [
     "West Bengal",
-    "Jharkhand",
     "Uttar Pradesh",
   ];
 
@@ -366,7 +365,7 @@ function PickupCheckoutContent() {
                     <h2 className="text-base font-bold text-brand-black">1. Pickup PIN Code & Serviceability <span className="text-red-500">*</span></h2>
                   </div>
                   <span className="text-[11px] font-semibold text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">
-                    5 Districts Serviced
+                    {SERVICEABLE_DISTRICTS.length} Districts Serviced
                   </span>
                 </div>
 
