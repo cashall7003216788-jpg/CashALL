@@ -770,7 +770,7 @@ export default function TabletConditionAssessmentPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {[
-                      { id: "charger", title: "Original Fast Charger", desc: "Original brand power adapter and charging cable" },
+                      { id: "charger", title: "Original Charger", desc: "Original brand power adapter and charging cable" },
                       { id: "box", title: "Original Device Box", desc: "Matching IMEI/Serial box packaging" },
                     ].map((item) => {
                       const isSelected = selectedAccessories.includes(item.id);

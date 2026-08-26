@@ -323,7 +323,7 @@ export function CustomerAnswersModal({
     {
       id: "charger",
       category: "accessories",
-      title: "Original Fast Charger / Cable",
+      title: "Original Charger / Cable",
       isAnswered: true,
       isPositive: (rawAnswers.selectedAccessories || []).includes("charger"),
       customerAnswer: (rawAnswers.selectedAccessories || []).includes("charger")
