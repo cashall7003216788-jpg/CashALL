@@ -178,6 +178,10 @@ export async function GET(req: NextRequest) {
         urn: ord.urn && !ord.urn.startsWith("PAID-") && ord.urn !== "128158907549" && ord.urn !== "623480124575" ? ord.urn : (activePayment?.transactionRef && !activePayment.transactionRef.startsWith("PAID-") && activePayment.transactionRef !== "128158907549" ? activePayment.transactionRef : null),
         paymentScreenshotUrl: ord.paymentScreenshotUrl || null,
         agentName: targetAgentUser?.name || "CashALL Agent",
+        selectedAnswersJson: ord.quote?.selectedAnswersJson || (ord as any).selectedAnswersJson || null,
+        breakdownJson: ord.quote?.breakdownJson || (ord as any).breakdownJson || null,
+        priceDifferenceReason: qcReport?.priceDifferenceReason || ord.offers?.[0]?.priceDifferenceReason || (ord as any).priceDifferenceReason || null,
+        quoteNumber: ord.quote?.quoteNumber || null,
         createdAt: ord.createdAt,
       };
     });

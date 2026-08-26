@@ -17,7 +17,9 @@ import {
   Printer,
   CheckCircle2,
   Ban,
+  ListChecks,
 } from "lucide-react";
+import { CustomerAnswersModal } from "@/components/admin/CustomerAnswersModal";
 
 interface Quote {
   id: string;
@@ -40,6 +42,7 @@ export default function AdminQuotesPage() {
   const [error, setError] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [successToast, setSuccessToast] = useState("");
+  const [selectedQuoteForAnswers, setSelectedQuoteForAnswers] = useState<any | null>(null);
 
   const [quoteToConvert, setQuoteToConvert] = useState<Quote | null>(null);
   const [convertForm, setConvertForm] = useState({
@@ -400,42 +403,53 @@ export default function AdminQuotesPage() {
                         {new Date(q.createdAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })}
                       </td>
 
-                      {/* ACTION CONVERT & CANCEL */}
+                      {/* ACTION CONVERT, ANSWERS & CANCEL */}
                       <td className="py-4 px-3">
-                        {q.status !== "ORDERED" && q.status !== "COMPLETED" && q.status !== "CONVERTED" && q.status !== "CANCELLED" ? (
-                          <div className="flex items-center gap-1.5 flex-wrap">
-                            <button
-                              onClick={() => {
-                                setQuoteToConvert(q);
-                                setConvertForm((prev) => ({
-                                  ...prev,
-                                  customerName: q.customerName || "",
-                                  customerPhone: q.customerPhone || "",
-                                }));
-                              }}
-                              className="inline-flex items-center gap-1.5 bg-yellow-400 hover:bg-yellow-300 text-black font-black text-xs px-3 py-1.5 rounded-xl transition shadow-yellowGlow"
-                              title="Convert Quote into Order (CA...)"
-                            >
-                              <CheckCircle2 className="w-3.5 h-3.5" />
-                              <span>Convert (CA...)</span>
-                            </button>
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <button
+                            onClick={() => setSelectedQuoteForAnswers(q)}
+                            className="inline-flex items-center gap-1 bg-cyan-950/80 hover:bg-cyan-900 text-cyan-300 border border-cyan-700 font-bold text-xs px-2.5 py-1.5 rounded-xl transition shadow-sm"
+                            title="View Customer Evaluation Answers & Conditions"
+                          >
+                            <ListChecks className="w-3.5 h-3.5 text-cyan-400" />
+                            <span>Answers</span>
+                          </button>
 
-                            <button
-                              onClick={() => handleCancelQuoteAdmin(q)}
-                              className="inline-flex items-center gap-1 bg-red-950/80 hover:bg-red-900 text-red-300 border border-red-800 font-bold text-xs px-2.5 py-1.5 rounded-xl transition shadow-sm"
-                              title="Cancel / Reject Quote"
-                            >
-                              <Ban className="w-3.5 h-3.5 text-red-400" />
-                              <span>Cancel</span>
-                            </button>
-                          </div>
-                        ) : q.status === "CANCELLED" ? (
-                          <span className="text-red-400 text-[11px] font-bold bg-red-950/60 border border-red-800 px-2 py-0.5 rounded-lg">
-                            CANCELLED
-                          </span>
-                        ) : (
-                          <span className="text-neutral-500 text-[11px] font-bold">Converted</span>
-                        )}
+                          {q.status !== "ORDERED" && q.status !== "COMPLETED" && q.status !== "CONVERTED" && q.status !== "CANCELLED" ? (
+                            <>
+                              <button
+                                onClick={() => {
+                                  setQuoteToConvert(q);
+                                  setConvertForm((prev) => ({
+                                    ...prev,
+                                    customerName: q.customerName || "",
+                                    customerPhone: q.customerPhone || "",
+                                  }));
+                                }}
+                                className="inline-flex items-center gap-1.5 bg-yellow-400 hover:bg-yellow-300 text-black font-black text-xs px-3 py-1.5 rounded-xl transition shadow-yellowGlow"
+                                title="Convert Quote into Order (CA...)"
+                              >
+                                <CheckCircle2 className="w-3.5 h-3.5" />
+                                <span>Convert (CA...)</span>
+                              </button>
+
+                              <button
+                                onClick={() => handleCancelQuoteAdmin(q)}
+                                className="inline-flex items-center gap-1 bg-red-950/80 hover:bg-red-900 text-red-300 border border-red-800 font-bold text-xs px-2.5 py-1.5 rounded-xl transition shadow-sm"
+                                title="Cancel / Reject Quote"
+                              >
+                                <Ban className="w-3.5 h-3.5 text-red-400" />
+                                <span>Cancel</span>
+                              </button>
+                            </>
+                          ) : q.status === "CANCELLED" ? (
+                            <span className="text-red-400 text-[11px] font-bold bg-red-950/60 border border-red-800 px-2 py-0.5 rounded-lg">
+                              CANCELLED
+                            </span>
+                          ) : (
+                            <span className="text-neutral-500 text-[11px] font-bold">Converted</span>
+                          )}
+                        </div>
                       </td>
                     </tr>
                   ))}
@@ -620,6 +634,13 @@ export default function AdminQuotesPage() {
           </div>
         </div>
       )}
+
+      {/* CUSTOMER ANSWERS & QC AUDIT MODAL */}
+      <CustomerAnswersModal
+        isOpen={!!selectedQuoteForAnswers}
+        onClose={() => setSelectedQuoteForAnswers(null)}
+        orderOrQuote={selectedQuoteForAnswers}
+      />
     </div>
   );
 }

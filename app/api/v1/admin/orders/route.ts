@@ -150,6 +150,11 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       ord.imeiNumber ||
       (ord.orderNumber === "CA36738" ? "864932057391842" : null);
 
+    const qcReport = ord.qcReports?.[0];
+    const priceDifferenceReason = qcReport?.priceDifferenceReason || ord.offers?.[0]?.priceDifferenceReason || (ord as any).priceDifferenceReason || null;
+    const selectedAnswersJson = ord.quote?.selectedAnswersJson || (ord as any).selectedAnswersJson || null;
+    const breakdownJson = ord.quote?.breakdownJson || (ord as any).breakdownJson || null;
+
     const paymentRef = ord.urn || (ord as any).utr || ord.payments?.[0]?.transactionRef || (ord.orderNumber === "CA83848" ? "659789934722" : null);
 
     return {
@@ -163,6 +168,9 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       urn: paymentRef,
       utr: paymentRef,
       paymentScreenshotUrl: ord.paymentScreenshotUrl || null,
+      selectedAnswersJson,
+      breakdownJson,
+      priceDifferenceReason,
     };
   });
 

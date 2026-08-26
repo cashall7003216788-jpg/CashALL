@@ -28,6 +28,7 @@ interface BillData {
   paidAt: string;
   orderDate: string;
   completedAt: string;
+  priceDifferenceReason?: string;
 }
 
 export default function CustomerBillPage() {
@@ -167,6 +168,12 @@ export default function CustomerBillPage() {
         if (typeof document !== "undefined") {
           document.title = generatedBillNum;
         }
+        const resolvedPriceDifferenceReason =
+          ord.priceDifferenceReason ||
+          ord.qcReports?.[0]?.priceDifferenceReason ||
+          ord.offers?.[0]?.priceDifferenceReason ||
+          (ord as any).qcReport?.priceDifferenceReason ||
+          "";
 
         setBill({
           orderNumber: ord.orderNumber,
@@ -195,6 +202,7 @@ export default function CustomerBillPage() {
           paidAt: ord.updatedAt ? new Date(ord.updatedAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : `${exactDateStr}, 02:30 PM`,
           orderDate: ord.createdAt ? new Date(ord.createdAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : `${exactDateStr}, 11:15 AM`,
           completedAt: ord.updatedAt ? new Date(ord.updatedAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : `${exactDateStr}, 02:30 PM`,
+          priceDifferenceReason: resolvedPriceDifferenceReason,
         });
       } catch (err: any) {
         setError(err?.message || "Failed to load bill.");
@@ -388,6 +396,24 @@ export default function CustomerBillPage() {
               </div>
             </div>
           </div>
+
+          {/* QC Physical Inspection & Price Settlement Rationale */}
+          {bill.priceDifferenceReason && (
+            <div className="bg-amber-50/80 rounded-xl p-4 border border-amber-200 space-y-1.5 shadow-sm">
+              <div className="flex items-center justify-between">
+                <div className="text-[10px] font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-amber-700" />
+                  <span>Doorstep QC Physical Inspection & Settlement Rationale</span>
+                </div>
+                <span className="text-[10px] text-amber-800 font-bold">
+                  Inspected by: {bill.agentName}
+                </span>
+              </div>
+              <p className="text-xs text-gray-800 font-medium leading-relaxed bg-white/90 p-2.5 rounded-lg border border-amber-100 italic">
+                &ldquo;{bill.priceDifferenceReason}&rdquo;
+              </p>
+            </div>
+          )}
 
           {/* Payment Summary */}
           <div>

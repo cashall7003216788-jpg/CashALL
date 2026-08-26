@@ -27,7 +27,9 @@ import {
   Ban,
   XCircle,
   AlertTriangle,
+  ListChecks,
 } from "lucide-react";
+import { CustomerAnswersModal } from "@/components/admin/CustomerAnswersModal";
 
 interface Order {
   id: string;
@@ -73,6 +75,7 @@ export default function AdminOrdersPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [actionLoading, setActionLoading] = useState<string | null>(null);
+  const [selectedOrderForAnswers, setSelectedOrderForAnswers] = useState<any | null>(null);
 
   const fetchOrders = useCallback(async () => {
     setLoading(true);
@@ -946,6 +949,15 @@ export default function AdminOrdersPage() {
                     {actionLoading === ord.id + "-agent" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <UserCheck className="w-3.5 h-3.5" />}
                     <span>{ord.agentName ? "Re-Assign Agent" : "Assign Agent"}</span>
                   </button>
+
+                  <button
+                    onClick={() => setSelectedOrderForAnswers(ord)}
+                    className="inline-flex items-center gap-1.5 text-xs font-black text-cyan-300 bg-cyan-950/80 hover:bg-cyan-900 border border-cyan-700 px-3.5 py-2 rounded-xl transition shadow-md"
+                    title="View all questions answered and not answered by customer to negotiate"
+                  >
+                    <ListChecks className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>Customer Answers (QC)</span>
+                  </button>
                 </div>
 
                 <div className="flex items-center gap-2 flex-wrap">
@@ -994,6 +1006,13 @@ export default function AdminOrdersPage() {
           ))}
         </div>
       </main>
+
+      {/* CUSTOMER ANSWERS & QC AUDIT MODAL */}
+      <CustomerAnswersModal
+        isOpen={!!selectedOrderForAnswers}
+        onClose={() => setSelectedOrderForAnswers(null)}
+        orderOrQuote={selectedOrderForAnswers}
+      />
     </div>
   );
 }

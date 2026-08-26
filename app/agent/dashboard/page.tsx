@@ -24,7 +24,9 @@ import {
   Barcode,
   Ban,
   XCircle,
+  ListChecks,
 } from "lucide-react";
+import { CustomerAnswersModal } from "@/components/admin/CustomerAnswersModal";
 
 interface AgentOrder {
   id: string;
@@ -56,6 +58,7 @@ export default function AgentDashboardPage() {
   const [uploadingOrderId, setUploadingOrderId] = useState<string | null>(null);
   const [ocrStatus, setOcrStatus] = useState<string>("");
   const [notification, setNotification] = useState<{ type: "success" | "error"; msg: string } | null>(null);
+  const [selectedOrderForAnswers, setSelectedOrderForAnswers] = useState<any | null>(null);
 
   // Check agent login session
   useEffect(() => {
@@ -607,7 +610,7 @@ export default function AgentDashboardPage() {
 
                   {/* BOTTOM ACTION BUTTONS TOOLBAR */}
                   <div className="pt-4 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-3">
-                    {/* LEFT BUTTONS: Physical Inspection */}
+                    {/* LEFT BUTTONS: Physical Inspection & Customer Answers */}
                     <div className="flex items-center gap-2 flex-wrap">
                       <Link
                         href={`/agent/orders/${ord.orderNumber}/inspection`}
@@ -620,6 +623,15 @@ export default function AgentDashboardPage() {
                         <ClipboardCheck className="w-4 h-4" />
                         <span>{isInspectionDone ? "✓ Inspection Done (Edit QC)" : "Physical Inspection"}</span>
                       </Link>
+
+                      <button
+                        onClick={() => setSelectedOrderForAnswers(ord)}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold bg-cyan-950/80 hover:bg-cyan-900 text-cyan-300 border border-cyan-700 px-4 py-2.5 rounded-xl transition shadow-md cursor-pointer"
+                        title="View all answers given & skipped by customer to negotiate price"
+                      >
+                        <ListChecks className="w-4 h-4 text-cyan-400" />
+                        <span>View Customer Answers</span>
+                      </button>
                     </div>
 
                     {/* RIGHT BUTTONS: Mark Paid & Customer Rejected */}
@@ -683,6 +695,13 @@ export default function AgentDashboardPage() {
           )}
         </div>
       </main>
+
+      {/* CUSTOMER ANSWERS & QC AUDIT MODAL */}
+      <CustomerAnswersModal
+        isOpen={!!selectedOrderForAnswers}
+        onClose={() => setSelectedOrderForAnswers(null)}
+        orderOrQuote={selectedOrderForAnswers}
+      />
     </div>
   );
 }
