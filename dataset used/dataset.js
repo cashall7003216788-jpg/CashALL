@@ -1,4 +1,4 @@
-module.exports = [
+const MOBILE_DATASET = [
   {
     "brand": "Apple",
     "brand_slug": "apple",
