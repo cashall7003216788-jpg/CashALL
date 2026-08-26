@@ -3,7 +3,7 @@ import { prisma } from "@/lib/db";
 import { WhatsAppService } from "@/lib/services/whatsapp.service";
 import { logger } from "@/lib/utils/logger";
 import { cleanDeviceName } from "@/lib/device";
-import { isPincodeServiced, getPincodeDetails } from "@/lib/serviceability";
+import { isPincodeServiced, getPincodeDetails, SERVICEABLE_DISTRICTS } from "@/lib/serviceability";
 import { z } from "zod";
 
 const createOrderSchema = z.object({
