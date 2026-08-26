@@ -45,13 +45,7 @@ export const POST = apiWrapper(async (req: NextRequest, context: { params: Promi
       });
     }
 
-    if (order.status === "COMPLETED") {
-      return NextResponse.json(
-        { success: false, error: "Completed orders cannot be cancelled." },
-        { status: 400 }
-      );
-    }
-
+    // Allow cancellation even if marked completed by mistake
     const updatedOrder = await prisma.order.update({
       where: { id: order.id },
       data: {

@@ -653,10 +653,26 @@ export default function AgentDashboardPage() {
                             <span>Mark Paid</span>
                           </button>
                         </>
+                      ) : isCancelled ? (
+                        <div className="inline-flex items-center gap-1.5 text-xs font-black text-red-400 bg-red-950/60 border border-red-800 px-4 py-2 rounded-xl">
+                          <Ban className="w-4 h-4" />
+                          <span>Order Cancelled</span>
+                        </div>
                       ) : (
-                        <div className="inline-flex items-center gap-1.5 text-xs font-black text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-4 py-2 rounded-xl">
-                          <CheckCircle2 className="w-4 h-4" />
-                          <span>Order Completed & Invoice Emailed</span>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <div className="inline-flex items-center gap-1.5 text-xs font-black text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-4 py-2 rounded-xl">
+                            <CheckCircle2 className="w-4 h-4" />
+                            <span>Order Completed & Paid</span>
+                          </div>
+                          <button
+                            onClick={() => handleCustomerRejectedOffer(ord)}
+                            disabled={actionLoading === ord.id + "-reject"}
+                            className="inline-flex items-center gap-1 text-xs font-bold text-red-300 hover:text-red-200 bg-red-950/40 hover:bg-red-900/60 border border-red-800/60 px-3 py-2 rounded-xl transition cursor-pointer"
+                            title="Cancel order if marked paid by mistake"
+                          >
+                            <Ban className="w-3.5 h-3.5 text-red-400" />
+                            <span>Cancel</span>
+                          </button>
                         </div>
                       )}
                     </div>

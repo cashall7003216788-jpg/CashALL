@@ -977,7 +977,7 @@ export default function AdminOrdersPage() {
                     <span>View Bill</span>
                   </Link>
 
-                  {!["COMPLETED", "BILL_GENERATED", "CANCELLED", "REJECTED"].includes(ord.status) && (
+                  {!["CANCELLED", "REJECTED"].includes(ord.status) && (
                     <button
                       onClick={() => handleCancelOrderAdmin(ord)}
                       disabled={actionLoading === ord.id + "-cancel"}
