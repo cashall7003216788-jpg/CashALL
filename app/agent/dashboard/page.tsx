@@ -445,6 +445,7 @@ export default function AgentDashboardPage() {
             </div>
           ) : (
             orders.map((ord) => {
+              const isCancelled = ord.status === "CANCELLED" || ord.status === "REJECTED";
               const isCompleted = ord.paymentStatus === "PAID" || ord.status === "COMPLETED";
               const isInspectionDone = Boolean(ord.imeiNumber) || ord.status === "ACCEPTED" || isCompleted;
               const payoutVal = ord.finalPrice || ord.amount || ord.estimatedPrice || 0;
@@ -469,14 +470,16 @@ export default function AgentDashboardPage() {
                     <div className="flex items-center gap-2">
                       <span
                         className={`text-xs font-black px-3.5 py-1 rounded-full uppercase tracking-wider ${
-                          isCompleted
+                          isCancelled
+                            ? "bg-red-950 text-red-400 border border-red-700"
+                            : isCompleted
                             ? "bg-emerald-950 text-emerald-400 border border-emerald-700"
                             : isInspectionDone
                             ? "bg-blue-950 text-blue-300 border border-blue-700"
                             : "bg-amber-950 text-yellow-400 border border-yellow-700"
                         }`}
                       >
-                        {isCompleted ? "PAID & COMPLETED" : isInspectionDone ? "INSPECTION COMPLETED" : "PICKUP SCHEDULED"}
+                        {isCancelled ? "CANCELLED" : isCompleted ? "PAID & COMPLETED" : isInspectionDone ? "INSPECTION COMPLETED" : "PICKUP SCHEDULED"}
                       </span>
                     </div>
                   </div>

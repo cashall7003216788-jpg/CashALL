@@ -770,7 +770,9 @@ export default function AdminOrdersPage() {
                 <div className="flex items-center gap-2 flex-wrap">
                   {/* Status Badge */}
                   <span className={`text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider ${
-                    ["COMPLETED", "BILL_GENERATED"].includes(ord.status)
+                    ["CANCELLED", "REJECTED"].includes(ord.status)
+                      ? "bg-red-950 text-red-400 border border-red-700 font-extrabold"
+                      : ["COMPLETED", "BILL_GENERATED"].includes(ord.status)
                       ? "bg-green-950 text-green-400 border border-green-700"
                       : ord.status === "PARTNER_ASSIGNED"
                       ? "bg-blue-950 text-blue-400 border border-blue-700"
