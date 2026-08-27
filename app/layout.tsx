@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SupportWidget } from "@/components/common/SupportWidget";
 import Script from "next/script";
+import { Suspense } from "react";
+import { MetaPageViewTracker } from "@/components/analytics/MetaPageViewTracker";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cashall.in"),
@@ -124,6 +126,9 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
+        <Suspense fallback={null}>
+          <MetaPageViewTracker />
+        </Suspense>
         {children}
         <SupportWidget />
       </body>

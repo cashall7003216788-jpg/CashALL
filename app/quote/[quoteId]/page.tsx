@@ -14,6 +14,7 @@ import {
   INITIAL_MODELS,
   INITIAL_BRANDS,
 } from "@/lib/store";
+import { trackMetaStandardEvent } from "@/lib/analytics/meta";
 import {
   ShieldCheck,
   Truck,
@@ -186,11 +187,20 @@ export default function QuoteResultPage() {
   })();
 
   const handleScheduleClick = () => {
+    if (quote) {
+      trackMetaStandardEvent("InitiateCheckout", {
+        content_name: resolvedDeviceName,
+        value: quote.estimatedPrice,
+        currency: "INR",
+        num_items: 1,
+      }, { eventId: `init_checkout_${quote.id}` });
+    }
+
     // Check if customer phone is already stored
     if (typeof window !== "undefined") {
       const existingUser = localStorage.getItem("cashall_user");
       if (existingUser) {
-        router.push(`/checkout/pickup?quoteId=${quote.id}`);
+        router.push(`/checkout/pickup?quoteId=${quote?.id}`);
         return;
       }
     }
@@ -215,6 +225,11 @@ export default function QuoteResultPage() {
       localStorage.setItem("cashall_user", JSON.stringify(userObj));
       document.cookie = `cashall_user_phone=${clean}; path=/; max-age=31536000`;
     }
+
+    trackMetaStandardEvent("CompleteRegistration", {
+      status: "success",
+      method: "phone_otp",
+    }, { eventId: `reg_${clean}` });
 
     if (quote) {
       // Sync customer details to DB

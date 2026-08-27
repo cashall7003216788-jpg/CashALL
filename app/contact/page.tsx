@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { Mail, Phone, MapPin, CheckCircle2, MessageSquare } from "lucide-react";
+import { trackMetaStandardEvent } from "@/lib/analytics/meta";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -19,6 +20,10 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackMetaStandardEvent("Contact", {
+      content_name: "Contact Form",
+      issue_type: formData.issueType,
+    }, { eventId: `contact_form_${formData.phone || Date.now()}` });
     setSubmitted(true);
   };
 

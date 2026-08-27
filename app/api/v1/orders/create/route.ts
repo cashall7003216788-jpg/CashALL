@@ -4,6 +4,12 @@ import { WhatsAppService } from "@/lib/services/whatsapp.service";
 import { logger } from "@/lib/utils/logger";
 import { cleanDeviceName } from "@/lib/device";
 import { isPincodeServiced, getPincodeDetails, SERVICEABLE_DISTRICTS } from "@/lib/serviceability";
+import {
+  extractClientMetadata,
+  sendServerLeadEvent,
+  sendServerScheduleEvent,
+  sendServerPickupBookedEvent,
+} from "@/lib/analytics/meta-server";
 import { z } from "zod";
 
 const createOrderSchema = z.object({
@@ -309,6 +315,58 @@ export async function POST(req: NextRequest) {
       pickupTimeSlot: pickupTimeSlot,
       address: fullAddress,
     }).catch((err) => logger.error("WhatsApp notification error:", err));
+
+    // 7. Dispatch Meta Conversions API (CAPI) events with SHA-256 deduplication
+    try {
+      const clientMeta = extractClientMetadata(req);
+      const capiUserData = {
+        email: rawEmail || undefined,
+        phone: cleanPhone,
+        firstName: fullName,
+        city: city || undefined,
+        state: state || undefined,
+        pincode: pincode,
+        clientIpAddress: clientMeta.clientIpAddress,
+        clientUserAgent: clientMeta.clientUserAgent,
+        fbp: clientMeta.fbp,
+        fbc: clientMeta.fbc,
+      };
+
+      // Non-blocking fire of Lead, Schedule, and PickupBooked CAPI events
+      Promise.allSettled([
+        sendServerLeadEvent({
+          orderNumber: order.orderNumber,
+          value: estimatedPrice,
+          contentName: deviceName,
+          userData: capiUserData,
+        }),
+        sendServerScheduleEvent({
+          orderNumber: order.orderNumber,
+          value: estimatedPrice,
+          contentName: deviceName,
+          pickupDate: pickupDate,
+          pickupTimeSlot: pickupTimeSlot,
+          userData: capiUserData,
+        }),
+        sendServerPickupBookedEvent({
+          orderNumber: order.orderNumber,
+          value: estimatedPrice,
+          contentName: deviceName,
+          contentCategory: (quote as any)?.variant?.model?.category || "MOBILE",
+          pincode: pincode,
+          city: city,
+          pickupDate: pickupDate,
+          pickupTimeSlot: pickupTimeSlot,
+          userData: capiUserData,
+        }),
+      ]).then(() => {
+        logger.info(`[META CAPI] Dispatched Lead, Schedule, and PickupBooked for #${order.orderNumber}`);
+      }).catch((capiErr) => {
+        logger.error("[META CAPI ERROR]", capiErr);
+      });
+    } catch (capiErr) {
+      logger.error("[META CAPI SETUP ERROR]", capiErr);
+    }
 
     logger.info(`[ORDER SUCCESS] Created Order #${order.orderNumber} for ${fullName}`);
 

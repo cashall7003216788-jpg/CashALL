@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { X, Lock, Smartphone } from "lucide-react";
+import { trackMetaStandardEvent } from "@/lib/analytics/meta";
 
 interface PriceUnlockModalProps {
   isOpen: boolean;
@@ -55,6 +56,11 @@ export function PriceUnlockModal({
       localStorage.setItem("cashall_user", JSON.stringify(userObj));
       document.cookie = `cashall_user_phone=${clean}; path=/; max-age=31536000`;
     }
+
+    trackMetaStandardEvent("CompleteRegistration", {
+      status: "success",
+      method: "phone",
+    }, { eventId: `reg_${clean}` });
 
     setTimeout(() => {
       setLoading(false);

@@ -9,6 +9,7 @@ import {
   ArrowRight,
   RefreshCw,
 } from "lucide-react";
+import { trackMetaStandardEvent } from "@/lib/analytics/meta";
 
 interface CustomerAuthModalProps {
   isOpen: boolean;
@@ -76,6 +77,11 @@ export function CustomerAuthModal({
       document.cookie = `cashall_user_phone=${cleanPhone}; path=/; max-age=31536000`;
     }
 
+    trackMetaStandardEvent("CompleteRegistration", {
+      status: "success",
+      method: "phone_direct",
+    }, { eventId: `reg_${cleanPhone}` });
+
     setTimeout(() => {
       setLoading(false);
       onClose();
@@ -108,6 +114,11 @@ export function CustomerAuthModal({
       localStorage.setItem("cashall_user", JSON.stringify(userObj));
       document.cookie = `cashall_user_phone=${cleanPhone}; path=/; max-age=31536000`;
     }
+
+    trackMetaStandardEvent("CompleteRegistration", {
+      status: "success",
+      method: "phone_otp",
+    }, { eventId: `reg_${cleanPhone}` });
 
     setLoading(false);
     onClose();

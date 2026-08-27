@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { INITIAL_SERVICE_AREAS, OrderData, QuoteData, INITIAL_VARIANTS, INITIAL_MODELS, INITIAL_BRANDS } from "@/lib/store";
 import { removeQuoteFromCart } from "@/lib/cart";
 import { SERVICEABLE_DISTRICTS, isPincodeServiced, getPincodeDetails } from "@/lib/serviceability";
+import { trackMetaStandardEvent, trackMetaCustomEvent } from "@/lib/analytics/meta";
 import {
   MapPin,
   Calendar,
@@ -62,16 +63,22 @@ function PickupCheckoutContent() {
       return;
     }
 
-    if (isPincodeServiced(pinStr)) {
-      const details = getPincodeDetails(pinStr);
-      if (details) {
-        setCity(details.city);
-        setSelectedState(details.state);
-      }
+    const isServiced = isPincodeServiced(pinStr);
+    const details = isServiced ? getPincodeDetails(pinStr) : null;
+    if (isServiced && details) {
+      setCity(details.city);
+      setSelectedState(details.state);
       setServiceStatus("AVAILABLE");
     } else {
       setServiceStatus("UNAVAILABLE");
     }
+
+    trackMetaCustomEvent("ServiceabilityChecked", {
+      pincode: pinStr,
+      serviceable: isServiced,
+      city: details?.city || city,
+      state: details?.state || selectedState,
+    }, { eventId: `serviceability_${pinStr}` });
   };
 
   const handlePincodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -150,6 +157,17 @@ function PickupCheckoutContent() {
       }
     }
   }, [quoteId]);
+
+  useEffect(() => {
+    if (quote) {
+      trackMetaStandardEvent("InitiateCheckout", {
+        content_name: resolvedDeviceName || "Assessed Device",
+        value: quote.estimatedPrice,
+        currency: "INR",
+        num_items: 1,
+      }, { eventId: `init_checkout_${quote.id || quote.quoteNumber}` });
+    }
+  }, [quote?.id, quote?.estimatedPrice, resolvedDeviceName]);
 
   const handleConfirmOrder = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -250,6 +268,53 @@ function PickupCheckoutContent() {
       setIsSubmitting(false);
       alert(serverErrorMsg || "Unable to process order right now. Please check your details and try again.");
       return;
+    }
+
+    // ── FIRE META CONVERSIONS ONLY ON BACKEND CONFIRMED SUCCESS ──
+    const orderValue = quote?.estimatedPrice || 32500;
+    let categoryName = "MOBILE";
+    if (quote?.breakdownJson) {
+      try {
+        const bd = JSON.parse(quote.breakdownJson);
+        if (bd.category) categoryName = bd.category;
+      } catch {}
+    }
+
+    // 1. Lead (Funnel event)
+    trackMetaStandardEvent("Lead", {
+      currency: "INR",
+      value: orderValue,
+      content_name: fullDeviceName,
+      order_number: createdOrderNum,
+    }, { eventId: `lead_${createdOrderNum}` });
+
+    // 2. Schedule (Funnel event)
+    trackMetaStandardEvent("Schedule", {
+      currency: "INR",
+      value: orderValue,
+      content_name: fullDeviceName,
+      order_number: createdOrderNum,
+      pickup_date: pickupDate,
+      pickup_time_slot: pickupSlot,
+    }, { eventId: `schedule_${createdOrderNum}` });
+
+    // 3. PickupBooked (PRIMARY FINAL BUSINESS CONVERSION)
+    trackMetaCustomEvent("PickupBooked", {
+      order_number: createdOrderNum,
+      content_name: fullDeviceName,
+      content_category: categoryName,
+      value: orderValue,
+      currency: "INR",
+      pincode: pincode,
+      city: finalCity,
+      pickup_date: pickupDate,
+      pickup_time_slot: pickupSlot,
+    }, { eventId: `pickup_${createdOrderNum}` });
+
+    if (typeof window !== "undefined" && window.sessionStorage) {
+      try {
+        sessionStorage.setItem(`cashall_tracked_order_${createdOrderNum}`, "true");
+      } catch {}
     }
 
     const fullAddress = `${finalHouse}, ${finalStreet}, ${finalArea}${landmark ? ", " + landmark.trim() : ""}, ${finalCity}, ${selectedState} - ${pincode}`;

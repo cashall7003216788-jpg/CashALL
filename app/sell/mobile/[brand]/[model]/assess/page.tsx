@@ -3,7 +3,7 @@
 
 export const dynamic = "force-dynamic";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useParams, useSearchParams, useRouter } from "next/navigation";
@@ -20,6 +20,7 @@ import {
 } from "@/lib/store";
 import { saveQuoteToCart } from "@/lib/cart";
 import { formatDeviceName } from "@/lib/device";
+import { trackMetaCustomEvent, trackMetaStandardEvent } from "@/lib/analytics/meta";
 import {
   ChevronLeft,
   ChevronRight,
@@ -282,6 +283,33 @@ export default function ConditionAssessmentPage() {
   const currentPrice = calculateEstimatedPrice();
   const [unlockModalOpen, setUnlockModalOpen] = useState(false);
 
+  useEffect(() => {
+    if (brand && model && variant) {
+      const deviceFullName = formatDeviceName(brand.name, model.name, variant.storage);
+      trackMetaCustomEvent("AssessmentStarted", {
+        content_name: deviceFullName,
+        content_category: "mobile",
+        brand: brand.name,
+        model: model.name,
+        storage: variant.storage,
+      }, { eventId: `assess_start_${variant.id}` });
+    }
+  }, [variant.id]);
+
+  useEffect(() => {
+    if (step > 5 && brand && model && variant) {
+      const deviceFullName = formatDeviceName(brand.name, model.name, variant.storage);
+      trackMetaCustomEvent("AssessmentCompleted", {
+        content_name: deviceFullName,
+        content_category: "mobile",
+        brand: brand.name,
+        model: model.name,
+        estimated_value: currentPrice,
+        currency: "INR",
+      }, { eventId: `assess_done_${variant.id}` });
+    }
+  }, [step, variant.id, currentPrice]);
+
   // GENERATE FINAL QUOTE & REDIRECT
   const handleGenerateQuote = () => {
     if (typeof window !== "undefined" && !localStorage.getItem("cashall_user")) {
@@ -370,6 +398,25 @@ export default function ConditionAssessmentPage() {
         deviceName: deviceFullName,
       }),
     }).catch((err) => console.error("Quote DB save error:", err));
+
+    // Track Meta QuoteGenerated & AddToCart
+    trackMetaCustomEvent("QuoteGenerated", {
+      quote_id: quoteNumber,
+      content_name: deviceFullName,
+      content_category: "mobile",
+      brand: brand.name,
+      model: model.name,
+      value: currentPrice,
+      currency: "INR",
+    }, { eventId: `quote_${quoteNumber}` });
+
+    trackMetaStandardEvent("AddToCart", {
+      content_type: "product",
+      content_name: deviceFullName,
+      content_ids: [variant.id],
+      value: currentPrice,
+      currency: "INR",
+    }, { eventId: `cart_${quoteNumber}` });
 
     router.push(`/quote/${quoteId}`);
   };

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Headphones, PhoneCall, MessageSquare, Mail, X, Clock, HelpCircle } from "lucide-react";
+import { trackMetaStandardEvent } from "@/lib/analytics/meta";
 
 export function SupportWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,6 +48,9 @@ export function SupportWidget() {
             {/* PHONE CALL */}
             <a
               href="tel:+917003216788"
+              onClick={() => {
+                trackMetaStandardEvent("Contact", { content_name: "Phone Call" }, { eventId: "contact_phone_widget" });
+              }}
               className="flex items-center gap-3 p-3 rounded-2xl bg-gray-50 hover:bg-brand-yellow/10 border border-gray-100 hover:border-brand-yellow/40 transition-colors group"
             >
               <div className="w-8 h-8 rounded-xl bg-green-50 text-green-700 flex items-center justify-center shrink-0">
@@ -63,6 +67,9 @@ export function SupportWidget() {
               href="https://wa.me/917003216788?text=Hi%20CashALL%20Support,%20I%20need%20assistance%20selling%20my%20device."
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                trackMetaStandardEvent("Contact", { content_name: "WhatsApp" }, { eventId: "contact_whatsapp_widget" });
+              }}
               className="flex items-center gap-3 p-3 rounded-2xl bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 transition-colors group"
             >
               <div className="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-sm">
@@ -80,6 +87,9 @@ export function SupportWidget() {
             {/* EMAIL */}
             <a
               href="mailto:support@cashall.in"
+              onClick={() => {
+                trackMetaStandardEvent("Contact", { content_name: "Email Support" }, { eventId: "contact_email_widget" });
+              }}
               className="flex items-center gap-3 p-3 rounded-2xl bg-gray-50 hover:bg-gray-100 border border-gray-100 transition-colors group"
             >
               <div className="w-8 h-8 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">

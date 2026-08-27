@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { Header } from "@/components/layout/Header";
@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { INITIAL_BRANDS, INITIAL_MODELS, INITIAL_VARIANTS } from "@/lib/store";
 import { ChevronRight, ArrowRight, Sparkles, Tablet, Check } from "lucide-react";
+import { trackMetaStandardEvent } from "@/lib/analytics/meta";
 
 export default function TabletVariantSelectionPage() {
   const params = useParams();
@@ -34,6 +35,20 @@ export default function TabletVariantSelectionPage() {
   );
 
   const selectedVariant = variants.find((v) => v.id === selectedVariantId) || variants[0];
+
+  useEffect(() => {
+    if (model && brand) {
+      trackMetaStandardEvent("ViewContent", {
+        content_type: "product",
+        content_name: `${brand.name} ${model.name}`,
+        content_category: "tablet",
+        brand: brand.name,
+        model: model.name,
+        value: selectedVariant?.basePrice || 0,
+        currency: "INR",
+      }, { eventId: `view_tablet_${brand.slug}_${model.slug}` });
+    }
+  }, [model?.id, brand?.id]);
 
   const handleContinue = () => {
     if (!selectedVariant) return;

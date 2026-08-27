@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Modal } from "@/components/ui/Modal";
 import { OrderData, INITIAL_VARIANTS, INITIAL_MODELS, INITIAL_BRANDS, INITIAL_ORDERS } from "@/lib/store";
+import { trackMetaCustomEvent } from "@/lib/analytics/meta";
 import {
   CheckCircle2,
   Clock,
@@ -193,6 +194,12 @@ export default function OrderTrackingPage() {
       if (typeof window !== "undefined") {
         localStorage.setItem(`cashall_order_${order.orderNumber}`, JSON.stringify(updated));
       }
+
+      trackMetaCustomEvent("OfferAccepted", {
+        order_number: order.orderNumber,
+        value: order.revisedPrice || order.estimatedPrice || 0,
+        currency: "INR",
+      }, { eventId: `offer_accept_${order.id || order.orderNumber}` });
     } catch (e) {
       console.error(e);
     }

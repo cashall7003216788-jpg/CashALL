@@ -10,6 +10,7 @@ import { DeviceCardImage } from "@/components/common/DeviceCardImage";
 import { INITIAL_BRANDS, INITIAL_MODELS } from "@/lib/store";
 import { getSeriesForBrand, filterModelsBySeries } from "@/lib/series-data";
 import { Search, ChevronRight, Smartphone, Sparkles, Layers } from "lucide-react";
+import { trackMetaStandardEvent } from "@/lib/analytics/meta";
 
 export default function ModelSelectionPage() {
   const params = useParams();
@@ -133,6 +134,16 @@ export default function ModelSelectionPage() {
               <Link
                 key={model.id}
                 href={`/sell/mobile/${brand.slug}/${model.slug}`}
+                onClick={() => {
+                  if (search.trim()) {
+                    trackMetaStandardEvent("Search", {
+                      search_string: search.trim(),
+                      content_category: "mobile",
+                      brand: brand.name,
+                      content_name: model.name,
+                    }, { eventId: `search_${brand.slug}_${search.trim().toLowerCase()}` });
+                  }
+                }}
                 className="bg-white rounded-2xl p-4 border border-brand-border hover:border-brand-yellow hover:shadow-premium transition-all duration-200 text-center group flex flex-col justify-between"
               >
                 <div className="w-full aspect-square bg-gray-50 rounded-xl mb-3 flex items-center justify-center p-2 border border-gray-100 group-hover:border-brand-yellow/30 relative overflow-hidden">

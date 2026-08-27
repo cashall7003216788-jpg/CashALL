@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { INITIAL_BRANDS, INITIAL_MODELS, INITIAL_VARIANTS } from "@/lib/store";
 import { ChevronRight, Laptop, ArrowRight, CheckCircle2, Cpu } from "lucide-react";
+import { trackMetaStandardEvent } from "@/lib/analytics/meta";
 
 export default function LaptopVariantSelectionPage() {
   const params = useParams();
@@ -28,6 +29,20 @@ export default function LaptopVariantSelectionPage() {
 
   const [selectedVariantId, setSelectedVariantId] = useState<string>(fallbackVariants[0].id);
   const selectedVariant = fallbackVariants.find((v) => v.id === selectedVariantId) || fallbackVariants[0];
+
+  useEffect(() => {
+    if (model && brand) {
+      trackMetaStandardEvent("ViewContent", {
+        content_type: "product",
+        content_name: `${brand.name} ${model.name}`,
+        content_category: "laptop",
+        brand: brand.name,
+        model: model.name,
+        value: selectedVariant?.basePrice || 0,
+        currency: "INR",
+      }, { eventId: `view_laptop_${brand.slug}_${model.slug}` });
+    }
+  }, [model?.id, brand?.id]);
 
   const handleContinue = () => {
     router.push(`/sell/laptop/${brand.slug}/${model?.slug}/assess?variantId=${selectedVariant.id}`);

@@ -5,6 +5,7 @@ import { prisma } from "@/lib/db";
 import { AppError } from "@/lib/utils/AppError";
 import { OrderStateMachine } from "@/lib/services/order-state";
 import { AuditService } from "@/lib/services/audit.service";
+import { extractClientMetadata, sendServerOfferAcceptedEvent } from "@/lib/analytics/meta-server";
 import { z } from "zod";
 
 const schema = z.object({
@@ -23,7 +24,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
 
   const order = await prisma.order.findUnique({
     where: { id: params.id },
-    include: { offers: true },
+    include: { offers: true, quote: true },
   });
   if (!order) throw new AppError("Order not found.", 404);
 
@@ -53,6 +54,23 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
       oldValues: { status: order.status },
       newValues: { status: "ACCEPTED", acceptedPrice: order.finalPrice, acceptedAt: new Date() },
     });
+
+    // Fire Meta CAPI OfferAccepted event
+    try {
+      const clientMeta = extractClientMetadata(req);
+      const offerVal = pendingOffer ? pendingOffer.revisedPrice : (order.finalPrice ?? order.quote?.estimatedPrice ?? 0);
+      sendServerOfferAcceptedEvent({
+        orderId: order.id,
+        orderNumber: order.orderNumber,
+        value: Number(offerVal),
+        userData: {
+          clientIpAddress: clientMeta.clientIpAddress,
+          clientUserAgent: clientMeta.clientUserAgent,
+          fbp: clientMeta.fbp,
+          fbc: clientMeta.fbc,
+        },
+      }).catch(() => null);
+    } catch {}
 
     return NextResponse.json({
       success: true,

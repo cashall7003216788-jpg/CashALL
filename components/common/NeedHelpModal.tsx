@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { HelpCircle, X, HelpCircle as FaqIcon, Headphones, MessageSquare, PhoneCall, ChevronRight } from "lucide-react";
+import { trackMetaStandardEvent } from "@/lib/analytics/meta";
 
 interface NeedHelpModalProps {
   isOpen: boolean;
@@ -86,6 +87,9 @@ export function NeedHelpModal({ isOpen, onClose }: NeedHelpModalProps) {
           <div className="pt-2 border-t border-neutral-800/80 grid grid-cols-2 gap-3">
             <a
               href="tel:+917003216788"
+              onClick={() => {
+                trackMetaStandardEvent("Contact", { content_name: "Phone Call" }, { eventId: "contact_phone_helpmodal" });
+              }}
               className="flex items-center justify-center gap-2 p-3 rounded-xl bg-neutral-900/60 border border-neutral-800 text-xs font-bold text-gray-300 hover:text-white hover:border-brand-yellow/40 transition-colors"
             >
               <PhoneCall className="w-4 h-4 text-brand-yellow" />
@@ -95,6 +99,9 @@ export function NeedHelpModal({ isOpen, onClose }: NeedHelpModalProps) {
               href="https://wa.me/917003216788"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                trackMetaStandardEvent("Contact", { content_name: "WhatsApp" }, { eventId: "contact_whatsapp_helpmodal" });
+              }}
               className="flex items-center justify-center gap-2 p-3 rounded-xl bg-neutral-900/60 border border-neutral-800 text-xs font-bold text-gray-300 hover:text-white hover:border-brand-yellow/40 transition-colors"
             >
               <MessageSquare className="w-4 h-4 text-brand-yellow" />

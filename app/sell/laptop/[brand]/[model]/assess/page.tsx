@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useParams, useSearchParams, useRouter } from "next/navigation";
@@ -11,6 +11,7 @@ import { PriceUnlockModal } from "@/components/common/PriceUnlockModal";
 import { INITIAL_BRANDS, INITIAL_MODELS, INITIAL_VARIANTS, QuoteData } from "@/lib/store";
 import { saveQuoteToCart } from "@/lib/cart";
 import { formatDeviceName } from "@/lib/device";
+import { trackMetaCustomEvent, trackMetaStandardEvent } from "@/lib/analytics/meta";
 import {
   ChevronRight,
   CheckCircle2,
@@ -192,6 +193,19 @@ export default function LaptopAssessmentPage() {
 
   const finalPrice = calculateFinalPrice();
 
+  useEffect(() => {
+    if (brand && model) {
+      const deviceFullName = formatDeviceName(brand.name, model?.name || "Laptop", variant?.storage);
+      trackMetaCustomEvent("AssessmentStarted", {
+        content_name: deviceFullName,
+        content_category: "laptop",
+        brand: brand.name,
+        model: model?.name,
+        storage: variant?.storage,
+      }, { eventId: `assess_start_${variant?.id || model?.id}` });
+    }
+  }, [variant?.id, model?.id]);
+
   const handleGenerateLaptopQuote = () => {
     const quoteId = `quote-${Date.now()}`;
     const random5Digits = Math.floor(10000 + Math.random() * 90000);
@@ -282,6 +296,34 @@ export default function LaptopAssessmentPage() {
         createdAt: newQuote.createdAt,
       }),
     }).catch((err) => console.error("Error saving laptop quote:", err));
+
+    // Track Meta AssessmentCompleted, QuoteGenerated & AddToCart
+    trackMetaCustomEvent("AssessmentCompleted", {
+      content_name: deviceFullName,
+      content_category: "laptop",
+      brand: brand.name,
+      model: model?.name,
+      estimated_value: finalPrice,
+      currency: "INR",
+    }, { eventId: `assess_done_${variant?.id || quoteNumber}` });
+
+    trackMetaCustomEvent("QuoteGenerated", {
+      quote_id: quoteNumber,
+      content_name: deviceFullName,
+      content_category: "laptop",
+      brand: brand.name,
+      model: model?.name,
+      value: finalPrice,
+      currency: "INR",
+    }, { eventId: `quote_${quoteNumber}` });
+
+    trackMetaStandardEvent("AddToCart", {
+      content_type: "product",
+      content_name: deviceFullName,
+      content_ids: [variant?.id || model?.id || ""],
+      value: finalPrice,
+      currency: "INR",
+    }, { eventId: `cart_${quoteNumber}` });
 
     router.push(`/checkout/pickup?quoteId=${quoteNumber}`);
   };

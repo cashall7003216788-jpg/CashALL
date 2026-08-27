@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Search, ArrowRight, Smartphone, Laptop, Tablet, Sparkles } from "lucide-react";
 import { INITIAL_MODELS, INITIAL_BRANDS } from "@/lib/store";
+import { trackMetaStandardEvent } from "@/lib/analytics/meta";
 
 export function DeviceSearch() {
   const [query, setQuery] = useState("");
@@ -65,6 +66,13 @@ export function DeviceSearch() {
                     <Link
                       key={item.id}
                       href={targetUrl}
+                      onClick={() => {
+                        trackMetaStandardEvent("Search", {
+                          search_string: query,
+                          content_category: item.category?.toLowerCase() || "device",
+                          content_name: item.name,
+                        }, { eventId: `search_${query.trim().toLowerCase()}` });
+                      }}
                       className="flex items-center justify-between px-5 py-3.5 hover:bg-brand-yellow/10 transition-colors group"
                     >
                       <div className="flex items-center gap-3">
