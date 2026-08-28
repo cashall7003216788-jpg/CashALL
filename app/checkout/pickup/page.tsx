@@ -54,6 +54,7 @@ function PickupCheckoutContent() {
   const ALL_INDIAN_STATES = [
     "West Bengal",
     "Uttar Pradesh",
+    "Jharkhand",
   ];
 
   const checkPincode = (pinToCheck?: string) => {
@@ -181,7 +182,8 @@ function PickupCheckoutContent() {
 
     if (!isPincodeServiced(cleanPin)) {
       setServiceStatus("UNAVAILABLE");
-      alert(`Currently, we only serve Ballia, Gorakhpur, Kolkata, Barrackpore, and Ranchi. PIN code ${cleanPin} is outside our service area.`);
+      const districtList = SERVICEABLE_DISTRICTS.map((d) => d.name).join(", ");
+      alert(`Currently, we only serve ${districtList}. PIN code ${cleanPin} is outside our service area.`);
       return;
     }
 

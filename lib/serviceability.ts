@@ -50,6 +50,13 @@ export const HOWRAH_PINCODES: string[] = [
   "711403"
 ];
 
+// 7. Ranchi, Jharkhand (3 PIN codes)
+export const RANCHI_PINCODES: string[] = [
+  "834001",
+  "834002",
+  "834003"
+];
+
 export const SERVICEABLE_DISTRICTS: ServiceableDistrict[] = [
   {
     id: "dist-kolkata",
@@ -92,6 +99,13 @@ export const SERVICEABLE_DISTRICTS: ServiceableDistrict[] = [
     state: "Uttar Pradesh",
     count: BALLIA_PINCODES.length,
     pincodes: BALLIA_PINCODES,
+  },
+  {
+    id: "dist-ranchi",
+    name: "Ranchi",
+    state: "Jharkhand",
+    count: RANCHI_PINCODES.length,
+    pincodes: RANCHI_PINCODES,
   },
 ];
 

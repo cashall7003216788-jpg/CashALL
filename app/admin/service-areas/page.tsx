@@ -66,7 +66,7 @@ export default function AdminServiceAreasPage() {
             Service Area PIN Code Management
           </h1>
           <p className="text-xs text-brand-muted mt-0.5">
-            Configure active serviceability PIN codes and doorstep pickup availability across active states (West Bengal, Uttar Pradesh)
+            Configure active serviceability PIN codes and doorstep pickup availability across active states (West Bengal, Uttar Pradesh, Jharkhand)
           </p>
         </div>
 
