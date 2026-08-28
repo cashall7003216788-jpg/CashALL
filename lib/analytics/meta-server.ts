@@ -12,7 +12,7 @@ import crypto from "crypto";
  * - META_TEST_EVENT_CODE (optional for Meta Events Manager test console)
  */
 
-const META_GRAPH_API_VERSION = "v20.0";
+const META_GRAPH_API_VERSION = process.env.META_GRAPH_API_VERSION || "v26.0";
 const DEFAULT_PIXEL_ID = "1037780558881291";
 
 export interface ServerUserData {
