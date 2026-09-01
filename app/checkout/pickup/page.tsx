@@ -243,6 +243,8 @@ function PickupCheckoutContent() {
             pickupTimeSlot: pickupSlot,
             deviceName: fullDeviceName,
             estimatedPrice: quote?.estimatedPrice || 32500,
+            selectedAnswersJson: quote?.selectedAnswersJson || "{}",
+            breakdownJson: quote?.breakdownJson || "{}",
           }),
         });
 

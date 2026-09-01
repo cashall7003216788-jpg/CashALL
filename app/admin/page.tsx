@@ -41,7 +41,7 @@ const DEFAULT_RECENT_ORDERS: RecentOrder[] = [
     id: "ord-ca72512",
     orderNumber: "CA72512",
     customerName: "West Bengal Customer",
-    customerPhone: "+91 7003216788",
+    customerPhone: "+91 7604092333",
     pickupDate: "Tomorrow",
     pickupTimeSlot: "1 PM - 4 PM",
     estimatedPrice: 32500,

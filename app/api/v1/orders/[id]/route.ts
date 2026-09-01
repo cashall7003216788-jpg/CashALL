@@ -83,7 +83,7 @@ export const GET = apiWrapper(async (req: NextRequest, { params }: { params: { i
     ? pickup.notes
     : (assignedPartner?.name || assignedPartner?.businessName || null));
 
-  const assignedAgentPhone = order.agent?.phone || assignedPartner?.phone || (assignedAgentName ? "7003216788" : null);
+  const assignedAgentPhone = order.agent?.phone || assignedPartner?.phone || (assignedAgentName ? "7604092333" : null);
 
   const activePayment = order.payments?.find((p: any) => p.status === "PAID") || order.payments?.[0];
 

@@ -245,7 +245,12 @@ export default function AdminOrdersPage() {
         setOrders((prev) =>
           prev.map((item) =>
             item.id === ord.id || item.orderNumber === ord.orderNumber
-              ? { ...item, agentId: selectedAgentId, agentName, status: "PARTNER_ASSIGNED" }
+              ? {
+                  ...item,
+                  agentId: selectedAgentId,
+                  agentName,
+                  status: ["COMPLETED", "BILL_GENERATED"].includes(item.status) ? item.status : "PARTNER_ASSIGNED",
+                }
               : item
           )
         );
@@ -260,7 +265,9 @@ export default function AdminOrdersPage() {
               parsed.assignedPartnerPhone = agentPhone;
               parsed.agentName = agentName;
               parsed.agentPhone = agentPhone;
-              parsed.status = "PARTNER_ASSIGNED";
+              if (!["COMPLETED", "BILL_GENERATED"].includes(parsed.status)) {
+                parsed.status = "PARTNER_ASSIGNED";
+              }
               localStorage.setItem(`cashall_order_${ord.orderNumber}`, JSON.stringify(parsed));
             } catch (e) {}
           }

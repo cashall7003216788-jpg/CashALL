@@ -47,7 +47,7 @@ export function SupportWidget() {
             
             {/* PHONE CALL */}
             <a
-              href="tel:+917003216788"
+              href="tel:+917604092333"
               onClick={() => {
                 trackMetaStandardEvent("Contact", { content_name: "Phone Call" }, { eventId: "contact_phone_widget" });
               }}
@@ -58,13 +58,13 @@ export function SupportWidget() {
               </div>
               <div className="flex-grow">
                 <div className="font-extrabold text-brand-black group-hover:text-black">Call Support Hotline</div>
-                <div className="text-[11px] text-gray-500">+91 7003216788</div>
+                <div className="text-[11px] text-gray-500">+91 7604092333</div>
               </div>
             </a>
 
             {/* WHATSAPP */}
             <a
-              href="https://wa.me/917003216788?text=Hi%20CashALL%20Support,%20I%20need%20assistance%20selling%20my%20device."
+              href="https://wa.me/917604092333?text=Hi%20CashALL%20Support,%20I%20need%20assistance%20selling%20my%20device."
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
@@ -80,7 +80,7 @@ export function SupportWidget() {
                   <span>WhatsApp Live Chat</span>
                   <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 </div>
-                <div className="text-[11px] text-emerald-700 font-medium">Chat directly on WhatsApp (+91 7003216788)</div>
+                <div className="text-[11px] text-emerald-700 font-medium">Chat directly on WhatsApp (+91 7604092333)</div>
               </div>
             </a>
 

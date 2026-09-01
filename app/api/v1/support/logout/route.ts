@@ -7,7 +7,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => ({}));
     const name = (body.name || body.username || "Support Agent").trim();
-    const phone = (body.phone || "7003216788").trim();
+    const phone = (body.phone || "7604092333").trim();
 
     try {
       await prisma.auditLog.create({

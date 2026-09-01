@@ -49,3 +49,5 @@ page_debug.html
 cashify_debug.py
 scraper_log.txt
 scratch/
+__pycache__/
+*.pyc

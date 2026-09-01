@@ -97,14 +97,14 @@ export default function LaptopVariantSelectionPage() {
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+917604092333"
                   className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-brand-yellow text-brand-black font-extrabold rounded-xl shadow-yellowGlow hover:opacity-90 transition-opacity text-sm"
                 >
                   <span>📞</span>
                   Call for Exact Price
                 </a>
                 <a
-                  href={`https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20sell%20my%20${encodeURIComponent(model?.name ?? "")}%20laptop`}
+                  href={`https://wa.me/917604092333?text=Hi%2C%20I%20want%20to%20sell%20my%20${encodeURIComponent(model?.name ?? "")}%20laptop`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-green-500 text-white font-extrabold rounded-xl hover:bg-green-600 transition-colors text-sm"

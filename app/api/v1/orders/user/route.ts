@@ -87,7 +87,7 @@ export const GET = apiWrapper(async (req: NextRequest) => {
 
     const pickup = ord.pickups && ord.pickups.length > 0 ? ord.pickups[0] : null;
     const assignedAgentName = ord.agent?.name || (pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically." ? pickup.notes : null);
-    const assignedAgentPhone = ord.agent?.phone || pickup?.partner?.phone || (assignedAgentName ? "7003216788" : null);
+    const assignedAgentPhone = ord.agent?.phone || pickup?.partner?.phone || (assignedAgentName ? "7604092333" : null);
 
     return {
       id: ord.id,

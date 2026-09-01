@@ -72,14 +72,14 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
 
   if (!partner) {
     partner = await prisma.partner.findFirst({
-      where: { phone: "7003216788" },
+      where: { phone: "7604092333" },
     });
     if (!partner) {
       partner = await prisma.partner.create({
         data: {
           name: agentName,
           businessName: "CashALL In-House Logistics",
-          phone: "7003216788",
+          phone: "7604092333",
           email: "support@cashall.in",
           city: "Kolkata",
           status: "ACTIVE",

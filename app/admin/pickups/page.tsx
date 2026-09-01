@@ -118,7 +118,7 @@ export default function AdminPickupsPage() {
       ...order,
       assignedPartnerId: "p-inhouse-custom",
       assignedPartnerName: `${agentName} (CashALL In-House Agent)`,
-      assignedPartnerPhone: "+91 7003216788",
+      assignedPartnerPhone: "+91 7604092333",
       assignedPartnerBusiness: "In-House CashALL Logistics Agent",
       status: "PARTNER_ASSIGNED",
       updatedAt: new Date().toISOString(),

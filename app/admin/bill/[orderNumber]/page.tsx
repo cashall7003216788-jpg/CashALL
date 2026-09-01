@@ -433,7 +433,7 @@ export default function AdminBillPage() {
 
         {/* Footer strip */}
         <div className="bg-black text-center py-3 text-[10px] text-gray-500">
-          CashALL | cashall.in | Helpline: 7003216788
+          CashALL | cashall.in | Helpline: 7604092333
         </div>
       </div>
 

@@ -236,7 +236,7 @@ export function InvoicePdfDocument({
             Bengal
           </Text>
           <Text>
-            Helpline: +91 7003216788 | Support Email: support@cashall.in |
+            Helpline: +91 7604092333 | Support Email: support@cashall.in |
             Website: www.cashall.in
           </Text>
           <Text style={{ marginTop: 4, color: "#9CA3AF" }}>

@@ -7,8 +7,8 @@
  * FALLBACK: If no API key, messages are queued as console logs with a wa.me direct link.
  */
 
-const ADMIN_PHONE = "917003216788"; // +91 7003216788
-const ADMIN_PHONE_DISPLAY = "7003216788";
+const ADMIN_PHONE = "917604092333"; // +91 7604092333
+const ADMIN_PHONE_DISPLAY = "7604092333";
 const CALLMEBOT_API_KEY = process.env.CALLMEBOT_API_KEY || "";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cashall.in";
 

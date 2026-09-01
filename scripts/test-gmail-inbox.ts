@@ -56,7 +56,7 @@ Thank you for choosing CashALL!`;
       </table>
 
       <p style="font-size: 12px; color: #6b7280; text-align: center; margin-top: 24px;">
-        CashALL | AARNA ENTERPRISE | support@cashall.in | Helpline: 7003216788
+        CashALL | AARNA ENTERPRISE | support@cashall.in | Helpline: 7604092333
       </p>
     </div>
   `;

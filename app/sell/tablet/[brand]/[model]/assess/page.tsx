@@ -242,18 +242,28 @@ export default function TabletConditionAssessmentPage() {
     const random5Digits = Math.floor(10000 + Math.random() * 90000);
     const quoteNumber = `CAQ${random5Digits}`;
 
+    const deviceFullName = formatDeviceName(brand.name, model.name, variant.storage);
+
     const selectedAnswersSummary = {
-      callsWorking: callsWorking ? "Yes" : "No",
-      touchWorking: touchWorking ? "Yes" : "No",
-      screenOriginal: screenOriginal ? "Yes" : "No",
+      device: deviceFullName,
+      underWarranty: underWarranty === true,
+      validBill: validBill === true,
+      powerWorking: powerWorking === true,
+      callsWorking: callsWorking === true,
+      touchWorking: touchWorking === true,
+      screenOriginal: screenOriginal === true,
+      power: powerWorking ? "yes" : "no",
+      calls: callsWorking ? "yes" : "no",
+      touch: touchWorking ? "yes" : "no",
+      selectedMajorDefects,
       majorDefects: selectedMajorDefects,
       scratchLevel,
       dentLevel,
+      selectedFunctionalIssues,
       functionalIssues: selectedFunctionalIssues,
+      selectedAccessories,
       accessories: selectedAccessories,
     };
-
-    const deviceFullName = formatDeviceName(brand.name, model.name, variant.storage);
 
     const newQuote: QuoteData = {
       id: quoteId,

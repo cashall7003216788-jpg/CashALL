@@ -278,7 +278,7 @@ async function main() {
   await prisma.user.create({
     data: {
       email: "support@cashall.in",
-      phone: "+91 7003216788",
+      phone: "+91 7604092333",
       firebaseUid: "admin_master_uid_123",
       role: "ADMIN",
       name: "System Admin",

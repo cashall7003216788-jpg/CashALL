@@ -86,7 +86,7 @@ export function NeedHelpModal({ isOpen, onClose }: NeedHelpModalProps) {
           {/* QUICK DIRECT CONTACT CHANNELS */}
           <div className="pt-2 border-t border-neutral-800/80 grid grid-cols-2 gap-3">
             <a
-              href="tel:+917003216788"
+              href="tel:+917604092333"
               onClick={() => {
                 trackMetaStandardEvent("Contact", { content_name: "Phone Call" }, { eventId: "contact_phone_helpmodal" });
               }}
@@ -96,7 +96,7 @@ export function NeedHelpModal({ isOpen, onClose }: NeedHelpModalProps) {
               <span>Call Us</span>
             </a>
             <a
-              href="https://wa.me/917003216788"
+              href="https://wa.me/917604092333"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {

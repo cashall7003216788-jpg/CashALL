@@ -221,7 +221,7 @@ export class EmailService {
         <p style="font-size: 14px; line-height: 1.5; color: #444;">Thank you for choosing CashALL. We make selling your old mobile phones and laptops simple, fast, and secure.</p>
         <p style="font-size: 14px; line-height: 1.5; color: #444;">Get instant doorstep inspections, transparent price calculations, and immediate bank transfers.</p>
         <hr style="border: 0; border-top: 1px solid #eeeeee; margin: 24px 0;" />
-        <p style="font-size: 11px; color: #888888; text-align: center;">CashALL | AARNA ENTERPRISE | support@cashall.in | Helpline: 7003216788</p>
+        <p style="font-size: 11px; color: #888888; text-align: center;">CashALL | AARNA ENTERPRISE | support@cashall.in | Helpline: 7604092333</p>
       </div>
     `;
   }
@@ -327,7 +327,7 @@ export class EmailService {
         <p style="font-size: 12px; color: #6b7280; line-height: 1.4;">This automated email serves as your official purchase acknowledgment and transaction record from AARNA ENTERPRISE (CashALL Platform, HQ: Howrah, West Bengal).</p>
 
         <hr style="border: 0; border-top: 1px solid #eeeeee; margin: 24px 0;" />
-        <p style="font-size: 11px; color: #9ca3af; text-align: center; margin: 0;">CashALL • AARNA ENTERPRISE | GSTIN: 19AVPPG9800JIZ3 | Howrah, West Bengal | support@cashall.in | Helpline: +91 7003216788 | www.cashall.in</p>
+        <p style="font-size: 11px; color: #9ca3af; text-align: center; margin: 0;">CashALL • AARNA ENTERPRISE | GSTIN: 19AVPPG9800JIZ3 | Howrah, West Bengal | support@cashall.in | Helpline: +91 7604092333 | www.cashall.in</p>
       </div>
     `;
   }

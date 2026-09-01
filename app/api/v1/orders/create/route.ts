@@ -37,8 +37,8 @@ export async function POST(req: NextRequest) {
 
     const data = validation.success ? validation.data : body || {};
 
-    const rawPhone = data.phone ? String(data.phone) : "7003216788";
-    const cleanPhone = rawPhone.replace(/\D/g, "").slice(-10) || "7003216788";
+    const rawPhone = data.phone ? String(data.phone) : "7604092333";
+    const cleanPhone = rawPhone.replace(/\D/g, "").slice(-10) || "7604092333";
     const fullName = data.fullName ? String(data.fullName).trim() : "Customer";
     const house = data.house ? String(data.house).trim() : "Customer Address";
     const street = data.street ? String(data.street).trim() : "Doorstep Location";
@@ -137,6 +137,16 @@ export async function POST(req: NextRequest) {
       });
     }
 
+    const rawIncomingAnswers = data.selectedAnswersJson || body.selectedAnswersJson || null;
+    const incomingAnswersJson = typeof rawIncomingAnswers === "object" && rawIncomingAnswers !== null
+      ? JSON.stringify(rawIncomingAnswers)
+      : (typeof rawIncomingAnswers === "string" && rawIncomingAnswers.trim() && rawIncomingAnswers !== "{}" ? rawIncomingAnswers : null);
+
+    const rawIncomingBreakdown = data.breakdownJson || body.breakdownJson || null;
+    const incomingBreakdownJson = typeof rawIncomingBreakdown === "object" && rawIncomingBreakdown !== null
+      ? JSON.stringify(rawIncomingBreakdown)
+      : (typeof rawIncomingBreakdown === "string" && rawIncomingBreakdown.trim() && rawIncomingBreakdown !== "{}" ? rawIncomingBreakdown : null);
+
     if (quote) {
       try {
         quote = await prisma.quote.update({
@@ -145,6 +155,8 @@ export async function POST(req: NextRequest) {
             status: "ORDERED",
             estimatedPrice: estimatedPrice || quote.estimatedPrice,
             basePrice: Math.max(quote.basePrice, estimatedPrice || 0),
+            ...(incomingAnswersJson ? { selectedAnswersJson: incomingAnswersJson } : {}),
+            ...(incomingBreakdownJson ? { breakdownJson: incomingBreakdownJson } : {}),
           },
         });
       } catch (e) {
@@ -187,11 +199,26 @@ export async function POST(req: NextRequest) {
           data: {
             quoteNumber: generatedQuoteNumber,
             variantId: variant.id,
-            selectedAnswersJson: JSON.stringify({ device: deviceName, customerName: fullName, customerPhone: cleanPhone }),
+            selectedAnswersJson: incomingAnswersJson || JSON.stringify({
+              device: deviceName,
+              customerName: fullName,
+              customerPhone: cleanPhone,
+              powerWorking: true,
+              callsWorking: true,
+              touchWorking: true,
+              screenOriginal: true,
+              underWarranty: false,
+              validBill: false,
+              selectedMajorDefects: [],
+              scratchLevel: "no_scratches",
+              dentLevel: "no_dents",
+              selectedFunctionalIssues: [],
+              selectedAccessories: ["charger", "box"],
+            }),
             basePrice: Math.max(variant.basePrice, estimatedPrice),
             totalDeductions: 0,
             estimatedPrice: estimatedPrice,
-            breakdownJson: JSON.stringify({
+            breakdownJson: incomingBreakdownJson || JSON.stringify({
               deviceName: deviceName,
               basePrice: estimatedPrice,
               estimatedPrice: estimatedPrice,
@@ -304,7 +331,7 @@ export async function POST(req: NextRequest) {
 
     const fullAddress = `${house}, ${street}, ${area}${data.landmark ? ", " + data.landmark : ""}, ${state} - ${pincode}`;
 
-    // 6. Trigger WhatsApp Notification to Admin (7003216788)
+    // 6. Trigger WhatsApp Notification to Admin (7604092333)
     WhatsAppService.notifyNewOrder({
       orderNumber: order.orderNumber,
       customerName: fullName,

@@ -321,18 +321,28 @@ export default function ConditionAssessmentPage() {
     const random5Digits = Math.floor(10000 + Math.random() * 90000);
     const quoteNumber = `CAQ${random5Digits}`;
 
+    const deviceFullName = formatDeviceName(brand.name, model.name, variant.storage);
+
     const selectedAnswersSummary = {
-      callsWorking: callsWorking ? "Yes" : "No",
-      touchWorking: touchWorking ? "Yes" : "No",
-      screenOriginal: screenOriginal ? "Yes" : "No",
+      device: deviceFullName,
+      underWarranty: underWarranty === true,
+      validBill: validBill === true,
+      powerWorking: powerWorking === true,
+      callsWorking: callsWorking === true,
+      touchWorking: touchWorking === true,
+      screenOriginal: screenOriginal === true,
+      power: powerWorking ? "yes" : "no",
+      calls: callsWorking ? "yes" : "no",
+      touch: touchWorking ? "yes" : "no",
+      selectedMajorDefects,
       majorDefects: selectedMajorDefects,
       scratchLevel,
       dentLevel,
+      selectedFunctionalIssues,
       functionalIssues: selectedFunctionalIssues,
+      selectedAccessories,
       accessories: selectedAccessories,
     };
-
-    const deviceFullName = formatDeviceName(brand.name, model.name, variant.storage);
 
     const newQuote: QuoteData = {
       id: quoteId,
@@ -466,227 +476,296 @@ export default function ConditionAssessmentPage() {
               </div>
 
               {/* STEP 1: BASIC QUESTIONS (YES / NO) */}
-              {step === 1 && (
-                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-border shadow-premium space-y-8">
-                  
-                  {/* QUESTION 0A: MANUFACTURER WARRANTY */}
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-black text-brand-black">
-                      Is your device under manufacturer warranty?
-                    </h3>
-                    <p className="text-xs text-brand-muted">
-                      You can get a better price for your device if it&apos;s under manufacturer warranty with a GST valid bill.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
-                      <button
-                        onClick={() => setUnderWarranty(true)}
-                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
-                          underWarranty === true
-                            ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
-                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
-                        }`}
-                      >
-                        Yes
-                      </button>
-                      <button
-                        onClick={() => setUnderWarranty(false)}
-                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
-                          underWarranty === false
-                            ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
-                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
-                        }`}
-                      >
-                        No
-                      </button>
+              {step === 1 && (() => {
+                const step1AnsweredCount = [underWarranty, validBill, powerWorking, callsWorking, touchWorking, screenOriginal].filter((v) => v !== null).length;
+                const isStep1Complete = step1AnsweredCount === 6;
+
+                return (
+                  <div className="bg-white rounded-3xl p-6 sm:p-8 border border-brand-border shadow-premium space-y-8">
+                    
+                    {/* STEP 1 HEADER & COMPULSORY BADGE */}
+                    <div className="flex items-center justify-between flex-wrap gap-2 pb-2 border-b border-gray-100">
+                      <div>
+                        <h2 className="text-xl font-black text-brand-black">Basic Device Condition</h2>
+                        <p className="text-xs text-brand-muted mt-0.5">Please answer all 6 mandatory questions to calculate your valuation</p>
+                      </div>
+                      <span className={`text-xs font-black px-3 py-1.5 rounded-full ${
+                        isStep1Complete ? "bg-emerald-100 text-emerald-800" : "bg-amber-100 text-amber-900 animate-pulse"
+                      }`}>
+                        {step1AnsweredCount} / 6 Answered {isStep1Complete ? "✓" : "(Compulsory)"}
+                      </span>
                     </div>
-                  </div>
 
-                  <hr className="border-gray-100" />
-
-                  {/* QUESTION 0B: GST VALID BILL WITH SAME IMEI */}
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-black text-brand-black">
-                      Do you have GST valid bill with the same IMEI?
-                    </h3>
-                    <p className="text-xs text-brand-muted">
-                      Make sure your bill has device IMEI mentioned on it.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
-                      <button
-                        onClick={() => setValidBill(true)}
-                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
-                          validBill === true
-                            ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
-                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
-                        }`}
-                      >
-                        Yes
-                      </button>
-                      <button
-                        onClick={() => setValidBill(false)}
-                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
-                          validBill === false
-                            ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
-                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
-                        }`}
-                      >
-                        No
-                      </button>
+                    {/* QUESTION 0A: MANUFACTURER WARRANTY */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-base sm:text-lg font-black text-brand-black">
+                          1. Is your device under manufacturer warranty? <span className="text-red-500">*</span>
+                        </h3>
+                        {underWarranty !== null ? (
+                          <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">✓ Selected</span>
+                        ) : (
+                          <span className="text-[11px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md">Required</span>
+                        )}
+                      </div>
+                      <p className="text-xs text-brand-muted">
+                        You can get a better price for your device if it&apos;s under manufacturer warranty with a GST valid bill.
+                      </p>
+                      <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
+                        <button
+                          onClick={() => setUnderWarranty(true)}
+                          className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                            underWarranty === true
+                              ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
+                              : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                          }`}
+                        >
+                          Yes
+                        </button>
+                        <button
+                          onClick={() => setUnderWarranty(false)}
+                          className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                            underWarranty === false
+                              ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
+                              : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                          }`}
+                        >
+                          No
+                        </button>
+                      </div>
                     </div>
-                  </div>
 
-                  <hr className="border-gray-100" />
+                    <hr className="border-gray-100" />
 
-                  {/* QUESTION 1: POWER / SWITCH ON */}
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-black text-brand-black">
-                      Does your phone switch on?
-                    </h3>
-                    <p className="text-xs text-brand-muted">
-                      Turn on the device screen and check basic power status.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
-                      <button
-                        onClick={() => setPowerWorking(true)}
-                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
-                          powerWorking === true
-                            ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
-                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
-                        }`}
-                      >
-                        Yes
-                      </button>
-                      <button
-                        onClick={() => setPowerWorking(false)}
-                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
-                          powerWorking === false
-                            ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
-                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
-                        }`}
-                      >
-                        No
-                      </button>
+                    {/* QUESTION 0B: GST VALID BILL WITH SAME IMEI */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-base sm:text-lg font-black text-brand-black">
+                          2. Do you have GST valid bill with the same IMEI? <span className="text-red-500">*</span>
+                        </h3>
+                        {validBill !== null ? (
+                          <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">✓ Selected</span>
+                        ) : (
+                          <span className="text-[11px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md">Required</span>
+                        )}
+                      </div>
+                      <p className="text-xs text-brand-muted">
+                        Make sure your bill has device IMEI mentioned on it.
+                      </p>
+                      <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
+                        <button
+                          onClick={() => setValidBill(true)}
+                          className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                            validBill === true
+                              ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
+                              : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                          }`}
+                        >
+                          Yes
+                        </button>
+                        <button
+                          onClick={() => setValidBill(false)}
+                          className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                            validBill === false
+                              ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
+                              : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                          }`}
+                        >
+                          No
+                        </button>
+                      </div>
                     </div>
-                  </div>
 
-                  <hr className="border-gray-100" />
+                    <hr className="border-gray-100" />
 
-                  {/* QUESTION 2: CALLS */}
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-black text-brand-black">
-                      Are you able to make and receive calls?
-                    </h3>
-                    <p className="text-xs text-brand-muted">
-                      Check your device for cellular network connectivity issues.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
-                      <button
-                        onClick={() => setCallsWorking(true)}
-                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
-                          callsWorking === true
-                            ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
-                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
-                        }`}
-                      >
-                        Yes
-                      </button>
-                      <button
-                        onClick={() => setCallsWorking(false)}
-                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
-                          callsWorking === false
-                            ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
-                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
-                        }`}
-                      >
-                        No
-                      </button>
+                    {/* QUESTION 1: POWER / SWITCH ON */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-base sm:text-lg font-black text-brand-black">
+                          3. Does your phone switch on? <span className="text-red-500">*</span>
+                        </h3>
+                        {powerWorking !== null ? (
+                          <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">✓ Selected</span>
+                        ) : (
+                          <span className="text-[11px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md">Required</span>
+                        )}
+                      </div>
+                      <p className="text-xs text-brand-muted">
+                        Turn on the device screen and check basic power status.
+                      </p>
+                      <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
+                        <button
+                          onClick={() => setPowerWorking(true)}
+                          className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                            powerWorking === true
+                              ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
+                              : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                          }`}
+                        >
+                          Yes
+                        </button>
+                        <button
+                          onClick={() => setPowerWorking(false)}
+                          className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                            powerWorking === false
+                              ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
+                              : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                          }`}
+                        >
+                          No
+                        </button>
+                      </div>
                     </div>
-                  </div>
 
-                  <hr className="border-gray-100" />
+                    <hr className="border-gray-100" />
 
-                  {/* QUESTION 2: TOUCH SCREEN */}
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-black text-brand-black">
-                      Is your device&apos;s touch screen working properly?
-                    </h3>
-                    <p className="text-xs text-brand-muted">
-                      Check the touch screen functionality of your phone.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
-                      <button
-                        onClick={() => setTouchWorking(true)}
-                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
-                          touchWorking === true
-                            ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
-                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
-                        }`}
-                      >
-                        Yes
-                      </button>
-                      <button
-                        onClick={() => setTouchWorking(false)}
-                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
-                          touchWorking === false
-                            ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
-                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
-                        }`}
-                      >
-                        No
-                      </button>
+                    {/* QUESTION 2: CALLS */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-base sm:text-lg font-black text-brand-black">
+                          4. Are you able to make and receive calls? <span className="text-red-500">*</span>
+                        </h3>
+                        {callsWorking !== null ? (
+                          <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">✓ Selected</span>
+                        ) : (
+                          <span className="text-[11px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md">Required</span>
+                        )}
+                      </div>
+                      <p className="text-xs text-brand-muted">
+                        Check your device for cellular network connectivity issues.
+                      </p>
+                      <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
+                        <button
+                          onClick={() => setCallsWorking(true)}
+                          className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                            callsWorking === true
+                              ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
+                              : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                          }`}
+                        >
+                          Yes
+                        </button>
+                        <button
+                          onClick={() => setCallsWorking(false)}
+                          className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                            callsWorking === false
+                              ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
+                              : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                          }`}
+                        >
+                          No
+                        </button>
+                      </div>
                     </div>
-                  </div>
 
-                  <hr className="border-gray-100" />
+                    <hr className="border-gray-100" />
 
-                  {/* QUESTION 3: ORIGINAL SCREEN */}
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-black text-brand-black">
-                      Is your phone&apos;s screen original?
-                    </h3>
-                    <p className="text-xs text-brand-muted leading-relaxed">
-                      Pick &quot;Yes&quot; if screen was never changed or was changed by Authorized Service Center. Pick &quot;No&quot; if screen was changed at local shop.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
-                      <button
-                        onClick={() => setScreenOriginal(true)}
-                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
-                          screenOriginal === true
-                            ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
-                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
-                        }`}
-                      >
-                        Yes
-                      </button>
-                      <button
-                        onClick={() => setScreenOriginal(false)}
-                        className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
-                          screenOriginal === false
-                            ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
-                            : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
-                        }`}
-                      >
-                        No
-                      </button>
+                    {/* QUESTION 2: TOUCH SCREEN */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-base sm:text-lg font-black text-brand-black">
+                          5. Is your device&apos;s touch screen working properly? <span className="text-red-500">*</span>
+                        </h3>
+                        {touchWorking !== null ? (
+                          <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">✓ Selected</span>
+                        ) : (
+                          <span className="text-[11px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md">Required</span>
+                        )}
+                      </div>
+                      <p className="text-xs text-brand-muted">
+                        Check the touch screen functionality of your phone.
+                      </p>
+                      <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
+                        <button
+                          onClick={() => setTouchWorking(true)}
+                          className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                            touchWorking === true
+                              ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
+                              : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                          }`}
+                        >
+                          Yes
+                        </button>
+                        <button
+                          onClick={() => setTouchWorking(false)}
+                          className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                            touchWorking === false
+                              ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
+                              : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                          }`}
+                        >
+                          No
+                        </button>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* CONTINUE ACTION */}
-                  <div className="pt-4 flex justify-end">
-                    <Button
-                      onClick={() => setStep(2)}
-                      disabled={underWarranty === null || validBill === null || callsWorking === null || touchWorking === null || screenOriginal === null}
-                      variant="primary"
-                      size="lg"
-                      className="font-extrabold px-8 gap-2 shadow-yellowGlow"
-                    >
-                      <span>Continue</span>
-                      <ArrowRight className="w-5 h-5" />
-                    </Button>
-                  </div>
+                    <hr className="border-gray-100" />
 
-                </div>
-              )}
+                    {/* QUESTION 3: ORIGINAL SCREEN */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-base sm:text-lg font-black text-brand-black">
+                          6. Is your phone&apos;s screen original? <span className="text-red-500">*</span>
+                        </h3>
+                        {screenOriginal !== null ? (
+                          <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">✓ Selected</span>
+                        ) : (
+                          <span className="text-[11px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md">Required</span>
+                        )}
+                      </div>
+                      <p className="text-xs text-brand-muted leading-relaxed">
+                        Pick &quot;Yes&quot; if screen was never changed or was changed by Authorized Service Center. Pick &quot;No&quot; if screen was changed at local shop.
+                      </p>
+                      <div className="grid grid-cols-2 gap-4 max-w-sm pt-1">
+                        <button
+                          onClick={() => setScreenOriginal(true)}
+                          className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                            screenOriginal === true
+                              ? "border-emerald-500 bg-emerald-50 text-emerald-900 shadow-sm"
+                              : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                          }`}
+                        >
+                          Yes
+                        </button>
+                        <button
+                          onClick={() => setScreenOriginal(false)}
+                          className={`py-3.5 px-6 rounded-2xl border-2 font-black text-sm transition-all ${
+                            screenOriginal === false
+                              ? "border-red-500 bg-red-50 text-red-900 shadow-sm"
+                              : "border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300"
+                          }`}
+                        >
+                          No
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* CONTINUE ACTION */}
+                    <div className="pt-4 flex items-center justify-between flex-wrap gap-4 border-t border-gray-100">
+                      {!isStep1Complete ? (
+                        <span className="text-xs font-bold text-amber-700 bg-amber-50 px-3 py-1.5 rounded-xl border border-amber-200">
+                          ⚠️ Please answer all 6 questions to proceed ({6 - step1AnsweredCount} remaining)
+                        </span>
+                      ) : (
+                        <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200">
+                          ✓ All 6 questions answered
+                        </span>
+                      )}
+                      <Button
+                        onClick={() => setStep(2)}
+                        disabled={!isStep1Complete}
+                        variant="primary"
+                        size="lg"
+                        className="font-extrabold px-8 gap-2 shadow-yellowGlow disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <span>Continue</span>
+                        <ArrowRight className="w-5 h-5" />
+                      </Button>
+                    </div>
+
+                  </div>
+                );
+              })()}
 
               {/* STEP 2: MAJOR DEFECT CATEGORIES WITH CASHIFY SVG OPTION ICONS */}
               {step === 2 && (

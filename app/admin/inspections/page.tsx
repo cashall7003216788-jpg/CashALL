@@ -3,9 +3,10 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
+import { CustomerAnswersModal } from "@/components/admin/CustomerAnswersModal";
 import { Badge } from "@/components/ui/Badge";
 import { INITIAL_ORDERS, OrderData } from "@/lib/store";
-import { ClipboardCheck, CheckCircle2, ShieldCheck, Save, Loader2, Search, ArrowRight } from "lucide-react";
+import { ClipboardCheck, CheckCircle2, ShieldCheck, Save, Loader2, Search, ArrowRight, ClipboardList } from "lucide-react";
 
 function getAdminToken() {
   if (typeof window === "undefined") return "tok_admin_master_session";
@@ -26,6 +27,7 @@ function AdminInspectionsContent() {
   const [allOrders, setAllOrders] = useState<OrderData[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [showAuditModal, setShowAuditModal] = useState(false);
 
   const [imei, setImei] = useState("");
   const [customerEmail, setCustomerEmail] = useState("");
@@ -229,11 +231,21 @@ function AdminInspectionsContent() {
                 </div>
               </div>
 
-              <div className="text-right">
-                <div className="text-xs text-neutral-400">Initial Estimated Payout</div>
-                <div className="text-2xl font-black text-green-400 font-price">
-                  ₹{(order.estimatedPrice || 0).toLocaleString("en-IN")}
+              <div className="text-right space-y-2">
+                <div>
+                  <div className="text-xs text-neutral-400">Initial Estimated Payout</div>
+                  <div className="text-2xl font-black text-green-400 font-price">
+                    ₹{(order.estimatedPrice || 0).toLocaleString("en-IN")}
+                  </div>
                 </div>
+                <button
+                  type="button"
+                  onClick={() => setShowAuditModal(true)}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-yellow-400 text-black text-xs font-black rounded-xl hover:bg-yellow-300 transition shadow-sm"
+                >
+                  <ClipboardList className="w-3.5 h-3.5" />
+                  <span>View Customer Answers (QC)</span>
+                </button>
               </div>
             </div>
 
@@ -424,6 +436,13 @@ function AdminInspectionsContent() {
             </table>
           </div>
         </div>
+
+        {/* CUSTOMER ANSWERS AUDIT MODAL */}
+        <CustomerAnswersModal
+          isOpen={showAuditModal}
+          onClose={() => setShowAuditModal(false)}
+          orderOrQuote={order}
+        />
       </main>
     </div>
   );

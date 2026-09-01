@@ -69,7 +69,7 @@ export async function POST(req: Request) {
           recordId: crypto.randomUUID(),
           newValuesJson: JSON.stringify({
             name: resolvedName,
-            phone: supportUser?.phone || body.phone || "7003216788",
+            phone: supportUser?.phone || body.phone || "7604092333",
             event: "LOGIN",
             loginTime: new Date().toISOString(),
           }),

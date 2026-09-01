@@ -104,7 +104,7 @@ header_data = [
         Paragraph("PURCHASE RECEIPT", right_header_style)
     ],
     [
-        Paragraph("Best Value For Your Old Devices<br/>www.cashall.in | Helpline: 7003216788", subtitle_style),
+        Paragraph("Best Value For Your Old Devices<br/>www.cashall.in | Helpline: 7604092333", subtitle_style),
         Paragraph(f"<b>Bill No:</b> {order_number}-2026<br/><b>Date:</b> 16 August 2026", right_meta_style)
     ]
 ]
@@ -238,7 +238,7 @@ elements.append(Spacer(1, 14))
 # --- FOOTER ---
 footer_text = Paragraph(
     "<center><b>Thank you for choosing CashALL — Best Value For Your Old Devices</b><br/>"
-    "CashALL | cashall.in | AARNA ENTERPRISE (GSTIN: 19AVPPG9800J1Z3) | Helpline: 7003216788</center>",
+    "CashALL | cashall.in | AARNA ENTERPRISE (GSTIN: 19AVPPG9800J1Z3) | Helpline: 7604092333</center>",
     ParagraphStyle('FooterText', fontName='Helvetica', fontSize=7.5, textColor=colors.HexColor('#777777'), leading=10)
 )
 elements.append(footer_text)

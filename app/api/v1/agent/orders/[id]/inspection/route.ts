@@ -9,7 +9,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
     const orderIdentifier = params.id;
     const body = await req.json().catch(() => ({}));
 
-    const { imei, screenFinding, bodyFinding, revisedPrice, reason, customerEmail, agentName } = body;
+    const { imei, screenFinding, bodyFinding, inspectedAnswers, revisedPrice, reason, customerEmail, agentName } = body;
 
     if (!imei || String(imei).trim().length < 5) {
       return NextResponse.json({ success: false, error: "Valid IMEI number is required (min 5 digits)" }, { status: 400 });
@@ -34,6 +34,9 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
 
     const finalPriceVal = typeof revisedPrice === "number" ? revisedPrice : (parseFloat(String(revisedPrice)) || order.quote?.estimatedPrice || 0);
 
+    const physicalAnswersData = inspectedAnswers || { screenFinding, bodyFinding };
+    const physicalAnswersString = typeof physicalAnswersData === "object" ? JSON.stringify(physicalAnswersData) : String(physicalAnswersData);
+
     const updatedOrder = await prisma.$transaction(async (tx) => {
       // 1. Update customer email if provided
       if (customerEmail && String(customerEmail).includes("@")) {
@@ -43,7 +46,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
         });
       }
 
-      // 2. Create or Update QC Report
+      // 2. Create or Update QC Report (Preserving Original Declared Answers, saving Inspected Answers)
       const existingQc = await tx.qcReport.findFirst({ where: { orderId: order.id } });
       if (existingQc) {
         await tx.qcReport.update({
@@ -51,7 +54,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
           data: {
             inspectorName: agentName || "Field Logistics Agent",
             imeiNumber: String(imei).trim(),
-            physicalAnswersJson: JSON.stringify({ screenFinding, bodyFinding }),
+            physicalAnswersJson: physicalAnswersString,
             revisedPrice: finalPriceVal,
             priceDifferenceReason: reason || null,
             status: "APPROVED",
@@ -65,7 +68,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
             inspectorName: agentName || "Field Logistics Agent",
             imeiNumber: String(imei).trim(),
             declaredAnswersJson: order.quote?.selectedAnswersJson || "{}",
-            physicalAnswersJson: JSON.stringify({ screenFinding, bodyFinding }),
+            physicalAnswersJson: physicalAnswersString,
             revisedPrice: finalPriceVal,
             priceDifferenceReason: reason || null,
             status: "APPROVED",
@@ -74,7 +77,22 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
         });
       }
 
-      // 3. Record IMEI
+      // 3. Update Quote selectedAnswersJson with the updated inspected answers so customer sees the new condition
+      if (order.quoteId && inspectedAnswers) {
+        try {
+          await tx.quote.update({
+            where: { id: order.quoteId },
+            data: {
+              selectedAnswersJson: physicalAnswersString,
+              estimatedPrice: finalPriceVal,
+            },
+          });
+        } catch (qErr) {
+          logger.warn("Could not update quote answers with inspected data:", qErr);
+        }
+      }
+
+      // 4. Record IMEI
       const existingImei = await tx.imei.findFirst({ where: { code: String(imei).trim() } });
       if (!existingImei) {
         await tx.imei.create({
@@ -91,7 +109,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
         });
       }
 
-      // 4. Update Order Status and Revised Price
+      // 5. Update Order Status and Revised Price
       return tx.order.update({
         where: { id: order.id },
         data: {

@@ -18,8 +18,8 @@ export const POST = apiWrapper(async (req: NextRequest) => {
     throw new AppError(validation.error.issues[0].message, 400);
   }
 
-  const rawPhone = String(validation.data.phone || validation.data.idToken || "7003216788");
-  const phone = rawPhone.replace(/\D/g, "").slice(-10) || "7003216788";
+  const rawPhone = String(validation.data.phone || validation.data.idToken || "7604092333");
+  const phone = rawPhone.replace(/\D/g, "").slice(-10) || "7604092333";
 
   // Log verified OTP in database for audit trail
   try {

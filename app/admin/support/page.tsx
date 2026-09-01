@@ -324,7 +324,7 @@ export default function AdminSupportManagementPage() {
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. 7003216788"
+                    placeholder="e.g. 7604092333"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:border-yellow-400 transition"

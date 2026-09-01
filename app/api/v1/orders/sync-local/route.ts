@@ -46,8 +46,8 @@ export const POST = apiWrapper(async (req: NextRequest) => {
 
     if (existing) continue; // Already in DB, no need to re-sync
 
-    const rawPhone = item.customerPhone ? String(item.customerPhone) : "7003216788";
-    const phone = rawPhone.replace(/\D/g, "").slice(-10) || "7003216788";
+    const rawPhone = item.customerPhone ? String(item.customerPhone) : "7604092333";
+    const phone = rawPhone.replace(/\D/g, "").slice(-10) || "7604092333";
     const name = item.customerName ? String(item.customerName) : "Customer";
     const rawEmail = item.customerEmail ? String(item.customerEmail).trim() : null;
     

@@ -13,13 +13,13 @@ async function main() {
   const order = await prisma.order.findFirst({ where: { orderNumber: "CA78994" } });
   if (!order) throw new Error("Order CA78994 not found in DB!");
 
-  let partner = await prisma.partner.findFirst({ where: { phone: "7003216788" } });
+  let partner = await prisma.partner.findFirst({ where: { phone: "7604092333" } });
   if (!partner) {
     partner = await prisma.partner.create({
       data: {
         name: "kumar",
         businessName: "CashALL In-House Logistics",
-        phone: "7003216788",
+        phone: "7604092333",
         email: "support@cashall.in",
         city: "Kolkata",
         status: "ACTIVE",

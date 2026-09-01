@@ -63,12 +63,14 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
       where: { orderId: order.id },
     });
 
+    const isAlreadyCompleted = ["COMPLETED", "BILL_GENERATED"].includes(order.status);
+
     if (existingPickup) {
       await tx.pickup.update({
         where: { id: existingPickup.id },
         data: {
           notes: selectedAgentName || "Assigned Agent",
-          status: "ASSIGNED",
+          status: isAlreadyCompleted ? "COMPLETED" : "ASSIGNED",
           assignedAt: new Date(),
         },
       });
@@ -78,7 +80,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
           orderId: order.id,
           date: order.pickupDate || "Today",
           timeSlot: order.pickupTimeSlot || "10 AM - 1 PM",
-          status: "ASSIGNED",
+          status: isAlreadyCompleted ? "COMPLETED" : "ASSIGNED",
           notes: selectedAgentName || "Assigned Agent",
           assignedAt: new Date(),
         },
@@ -89,7 +91,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
       where: { id: order.id },
       data: {
         agentId: resolvedAgentId || null,
-        status: "PARTNER_ASSIGNED",
+        status: isAlreadyCompleted ? order.status : "PARTNER_ASSIGNED",
       },
       include: {
         agent: true,

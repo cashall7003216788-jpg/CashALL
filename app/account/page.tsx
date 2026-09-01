@@ -7,14 +7,18 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Modal } from "@/components/ui/Modal";
+import { CustomerAnswersModal } from "@/components/admin/CustomerAnswersModal";
 import { OrderData, QuoteData } from "@/lib/store";
-import { User, Smartphone, ArrowRight, Clock, UserCheck, Phone, XCircle, Ban, AlertTriangle, FileText } from "lucide-react";
+import { User, Smartphone, ArrowRight, Clock, UserCheck, Phone, XCircle, Ban, AlertTriangle, FileText, ClipboardList } from "lucide-react";
 import { cleanDeviceName } from "@/lib/device";
 
 export default function CustomerAccountPage() {
   const [user, setUser] = useState<{ name: string; phone: string } | null>(null);
   const [orders, setOrders] = useState<OrderData[]>([]);
   const [quotes, setQuotes] = useState<QuoteData[]>([]);
+
+  // View Answers / Condition modal state
+  const [selectedOrderForAnswers, setSelectedOrderForAnswers] = useState<OrderData | null>(null);
 
   // Cancel order modal state
   const [orderToCancel, setOrderToCancel] = useState<string | null>(null);
@@ -295,6 +299,15 @@ export default function CustomerAccountPage() {
                               <ArrowRight className="w-4 h-4" />
                             </Button>
                           </Link>
+                          <Button
+                            onClick={() => setSelectedOrderForAnswers(ord)}
+                            variant="outline"
+                            size="sm"
+                            className="font-extrabold gap-1.5 bg-yellow-50 hover:bg-yellow-100 border-yellow-300 text-neutral-900"
+                          >
+                            <ClipboardList className="w-4 h-4 text-yellow-600" />
+                            <span>Condition Answers</span>
+                          </Button>
                           <Link href={`/order/${ord.orderNumber}/bill`}>
                             <Button variant="outline" size="sm" className="font-extrabold gap-1.5">
                               <span>View Bill</span>
@@ -496,6 +509,13 @@ export default function CustomerAccountPage() {
           </div>
         </div>
       </Modal>
+
+      {/* VIEW CONDITION ANSWERS AUDIT MODAL */}
+      <CustomerAnswersModal
+        isOpen={!!selectedOrderForAnswers}
+        onClose={() => setSelectedOrderForAnswers(null)}
+        orderOrQuote={selectedOrderForAnswers}
+      />
 
       <Footer />
     </div>

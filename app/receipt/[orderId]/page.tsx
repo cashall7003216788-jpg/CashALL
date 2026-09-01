@@ -324,7 +324,7 @@ export default function PurchaseReceiptPage() {
                 </div>
               </div>
               <div className="text-xs font-black text-gray-900">Customer Digital Signature</div>
-              <div className="text-[10px] text-gray-500 font-mono">OTP Verified (+91 7003216788)</div>
+              <div className="text-[10px] text-gray-500 font-mono">OTP Verified (+91 7604092333)</div>
             </div>
           </div>
         </div>

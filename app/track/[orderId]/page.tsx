@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Modal } from "@/components/ui/Modal";
+import { CustomerAnswersModal } from "@/components/admin/CustomerAnswersModal";
 import { OrderData, INITIAL_VARIANTS, INITIAL_MODELS, INITIAL_BRANDS, INITIAL_ORDERS } from "@/lib/store";
 import { trackMetaCustomEvent } from "@/lib/analytics/meta";
 import {
@@ -29,6 +30,7 @@ import {
   Printer,
   XCircle,
   Ban,
+  ClipboardList,
 } from "lucide-react";
 
 export default function OrderTrackingPage() {
@@ -38,6 +40,7 @@ export default function OrderTrackingPage() {
   const [order, setOrder] = useState<OrderData | null>(null);
   const [customerDecision, setCustomerDecision] = useState<"NONE" | "ACCEPTED" | "DECLINED">("NONE");
   const [handoverModalOpen, setHandoverModalOpen] = useState(false);
+  const [showAnswersModal, setShowAnswersModal] = useState(false);
   const [cancelModalOpen, setCancelModalOpen] = useState(false);
   const [isCancelling, setIsCancelling] = useState(false);
 
@@ -78,7 +81,7 @@ export default function OrderTrackingPage() {
               pickupDate: ord.pickupDate || "Scheduled",
               pickupTimeSlot: ord.pickupTimeSlot || "Standard Slot",
               assignedPartnerName: ord.assignedPartnerName || null,
-              assignedPartnerPhone: ord.assignedPartnerPhone || "7003216788",
+              assignedPartnerPhone: ord.assignedPartnerPhone || "7604092333",
               assignedPartnerBusiness: ord.assignedPartnerBusiness || "CashALL Express Logistics",
               estimatedPrice: ord.estimatedPrice || ord.quote?.estimatedPrice || 0,
               revisedPrice: ord.revisedPrice || ord.finalPrice || ord.estimatedPrice || 0,
@@ -274,7 +277,16 @@ export default function OrderTrackingPage() {
                   ₹{(order.revisedPrice || order.estimatedPrice || 31400).toLocaleString("en-IN")}
                 </div>
               </div>
-              <div className="flex items-center sm:justify-end gap-2">
+              <div className="flex flex-wrap items-center sm:justify-end gap-2">
+                <Button
+                  onClick={() => setShowAnswersModal(true)}
+                  variant="outline"
+                  size="sm"
+                  className="font-extrabold text-xs bg-yellow-50 hover:bg-yellow-100 border-yellow-300 text-neutral-900 gap-1.5"
+                >
+                  <ClipboardList className="w-4 h-4 text-yellow-600" />
+                  <span>Condition Answers</span>
+                </Button>
                 <Link href={`/order/${order.orderNumber}/bill`}>
                   <Button variant="outline" size="sm" className="font-extrabold text-xs">
                     <span>View Official Bill</span>
@@ -650,6 +662,13 @@ export default function OrderTrackingPage() {
           </div>
         </div>
       </Modal>
+
+      {/* CONDITION ANSWERS MODAL */}
+      <CustomerAnswersModal
+        isOpen={showAnswersModal}
+        onClose={() => setShowAnswersModal(false)}
+        orderOrQuote={order}
+      />
 
       <Footer />
     </div>

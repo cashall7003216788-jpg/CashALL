@@ -94,7 +94,7 @@ Implemented in `lib/analytics/meta-server.ts`:
   - `client_user_agent`: Extracted from HTTP `user-agent` header.
   - `fbp` & `fbc`: Extracted from request cookies `_fbp` and `_fbc` if available.
 - **Customer Data Normalization & SHA-256 Hashing**:
-  - **Phone Number**: Normalized to E.164 without `+` (e.g., `7003216788` becomes `917003216788`), then SHA-256 hashed.
+  - **Phone Number**: Normalized to E.164 without `+` (e.g., `7604092333` becomes `917604092333`), then SHA-256 hashed.
   - **Email**: Trimmed, lowercased, then SHA-256 hashed.
   - **First Name / Last Name**: Lowercase, trimmed, then SHA-256 hashed.
   - **City / State / Postal Code**: Normalized, then SHA-256 hashed.

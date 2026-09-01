@@ -156,8 +156,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="font-bold text-brand-black">Call Support</div>
-                      <a href="tel:+917003216788" className="text-brand-black font-extrabold hover:underline">
-                        +91 7003216788
+                      <a href="tel:+917604092333" className="text-brand-black font-extrabold hover:underline">
+                        +91 7604092333
                       </a>
                     </div>
                   </div>
@@ -169,12 +169,12 @@ export default function ContactPage() {
                     <div>
                       <div className="font-bold text-emerald-900">WhatsApp Live Support</div>
                       <a
-                        href="https://wa.me/917003216788?text=Hi%20CashALL%20Support,%20I%20need%20assistance%20selling%20my%20device."
+                        href="https://wa.me/917604092333?text=Hi%20CashALL%20Support,%20I%20need%20assistance%20selling%20my%20device."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-emerald-700 font-extrabold underline hover:text-emerald-900"
                       >
-                        Chat on WhatsApp (+91 7003216788) &rarr;
+                        Chat on WhatsApp (+91 7604092333) &rarr;
                       </a>
                     </div>
                   </div>
