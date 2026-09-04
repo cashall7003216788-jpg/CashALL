@@ -131,7 +131,7 @@ export default function AdminQuotesPage() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/api/v1/admin/quotes");
+      const res = await fetch("/api/v1/admin/quotes?limit=250");
       const json = await res.json();
       if (json.success && Array.isArray(json.quotes)) {
         setQuotes(json.quotes);

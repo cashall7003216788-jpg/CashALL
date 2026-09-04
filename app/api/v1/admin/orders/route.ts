@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 export const GET = apiWrapper(async (req: NextRequest) => {
   const { searchParams } = new URL(req.url);
   const page = parseInt(searchParams.get("page") || "1", 10);
-  const limit = parseInt(searchParams.get("limit") || "50", 10);
+  const limit = parseInt(searchParams.get("limit") || "200", 10);
   const status = searchParams.get("status");
   const query = searchParams.get("query");
 
