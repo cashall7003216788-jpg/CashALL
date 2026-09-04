@@ -57,6 +57,10 @@ interface Order {
   createdAt?: string;
   updatedAt?: string;
   completedAt?: string;
+  // Customer assessment answers — passed to CustomerAnswersModal for QC display
+  selectedAnswersJson?: string | null;
+  breakdownJson?: string | null;
+  priceDifferenceReason?: string | null;
 }
 
 function getAdminToken() {
@@ -151,6 +155,10 @@ export default function AdminOrdersPage() {
             createdAt: ord.createdAt,
             updatedAt: ord.updatedAt,
             completedAt: ["COMPLETED", "PAID", "BILL_GENERATED"].includes(status) ? (ord.updatedAt || activePayment?.createdAt) : undefined,
+            // ⬇ CRITICAL: pass through the actual customer assessment answers for QC modal
+            selectedAnswersJson: ord.selectedAnswersJson || ord.quote?.selectedAnswersJson || null,
+            breakdownJson: ord.breakdownJson || ord.quote?.breakdownJson || null,
+            priceDifferenceReason: ord.priceDifferenceReason || ord.qcReports?.[0]?.priceDifferenceReason || null,
           };
         });
         combinedOrders.push(...mapped);

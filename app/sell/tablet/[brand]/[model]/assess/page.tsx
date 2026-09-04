@@ -24,6 +24,7 @@ import {
 } from "@/lib/store";
 import { saveQuoteToCart } from "@/lib/cart";
 import { formatDeviceName } from "@/lib/device";
+import { tabletHasStylus } from "@/lib/laptop-specs";
 import { trackMetaCustomEvent, trackMetaStandardEvent } from "@/lib/analytics/meta";
 import { ChevronRight } from "lucide-react";
 
@@ -115,12 +116,9 @@ export default function TabletAssessmentPage() {
     modelSlug.toLowerCase().includes("lte") ||
     modelSlug.toLowerCase().includes("cellular");
 
-  const isStylusCompatible =
-    model.name.toLowerCase().includes("ipad") ||
-    model.name.toLowerCase().includes("tab s") ||
-    model.name.toLowerCase().includes("oneplus pad") ||
-    model.name.toLowerCase().includes("pen") ||
-    model.name.toLowerCase().includes("pro");
+  // Determines whether to show S Pen / Apple Pencil accessory question
+  // Based on explicit model slug matching — not generic keyword matching
+  const isStylusCompatible = tabletHasStylus(modelSlug);
 
   // ── WIZARD STATE ──────────────────────────────────────────────────────────
   const [step, setStep] = useState<number>(1);

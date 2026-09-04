@@ -111,34 +111,103 @@ export function CustomerAnswersModal({
 
   const isExplicitlyProvided = (val: any) => val !== undefined && val !== null && val !== "";
 
-  // Normalize defect and accessory arrays
-  const majorDefects: string[] = Array.isArray(rawAnswers.selectedMajorDefects)
+  // ─── FIELD NAME NORMALISATION ───────────────────────────────────────────────
+  // The assessment pages (assess/page.tsx) save answers with these keys:
+  //   canMakeCalls, touchScreenWorking, isScreenOriginal, underWarranty, hasGstBill
+  //   selectedDefects (array of: broken_screen | dead_spot_lines | body_dent_scratch | panel_missing)
+  //   selectedProblems (array of: front_camera | back_camera | battery_service | esim_issue | ...)
+  //   selectedAccessories (array of: box | charger | spen)
+  //
+  // Older / fallback order-create code used different keys:
+  //   callsWorking, touchWorking, screenOriginal, validBill,
+  //   selectedMajorDefects (screen_broken | screen_lines | panel_missing)
+  //   selectedFunctionalIssues (front_camera | back_camera | battery | battery_health | ...)
+  //
+  // We resolve BOTH sets of keys so the modal works correctly for all orders.
+
+  // ── Basic booleans (read both formats, no wrong default) ──
+  const powerWorking = parseBool(
+    rawAnswers.powerWorking ?? rawAnswers.power,
+    true
+  );
+
+  // callsWorking: new key = canMakeCalls, old key = callsWorking / calls
+  const _callsRaw = rawAnswers.canMakeCalls ?? rawAnswers.callsWorking ?? rawAnswers.calls;
+  const callsAnswered = isExplicitlyProvided(_callsRaw);
+  const callsWorking = parseBool(_callsRaw, true);
+
+  // touchWorking: new key = touchScreenWorking, old key = touchWorking / touch
+  const _touchRaw = rawAnswers.touchScreenWorking ?? rawAnswers.touchWorking ?? rawAnswers.touch;
+  const touchAnswered = isExplicitlyProvided(_touchRaw);
+  const touchWorking = parseBool(_touchRaw, true);
+
+  // screenOriginal: new key = isScreenOriginal, old key = screenOriginal
+  const _screenOrigRaw = rawAnswers.isScreenOriginal ?? rawAnswers.screenOriginal;
+  const screenOrigAnswered = isExplicitlyProvided(_screenOrigRaw);
+  const screenOriginal = parseBool(_screenOrigRaw, true);
+
+  // underWarranty: same key in both formats
+  const underWarranty = parseBool(rawAnswers.underWarranty, false);
+
+  // hasGstBill: new key = hasGstBill, old key = validBill
+  const _billRaw = rawAnswers.hasGstBill ?? rawAnswers.validBill;
+  const validBill = parseBool(_billRaw, false);
+
+  // ── Screen/Body defects ────────────────────────────────────────────────────
+  // New assessment format: selectedDefects contains IDs like broken_screen, dead_spot_lines, body_dent_scratch, panel_missing
+  // Old format: selectedMajorDefects contains IDs like screen_broken, screen_lines, panel_missing
+  const selectedDefects: string[] = Array.isArray(rawAnswers.selectedDefects) ? rawAnswers.selectedDefects : [];
+  const majorDefectsOld: string[] = Array.isArray(rawAnswers.selectedMajorDefects)
     ? rawAnswers.selectedMajorDefects
     : Array.isArray(rawAnswers.majorDefects)
     ? rawAnswers.majorDefects
     : [];
 
-  const functionalIssues: string[] = Array.isArray(rawAnswers.selectedFunctionalIssues)
+  // Unified defect checks — handles both ID naming conventions
+  const hasScreenBroken = selectedDefects.includes("broken_screen") || majorDefectsOld.includes("screen_broken");
+  const hasDeadSpot = selectedDefects.includes("dead_spot_lines") || majorDefectsOld.includes("screen_lines");
+  const hasBodyDent = selectedDefects.includes("body_dent_scratch") || majorDefectsOld.includes("body_dents");
+  const hasPanelMissing = selectedDefects.includes("panel_missing") || majorDefectsOld.includes("panel_missing");
+
+  // Scratch / dent levels — only populated by old format
+  const scratchLevel = rawAnswers.scratchLevel || (hasBodyDent ? "1_2_scratches" : "no_scratches");
+  const dentLevel = rawAnswers.dentLevel || (hasBodyDent ? "1_2_dents" : "no_dents");
+
+  // ── Functional / hardware problems ────────────────────────────────────────
+  // New assessment format: selectedProblems contains IDs like front_camera, back_camera, battery_service, esim_issue, wifi, speaker, ...
+  // Old format: selectedFunctionalIssues contains front_camera, back_camera, battery, battery_health, fingerprint, face_id, face_sensor, ...
+  const selectedProblems: string[] = Array.isArray(rawAnswers.selectedProblems) ? rawAnswers.selectedProblems : [];
+  const functionalIssuesOld: string[] = Array.isArray(rawAnswers.selectedFunctionalIssues)
     ? rawAnswers.selectedFunctionalIssues
     : Array.isArray(rawAnswers.functionalIssues)
     ? rawAnswers.functionalIssues
     : [];
 
-  const accessories: string[] = Array.isArray(rawAnswers.selectedAccessories)
-    ? rawAnswers.selectedAccessories
-    : Array.isArray(rawAnswers.accessories)
-    ? rawAnswers.accessories
-    : (rawAnswers.selectedAccessories === undefined && rawAnswers.accessories === undefined ? ["charger", "box"] : []);
+  // Unified helpers for each functional issue
+  const hasFrontCamera = selectedProblems.includes("front_camera") || functionalIssuesOld.includes("front_camera");
+  const hasBackCamera = selectedProblems.includes("back_camera") || functionalIssuesOld.includes("back_camera");
+  const hasBattery = selectedProblems.includes("battery_service") || functionalIssuesOld.includes("battery") || functionalIssuesOld.includes("battery_health");
+  const hasBiometrics =
+    selectedProblems.includes("finger_touch") || selectedProblems.includes("face_sensor") ||
+    functionalIssuesOld.includes("fingerprint") || functionalIssuesOld.includes("face_id") || functionalIssuesOld.includes("face_sensor");
+  const hasSpeakerMic =
+    selectedProblems.includes("speaker") || selectedProblems.includes("microphone") || selectedProblems.includes("audio_receiver") ||
+    functionalIssuesOld.includes("speaker") || functionalIssuesOld.includes("mic") || functionalIssuesOld.includes("microphone") || functionalIssuesOld.includes("receiver");
+  const hasWifiBluetooth =
+    selectedProblems.includes("wifi") || selectedProblems.includes("bluetooth") ||
+    functionalIssuesOld.includes("wifi") || functionalIssuesOld.includes("bluetooth");
 
-  const scratchLevel = rawAnswers.scratchLevel || "no_scratches";
-  const dentLevel = rawAnswers.dentLevel || "no_dents";
+  // ── Accessories ────────────────────────────────────────────────────────────
+  // Both formats use selectedAccessories with same IDs (box, charger, spen)
+  // If the field exists but is empty array → customer removed everything
+  // If the field doesn't exist at all → unknown (default to both present for old orders)
+  const _accRaw = rawAnswers.selectedAccessories ?? rawAnswers.accessories;
+  const accessories: string[] = Array.isArray(_accRaw)
+    ? _accRaw
+    : (_accRaw === undefined ? ["charger", "box"] : []);
 
-  const powerWorking = parseBool(rawAnswers.powerWorking ?? rawAnswers.power, true);
-  const callsWorking = parseBool(rawAnswers.callsWorking ?? rawAnswers.calls, true);
-  const touchWorking = parseBool(rawAnswers.touchWorking ?? rawAnswers.touch, true);
-  const screenOriginal = parseBool(rawAnswers.screenOriginal, true);
-  const underWarranty = parseBool(rawAnswers.underWarranty, false);
-  const validBill = parseBool(rawAnswers.validBill, false);
+  // Legacy compat alias (used in some old question definitions below)
+  const functionalIssues = [...selectedProblems, ...functionalIssuesOld];
 
   // Build standard list of evaluation questions
   const questionsList: QuestionItem[] = [
@@ -158,7 +227,8 @@ export function CustomerAnswersModal({
       id: "calls",
       category: "basic",
       title: "Make & Receive Calls (Network)",
-      isAnswered: isExplicitlyProvided(rawAnswers.callsWorking ?? rawAnswers.calls),
+      // reads both canMakeCalls (new) and callsWorking/calls (old)
+      isAnswered: callsAnswered,
       isPositive: callsWorking,
       customerAnswer: callsWorking
         ? "Declared: Network & Calling Works Properly"
@@ -169,7 +239,8 @@ export function CustomerAnswersModal({
       id: "touch",
       category: "basic",
       title: "Touchscreen Functionality",
-      isAnswered: isExplicitlyProvided(rawAnswers.touchWorking ?? rawAnswers.touch),
+      // reads both touchScreenWorking (new) and touchWorking/touch (old)
+      isAnswered: touchAnswered,
       isPositive: touchWorking,
       customerAnswer: touchWorking
         ? "Declared: Touch Working Smoothly"
@@ -180,7 +251,8 @@ export function CustomerAnswersModal({
       id: "screen_original",
       category: "basic",
       title: "Original Factory Screen",
-      isAnswered: isExplicitlyProvided(rawAnswers.screenOriginal),
+      // reads both isScreenOriginal (new) and screenOriginal (old)
+      isAnswered: screenOrigAnswered,
       isPositive: screenOriginal,
       customerAnswer: screenOriginal
         ? "Declared: Original Screen (Never Replaced)"
@@ -202,7 +274,8 @@ export function CustomerAnswersModal({
       id: "bill",
       category: "basic",
       title: "Valid GST / Brand Purchase Invoice",
-      isAnswered: isExplicitlyProvided(rawAnswers.validBill),
+      // reads both hasGstBill (new) and validBill (old)
+      isAnswered: isExplicitlyProvided(_billRaw),
       isPositive: validBill,
       customerAnswer: validBill
         ? "Declared: Original Tax Invoice Available with Matching IMEI"
@@ -216,61 +289,59 @@ export function CustomerAnswersModal({
       category: "screen_body",
       title: "Screen Glass Condition",
       isAnswered: true,
-      isPositive: !majorDefects.includes("screen_broken"),
-      customerAnswer: majorDefects.includes("screen_broken")
+      isPositive: !hasScreenBroken,
+      customerAnswer: hasScreenBroken
         ? "Customer Declared Screen Cracked / Broken"
         : "Declared: Flawless Screen Glass (No Cracks)",
-      deductionNote: majorDefects.includes("screen_broken") ? "Glass replacement deduction" : undefined,
+      deductionNote: hasScreenBroken ? "Glass replacement deduction" : undefined,
     },
     {
       id: "screen_lines",
       category: "screen_body",
       title: "Display Lines / Dead Pixels / Spot",
       isAnswered: true,
-      isPositive: !majorDefects.includes("screen_lines"),
-      customerAnswer: majorDefects.includes("screen_lines")
+      isPositive: !hasDeadSpot,
+      customerAnswer: hasDeadSpot
         ? "Customer Declared Lines / Black Spots on Display"
         : "Declared: Clear Display (No Lines / Dead Pixels)",
-      deductionNote: majorDefects.includes("screen_lines") ? "OLED/LCD panel defect deduction" : undefined,
+      deductionNote: hasDeadSpot ? "OLED/LCD panel defect deduction" : undefined,
     },
     {
       id: "scratches",
       category: "screen_body",
       title: "Body / Screen Scratches",
       isAnswered: true,
-      isPositive: scratchLevel === "no_scratches" || !scratchLevel,
-      customerAnswer:
-        scratchLevel === "more_than_2"
-          ? "Declared: Heavy / Multiple Scratches (>2)"
-          : scratchLevel === "1_2_scratches"
-          ? "Declared: 1-2 Minor Scratches"
-          : "Declared: Flawless / Like New (No Scratches)",
-      deductionNote: scratchLevel === "more_than_2" ? "Cosmetic scratch grade deduction" : undefined,
+      isPositive: !hasBodyDent && scratchLevel === "no_scratches",
+      customerAnswer: hasBodyDent || scratchLevel === "more_than_2"
+        ? "Declared: Heavy / Multiple Scratches (>2)"
+        : scratchLevel === "1_2_scratches"
+        ? "Declared: 1-2 Minor Scratches"
+        : "Declared: Flawless / Like New (No Scratches)",
+      deductionNote: (hasBodyDent || scratchLevel === "more_than_2") ? "Cosmetic scratch grade deduction" : undefined,
     },
     {
       id: "dents",
       category: "screen_body",
       title: "Body Dents / Bezel Condition",
       isAnswered: true,
-      isPositive: dentLevel === "no_dents" || !dentLevel,
-      customerAnswer:
-        dentLevel === "major_dents"
-          ? "Declared: Major Dents / Bent Frame"
-          : dentLevel === "1_2_dents"
-          ? "Declared: 1-2 Minor Dents"
-          : "Declared: No Dents / Pristine Housing",
-      deductionNote: dentLevel === "major_dents" ? "Housing body replacement deduction" : undefined,
+      isPositive: !hasBodyDent && dentLevel === "no_dents",
+      customerAnswer: dentLevel === "major_dents"
+        ? "Declared: Major Dents / Bent Frame"
+        : (hasBodyDent || dentLevel === "1_2_dents")
+        ? "Declared: 1-2 Minor Dents (Body Dent Reported)"
+        : "Declared: No Dents / Pristine Housing",
+      deductionNote: (hasBodyDent || dentLevel === "major_dents") ? "Housing body replacement deduction" : undefined,
     },
     {
       id: "back_panel",
       category: "screen_body",
       title: "Back Glass / Panel Condition",
       isAnswered: true,
-      isPositive: !majorDefects.includes("panel_missing"),
-      customerAnswer: majorDefects.includes("panel_missing")
-        ? "Customer Declared Back Panel Broken / Loose"
+      isPositive: !hasPanelMissing,
+      customerAnswer: hasPanelMissing
+        ? "Customer Declared Back Panel Broken / Missing"
         : "Declared: Back Panel Intact & Pristine",
-      deductionNote: majorDefects.includes("panel_missing") ? "Back glass replacement deduction" : undefined,
+      deductionNote: hasPanelMissing ? "Back glass replacement deduction" : undefined,
     },
 
     // 3. HARDWARE & FUNCTIONAL
@@ -279,8 +350,8 @@ export function CustomerAnswersModal({
       category: "functional",
       title: "Front Selfie Camera",
       isAnswered: true,
-      isPositive: !functionalIssues.includes("front_camera"),
-      customerAnswer: functionalIssues.includes("front_camera")
+      isPositive: !hasFrontCamera,
+      customerAnswer: hasFrontCamera
         ? "Declared: Front Camera Faulty / Blurry"
         : "Declared: Working Properly",
     },
@@ -289,8 +360,8 @@ export function CustomerAnswersModal({
       category: "functional",
       title: "Primary Rear Camera",
       isAnswered: true,
-      isPositive: !functionalIssues.includes("back_camera"),
-      customerAnswer: functionalIssues.includes("back_camera")
+      isPositive: !hasBackCamera,
+      customerAnswer: hasBackCamera
         ? "Declared: Rear Camera Faulty / Shaking"
         : "Declared: Working Properly",
     },
@@ -299,8 +370,8 @@ export function CustomerAnswersModal({
       category: "functional",
       title: "Battery Health & Performance",
       isAnswered: true,
-      isPositive: !functionalIssues.includes("battery") && !functionalIssues.includes("battery_health"),
-      customerAnswer: (functionalIssues.includes("battery") || functionalIssues.includes("battery_health"))
+      isPositive: !hasBattery,
+      customerAnswer: hasBattery
         ? "Declared: Battery Drains Fast / Service Warning (<80%)"
         : "Declared: Good Battery Backup (>80%)",
     },
@@ -309,32 +380,18 @@ export function CustomerAnswersModal({
       category: "functional",
       title: "Fingerprint Scanner / Face ID",
       isAnswered: true,
-      isPositive:
-        !functionalIssues.includes("fingerprint") &&
-        !functionalIssues.includes("face_id") &&
-        !functionalIssues.includes("face_sensor"),
-      customerAnswer:
-        functionalIssues.includes("fingerprint") ||
-        functionalIssues.includes("face_id") ||
-        functionalIssues.includes("face_sensor")
-          ? "Declared: Biometric / Face ID Not Working"
-          : "Declared: Working Properly",
+      isPositive: !hasBiometrics,
+      customerAnswer: hasBiometrics
+        ? "Declared: Biometric / Face ID Not Working"
+        : "Declared: Working Properly",
     },
     {
       id: "speaker_mic",
       category: "functional",
       title: "Speaker & Microphone",
       isAnswered: true,
-      isPositive:
-        !functionalIssues.includes("speaker") &&
-        !functionalIssues.includes("mic") &&
-        !functionalIssues.includes("microphone") &&
-        !functionalIssues.includes("receiver"),
-      customerAnswer:
-        functionalIssues.includes("speaker") ||
-        functionalIssues.includes("mic") ||
-        functionalIssues.includes("microphone") ||
-        functionalIssues.includes("receiver")
+      isPositive: !hasSpeakerMic,
+      customerAnswer: hasSpeakerMic
           ? "Declared: Speaker / Microphone Crackling or Silent"
           : "Declared: Audio Loud & Clear",
     },
@@ -343,12 +400,8 @@ export function CustomerAnswersModal({
       category: "functional",
       title: "Wi-Fi & Bluetooth Connectivity",
       isAnswered: true,
-      isPositive:
-        !functionalIssues.includes("wifi") &&
-        !functionalIssues.includes("bluetooth"),
-      customerAnswer:
-        functionalIssues.includes("wifi") ||
-        functionalIssues.includes("bluetooth")
+      isPositive: !hasWifiBluetooth,
+      customerAnswer: hasWifiBluetooth
           ? "Declared: Connectivity Issues (Cannot Connect)"
           : "Declared: Working Properly",
     },

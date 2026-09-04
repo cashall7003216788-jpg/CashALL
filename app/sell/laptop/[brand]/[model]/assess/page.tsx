@@ -20,72 +20,12 @@ import {
 } from "@/lib/store";
 import { saveQuoteToCart } from "@/lib/cart";
 import { formatDeviceName } from "@/lib/device";
+import { getLaptopSpecs } from "@/lib/laptop-specs";
 import { trackMetaCustomEvent, trackMetaStandardEvent } from "@/lib/analytics/meta";
 import { ChevronRight } from "lucide-react";
 
-const PROCESSOR_OPTIONS = [
-  "Intel Core i3",
-  "Intel Core i5",
-  "Intel Core i7",
-  "Intel Core i9",
-  "Intel Core Ultra 5",
-  "Intel Core Ultra 7",
-  "Intel Core Ultra 9",
-  "Intel Core 2 Duo",
-  "Intel Pentium / Celeron",
-  "AMD Ryzen 3",
-  "AMD Ryzen 5",
-  "AMD Ryzen 7",
-  "AMD Ryzen 9",
-  "AMD Athlon",
-  "Apple M1",
-  "Apple M1 Pro / Max",
-  "Apple M2",
-  "Apple M2 Pro / Max",
-  "Apple M3",
-  "Apple M3 Pro / Max",
-  "Apple M4",
-  "Other Dual Core"
-];
-
-const RAM_OPTIONS = [
-  "512 MB",
-  "1 GB",
-  "2 GB",
-  "3 GB",
-  "4 GB",
-  "6 GB",
-  "8 GB",
-  "12 GB",
-  "16 GB",
-  "24 GB",
-  "32 GB",
-  "64 GB"
-];
-
-const STORAGE_OPTIONS = [
-  "60 GB HDD",
-  "80 GB HDD",
-  "120 GB HDD",
-  "160 GB HDD",
-  "250 GB HDD",
-  "320 GB HDD",
-  "500 GB HDD",
-  "750 GB HDD",
-  "1 TB HDD",
-  "2 TB HDD",
-  "64 GB SSD",
-  "128 GB SSD",
-  "256 GB SSD",
-  "512 GB SSD",
-  "1 TB SSD",
-  "2 TB SSD",
-  "4 TB SSD",
-  "128 GB SSD + 1 TB HDD",
-  "256 GB SSD + 1 TB HDD",
-  "512 GB SSD + 1 TB HDD",
-  "1 TB SSD + 1 TB HDD"
-];
+// NOTE: Processor/RAM/Storage options are now model-specific.
+// They are derived at runtime via getLaptopSpecs() using the brand + model slug.
 
 export default function LaptopAssessmentPage() {
   const router = useRouter();
@@ -178,10 +118,12 @@ export default function LaptopAssessmentPage() {
   const [turnsOn, setTurnsOn] = useState<boolean | null>(true);
 
   // STEP 2: System Configuration Details (Processor, RAM, Storage)
-  const isApple = brandSlug.toLowerCase() === "apple" || model.name.toLowerCase().includes("macbook");
-  const [processor, setProcessor] = useState<string>(isApple ? "Apple M2" : "Intel Core i3");
-  const [ram, setRam] = useState<string>("512 MB");
-  const [hardDisk, setHardDisk] = useState<string>("60 GB HDD");
+  // Model-specific spec options — drives the 3 dropdowns in Step 2
+  const modelSpecs = getLaptopSpecs(brandSlug, modelSlug);
+  const [processor, setProcessor] = useState<string>(modelSpecs.defaultProcessor);
+  const [ram, setRam] = useState<string>(modelSpecs.defaultRam);
+  const [hardDisk, setHardDisk] = useState<string>(modelSpecs.defaultStorage);
+  const hasStylus = modelSpecs.hasStylus;
 
   // STEP 3: Functional Problems (Multi-select)
   const [functionalProblems, setFunctionalProblems] = useState<string[]>([]);
@@ -193,7 +135,10 @@ export default function LaptopAssessmentPage() {
   const [screenLines, setScreenLines] = useState<string>("no_lines");
 
   // STEP 5: Accessories (Multi-select)
-  const [accessories, setAccessories] = useState<string[]>(["charger", "box"]);
+  // Include stylus in default accessories only for models that ship with one
+  const [accessories, setAccessories] = useState<string[]>(
+    hasStylus ? ["charger", "box", "stylus"] : ["charger", "box"]
+  );
 
   // STEP 6: Laptop Age
   const [laptopAge, setLaptopAge] = useState<string>("Less than 1 year (in warranty)");
@@ -231,15 +176,19 @@ export default function LaptopAssessmentPage() {
       addDeduction(`Low RAM (${ram})`, 14);
     } else if (["3 GB", "4 GB"].includes(ram)) {
       addDeduction(`Entry RAM (${ram})`, 8);
+    } else if (ram === "6 GB") {
+      addDeduction(`Entry RAM (${ram})`, 5);
     }
 
     if (["60 GB HDD", "80 GB HDD", "120 GB HDD", "160 GB HDD"].includes(hardDisk)) {
       addDeduction(`Legacy HDD (${hardDisk})`, 12);
-    } else if (["250 GB HDD", "320 GB HDD", "500 GB HDD"].includes(hardDisk)) {
+    } else if (["250 GB HDD", "320 GB HDD", "500 GB HDD", "750 GB HDD"].includes(hardDisk)) {
       addDeduction(`Standard HDD (${hardDisk})`, 6);
+    } else if (["1 TB HDD", "2 TB HDD"].includes(hardDisk)) {
+      addDeduction(`HDD-Only Storage (${hardDisk})`, 4);
     }
 
-    if (["Intel Core 2 Duo", "Intel Pentium / Celeron", "AMD Athlon"].includes(processor)) {
+    if (["Intel Core 2 Duo", "Intel Pentium / Celeron", "AMD Athlon", "Other Dual Core"].includes(processor)) {
       addDeduction(`Legacy Processor (${processor})`, 10);
     }
 
@@ -282,6 +231,7 @@ export default function LaptopAssessmentPage() {
     // Step 5 Accessories
     if (!accessories.includes("charger")) addDeduction("Original Charger Missing", 10);
     if (!accessories.includes("box")) addDeduction("Original Box Missing", 3);
+    if (hasStylus && !accessories.includes("stylus")) addDeduction("Original Stylus / Pen Missing", 6);
 
     // Step 6 Laptop Age
     if (laptopAge === "Between 1 and 3 years") addDeduction("Device Age (1-3 Years)", 8);
@@ -372,6 +322,7 @@ export default function LaptopAssessmentPage() {
       screenSpots,
       screenLines,
       accessories,
+      hasStylus,
       laptopAge,
       bodyScratches,
       topPanelDents,
@@ -555,7 +506,7 @@ export default function LaptopAssessmentPage() {
                           onChange={(e) => setProcessor(e.target.value)}
                           className="w-full bg-white border border-gray-200 hover:border-brand-yellow focus:border-brand-yellow rounded-xl px-4 py-3.5 text-sm font-semibold text-gray-800 appearance-none focus:outline-none focus:ring-2 focus:ring-brand-yellow/20 shadow-sm transition pr-10 cursor-pointer"
                         >
-                          {PROCESSOR_OPTIONS.map((proc) => (
+                          {modelSpecs.processors.map((proc) => (
                             <option key={proc} value={proc}>
                               {proc}
                             </option>
@@ -581,7 +532,7 @@ export default function LaptopAssessmentPage() {
                           onChange={(e) => setRam(e.target.value)}
                           className="w-full bg-white border border-gray-200 hover:border-brand-yellow focus:border-brand-yellow rounded-xl px-4 py-3.5 text-sm font-semibold text-gray-800 appearance-none focus:outline-none focus:ring-2 focus:ring-brand-yellow/20 shadow-sm transition pr-10 cursor-pointer"
                         >
-                          {RAM_OPTIONS.map((r) => (
+                          {modelSpecs.rams.map((r) => (
                             <option key={r} value={r}>
                               {r}
                             </option>
@@ -595,10 +546,10 @@ export default function LaptopAssessmentPage() {
                       </div>
                     </div>
 
-                    {/* Hard Disk Dropdown */}
+                    {/* Hard Disk / SSD Dropdown */}
                     <div>
                       <label className="block text-sm font-bold text-gray-800 mb-2">
-                        Hard Disk <span className="text-red-500">*</span>
+                        Hard Disk / SSD <span className="text-red-500">*</span>
                       </label>
                       <div className="relative">
                         <select
@@ -607,7 +558,7 @@ export default function LaptopAssessmentPage() {
                           onChange={(e) => setHardDisk(e.target.value)}
                           className="w-full bg-white border border-gray-200 hover:border-brand-yellow focus:border-brand-yellow rounded-xl px-4 py-3.5 text-sm font-semibold text-gray-800 appearance-none focus:outline-none focus:ring-2 focus:ring-brand-yellow/20 shadow-sm transition pr-10 cursor-pointer"
                         >
-                          {STORAGE_OPTIONS.map((st) => (
+                          {modelSpecs.storages.map((st) => (
                             <option key={st} value={st}>
                               {st}
                             </option>
@@ -902,6 +853,16 @@ export default function LaptopAssessmentPage() {
                       onClick={() => setAccessories(toggleArrayItem(accessories, "charger"))}
                       sublabel="Official power adapter and charging cord"
                     />
+                    {hasStylus && (
+                      <VisualOptionCard
+                        id="laptop-acc-stylus"
+                        label="Original Stylus / Pen available"
+                        imageUrl="https://s3ng.cashify.in/cashify/productLinePartVariation/img/xhdpi/spen.png"
+                        selected={accessories.includes("stylus")}
+                        onClick={() => setAccessories(toggleArrayItem(accessories, "stylus"))}
+                        sublabel="Original stylus / active pen that ships with the device"
+                      />
+                    )}
                   </div>
                 </div>
               )}
