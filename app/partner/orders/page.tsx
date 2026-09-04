@@ -34,6 +34,7 @@ interface PartnerOrder {
   hasQcReport: boolean;
   paymentStatus: string;
   isSigned: boolean;
+  cancellationReason?: string | null;
 }
 
 export default function PartnerOrdersPage() {
@@ -206,8 +207,42 @@ export default function PartnerOrdersPage() {
                 </div>
               </div>
 
+              {/* Cancellation Reason Banner */}
+              {["CANCELLED", "REJECTED"].includes(ord.status) && (
+                <div className="bg-red-950/40 border border-red-800/60 rounded-2xl p-3 text-xs flex items-start gap-2.5 text-red-300">
+                  <AlertTriangle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-bold text-red-400">Order Cancelled</div>
+                    <div className="text-[11px] text-red-200 mt-0.5">
+                      <span className="font-semibold text-red-300">Reason: </span>
+                      {ord.cancellationReason || "Customer cancelled order / rejected offer."}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Action Buttons */}
               {(() => {
+                if (["CANCELLED", "REJECTED"].includes(ord.status)) {
+                  return (
+                    <div className="grid grid-cols-2 gap-2 pt-1">
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ord.addressText)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="py-2.5 bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 transition-colors"
+                      >
+                        <MapPin className="w-3.5 h-3.5 text-brand-yellow" />
+                        <span>Google Maps</span>
+                      </a>
+                      <div className="py-2.5 bg-red-950/50 border border-red-850 text-red-400 font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 cursor-not-allowed">
+                        <AlertTriangle className="w-3.5 h-3.5" />
+                        <span>Cancelled</span>
+                      </div>
+                    </div>
+                  );
+                }
+
                 let targetHref = `/partner/orders/${ord.id}/inspection`;
                 let btnLabel = "Inspect Device";
 

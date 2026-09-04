@@ -27,6 +27,7 @@ import {
   Ban,
   XCircle,
   AlertTriangle,
+  AlertCircle,
   ListChecks,
 } from "lucide-react";
 import { CustomerAnswersModal } from "@/components/admin/CustomerAnswersModal";
@@ -61,6 +62,53 @@ interface Order {
   selectedAnswersJson?: string | null;
   breakdownJson?: string | null;
   priceDifferenceReason?: string | null;
+  cancellationReason?: string | null;
+}
+
+function getOrderBoxStatus(ord: Order | any): "BOX" | "NO BOX" {
+  const answersJson = ord.selectedAnswersJson || ord.quote?.selectedAnswersJson;
+  if (answersJson) {
+    try {
+      const parsed = typeof answersJson === "string" ? JSON.parse(answersJson) : answersJson;
+      const acc = parsed.accessories || parsed.selectedAccessories || [];
+      if (Array.isArray(acc)) {
+        const hasBox = acc.some((item: any) => String(item).toLowerCase().includes("box"));
+        return hasBox ? "BOX" : "NO BOX";
+      }
+    } catch (e) {}
+  }
+
+  if (Array.isArray(ord.qcReports) && ord.qcReports.length > 0) {
+    for (const qc of ord.qcReports) {
+      if (qc.accessories) {
+        try {
+          const acc = typeof qc.accessories === "string" ? JSON.parse(qc.accessories) : qc.accessories;
+          if (Array.isArray(acc)) {
+            const hasBox = acc.some((item: any) => String(item).toLowerCase().includes("box"));
+            return hasBox ? "BOX" : "NO BOX";
+          }
+        } catch (e) {}
+      }
+    }
+  }
+
+  const breakdownJson = ord.breakdownJson || ord.quote?.breakdownJson;
+  if (breakdownJson) {
+    try {
+      const parsed = typeof breakdownJson === "string" ? JSON.parse(breakdownJson) : breakdownJson;
+      const deductions = parsed.summary || parsed.deductionsList || [];
+      if (Array.isArray(deductions)) {
+        const hasBoxMissing = deductions.some(
+          (d: any) =>
+            (d.label && d.label.toLowerCase().includes("box missing")) ||
+            (d.title && d.title.toLowerCase().includes("box missing"))
+        );
+        if (hasBoxMissing) return "NO BOX";
+      }
+    } catch (e) {}
+  }
+
+  return "NO BOX";
 }
 
 function getAdminToken() {
@@ -159,6 +207,12 @@ export default function AdminOrdersPage() {
             selectedAnswersJson: ord.selectedAnswersJson || ord.quote?.selectedAnswersJson || null,
             breakdownJson: ord.breakdownJson || ord.quote?.breakdownJson || null,
             priceDifferenceReason: ord.priceDifferenceReason || ord.qcReports?.[0]?.priceDifferenceReason || null,
+            cancellationReason:
+              ord.cancellationReason ||
+              (ord.pickups?.[0]?.notes?.startsWith("Order Cancelled:")
+                ? ord.pickups[0].notes.replace(/^Order Cancelled:\s*/i, "")
+                : null) ||
+              null,
           };
         });
         combinedOrders.push(...mapped);
@@ -557,18 +611,28 @@ export default function AdminOrdersPage() {
   // Cancel Order from Admin
   const handleCancelOrderAdmin = async (ord: Order) => {
     const reason = prompt(
-      `Cancel Order #${ord.orderNumber}? Enter cancellation reason:`,
-      "Customer rejected offer / order cancelled"
+      `🛑 Cancel Order #${ord.orderNumber}?\n\n* Cancellation reason is MANDATORY:`,
+      ""
     );
-    if (reason === null) return;
+    if (reason === null) return; // User cancelled prompt
+    if (!reason.trim()) {
+      alert("⚠️ Cancellation reason is required! The order was NOT cancelled.");
+      return;
+    }
 
     setActionLoading(ord.id + "-cancel");
     try {
-      await fetch(`/api/v1/orders/${ord.orderNumber}/cancel`, {
+      const res = await fetch(`/api/v1/orders/${ord.orderNumber}/cancel`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ reason }),
+        body: JSON.stringify({ reason: reason.trim() }),
       });
+
+      const json = await res.json();
+      if (!res.ok || !json.success) {
+        alert(json.error || "Failed to cancel order.");
+        return;
+      }
 
       if (typeof window !== "undefined") {
         const storedStr = localStorage.getItem(`cashall_order_${ord.orderNumber}`);
@@ -576,13 +640,14 @@ export default function AdminOrdersPage() {
           try {
             const parsed = JSON.parse(storedStr);
             parsed.status = "CANCELLED";
+            parsed.cancellationReason = reason.trim();
             localStorage.setItem(`cashall_order_${ord.orderNumber}`, JSON.stringify(parsed));
           } catch (e) {}
         }
       }
 
       await fetchOrders();
-      alert(`🛑 Order #${ord.orderNumber} has been marked as CANCELLED!`);
+      alert(`🛑 Order #${ord.orderNumber} has been marked as CANCELLED!\nReason: ${reason.trim()}`);
     } catch (err: any) {
       alert(`Error cancelling order: ${err.message}`);
     } finally {
@@ -603,12 +668,14 @@ export default function AdminOrdersPage() {
       "Email",
       "Location",
       "Device Name",
+      "Box Status",
       "IMEI Number",
       "Estimated Quote (INR)",
       "Final Settled Payout (INR)",
       "Bank UTR",
       "Assigned Agent",
       "Order Status",
+      "Cancellation Reason",
       "Payment Status",
     ];
     const rows = orders.map((ord) => [
@@ -621,12 +688,16 @@ export default function AdminOrdersPage() {
       ord.customerEmail || "—",
       `"${(ord.location || "—").replace(/"/g, '""')}"`,
       `"${ord.deviceName.replace(/"/g, '""')}"`,
+      getOrderBoxStatus(ord),
       ord.imeiNumber || (ord as any).imeiRecords?.[0]?.code || "—",
       ord.estimatedPrice || 0,
       ord.revisedPrice || (ord as any).finalPrice || ord.estimatedPrice || 0,
       ord.utr && !ord.utr.startsWith("PAID-") && ord.utr !== "623480124575" ? ord.utr : "—",
       `"${(ord.agentName || "Assigned Agent").replace(/"/g, '""')}"`,
       ord.status,
+      ["CANCELLED", "REJECTED"].includes(ord.status)
+        ? `"${(ord.cancellationReason || "Order cancelled").replace(/"/g, '""')}"`
+        : "—",
       ord.paymentStatus || "PAID",
     ]);
     const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map((e) => e.join(","))].join("\n");
@@ -646,19 +717,27 @@ export default function AdminOrdersPage() {
       "ORDER NUMBER",
       "ORDER COMPLETED DATE & TIME",
       "DEVICE NAME",
+      "BOX STATUS",
       "IMEI/SERIAL NUMBER",
       "ESTIMATED QUOTE (INR)",
       "FINAL SETTLED PAYOUT (INR)",
       "ASSIGNED AGENT",
+      "ORDER STATUS",
+      "CANCELLATION REASON",
     ];
     const rows = orders.map((ord) => [
       ord.orderNumber,
       ord.completedAt ? `"${new Date(ord.completedAt).toLocaleString("en-IN")}"` : (ord.status === "COMPLETED" && ord.createdAt ? `"${new Date(ord.createdAt).toLocaleString("en-IN")}"` : "—"),
       `"${(ord.deviceName || "Mobile Device").replace(/"/g, '""')}"`,
+      getOrderBoxStatus(ord),
       ord.imeiNumber || (ord as any).imeiRecords?.[0]?.code || "—",
       ord.estimatedPrice || 0,
       ord.revisedPrice || (ord as any).finalPrice || ord.estimatedPrice || 0,
       `"${(ord.agentName && ord.agentName !== "CashALL Logistics" ? ord.agentName : "—").replace(/"/g, '""')}"`,
+      ord.status,
+      ["CANCELLED", "REJECTED"].includes(ord.status)
+        ? `"${(ord.cancellationReason || "Order cancelled").replace(/"/g, '""')}"`
+        : "—",
     ]);
     const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map((e) => e.join(","))].join("\n");
     const encodedUri = encodeURI(csvContent);
@@ -807,6 +886,17 @@ export default function AdminOrdersPage() {
                   </span>
                 </div>
               </div>
+
+              {/* CANCELLATION REASON BANNER (IF CANCELLED / REJECTED) */}
+              {["CANCELLED", "REJECTED"].includes(ord.status) && (
+                <div className="bg-red-950/40 border border-red-700/60 rounded-2xl p-3.5 flex items-start gap-2.5 text-xs text-red-300">
+                  <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-bold text-red-200">Cancellation Reason: </span>
+                    <span className="font-medium text-red-100">{ord.cancellationReason || "Customer cancelled order / rejected offer."}</span>
+                  </div>
+                </div>
+              )}
 
               {/* ROW 2: 3-COLUMN CONTENT GRID */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

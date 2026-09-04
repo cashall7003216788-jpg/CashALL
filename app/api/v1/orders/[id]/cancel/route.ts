@@ -18,7 +18,17 @@ export const POST = apiWrapper(async (req: NextRequest, context: { params: Promi
     const id = rawParams?.id || "";
     const body = await req.json().catch(() => ({}));
     const validation = cancelSchema.safeParse(body);
-    const reason = validation.success && validation.data.reason ? validation.data.reason : "Customer cancelled order / rejected offer.";
+    const reason = validation.success && validation.data.reason?.trim() ? validation.data.reason.trim() : null;
+
+    if (!reason) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Cancellation reason is mandatory. Please provide a valid reason to cancel the order.",
+        },
+        { status: 400 }
+      );
+    }
 
     // Safe search: only query by UUID if id matches UUID pattern
     let order = null;
@@ -45,17 +55,27 @@ export const POST = apiWrapper(async (req: NextRequest, context: { params: Promi
       });
     }
 
-    // Allow cancellation even if marked completed by mistake
+    // Update order status and record explicit cancellationReason
     const updatedOrder = await prisma.order.update({
       where: { id: order.id },
       data: {
         status: "CANCELLED",
+        cancellationReason: reason,
       },
     });
 
+    // Also update any linked pickup record notes
+    await prisma.pickup.updateMany({
+      where: { orderId: order.id },
+      data: {
+        status: "CANCELLED",
+        notes: `Order Cancelled: ${reason}`,
+      },
+    }).catch(() => null);
+
     await AuditService.log({
-      actorId: "customer_portal",
-      actorRole: "CUSTOMER",
+      actorId: "console",
+      actorRole: "AGENT_OR_ADMIN",
       action: "ORDER_CANCELLED",
       tableName: "Order",
       recordId: order.id,

@@ -47,6 +47,7 @@ interface AgentOrder {
   paymentStatus: string;
   urn?: string | null;
   paymentScreenshotUrl?: string | null;
+  cancellationReason?: string | null;
 }
 
 export default function AgentDashboardPage() {
@@ -289,17 +290,21 @@ export default function AgentDashboardPage() {
   // Agent: Mark as Customer Rejected Offer / Cancel Order
   const handleCustomerRejectedOffer = async (ord: AgentOrder) => {
     const reason = prompt(
-      `Mark Order #${ord.orderNumber} as Customer Rejected Offer / Cancelled? Enter reason:`,
-      "Customer rejected doorstep inspection revised price"
+      `🛑 Mark Order #${ord.orderNumber} as Customer Rejected / Cancelled?\n\n* Cancellation reason is MANDATORY:`,
+      ""
     );
-    if (reason === null) return;
+    if (reason === null) return; // Cancelled prompt
+    if (!reason.trim()) {
+      alert("⚠️ Cancellation reason is mandatory. The order was NOT cancelled.");
+      return;
+    }
 
     setActionLoading(ord.id + "-reject");
     try {
       const res = await fetch(`/api/v1/orders/${ord.orderNumber}/cancel`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ reason }),
+        body: JSON.stringify({ reason: reason.trim() }),
       });
 
       const json = await res.json();
@@ -310,6 +315,7 @@ export default function AgentDashboardPage() {
             try {
               const parsed = JSON.parse(storedStr);
               parsed.status = "CANCELLED";
+              parsed.cancellationReason = reason.trim();
               localStorage.setItem(`cashall_order_${ord.orderNumber}`, JSON.stringify(parsed));
             } catch (e) {}
           }
@@ -317,7 +323,7 @@ export default function AgentDashboardPage() {
 
         setNotification({
           type: "success",
-          msg: `🛑 Order #${ord.orderNumber} marked as CANCELLED (Customer Rejected Offer). Doorstep pickup closed.`,
+          msg: `🛑 Order #${ord.orderNumber} marked as CANCELLED!\nReason: ${reason.trim()}`,
         });
 
         await fetchOrders();
@@ -486,6 +492,17 @@ export default function AgentDashboardPage() {
                       </span>
                     </div>
                   </div>
+
+                  {/* CANCELLATION REASON BANNER */}
+                  {isCancelled && (
+                    <div className="bg-red-950/40 border border-red-700/60 rounded-2xl p-3.5 flex items-start gap-2.5 text-xs text-red-300">
+                      <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-bold text-red-200">Cancellation Reason: </span>
+                        <span className="font-medium text-red-100">{ord.cancellationReason || "Doorstep inspection rejected / cancelled"}</span>
+                      </div>
+                    </div>
+                  )}
 
                   {/* 3 COLUMN INFO GRID */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

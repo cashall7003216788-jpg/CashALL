@@ -171,6 +171,7 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       selectedAnswersJson,
       breakdownJson,
       priceDifferenceReason,
+      cancellationReason: ord.cancellationReason || (ord.pickups?.[0]?.notes?.startsWith("Order Cancelled:") ? ord.pickups[0].notes.replace(/^Order Cancelled:\s*/i, "") : null) || null,
     };
   });
 

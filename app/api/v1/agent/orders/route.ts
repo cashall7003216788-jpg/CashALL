@@ -182,6 +182,7 @@ export async function GET(req: NextRequest) {
         breakdownJson: ord.quote?.breakdownJson || (ord as any).breakdownJson || null,
         priceDifferenceReason: qcReport?.priceDifferenceReason || ord.offers?.[0]?.priceDifferenceReason || (ord as any).priceDifferenceReason || null,
         quoteNumber: ord.quote?.quoteNumber || null,
+        cancellationReason: ord.cancellationReason || (activePickup?.notes?.startsWith("Order Cancelled:") ? activePickup.notes.replace(/^Order Cancelled:\s*/i, "") : null) || null,
         createdAt: ord.createdAt,
       };
     });

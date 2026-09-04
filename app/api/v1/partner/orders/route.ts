@@ -59,6 +59,7 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     estimatedPrice: p.order.quote.estimatedPrice,
     finalPrice: p.order.finalPrice,
     status: p.order.status,
+    cancellationReason: (p.order as any).cancellationReason || (p.notes?.startsWith("Order Cancelled:") ? p.notes.replace(/^Order Cancelled:\s*/i, "") : null) || null,
     identityStatus: "PENDING",
     imeiStatus: "PENDING",
     hasQcReport: p.order.qcReports.length > 0,
