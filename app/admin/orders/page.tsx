@@ -29,8 +29,10 @@ import {
   AlertTriangle,
   AlertCircle,
   ListChecks,
+  Sparkles,
 } from "lucide-react";
 import { CustomerAnswersModal } from "@/components/admin/CustomerAnswersModal";
+import { ReQuotationModal } from "@/components/admin/ReQuotationModal";
 
 interface Order {
   id: string;
@@ -128,6 +130,7 @@ export default function AdminOrdersPage() {
   const [error, setError] = useState("");
   const [actionLoading, setActionLoading] = useState<string | null>(null);
   const [selectedOrderForAnswers, setSelectedOrderForAnswers] = useState<any | null>(null);
+  const [selectedOrderForReQuote, setSelectedOrderForReQuote] = useState<any | null>(null);
 
   const fetchOrders = useCallback(async () => {
     setLoading(true);
@@ -967,19 +970,21 @@ export default function AdminOrdersPage() {
                 <div className="space-y-2">
                   <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">Assigned Logistics Agent</div>
                   <div className="space-y-2">
-                    <select
-                      value={ord.agentId || ""}
-                      onChange={(e) => handleSelectAgent(ord, e.target.value)}
-                      disabled={actionLoading === ord.id + "-agent"}
-                      className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs font-bold rounded-xl px-3 py-2.5 focus:outline-none focus:border-yellow-400 transition cursor-pointer"
-                    >
-                      <option value="">-- Select Field Agent --</option>
-                      {availableAgents.map((ag) => (
-                        <option key={ag.id} value={ag.id}>
-                          {ag.name}
-                        </option>
-                      ))}
-                    </select>
+                    {!["CANCELLED", "REJECTED", "COMPLETED", "BILL_GENERATED"].includes(ord.status) && (
+                      <select
+                        value={ord.agentId || ""}
+                        onChange={(e) => handleSelectAgent(ord, e.target.value)}
+                        disabled={actionLoading === ord.id + "-agent"}
+                        className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs font-bold rounded-xl px-3 py-2.5 focus:outline-none focus:border-yellow-400 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <option value="">-- Select Field Agent --</option>
+                        {availableAgents.map((ag) => (
+                          <option key={ag.id} value={ag.id}>
+                            {ag.name}
+                          </option>
+                        ))}
+                      </select>
+                    )}
 
                     {ord.agentName ? (
                       <div className="bg-blue-950/50 border border-blue-800/60 p-2.5 rounded-2xl flex items-center justify-between text-xs text-blue-300">
@@ -992,7 +997,7 @@ export default function AdminOrdersPage() {
                         </span>
                       </div>
                     ) : (
-                      <div className="text-[11px] text-neutral-500 italic">No agent assigned yet. Select from dropdown.</div>
+                      <div className="text-[11px] text-neutral-500 italic">No agent assigned yet.</div>
                     )}
                   </div>
 
@@ -1013,99 +1018,168 @@ export default function AdminOrdersPage() {
 
               {/* ROW 3: ACTION BUTTONS TOOLBAR */}
               <div className="pt-4 border-t border-neutral-700 flex flex-wrap items-center justify-between gap-3">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <Link
-                    href={`/track/${ord.orderNumber}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-200 bg-neutral-700 hover:bg-neutral-600 px-3 py-2 rounded-xl transition"
-                  >
-                    <Eye className="w-3.5 h-3.5" />
-                    <span>Track Order</span>
-                  </Link>
+                {(() => {
+                  const isCancelled = ["CANCELLED", "REJECTED"].includes(ord.status);
+                  const isCompleted = ["COMPLETED", "BILL_GENERATED"].includes(ord.status);
 
-                  <Link
-                    href={`/admin/inspections?orderId=${ord.orderNumber}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-3.5 py-2 rounded-xl transition shadow-md"
-                  >
-                    <ClipboardCheck className="w-3.5 h-3.5" />
-                    <span>Physical Inspection</span>
-                  </Link>
+                  // CASE 1: CANCELLED ORDER -> ONLY Customer Answers & Re-Quotation
+                  if (isCancelled) {
+                    return (
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <button
+                          onClick={() => setSelectedOrderForAnswers(ord)}
+                          className="inline-flex items-center gap-1.5 text-xs font-black text-cyan-300 bg-cyan-950/80 hover:bg-cyan-900 border border-cyan-700 px-3.5 py-2 rounded-xl transition shadow-md"
+                          title="View all questions answered and declared by customer"
+                        >
+                          <ListChecks className="w-3.5 h-3.5 text-cyan-400" />
+                          <span>Customer Answers (QC)</span>
+                        </button>
 
-                  <label className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-300 bg-yellow-950/60 hover:bg-yellow-900/80 border border-yellow-700/60 px-3.5 py-2 rounded-xl transition cursor-pointer">
-                    {actionLoading === ord.id + "-upload" ? (
-                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                    ) : (
-                      <Upload className="w-3.5 h-3.5 text-yellow-400" />
-                    )}
-                    <span>Upload Screenshot</span>
-                    <input
-                      type="file"
-                      accept="image/*"
-                      onChange={(e) => handleAdminFileUpload(ord, e)}
-                      disabled={actionLoading === ord.id + "-upload"}
-                      className="hidden"
-                    />
-                  </label>
+                        <button
+                          onClick={() => setSelectedOrderForReQuote(ord)}
+                          className="inline-flex items-center gap-1.5 text-xs font-black text-purple-200 bg-purple-950/80 hover:bg-purple-900 border border-purple-600 px-3.5 py-2 rounded-xl transition shadow-md"
+                          title="Record or view re-quotation answers given by agents"
+                        >
+                          <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+                          <span>Re-Quotation</span>
+                        </button>
+                      </div>
+                    );
+                  }
 
-                  <button
-                    onClick={() => handleAssignAgent(ord)}
-                    disabled={actionLoading === ord.id + "-agent"}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-300 bg-blue-950 hover:bg-blue-900 border border-blue-800 px-3.5 py-2 rounded-xl transition"
-                  >
-                    {actionLoading === ord.id + "-agent" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <UserCheck className="w-3.5 h-3.5" />}
-                    <span>{ord.agentName ? "Re-Assign Agent" : "Assign Agent"}</span>
-                  </button>
+                  // CASE 2: COMPLETED ORDER -> ONLY Customer Answers, Send Bill Email, View Bill, and Re-Quotation
+                  if (isCompleted) {
+                    return (
+                      <div className="flex items-center justify-between w-full flex-wrap gap-3">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <button
+                            onClick={() => setSelectedOrderForAnswers(ord)}
+                            className="inline-flex items-center gap-1.5 text-xs font-black text-cyan-300 bg-cyan-950/80 hover:bg-cyan-900 border border-cyan-700 px-3.5 py-2 rounded-xl transition shadow-md"
+                            title="View all questions answered and declared by customer"
+                          >
+                            <ListChecks className="w-3.5 h-3.5 text-cyan-400" />
+                            <span>Customer Answers (QC)</span>
+                          </button>
 
-                  <button
-                    onClick={() => setSelectedOrderForAnswers(ord)}
-                    className="inline-flex items-center gap-1.5 text-xs font-black text-cyan-300 bg-cyan-950/80 hover:bg-cyan-900 border border-cyan-700 px-3.5 py-2 rounded-xl transition shadow-md"
-                    title="View all questions answered and not answered by customer to negotiate"
-                  >
-                    <ListChecks className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>Customer Answers (QC)</span>
-                  </button>
-                </div>
+                          <button
+                            onClick={() => setSelectedOrderForReQuote(ord)}
+                            className="inline-flex items-center gap-1.5 text-xs font-black text-purple-200 bg-purple-950/80 hover:bg-purple-900 border border-purple-600 px-3.5 py-2 rounded-xl transition shadow-md"
+                            title="View re-quotation answers given by agent"
+                          >
+                            <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+                            <span>Re-Quotation</span>
+                          </button>
+                        </div>
 
-                <div className="flex items-center gap-2 flex-wrap">
-                  {!["COMPLETED", "BILL_GENERATED"].includes(ord.status) && (
-                    <button
-                      onClick={() => handleMarkCompleted(ord)}
-                      disabled={actionLoading === ord.id + "-complete"}
-                      className="inline-flex items-center gap-1.5 text-xs font-black text-white bg-green-600 hover:bg-green-500 px-4 py-2 rounded-xl transition shadow-lg disabled:opacity-60"
-                    >
-                      {actionLoading === ord.id + "-complete" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <IndianRupee className="w-3.5 h-3.5" />}
-                      <span>Mark Paid</span>
-                    </button>
-                  )}
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <button
+                            onClick={() => handleSendBillEmail(ord)}
+                            disabled={actionLoading === ord.id + "-email"}
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 px-3.5 py-2 rounded-xl transition disabled:opacity-60"
+                          >
+                            {actionLoading === ord.id + "-email" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Send className="w-3.5 h-3.5" />}
+                            <span>Send Bill Email</span>
+                          </button>
 
-                  <button
-                    onClick={() => handleSendBillEmail(ord)}
-                    disabled={actionLoading === ord.id + "-email"}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-indigo-600 hover:bg-indigo-500 px-3.5 py-2 rounded-xl transition disabled:opacity-60"
-                  >
-                    {actionLoading === ord.id + "-email" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Send className="w-3.5 h-3.5" />}
-                    <span>Send Bill Email</span>
-                  </button>
+                          <Link
+                            href={`/admin/bill/${ord.orderNumber}`}
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-300 bg-neutral-700 hover:bg-neutral-600 px-3.5 py-2 rounded-xl transition"
+                          >
+                            <FileText className="w-3.5 h-3.5" />
+                            <span>View Bill</span>
+                          </Link>
+                        </div>
+                      </div>
+                    );
+                  }
 
-                  <Link
-                    href={`/admin/bill/${ord.orderNumber}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-300 bg-neutral-700 hover:bg-neutral-600 px-3.5 py-2 rounded-xl transition"
-                  >
-                    <FileText className="w-3.5 h-3.5" />
-                    <span>View Bill</span>
-                  </Link>
+                  // CASE 3: ACTIVE / IN-PROGRESS ORDER -> Standard Workflow
+                  return (
+                    <div className="flex items-center justify-between w-full flex-wrap gap-3">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <Link
+                          href={`/track/${ord.orderNumber}`}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-200 bg-neutral-700 hover:bg-neutral-600 px-3 py-2 rounded-xl transition"
+                        >
+                          <Eye className="w-3.5 h-3.5" />
+                          <span>Track Order</span>
+                        </Link>
 
-                  {!["CANCELLED", "REJECTED"].includes(ord.status) && (
-                    <button
-                      onClick={() => handleCancelOrderAdmin(ord)}
-                      disabled={actionLoading === ord.id + "-cancel"}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-red-300 bg-red-950/80 hover:bg-red-900 border border-red-800 px-3.5 py-2 rounded-xl transition shadow-md disabled:opacity-60"
-                      title="Cancel Order"
-                    >
-                      {actionLoading === ord.id + "-cancel" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Ban className="w-3.5 h-3.5 text-red-400" />}
-                      <span>Cancel Order</span>
-                    </button>
-                  )}
-                </div>
+                        <Link
+                          href={`/admin/inspections?orderId=${ord.orderNumber}`}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-3.5 py-2 rounded-xl transition shadow-md"
+                        >
+                          <ClipboardCheck className="w-3.5 h-3.5" />
+                          <span>Physical Inspection</span>
+                        </Link>
+
+                        <label className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-300 bg-yellow-950/60 hover:bg-yellow-900/80 border border-yellow-700/60 px-3.5 py-2 rounded-xl transition cursor-pointer">
+                          {actionLoading === ord.id + "-upload" ? (
+                            <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                          ) : (
+                            <Upload className="w-3.5 h-3.5 text-yellow-400" />
+                          )}
+                          <span>Upload Screenshot</span>
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => handleAdminFileUpload(ord, e)}
+                            disabled={actionLoading === ord.id + "-upload"}
+                            className="hidden"
+                          />
+                        </label>
+
+                        <button
+                          onClick={() => handleAssignAgent(ord)}
+                          disabled={actionLoading === ord.id + "-agent"}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-300 bg-blue-950 hover:bg-blue-900 border border-blue-800 px-3.5 py-2 rounded-xl transition"
+                        >
+                          {actionLoading === ord.id + "-agent" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <UserCheck className="w-3.5 h-3.5" />}
+                          <span>{ord.agentName ? "Re-Assign Agent" : "Assign Agent"}</span>
+                        </button>
+
+                        <button
+                          onClick={() => setSelectedOrderForAnswers(ord)}
+                          className="inline-flex items-center gap-1.5 text-xs font-black text-cyan-300 bg-cyan-950/80 hover:bg-cyan-900 border border-cyan-700 px-3.5 py-2 rounded-xl transition shadow-md"
+                          title="View all questions answered and declared by customer"
+                        >
+                          <ListChecks className="w-3.5 h-3.5 text-cyan-400" />
+                          <span>Customer Answers (QC)</span>
+                        </button>
+
+                        <button
+                          onClick={() => setSelectedOrderForReQuote(ord)}
+                          className="inline-flex items-center gap-1.5 text-xs font-black text-purple-200 bg-purple-950/80 hover:bg-purple-900 border border-purple-600 px-3.5 py-2 rounded-xl transition shadow-md"
+                          title="Record or view re-quotation answers given by agents"
+                        >
+                          <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+                          <span>Re-Quotation</span>
+                        </button>
+                      </div>
+
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <button
+                          onClick={() => handleMarkCompleted(ord)}
+                          disabled={actionLoading === ord.id + "-complete"}
+                          className="inline-flex items-center gap-1.5 text-xs font-black text-white bg-green-600 hover:bg-green-500 px-4 py-2 rounded-xl transition shadow-lg disabled:opacity-60"
+                        >
+                          {actionLoading === ord.id + "-complete" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <IndianRupee className="w-3.5 h-3.5" />}
+                          <span>Mark Paid</span>
+                        </button>
+
+                        <button
+                          onClick={() => handleCancelOrderAdmin(ord)}
+                          disabled={actionLoading === ord.id + "-cancel"}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-red-300 bg-red-950/80 hover:bg-red-900 border border-red-800 px-3.5 py-2 rounded-xl transition shadow-md disabled:opacity-60"
+                          title="Cancel Order"
+                        >
+                          {actionLoading === ord.id + "-cancel" ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Ban className="w-3.5 h-3.5 text-red-400" />}
+                          <span>Cancel Order</span>
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
             </div>
           ))}
@@ -1117,6 +1191,14 @@ export default function AdminOrdersPage() {
         isOpen={!!selectedOrderForAnswers}
         onClose={() => setSelectedOrderForAnswers(null)}
         orderOrQuote={selectedOrderForAnswers}
+      />
+
+      {/* AGENT RE-QUOTATION MODAL */}
+      <ReQuotationModal
+        isOpen={!!selectedOrderForReQuote}
+        onClose={() => setSelectedOrderForReQuote(null)}
+        order={selectedOrderForReQuote}
+        onUpdated={() => fetchOrders()}
       />
     </div>
   );

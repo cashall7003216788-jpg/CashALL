@@ -109,11 +109,12 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
         });
       }
 
-      // 5. Update Order Status and Revised Price
+      // 5. Update Order Status and Revised Price (preserve completed or cancelled status)
+      const shouldPreserveStatus = ["COMPLETED", "CANCELLED", "REJECTED", "BILL_GENERATED"].includes(order.status);
       return tx.order.update({
         where: { id: order.id },
         data: {
-          status: "ACCEPTED",
+          status: shouldPreserveStatus ? order.status : "ACCEPTED",
           finalPrice: finalPriceVal,
         },
         include: {
