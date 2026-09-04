@@ -34,7 +34,26 @@ export async function POST(req: Request) {
         },
       });
 
-      const agentId = agent?.id || "agent_sangeet_shaw";
+      if (!agent) {
+        agent = await prisma.user.upsert({
+          where: { phone: "6289477287" },
+          update: {
+            name: "SANGEET SHAW",
+            role: "AGENT",
+            status: "ACTIVE",
+          },
+          create: {
+            name: "SANGEET SHAW",
+            phone: "6289477287",
+            email: "sangeetshaw39@gmail.com",
+            role: "AGENT",
+            status: "ACTIVE",
+            firebaseUid: "sangeet_shaw_6289477287",
+          },
+        });
+      }
+
+      const agentId = agent.id;
       const token = `tok_agent_${agentId}_${Date.now()}`;
 
       return NextResponse.json({

@@ -50,7 +50,11 @@ export function calculateDeviceQuote(
         calcAmount = -Math.abs(matchingRule.adjustmentValue);
         totalDeductions += Math.abs(calcAmount);
       } else if (matchingRule.adjustmentType === "PERCENTAGE_DEDUCTION") {
-        const pDeduct = (basePrice * Math.abs(matchingRule.adjustmentValue)) / 100;
+        let pct = Math.abs(matchingRule.adjustmentValue);
+        if (pct > 100) {
+          pct = pct / 100;
+        }
+        const pDeduct = (basePrice * pct) / 100;
         calcAmount = -Math.round(pDeduct);
         totalDeductions += Math.abs(calcAmount);
       } else if (matchingRule.adjustmentType === "FIXED_BONUS") {

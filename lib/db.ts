@@ -1,4 +1,12 @@
 import { PrismaClient } from "@prisma/client";
+import dns from "node:dns";
+
+// Ensure Node.js resolves IPv4 addresses first to avoid pooler connection timeouts
+try {
+  dns.setDefaultResultOrder?.("ipv4first");
+} catch {
+  // Ignore in environments where not supported
+}
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient };
 
@@ -8,7 +16,6 @@ const SUPABASE_IPV4_POOLER_URL =
 
 let dbUrl = process.env.POSTGRES_URL_NON_POOLING || process.env.DATABASE_URL || SUPABASE_IPV4_POOLER_URL;
 
-// Force override any IPv6 direct host or port 6543 to working port 5432
 if (!dbUrl || dbUrl.includes("db.jqysknhobtpcbyyltnfc.supabase.co") || dbUrl.includes("localhost") || dbUrl.includes(":6543")) {
   dbUrl = SUPABASE_IPV4_POOLER_URL;
 }
