@@ -291,7 +291,7 @@ export default function AdminSupportManagementPage() {
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Sangeet Shaw"
+                    placeholder="Enter Full Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:border-yellow-400 transition"
@@ -309,7 +309,7 @@ export default function AdminSupportManagementPage() {
                   <input
                     type="text"
                     required
-                    placeholder="e.g. SANGEET SHAW"
+                    placeholder="Enter User Name"
                     value={formData.username}
                     onChange={(e) => setFormData({ ...formData, username: e.target.value })}
                     className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:border-yellow-400 transition"
@@ -327,7 +327,7 @@ export default function AdminSupportManagementPage() {
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. 7604092333"
+                    placeholder="Enter 10-digit Phone Number"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:border-yellow-400 transition"
@@ -345,7 +345,7 @@ export default function AdminSupportManagementPage() {
                   <input
                     type={showPassword ? "text" : "password"}
                     required
-                    placeholder="Enter Password (e.g. Ank933967@)"
+                    placeholder="Enter Login Password (or phone number)"
                     value={formData.password}
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                     className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-10 pr-10 py-3 focus:outline-none focus:border-yellow-400 transition"

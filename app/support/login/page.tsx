@@ -104,7 +104,7 @@ export default function SupportLoginPage() {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="e.g. Harshita Vyas, or 8981191734"
+                placeholder="Enter User Name, Phone, or Email"
                 autoComplete="off"
                 required
                 className="w-full pl-10 pr-3 py-3 text-xs bg-neutral-950 border border-neutral-800 rounded-xl text-white focus:outline-none focus:border-yellow-400 transition"
@@ -120,7 +120,7 @@ export default function SupportLoginPage() {
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter Password or Phone Number"
+                placeholder="Enter Password"
                 autoComplete="new-password"
                 required
                 className="w-full pl-10 pr-10 py-3 text-xs bg-neutral-950 border border-neutral-800 rounded-xl text-white focus:outline-none focus:border-yellow-400 transition"
