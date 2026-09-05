@@ -97,14 +97,14 @@ export default function SupportLoginPage() {
 
         <form onSubmit={handleLogin} className="space-y-4" autoComplete="off">
           <div>
-            <label className="block text-xs font-bold text-neutral-300 mb-1">Support User Name</label>
+            <label className="block text-xs font-bold text-neutral-300 mb-1">Support User Name or Phone</label>
             <div className="relative flex items-center">
               <User className="w-4 h-4 absolute left-3.5 text-neutral-500" />
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Enter Support User Name"
+                placeholder="e.g. Harshita Vyas, or 8981191734"
                 autoComplete="off"
                 required
                 className="w-full pl-10 pr-3 py-3 text-xs bg-neutral-950 border border-neutral-800 rounded-xl text-white focus:outline-none focus:border-yellow-400 transition"
@@ -120,7 +120,7 @@ export default function SupportLoginPage() {
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter Password"
+                placeholder="Enter Password or Phone Number"
                 autoComplete="new-password"
                 required
                 className="w-full pl-10 pr-10 py-3 text-xs bg-neutral-950 border border-neutral-800 rounded-xl text-white focus:outline-none focus:border-yellow-400 transition"

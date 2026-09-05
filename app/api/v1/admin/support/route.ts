@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    const [supportUsers, callLogs, sessionLogs] = await Promise.all([
+    const [supportUsers, callLogs, sessionLogs, credLogs] = await Promise.all([
       prisma.user.findMany({
         where: {
           role: "EMPLOYEE",
@@ -17,6 +17,7 @@ export async function GET() {
           email: true,
           phone: true,
           status: true,
+          firebaseUid: true,
           createdAt: true,
         },
         orderBy: {
@@ -35,6 +36,10 @@ export async function GET() {
         },
         take: 100,
       }),
+      prisma.auditLog.findMany({
+        where: { action: "SUPPORT_STAFF_CREDENTIALS" },
+        orderBy: { createdAt: "desc" },
+      }),
     ]);
 
     // Ensure default test user "SANGEET SHAW" is present if not yet returned
@@ -45,6 +50,7 @@ export async function GET() {
         name: "SANGEET SHAW",
         email: "sangeet.shaw@cashall.in",
         phone: "6289477287",
+        firebaseUid: "support_sangeet_shaw",
         status: "ACTIVE",
         createdAt: new Date("2026-08-21T06:00:00.000Z"),
       });
@@ -98,9 +104,7 @@ export async function GET() {
           (uName && sName === uName) ||
           (uName && sName.includes(uName)) ||
           (uName && uName.includes(sName)) ||
-          (user.phone && sPhone === user.phone) ||
-          (user.id && s.actorId === user.id) ||
-          (uName && s.actorId?.toLowerCase().includes(uName.replace(/\s+/g, "_")))
+          (user.phone && sPhone && sPhone === user.phone)
         );
       });
 
@@ -108,7 +112,7 @@ export async function GET() {
       const userLogouts = userSessions.filter((s) => s.action === "SUPPORT_LOGOUT");
 
       const lastLogin = userLogins[0]; // ordered desc
-      const lastLogout = userLogouts[0]; // ordered desc
+      const lastLogout = userLogouts[0];
 
       const lastLoginTime = lastLogin ? formatIST(lastLogin.createdAt) : "—";
       const lastLogoutTime = lastLogout ? formatIST(lastLogout.createdAt) : "—";
@@ -124,8 +128,37 @@ export async function GET() {
         sessionStatus = "OFFLINE";
       }
 
+      // Determine configured password
+      let loginPassword = "";
+      if (user.firebaseUid && user.firebaseUid.includes("_pwd_")) {
+        try {
+          const b64 = user.firebaseUid.split("_pwd_")[1];
+          loginPassword = Buffer.from(b64, "base64").toString("utf-8");
+        } catch {}
+      }
+      if (!loginPassword) {
+        const cred = credLogs.find((c) => {
+          if (!c.newValuesJson) return false;
+          try {
+            const p = JSON.parse(c.newValuesJson);
+            return p.phone === user.phone || c.actorId === user.id || c.recordId === user.id;
+          } catch {
+            return false;
+          }
+        });
+        if (cred?.newValuesJson) {
+          try {
+            loginPassword = JSON.parse(cred.newValuesJson).password || "";
+          } catch {}
+        }
+      }
+      if (!loginPassword) {
+        loginPassword = user.phone || "Ank933967@";
+      }
+
       return {
         ...user,
+        loginPassword,
         callsCount,
         lastLoginTime,
         lastLogoutTime,
@@ -177,7 +210,10 @@ export async function POST(req: Request) {
 
     const fullName = (name || username || "Support Staff").trim();
     const cleanUsername = (username || fullName).trim();
-    const cleanPhone = phone ? phone.trim() : `98${Date.now().toString().slice(-8)}`;
+    const cleanPhone = phone ? phone.trim().replace(/\D/g, "") : `98${Date.now().toString().slice(-8)}`;
+    const cleanPassword = (password || "").trim() || cleanPhone;
+    const pwdB64 = Buffer.from(cleanPassword).toString("base64");
+    const firebaseUid = `support_${cleanPhone}_pwd_${pwdB64}`;
     const autoEmail = `${cleanUsername.toLowerCase().replace(/\s+/g, ".")}@cashall.in`;
 
     // Check if support user already exists
@@ -200,9 +236,32 @@ export async function POST(req: Request) {
           name: fullName,
           email: existingUser.email || autoEmail,
           phone: cleanPhone,
+          firebaseUid: firebaseUid,
           status: "ACTIVE",
         },
       });
+
+      // Record credential log in auditLog
+      try {
+        await prisma.auditLog.create({
+          data: {
+            actorId: existingUser.id,
+            actorRole: "ADMIN",
+            action: "SUPPORT_STAFF_CREDENTIALS",
+            tableName: "SupportStaff",
+            recordId: existingUser.id,
+            newValuesJson: JSON.stringify({
+              password: cleanPassword,
+              phone: cleanPhone,
+              name: fullName,
+              username: cleanUsername,
+              updatedAt: new Date().toISOString(),
+            }),
+          },
+        });
+      } catch (e) {
+        console.warn("Could not save credential log:", e);
+      }
 
       return NextResponse.json({
         success: true,
@@ -210,8 +269,6 @@ export async function POST(req: Request) {
         supportUser: updated,
       });
     }
-
-    const firebaseUid = `support_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
 
     const supportUser = await prisma.user.create({
       data: {
@@ -223,6 +280,28 @@ export async function POST(req: Request) {
         status: "ACTIVE",
       },
     });
+
+    // Record credential log in auditLog
+    try {
+      await prisma.auditLog.create({
+        data: {
+          actorId: supportUser.id,
+          actorRole: "ADMIN",
+          action: "SUPPORT_STAFF_CREDENTIALS",
+          tableName: "SupportStaff",
+          recordId: supportUser.id,
+          newValuesJson: JSON.stringify({
+            password: cleanPassword,
+            phone: cleanPhone,
+            name: fullName,
+            username: cleanUsername,
+            createdAt: new Date().toISOString(),
+          }),
+        },
+      });
+    } catch (e) {
+      console.warn("Could not save credential log:", e);
+    }
 
     return NextResponse.json({
       success: true,

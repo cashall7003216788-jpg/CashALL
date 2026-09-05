@@ -29,6 +29,7 @@ interface SupportStaff {
   email: string;
   phone: string;
   status: string;
+  loginPassword?: string;
   createdAt: string;
   callsCount?: number;
   lastLoginTime?: string;
@@ -142,6 +143,7 @@ export default function AdminSupportManagementPage() {
       "Support Staff Name",
       "Email / User Name",
       "Phone Number",
+      "Login Password",
       "Session Status",
       "Last Log In (Date & Time)",
       "Last Log Out (Date & Time)",
@@ -152,6 +154,7 @@ export default function AdminSupportManagementPage() {
       `"${(s.name || "").replace(/"/g, '""')}"`,
       `"${(s.email || "").replace(/"/g, '""')}"`,
       `"=""${s.phone || ""}"""`,
+      `"${(s.loginPassword || s.phone || "Ank933967@").replace(/"/g, '""')}"`,
       `"${s.sessionStatus || "OFFLINE"}"`,
       `"${(s.lastLoginTime || "—").replace(/"/g, '""')}"`,
       `"${(s.lastLogoutTime || "—").replace(/"/g, '""')}"`,
@@ -400,6 +403,7 @@ export default function AdminSupportManagementPage() {
                     <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider font-extrabold print:text-black print:border-gray-300">
                       <th className="py-3 px-3">Staff Name</th>
                       <th className="py-3 px-3">Phone & Email</th>
+                      <th className="py-3 px-3">Login Password</th>
                       <th className="py-3 px-3">Session Status</th>
                       <th className="py-3 px-3">Last Log In</th>
                       <th className="py-3 px-3">Last Log Out</th>
@@ -418,6 +422,11 @@ export default function AdminSupportManagementPage() {
                         <td className="py-4 px-3">
                           <div className="text-neutral-300 font-mono text-xs">{staff.phone}</div>
                           <div className="text-neutral-400 text-[11px]">{staff.email}</div>
+                        </td>
+                        <td className="py-4 px-3">
+                          <span className="font-mono text-xs bg-neutral-900 border border-neutral-700 px-2.5 py-1 rounded-lg text-yellow-400 font-bold select-all inline-block">
+                            {staff.loginPassword || staff.phone || "Ank933967@"}
+                          </span>
                         </td>
                         <td className="py-4 px-3">
                           <span className={`inline-flex items-center gap-1 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
