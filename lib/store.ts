@@ -12107,6 +12107,475 @@ const MOBILE_MODELS_PART_3: DeviceModelData[] = [
 
 const MOBILE_MODELS_PART_4: DeviceModelData[] = [
   {
+    "id": "m-realme-realme-14-pro-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme 14 Pro 5G",
+    "slug": "realme-14-pro-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/32ee5dcc-e720.jpg",
+    "releaseYear": 2025,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-15-pro-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme 15 Pro 5G",
+    "slug": "realme-15-pro-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2281a965-ea42.jpg",
+    "releaseYear": 2025,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-13-pro-plus-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme 13 Pro Plus 5G",
+    "slug": "realme-13-pro-plus-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4150f505-7809.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-13-pro-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme 13 Pro 5G",
+    "slug": "realme-13-pro-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ff9f83a0-c885.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-13-plus-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme 13 Plus 5G",
+    "slug": "realme-13-plus-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/62690e88-4cc9.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-12-pro-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme 12 Pro 5G",
+    "slug": "realme-12-pro-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a54e8454-8fb9.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-12x-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme 12x 5G",
+    "slug": "realme-12x-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f845b732-bc90.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-gt-6",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme GT 6",
+    "slug": "realme-gt-6",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a9fdab2c-b4fb.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-gt-6t",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme GT 6T",
+    "slug": "realme-gt-6t",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/6eff5945-3906.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-p1-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme P1 5G",
+    "slug": "realme-p1-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/fdeed63e-116e.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-p1-pro-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme P1 Pro 5G",
+    "slug": "realme-p1-pro-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/af237cc3-8db0.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-p2-pro-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme P2 Pro 5G",
+    "slug": "realme-p2-pro-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/536c201d-d065.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-narzo-70-pro-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 70 Pro 5G",
+    "slug": "realme-narzo-70-pro-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c3c767d8-ee3e.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-narzo-70x-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 70x 5G",
+    "slug": "realme-narzo-70x-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/cedd86ca-f981.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-11-pro-plus-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme 11 Pro Plus 5G",
+    "slug": "realme-11-pro-plus-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d6eb2920-1402.jpg",
+    "releaseYear": 2023,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-11-pro-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme 11 Pro 5G",
+    "slug": "realme-11-pro-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4c676715-d934.jpg",
+    "releaseYear": 2023,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-11x-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme 11x 5G",
+    "slug": "realme-11x-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/533ff486-39c0.jpg",
+    "releaseYear": 2023,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-10-pro-plus-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme 10 Pro Plus 5G",
+    "slug": "realme-10-pro-plus-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3030c468-c90c.jpg",
+    "releaseYear": 2023,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-realme-realme-10-pro-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme 10 Pro 5G",
+    "slug": "realme-10-pro-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/c609678c-a280.jpg",
+    "releaseYear": 2023,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-xiaomi-xiaomi-redmi-note-13-pro-5g",
+    "brandId": "b-xiaomi",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi Note 13 Pro 5G",
+    "slug": "xiaomi-redmi-note-13-pro-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0eacd64b-072d.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-xiaomi-xiaomi-redmi-note-13-5g",
+    "brandId": "b-xiaomi",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi Note 13 5G",
+    "slug": "xiaomi-redmi-note-13-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/eb66998a-02e5.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-xiaomi-xiaomi-redmi-note-12-pro-5g",
+    "brandId": "b-xiaomi",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi Note 12 Pro 5G",
+    "slug": "xiaomi-redmi-note-12-pro-5g",
+    "imageUrl": "",
+    "releaseYear": 2023,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-xiaomi-xiaomi-redmi-note-12-5g",
+    "brandId": "b-xiaomi",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi Note 12 5G",
+    "slug": "xiaomi-redmi-note-12-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d2166a5b-fd2d.jpg",
+    "releaseYear": 2023,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-xiaomi-xiaomi-redmi-12-5g",
+    "brandId": "b-xiaomi",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi 12 5G",
+    "slug": "xiaomi-redmi-12-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/59c2fc00-c3b8.jpg",
+    "releaseYear": 2023,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-xiaomi-xiaomi-redmi-13c-5g",
+    "brandId": "b-xiaomi",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi 13C 5G",
+    "slug": "xiaomi-redmi-13c-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/19b99917-ffdf.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-xiaomi-xiaomi-14",
+    "brandId": "b-xiaomi",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi 14",
+    "slug": "xiaomi-14",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d7dcd7a1-3155.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-xiaomi-xiaomi-14-civi",
+    "brandId": "b-xiaomi",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi 14 CIVI",
+    "slug": "xiaomi-14-civi",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/32e63e9f-150a.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-motorola-motorola-moto-edge-50-fusion-5g",
+    "brandId": "b-motorola",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 50 Fusion 5G",
+    "slug": "motorola-moto-edge-50-fusion-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/11741151-313a.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-motorola-motorola-moto-edge-50-ultra-5g",
+    "brandId": "b-motorola",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 50 Ultra 5G",
+    "slug": "motorola-moto-edge-50-ultra-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/4dc180ec-db5f.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-motorola-motorola-moto-edge-40-5g",
+    "brandId": "b-motorola",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 40 5G",
+    "slug": "motorola-moto-edge-40-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/8a900756-d7e6.jpg",
+    "releaseYear": 2023,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-motorola-motorola-moto-edge-40-neo-5g",
+    "brandId": "b-motorola",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 40 Neo 5G",
+    "slug": "motorola-moto-edge-40-neo-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1a9e893f-1bca.jpg",
+    "releaseYear": 2023,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-motorola-motorola-moto-g85-5g",
+    "brandId": "b-motorola",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G85 5G",
+    "slug": "motorola-moto-g85-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/fdaad04e-9d1c.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-motorola-motorola-moto-g64-5g",
+    "brandId": "b-motorola",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G64 5G",
+    "slug": "motorola-moto-g64-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/388fa800-9dbb.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-motorola-motorola-moto-g54-5g",
+    "brandId": "b-motorola",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G54 5G",
+    "slug": "motorola-moto-g54-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2fa067f6-ba7f.jpg",
+    "releaseYear": 2023,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-motorola-motorola-moto-g45-5g",
+    "brandId": "b-motorola",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G45 5G",
+    "slug": "motorola-moto-g45-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/19853311-92b3.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-motorola-motorola-moto-g34-5g",
+    "brandId": "b-motorola",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G34 5G",
+    "slug": "motorola-moto-g34-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/ddc4945a-ea87.jpg",
+    "releaseYear": 2024,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+
+  {
     "id": "m-vivo-vivo-y71",
     "brandId": "b-vivo",
     "brandSlug": "vivo",
@@ -28746,34 +29215,10 @@ const MOBILE_VARIANTS_PART_1: DeviceVariantData[] = [
     "ram": "4 GB"
   },
   {
-    "id": "v-m-google-google-pixel-3a-64-gb-4-gb-2",
-    "modelId": "m-google-google-pixel-3a",
-    "storage": "64 GB",
-    "basePrice": 5050,
-    "active": true,
-    "ram": "4 GB"
-  },
-  {
     "id": "v-m-google-google-pixel-4a-128-gb-6-gb",
     "modelId": "m-google-google-pixel-4a",
     "storage": "128 GB",
     "basePrice": 4363,
-    "active": true,
-    "ram": "6 GB"
-  },
-  {
-    "id": "v-m-google-google-pixel-4a-128-gb-6-gb-2",
-    "modelId": "m-google-google-pixel-4a",
-    "storage": "128 GB",
-    "basePrice": 6262,
-    "active": true,
-    "ram": "6 GB"
-  },
-  {
-    "id": "v-m-google-google-pixel-4a-64-gb-6-gb",
-    "modelId": "m-google-google-pixel-4a",
-    "storage": "64 GB",
-    "basePrice": 5555,
     "active": true,
     "ram": "6 GB"
   },
@@ -28784,14 +29229,6 @@ const MOBILE_VARIANTS_PART_1: DeviceVariantData[] = [
     "basePrice": 10666,
     "active": true,
     "ram": "6 GB"
-  },
-  {
-    "id": "v-m-google-google-pixel-6a-128-gb-8-gb",
-    "modelId": "m-google-google-pixel-6a",
-    "storage": "128 GB",
-    "basePrice": 10605,
-    "active": true,
-    "ram": "8 GB"
   },
   {
     "id": "v-m-google-google-pixel-7-128-gb",
@@ -28858,14 +29295,6 @@ const MOBILE_VARIANTS_PART_1: DeviceVariantData[] = [
     "modelId": "m-google-google-pixel-7a",
     "storage": "128 GB",
     "basePrice": 18513,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-google-google-pixel-7a-128-gb-8-gb-2",
-    "modelId": "m-google-google-pixel-7a",
-    "storage": "128 GB",
-    "basePrice": 18483,
     "active": true,
     "ram": "8 GB"
   },
@@ -28975,14 +29404,6 @@ const MOBILE_VARIANTS_PART_1: DeviceVariantData[] = [
     "ram": "12 GB"
   },
   {
-    "id": "v-m-google-google-pixel-9-256-gb-12-gb-2",
-    "modelId": "m-google-google-pixel-9",
-    "storage": "256 GB",
-    "basePrice": 38380,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
     "id": "v-m-google-google-pixel-9-pro-xl-256-gb",
     "modelId": "m-google-google-pixel-9-pro-xl",
     "storage": "256 GB",
@@ -29021,26 +29442,10 @@ const MOBILE_VARIANTS_PART_1: DeviceVariantData[] = [
     "ram": "16 GB"
   },
   {
-    "id": "v-m-google-google-pixel-9-pro-fold-256-gb-16-gb-2",
-    "modelId": "m-google-google-pixel-9-pro-fold",
-    "storage": "256 GB",
-    "basePrice": 68680,
-    "active": true,
-    "ram": "16 GB"
-  },
-  {
     "id": "v-m-google-google-pixel-9-pro-256-gb-16-gb",
     "modelId": "m-google-google-pixel-9-pro",
     "storage": "256 GB",
     "basePrice": 50611,
-    "active": true,
-    "ram": "16 GB"
-  },
-  {
-    "id": "v-m-google-google-pixel-9-pro-256-gb-16-gb-2",
-    "modelId": "m-google-google-pixel-9-pro",
-    "storage": "256 GB",
-    "basePrice": 50500,
     "active": true,
     "ram": "16 GB"
   },
@@ -29053,26 +29458,10 @@ const MOBILE_VARIANTS_PART_1: DeviceVariantData[] = [
     "ram": "8 GB"
   },
   {
-    "id": "v-m-google-google-pixel-9a-256-gb-8-gb-2",
-    "modelId": "m-google-google-pixel-9a",
-    "storage": "256 GB",
-    "basePrice": 28280,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
     "id": "v-m-google-google-pixel-10-256-gb-12-gb",
     "modelId": "m-google-google-pixel-10",
     "storage": "256 GB",
     "basePrice": 46531,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-google-google-pixel-10-256-gb-12-gb-2",
-    "modelId": "m-google-google-pixel-10",
-    "storage": "256 GB",
-    "basePrice": 47470,
     "active": true,
     "ram": "12 GB"
   },
@@ -29085,26 +29474,10 @@ const MOBILE_VARIANTS_PART_1: DeviceVariantData[] = [
     "ram": "16 GB"
   },
   {
-    "id": "v-m-google-google-pixel-10-pro-256-gb-16-gb-2",
-    "modelId": "m-google-google-pixel-10-pro",
-    "storage": "256 GB",
-    "basePrice": 65650,
-    "active": true,
-    "ram": "16 GB"
-  },
-  {
     "id": "v-m-google-google-pixel-10-pro-xl-256-gb-16-gb",
     "modelId": "m-google-google-pixel-10-pro-xl",
     "storage": "256 GB",
     "basePrice": 71306,
-    "active": true,
-    "ram": "16 GB"
-  },
-  {
-    "id": "v-m-google-google-pixel-10-pro-xl-256-gb-16-gb-2",
-    "modelId": "m-google-google-pixel-10-pro-xl",
-    "storage": "256 GB",
-    "basePrice": 72720,
     "active": true,
     "ram": "16 GB"
   },
@@ -29117,26 +29490,10 @@ const MOBILE_VARIANTS_PART_1: DeviceVariantData[] = [
     "ram": "16 GB"
   },
   {
-    "id": "v-m-google-google-pixel-10-pro-fold-256-gb-16-gb-2",
-    "modelId": "m-google-google-pixel-10-pro-fold",
-    "storage": "256 GB",
-    "basePrice": 97970,
-    "active": true,
-    "ram": "16 GB"
-  },
-  {
     "id": "v-m-google-google-pixel-10a-256-gb-8-gb",
     "modelId": "m-google-google-pixel-10a",
     "storage": "256 GB",
     "basePrice": 33542,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-google-google-pixel-10a-256-gb-8-gb-2",
-    "modelId": "m-google-google-pixel-10a",
-    "storage": "256 GB",
-    "basePrice": 34138,
     "active": true,
     "ram": "8 GB"
   },
@@ -29151,10 +29508,10 @@ const MOBILE_VARIANTS_PART_1: DeviceVariantData[] = [
   {
     "id": "v-m-google-google-pixel-11-pro-xl-16-gb-512-gb",
     "modelId": "m-google-google-pixel-11-pro-xl",
-    "storage": "16 GB",
+    "storage": "512 GB",
     "basePrice": 95950,
     "active": true,
-    "ram": "512 GB"
+    "ram": "16 GB"
   },
   {
     "id": "v-m-google-google-pixel-11-pro-xl-256-gb-12-gb",
@@ -32694,14 +33051,6 @@ const MOBILE_VARIANTS_PART_3: DeviceVariantData[] = [
     "ram": "10 GB"
   },
   {
-    "id": "v-m-oneplus-oneplus-6t-mclaren-256-gb-10-gb-2",
-    "modelId": "m-oneplus-oneplus-6t-mclaren",
-    "storage": "256 GB",
-    "basePrice": 9090,
-    "active": true,
-    "ram": "10 GB"
-  },
-  {
     "id": "v-m-oneplus-oneplus-7-128-gb-6-gb",
     "modelId": "m-oneplus-oneplus-7",
     "storage": "128 GB",
@@ -32832,14 +33181,6 @@ const MOBILE_VARIANTS_PART_3: DeviceVariantData[] = [
     "modelId": "m-oneplus-oneplus-7t-pro-mclaren-edition",
     "storage": "256 GB",
     "basePrice": 9181,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-oneplus-oneplus-7t-pro-mclaren-edition-256-gb-12-gb-2",
-    "modelId": "m-oneplus-oneplus-7t-pro-mclaren-edition",
-    "storage": "256 GB",
-    "basePrice": 15150,
     "active": true,
     "ram": "12 GB"
   },
@@ -33124,14 +33465,6 @@ const MOBILE_VARIANTS_PART_3: DeviceVariantData[] = [
     "ram": "16 GB"
   },
   {
-    "id": "v-m-oneplus-oneplus-11-5g-marble-edition-256-gb-16-gb-2",
-    "modelId": "m-oneplus-oneplus-11-5g-marble-edition",
-    "storage": "256 GB",
-    "basePrice": 26967,
-    "active": true,
-    "ram": "16 GB"
-  },
-  {
     "id": "v-m-oneplus-oneplus-11r-5g-128-gb-8-gb",
     "modelId": "m-oneplus-oneplus-11r-5g",
     "storage": "128 GB",
@@ -33230,14 +33563,6 @@ const MOBILE_VARIANTS_PART_3: DeviceVariantData[] = [
     "modelId": "m-oneplus-oneplus-open",
     "storage": "1 TB",
     "basePrice": 60600,
-    "active": true,
-    "ram": "16 GB"
-  },
-  {
-    "id": "v-m-oneplus-oneplus-open-512-gb-16-gb-2",
-    "modelId": "m-oneplus-oneplus-open",
-    "storage": "512 GB",
-    "basePrice": 55045,
     "active": true,
     "ram": "16 GB"
   },
@@ -33715,7 +34040,7 @@ const MOBILE_VARIANTS_PART_3: DeviceVariantData[] = [
     "id": "v-m-oneplus-oneplus-nord-4-5g-256-gb-12-gb",
     "modelId": "m-oneplus-oneplus-nord-4-5g",
     "storage": "256 GB",
-    "basePrice": 21008,
+    "basePrice": 20937,
     "active": true,
     "ram": "12 GB"
   },
@@ -33723,7 +34048,7 @@ const MOBILE_VARIANTS_PART_3: DeviceVariantData[] = [
     "id": "v-m-oneplus-oneplus-nord-4-5g-128-gb-8-gb",
     "modelId": "m-oneplus-oneplus-nord-4-5g",
     "storage": "128 GB",
-    "basePrice": 20402,
+    "basePrice": 18109,
     "active": true,
     "ram": "8 GB"
   },
@@ -33731,7 +34056,7 @@ const MOBILE_VARIANTS_PART_3: DeviceVariantData[] = [
     "id": "v-m-oneplus-oneplus-nord-4-5g-256-gb-8-gb",
     "modelId": "m-oneplus-oneplus-nord-4-5g",
     "storage": "256 GB",
-    "basePrice": 18180,
+    "basePrice": 20170,
     "active": true,
     "ram": "8 GB"
   },
@@ -35631,7 +35956,7 @@ const MOBILE_VARIANTS_PART_4: DeviceVariantData[] = [
     "id": "v-m-oppo-oppo-f33-5g-128-gb-8-gb",
     "modelId": "m-oppo-oppo-f33-5g",
     "storage": "128 GB",
-    "basePrice": 0,
+    "basePrice": 22008,
     "active": true,
     "ram": "8 GB"
   },
@@ -37742,14 +38067,6 @@ const MOBILE_VARIANTS_PART_5: DeviceVariantData[] = [
     "ram": "4 GB"
   },
   {
-    "id": "v-m-samsung-samsung-galaxy-a30-64-gb-4-gb-2",
-    "modelId": "m-samsung-samsung-galaxy-a30",
-    "storage": "64 GB",
-    "basePrice": 3838,
-    "active": true,
-    "ram": "4 GB"
-  },
-  {
     "id": "v-m-samsung-samsung-galaxy-a30s-128-gb",
     "modelId": "m-samsung-samsung-galaxy-a30s",
     "storage": "128 GB",
@@ -37784,14 +38101,6 @@ const MOBILE_VARIANTS_PART_5: DeviceVariantData[] = [
     "modelId": "m-samsung-samsung-galaxy-a31",
     "storage": "128 GB",
     "basePrice": 3828,
-    "active": true,
-    "ram": "6 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a31-128-gb-6-gb-2",
-    "modelId": "m-samsung-samsung-galaxy-a31",
-    "storage": "128 GB",
-    "basePrice": 5050,
     "active": true,
     "ram": "6 GB"
   },
@@ -37911,7 +38220,7 @@ const MOBILE_VARIANTS_PART_5: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-a53-5g-128-gb-6-gb",
     "modelId": "m-samsung-samsung-galaxy-a53-5g",
     "storage": "128 GB",
-    "basePrice": 7852,
+    "basePrice": 7504,
     "active": true,
     "ram": "6 GB"
   },
@@ -37919,7 +38228,7 @@ const MOBILE_VARIANTS_PART_5: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-a53-5g-128-gb-8-gb",
     "modelId": "m-samsung-samsung-galaxy-a53-5g",
     "storage": "128 GB",
-    "basePrice": 8355,
+    "basePrice": 7666,
     "active": true,
     "ram": "8 GB"
   },
@@ -37927,25 +38236,9 @@ const MOBILE_VARIANTS_PART_5: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-a53-5g-256-gb-8-gb",
     "modelId": "m-samsung-samsung-galaxy-a53-5g",
     "storage": "256 GB",
-    "basePrice": 8806,
+    "basePrice": 8120,
     "active": true,
     "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a53-5g-256-gb-6-gb",
-    "modelId": "m-samsung-samsung-galaxy-a53-5g",
-    "storage": "256 GB",
-    "basePrice": 10302,
-    "active": true,
-    "ram": "6 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a53-5g-128-gb-4-gb",
-    "modelId": "m-samsung-samsung-galaxy-a53-5g",
-    "storage": "128 GB",
-    "basePrice": 8585,
-    "active": true,
-    "ram": "4 GB"
   },
   {
     "id": "v-m-samsung-samsung-galaxy-a6-32-gb-3-gb",
@@ -38015,7 +38308,7 @@ const MOBILE_VARIANTS_PART_5: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-a7-2018-64-gb-4-gb",
     "modelId": "m-samsung-samsung-galaxy-a7-2018",
     "storage": "64 GB",
-    "basePrice": 2828,
+    "basePrice": 1838,
     "active": true,
     "ram": "4 GB"
   },
@@ -38222,14 +38515,6 @@ const MOBILE_VARIANTS_PART_5: DeviceVariantData[] = [
     "ram": "4 GB"
   },
   {
-    "id": "v-m-samsung-samsung-galaxy-c5-pro-64-gb-4-gb-2",
-    "modelId": "m-samsung-samsung-galaxy-c5-pro",
-    "storage": "64 GB",
-    "basePrice": 4848,
-    "active": true,
-    "ram": "4 GB"
-  },
-  {
     "id": "v-m-samsung-samsung-galaxy-c7-pro-64-gb-4-gb",
     "modelId": "m-samsung-samsung-galaxy-c7-pro",
     "storage": "64 GB",
@@ -38238,26 +38523,10 @@ const MOBILE_VARIANTS_PART_5: DeviceVariantData[] = [
     "ram": "4 GB"
   },
   {
-    "id": "v-m-samsung-samsung-galaxy-c7-pro-64-gb-4-gb-2",
-    "modelId": "m-samsung-samsung-galaxy-c7-pro",
-    "storage": "64 GB",
-    "basePrice": 4848,
-    "active": true,
-    "ram": "4 GB"
-  },
-  {
     "id": "v-m-samsung-samsung-galaxy-c9-pro-64-gb-6-gb",
     "modelId": "m-samsung-samsung-galaxy-c9-pro",
     "storage": "64 GB",
     "basePrice": 2172,
-    "active": true,
-    "ram": "6 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-c9-pro-64-gb-6-gb-2",
-    "modelId": "m-samsung-samsung-galaxy-c9-pro",
-    "storage": "64 GB",
-    "basePrice": 5050,
     "active": true,
     "ram": "6 GB"
   },
@@ -38767,7 +39036,7 @@ const MOBILE_VARIANTS_PART_5: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-s24-fe-128-gb-8-gb",
     "modelId": "m-samsung-samsung-galaxy-s24-fe",
     "storage": "128 GB",
-    "basePrice": 23230,
+    "basePrice": 23917,
     "active": true,
     "ram": "8 GB"
   },
@@ -38775,7 +39044,7 @@ const MOBILE_VARIANTS_PART_5: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-s24-fe-256-gb-8-gb",
     "modelId": "m-samsung-samsung-galaxy-s24-fe",
     "storage": "256 GB",
-    "basePrice": 25250,
+    "basePrice": 25563,
     "active": true,
     "ram": "8 GB"
   },
@@ -39754,7 +40023,7 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-m06-5g-64-gb-4-gb",
     "modelId": "m-samsung-samsung-galaxy-m06-5g",
     "storage": "64 GB",
-    "basePrice": 6060,
+    "basePrice": 5454,
     "active": true,
     "ram": "4 GB"
   },
@@ -39762,7 +40031,7 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-m06-5g-128-gb-4-gb",
     "modelId": "m-samsung-samsung-galaxy-m06-5g",
     "storage": "128 GB",
-    "basePrice": 5454,
+    "basePrice": 6060,
     "active": true,
     "ram": "4 GB"
   },
@@ -39778,7 +40047,7 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-f06-5g-64-gb-4-gb",
     "modelId": "m-samsung-samsung-galaxy-f06-5g",
     "storage": "64 GB",
-    "basePrice": 5757,
+    "basePrice": 5252,
     "active": true,
     "ram": "4 GB"
   },
@@ -39786,7 +40055,7 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-f06-5g-128-gb-4-gb",
     "modelId": "m-samsung-samsung-galaxy-f06-5g",
     "storage": "128 GB",
-    "basePrice": 5252,
+    "basePrice": 5757,
     "active": true,
     "ram": "4 GB"
   },
@@ -39866,7 +40135,7 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-m30s-64-gb-4-gb",
     "modelId": "m-samsung-samsung-galaxy-m30s",
     "storage": "64 GB",
-    "basePrice": 4646,
+    "basePrice": 2707,
     "active": true,
     "ram": "4 GB"
   },
@@ -39874,7 +40143,7 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-m30s-128-gb-4-gb",
     "modelId": "m-samsung-samsung-galaxy-m30s",
     "storage": "128 GB",
-    "basePrice": 4545,
+    "basePrice": 2949,
     "active": true,
     "ram": "4 GB"
   },
@@ -40842,7 +41111,7 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-s24-5g-512-gb-8-gb",
     "modelId": "m-samsung-samsung-galaxy-s24-5g",
     "storage": "512 GB",
-    "basePrice": 36360,
+    "basePrice": 36693,
     "active": true,
     "ram": "8 GB"
   },
@@ -40850,7 +41119,7 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-s24-5g-128-gb-8-gb",
     "modelId": "m-samsung-samsung-galaxy-s24-5g",
     "storage": "128 GB",
-    "basePrice": 35350,
+    "basePrice": 32805,
     "active": true,
     "ram": "8 GB"
   },
@@ -40858,7 +41127,7 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-s24-5g-256-gb-8-gb",
     "modelId": "m-samsung-samsung-galaxy-s24-5g",
     "storage": "256 GB",
-    "basePrice": 30199,
+    "basePrice": 35259,
     "active": true,
     "ram": "8 GB"
   },
@@ -40866,7 +41135,7 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-s24-plus-5g-512-gb-12-gb",
     "modelId": "m-samsung-samsung-galaxy-s24-plus-5g",
     "storage": "512 GB",
-    "basePrice": 37168,
+    "basePrice": 39380,
     "active": true,
     "ram": "12 GB"
   },
@@ -40874,15 +41143,15 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-s24-plus-5g-256-gb-12-gb",
     "modelId": "m-samsung-samsung-galaxy-s24-plus-5g",
     "storage": "256 GB",
-    "basePrice": 36865,
+    "basePrice": 39198,
     "active": true,
     "ram": "12 GB"
   },
   {
     "id": "v-m-samsung-samsung-galaxy-s24-ultra-5g-1021-gb-12-gb",
     "modelId": "m-samsung-samsung-galaxy-s24-ultra-5g",
-    "storage": "1021 GB",
-    "basePrice": 65145,
+    "storage": "1 TB",
+    "basePrice": 64357,
     "active": true,
     "ram": "12 GB"
   },
@@ -40890,7 +41159,7 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-s24-ultra-5g-512-gb-12-gb",
     "modelId": "m-samsung-samsung-galaxy-s24-ultra-5g",
     "storage": "512 GB",
-    "basePrice": 64640,
+    "basePrice": 63872,
     "active": true,
     "ram": "12 GB"
   },
@@ -40898,7 +41167,7 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "id": "v-m-samsung-samsung-galaxy-s24-ultra-5g-256-gb-12-gb",
     "modelId": "m-samsung-samsung-galaxy-s24-ultra-5g",
     "storage": "256 GB",
-    "basePrice": 63832,
+    "basePrice": 63398,
     "active": true,
     "ram": "12 GB"
   },
@@ -40934,11 +41203,27 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "active": true,
     "ram": "12 GB"
   },
+    {
+    "id": "v-m-samsung-samsung-galaxy-z-fold-6-256-gb-12-gb",
+    "modelId": "m-samsung-samsung-galaxy-z-fold-6",
+    "storage": "256 GB",
+    "basePrice": 67296,
+    "active": true,
+    "ram": "12 GB"
+  },
   {
+    "id": "v-m-samsung-samsung-galaxy-z-fold-6-512-gb-12-gb",
+    "modelId": "m-samsung-samsung-galaxy-z-fold-6",
+    "storage": "512 GB",
+    "basePrice": 68852,
+    "active": true,
+    "ram": "12 GB"
+  },
+{
     "id": "v-m-samsung-samsung-galaxy-z-fold-6-1-tb-12-gb",
     "modelId": "m-samsung-samsung-galaxy-z-fold-6",
     "storage": "1 TB",
-    "basePrice": 78780,
+    "basePrice": 71942,
     "active": true,
     "ram": "12 GB"
   },
@@ -52761,6 +53046,711 @@ const MOBILE_VARIANTS_PART_11: DeviceVariantData[] = [
 ];
 
 const MOBILE_VARIANTS_PART_12: DeviceVariantData[] = [
+  {
+    "id": "v-m-realme-realme-14-pro-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-14-pro-5g",
+    "storage": "128 GB",
+    "basePrice": 16695,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-14-pro-5g-256-gb-8-gb",
+    "modelId": "m-realme-realme-14-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 17018,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-15-pro-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-15-pro-5g",
+    "storage": "128 GB",
+    "basePrice": 18130,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-15-pro-5g-256-gb-8-gb",
+    "modelId": "m-realme-realme-15-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 19150,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-15-pro-5g-256-gb-12-gb",
+    "modelId": "m-realme-realme-15-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 19695,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-15-pro-5g-512-gb-12-gb",
+    "modelId": "m-realme-realme-15-pro-5g",
+    "storage": "512 GB",
+    "basePrice": 22372,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-13-pro-plus-5g-256-gb-8-gb",
+    "modelId": "m-realme-realme-13-pro-plus-5g",
+    "storage": "256 GB",
+    "basePrice": 16938,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-13-pro-plus-5g-256-gb-12-gb",
+    "modelId": "m-realme-realme-13-pro-plus-5g",
+    "storage": "256 GB",
+    "basePrice": 17261,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-13-pro-plus-5g-512-gb-12-gb",
+    "modelId": "m-realme-realme-13-pro-plus-5g",
+    "storage": "512 GB",
+    "basePrice": 17574,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-13-pro-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-13-pro-5g",
+    "storage": "128 GB",
+    "basePrice": 14716,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-13-pro-5g-256-gb-8-gb",
+    "modelId": "m-realme-realme-13-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 16776,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-13-pro-5g-512-gb-12-gb",
+    "modelId": "m-realme-realme-13-pro-5g",
+    "storage": "512 GB",
+    "basePrice": 17322,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-13-plus-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-13-plus-5g",
+    "storage": "128 GB",
+    "basePrice": 11302,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-13-plus-5g-256-gb-8-gb",
+    "modelId": "m-realme-realme-13-plus-5g",
+    "storage": "256 GB",
+    "basePrice": 11908,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-13-plus-5g-256-gb-12-gb",
+    "modelId": "m-realme-realme-13-plus-5g",
+    "storage": "256 GB",
+    "basePrice": 12918,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-12-pro-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-12-pro-5g",
+    "storage": "128 GB",
+    "basePrice": 14170,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-12-pro-5g-256-gb-8-gb",
+    "modelId": "m-realme-realme-12-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 15059,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-12-pro-5g-256-gb-12-gb",
+    "modelId": "m-realme-realme-12-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 15604,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-12x-5g-128-gb-4-gb",
+    "modelId": "m-realme-realme-12x-5g",
+    "storage": "128 GB",
+    "basePrice": 7626,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "v-m-realme-realme-12x-5g-128-gb-6-gb",
+    "modelId": "m-realme-realme-12x-5g",
+    "storage": "128 GB",
+    "basePrice": 10534,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "v-m-realme-realme-12x-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-12x-5g",
+    "storage": "128 GB",
+    "basePrice": 10878,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-gt-6-256-gb-8-gb",
+    "modelId": "m-realme-realme-gt-6",
+    "storage": "256 GB",
+    "basePrice": 16928,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-gt-6-256-gb-12-gb",
+    "modelId": "m-realme-realme-gt-6",
+    "storage": "256 GB",
+    "basePrice": 17473,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-gt-6-512-gb-16-gb",
+    "modelId": "m-realme-realme-gt-6",
+    "storage": "512 GB",
+    "basePrice": 20584,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "v-m-realme-realme-gt-6t-128-gb-8-gb",
+    "modelId": "m-realme-realme-gt-6t",
+    "storage": "128 GB",
+    "basePrice": 14837,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-gt-6t-256-gb-8-gb",
+    "modelId": "m-realme-realme-gt-6t",
+    "storage": "256 GB",
+    "basePrice": 16039,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-gt-6t-256-gb-12-gb",
+    "modelId": "m-realme-realme-gt-6t",
+    "storage": "256 GB",
+    "basePrice": 16625,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-gt-6t-512-gb-12-gb",
+    "modelId": "m-realme-realme-gt-6t",
+    "storage": "512 GB",
+    "basePrice": 18372,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-p1-5g-128-gb-6-gb",
+    "modelId": "m-realme-realme-p1-5g",
+    "storage": "128 GB",
+    "basePrice": 9908,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "v-m-realme-realme-p1-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-p1-5g",
+    "storage": "128 GB",
+    "basePrice": 10393,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-p1-5g-256-gb-8-gb",
+    "modelId": "m-realme-realme-p1-5g",
+    "storage": "256 GB",
+    "basePrice": 10595,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-p1-pro-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-p1-pro-5g",
+    "storage": "128 GB",
+    "basePrice": 9090,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-p1-pro-5g-256-gb-8-gb",
+    "modelId": "m-realme-realme-p1-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 9595,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-p1-pro-5g-256-gb-12-gb",
+    "modelId": "m-realme-realme-p1-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 9746,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-p2-pro-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-p2-pro-5g",
+    "storage": "128 GB",
+    "basePrice": 9746,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-p2-pro-5g-256-gb-12-gb",
+    "modelId": "m-realme-realme-p2-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 10595,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-p2-pro-5g-512-gb-12-gb",
+    "modelId": "m-realme-realme-p2-pro-5g",
+    "storage": "512 GB",
+    "basePrice": 12372,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-narzo-70-pro-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-narzo-70-pro-5g",
+    "storage": "128 GB",
+    "basePrice": 10292,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-narzo-70x-5g-128-gb-4-gb",
+    "modelId": "m-realme-realme-narzo-70x-5g",
+    "storage": "128 GB",
+    "basePrice": 6141,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "v-m-realme-realme-narzo-70x-5g-128-gb-6-gb",
+    "modelId": "m-realme-realme-narzo-70x-5g",
+    "storage": "128 GB",
+    "basePrice": 7222,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "v-m-realme-realme-narzo-70x-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-narzo-70x-5g",
+    "storage": "128 GB",
+    "basePrice": 7626,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-11-pro-plus-5g-256-gb-8-gb",
+    "modelId": "m-realme-realme-11-pro-plus-5g",
+    "storage": "256 GB",
+    "basePrice": 16170,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-11-pro-plus-5g-256-gb-12-gb",
+    "modelId": "m-realme-realme-11-pro-plus-5g",
+    "storage": "256 GB",
+    "basePrice": 16534,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-11-pro-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-11-pro-5g",
+    "storage": "128 GB",
+    "basePrice": 14574,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-11-pro-5g-256-gb-8-gb",
+    "modelId": "m-realme-realme-11-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 14988,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-11-pro-5g-256-gb-12-gb",
+    "modelId": "m-realme-realme-11-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 15443,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-realme-realme-11x-5g-128-gb-6-gb",
+    "modelId": "m-realme-realme-11x-5g",
+    "storage": "128 GB",
+    "basePrice": 9312,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "v-m-realme-realme-11x-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-11x-5g",
+    "storage": "128 GB",
+    "basePrice": 9827,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-10-pro-plus-5g-128-gb-6-gb",
+    "modelId": "m-realme-realme-10-pro-plus-5g",
+    "storage": "128 GB",
+    "basePrice": 9979,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "v-m-realme-realme-10-pro-plus-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-10-pro-plus-5g",
+    "storage": "128 GB",
+    "basePrice": 10231,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-10-pro-plus-5g-256-gb-8-gb",
+    "modelId": "m-realme-realme-10-pro-plus-5g",
+    "storage": "256 GB",
+    "basePrice": 10443,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-10-pro-5g-128-gb-6-gb",
+    "modelId": "m-realme-realme-10-pro-5g",
+    "storage": "128 GB",
+    "basePrice": 8585,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "v-m-realme-realme-10-pro-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-10-pro-5g",
+    "storage": "128 GB",
+    "basePrice": 8838,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-note-13-pro-5g-128-gb-8-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-note-13-pro-5g",
+    "storage": "128 GB",
+    "basePrice": 12746,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-note-13-pro-5g-256-gb-8-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-note-13-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 13494,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-note-13-pro-5g-256-gb-12-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-note-13-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 14211,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-note-13-5g-128-gb-6-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-note-13-5g",
+    "storage": "128 GB",
+    "basePrice": 10150,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-note-13-5g-256-gb-8-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-note-13-5g",
+    "storage": "256 GB",
+    "basePrice": 10595,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-note-13-5g-256-gb-12-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-note-13-5g",
+    "storage": "256 GB",
+    "basePrice": 11019,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-note-12-pro-5g-256-gb-8-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-note-12-pro-5g",
+    "storage": "256 GB",
+    "basePrice": 9171,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-note-12-5g-128-gb-4-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-note-12-5g",
+    "storage": "128 GB",
+    "basePrice": 8807,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-note-12-5g-128-gb-6-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-note-12-5g",
+    "storage": "128 GB",
+    "basePrice": 9353,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-note-12-5g-256-gb-8-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-note-12-5g",
+    "storage": "256 GB",
+    "basePrice": 9767,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-12-5g-128-gb-4-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-12-5g",
+    "storage": "128 GB",
+    "basePrice": 8080,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-12-5g-128-gb-6-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-12-5g",
+    "storage": "128 GB",
+    "basePrice": 9161,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-12-5g-256-gb-8-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-12-5g",
+    "storage": "256 GB",
+    "basePrice": 10221,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-13c-5g-128-gb-4-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-13c-5g",
+    "storage": "128 GB",
+    "basePrice": 7757,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-13c-5g-128-gb-6-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-13c-5g",
+    "storage": "128 GB",
+    "basePrice": 8019,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-redmi-13c-5g-256-gb-8-gb",
+    "modelId": "m-xiaomi-xiaomi-redmi-13c-5g",
+    "storage": "256 GB",
+    "basePrice": 8504,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-14-128-gb-8-gb",
+    "modelId": "m-xiaomi-xiaomi-14",
+    "storage": "128 GB",
+    "basePrice": 27482,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-14-civi-256-gb-8-gb",
+    "modelId": "m-xiaomi-xiaomi-14-civi",
+    "storage": "256 GB",
+    "basePrice": 18988,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-xiaomi-xiaomi-14-civi-512-gb-12-gb",
+    "modelId": "m-xiaomi-xiaomi-14-civi",
+    "storage": "512 GB",
+    "basePrice": 19644,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-edge-50-fusion-5g-128-gb-8-gb",
+    "modelId": "m-motorola-motorola-moto-edge-50-fusion-5g",
+    "storage": "128 GB",
+    "basePrice": 13928,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-edge-50-fusion-5g-256-gb-12-gb",
+    "modelId": "m-motorola-motorola-moto-edge-50-fusion-5g",
+    "storage": "256 GB",
+    "basePrice": 15291,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-edge-50-ultra-5g-512-gb-12-gb",
+    "modelId": "m-motorola-motorola-moto-edge-50-ultra-5g",
+    "storage": "512 GB",
+    "basePrice": 25937,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-edge-40-5g-256-gb-8-gb",
+    "modelId": "m-motorola-motorola-moto-edge-40-5g",
+    "storage": "256 GB",
+    "basePrice": 15372,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-edge-40-neo-5g-128-gb-8-gb",
+    "modelId": "m-motorola-motorola-moto-edge-40-neo-5g",
+    "storage": "128 GB",
+    "basePrice": 13837,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-edge-40-neo-5g-256-gb-12-gb",
+    "modelId": "m-motorola-motorola-moto-edge-40-neo-5g",
+    "storage": "256 GB",
+    "basePrice": 15170,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-g85-5g-128-gb-8-gb",
+    "modelId": "m-motorola-motorola-moto-g85-5g",
+    "storage": "128 GB",
+    "basePrice": 12756,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-g85-5g-256-gb-12-gb",
+    "modelId": "m-motorola-motorola-moto-g85-5g",
+    "storage": "256 GB",
+    "basePrice": 13988,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-g64-5g-128-gb-8-gb",
+    "modelId": "m-motorola-motorola-moto-g64-5g",
+    "storage": "128 GB",
+    "basePrice": 9484,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-g64-5g-256-gb-12-gb",
+    "modelId": "m-motorola-motorola-moto-g64-5g",
+    "storage": "256 GB",
+    "basePrice": 10716,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-g54-5g-128-gb-8-gb",
+    "modelId": "m-motorola-motorola-moto-g54-5g",
+    "storage": "128 GB",
+    "basePrice": 10090,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-g54-5g-256-gb-12-gb",
+    "modelId": "m-motorola-motorola-moto-g54-5g",
+    "storage": "256 GB",
+    "basePrice": 11312,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-g45-5g-128-gb-4-gb",
+    "modelId": "m-motorola-motorola-moto-g45-5g",
+    "storage": "128 GB",
+    "basePrice": 7131,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-g45-5g-128-gb-8-gb",
+    "modelId": "m-motorola-motorola-moto-g45-5g",
+    "storage": "128 GB",
+    "basePrice": 9060,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-g34-5g-128-gb-4-gb",
+    "modelId": "m-motorola-motorola-moto-g34-5g",
+    "storage": "128 GB",
+    "basePrice": 7222,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "v-m-motorola-motorola-moto-g34-5g-128-gb-8-gb",
+    "modelId": "m-motorola-motorola-moto-g34-5g",
+    "storage": "128 GB",
+    "basePrice": 8545,
+    "active": true,
+    "ram": "8 GB"
+  },
+
   {
     "id": "v-m-tablet-motorola-motorola-moto-tab-g62-4-gb128-gb-wi-fi4g-128-gb-4-gb",
     "modelId": "m-tablet-motorola-motorola-moto-tab-g62-4-gb128-gb-wi-fi4g",
