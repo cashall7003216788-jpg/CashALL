@@ -38,7 +38,7 @@ async function addRealme15x() {
         category: "MOBILE",
         imageUrl: "https://s3bo.cashify.in/gpro/uploads/2024/11/01184336/realme-15x-5g-front-1.webp",
         releaseYear: 2025,
-        basePrice: 8200,
+        basePrice: 12070,
         description: "MediaTek Dimensity 6300, 6.81-inch 144Hz, 7000mAh Titan Battery 60W, 50MP Camera",
         popular: true,
         active: true,
@@ -53,7 +53,7 @@ async function addRealme15x() {
         name: "Realme 15x 5G",
         imageUrl: "https://s3bo.cashify.in/gpro/uploads/2024/11/01184336/realme-15x-5g-front-1.webp",
         releaseYear: 2025,
-        basePrice: 8200,
+        basePrice: 12070,
         popular: true,
         active: true,
       },
@@ -61,11 +61,14 @@ async function addRealme15x() {
     console.log("Updated Realme 15x 5G model in DB:", model.id);
   }
 
-  // 3. Add Variants
+  // 3. Add Variants (Cashify + 1% increase)
+  // 6/128: 11950 * 1.01 = 12070
+  // 8/128: 12970 * 1.01 = 13100
+  // 8/256: 13820 * 1.01 = 13958
   const variants = [
-    { ram: "6 GB", storage: "128 GB", basePrice: 8200, sortOrder: 1 },
-    { ram: "8 GB", storage: "128 GB", basePrice: 9400, sortOrder: 2 },
-    { ram: "8 GB", storage: "256 GB", basePrice: 10800, sortOrder: 3 },
+    { ram: "6 GB", storage: "128 GB", basePrice: 12070, sortOrder: 1 },
+    { ram: "8 GB", storage: "128 GB", basePrice: 13100, sortOrder: 2 },
+    { ram: "8 GB", storage: "256 GB", basePrice: 13958, sortOrder: 3 },
   ];
 
   for (const v of variants) {

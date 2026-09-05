@@ -36598,7 +36598,7 @@ const MOBILE_VARIANTS_PART_4: DeviceVariantData[] = [
     "id": "v-m-realme-realme-15x-5g-128-gb-6-gb",
     "modelId": "m-realme-realme-15x-5g",
     "storage": "128 GB",
-    "basePrice": 8200,
+    "basePrice": 12070,
     "active": true,
     "ram": "6 GB"
   },
@@ -36606,7 +36606,7 @@ const MOBILE_VARIANTS_PART_4: DeviceVariantData[] = [
     "id": "v-m-realme-realme-15x-5g-128-gb-8-gb",
     "modelId": "m-realme-realme-15x-5g",
     "storage": "128 GB",
-    "basePrice": 9400,
+    "basePrice": 13100,
     "active": true,
     "ram": "8 GB"
   },
@@ -36614,7 +36614,7 @@ const MOBILE_VARIANTS_PART_4: DeviceVariantData[] = [
     "id": "v-m-realme-realme-15x-5g-256-gb-8-gb",
     "modelId": "m-realme-realme-15x-5g",
     "storage": "256 GB",
-    "basePrice": 10800,
+    "basePrice": 13958,
     "active": true,
     "ram": "8 GB"
   },
