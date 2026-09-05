@@ -8097,6 +8097,19 @@ const MOBILE_MODELS_PART_2: DeviceModelData[] = [
     "category": "MOBILE"
   },
   {
+    "id": "m-realme-realme-15x-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme 15x 5G",
+    "slug": "realme-15x-5g",
+    "imageUrl": "https://s3bo.cashify.in/gpro/uploads/2024/11/01184336/realme-15x-5g-front-1.webp",
+    "releaseYear": 2025,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
     "id": "m-realme-realme-2-pro",
     "brandId": "b-realme",
     "brandSlug": "realme",
@@ -36580,6 +36593,30 @@ const MOBILE_VARIANTS_PART_4: DeviceVariantData[] = [
     "basePrice": 7322,
     "active": true,
     "ram": "4 GB"
+  },
+  {
+    "id": "v-m-realme-realme-15x-5g-128-gb-6-gb",
+    "modelId": "m-realme-realme-15x-5g",
+    "storage": "128 GB",
+    "basePrice": 8200,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "v-m-realme-realme-15x-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-15x-5g",
+    "storage": "128 GB",
+    "basePrice": 9400,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-15x-5g-256-gb-8-gb",
+    "modelId": "m-realme-realme-15x-5g",
+    "storage": "256 GB",
+    "basePrice": 10800,
+    "active": true,
+    "ram": "8 GB"
   },
   {
     "id": "v-m-realme-realme-2-pro-64-gb-4-gb",

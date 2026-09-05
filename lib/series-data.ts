@@ -59,11 +59,11 @@ export const BRAND_SERIES_MAP: Record<string, SeriesItem[]> = {
   ],
   realme: [
     { id: "s-rea-gt", name: "GT Series", matchPattern: ["GT"] },
-    { id: "s-rea-num", name: "Number Series", matchPattern: ["Realme 1", "Realme 2", "Realme 3", "Realme 5", "Realme 6", "Realme 7", "Realme 8", "Realme 9", "Realme 10", "Realme 11", "Realme 12", "Realme 13", "Realme 14"] },
+    { id: "s-rea-num", name: "Number Series", matchPattern: ["Realme 1", "Realme 2", "Realme 3", "Realme 5", "Realme 6", "Realme 7", "Realme 8", "Realme 9", "Realme 10", "Realme 11", "Realme 12", "Realme 13", "Realme 14", "Realme 15", "15x", "15X"] },
     { id: "s-rea-c", name: "C Series", matchPattern: [" C", "C1", "C2", "C3", "C11", "C12", "C15", "C21", "C25", "C30", "C31", "C33", "C35", "C51", "C53", "C55", "C65", "C67"] },
     { id: "s-rea-narzo", name: "Narzo Series", matchPattern: ["Narzo"] },
     { id: "s-rea-p", name: "P Series", matchPattern: [" P1", " P2"] },
-    { id: "s-rea-x", name: "X Series", matchPattern: [" X", "X2", "X3", "X7", "X50"] },
+    { id: "s-rea-x", name: "X Series", matchPattern: [" X", "X2", "X3", "X7", "X50", "15x", "15X", "Realme 15x"] },
   ],
   poco: [
     { id: "s-poc-f", name: "POCO F Series", matchPattern: ["F1", "F2", "F3", "F4", "F5", "F6", "F7"] },

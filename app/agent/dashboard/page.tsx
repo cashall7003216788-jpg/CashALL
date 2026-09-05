@@ -25,6 +25,7 @@ import {
   Ban,
   XCircle,
   ListChecks,
+  FileText,
 } from "lucide-react";
 import { CustomerAnswersModal } from "@/components/admin/CustomerAnswersModal";
 
@@ -41,6 +42,9 @@ interface AgentOrder {
   pickupDate: string;
   pickupTimeSlot: string;
   amount: number;
+  quotedPrice?: number;
+  requotedPrice?: number;
+  revisedPrice?: number;
   finalPrice?: number;
   estimatedPrice?: number;
   status: string;
@@ -542,13 +546,26 @@ export default function AgentDashboardPage() {
                         </div>
                       )}
 
-                      <div className="bg-black/60 p-3 rounded-2xl border border-neutral-800 space-y-1">
-                        <div className="flex items-center justify-between text-[11px] text-neutral-400">
-                          <span>{isInspectionDone ? "Final Settled Payout:" : "Online Customer Quote:"}</span>
+                      <div className="bg-black/60 p-3 rounded-2xl border border-neutral-800 space-y-1.5">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-neutral-400">Quoted Price:</span>
+                          <span className="font-bold text-yellow-400 font-price">
+                            ₹{(ord.quotedPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
+                          </span>
                         </div>
-                        <div className="text-xl font-black text-emerald-400 font-price flex items-center gap-1">
-                          <IndianRupee className="w-4 h-4" />
-                          <span>{payoutVal.toLocaleString("en-IN")}</span>
+
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-neutral-400">Re-Quoted Price:</span>
+                          <span className="font-bold text-purple-300 font-price">
+                            ₹{(ord.requotedPrice || ord.revisedPrice || ord.finalPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
+                          </span>
+                        </div>
+
+                        <div className="pt-1.5 border-t border-neutral-800 flex items-center justify-between">
+                          <span className="text-xs font-bold text-neutral-300">Final Price:</span>
+                          <span className="text-lg font-black text-emerald-400 font-price">
+                            ₹{(ord.finalPrice || ord.amount || ord.revisedPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -693,6 +710,15 @@ export default function AgentDashboardPage() {
                             <CheckCircle2 className="w-4 h-4" />
                             <span>Order Completed & Paid</span>
                           </div>
+                          <Link
+                            href={`/order/${ord.orderNumber}/bill`}
+                            target="_blank"
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-200 bg-neutral-800 hover:bg-neutral-700 border border-neutral-600 px-3.5 py-2 rounded-xl transition shadow-md"
+                            title="View official purchase receipt & bill"
+                          >
+                            <FileText className="w-3.5 h-3.5 text-yellow-400" />
+                            <span>View Bill</span>
+                          </Link>
                           <button
                             onClick={() => handleCustomerRejectedOffer(ord)}
                             disabled={actionLoading === ord.id + "-reject"}

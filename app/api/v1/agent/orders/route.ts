@@ -157,6 +157,9 @@ export async function GET(req: NextRequest) {
         finalSettled = ord.quote?.estimatedPrice;
       }
 
+      const quotedPrice = ord.quote?.estimatedPrice || 0;
+      const requotedPrice = qcReport?.revisedPrice || (ord.finalPrice && ord.finalPrice !== quotedPrice ? ord.finalPrice : null) || quotedPrice;
+
       return {
         id: ord.id,
         orderNumber: ord.orderNumber,
@@ -165,9 +168,12 @@ export async function GET(req: NextRequest) {
         customerEmail: ord.user?.email || "—",
         deviceName,
         imeiNumber: imeiCode,
-        estimatedPrice: ord.quote?.estimatedPrice || 0,
-        finalPrice: finalSettled,
-        amount: finalSettled || ord.quote?.estimatedPrice || 0,
+        quotedPrice,
+        requotedPrice,
+        revisedPrice: requotedPrice,
+        estimatedPrice: quotedPrice,
+        finalPrice: finalSettled || requotedPrice || quotedPrice,
+        amount: finalSettled || requotedPrice || quotedPrice,
         address: fullAddress,
         addressSummary: fullAddress,
         pickupDate: ord.pickupDate || activePickup?.date || "Scheduled",

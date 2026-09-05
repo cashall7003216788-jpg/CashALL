@@ -151,6 +151,8 @@ export class EmailService {
     customerPhone,
     customerAddress,
     deviceName,
+    quotedPrice,
+    requotedPrice,
     finalPrice,
     urn,
     orderDate,
@@ -163,6 +165,8 @@ export class EmailService {
     customerPhone?: string;
     customerAddress?: string;
     deviceName: string;
+    quotedPrice?: number;
+    requotedPrice?: number;
     finalPrice: number;
     urn: string;
     orderDate?: string;
@@ -179,6 +183,8 @@ export class EmailService {
         customerEmail: to,
         customerAddress,
         deviceName,
+        quotedPrice,
+        requotedPrice,
         amountPaid: finalPrice,
         urn,
         agentName,
@@ -196,7 +202,9 @@ export class EmailService {
       customerName,
       deviceName,
       orderDate,
-      completedDate
+      completedDate,
+      quotedPrice,
+      requotedPrice
     );
     const subject = `CashALL Official Invoice #${orderNumber} — ₹${finalPrice.toLocaleString("en-IN")}`;
 
@@ -268,8 +276,13 @@ export class EmailService {
     customerName?: string,
     deviceName?: string,
     orderDate?: string,
-    completedDate?: string
+    completedDate?: string,
+    quotedPrice?: number,
+    requotedPrice?: number
   ) {
+    const effectiveQuotedPrice = quotedPrice || amount;
+    const effectiveReQuotedPrice = requotedPrice || amount;
+
     return `
       <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 24px; color: #111; max-width: 600px; margin: 0 auto; border: 1px solid #e5e7eb; border-radius: 16px; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
         
@@ -304,6 +317,14 @@ export class EmailService {
           <tr>
             <td style="padding: 10px 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #374151;">Order Completion & Payout</td>
             <td style="padding: 10px 14px; border: 1px solid #e5e7eb; color: #111827; font-weight: 600;">${completedDate || new Date().toLocaleString("en-IN")}</td>
+          </tr>
+          <tr style="background-color: #f9fafb;">
+            <td style="padding: 10px 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #374151;">Quoted Price (Online)</td>
+            <td style="padding: 10px 14px; border: 1px solid #e5e7eb; color: #111827; font-weight: 600;">₹${effectiveQuotedPrice.toLocaleString('en-IN')}</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #374151;">Re-Quoted Price (Inspection)</td>
+            <td style="padding: 10px 14px; border: 1px solid #e5e7eb; color: #6b21a8; font-weight: 700;">₹${effectiveReQuotedPrice.toLocaleString('en-IN')}</td>
           </tr>
           <tr style="background-color: #f9fafb;">
             <td style="padding: 10px 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #374151;">Final Price Paid</td>

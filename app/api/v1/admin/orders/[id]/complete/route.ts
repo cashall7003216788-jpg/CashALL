@@ -29,6 +29,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
       address: true,
       agent: true,
       pickups: { include: { partner: true } },
+      qcReports: true,
       quote: { include: { variant: { include: { model: { include: { brand: true } } } } } },
     },
   });
@@ -139,6 +140,8 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
           customerPhone: phoneStr,
           customerAddress: customerAddressStr,
           deviceName,
+          quotedPrice: order.quote?.estimatedPrice || price,
+          requotedPrice: order.qcReports?.[0]?.revisedPrice || price,
           finalPrice: price,
           urn: transactionRef || "",
           agentName,

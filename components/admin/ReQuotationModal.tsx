@@ -166,8 +166,9 @@ export function ReQuotationModal({
     "Customer Mobile Device"
   );
   const orderNumber = order.orderNumber || "Order";
-  const onlineQuote = order.estimatedPrice || order.quote?.estimatedPrice || 0;
-  const settledPayout = Number(revisedPrice) || onlineQuote;
+  const quotedPrice = order.quotedPrice || order.estimatedPrice || order.quote?.estimatedPrice || 0;
+  const requotedPrice = Number(revisedPrice) || order.requotedPrice || order.qcReports?.[0]?.revisedPrice || quotedPrice;
+  const finalPrice = order.finalPrice || Number(revisedPrice) || requotedPrice || quotedPrice;
   const qcReport = order.qcReports?.[0];
 
   // Handle Save Re-Quotation
@@ -411,8 +412,9 @@ export function ReQuotationModal({
 
   const handleCopySummary = () => {
     const text = `📋 CashALL Agent Re-Quotation Audit for ${deviceName} (#${orderNumber})
-Online Quoted Price: ₹${onlineQuote.toLocaleString("en-IN")}
-Final Settled Payout: ₹${settledPayout.toLocaleString("en-IN")}
+Quoted Price: ₹${quotedPrice.toLocaleString("en-IN")}
+Re-Quoted Price: ₹${requotedPrice.toLocaleString("en-IN")}
+Final Price: ₹${finalPrice.toLocaleString("en-IN")}
 Assigned Agent: ${agentName}
 Verified IMEI: ${imei || "—"}
 Box Status: ${hasBox ? "BOX" : "NO BOX"}
@@ -449,13 +451,13 @@ Settlement Rationale:
                 <span className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded-md ${
                   order.status === "COMPLETED" ? "bg-green-950 text-green-300 border border-green-800" :
                   ["CANCELLED", "REJECTED"].includes(order.status) ? "bg-red-950 text-red-300 border border-red-800" :
-                  "bg-neutral-800 text-gray-300"
+                  "bg-yellow-950 text-yellow-300 border border-yellow-800"
                 }`}>
                   {order.status}
                 </span>
               </div>
-              <p className="text-xs text-neutral-400 font-medium">
-                {deviceName} • Doorstep agent verified answers & final payout calibration
+              <p className="text-xs text-neutral-400 mt-0.5">
+                {deviceName}
               </p>
             </div>
           </div>
@@ -470,14 +472,18 @@ Settlement Rationale:
         </div>
 
         {/* METRICS ROW */}
-        <div className="bg-neutral-950/60 border-b border-neutral-800 px-6 py-3.5 grid grid-cols-2 sm:grid-cols-5 gap-4 text-xs">
+        <div className="bg-neutral-950/60 border-b border-neutral-800 px-6 py-3.5 grid grid-cols-2 sm:grid-cols-6 gap-3 text-xs">
           <div>
-            <div className="text-[10px] text-neutral-400 font-bold uppercase">Online Quote</div>
-            <div className="font-bold text-gray-300 line-through">₹{onlineQuote.toLocaleString("en-IN")}</div>
+            <div className="text-[10px] text-neutral-400 font-bold uppercase">Quoted Price</div>
+            <div className="font-bold text-yellow-400 font-price">₹{quotedPrice.toLocaleString("en-IN")}</div>
           </div>
           <div>
-            <div className="text-[10px] text-purple-400 font-bold uppercase">Settled Re-Quote</div>
-            <div className="font-black text-lg text-emerald-400 font-price">₹{settledPayout.toLocaleString("en-IN")}</div>
+            <div className="text-[10px] text-purple-400 font-bold uppercase">Re-Quoted Price</div>
+            <div className="font-bold text-purple-300 font-price">₹{requotedPrice.toLocaleString("en-IN")}</div>
+          </div>
+          <div>
+            <div className="text-[10px] text-emerald-400 font-bold uppercase">Final Price</div>
+            <div className="font-black text-base text-emerald-400 font-price">₹{finalPrice.toLocaleString("en-IN")}</div>
           </div>
           <div>
             <div className="text-[10px] text-neutral-400 font-bold uppercase">Assigned Agent</div>
@@ -486,7 +492,7 @@ Settlement Rationale:
           <div>
             <div className="text-[10px] text-neutral-400 font-bold uppercase">Box Status</div>
             <div className={`font-black font-mono ${hasBox ? "text-emerald-400" : "text-red-400"}`}>
-              {hasBox ? "BOX (Present)" : "NO BOX (Missing)"}
+              {hasBox ? "BOX" : "NO BOX"}
             </div>
           </div>
           <div>

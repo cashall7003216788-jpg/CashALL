@@ -157,6 +157,10 @@ export const GET = apiWrapper(async (req: NextRequest) => {
 
     const paymentRef = ord.urn || (ord as any).utr || ord.payments?.[0]?.transactionRef || (ord.orderNumber === "CA83848" ? "659789934722" : null);
 
+    const quotedPrice = ord.quote?.estimatedPrice ?? ord.estimatedPrice ?? 0;
+    const requotedPrice = qcReport?.revisedPrice ?? ord.offers?.[0]?.amount ?? ord.revisedPrice ?? (ord.finalPrice && ord.finalPrice !== quotedPrice ? ord.finalPrice : null) ?? quotedPrice;
+    const finalPrice = ord.payments?.[0]?.amount ?? ord.finalPrice ?? requotedPrice ?? quotedPrice ?? 0;
+
     return {
       ...ord,
       deviceName,
@@ -172,6 +176,11 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       breakdownJson,
       priceDifferenceReason,
       cancellationReason: ord.cancellationReason || (ord.pickups?.[0]?.notes?.startsWith("Order Cancelled:") ? ord.pickups[0].notes.replace(/^Order Cancelled:\s*/i, "") : null) || null,
+      quotedPrice,
+      estimatedPrice: quotedPrice,
+      requotedPrice,
+      revisedPrice: requotedPrice,
+      finalPrice,
     };
   });
 

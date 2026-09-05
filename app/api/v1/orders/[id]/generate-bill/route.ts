@@ -100,6 +100,9 @@ async function getOrderBillData(orderIdentifier: string) {
       imei2: "—",
     },
     financials: {
+      quotedPrice: order.quote?.estimatedPrice || finalPrice,
+      requotedPrice: order.qcReports?.[0]?.revisedPrice || order.finalPrice || order.quote?.estimatedPrice || finalPrice,
+      finalPrice: finalPrice,
       estimatedPrice: order.quote?.estimatedPrice || finalPrice,
       finalPurchasePrice: finalPrice,
       paymentMethod: payment?.method || "UPI Transfer",

@@ -46,7 +46,10 @@ interface Order {
   pickupDate: string;
   pickupTimeSlot: string;
   estimatedPrice: number;
+  quotedPrice?: number;
+  requotedPrice?: number | null;
   revisedPrice: number | null;
+  finalPrice?: number | null;
   status: string;
   identityStatus: string;
   imeiStatus: string;
@@ -952,16 +955,26 @@ export default function AdminOrdersPage() {
                     </div>
                   </div>
 
-                  <div className="bg-black/50 p-3 rounded-2xl border border-neutral-700 space-y-1.5">
-                    {ord.estimatedPrice ? (
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="text-neutral-400">Online Customer Quote:</span>
-                        <span className="font-bold text-yellow-400 font-price">₹{ord.estimatedPrice.toLocaleString("en-IN")}</span>
-                      </div>
-                    ) : null}
-                    <div className="text-[11px] text-neutral-400">Final Settled Price Payout:</div>
-                    <div className="text-xl font-black text-green-400 font-price">
-                      ₹{(ord.revisedPrice || (ord as any).finalPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
+                  <div className="bg-black/50 p-3 rounded-2xl border border-neutral-700 space-y-2">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-neutral-400">Quoted Price:</span>
+                      <span className="font-bold text-yellow-400 font-price">
+                        ₹{(ord.quotedPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-neutral-400">Re-Quoted Price:</span>
+                      <span className="font-bold text-purple-300 font-price">
+                        ₹{(ord.requotedPrice || ord.revisedPrice || ord.quotedPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
+                      </span>
+                    </div>
+
+                    <div className="pt-1.5 border-t border-neutral-800 flex items-center justify-between">
+                      <span className="text-xs font-bold text-neutral-300">Final Price:</span>
+                      <span className="text-xl font-black text-green-400 font-price">
+                        ₹{(ord.finalPrice || ord.revisedPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
+                      </span>
                     </div>
                   </div>
                 </div>

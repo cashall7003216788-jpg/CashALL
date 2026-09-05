@@ -104,6 +104,8 @@ export interface InvoicePdfProps {
   customerEmail?: string;
   customerAddress?: string;
   deviceName: string;
+  quotedPrice?: number;
+  requotedPrice?: number;
   amountPaid: number;
   urn: string;
   agentName?: string;
@@ -119,6 +121,8 @@ export function InvoicePdfDocument({
   customerEmail,
   customerAddress,
   deviceName,
+  quotedPrice,
+  requotedPrice,
   amountPaid,
   urn,
   agentName,
@@ -129,6 +133,8 @@ export function InvoicePdfDocument({
   const formattedDate = date || new Date().toISOString().split("T")[0];
   const formattedOrderDate = orderDate || formattedDate;
   const formattedCompletedDate = completedDate || formattedDate;
+  const effectiveQuotedPrice = quotedPrice || amountPaid;
+  const effectiveReQuotedPrice = requotedPrice || amountPaid;
 
   return (
     <Document>
@@ -167,7 +173,21 @@ export function InvoicePdfDocument({
         </View>
 
         <View style={styles.row}>
-          <Text style={styles.rowLabel}>Final Amount Paid</Text>
+          <Text style={styles.rowLabel}>Quoted Price (Online)</Text>
+          <Text style={styles.rowVal}>
+            Rs. {effectiveQuotedPrice.toLocaleString("en-IN")}
+          </Text>
+        </View>
+
+        <View style={styles.row}>
+          <Text style={styles.rowLabel}>Re-Quoted Price (Inspection)</Text>
+          <Text style={styles.rowVal}>
+            Rs. {effectiveReQuotedPrice.toLocaleString("en-IN")}
+          </Text>
+        </View>
+
+        <View style={styles.row}>
+          <Text style={styles.rowLabel}>Final Price Paid</Text>
           <Text style={[styles.rowVal, styles.amountVal]}>
             Rs. {amountPaid.toLocaleString("en-IN")}
           </Text>

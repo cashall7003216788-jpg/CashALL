@@ -147,6 +147,8 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
           customerPhone: phoneStr,
           customerAddress: customerAddressStr,
           deviceName,
+          quotedPrice: order.quote?.estimatedPrice || price,
+          requotedPrice: order.qcReports?.[0]?.revisedPrice || price,
           finalPrice: price,
           urn: transactionRef || "",
           agentName: activeAgentName,

@@ -19,6 +19,8 @@ interface BillData {
   variantName: string;
   imeiNumber: string;
   quoteNumber: string;
+  quotedPrice: number;
+  requotedPrice: number;
   estimatedPrice: number;
   finalPrice: number;
   paymentMethod: string;
@@ -161,8 +163,16 @@ export default function AdminBillPage() {
           variantName: ord.quote?.variant?.name || ord.quote?.variant?.storage || "Doorstep Verified Device",
           imeiNumber,
           quoteNumber: ord.quote?.quoteNumber || `CAQ-${ord.id?.slice(0, 6).toUpperCase()}`,
-          estimatedPrice: ord.quote?.estimatedPrice ?? 0,
-          finalPrice: payment?.amount ?? ord.finalPrice ?? 0,
+          quotedPrice: Number(ord.quotedPrice ?? ord.quote?.estimatedPrice ?? ord.estimatedPrice ?? 0),
+          requotedPrice: Number(
+            ord.requotedPrice ??
+            ord.qcReports?.[0]?.revisedPrice ??
+            ord.revisedPrice ??
+            (ord.finalPrice && ord.finalPrice !== (ord.quote?.estimatedPrice ?? ord.estimatedPrice) ? ord.finalPrice : null) ??
+            (ord.quote?.estimatedPrice ?? ord.estimatedPrice ?? 0)
+          ),
+          estimatedPrice: Number(ord.quotedPrice ?? ord.quote?.estimatedPrice ?? ord.estimatedPrice ?? 0),
+          finalPrice: Number(payment?.amount ?? ord.finalPrice ?? ord.requotedPrice ?? ord.qcReports?.[0]?.revisedPrice ?? ord.estimatedPrice ?? 0),
           paymentMethod: payment?.method || "UPI",
           utrNumber: (() => {
             const raw = payment?.transactionRef || (payment as any)?.utrNumber || ord.payments?.[0]?.transactionRef || ord.urn || "";
@@ -345,10 +355,17 @@ export default function AdminBillPage() {
                     IMEI NO: <span className="text-gray-900 tracking-wider font-mono">{bill.imeiNumber}</span>
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="text-[10px] text-gray-400">CashALL Valuation</div>
-                  <div className="text-xs text-gray-400 line-through">₹{bill.estimatedPrice.toLocaleString("en-IN")}</div>
-                  <div className="text-lg font-black text-gray-900">₹{bill.finalPrice.toLocaleString("en-IN")}</div>
+                <div className="text-right space-y-1">
+                  <div className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Price Valuation</div>
+                  <div className="text-xs text-gray-500">
+                    Quoted: <span className="font-semibold text-gray-700">₹{bill.quotedPrice.toLocaleString("en-IN")}</span>
+                  </div>
+                  <div className="text-xs text-purple-700 font-semibold">
+                    Re-Quoted: <span>₹{bill.requotedPrice.toLocaleString("en-IN")}</span>
+                  </div>
+                  <div className="text-base font-black text-gray-900 pt-1 border-t border-gray-200 mt-1">
+                    Final: <span className="text-green-700">₹{bill.finalPrice.toLocaleString("en-IN")}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -377,16 +394,16 @@ export default function AdminBillPage() {
             <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-3">Payment Summary</div>
             <div className="space-y-2 text-xs">
               <div className="flex justify-between text-gray-600">
-                <span>Initial Online Valuation</span>
-                <span>₹{bill.estimatedPrice.toLocaleString("en-IN")}</span>
+                <span>Quoted Price (Online Initial Quote)</span>
+                <span className="font-bold text-gray-800">₹{bill.quotedPrice.toLocaleString("en-IN")}</span>
               </div>
               <div className="flex justify-between text-gray-600">
-                <span>Post-Inspection Final Offer</span>
-                <span className="font-bold text-gray-900">₹{bill.finalPrice.toLocaleString("en-IN")}</span>
+                <span>Re-Quoted Price (Doorstep Inspection Offer)</span>
+                <span className="font-bold text-purple-700">₹{bill.requotedPrice.toLocaleString("en-IN")}</span>
               </div>
               <div className="border-t border-gray-200 pt-2 mt-2 flex justify-between font-black text-sm text-gray-900">
-                <span>TOTAL PAID TO SELLER</span>
-                <span className="text-green-700">₹{bill.finalPrice.toLocaleString("en-IN")}</span>
+                <span>FINAL PRICE (TOTAL PAID TO SELLER)</span>
+                <span className="text-green-700 text-base">₹{bill.finalPrice.toLocaleString("en-IN")}</span>
               </div>
             </div>
           </div>

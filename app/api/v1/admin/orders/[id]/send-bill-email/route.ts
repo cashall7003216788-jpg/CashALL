@@ -113,6 +113,9 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       ? new Date(order.updatedAt || payment?.createdAt || Date.now()).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })
       : new Date().toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
 
+    const quotedPrice = order.quote?.estimatedPrice || finalPrice;
+    const requotedPrice = order.qcReports?.[0]?.revisedPrice || order.finalPrice || quotedPrice;
+
     // Send PDF invoice email via multi-tier SMTP
     const mailRes = await EmailService.sendInvoicePdfEmail({
       to: recipientEmail,
@@ -121,6 +124,8 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       customerPhone: order.user?.phone ? `+91 ${order.user.phone}` : "+91 6289477287",
       customerAddress,
       deviceName: fullDeviceName,
+      quotedPrice,
+      requotedPrice,
       finalPrice,
       urn: utr,
       orderDate: orderDateFormatted,

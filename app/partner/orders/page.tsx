@@ -27,6 +27,9 @@ interface PartnerOrder {
   deviceName: string;
   storage: string;
   estimatedPrice: number;
+  quotedPrice?: number;
+  requotedPrice?: number | null;
+  revisedPrice?: number | null;
   finalPrice: number | null;
   status: string;
   identityStatus: string;
@@ -190,14 +193,27 @@ export default function PartnerOrdersPage() {
               </div>
 
               {/* Price & Status Tags */}
-              <div className="bg-neutral-950 rounded-2xl p-3 flex items-center justify-between border border-neutral-850">
-                <div>
-                  <span className="text-[10px] text-gray-500 uppercase font-bold block">Valuation</span>
-                  <span className="text-base font-black text-brand-yellow font-price">
-                    ₹{(ord.finalPrice || ord.estimatedPrice).toLocaleString("en-IN")}
+              <div className="bg-neutral-950 rounded-2xl p-3 border border-neutral-850 space-y-1.5">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-gray-400 font-bold">Quoted Price:</span>
+                  <span className="font-bold text-yellow-400 font-price">
+                    ₹{(ord.quotedPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
                   </span>
                 </div>
-                <div className="flex gap-1.5">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-gray-400 font-bold">Re-Quoted Price:</span>
+                  <span className="font-bold text-purple-300 font-price">
+                    ₹{(ord.requotedPrice || ord.revisedPrice || ord.finalPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
+                  </span>
+                </div>
+                <div className="pt-1.5 border-t border-neutral-800 flex items-center justify-between">
+                  <span className="text-xs font-bold text-gray-300">Final Price:</span>
+                  <span className="text-base font-black text-green-400 font-price">
+                    ₹{(ord.finalPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
+                  </span>
+                </div>
+
+                <div className="pt-1 border-t border-neutral-900 flex justify-end gap-1.5">
                   <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${ord.identityStatus === "VERIFIED" ? "bg-green-950 text-green-400 border border-green-800" : "bg-neutral-800 text-gray-400"}`}>
                     ID: {ord.identityStatus}
                   </span>
