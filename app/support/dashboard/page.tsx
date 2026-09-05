@@ -57,6 +57,7 @@ export default function SupportDashboardPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [callFilter, setCallFilter] = useState<"MY_CALLS" | "ALL_CALLS">("MY_CALLS");
 
   // Modal State for Call Logging
   const [selectedQuote, setSelectedQuote] = useState<QuoteLead | null>(null);
@@ -227,7 +228,14 @@ export default function SupportDashboardPage() {
   });
 
   const pendingLeadsCount = quotes.filter((q) => q.status.includes("UNCOMPLETED")).length;
-  const myCallsCount = callLogs.filter((c) => c.supportPersonName === supportSession?.name).length;
+
+  const myCalls = callLogs.filter((c) => {
+    const sName = (supportSession?.name || "").toLowerCase().trim();
+    const cName = (c.supportPersonName || "").toLowerCase().trim();
+    return sName && (cName === sName || cName.includes(sName) || sName.includes(cName));
+  });
+  const myCallsCount = myCalls.length;
+  const displayedCalls = callFilter === "MY_CALLS" ? myCalls : callLogs;
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white p-4 sm:p-6 lg:p-8 space-y-6">
@@ -467,17 +475,45 @@ export default function SupportDashboardPage() {
 
       {/* CALL LOGS AUDIT TRAIL TABLE */}
       <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-3xl shadow-xl space-y-4">
-        <div className="flex items-center justify-between border-b border-neutral-800 pb-3">
-          <h2 className="text-base font-extrabold text-white flex items-center gap-2">
-            <MessageSquare className="w-5 h-5 text-blue-400" />
-            <span>Support Call Records & Incentive Log ({callLogs.length})</span>
-          </h2>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-neutral-800 pb-3">
+          <div className="flex flex-wrap items-center gap-3">
+            <h2 className="text-base font-extrabold text-white flex items-center gap-2">
+              <MessageSquare className="w-5 h-5 text-blue-400" />
+              <span>Call Records & Incentive Log</span>
+            </h2>
+            <div className="flex items-center gap-1 bg-neutral-950 p-1 rounded-xl border border-neutral-800 text-xs">
+              <button
+                type="button"
+                onClick={() => setCallFilter("MY_CALLS")}
+                className={`px-3 py-1 rounded-lg font-bold transition ${
+                  callFilter === "MY_CALLS"
+                    ? "bg-blue-600 text-white shadow-sm"
+                    : "text-neutral-400 hover:text-white"
+                }`}
+              >
+                My Calls ({myCalls.length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setCallFilter("ALL_CALLS")}
+                className={`px-3 py-1 rounded-lg font-bold transition ${
+                  callFilter === "ALL_CALLS"
+                    ? "bg-neutral-800 text-white shadow-sm"
+                    : "text-neutral-400 hover:text-white"
+                }`}
+              >
+                All Team Calls ({callLogs.length})
+              </button>
+            </div>
+          </div>
           <span className="text-[11px] text-neutral-400 font-mono">Recorded in Supabase Database</span>
         </div>
 
-        {callLogs.length === 0 ? (
-          <div className="text-center py-8 text-neutral-500 text-xs">
-            No support call logs recorded yet. Use the "Log Call" button above to record your customer interactions.
+        {displayedCalls.length === 0 ? (
+          <div className="text-center py-8 text-neutral-400 text-xs">
+            {callFilter === "MY_CALLS"
+              ? `No calls recorded by ${supportSession?.name || "you"} yet. Click "Log Call" on any customer quote above to record your call interaction.`
+              : 'No support call logs recorded yet. Use the "Log Call" button above to record customer interactions.'}
           </div>
         ) : (
           <div className="overflow-x-auto">
@@ -493,7 +529,7 @@ export default function SupportDashboardPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-neutral-800/60">
-                {callLogs.map((log) => (
+                {displayedCalls.map((log) => (
                   <tr key={log.id} className="hover:bg-neutral-800/40 transition">
                     <td className="py-3 px-3 font-bold text-white flex items-center gap-1.5">
                       <User className="w-3.5 h-3.5 text-blue-400" />
