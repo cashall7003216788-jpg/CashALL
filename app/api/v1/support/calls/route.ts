@@ -7,7 +7,7 @@ export async function GET() {
   try {
     const logs = await prisma.auditLog.findMany({
       where: {
-        action: "SUPPORT_CALL_LOGGED",
+        action: { in: ["SUPPORT_CALL_LOGGED", "SUPPORT_CALL_RECORDING"] },
       },
       orderBy: { createdAt: "desc" },
     });
@@ -26,9 +26,13 @@ export async function GET() {
         quoteId: data.quoteId || "N/A",
         customerName: data.customerName || "Customer",
         customerPhone: data.customerPhone || "—",
-        callOutcome: data.callOutcome || "CALL_ATTEMPTED",
+        callOutcome: data.callOutcome || (log.action === "SUPPORT_CALL_RECORDING" ? "CALL_RECORDED" : "CALL_ATTEMPTED"),
         callNotes: data.callNotes || "Followed up with customer regarding valuation quote.",
         callTimeIST: data.callTimeIST || new Date(log.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+        durationSeconds: Number(data.durationSeconds) || 0,
+        durationFormatted: data.durationFormatted || (data.durationSeconds ? `${data.durationSeconds}s` : "—"),
+        audioUrl: data.audioUrl || "",
+        hasRecording: !!data.audioUrl,
         createdAt: log.createdAt.toISOString(),
       };
     });

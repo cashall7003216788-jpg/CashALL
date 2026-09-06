@@ -17,18 +17,38 @@ export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
 });
 
 export class StorageService {
-  private static readonly ALLOWED_MIME_TYPES = ["image/jpeg", "image/png", "image/webp"];
-  private static readonly MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+  private static readonly ALLOWED_MIME_TYPES = [
+    "image/jpeg",
+    "image/png",
+    "image/webp",
+    "audio/mp4",
+    "audio/m4a",
+    "audio/mpeg",
+    "audio/mp3",
+    "audio/aac",
+    "audio/wav",
+    "audio/3gpp",
+    "audio/ogg",
+    "audio/webm",
+    "application/octet-stream",
+  ];
+  private static readonly MAX_FILE_SIZE = 25 * 1024 * 1024; // 25MB (sufficient for ~45 min audio)
 
   /**
    * Validates file size and type.
    */
   static validateFile(size: number, mimeType: string) {
-    if (!this.ALLOWED_MIME_TYPES.includes(mimeType)) {
-      throw new AppError("Invalid file type. Only JPEG, PNG, and WebP are allowed.", 400);
+    // Normalise mimeType (e.g. audio/x-m4a -> audio/m4a)
+    const cleanType = mimeType.toLowerCase();
+    const isAllowed =
+      this.ALLOWED_MIME_TYPES.includes(cleanType) ||
+      cleanType.startsWith("audio/") ||
+      cleanType.startsWith("image/");
+    if (!isAllowed) {
+      throw new AppError(`Invalid file type (${mimeType}). Only images and audio files are allowed.`, 400);
     }
     if (size > this.MAX_FILE_SIZE) {
-      throw new AppError("File size exceeds the maximum limit of 5MB.", 400);
+      throw new AppError("File size exceeds the maximum limit of 25MB.", 400);
     }
   }
 

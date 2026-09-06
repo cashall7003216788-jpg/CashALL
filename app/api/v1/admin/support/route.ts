@@ -25,7 +25,7 @@ export async function GET() {
         },
       }),
       prisma.auditLog.findMany({
-        where: { action: "SUPPORT_CALL_LOGGED" },
+        where: { action: { in: ["SUPPORT_CALL_LOGGED", "SUPPORT_CALL_RECORDING"] } },
       }),
       prisma.auditLog.findMany({
         where: {
@@ -44,26 +44,28 @@ export async function GET() {
 
     // Ensure default test user "SANGEET SHAW" is present if not yet returned
     const staffList: any[] = [...supportUsers];
-    if (!staffList.some((u) => u.name?.toLowerCase() === "sangeet shaw")) {
-      staffList.unshift({
+    const hasSangeet = staffList.some(
+      (u) => u.name?.toLowerCase().includes("sangeet") || u.phone === "6289477287"
+    );
+    if (!hasSangeet) {
+      staffList.push({
         id: "support_sangeet_shaw",
-        name: "SANGEET SHAW",
-        email: "sangeet.shaw@cashall.in",
+        name: "Sangeet Shaw",
+        email: "sangeet@cashall.in",
         phone: "6289477287",
         firebaseUid: "support_sangeet_shaw",
-        status: "ACTIVE",
-        createdAt: new Date("2026-08-21T06:00:00.000Z"),
-      });
+        role: "EMPLOYEE",
+        active: true,
+        createdAt: new Date("2026-09-01T00:00:00Z"),
+        updatedAt: new Date(),
+      } as any);
     }
 
-    const formatIST = (date: string | Date | null | undefined): string => {
-      if (!date) return "—";
+    const formatIST = (date: any) => {
       try {
-        const d = typeof date === "string" ? new Date(date) : date;
-        if (isNaN(d.getTime())) return "—";
-        return d.toLocaleString("en-IN", {
+        return new Date(date).toLocaleString("en-IN", {
           timeZone: "Asia/Kolkata",
-          day: "numeric",
+          day: "2-digit",
           month: "short",
           year: "numeric",
           hour: "2-digit",
@@ -75,21 +77,44 @@ export async function GET() {
       }
     };
 
+    const formatDurationSec = (seconds: number) => {
+      if (!seconds || seconds <= 0) return "0s";
+      const h = Math.floor(seconds / 3600);
+      const m = Math.floor((seconds % 3600) / 60);
+      const s = Math.floor(seconds % 60);
+      if (h > 0) return `${h}h ${m}m`;
+      if (m > 0) return `${m}m ${s}s`;
+      return `${s}s`;
+    };
+
     // Process Login and Logout timing per staff
     const mapped = staffList.map((user) => {
       const uName = user.name?.toLowerCase().trim() || "";
 
-      // Find user calls count
-      const callsCount = callLogs.filter((log) => {
+      // Find user calls count & total duration
+      let userTotalSeconds = 0;
+      let userRecordingsCount = 0;
+      const userCalls = callLogs.filter((log) => {
         if (!log.newValuesJson) return false;
         try {
           const data = JSON.parse(log.newValuesJson);
           const spName = data.supportPersonName?.toLowerCase().trim() || "";
-          return spName === uName || spName.includes(uName) || uName.includes(spName);
+          const spPhone = data.supportPersonPhone?.trim() || "";
+          const isMatch =
+            (uName && (spName === uName || spName.includes(uName) || uName.includes(spName))) ||
+            (user.phone && spPhone && spPhone === user.phone);
+          if (isMatch) {
+            if (data.durationSeconds) userTotalSeconds += Number(data.durationSeconds);
+            if (data.audioUrl) userRecordingsCount++;
+            return true;
+          }
+          return false;
         } catch {
           return false;
         }
-      }).length;
+      });
+      const callsCount = userCalls.length;
+      const totalTalkTime = formatDurationSec(userTotalSeconds);
 
       // Find user session logs
       const userSessions = sessionLogs.filter((s) => {
@@ -160,6 +185,9 @@ export async function GET() {
         ...user,
         loginPassword,
         callsCount,
+        totalTalkTime,
+        totalTalkSeconds: userTotalSeconds,
+        recordingsCount: userRecordingsCount,
         lastLoginTime,
         lastLogoutTime,
         sessionStatus,

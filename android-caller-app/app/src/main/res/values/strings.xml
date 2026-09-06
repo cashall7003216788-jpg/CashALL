@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CashALL Caller</string>
+    <string name="accessibility_service_description">Enables CashALL Calling Desk to record customer support calls and calculate accurate talk time for quality assurance.</string>
+    <string name="permission_required_title">Permissions Required</string>
+    <string name="permission_required_desc">To start your calling shift, CashALL requires Call and Audio permissions to record talk time and log customer outcomes.</string>
+    <string name="grant_permissions">Grant Permissions</string>
+    <string name="enable_accessibility">Enable Call Recording in Settings</string>
+    <string name="portal_loading">Connecting to CashALL Support Desk…</string>
+</resources>

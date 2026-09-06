@@ -21,7 +21,27 @@ import {
   Printer,
   ExternalLink,
   MessageSquare,
+  Volume2,
+  Clock,
+  Radio,
+  Play,
 } from "lucide-react";
+
+interface CallRecordingItem {
+  id: string;
+  supportPersonName: string;
+  supportPersonPhone: string;
+  customerPhone: string;
+  quoteId?: string;
+  durationSeconds: number;
+  durationFormatted: string;
+  audioUrl: string;
+  callOutcome: string;
+  callNotes: string;
+  callStartTime: string;
+  callEndTime: string;
+  createdAtIST: string;
+}
 
 interface SupportStaff {
   id: string;
@@ -32,6 +52,8 @@ interface SupportStaff {
   loginPassword?: string;
   createdAt: string;
   callsCount?: number;
+  totalTalkTime?: string;
+  recordingsCount?: number;
   lastLoginTime?: string;
   lastLogoutTime?: string;
   sessionStatus?: string;
@@ -49,6 +71,8 @@ interface SupportSessionLog {
 export default function AdminSupportManagementPage() {
   const [supportStaff, setSupportStaff] = useState<SupportStaff[]>([]);
   const [sessionLogs, setSessionLogs] = useState<SupportSessionLog[]>([]);
+  const [recordings, setRecordings] = useState<CallRecordingItem[]>([]);
+  const [recordingSearch, setRecordingSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -67,13 +91,20 @@ export default function AdminSupportManagementPage() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/api/v1/admin/support");
-      const json = await res.json();
+      const [staffRes, recRes] = await Promise.all([
+        fetch("/api/v1/admin/support"),
+        fetch("/api/v1/support/recordings"),
+      ]);
+      const json = await staffRes.json();
+      const recJson = await recRes.json();
       if (json.success) {
         setSupportStaff(json.supportStaff || []);
         setSessionLogs(json.sessionLogs || []);
       } else {
         setError(json.error || "Failed to fetch support staff");
+      }
+      if (recJson.success) {
+        setRecordings(recJson.recordings || []);
       }
     } catch (err: any) {
       setError(err.message || "Network error fetching support staff");
@@ -445,9 +476,23 @@ export default function AdminSupportManagementPage() {
                           {staff.lastLogoutTime || "—"}
                         </td>
                         <td className="py-4 px-3">
-                          <div className="inline-flex items-center gap-1 bg-blue-950/80 border border-blue-800 text-blue-300 px-2.5 py-1 rounded-xl text-xs font-bold font-mono">
-                            <MessageSquare className="w-3 h-3 text-blue-400" />
-                            <span>{staff.callsCount || 0} Calls</span>
+                          <div className="flex flex-col gap-1">
+                            <div className="inline-flex items-center gap-1 bg-blue-950/80 border border-blue-800 text-blue-300 px-2.5 py-0.5 rounded-lg text-xs font-bold font-mono w-fit">
+                              <MessageSquare className="w-3 h-3 text-blue-400" />
+                              <span>{staff.callsCount || 0} Calls</span>
+                            </div>
+                            {staff.totalTalkTime && (
+                              <div className="inline-flex items-center gap-1 text-[11px] text-amber-400 font-mono">
+                                <Clock className="w-3 h-3" />
+                                <span>{staff.totalTalkTime} Talk</span>
+                              </div>
+                            )}
+                            {(staff.recordingsCount ?? 0) > 0 && (
+                              <div className="inline-flex items-center gap-1 text-[10px] text-emerald-400 font-mono">
+                                <Volume2 className="w-2.5 h-2.5" />
+                                <span>{staff.recordingsCount} Audios</span>
+                              </div>
+                            )}
                           </div>
                         </td>
                       </tr>
@@ -531,6 +576,132 @@ export default function AdminSupportManagementPage() {
                       </td>
                     </tr>
                   ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+
+        {/* SECTION 4: LIVE CALL AUDIO RECORDINGS & DURATION FEED */}
+        <div className="bg-neutral-800 border border-neutral-700 p-6 rounded-3xl shadow-xl space-y-4 print:hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-neutral-700 pb-3">
+            <div>
+              <h2 className="text-base font-extrabold text-white flex items-center gap-2">
+                <Radio className="w-5 h-5 text-emerald-400 animate-pulse" />
+                <span>Customer Call Audio Recordings ({recordings.length})</span>
+              </h2>
+              <p className="text-xs text-neutral-400 mt-0.5">
+                Automatically recorded and synced by the CashALL Android Caller App
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                placeholder="Search Phone or Agent..."
+                value={recordingSearch}
+                onChange={(e) => setRecordingSearch(e.target.value)}
+                className="bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl px-3 py-1.5 focus:outline-none focus:border-yellow-400"
+              />
+              <button
+                onClick={fetchStaff}
+                className="inline-flex items-center gap-1.5 text-xs text-neutral-300 bg-neutral-700 hover:bg-neutral-600 px-3 py-1.5 rounded-xl font-bold transition"
+              >
+                <RefreshCw className="w-3.5 h-3.5" />
+                <span>Refresh</span>
+              </button>
+            </div>
+          </div>
+
+          {recordings.length === 0 ? (
+            <div className="text-center py-12 text-neutral-400 text-xs">
+              No call audio recordings uploaded yet. Once the caller app dials customers, recordings will appear here automatically.
+            </div>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider font-extrabold">
+                    <th className="py-3 px-3">Agent</th>
+                    <th className="py-3 px-3">Customer Phone</th>
+                    <th className="py-3 px-3">Date & Time (IST)</th>
+                    <th className="py-3 px-3">Duration</th>
+                    <th className="py-3 px-3">Call Outcome</th>
+                    <th className="py-3 px-3">In-Browser Audio Player</th>
+                    <th className="py-3 px-3 text-right">Download</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-neutral-700/60">
+                  {recordings
+                    .filter((rec) => {
+                      if (!recordingSearch.trim()) return true;
+                      const q = recordingSearch.toLowerCase();
+                      return (
+                        rec.customerPhone.includes(q) ||
+                        rec.supportPersonName.toLowerCase().includes(q) ||
+                        rec.supportPersonPhone.includes(q) ||
+                        rec.quoteId?.toLowerCase().includes(q)
+                      );
+                    })
+                    .map((rec) => (
+                      <tr key={rec.id} className="hover:bg-neutral-750/50 transition">
+                        <td className="py-3.5 px-3 font-bold text-white">
+                          <div className="flex items-center gap-1.5">
+                            <User className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
+                            <span>{rec.supportPersonName}</span>
+                          </div>
+                          <div className="text-[10px] text-neutral-400 font-mono">{rec.supportPersonPhone}</div>
+                        </td>
+                        <td className="py-3.5 px-3 font-mono font-bold text-neutral-200">
+                          <div>{rec.customerPhone}</div>
+                          {rec.quoteId && <div className="text-[10px] text-yellow-400">{rec.quoteId}</div>}
+                        </td>
+                        <td className="py-3.5 px-3 text-neutral-300 font-mono text-[11px] whitespace-nowrap">
+                          {rec.createdAtIST}
+                        </td>
+                        <td className="py-3.5 px-3">
+                          <span className="inline-flex items-center gap-1 bg-amber-950/80 border border-amber-800 text-amber-300 font-mono font-bold px-2 py-0.5 rounded-lg text-xs">
+                            <Clock className="w-3 h-3 text-amber-400" />
+                            <span>{rec.durationFormatted}</span>
+                          </span>
+                        </td>
+                        <td className="py-3.5 px-3">
+                          <span className="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-300">
+                            {rec.callOutcome.replace(/_/g, " ")}
+                          </span>
+                        </td>
+                        <td className="py-3.5 px-3">
+                          {rec.audioUrl ? (
+                            <audio
+                              controls
+                              preload="none"
+                              className="h-8 max-w-[220px] rounded-lg shadow"
+                              src={rec.audioUrl}
+                            >
+                              Your browser does not support audio playback.
+                            </audio>
+                          ) : (
+                            <span className="text-neutral-500 text-[11px] italic">No audio clip</span>
+                          )}
+                        </td>
+                        <td className="py-3.5 px-3 text-right">
+                          {rec.audioUrl ? (
+                            <a
+                              href={rec.audioUrl}
+                              download={`Call_${rec.customerPhone}_${rec.durationFormatted}.m4a`}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-1 text-[11px] font-bold text-yellow-400 hover:text-yellow-300 bg-neutral-900 border border-neutral-700 px-2.5 py-1 rounded-lg transition"
+                            >
+                              <Download className="w-3 h-3" />
+                              <span>MP3</span>
+                            </a>
+                          ) : (
+                            <span className="text-neutral-600">—</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
                 </tbody>
               </table>
             </div>

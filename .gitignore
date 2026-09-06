@@ -51,3 +51,6 @@ scraper_log.txt
 scratch/
 __pycache__/
 *.pyc
+.gradle/
+*.iml
+
