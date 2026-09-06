@@ -107,10 +107,24 @@ export default function MobileAssessmentPage() {
     active: true,
   };
 
-  const isApple = brand.slug.toLowerCase().includes("apple") || model.name.toLowerCase().includes("iphone");
+  const isIPhone =
+    brandSlug.toLowerCase() === "apple" ||
+    brand.slug.toLowerCase().includes("apple") ||
+    (brand.name && brand.name.toLowerCase().includes("apple")) ||
+    modelSlug.toLowerCase().includes("iphone") ||
+    model.slug.toLowerCase().includes("iphone") ||
+    model.name.toLowerCase().includes("iphone");
+  const isApple = isIPhone;
   const isSamsungNoteOrUltra =
     brand.slug.toLowerCase().includes("samsung") &&
     (model.name.toLowerCase().includes("note") || model.name.toLowerCase().includes("ultra"));
+
+  // Ensure iPhone-only questions are purged from non-iPhones
+  useEffect(() => {
+    if (!isIPhone) {
+      setSelectedProblems((prev) => prev.filter((p) => p !== "battery_service" && p !== "esim_issue"));
+    }
+  }, [isIPhone]);
 
   // ── WIZARD STATE ──────────────────────────────────────────────────────────
   const [step, setStep] = useState<number>(1);
@@ -206,11 +220,18 @@ export default function MobileAssessmentPage() {
       bluetooth: { label: "Bluetooth Issue", pct: 5 },
       vibrator: { label: "Vibrator Not Working", pct: 4 },
       proximity_sensor: { label: "Proximity Sensor Issue", pct: 4 },
-      battery_service: { label: "Battery Health < 80%", pct: 12 },
-      esim_issue: { label: "e-SIM / Cellular Not Working", pct: 6 },
+      ...(isIPhone
+        ? {
+            battery_service: { label: "Battery Health < 80%", pct: 12 },
+            esim_issue: { label: "e-SIM / Cellular Not Working", pct: 6 },
+          }
+        : {}),
     };
 
     selectedProblems.forEach((probId) => {
+      if (!isIPhone && (probId === "battery_service" || probId === "esim_issue")) {
+        return;
+      }
       const item = functionalDeductionMap[probId];
       if (item) {
         addDeduction(item.label, item.pct);
@@ -305,6 +326,10 @@ export default function MobileAssessmentPage() {
     const quoteNumber = `CAQ${random5Digits}`;
     const deviceFullName = formatDeviceName(brand.name, model.name, variant.storage);
 
+    const sanitizedProblems = isIPhone
+      ? selectedProblems
+      : selectedProblems.filter((p) => p !== "battery_service" && p !== "esim_issue");
+
     const answersSummary = {
       device: deviceFullName,
       canMakeCalls,
@@ -313,7 +338,7 @@ export default function MobileAssessmentPage() {
       underWarranty,
       hasGstBill,
       selectedDefects,
-      selectedProblems,
+      selectedProblems: sanitizedProblems,
       selectedAccessories,
       mobileAge: underWarranty === true ? mobileAge : "Above 11 months",
     };
@@ -679,20 +704,24 @@ export default function MobileAssessmentPage() {
                       selected={selectedProblems.includes("proximity_sensor")}
                       onClick={() => setSelectedProblems(toggleArrayItem(selectedProblems, "proximity_sensor"))}
                     />
-                    <VisualOptionCard
-                      id="prob-bat-service"
-                      label="Battery in Service (Health is less than 80%)"
-                      imageUrl="https://s3ng.cashify.in/cashify/productLinePartVariation/img/xhdpi/5d244621b86f8.jpg"
-                      selected={selectedProblems.includes("battery_service")}
-                      onClick={() => setSelectedProblems(toggleArrayItem(selectedProblems, "battery_service"))}
-                    />
-                    <VisualOptionCard
-                      id="prob-esim"
-                      label="e-SIM / Cellular Not Working"
-                      imageUrl="https://s3n.cashify.in/cashify/productLinePartVariation/img/xhdpi/SIM_card_tray_broken_missing.png"
-                      selected={selectedProblems.includes("esim_issue")}
-                      onClick={() => setSelectedProblems(toggleArrayItem(selectedProblems, "esim_issue"))}
-                    />
+                    {isIPhone && (
+                      <>
+                        <VisualOptionCard
+                          id="prob-bat-service"
+                          label="Battery in Service (Health is less than 80%)"
+                          imageUrl="https://s3ng.cashify.in/cashify/productLinePartVariation/img/xhdpi/5d244621b86f8.jpg"
+                          selected={selectedProblems.includes("battery_service")}
+                          onClick={() => setSelectedProblems(toggleArrayItem(selectedProblems, "battery_service"))}
+                        />
+                        <VisualOptionCard
+                          id="prob-esim"
+                          label="e-SIM / Cellular Not Working"
+                          imageUrl="https://s3n.cashify.in/cashify/productLinePartVariation/img/xhdpi/SIM_card_tray_broken_missing.png"
+                          selected={selectedProblems.includes("esim_issue")}
+                          onClick={() => setSelectedProblems(toggleArrayItem(selectedProblems, "esim_issue"))}
+                        />
+                      </>
+                    )}
                   </div>
 
                   <div className="pt-4 border-t border-gray-100 flex items-center justify-between">

@@ -183,6 +183,10 @@ export function CustomerAnswersModal({
     ? rawAnswers.functionalIssues
     : [];
 
+  const isIPhone =
+    deviceName.toLowerCase().includes("iphone") ||
+    deviceName.toLowerCase().includes("apple");
+
   // Unified helpers for each functional issue
   const hasFrontCamera = selectedProblems.includes("front_camera") || functionalIssuesOld.includes("front_camera");
   const hasBackCamera = selectedProblems.includes("back_camera") || functionalIssuesOld.includes("back_camera");
@@ -365,16 +369,44 @@ export function CustomerAnswersModal({
         ? "Declared: Rear Camera Faulty / Shaking"
         : "Declared: Working Properly",
     },
-    {
-      id: "battery",
-      category: "functional",
-      title: "Battery Health & Performance",
-      isAnswered: true,
-      isPositive: !hasBattery,
-      customerAnswer: hasBattery
-        ? "Declared: Battery Drains Fast / Service Warning (<80%)"
-        : "Declared: Good Battery Backup (>80%)",
-    },
+    ...(isIPhone
+      ? [
+          {
+            id: "battery",
+            category: "functional" as const,
+            title: "Battery Health & Performance",
+            isAnswered: true,
+            isPositive: !hasBattery,
+            customerAnswer: hasBattery
+              ? "Declared: Battery Drains Fast / Service Warning (<80%)"
+              : "Declared: Good Battery Backup (>80%)",
+          },
+          ...(selectedProblems.includes("esim_issue")
+            ? [
+                {
+                  id: "esim",
+                  category: "functional" as const,
+                  title: "e-SIM / Cellular",
+                  isAnswered: true,
+                  isPositive: false,
+                  customerAnswer: "Declared: e-SIM / Cellular Not Working",
+                  deductionNote: "e-SIM / Cellular defect deduction applied",
+                },
+              ]
+            : []),
+        ]
+      : hasBattery
+      ? [
+          {
+            id: "battery",
+            category: "functional" as const,
+            title: "Battery Performance",
+            isAnswered: true,
+            isPositive: false,
+            customerAnswer: "Declared: Battery Draining Fast / Defective",
+          },
+        ]
+      : []),
     {
       id: "biometrics",
       category: "functional",
