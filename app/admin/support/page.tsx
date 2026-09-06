@@ -25,13 +25,16 @@ import {
   Clock,
   Radio,
   Play,
+  Smartphone,
 } from "lucide-react";
 
 interface CallRecordingItem {
   id: string;
   supportPersonName: string;
   supportPersonPhone: string;
+  customerName?: string;
   customerPhone: string;
+  deviceName?: string;
   quoteId?: string;
   durationSeconds: number;
   durationFormatted: string;
@@ -623,8 +626,8 @@ export default function AdminSupportManagementPage() {
                 <thead>
                   <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider font-extrabold">
                     <th className="py-3 px-3">Agent</th>
-                    <th className="py-3 px-3">Customer Phone</th>
-                    <th className="py-3 px-3">Date & Time (IST)</th>
+                    <th className="py-3 px-3">Customer &amp; Device</th>
+                    <th className="py-3 px-3">Date &amp; Time (IST)</th>
                     <th className="py-3 px-3">Duration</th>
                     <th className="py-3 px-3">Call Outcome</th>
                     <th className="py-3 px-3">In-Browser Audio Player</th>
@@ -638,6 +641,8 @@ export default function AdminSupportManagementPage() {
                       const q = recordingSearch.toLowerCase();
                       return (
                         rec.customerPhone.includes(q) ||
+                        rec.customerName?.toLowerCase().includes(q) ||
+                        rec.deviceName?.toLowerCase().includes(q) ||
                         rec.supportPersonName.toLowerCase().includes(q) ||
                         rec.supportPersonPhone.includes(q) ||
                         rec.quoteId?.toLowerCase().includes(q)
@@ -652,9 +657,26 @@ export default function AdminSupportManagementPage() {
                           </div>
                           <div className="text-[10px] text-neutral-400 font-mono">{rec.supportPersonPhone}</div>
                         </td>
-                        <td className="py-3.5 px-3 font-mono font-bold text-neutral-200">
-                          <div>{rec.customerPhone}</div>
-                          {rec.quoteId && <div className="text-[10px] text-yellow-400">{rec.quoteId}</div>}
+                        <td className="py-3.5 px-3">
+                          <div className="font-bold text-white flex items-center gap-1.5">
+                            <User className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
+                            <span>{rec.customerName || "Customer Lead"}</span>
+                          </div>
+                          <div className="text-xs text-neutral-300 font-mono flex items-center gap-1 mt-0.5">
+                            <Phone className="w-3 h-3 text-neutral-400 shrink-0" />
+                            <span>{rec.customerPhone}</span>
+                          </div>
+                          {rec.deviceName && rec.deviceName !== "—" && (
+                            <div className="text-[11px] text-amber-300/90 font-medium flex items-center gap-1 mt-1">
+                              <Smartphone className="w-3 h-3 text-yellow-400 shrink-0" />
+                              <span>{rec.deviceName}</span>
+                            </div>
+                          )}
+                          {rec.quoteId && rec.quoteId !== "N/A" && (
+                            <div className="inline-block text-[10px] font-mono text-yellow-400 font-extrabold bg-yellow-950/60 border border-yellow-800/80 px-2 py-0.5 rounded mt-1">
+                              Quote: {rec.quoteId}
+                            </div>
+                          )}
                         </td>
                         <td className="py-3.5 px-3 text-neutral-300 font-mono text-[11px] whitespace-nowrap">
                           {rec.createdAtIST}

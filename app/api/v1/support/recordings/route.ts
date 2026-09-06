@@ -40,7 +40,9 @@ export async function GET(req: NextRequest) {
         id: log.id,
         supportPersonName: data.supportPersonName || "Support Agent",
         supportPersonPhone: data.supportPersonPhone || "—",
+        customerName: data.customerName || "Customer Lead",
         customerPhone: data.customerPhone || "—",
+        deviceName: data.deviceName || "Mobile Device",
         quoteId: data.quoteId || "N/A",
         durationSeconds: Number(data.durationSeconds) || 0,
         durationFormatted: data.durationFormatted || formatDuration(Number(data.durationSeconds) || 0),
@@ -49,7 +51,7 @@ export async function GET(req: NextRequest) {
         callNotes: data.callNotes || "Recorded via CashALL Android Caller App.",
         callStartTime: data.callStartTime || log.createdAt.toISOString(),
         callEndTime: data.callEndTime || log.createdAt.toISOString(),
-        createdAtIST: new Date(log.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+        createdAtIST: data.callTimeIST || new Date(log.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
         createdAt: log.createdAt.toISOString(),
       };
     });
@@ -78,46 +80,130 @@ export async function POST(req: NextRequest) {
     const audioFile = formData.get("audio") as File | null;
     const supportPersonName = (formData.get("supportPersonName") as string) || "Support Staff";
     const supportPersonPhone = (formData.get("supportPersonPhone") as string) || "";
-    const customerPhone = (formData.get("customerPhone") as string) || "Unknown Customer";
+    const rawCustomerPhone = (formData.get("customerPhone") as string) || "";
+    let customerPhone = rawCustomerPhone.trim();
+    if (customerPhone.startsWith("+91")) customerPhone = customerPhone.replace("+91", "").trim();
+
+    let customerName = (formData.get("customerName") as string) || "";
+    let deviceName = (formData.get("deviceName") as string) || "";
+    let quoteId = (formData.get("quoteId") as string) || "";
     const durationSeconds = Number(formData.get("durationSeconds")) || 0;
     const callOutcome = (formData.get("callOutcome") as string) || "CALL_COMPLETED";
     const callNotes = (formData.get("callNotes") as string) || "Recorded via CashALL Android Caller App.";
     const callStartTime = (formData.get("callStartTime") as string) || new Date().toISOString();
     const callEndTime = (formData.get("callEndTime") as string) || new Date().toISOString();
-    const quoteId = (formData.get("quoteId") as string) || "";
+
+    // Automatic Quote & Customer Enrichment if not already provided
+    const cleanDigits = customerPhone.replace(/\D/g, "").slice(-10);
+    try {
+      let matchedQuote: any = null;
+      if (quoteId && quoteId !== "N/A") {
+        matchedQuote = await prisma.quote.findFirst({
+          where: { OR: [{ quoteNumber: quoteId }, { id: quoteId }] },
+          include: {
+            orders: { include: { user: true, address: true } },
+            variant: { include: { model: { include: { brand: true } } } },
+          },
+        });
+      }
+
+      if (!matchedQuote && cleanDigits) {
+        // Search quotes with this customer phone
+        const recentQuotes = await prisma.quote.findMany({
+          where: {
+            deletedAt: null,
+            OR: [
+              { breakdownJson: { contains: cleanDigits } },
+              { selectedAnswersJson: { contains: cleanDigits } },
+            ],
+          },
+          include: {
+            orders: { include: { user: true, address: true } },
+            variant: { include: { model: { include: { brand: true } } } },
+          },
+          orderBy: { createdAt: "desc" },
+          take: 1,
+        });
+
+        if (recentQuotes.length > 0) {
+          matchedQuote = recentQuotes[0];
+        }
+      }
+
+      if (matchedQuote) {
+        if (!quoteId || quoteId === "N/A") quoteId = matchedQuote.quoteNumber;
+        
+        if (!deviceName || deviceName === "Mobile Device") {
+          if (matchedQuote.variant) {
+            deviceName = `${matchedQuote.variant.model.brand.name} ${matchedQuote.variant.model.name} (${matchedQuote.variant.storage})`;
+          }
+          if (matchedQuote.breakdownJson) {
+            try {
+              const bd = JSON.parse(matchedQuote.breakdownJson);
+              if (bd.deviceName) deviceName = bd.deviceName;
+              if (!customerName && bd.customerName) customerName = bd.customerName;
+            } catch {}
+          }
+        }
+
+        if (!customerName) {
+          if (matchedQuote.selectedAnswersJson) {
+            try {
+              const sa = JSON.parse(matchedQuote.selectedAnswersJson);
+              if (sa.customerName) customerName = sa.customerName;
+            } catch {}
+          }
+          if (!customerName && matchedQuote.orders?.[0]?.user?.name) {
+            customerName = matchedQuote.orders[0].user.name;
+          }
+        }
+      }
+    } catch (e: any) {
+      console.warn("Could not enrich quote metadata:", e.message);
+    }
+
+    if (!customerName) customerName = "Customer Lead";
+    if (!deviceName) deviceName = "Mobile Device";
+    if (!quoteId) quoteId = "N/A";
 
     let audioUrl = "";
     let storageType = "none";
 
-    if (audioFile) {
-      const arrayBuffer = await audioFile.arrayBuffer();
-      const buffer = Buffer.from(arrayBuffer);
-      const ext = audioFile.name?.split(".").pop() || "m4a";
-      const fileName = `rec_${Date.now()}_${uuidv4().slice(0, 8)}.${ext}`;
-      const mimeType = audioFile.type || "audio/m4a";
-
-      // 1. Try Supabase Storage first
+    if (audioFile && typeof audioFile.arrayBuffer === "function") {
       try {
-        const bucket = "support-recordings";
-        const storagePath = `recordings/${fileName}`;
-        await StorageService.uploadFile(bucket, storagePath, buffer, mimeType);
-        audioUrl = await StorageService.getSignedUrl(bucket, storagePath, 60 * 60 * 24 * 365); // 1 year signed URL
-        storageType = "supabase";
-      } catch (storageErr: any) {
-        console.warn("Supabase bucket upload fallback to local disk storage:", storageErr?.message);
-        // 2. Fallback to local disk (public/uploads/recordings)
-        try {
-          const publicUploadsDir = path.join(process.cwd(), "public", "uploads", "recordings");
-          if (!fs.existsSync(publicUploadsDir)) {
-            fs.mkdirSync(publicUploadsDir, { recursive: true });
+        const arrayBuffer = await audioFile.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+        const ext = audioFile.name?.split(".").pop() || "m4a";
+        const fileName = `rec_${Date.now()}_${uuidv4().slice(0, 8)}.${ext}`;
+        const mimeType = audioFile.type || "audio/m4a";
+
+        if (buffer.length > 0) {
+          // 1. Upload to Supabase Storage bucket 'support-recordings'
+          try {
+            const bucket = "support-recordings";
+            const storagePath = `${fileName}`;
+            await StorageService.uploadFile(bucket, storagePath, buffer, mimeType);
+            audioUrl = await StorageService.getSignedUrl(bucket, storagePath, 31536000);
+            storageType = "supabase";
+          } catch (storageErr: any) {
+            console.warn("Supabase upload failed, trying local fallback:", storageErr?.message);
+            // 2. Fallback to local disk (for local dev)
+            try {
+              const publicUploadsDir = path.join(process.cwd(), "public", "uploads", "recordings");
+              if (!fs.existsSync(publicUploadsDir)) {
+                fs.mkdirSync(publicUploadsDir, { recursive: true });
+              }
+              const localFilePath = path.join(publicUploadsDir, fileName);
+              fs.writeFileSync(localFilePath, buffer);
+              audioUrl = `/uploads/recordings/${fileName}`;
+              storageType = "local";
+            } catch (localErr: any) {
+              console.error("Local storage error:", localErr);
+            }
           }
-          const localFilePath = path.join(publicUploadsDir, fileName);
-          fs.writeFileSync(localFilePath, buffer);
-          audioUrl = `/uploads/recordings/${fileName}`;
-          storageType = "local";
-        } catch (localErr: any) {
-          console.error("Local disk storage error:", localErr);
         }
+      } catch (audioReadErr: any) {
+        console.error("Error reading audio stream:", audioReadErr);
       }
     }
 
@@ -135,7 +221,9 @@ export async function POST(req: NextRequest) {
         newValuesJson: JSON.stringify({
           supportPersonName,
           supportPersonPhone,
-          customerPhone,
+          customerName,
+          customerPhone: customerPhone || "—",
+          deviceName,
           quoteId,
           durationSeconds,
           durationFormatted,
@@ -156,6 +244,9 @@ export async function POST(req: NextRequest) {
       recordingId: record.id,
       audioUrl,
       durationFormatted,
+      customerName,
+      deviceName,
+      quoteId,
     });
   } catch (error: any) {
     console.error("Error saving call recording:", error);

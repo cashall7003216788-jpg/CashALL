@@ -400,11 +400,44 @@ export default function SupportDashboardPage() {
                           <User className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
                           <span>{q.customerName || "Customer Lead"}</span>
                         </div>
-                        <div className="text-neutral-300 font-mono text-[11px] flex items-center gap-1.5">
+                        <div className="text-neutral-300 font-mono text-[11px] flex items-center gap-2">
                           <Phone className="w-3 h-3 text-neutral-400 shrink-0" />
-                          <a href={`tel:${q.customerPhone}`} className="hover:text-yellow-400 transition underline decoration-dotted">
+                          <a
+                            href={`tel:${q.customerPhone}`}
+                            onClick={() => {
+                              if (typeof window !== "undefined" && (window as any).CashAllNative?.setTargetQuote) {
+                                (window as any).CashAllNative.setTargetQuote(
+                                  q.quoteNumber || q.id,
+                                  q.customerPhone || "",
+                                  q.customerName || "Customer Lead",
+                                  q.deviceName || "Mobile Device"
+                                );
+                              }
+                            }}
+                            className="hover:text-yellow-400 transition underline decoration-dotted font-bold"
+                          >
                             {q.customerPhone || "—"}
                           </a>
+                          {q.customerPhone && (
+                            <a
+                              href={`tel:${q.customerPhone}`}
+                              onClick={() => {
+                                if (typeof window !== "undefined" && (window as any).CashAllNative?.setTargetQuote) {
+                                  (window as any).CashAllNative.setTargetQuote(
+                                    q.quoteNumber || q.id,
+                                    q.customerPhone || "",
+                                    q.customerName || "Customer Lead",
+                                    q.deviceName || "Mobile Device"
+                                  );
+                                }
+                              }}
+                              className="inline-flex items-center gap-1 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-[10px] px-2 py-0.5 rounded-md transition shadow"
+                              title="1-Tap Native Call"
+                            >
+                              <PhoneCall className="w-2.5 h-2.5" />
+                              <span>Call</span>
+                            </a>
+                          )}
                         </div>
                       </div>
                     </td>
