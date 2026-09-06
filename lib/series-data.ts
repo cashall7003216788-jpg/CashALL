@@ -6,7 +6,7 @@ export interface SeriesItem {
 
 export const BRAND_SERIES_MAP: Record<string, SeriesItem[]> = {
   samsung: [
-    { id: "s-sam-s", name: "Galaxy S Series", matchPattern: ["Galaxy S", "S26", "S25", "S24", "S23", "S22", "S21", "S20", "S10", "S9", "S8", "S7", "S6"] },
+    { id: "s-sam-s", name: "Galaxy S Series", matchPattern: ["Galaxy S", "S25", "S24", "S23", "S22", "S21", "S20", "S10", "S9", "S8", "S7", "S6"] },
     { id: "s-sam-a", name: "Galaxy A Series", matchPattern: ["Galaxy A", " A0", " A1", " A2", " A3", " A5", " A7", " A8", " A9", " A50", " A51", " A52", " A53", " A54", " A55", " A70", " A71", " A72", " A73"] },
     { id: "s-sam-m", name: "Galaxy M Series", matchPattern: ["Galaxy M", " M0", " M1", " M2", " M3", " M5", " M10", " M20", " M30", " M51", " M52", " M53", " M54", " M55"] },
     { id: "s-sam-z", name: "Galaxy Z Flip / Fold", matchPattern: ["Galaxy Z", "Fold", "Flip"] },

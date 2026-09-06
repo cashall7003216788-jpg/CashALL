@@ -9361,266 +9361,6 @@ const MOBILE_MODELS_PART_3: DeviceModelData[] = [
     "category": "MOBILE"
   },
   {
-    "id": "m-samsung-samsung-galaxy-z-fold8-ultra",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy Z Fold8 Ultra",
-    "slug": "samsung-galaxy-z-fold8-ultra",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-z-fold8",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy Z Fold8",
-    "slug": "samsung-galaxy-z-fold8",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-z-fold7",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy Z Fold7",
-    "slug": "samsung-galaxy-z-fold7",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-s26-ultra-5g",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy S26 Ultra 5G",
-    "slug": "samsung-galaxy-s26-ultra-5g",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-s25-ultra-5g",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy S25 Ultra 5g",
-    "slug": "samsung-galaxy-s25-ultra-5g",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0eec7384-1b5a.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-z-flip-8",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy Z Flip 8",
-    "slug": "samsung-galaxy-z-flip-8",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-z-flip7-5g",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy Z Flip7 5G",
-    "slug": "samsung-galaxy-z-flip7-5g",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-s25-edge",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy S25 Edge",
-    "slug": "samsung-galaxy-s25-edge",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/90cb48b8-8691.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-a17-5g",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy A17 5G",
-    "slug": "samsung-galaxy-a17-5g",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/d9407450-85bc.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-z-flip7-fe-5g",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy Z Flip7 FE 5G",
-    "slug": "samsung-galaxy-z-flip7-fe-5g",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/2db446da-f5cf.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-s25-plus-5g",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy S25 Plus 5g",
-    "slug": "samsung-galaxy-s25-plus-5g",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9e093f7b-30d7.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-a37-5g",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy A37 5G",
-    "slug": "samsung-galaxy-a37-5g",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-a56-5g",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy A56 5G",
-    "slug": "samsung-galaxy-a56-5g",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f89e9037-c4aa.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-s22-plus-5g",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy S22 Plus 5G",
-    "slug": "samsung-galaxy-s22-plus-5g",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/bef10a95-823a.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-s22-5g",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy S22 5G",
-    "slug": "samsung-galaxy-s22-5g",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5f61f359-83ce.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-s26-plus",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy S26 Plus",
-    "slug": "samsung-galaxy-s26-plus",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-s26-5g",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy S26 5G",
-    "slug": "samsung-galaxy-s26-5g",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-s25-5g",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy S25 5g",
-    "slug": "samsung-galaxy-s25-5g",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1fcc94d7-eb45.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-a57-5g",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy A57 5G",
-    "slug": "samsung-galaxy-a57-5g",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
-    "id": "m-samsung-samsung-galaxy-s25-fe",
-    "brandId": "b-samsung",
-    "brandSlug": "samsung",
-    "name": "Samsung Galaxy S25 FE",
-    "slug": "samsung-galaxy-s25-fe",
-    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/e1d46c46-5e49.jpg?w=800",
-    "releaseYear": 2024,
-    "popular": false,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
     "id": "m-samsung-samsung-galaxy-z-fold3-5g",
     "brandId": "b-samsung",
     "brandSlug": "samsung",
@@ -9914,6 +9654,19 @@ const MOBILE_MODELS_PART_3: DeviceModelData[] = [
     "slug": "samsung-galaxy-a55-5g",
     "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1b66ee80-7dca.jpg?w=800",
     "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-samsung-samsung-galaxy-a56-5g",
+    "brandId": "b-samsung",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy A56 5G",
+    "slug": "samsung-galaxy-a56-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/f89e9037-c4aa.jpg?w=800",
+    "releaseYear": 2025,
     "popular": false,
     "active": true,
     "contactForPrice": false,
@@ -11103,6 +10856,32 @@ const MOBILE_MODELS_PART_3: DeviceModelData[] = [
     "category": "MOBILE"
   },
   {
+    "id": "m-samsung-samsung-galaxy-s22-5g",
+    "brandId": "b-samsung",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy S22 5G",
+    "slug": "samsung-galaxy-s22-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/5f61f359-83ce.jpg?w=800",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-samsung-samsung-galaxy-s22-plus-5g",
+    "brandId": "b-samsung",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy S22 Plus 5G",
+    "slug": "samsung-galaxy-s22-plus-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/bef10a95-823a.jpg?w=800",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
     "id": "m-samsung-samsung-galaxy-s22-ultra-5g",
     "brandId": "b-samsung",
     "brandSlug": "samsung",
@@ -11202,6 +10981,71 @@ const MOBILE_MODELS_PART_3: DeviceModelData[] = [
     "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a69ef28f-fe68.jpg?w=800",
     "releaseYear": 2024,
     "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-samsung-samsung-galaxy-s25-5g",
+    "brandId": "b-samsung",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy S25 5G",
+    "slug": "samsung-galaxy-s25-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/1fcc94d7-eb45.jpg?w=800",
+    "releaseYear": 2025,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-samsung-samsung-galaxy-s25-plus-5g",
+    "brandId": "b-samsung",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy S25 Plus 5G",
+    "slug": "samsung-galaxy-s25-plus-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/9e093f7b-30d7.jpg?w=800",
+    "releaseYear": 2025,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-samsung-samsung-galaxy-s25-ultra-5g",
+    "brandId": "b-samsung",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy S25 Ultra 5G",
+    "slug": "samsung-galaxy-s25-ultra-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/0eec7384-1b5a.jpg?w=800",
+    "releaseYear": 2025,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-samsung-samsung-galaxy-s25-edge",
+    "brandId": "b-samsung",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy S25 Edge",
+    "slug": "samsung-galaxy-s25-edge",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/90cb48b8-8691.jpg?w=800",
+    "releaseYear": 2025,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-samsung-samsung-galaxy-s25-fe",
+    "brandId": "b-samsung",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy S25 FE",
+    "slug": "samsung-galaxy-s25-fe",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/3f895ed4-1b00.jpg?w=800",
+    "releaseYear": 2025,
+    "popular": false,
     "active": true,
     "contactForPrice": false,
     "category": "MOBILE"
@@ -38609,406 +38453,6 @@ const MOBILE_VARIANTS_PART_5: DeviceVariantData[] = [
     "ram": "6 GB"
   },
   {
-    "id": "v-m-samsung-samsung-galaxy-z-fold8-ultra-1-tb-16-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-fold8-ultra",
-    "storage": "1 TB",
-    "basePrice": 142410,
-    "active": true,
-    "ram": "16 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-fold8-ultra-512-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-fold8-ultra",
-    "storage": "512 GB",
-    "basePrice": 131300,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-fold8-ultra-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-fold8-ultra",
-    "storage": "256 GB",
-    "basePrice": 126250,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-fold8-1-tb-16-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-fold8",
-    "storage": "1 TB",
-    "basePrice": 121200,
-    "active": true,
-    "ram": "16 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-fold8-512-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-fold8",
-    "storage": "512 GB",
-    "basePrice": 116150,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-fold8-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-fold8",
-    "storage": "256 GB",
-    "basePrice": 111100,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-fold7-1-tb-16-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-fold7",
-    "storage": "1 TB",
-    "basePrice": 104030,
-    "active": true,
-    "ram": "16 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-fold7-512-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-fold7",
-    "storage": "512 GB",
-    "basePrice": 99990,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-fold7-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-fold7",
-    "storage": "256 GB",
-    "basePrice": 97970,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s26-ultra-5g-1-tb-16-gb",
-    "modelId": "m-samsung-samsung-galaxy-s26-ultra-5g",
-    "storage": "1 TB",
-    "basePrice": 107060,
-    "active": true,
-    "ram": "16 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s26-ultra-5g-512-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s26-ultra-5g",
-    "storage": "512 GB",
-    "basePrice": 90900,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s26-ultra-5g-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s26-ultra-5g",
-    "storage": "256 GB",
-    "basePrice": 85850,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s25-ultra-5g-1-tb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s25-ultra-5g",
-    "storage": "1 TB",
-    "basePrice": 76760,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s25-ultra-5g-512-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s25-ultra-5g",
-    "storage": "512 GB",
-    "basePrice": 74740,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s25-ultra-5g-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s25-ultra-5g",
-    "storage": "256 GB",
-    "basePrice": 71710,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-flip-8-512-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-flip-8",
-    "storage": "512 GB",
-    "basePrice": 65650,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-flip-8-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-flip-8",
-    "storage": "256 GB",
-    "basePrice": 63125,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-flip7-5g-512-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-flip7-5g",
-    "storage": "512 GB",
-    "basePrice": 58075,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-flip7-5g-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-flip7-5g",
-    "storage": "256 GB",
-    "basePrice": 57570,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s25-edge-512-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s25-edge",
-    "storage": "512 GB",
-    "basePrice": 52015,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s25-edge-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s25-edge",
-    "storage": "256 GB",
-    "basePrice": 46460,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a17-5g-256-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-a17-5g",
-    "storage": "256 GB",
-    "basePrice": 13736,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a17-5g-128-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-a17-5g",
-    "storage": "128 GB",
-    "basePrice": 12878,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a17-5g-128-gb-6-gb",
-    "modelId": "m-samsung-samsung-galaxy-a17-5g",
-    "storage": "128 GB",
-    "basePrice": 11918,
-    "active": true,
-    "ram": "6 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-flip7-fe-5g-256-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-flip7-fe-5g",
-    "storage": "256 GB",
-    "basePrice": 53530,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-z-flip7-fe-5g-128-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-z-flip7-fe-5g",
-    "storage": "128 GB",
-    "basePrice": 51510,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s25-plus-5g-512-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s25-plus-5g",
-    "storage": "512 GB",
-    "basePrice": 53025,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s25-plus-5g-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s25-plus-5g",
-    "storage": "256 GB",
-    "basePrice": 49490,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a37-5g-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-a37-5g",
-    "storage": "256 GB",
-    "basePrice": 33330,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a37-5g-256-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-a37-5g",
-    "storage": "256 GB",
-    "basePrice": 29290,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a37-5g-128-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-a37-5g",
-    "storage": "128 GB",
-    "basePrice": 25755,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a56-5g-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-a56-5g",
-    "storage": "256 GB",
-    "basePrice": 26765,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a56-5g-256-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-a56-5g",
-    "storage": "256 GB",
-    "basePrice": 25250,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a56-5g-128-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-a56-5g",
-    "storage": "128 GB",
-    "basePrice": 23230,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s22-plus-5g-256-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-s22-plus-5g",
-    "storage": "256 GB",
-    "basePrice": 23735,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s22-plus-5g-128-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-s22-plus-5g",
-    "storage": "128 GB",
-    "basePrice": 22624,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s22-5g-256-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-s22-5g",
-    "storage": "256 GB",
-    "basePrice": 22725,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s22-5g-128-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-s22-5g",
-    "storage": "128 GB",
-    "basePrice": 21210,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s26-plus-512-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s26-plus",
-    "storage": "512 GB",
-    "basePrice": 68680,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s26-plus-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s26-plus",
-    "storage": "256 GB",
-    "basePrice": 65650,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s26-5g-512-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s26-5g",
-    "storage": "512 GB",
-    "basePrice": 62620,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s26-5g-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s26-5g",
-    "storage": "256 GB",
-    "basePrice": 53530,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s25-5g-512-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s25-5g",
-    "storage": "512 GB",
-    "basePrice": 43935,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s25-5g-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s25-5g",
-    "storage": "256 GB",
-    "basePrice": 42420,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s25-5g-128-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-s25-5g",
-    "storage": "128 GB",
-    "basePrice": 40804,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a57-5g-256-gb-12-gb",
-    "modelId": "m-samsung-samsung-galaxy-a57-5g",
-    "storage": "256 GB",
-    "basePrice": 40400,
-    "active": true,
-    "ram": "12 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-a57-5g-256-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-a57-5g",
-    "storage": "256 GB",
-    "basePrice": 36865,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s25-fe-512-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-s25-fe",
-    "storage": "512 GB",
-    "basePrice": 40400,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s25-fe-256-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-s25-fe",
-    "storage": "256 GB",
-    "basePrice": 36360,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-samsung-samsung-galaxy-s25-fe-128-gb-8-gb",
-    "modelId": "m-samsung-samsung-galaxy-s25-fe",
-    "storage": "128 GB",
-    "basePrice": 32623,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
     "id": "v-m-samsung-samsung-galaxy-z-fold3-5g-512-gb-12-gb",
     "modelId": "m-samsung-samsung-galaxy-z-fold3-5g",
     "storage": "512 GB",
@@ -39373,6 +38817,30 @@ const MOBILE_VARIANTS_PART_5: DeviceVariantData[] = [
     "modelId": "m-samsung-samsung-galaxy-a55-5g",
     "storage": "128 GB",
     "basePrice": 16665,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-a56-5g-256-gb-12-gb",
+    "modelId": "m-samsung-samsung-galaxy-a56-5g",
+    "storage": "256 GB",
+    "basePrice": 26765,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-a56-5g-256-gb-8-gb",
+    "modelId": "m-samsung-samsung-galaxy-a56-5g",
+    "storage": "256 GB",
+    "basePrice": 25250,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-a56-5g-128-gb-8-gb",
+    "modelId": "m-samsung-samsung-galaxy-a56-5g",
+    "storage": "128 GB",
+    "basePrice": 23230,
     "active": true,
     "ram": "8 GB"
   },
@@ -41012,6 +40480,38 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "ram": "12 GB"
   },
   {
+    "id": "v-m-samsung-samsung-galaxy-s22-5g-256-gb-8-gb",
+    "modelId": "m-samsung-samsung-galaxy-s22-5g",
+    "storage": "256 GB",
+    "basePrice": 22725,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s22-5g-128-gb-8-gb",
+    "modelId": "m-samsung-samsung-galaxy-s22-5g",
+    "storage": "128 GB",
+    "basePrice": 21210,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s22-plus-5g-256-gb-8-gb",
+    "modelId": "m-samsung-samsung-galaxy-s22-plus-5g",
+    "storage": "256 GB",
+    "basePrice": 23735,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s22-plus-5g-128-gb-8-gb",
+    "modelId": "m-samsung-samsung-galaxy-s22-plus-5g",
+    "storage": "128 GB",
+    "basePrice": 22624,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
     "id": "v-m-samsung-samsung-galaxy-s22-ultra-5g-1-tb-12-gb",
     "modelId": "m-samsung-samsung-galaxy-s22-ultra-5g",
     "storage": "1 TB",
@@ -41170,6 +40670,110 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "basePrice": 63398,
     "active": true,
     "ram": "12 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s25-5g-512-gb-12-gb",
+    "modelId": "m-samsung-samsung-galaxy-s25-5g",
+    "storage": "512 GB",
+    "basePrice": 44662,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s25-5g-256-gb-12-gb",
+    "modelId": "m-samsung-samsung-galaxy-s25-5g",
+    "storage": "256 GB",
+    "basePrice": 42935,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s25-5g-128-gb-12-gb",
+    "modelId": "m-samsung-samsung-galaxy-s25-5g",
+    "storage": "128 GB",
+    "basePrice": 41774,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s25-plus-5g-512-gb-12-gb",
+    "modelId": "m-samsung-samsung-galaxy-s25-plus-5g",
+    "storage": "512 GB",
+    "basePrice": 52348,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s25-plus-5g-256-gb-12-gb",
+    "modelId": "m-samsung-samsung-galaxy-s25-plus-5g",
+    "storage": "256 GB",
+    "basePrice": 49490,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s25-ultra-5g-1-tb-12-gb",
+    "modelId": "m-samsung-samsung-galaxy-s25-ultra-5g",
+    "storage": "1 TB",
+    "basePrice": 73478,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s25-ultra-5g-512-gb-12-gb",
+    "modelId": "m-samsung-samsung-galaxy-s25-ultra-5g",
+    "storage": "512 GB",
+    "basePrice": 70599,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s25-ultra-5g-256-gb-12-gb",
+    "modelId": "m-samsung-samsung-galaxy-s25-ultra-5g",
+    "storage": "256 GB",
+    "basePrice": 65660,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s25-edge-512-gb-12-gb",
+    "modelId": "m-samsung-samsung-galaxy-s25-edge",
+    "storage": "512 GB",
+    "basePrice": 50500,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s25-edge-256-gb-12-gb",
+    "modelId": "m-samsung-samsung-galaxy-s25-edge",
+    "storage": "256 GB",
+    "basePrice": 47470,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s25-fe-512-gb-8-gb",
+    "modelId": "m-samsung-samsung-galaxy-s25-fe",
+    "storage": "512 GB",
+    "basePrice": 32320,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s25-fe-256-gb-8-gb",
+    "modelId": "m-samsung-samsung-galaxy-s25-fe",
+    "storage": "256 GB",
+    "basePrice": 30300,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-samsung-samsung-galaxy-s25-fe-128-gb-8-gb",
+    "modelId": "m-samsung-samsung-galaxy-s25-fe",
+    "storage": "128 GB",
+    "basePrice": 28280,
+    "active": true,
+    "ram": "8 GB"
   },
   {
     "id": "v-m-samsung-samsung-galaxy-s8-plus-128-gb-6-gb",
