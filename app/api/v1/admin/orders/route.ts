@@ -56,7 +56,9 @@ export const GET = apiWrapper(async (req: NextRequest) => {
             include: { partner: true },
           },
           payments: true,
-          qcReports: true,
+          qcReports: {
+            orderBy: { inspectedAt: "desc" },
+          },
           imeiRecords: true,
         },
         orderBy: { createdAt: "desc" },
@@ -92,7 +94,9 @@ export const GET = apiWrapper(async (req: NextRequest) => {
             include: { partner: true },
           },
           payments: true,
-          qcReports: true,
+          qcReports: {
+            orderBy: { inspectedAt: "desc" },
+          },
           imeiRecords: true,
         },
         orderBy: { createdAt: "desc" },

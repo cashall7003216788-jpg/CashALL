@@ -87,7 +87,9 @@ export async function GET(req: NextRequest) {
         user: true,
         address: true,
         pickups: true,
-        qcReports: true,
+        qcReports: {
+          orderBy: { inspectedAt: "desc" },
+        },
         imeiRecords: true,
         payments: true,
         quote: {
