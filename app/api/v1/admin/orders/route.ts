@@ -181,10 +181,13 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     // 3. Resolve final agreed deal payout to seller
     const finalPrice = ord.finalPrice ?? ord.payments?.[0]?.amount ?? requotedPrice ?? quotedPrice;
 
+    const pincode = ord.address?.pincode || (ord as any).pincode || null;
+
     return {
       ...ord,
       deviceName,
       customerEmail,
+      pincode,
       assignedPartnerName: agentName,
       agentName,
       agentId: ord.agentId || null,

@@ -116,6 +116,19 @@ function getOrderBoxStatus(ord: Order | any): "BOX" | "NO BOX" {
   return "NO BOX";
 }
 
+function getOrderPincode(ord: Order | any): string {
+  if (ord?.pincode && ord.pincode !== "—" && /^\d{6}$/.test(String(ord.pincode).trim())) {
+    return String(ord.pincode).trim();
+  }
+  if (ord?.address?.pincode && /^\d{6}$/.test(String(ord.address.pincode).trim())) {
+    return String(ord.address.pincode).trim();
+  }
+  const locStr = `${ord?.location || ""} ${ord?.addressSummary || ""} ${ord?.address?.house || ""} ${ord?.address?.street || ""} ${ord?.address?.area || ""} ${ord?.address?.city || ""}`;
+  const match = locStr.match(/\b([1-9][0-9]{5})\b/);
+  if (match) return match[1];
+  return ord?.pincode && ord.pincode !== "—" ? String(ord.pincode).trim() : "—";
+}
+
 function getAdminToken() {
   if (typeof window === "undefined") return "tok_admin_master_session";
   try {
@@ -185,7 +198,7 @@ export default function AdminOrdersPage() {
             customerPhone: ord.user?.phone || ord.customerPhone || "—",
             customerEmail: ord.user?.email || ord.customerEmail || "",
             imeiNumber: ord.imeiRecords?.[0]?.code || ord.qcReports?.[0]?.imeiNumber || (ord as any).imeiNumber || "",
-            pincode: ord.address?.pincode || ord.pincode || "—",
+            pincode: ord.pincode || ord.address?.pincode || getOrderPincode(ord),
             location: ord.address
               ? `${ord.address.house || ""}, ${ord.address.city || ""}, ${ord.address.state || ""} - ${ord.address.pincode || ""}`
               : ord.addressSummary || "—",
@@ -673,6 +686,7 @@ export default function AdminOrdersPage() {
       "Phone",
       "Email",
       "Location",
+      "Pin Code",
       "Device Name",
       "Box Status",
       "IMEI Number",
@@ -693,11 +707,12 @@ export default function AdminOrdersPage() {
       ord.customerPhone || "—",
       ord.customerEmail || "—",
       `"${(ord.location || "—").replace(/"/g, '""')}"`,
+      `"${getOrderPincode(ord)}"`,
       `"${ord.deviceName.replace(/"/g, '""')}"`,
       getOrderBoxStatus(ord),
       ord.imeiNumber || (ord as any).imeiRecords?.[0]?.code || "—",
-      ord.estimatedPrice || 0,
-      ord.revisedPrice || (ord as any).finalPrice || ord.estimatedPrice || 0,
+      ord.quotedPrice || ord.estimatedPrice || 0,
+      ord.finalPrice || ord.revisedPrice || ord.estimatedPrice || 0,
       ord.utr && !ord.utr.startsWith("PAID-") && ord.utr !== "623480124575" ? ord.utr : "—",
       `"${(ord.agentName || "Assigned Agent").replace(/"/g, '""')}"`,
       ord.status,
@@ -722,6 +737,7 @@ export default function AdminOrdersPage() {
     const headers = [
       "ORDER NUMBER",
       "ORDER COMPLETED DATE & TIME",
+      "PIN CODE",
       "DEVICE NAME",
       "BOX STATUS",
       "IMEI/SERIAL NUMBER",
@@ -734,11 +750,12 @@ export default function AdminOrdersPage() {
     const rows = orders.map((ord) => [
       ord.orderNumber,
       ord.completedAt ? `"${new Date(ord.completedAt).toLocaleString("en-IN")}"` : (ord.status === "COMPLETED" && ord.createdAt ? `"${new Date(ord.createdAt).toLocaleString("en-IN")}"` : "—"),
+      `"${getOrderPincode(ord)}"`,
       `"${(ord.deviceName || "Mobile Device").replace(/"/g, '""')}"`,
       getOrderBoxStatus(ord),
       ord.imeiNumber || (ord as any).imeiRecords?.[0]?.code || "—",
-      ord.estimatedPrice || 0,
-      ord.revisedPrice || (ord as any).finalPrice || ord.estimatedPrice || 0,
+      ord.quotedPrice || ord.estimatedPrice || 0,
+      ord.finalPrice || ord.revisedPrice || ord.estimatedPrice || 0,
       `"${(ord.agentName && ord.agentName !== "CashALL Logistics" ? ord.agentName : "—").replace(/"/g, '""')}"`,
       ord.status,
       ["CANCELLED", "REJECTED"].includes(ord.status)
