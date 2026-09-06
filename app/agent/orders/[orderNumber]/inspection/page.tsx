@@ -51,7 +51,10 @@ export default function AgentOrderInspectionPage() {
   // Inspection Form State
   const [imei, setImei] = useState("");
   const [customerEmail, setCustomerEmail] = useState("");
-  const [revisedPrice, setRevisedPrice] = useState<number>(0);
+  const [originalQuotedPrice, setOriginalQuotedPrice] = useState<number>(0);
+  const [calculatedReQuote, setCalculatedReQuote] = useState<number>(0);
+  const [finalAgreedPrice, setFinalAgreedPrice] = useState<number>(0);
+  const [hasManuallyEditedFinal, setHasManuallyEditedFinal] = useState<boolean>(false);
   const [reason, setReason] = useState("");
 
   useEffect(() => {
@@ -127,11 +130,30 @@ export default function AgentOrderInspectionPage() {
             setSelectedFunctionalIssues(pFunctional);
             setSelectedAccessories(pAccessories);
 
-            const initialBase = match.quote?.basePrice || Math.round((match.estimatedPrice || 30000) * 1.25);
+            let initialQuoted = match.quotedPrice || match.estimatedPrice || 0;
+            const rawBd = match.breakdownJson || match.quote?.breakdownJson;
+            if (rawBd) {
+              try {
+                const bd = typeof rawBd === "string" ? JSON.parse(rawBd) : rawBd;
+                if (typeof bd?.estimatedPrice === "number" && bd.estimatedPrice > 0) {
+                  initialQuoted = bd.estimatedPrice;
+                }
+              } catch {}
+            }
+            setOriginalQuotedPrice(initialQuoted);
+
+            const initialBase = match.quote?.basePrice || Math.round((initialQuoted || 30000) * 1.25);
             setBasePrice(initialBase);
 
-            const initialPrice = match.finalPrice || match.revisedPrice || match.estimatedPrice || 0;
-            setRevisedPrice(initialPrice);
+            const initialReQuote = match.requotedPrice || match.revisedPrice || initialQuoted;
+            setCalculatedReQuote(initialReQuote);
+
+            const initialFinal = match.finalPrice || initialReQuote;
+            setFinalAgreedPrice(initialFinal);
+            if (match.finalPrice && match.finalPrice !== initialReQuote) {
+              setHasManuallyEditedFinal(true);
+            }
+
             setImei(match.imeiNumber || "");
             setCustomerEmail(match.customerEmail && match.customerEmail !== "—" ? match.customerEmail : "");
           } else {
@@ -195,7 +217,10 @@ export default function AgentOrderInspectionPage() {
   useEffect(() => {
     if (order && basePrice > 0) {
       const livePrice = calculateLiveReQuote();
-      setRevisedPrice(livePrice);
+      setCalculatedReQuote(livePrice);
+      if (!hasManuallyEditedFinal) {
+        setFinalAgreedPrice(livePrice);
+      }
     }
   }, [
     underWarranty,
@@ -210,6 +235,7 @@ export default function AgentOrderInspectionPage() {
     selectedFunctionalIssues,
     selectedAccessories,
     basePrice,
+    hasManuallyEditedFinal,
   ]);
 
   const toggleArrayItem = (array: string[], item: string) => {
@@ -223,11 +249,13 @@ export default function AgentOrderInspectionPage() {
       return;
     }
 
-    const finalAmount = Number(revisedPrice);
+    const finalAmount = Number(finalAgreedPrice);
     if (!finalAmount || finalAmount <= 0 || isNaN(finalAmount)) {
       alert("Please enter a valid final payout price.");
       return;
     }
+
+    const reQuoteAmount = Number(calculatedReQuote) || finalAmount;
 
     const inspectedAnswersObj = {
       device: order.deviceName || "Mobile Device",
@@ -258,8 +286,9 @@ export default function AgentOrderInspectionPage() {
         body: JSON.stringify({
           imei: imei.trim(),
           inspectedAnswers: inspectedAnswersObj,
-          revisedPrice: Number(revisedPrice),
-          finalPrice: Number(revisedPrice),
+          quotedPrice: originalQuotedPrice,
+          revisedPrice: reQuoteAmount,
+          finalPrice: finalAmount,
           reason: reason.trim() || "Physical QC inspection verified at doorstep",
           customerEmail: customerEmail.trim(),
           agentName: agentSession?.name || "Field Agent",
@@ -274,8 +303,12 @@ export default function AgentOrderInspectionPage() {
           if (stored) {
             try {
               const parsed = JSON.parse(stored);
-              parsed.revisedPrice = Number(revisedPrice);
-              parsed.finalPrice = Number(revisedPrice);
+              parsed.quotedPrice = originalQuotedPrice;
+              parsed.estimatedPrice = originalQuotedPrice;
+              parsed.requotedPrice = reQuoteAmount;
+              parsed.revisedPrice = reQuoteAmount;
+              parsed.finalPrice = finalAmount;
+              parsed.amount = finalAmount;
               parsed.imeiNumber = imei.trim();
               parsed.selectedAnswersJson = JSON.stringify(inspectedAnswersObj);
               parsed.status = "ACCEPTED";
@@ -285,7 +318,7 @@ export default function AgentOrderInspectionPage() {
           }
         }
 
-        alert(`✅ Physical Inspection Completed for Order #${orderNumberParam}!\nVerified IMEI: ${imei.trim()}\nRe-Quote / Final Valuation: ₹${Number(revisedPrice).toLocaleString("en-IN")}`);
+        alert(`✅ Physical Inspection Completed for Order #${orderNumberParam}!\nVerified IMEI: ${imei.trim()}\nCalculated Re-Quote: ₹${reQuoteAmount.toLocaleString("en-IN")}\nFinal Deal Payout: ₹${finalAmount.toLocaleString("en-IN")}`);
         router.push("/agent/dashboard");
       } else {
         alert(`Failed to save inspection: ${json.error || "Server error"}`);
@@ -327,8 +360,7 @@ export default function AgentOrderInspectionPage() {
     );
   }
 
-  const originalQuotePrice = order.estimatedPrice || 0;
-  const priceDiff = revisedPrice - originalQuotePrice;
+  const priceDiff = calculatedReQuote - originalQuotedPrice;
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
@@ -369,14 +401,14 @@ export default function AgentOrderInspectionPage() {
             <div className="flex items-center gap-4">
               <div className="text-right">
                 <div className="text-[10px] text-neutral-400 font-bold uppercase">Customer Online Quote</div>
-                <div className="text-base font-black text-gray-400 line-through">
-                  ₹{originalQuotePrice.toLocaleString("en-IN")}
+                <div className="text-base font-black text-gray-400">
+                  ₹{originalQuotedPrice.toLocaleString("en-IN")}
                 </div>
               </div>
               <div className="text-right bg-yellow-400/10 border border-yellow-400/40 p-2.5 rounded-2xl">
                 <div className="text-[10px] text-yellow-400 font-bold uppercase">Live Re-Quote Price</div>
                 <div className="text-lg font-black text-yellow-400 font-price">
-                  ₹{revisedPrice.toLocaleString("en-IN")}
+                  ₹{calculatedReQuote.toLocaleString("en-IN")}
                 </div>
               </div>
             </div>
@@ -766,7 +798,7 @@ export default function AgentOrderInspectionPage() {
               <div className="text-right">
                 <span className="text-[10px] uppercase font-bold text-neutral-400 block">Calculated Re-Quote</span>
                 <span className="text-2xl font-black text-yellow-400 font-price">
-                  ₹{revisedPrice.toLocaleString("en-IN")}
+                  ₹{calculatedReQuote.toLocaleString("en-IN")}
                 </span>
               </div>
             </div>
@@ -782,8 +814,11 @@ export default function AgentOrderInspectionPage() {
                   required
                   min={0}
                   placeholder="Final payout price"
-                  value={revisedPrice}
-                  onChange={(e) => setRevisedPrice(Number(e.target.value))}
+                  value={finalAgreedPrice || ""}
+                  onChange={(e) => {
+                    setFinalAgreedPrice(Number(e.target.value));
+                    setHasManuallyEditedFinal(true);
+                  }}
                   className="w-full bg-neutral-950 border border-emerald-600/60 focus:border-emerald-400 rounded-xl pl-9 pr-4 py-3 text-lg font-black font-price text-emerald-400 focus:outline-none transition"
                 />
               </div>
@@ -815,7 +850,7 @@ export default function AgentOrderInspectionPage() {
             ) : (
               <>
                 <CheckCircle2 className="w-4 h-4" />
-                <span>Complete Physical Inspection &amp; Lock Re-Quote (₹{revisedPrice.toLocaleString("en-IN")})</span>
+                <span>Complete Physical Inspection &amp; Lock Deal (Final: ₹{finalAgreedPrice.toLocaleString("en-IN")})</span>
               </>
             )}
           </button>

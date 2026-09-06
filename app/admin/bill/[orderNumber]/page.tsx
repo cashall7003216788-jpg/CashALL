@@ -163,16 +163,33 @@ export default function AdminBillPage() {
           variantName: ord.quote?.variant?.name || ord.quote?.variant?.storage || "Doorstep Verified Device",
           imeiNumber,
           quoteNumber: ord.quote?.quoteNumber || `CAQ-${ord.id?.slice(0, 6).toUpperCase()}`,
-          quotedPrice: Number(ord.quotedPrice ?? ord.quote?.estimatedPrice ?? ord.estimatedPrice ?? 0),
+          quotedPrice: (() => {
+            const rawBd = ord.breakdownJson || ord.quote?.breakdownJson;
+            if (rawBd) {
+              try {
+                const bd = typeof rawBd === "string" ? JSON.parse(rawBd) : rawBd;
+                if (typeof bd?.estimatedPrice === "number" && bd.estimatedPrice > 0) return bd.estimatedPrice;
+              } catch {}
+            }
+            return Number(ord.quotedPrice ?? ord.quote?.estimatedPrice ?? ord.estimatedPrice ?? 0);
+          })(),
           requotedPrice: Number(
             ord.requotedPrice ??
             ord.qcReports?.[0]?.revisedPrice ??
             ord.revisedPrice ??
-            (ord.finalPrice && ord.finalPrice !== (ord.quote?.estimatedPrice ?? ord.estimatedPrice) ? ord.finalPrice : null) ??
-            (ord.quote?.estimatedPrice ?? ord.estimatedPrice ?? 0)
+            Number(ord.quotedPrice ?? ord.quote?.estimatedPrice ?? ord.estimatedPrice ?? 0)
           ),
-          estimatedPrice: Number(ord.quotedPrice ?? ord.quote?.estimatedPrice ?? ord.estimatedPrice ?? 0),
-          finalPrice: Number(payment?.amount ?? ord.finalPrice ?? ord.requotedPrice ?? ord.qcReports?.[0]?.revisedPrice ?? ord.estimatedPrice ?? 0),
+          estimatedPrice: (() => {
+            const rawBd = ord.breakdownJson || ord.quote?.breakdownJson;
+            if (rawBd) {
+              try {
+                const bd = typeof rawBd === "string" ? JSON.parse(rawBd) : rawBd;
+                if (typeof bd?.estimatedPrice === "number" && bd.estimatedPrice > 0) return bd.estimatedPrice;
+              } catch {}
+            }
+            return Number(ord.quotedPrice ?? ord.quote?.estimatedPrice ?? ord.estimatedPrice ?? 0);
+          })(),
+          finalPrice: Number(ord.finalPrice ?? payment?.amount ?? ord.requotedPrice ?? ord.qcReports?.[0]?.revisedPrice ?? ord.estimatedPrice ?? 0),
           paymentMethod: payment?.method || "UPI",
           utrNumber: (() => {
             const raw = payment?.transactionRef || (payment as any)?.utrNumber || ord.payments?.[0]?.transactionRef || ord.urn || "";

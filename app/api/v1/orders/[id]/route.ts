@@ -87,6 +87,26 @@ export const GET = apiWrapper(async (req: NextRequest, { params }: { params: { i
 
   const activePayment = order.payments?.find((p: any) => p.status === "PAID") || order.payments?.[0];
 
+  // 1. Resolve original online quoted price
+  let quotedPrice = 0;
+  if (order.quote?.breakdownJson) {
+    try {
+      const bd = JSON.parse(order.quote.breakdownJson);
+      if (typeof bd?.estimatedPrice === "number" && bd.estimatedPrice > 0) {
+        quotedPrice = bd.estimatedPrice;
+      }
+    } catch {}
+  }
+  if (!quotedPrice) {
+    quotedPrice = order.quote?.estimatedPrice || 0;
+  }
+
+  // 2. Resolve doorstep physical QC re-quote price
+  const requotedPrice = order.qcReports?.[0]?.revisedPrice ?? quotedPrice;
+
+  // 3. Resolve final agreed deal payout to seller
+  const finalPrice = order.finalPrice ?? activePayment?.amount ?? requotedPrice ?? quotedPrice;
+
   return NextResponse.json({
     success: true,
     data: {
@@ -103,8 +123,12 @@ export const GET = apiWrapper(async (req: NextRequest, { params }: { params: { i
       assignedPartnerBusiness: assignedPartner?.businessName || "CashALL Express Logistics",
       utr: order.urn || activePayment?.transactionRef || "",
       urn: order.urn || activePayment?.transactionRef || "",
-      revisedPrice: order.finalPrice ?? order.quote?.estimatedPrice ?? 0,
-      estimatedPrice: order.quote?.estimatedPrice ?? 0,
+      quotedPrice,
+      estimatedPrice: quotedPrice,
+      requotedPrice,
+      revisedPrice: requotedPrice,
+      finalPrice,
+      amount: finalPrice,
     },
   });
 });

@@ -59,7 +59,27 @@ async function getOrderBillData(orderIdentifier: string) {
   fullDeviceName = cleanDeviceName(fullDeviceName);
 
   const payment = order.payments?.find((p) => p.status === "PAID") || order.payments?.[0];
-  const finalPrice = order.finalPrice || order.qcReports?.[0]?.revisedPrice || order.quote?.estimatedPrice || 0;
+
+  // 1. Resolve original online quote price
+  let quotedPrice = 0;
+  if (order.quote?.breakdownJson) {
+    try {
+      const bd = JSON.parse(order.quote.breakdownJson);
+      if (typeof bd?.estimatedPrice === "number" && bd.estimatedPrice > 0) {
+        quotedPrice = bd.estimatedPrice;
+      }
+    } catch {}
+  }
+  if (!quotedPrice) {
+    quotedPrice = order.quote?.estimatedPrice || 0;
+  }
+
+  // 2. Resolve doorstep physical inspection re-quote valuation
+  const requotedPrice = order.qcReports?.[0]?.revisedPrice ?? quotedPrice;
+
+  // 3. Resolve final agreed deal payout to seller
+  const finalPrice = order.finalPrice || payment?.amount || requotedPrice || quotedPrice;
+
   const rawUtr = order.urn || payment?.transactionRef || (order as any).utr || "";
   const utrNumber = rawUtr && !rawUtr.startsWith("PAID-") && rawUtr !== "623480124575" ? rawUtr : "";
   const imeiCode = order.imeiRecords?.[0]?.code || order.qcReports?.[0]?.imeiNumber || (order as any).imeiNumber || "N/A";
@@ -100,10 +120,10 @@ async function getOrderBillData(orderIdentifier: string) {
       imei2: "—",
     },
     financials: {
-      quotedPrice: order.quote?.estimatedPrice || finalPrice,
-      requotedPrice: order.qcReports?.[0]?.revisedPrice || order.finalPrice || order.quote?.estimatedPrice || finalPrice,
-      finalPrice: finalPrice,
-      estimatedPrice: order.quote?.estimatedPrice || finalPrice,
+      quotedPrice,
+      requotedPrice,
+      finalPrice,
+      estimatedPrice: quotedPrice,
       finalPurchasePrice: finalPrice,
       paymentMethod: payment?.method || "UPI Transfer",
       utrNumber,

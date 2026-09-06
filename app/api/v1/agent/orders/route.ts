@@ -149,16 +149,26 @@ export async function GET(req: NextRequest) {
       const imeiCode = ord.imeiRecords?.[0]?.code || qcReport?.imeiNumber || (ord as any).imeiNumber || "";
       const activePayment = ord.payments?.[0];
 
-      let finalSettled = ord.finalPrice;
-      if (!finalSettled && qcReport?.revisedPrice) {
-        finalSettled = qcReport.revisedPrice;
+      // 1. Resolve initial online quote price
+      let quotedPrice = 0;
+      if (ord.quote?.breakdownJson) {
+        try {
+          const bd = JSON.parse(ord.quote.breakdownJson);
+          if (typeof bd?.estimatedPrice === "number" && bd.estimatedPrice > 0) {
+            quotedPrice = bd.estimatedPrice;
+          }
+        } catch {}
       }
-      if (!finalSettled && ord.status === "COMPLETED") {
-        finalSettled = ord.quote?.estimatedPrice;
+      if (!quotedPrice) {
+        quotedPrice = ord.quote?.estimatedPrice || 0;
       }
 
-      const quotedPrice = ord.quote?.estimatedPrice || 0;
-      const requotedPrice = qcReport?.revisedPrice || (ord.finalPrice && ord.finalPrice !== quotedPrice ? ord.finalPrice : null) || quotedPrice;
+      // 2. Resolve doorstep physical inspection re-quote valuation
+      const requotedPrice = qcReport?.revisedPrice ?? quotedPrice;
+
+      // 3. Resolve final agreed deal payout to seller
+      const finalSettled = ord.finalPrice ?? activePayment?.amount ?? (ord.status === "COMPLETED" ? (requotedPrice || quotedPrice) : null);
+      const finalPrice = finalSettled ?? requotedPrice ?? quotedPrice;
 
       return {
         id: ord.id,
@@ -172,8 +182,8 @@ export async function GET(req: NextRequest) {
         requotedPrice,
         revisedPrice: requotedPrice,
         estimatedPrice: quotedPrice,
-        finalPrice: finalSettled || requotedPrice || quotedPrice,
-        amount: finalSettled || requotedPrice || quotedPrice,
+        finalPrice,
+        amount: finalPrice,
         address: fullAddress,
         addressSummary: fullAddress,
         pickupDate: ord.pickupDate || activePickup?.date || "Scheduled",

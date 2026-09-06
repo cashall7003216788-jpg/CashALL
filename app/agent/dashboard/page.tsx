@@ -557,7 +557,7 @@ export default function AgentDashboardPage() {
                         <div className="flex items-center justify-between text-xs">
                           <span className="text-neutral-400">Re-Quoted Price:</span>
                           <span className="font-bold text-purple-300 font-price">
-                            ₹{(ord.requotedPrice || ord.revisedPrice || ord.finalPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
+                            ₹{(ord.requotedPrice || ord.revisedPrice || ord.quotedPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
                           </span>
                         </div>
 

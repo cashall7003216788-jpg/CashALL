@@ -82,6 +82,16 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       status = q.status;
     }
 
+    let estimatedPrice = q.estimatedPrice;
+    if (q.breakdownJson) {
+      try {
+        const bd = JSON.parse(q.breakdownJson);
+        if (typeof bd?.estimatedPrice === "number" && bd.estimatedPrice > 0) {
+          estimatedPrice = bd.estimatedPrice;
+        }
+      } catch (e) {}
+    }
+
     return {
       id: q.id,
       quoteNumber: q.quoteNumber || `CAQ-${q.id.slice(0, 6).toUpperCase()}`,
@@ -89,7 +99,8 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       customerPhone,
       deviceName,
       basePrice: q.basePrice,
-      estimatedPrice: q.estimatedPrice,
+      estimatedPrice,
+      quotedPrice: estimatedPrice,
       status,
       createdAt: q.createdAt.toISOString(),
       orderNumber: relatedOrder?.orderNumber || null,

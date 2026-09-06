@@ -9,7 +9,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
     const orderIdentifier = params.id;
     const body = await req.json().catch(() => ({}));
 
-    const { imei, screenFinding, bodyFinding, inspectedAnswers, revisedPrice, reason, customerEmail, agentName } = body;
+    const { imei, screenFinding, bodyFinding, inspectedAnswers, quotedPrice, revisedPrice, finalPrice, reason, customerEmail, agentName } = body;
 
     if (!imei || String(imei).trim().length < 5) {
       return NextResponse.json({ success: false, error: "Valid IMEI number is required (min 5 digits)" }, { status: 400 });
@@ -32,7 +32,29 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       return NextResponse.json({ success: false, error: "Order not found" }, { status: 404 });
     }
 
-    const finalPriceVal = typeof revisedPrice === "number" ? revisedPrice : (parseFloat(String(revisedPrice)) || order.quote?.estimatedPrice || 0);
+    // 1. Resolve initial online quote price
+    let initialQuotePrice = typeof quotedPrice === "number" ? quotedPrice : parseFloat(String(quotedPrice));
+    if (!initialQuotePrice && order.quote?.breakdownJson) {
+      try {
+        const bd = JSON.parse(order.quote.breakdownJson);
+        if (typeof bd?.estimatedPrice === "number" && bd.estimatedPrice > 0) {
+          initialQuotePrice = bd.estimatedPrice;
+        }
+      } catch {}
+    }
+    if (!initialQuotePrice) {
+      initialQuotePrice = order.quote?.estimatedPrice || 0;
+    }
+
+    // 2. Doorstep physical QC re-quote price (deduction based valuation)
+    const revisedPriceVal = typeof revisedPrice === "number"
+      ? revisedPrice
+      : (parseFloat(String(revisedPrice)) || initialQuotePrice);
+
+    // 3. Final seller agreed payout
+    const finalPriceVal = typeof finalPrice === "number"
+      ? finalPrice
+      : (parseFloat(String(finalPrice)) || revisedPriceVal || initialQuotePrice);
 
     const physicalAnswersData = inspectedAnswers || { screenFinding, bodyFinding };
     const physicalAnswersString = typeof physicalAnswersData === "object" ? JSON.stringify(physicalAnswersData) : String(physicalAnswersData);
@@ -46,7 +68,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
         });
       }
 
-      // 2. Create or Update QC Report (Preserving Original Declared Answers, saving Inspected Answers)
+      // 2. Create or Update QC Report with doorstep re-quote price (revisedPriceVal)
       const existingQc = await tx.qcReport.findFirst({ where: { orderId: order.id } });
       if (existingQc) {
         await tx.qcReport.update({
@@ -55,7 +77,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
             inspectorName: agentName || "Field Logistics Agent",
             imeiNumber: String(imei).trim(),
             physicalAnswersJson: physicalAnswersString,
-            revisedPrice: finalPriceVal,
+            revisedPrice: revisedPriceVal,
             priceDifferenceReason: reason || null,
             status: "APPROVED",
             inspectedAt: new Date(),
@@ -69,7 +91,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
             imeiNumber: String(imei).trim(),
             declaredAnswersJson: order.quote?.selectedAnswersJson || "{}",
             physicalAnswersJson: physicalAnswersString,
-            revisedPrice: finalPriceVal,
+            revisedPrice: revisedPriceVal,
             priceDifferenceReason: reason || null,
             status: "APPROVED",
             inspectedAt: new Date(),
@@ -77,14 +99,14 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
         });
       }
 
-      // 3. Update Quote selectedAnswersJson with the updated inspected answers so customer sees the new condition
+      // 3. Update Quote selectedAnswersJson with inspected physical data
+      // PRESERVE initial estimatedPrice so original customer online quote is never lost!
       if (order.quoteId && inspectedAnswers) {
         try {
           await tx.quote.update({
             where: { id: order.quoteId },
             data: {
               selectedAnswersJson: physicalAnswersString,
-              estimatedPrice: finalPriceVal,
             },
           });
         } catch (qErr) {

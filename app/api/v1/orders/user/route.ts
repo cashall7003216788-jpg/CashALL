@@ -83,7 +83,19 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     }
 
     const basePrice = ord.quote?.basePrice || 0;
-    const estimatedPrice = ord.quote?.estimatedPrice || ord.finalPrice || 0;
+    let originalQuotedPrice = 0;
+    if (ord.quote?.breakdownJson) {
+      try {
+        const bd = JSON.parse(ord.quote.breakdownJson);
+        if (typeof bd?.estimatedPrice === "number" && bd.estimatedPrice > 0) {
+          originalQuotedPrice = bd.estimatedPrice;
+        }
+      } catch (e) {}
+    }
+    if (!originalQuotedPrice) {
+      originalQuotedPrice = ord.quote?.estimatedPrice || ord.finalPrice || 0;
+    }
+    const estimatedPrice = originalQuotedPrice;
 
     const pickup = ord.pickups && ord.pickups.length > 0 ? ord.pickups[0] : null;
     const assignedAgentName = ord.agent?.name || (pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically." ? pickup.notes : null);
@@ -108,7 +120,9 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       assignedPartnerPhone: assignedAgentPhone,
       agentName: assignedAgentName,
       agentPhone: assignedAgentPhone,
+      quotedPrice: estimatedPrice,
       estimatedPrice,
+      finalPrice: ord.finalPrice || estimatedPrice,
       revisedPrice: ord.finalPrice || estimatedPrice,
       declaredConditionSummary: `${deviceName} - ₹${estimatedPrice.toLocaleString("en-IN")}`,
       createdAt: ord.createdAt.toISOString(),

@@ -157,9 +157,25 @@ export const GET = apiWrapper(async (req: NextRequest) => {
 
     const paymentRef = ord.urn || (ord as any).utr || ord.payments?.[0]?.transactionRef || (ord.orderNumber === "CA83848" ? "659789934722" : null);
 
-    const quotedPrice = ord.quote?.estimatedPrice ?? ord.estimatedPrice ?? 0;
-    const requotedPrice = qcReport?.revisedPrice ?? ord.offers?.[0]?.amount ?? ord.revisedPrice ?? (ord.finalPrice && ord.finalPrice !== quotedPrice ? ord.finalPrice : null) ?? quotedPrice;
-    const finalPrice = ord.payments?.[0]?.amount ?? ord.finalPrice ?? requotedPrice ?? quotedPrice ?? 0;
+    // 1. Resolve initial online quote price
+    let quotedPrice = 0;
+    if (ord.quote?.breakdownJson) {
+      try {
+        const bd = JSON.parse(ord.quote.breakdownJson);
+        if (typeof bd?.estimatedPrice === "number" && bd.estimatedPrice > 0) {
+          quotedPrice = bd.estimatedPrice;
+        }
+      } catch {}
+    }
+    if (!quotedPrice) {
+      quotedPrice = ord.quote?.estimatedPrice ?? ord.estimatedPrice ?? 0;
+    }
+
+    // 2. Resolve doorstep physical inspection re-quote valuation
+    const requotedPrice = qcReport?.revisedPrice ?? ord.offers?.[0]?.amount ?? ord.revisedPrice ?? quotedPrice;
+
+    // 3. Resolve final agreed deal payout to seller
+    const finalPrice = ord.finalPrice ?? ord.payments?.[0]?.amount ?? requotedPrice ?? quotedPrice;
 
     return {
       ...ord,
