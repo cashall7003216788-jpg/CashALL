@@ -44,6 +44,12 @@ export default function SupportLoginPage() {
               loggedInAt: new Date().toISOString(),
             })
           );
+          if ((window as any).CashAllNative?.setAgentInfo) {
+            (window as any).CashAllNative.setAgentInfo(
+              data.supportUser?.name || name.trim(),
+              data.supportUser?.phone || ""
+            );
+          }
         }
         router.replace("/support/dashboard");
       } else {

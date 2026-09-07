@@ -1,4 +1,4 @@
-package in.cashall.caller.utils
+package `in`.cashall.caller.utils
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -18,6 +18,14 @@ class PreferenceManager(context: Context) {
     var lastTargetCustomerPhone: String
         get() = prefs.getString("last_customer_phone", "") ?: ""
         set(value) = prefs.edit().putString("last_customer_phone", value).apply()
+
+    var lastTargetCustomerName: String
+        get() = prefs.getString("last_customer_name", "Customer Lead") ?: "Customer Lead"
+        set(value) = prefs.edit().putString("last_customer_name", value).apply()
+
+    var lastTargetDeviceName: String
+        get() = prefs.getString("last_device_name", "Mobile Device") ?: "Mobile Device"
+        set(value) = prefs.edit().putString("last_device_name", value).apply()
 
     var lastTargetQuoteId: String
         get() = prefs.getString("last_quote_id", "") ?: ""

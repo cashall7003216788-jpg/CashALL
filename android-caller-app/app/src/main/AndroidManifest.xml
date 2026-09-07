@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="in.cashall.caller">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Essential Calling & Audio Permissions -->
+    <!-- Network -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Phone / Call -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" tools:node="remove" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+
+    <!-- Audio Recording -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <!-- System / Service -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_PHONE_CALL" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
     <application
@@ -30,7 +36,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
 
-        <!-- Main Screen (Permission onboarding & Calling Console WebView) -->
+        <!-- Main UI -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -42,24 +48,33 @@
             </intent-filter>
         </activity>
 
-        <!-- Broadcast Receiver for Call State Changes -->
+        <!-- Broadcast receiver for call state + boot -->
         <receiver
             android:name=".service.CallReceiver"
             android:exported="true">
-            <intent-filter>
+            <intent-filter android:priority="999">
                 <action android:name="android.intent.action.PHONE_STATE" />
                 <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <!-- Foreground Monitoring Service to prevent Android killing app -->
+        <!--
+            Always-running foreground service.
+            Handles BOTH call monitoring AND audio recording.
+            foregroundServiceType includes "microphone" so Android 11+
+            allows audio recording from background.
+        -->
         <service
             android:name=".service.CallMonitoringService"
             android:enabled="true"
             android:exported="false"
-            android:foregroundServiceType="phoneCall|microphone" />
+            android:foregroundServiceType="dataSync" />
 
-        <!-- Accessibility Service for 2-Way High Quality Call Recording on Android 10-14 -->
+        <!--
+            Accessibility service — kept for OPTIONAL use.
+            Recording no longer depends on it being enabled.
+        -->
         <service
             android:name=".service.CallRecorderAccessibilityService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"

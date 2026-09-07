@@ -93,12 +93,24 @@ export default function SupportDashboardPage() {
       }
       try {
         const parsed = JSON.parse(saved);
-        setSupportSession(parsed.supportUser || { name: "Support Agent" });
+        const user = parsed.supportUser || { name: "Support Agent" };
+        setSupportSession(user);
+        if ((window as any).CashAllNative?.setAgentInfo) {
+          (window as any).CashAllNative.setAgentInfo(user.name || "", user.phone || "");
+        }
       } catch (e) {
         router.replace("/support/login");
       }
     }
   }, [router]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && supportSession?.name) {
+      if ((window as any).CashAllNative?.setAgentInfo) {
+        (window as any).CashAllNative.setAgentInfo(supportSession.name, supportSession.phone || "");
+      }
+    }
+  }, [supportSession]);
 
   const handleLogout = async () => {
     try {
@@ -238,7 +250,7 @@ export default function SupportDashboardPage() {
   const displayedCalls = callFilter === "MY_CALLS" ? myCalls : callLogs;
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white p-4 sm:p-6 lg:p-8 space-y-6">
+    <div className="min-h-screen bg-neutral-950 text-white p-3 sm:p-6 lg:p-8 space-y-4">
       {/* HEADER */}
       <div className="flex flex-wrap items-center justify-between gap-4 bg-neutral-900 border border-neutral-800 p-4 sm:p-6 rounded-3xl shadow-xl">
         <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
@@ -289,7 +301,7 @@ export default function SupportDashboardPage() {
       )}
 
       {/* METRICS STATS */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-3">
         <div className="bg-neutral-900 border border-amber-900/50 bg-amber-950/10 p-5 rounded-2xl flex items-center justify-between">
           <div>
             <div className="text-xs text-amber-300 font-bold uppercase tracking-wider">Leads Pending Follow-Up</div>
@@ -324,7 +336,7 @@ export default function SupportDashboardPage() {
       </div>
 
       {/* UNCOMPLETED LEADS & CALL LOGGING SECTION */}
-      <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-3xl shadow-xl space-y-4">
+      <div className="bg-neutral-900 border border-neutral-800 p-4 rounded-3xl shadow-xl space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-neutral-800 pb-4">
           <div>
             <h2 className="text-base font-extrabold text-white flex items-center gap-2">
@@ -359,233 +371,212 @@ export default function SupportDashboardPage() {
             <p className="text-sm font-bold text-white">No quote leads found</p>
           </div>
         ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs border-collapse">
-              <thead>
-                <tr className="border-b border-neutral-800 text-neutral-400 uppercase tracking-wider font-extrabold">
-                  <th className="py-3 px-3">Quote ID</th>
-                  <th className="py-3 px-3">Customer Lead & Mobile</th>
-                  <th className="py-3 px-3">Device & Valuation</th>
-                  <th className="py-3 px-3">Booking Status</th>
-                  <th className="py-3 px-3">Action</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-neutral-800/60">
-                {filteredQuotes.map((q) => (
-                  <tr key={q.id} className="hover:bg-neutral-850/50 transition">
-                    <td className="py-4 px-3">
-                      <div className="font-mono font-black text-yellow-400 text-sm">
-                        {q.quoteNumber}
-                      </div>
-                      <div className="text-[11px] text-neutral-400 flex items-center gap-1.5 mt-1 font-medium" title="Time when quote was generated">
-                        <Clock className="w-3 h-3 text-yellow-400/80 shrink-0" />
-                        <span>
-                          {q.createdAt
-                            ? new Date(q.createdAt).toLocaleString("en-IN", {
-                                day: "2-digit",
-                                month: "short",
-                                year: "numeric",
-                                hour: "2-digit",
-                                minute: "2-digit",
-                                hour12: true,
-                              })
-                            : "—"}
-                        </span>
-                      </div>
-                    </td>
-
-                    <td className="py-4 px-3">
-                      <div className="space-y-1">
-                        <div className="font-bold text-white flex items-center gap-1.5">
-                          <User className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
-                          <span>{q.customerName || "Customer Lead"}</span>
-                        </div>
-                        <div className="text-neutral-300 font-mono text-[11px] flex items-center gap-2">
-                          <Phone className="w-3 h-3 text-neutral-400 shrink-0" />
-                          <a
-                            href={`tel:${q.customerPhone}`}
-                            onClick={() => {
-                              if (typeof window !== "undefined" && (window as any).CashAllNative?.setTargetQuote) {
-                                (window as any).CashAllNative.setTargetQuote(
-                                  q.quoteNumber || q.id,
-                                  q.customerPhone || "",
-                                  q.customerName || "Customer Lead",
-                                  q.deviceName || "Mobile Device"
-                                );
-                              }
-                            }}
-                            className="hover:text-yellow-400 transition underline decoration-dotted font-bold"
-                          >
-                            {q.customerPhone || "—"}
-                          </a>
-                          {q.customerPhone && (
-                            <a
-                              href={`tel:${q.customerPhone}`}
-                              onClick={() => {
-                                if (typeof window !== "undefined" && (window as any).CashAllNative?.setTargetQuote) {
-                                  (window as any).CashAllNative.setTargetQuote(
-                                    q.quoteNumber || q.id,
-                                    q.customerPhone || "",
-                                    q.customerName || "Customer Lead",
-                                    q.deviceName || "Mobile Device"
-                                  );
-                                }
-                              }}
-                              className="inline-flex items-center gap-1 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-[10px] px-2 py-0.5 rounded-md transition shadow"
-                              title="1-Tap Native Call"
-                            >
-                              <PhoneCall className="w-2.5 h-2.5" />
-                              <span>Call</span>
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    </td>
-
-                    <td className="py-4 px-3">
-                      <div className="space-y-1">
-                        <div className="font-bold text-white flex items-center gap-1.5">
-                          <Smartphone className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
-                          <span>{q.deviceName}</span>
-                        </div>
-                        <div className="text-[11px] text-neutral-400">
-                          CashALL Valuation: <span className="font-black text-green-400 font-price">₹{q.estimatedPrice.toLocaleString("en-IN")}</span>
-                        </div>
-                      </div>
-                    </td>
-
-                    <td className="py-4 px-3">
-                      <span className={`text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider ${
-                        q.status === "COMPLETED"
-                          ? "bg-green-950 text-green-400 border border-green-700"
-                          : q.status === "ORDERED"
-                          ? "bg-blue-950 text-blue-400 border border-blue-700"
-                          : "bg-amber-950 text-amber-400 border border-amber-700"
-                      }`}>
-                        {q.status}
+          /* ── MOBILE-FIRST CARD LIST — replaces overflow desktop table ── */
+          <div className="space-y-3">
+            {filteredQuotes.map((q) => (
+              <div
+                key={q.id}
+                className="bg-neutral-950 border border-neutral-800 rounded-2xl p-4 space-y-3 hover:border-neutral-700 transition"
+              >
+                {/* ROW 1 — Quote ID + Status */}
+                <div className="flex items-start justify-between gap-2">
+                  <div>
+                    <div className="font-mono font-black text-yellow-400 text-base leading-none">
+                      {q.quoteNumber}
+                    </div>
+                    <div className="text-[11px] text-neutral-500 flex items-center gap-1 mt-1">
+                      <Clock className="w-3 h-3 text-yellow-400/60 shrink-0" />
+                      <span>
+                        {q.createdAt
+                          ? new Date(q.createdAt).toLocaleString("en-IN", {
+                              day: "2-digit",
+                              month: "short",
+                              year: "numeric",
+                              hour: "2-digit",
+                              minute: "2-digit",
+                              hour12: true,
+                            })
+                          : "—"}
                       </span>
-                    </td>
+                    </div>
+                  </div>
+                  <span className={`text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shrink-0 ${
+                    q.status === "COMPLETED"
+                      ? "bg-green-950 text-green-400 border border-green-700"
+                      : q.status === "ORDERED"
+                      ? "bg-blue-950 text-blue-400 border border-blue-700"
+                      : "bg-amber-950 text-amber-400 border border-amber-700"
+                  }`}>
+                    {q.status}
+                  </span>
+                </div>
 
-                    <td className="py-4 px-3">
-                      <div className="flex items-center gap-2">
-                        <button
-                          onClick={() => {
-                            setSelectedQuote(q);
-                            setCallOutcome("CUSTOMER_INTERESTED");
-                            setCallNotes("");
-                          }}
-                          className="inline-flex items-center gap-1.5 bg-neutral-800 hover:bg-neutral-700 text-white font-extrabold text-xs px-3 py-2 rounded-xl transition shadow-md border border-neutral-700"
-                          title="Log Call"
-                        >
-                          <PhoneCall className="w-3.5 h-3.5 text-yellow-400" />
-                          <span>Log Call</span>
-                        </button>
-
-                        <button
-                          onClick={() => {
-                            setQuoteToConvert(q);
-                            setConvertForm((prev) => ({
-                              ...prev,
-                              customerName: q.customerName || "",
-                              customerPhone: q.customerPhone || "",
-                            }));
-                          }}
-                          className="inline-flex items-center gap-1.5 bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-xs px-3 py-2 rounded-xl transition shadow-yellowGlow"
-                          title="Convert quote into confirmed order"
-                        >
-                          <CheckCircle2 className="w-3.5 h-3.5" />
-                          <span>Convert (CA...)</span>
-                        </button>
+                {/* ROW 2 — Customer Name + Phone + Call button */}
+                <div className="flex items-center justify-between gap-2 bg-neutral-900 rounded-xl px-3 py-2.5">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <User className="w-4 h-4 text-yellow-400 shrink-0" />
+                    <div className="min-w-0">
+                      <div className="font-bold text-white text-sm truncate">
+                        {q.customerName || "Customer Lead"}
                       </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                      <div className="font-mono text-neutral-400 text-xs">
+                        {q.customerPhone || "—"}
+                      </div>
+                    </div>
+                  </div>
+                  {q.customerPhone && (
+                    <a
+                      href={`tel:${q.customerPhone}`}
+                      onClick={() => {
+                        if (typeof window !== "undefined") {
+                          const agentName = supportSession?.name || "";
+                          const agentPhone = supportSession?.phone || "";
+                          if ((window as any).CashAllNative?.setAgentInfo && agentName) {
+                            (window as any).CashAllNative.setAgentInfo(agentName, agentPhone);
+                          }
+                          if ((window as any).CashAllNative?.setTargetQuote) {
+                            (window as any).CashAllNative.setTargetQuote(
+                              q.quoteNumber || q.id,
+                              q.customerPhone || "",
+                              q.customerName || "Customer Lead",
+                              q.deviceName || "Mobile Device",
+                              agentName
+                            );
+                          }
+                        }
+                      }}
+                      className="flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-black text-xs px-4 py-2.5 rounded-xl transition shadow-lg shrink-0"
+                    >
+                      <PhoneCall className="w-4 h-4" />
+                      <span>Call</span>
+                    </a>
+                  )}
+                </div>
+
+                {/* ROW 3 — Device + Valuation */}
+                <div className="flex items-center gap-2">
+                  <Smartphone className="w-4 h-4 text-yellow-400 shrink-0" />
+                  <div className="min-w-0 flex-1">
+                    <div className="font-bold text-white text-xs truncate">{q.deviceName}</div>
+                    <div className="text-[11px] text-neutral-400">
+                      Valuation: <span className="font-black text-green-400">₹{q.estimatedPrice.toLocaleString("en-IN")}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ROW 4 — Action Buttons */}
+                <div className="flex gap-2 pt-1 border-t border-neutral-800">
+                  <button
+                    onClick={() => {
+                      setSelectedQuote(q);
+                      setCallOutcome("CUSTOMER_INTERESTED");
+                      setCallNotes("");
+                    }}
+                    className="flex-1 flex items-center justify-center gap-2 bg-neutral-800 hover:bg-neutral-700 active:bg-neutral-600 text-white font-extrabold text-xs py-3 rounded-xl transition border border-neutral-700"
+                  >
+                    <PhoneCall className="w-4 h-4 text-yellow-400" />
+                    <span>Log Call</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      setQuoteToConvert(q);
+                      setConvertForm((prev) => ({
+                        ...prev,
+                        customerName: q.customerName || "",
+                        customerPhone: q.customerPhone || "",
+                      }));
+                    }}
+                    className="flex-1 flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-500 text-black font-extrabold text-xs py-3 rounded-xl transition"
+                  >
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Convert to Order</span>
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>
 
-      {/* CALL LOGS AUDIT TRAIL TABLE */}
-      <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-3xl shadow-xl space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-neutral-800 pb-3">
-          <div className="flex flex-wrap items-center gap-3">
+      {/* CALL LOGS AUDIT TRAIL */}
+      <div className="bg-neutral-900 border border-neutral-800 p-4 rounded-3xl shadow-xl space-y-4">
+        <div className="flex flex-col gap-3 border-b border-neutral-800 pb-3">
+          <div className="flex items-center justify-between gap-2">
             <h2 className="text-base font-extrabold text-white flex items-center gap-2">
               <MessageSquare className="w-5 h-5 text-blue-400" />
-              <span>Call Records & Incentive Log</span>
+              <span>Call Records</span>
             </h2>
-            <div className="flex items-center gap-1 bg-neutral-950 p-1 rounded-xl border border-neutral-800 text-xs">
-              <button
-                type="button"
-                onClick={() => setCallFilter("MY_CALLS")}
-                className={`px-3 py-1 rounded-lg font-bold transition ${
-                  callFilter === "MY_CALLS"
-                    ? "bg-blue-600 text-white shadow-sm"
-                    : "text-neutral-400 hover:text-white"
-                }`}
-              >
-                My Calls ({myCalls.length})
-              </button>
-              <button
-                type="button"
-                onClick={() => setCallFilter("ALL_CALLS")}
-                className={`px-3 py-1 rounded-lg font-bold transition ${
-                  callFilter === "ALL_CALLS"
-                    ? "bg-neutral-800 text-white shadow-sm"
-                    : "text-neutral-400 hover:text-white"
-                }`}
-              >
-                All Team Calls ({callLogs.length})
-              </button>
-            </div>
+            <span className="text-[10px] text-neutral-500 font-mono">Supabase DB</span>
           </div>
-          <span className="text-[11px] text-neutral-400 font-mono">Recorded in Supabase Database</span>
+          <div className="flex items-center gap-1 bg-neutral-950 p-1 rounded-xl border border-neutral-800 text-xs w-full">
+            <button
+              type="button"
+              onClick={() => setCallFilter("MY_CALLS")}
+              className={`flex-1 py-1.5 rounded-lg font-bold transition text-center ${
+                callFilter === "MY_CALLS"
+                  ? "bg-blue-600 text-white shadow-sm"
+                  : "text-neutral-400 hover:text-white"
+              }`}
+            >
+              My Calls ({myCalls.length})
+            </button>
+            <button
+              type="button"
+              onClick={() => setCallFilter("ALL_CALLS")}
+              className={`flex-1 py-1.5 rounded-lg font-bold transition text-center ${
+                callFilter === "ALL_CALLS"
+                  ? "bg-neutral-700 text-white shadow-sm"
+                  : "text-neutral-400 hover:text-white"
+              }`}
+            >
+              All ({callLogs.length})
+            </button>
+          </div>
         </div>
 
         {displayedCalls.length === 0 ? (
           <div className="text-center py-8 text-neutral-400 text-xs">
             {callFilter === "MY_CALLS"
-              ? `No calls recorded by ${supportSession?.name || "you"} yet. Click "Log Call" on any customer quote above to record your call interaction.`
-              : 'No support call logs recorded yet. Use the "Log Call" button above to record customer interactions.'}
+              ? `No calls recorded by ${supportSession?.name || "you"} yet.`
+              : "No call logs yet."}
           </div>
         ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs border-collapse">
-              <thead>
-                <tr className="border-b border-neutral-800 text-neutral-400 uppercase tracking-wider font-extrabold">
-                  <th className="py-3 px-3">Support Person</th>
-                  <th className="py-3 px-3">Quote ID</th>
-                  <th className="py-3 px-3">Customer & Phone</th>
-                  <th className="py-3 px-3">Call Outcome</th>
-                  <th className="py-3 px-3">Notes / Remarks</th>
-                  <th className="py-3 px-3">Timestamp (IST)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-neutral-800/60">
-                {displayedCalls.map((log) => (
-                  <tr key={log.id} className="hover:bg-neutral-800/40 transition">
-                    <td className="py-3 px-3 font-bold text-white flex items-center gap-1.5">
-                      <User className="w-3.5 h-3.5 text-blue-400" />
-                      <span>{log.supportPersonName}</span>
-                    </td>
-                    <td className="py-3 px-3 font-mono font-bold text-yellow-400">{log.quoteId}</td>
-                    <td className="py-3 px-3 text-neutral-300">
-                      <div>{log.customerName}</div>
-                      <div className="text-[11px] text-neutral-500 font-mono">{log.customerPhone}</div>
-                    </td>
-                    <td className="py-3 px-3">
-                      <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-neutral-800 text-neutral-300 border border-neutral-700">
-                        {log.callOutcome.replace(/_/g, " ")}
-                      </span>
-                    </td>
-                    <td className="py-3 px-3 text-neutral-300 max-w-xs truncate" title={log.callNotes}>
-                      {log.callNotes}
-                    </td>
-                    <td className="py-3 px-3 text-neutral-400 font-mono text-[11px]">{log.callTimeIST}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="space-y-3">
+            {displayedCalls.map((log) => (
+              <div key={log.id} className="bg-neutral-950 border border-neutral-800 rounded-2xl p-3.5 space-y-2">
+                {/* Agent + Quote ID */}
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5">
+                    <User className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                    <span className="font-bold text-white text-sm">{log.supportPersonName}</span>
+                  </div>
+                  <span className="font-mono font-black text-yellow-400 text-xs bg-yellow-400/10 px-2 py-0.5 rounded border border-yellow-400/20">
+                    {log.quoteId}
+                  </span>
+                </div>
+                {/* Customer */}
+                <div className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-neutral-500 shrink-0" />
+                  <div>
+                    <div className="text-white text-xs font-semibold">{log.customerName}</div>
+                    <div className="text-neutral-500 font-mono text-[11px]">{log.customerPhone}</div>
+                  </div>
+                </div>
+                {/* Outcome + Time */}
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] font-black px-2.5 py-1 rounded-full bg-neutral-800 text-neutral-300 border border-neutral-700 uppercase">
+                    {log.callOutcome.replace(/_/g, " ")}
+                  </span>
+                  <span className="text-[11px] text-neutral-500 font-mono">{log.callTimeIST}</span>
+                </div>
+                {/* Notes */}
+                {log.callNotes && (
+                  <div className="text-[11px] text-neutral-400 bg-neutral-900 rounded-lg px-3 py-2 border border-neutral-800 leading-relaxed">
+                    {log.callNotes}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         )}
       </div>

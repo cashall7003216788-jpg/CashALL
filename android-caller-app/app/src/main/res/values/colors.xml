@@ -8,4 +8,7 @@
     <color name="text_primary">#FFFFFF</color>
     <color name="text_secondary">#9CA3AF</color>
     <color name="border">#27272A</color>
+    <!-- Launcher icon background: matches CashALL brand black -->
+    <color name="ic_launcher_background">#18181B</color>
 </resources>
+

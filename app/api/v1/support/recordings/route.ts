@@ -60,10 +60,29 @@ export async function GET(req: NextRequest) {
       ? recordings.filter((r) => r.supportPersonPhone === phone || r.customerPhone === phone)
       : recordings;
 
+    // Filter out duplicate 0s logs if a valid call log exists for the same quote/phone within 60s
+    const deduplicatedRecordings: any[] = [];
+    for (const rec of filtered) {
+      if (rec.durationSeconds === 0) {
+        const hasBetterEntry = filtered.some(
+          (other) =>
+            other.id !== rec.id &&
+            ((rec.quoteId !== "N/A" && other.quoteId === rec.quoteId) ||
+              (rec.customerPhone !== "—" && other.customerPhone === rec.customerPhone)) &&
+            other.durationSeconds > 0 &&
+            Math.abs(new Date(other.createdAt).getTime() - new Date(rec.createdAt).getTime()) < 60000
+        );
+        if (hasBetterEntry) {
+          continue; // Skip 0s duplicate
+        }
+      }
+      deduplicatedRecordings.push(rec);
+    }
+
     return NextResponse.json({
       success: true,
-      count: filtered.length,
-      recordings: filtered,
+      count: deduplicatedRecordings.length,
+      recordings: deduplicatedRecordings,
     });
   } catch (error: any) {
     console.error("Error fetching call recordings:", error);
@@ -209,6 +228,66 @@ export async function POST(req: NextRequest) {
 
     const durationFormatted = formatDuration(durationSeconds);
     const callTimeIST = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+
+    // Deduplication check within last 45 seconds
+    const fortyFiveSecondsAgo = new Date(Date.now() - 45000);
+    const recentLogs = await prisma.auditLog.findMany({
+      where: {
+        action: "SUPPORT_CALL_RECORDING",
+        createdAt: { gte: fortyFiveSecondsAgo },
+      },
+      orderBy: { createdAt: "desc" },
+      take: 5,
+    });
+
+    for (const recent of recentLogs) {
+      let recentData: any = {};
+      try {
+        recentData = JSON.parse(recent.newValuesJson || "{}");
+      } catch {}
+
+      const isSameQuote = quoteId && quoteId !== "N/A" && recentData.quoteId === quoteId;
+      const isSamePhone = cleanDigits && recentData.customerPhone && recentData.customerPhone.includes(cleanDigits);
+
+      if (isSameQuote || isSamePhone) {
+        const prevDuration = Number(recentData.durationSeconds) || 0;
+
+        // If incoming is 0s and existing record already exists, discard 0s duplicate
+        if (durationSeconds === 0) {
+          console.log(`[Deduplication] Discarding duplicate 0s call event for ${customerPhone}`);
+          return NextResponse.json({
+            success: true,
+            message: "Duplicate 0s call event discarded",
+            recordingId: recent.id,
+            durationFormatted: recentData.durationFormatted,
+          });
+        }
+
+        // If incoming has valid duration and existing was 0s, update existing record with true duration
+        if (durationSeconds > 0 && prevDuration === 0) {
+          console.log(`[Deduplication] Updating existing 0s call event with true duration ${durationSeconds}s`);
+          recentData.durationSeconds = durationSeconds;
+          recentData.durationFormatted = durationFormatted;
+          if (supportPersonName && supportPersonName !== "Support Staff" && supportPersonName !== "Support Agent") {
+            recentData.supportPersonName = supportPersonName;
+          }
+          if (audioUrl) {
+            recentData.audioUrl = audioUrl;
+            recentData.storageType = storageType;
+          }
+          await prisma.auditLog.update({
+            where: { id: recent.id },
+            data: { newValuesJson: JSON.stringify(recentData) },
+          });
+          return NextResponse.json({
+            success: true,
+            message: "Existing call event updated with accurate duration",
+            recordingId: recent.id,
+            durationFormatted,
+          });
+        }
+      }
+    }
 
     // Save into database
     const record = await prisma.auditLog.create({

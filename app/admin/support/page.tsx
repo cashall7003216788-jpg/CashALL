@@ -24,7 +24,6 @@ import {
   Volume2,
   Clock,
   Radio,
-  Play,
   Smartphone,
 } from "lucide-react";
 
@@ -585,16 +584,16 @@ export default function AdminSupportManagementPage() {
           )}
         </div>
 
-        {/* SECTION 4: LIVE CALL AUDIO RECORDINGS & DURATION FEED */}
+        {/* SECTION 4: CALL LOG FEED */}
         <div className="bg-neutral-800 border border-neutral-700 p-6 rounded-3xl shadow-xl space-y-4 print:hidden">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-neutral-700 pb-3">
             <div>
               <h2 className="text-base font-extrabold text-white flex items-center gap-2">
                 <Radio className="w-5 h-5 text-emerald-400 animate-pulse" />
-                <span>Customer Call Audio Recordings ({recordings.length})</span>
+                <span>Customer Call Logs ({recordings.length})</span>
               </h2>
               <p className="text-xs text-neutral-400 mt-0.5">
-                Automatically recorded and synced by the CashALL Android Caller App
+                Automatically synced by the CashALL Android Caller App — Date, Time, Duration &amp; Details
               </p>
             </div>
 
@@ -618,7 +617,7 @@ export default function AdminSupportManagementPage() {
 
           {recordings.length === 0 ? (
             <div className="text-center py-12 text-neutral-400 text-xs">
-              No call audio recordings uploaded yet. Once the caller app dials customers, recordings will appear here automatically.
+              No customer calls logged yet. Once the caller app dials customers, call logs will appear here automatically.
             </div>
           ) : (
             <div className="overflow-x-auto">
@@ -630,8 +629,6 @@ export default function AdminSupportManagementPage() {
                     <th className="py-3 px-3">Date &amp; Time (IST)</th>
                     <th className="py-3 px-3">Duration</th>
                     <th className="py-3 px-3">Call Outcome</th>
-                    <th className="py-3 px-3">In-Browser Audio Player</th>
-                    <th className="py-3 px-3 text-right">Download</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-neutral-700/60">
@@ -688,39 +685,15 @@ export default function AdminSupportManagementPage() {
                           </span>
                         </td>
                         <td className="py-3.5 px-3">
-                          <span className="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-300">
+                          <span className={`text-[10px] font-black uppercase px-2.5 py-1 rounded-full border ${
+                            rec.callOutcome === "CALL_COMPLETED"
+                              ? "bg-emerald-950 border-emerald-700 text-emerald-400"
+                              : rec.callOutcome === "CUSTOMER_INTERESTED"
+                              ? "bg-blue-950 border-blue-700 text-blue-400"
+                              : "bg-neutral-900 border-neutral-700 text-neutral-300"
+                          }`}>
                             {rec.callOutcome.replace(/_/g, " ")}
                           </span>
-                        </td>
-                        <td className="py-3.5 px-3">
-                          {rec.audioUrl ? (
-                            <audio
-                              controls
-                              preload="none"
-                              className="h-8 max-w-[220px] rounded-lg shadow"
-                              src={rec.audioUrl}
-                            >
-                              Your browser does not support audio playback.
-                            </audio>
-                          ) : (
-                            <span className="text-neutral-500 text-[11px] italic">No audio clip</span>
-                          )}
-                        </td>
-                        <td className="py-3.5 px-3 text-right">
-                          {rec.audioUrl ? (
-                            <a
-                              href={rec.audioUrl}
-                              download={`Call_${rec.customerPhone}_${rec.durationFormatted}.m4a`}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="inline-flex items-center gap-1 text-[11px] font-bold text-yellow-400 hover:text-yellow-300 bg-neutral-900 border border-neutral-700 px-2.5 py-1 rounded-lg transition"
-                            >
-                              <Download className="w-3 h-3" />
-                              <span>MP3</span>
-                            </a>
-                          ) : (
-                            <span className="text-neutral-600">—</span>
-                          )}
                         </td>
                       </tr>
                     ))}

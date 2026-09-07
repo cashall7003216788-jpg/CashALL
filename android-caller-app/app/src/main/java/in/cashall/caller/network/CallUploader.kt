@@ -1,8 +1,8 @@
-package in.cashall.caller.network
+package `in`.cashall.caller.network
 
 import android.content.Context
 import android.util.Log
-import in.cashall.caller.CashAllApplication
+import `in`.cashall.caller.CashAllApplication
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,8 +24,10 @@ object CallUploader {
 
     fun uploadCallRecording(
         context: Context,
-        audioFile: File,
+        audioFile: File? = null,
         customerPhone: String,
+        customerName: String = "Customer Lead",
+        deviceName: String = "Mobile Device",
         supportPersonName: String,
         supportPersonPhone: String,
         quoteId: String,
@@ -33,45 +35,50 @@ object CallUploader {
     ) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                Log.d(TAG, "Uploading audio: ${audioFile.name} (${audioFile.length()} bytes) to ${CashAllApplication.BACKEND_URL}")
+                val hasAudio = audioFile != null && audioFile.exists() && audioFile.length() > 100
+                Log.d(TAG, "Uploading call log (hasAudio=$hasAudio, duration=${durationSeconds}s) to ${CashAllApplication.BACKEND_URL}")
 
-                val audioBody = audioFile.asRequestBody("audio/m4a".toMediaTypeOrNull())
-
-                val multipartBody = MultipartBody.Builder()
+                val multipartBuilder = MultipartBody.Builder()
                     .setType(MultipartBody.FORM)
-                    .addFormDataPart("audio", audioFile.name, audioBody)
                     .addFormDataPart("supportPersonName", supportPersonName)
                     .addFormDataPart("supportPersonPhone", supportPersonPhone)
+                    .addFormDataPart("customerName", customerName)
                     .addFormDataPart("customerPhone", customerPhone)
+                    .addFormDataPart("deviceName", deviceName)
                     .addFormDataPart("durationSeconds", durationSeconds.toString())
                     .addFormDataPart("quoteId", quoteId)
-                    .addFormDataPart("callOutcome", if (durationSeconds > 10) "CUSTOMER_INTERESTED" else "CALL_ATTEMPTED")
-                    .addFormDataPart("callNotes", "Recorded automatically by CashALL Android Calling Desk")
-                    .build()
+                    .addFormDataPart("callOutcome", "CALL_COMPLETED")
+                    .addFormDataPart("callNotes", "Logged via CashALL Caller App")
+
+                if (hasAudio && audioFile != null) {
+                    val audioBody = audioFile.asRequestBody("audio/m4a".toMediaTypeOrNull())
+                    multipartBuilder.addFormDataPart("audio", audioFile.name, audioBody)
+                }
 
                 val request = Request.Builder()
                     .url(CashAllApplication.BACKEND_URL)
-                    .post(multipartBody)
+                    .post(multipartBuilder.build())
                     .build()
 
                 val response = httpClient.newCall(request).execute()
 
                 if (response.isSuccessful) {
                     val responseStr = response.body?.string()
-                    Log.i(TAG, "Call recording uploaded successfully! Response: $responseStr")
-                    // Clean up local temp file after successful upload
-                    try {
-                        audioFile.delete()
-                    } catch (e: Exception) {
-                        Log.w(TAG, "Could not delete temp audio file: ${e.message}")
+                    Log.i(TAG, "Call log uploaded successfully! Response: $responseStr")
+                    if (hasAudio && audioFile != null) {
+                        try {
+                            audioFile.delete()
+                        } catch (e: Exception) {
+                            Log.w(TAG, "Could not delete temp audio file: ${e.message}")
+                        }
                     }
                 } else {
-                    Log.error(TAG, "Call upload failed with HTTP code ${response.code}: ${response.body?.string()}")
+                    Log.e(TAG, "Call upload failed with HTTP code ${response.code}: ${response.body?.string()}")
                 }
             } catch (e: IOException) {
-                Log.error(TAG, "Network error uploading call recording: ${e.message}", e)
+                Log.e(TAG, "Network error uploading call recording: ${e.message}", e)
             } catch (e: Exception) {
-                Log.error(TAG, "Unexpected error in CallUploader: ${e.message}", e)
+                Log.e(TAG, "Unexpected error in CallUploader: ${e.message}", e)
             }
         }
     }
