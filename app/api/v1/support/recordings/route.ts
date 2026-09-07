@@ -57,8 +57,8 @@ export async function GET(req: NextRequest) {
         callOutcome: data.callOutcome || (log.action === "SUPPORT_CALL_RECORDING" ? "CALL_COMPLETED" : "CALL_ATTEMPTED"),
         callNotes: data.callNotes || (log.action === "SUPPORT_CALL_RECORDING" ? "Recorded via CashALL Android Caller App." : ""),
         callStartTime: data.callStartTime || log.createdAt.toISOString(),
-        callEndTime: data.callEndTime || log.createdAt.toISOString(),
         createdAtIST: data.callTimeIST || new Date(log.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+        callTimeIST: data.callTimeIST || new Date(log.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
         createdAt: log.createdAt.toISOString(),
       };
     });
@@ -67,7 +67,7 @@ export async function GET(req: NextRequest) {
       ? recordings.filter((r) => r.supportPersonPhone === phone || r.customerPhone === phone)
       : recordings;
 
-    // Filter out duplicate 0s logs if a valid call log exists for the same quote/phone within 60s
+    // Filter out duplicate 0s logs if a valid call log exists for the same quote/phone within 60s, and prioritize real notes
     const deduplicatedRecordings: any[] = [];
     for (const rec of filtered) {
       if (rec.durationSeconds === 0) {

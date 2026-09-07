@@ -158,6 +158,43 @@ export default function SupportDashboardPage() {
     }
   }, [supportSession, fetchData]);
 
+  useEffect(() => {
+    // Listen for call finished callback from Android WebView bridge
+    (window as any).__cashall_onCallFinished = (quoteId: string, phone: string) => {
+      const cleanP = (phone || "").replace(/\D/g, "").slice(-10);
+      const matched = quotes.find(
+        (item) =>
+          item.quoteNumber === quoteId ||
+          item.id === quoteId ||
+          (cleanP && item.customerPhone && item.customerPhone.replace(/\D/g, "").slice(-10) === cleanP)
+      );
+      if (matched) {
+        setSelectedQuote(matched);
+        setCallOutcome("CUSTOMER_INTERESTED");
+      }
+    };
+
+    // Prompt log modal when window regains focus after dialing
+    const handleWindowFocus = () => {
+      try {
+        const pendingStr = sessionStorage.getItem("cashall_pending_call_quote");
+        if (pendingStr) {
+          const parsed = JSON.parse(pendingStr);
+          if (parsed) {
+            setSelectedQuote((prev) => prev || parsed);
+          }
+        }
+      } catch {}
+    };
+
+    window.addEventListener("focus", handleWindowFocus);
+    document.addEventListener("visibilitychange", handleWindowFocus);
+    return () => {
+      window.removeEventListener("focus", handleWindowFocus);
+      document.removeEventListener("visibilitychange", handleWindowFocus);
+    };
+  }, [quotes]);
+
   const handleLogCallSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedQuote) return;
@@ -182,6 +219,9 @@ export default function SupportDashboardPage() {
         setSuccessToast(`✅ Call logged successfully for Quote ${selectedQuote.quoteNumber}!`);
         setSelectedQuote(null);
         setCallNotes("");
+        try {
+          sessionStorage.removeItem("cashall_pending_call_quote");
+        } catch {}
         await fetchData();
       } else {
         alert(json.error || "Failed to log call");
@@ -428,6 +468,12 @@ export default function SupportDashboardPage() {
                     <a
                       href={`tel:${q.customerPhone}`}
                       onClick={() => {
+                        setSelectedQuote(q);
+                        setCallOutcome("CUSTOMER_INTERESTED");
+                        setCallNotes("");
+                        try {
+                          sessionStorage.setItem("cashall_pending_call_quote", JSON.stringify(q));
+                        } catch {}
                         if (typeof window !== "undefined") {
                           const agentName = supportSession?.name || "";
                           const agentPhone = supportSession?.phone || "";

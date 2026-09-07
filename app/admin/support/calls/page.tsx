@@ -29,6 +29,9 @@ import {
   PhoneMissed,
   FileText,
   Volume2,
+  Edit3,
+  AlertCircle,
+  Save,
 } from "lucide-react";
 
 interface CallRecordingItem {
@@ -49,10 +52,46 @@ interface CallRecordingItem {
   callStartTime: string;
   callEndTime: string;
   createdAtIST: string;
+  callTimeIST?: string;
   createdAt: string;
 }
 
 type DateFilterType = "ALL" | "TODAY" | "YESTERDAY";
+
+function formatCallDateTime(dateVal?: string | Date | null, istVal?: string) {
+  if (dateVal) {
+    try {
+      const d = new Date(dateVal);
+      if (!isNaN(d.getTime())) {
+        const dateStr = d.toLocaleDateString("en-IN", {
+          timeZone: "Asia/Kolkata",
+          day: "2-digit",
+          month: "short",
+        });
+        const timeStr = d.toLocaleTimeString("en-IN", {
+          timeZone: "Asia/Kolkata",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        });
+        const fullStr = `${d.toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata", day: "2-digit", month: "short", year: "numeric" })}, ${timeStr}`;
+        return { date: dateStr, time: timeStr, full: fullStr };
+      }
+    } catch {}
+  }
+
+  if (istVal && typeof istVal === "string" && istVal.trim() && !istVal.includes("Invalid")) {
+    try {
+      const parts = istVal.split(",");
+      if (parts.length >= 2) {
+        return { date: parts[0].trim(), time: parts[1].trim(), full: istVal };
+      }
+      return { date: istVal, time: "", full: istVal };
+    } catch {}
+  }
+
+  return { date: "Today", time: "", full: "Today" };
+}
 
 function formatDurationHuman(seconds: number): string {
   if (!seconds || isNaN(seconds) || seconds <= 0) return "0s";
@@ -156,8 +195,67 @@ export default function AdminSupportCallLogsPage() {
   const [selectedCall, setSelectedCall] = useState<CallRecordingItem | null>(null);
   const [copiedNotes, setCopiedNotes] = useState(false);
   const [copiedQuote, setCopiedQuote] = useState(false);
-
   const [lastUpdated, setLastUpdated] = useState<string>("");
+
+  // Edit call reason / outcome states
+  const [isEditingReason, setIsEditingReason] = useState(false);
+  const [editOutcome, setEditOutcome] = useState("");
+  const [editNotes, setEditNotes] = useState("");
+  const [savingReason, setSavingReason] = useState(false);
+  const [saveSuccessMsg, setSaveSuccessMsg] = useState("");
+
+  const handleOpenCallModal = (rec: CallRecordingItem) => {
+    setSelectedCall(rec);
+    setIsEditingReason(false);
+    setEditOutcome(rec.callOutcome || "CUSTOMER_INTERESTED");
+    setEditNotes(rec.callNotes === "Logged via CashALL Caller App" ? "" : rec.callNotes);
+    setSaveSuccessMsg("");
+  };
+
+  const handleSaveReason = async () => {
+    if (!selectedCall) return;
+    setSavingReason(true);
+    try {
+      const res = await fetch("/api/v1/support/calls", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id: selectedCall.id,
+          quoteId: selectedCall.quoteId,
+          customerPhone: selectedCall.customerPhone,
+          callOutcome: editOutcome,
+          callNotes: editNotes,
+          supportPersonName: selectedCall.supportPersonName,
+        }),
+      });
+      const json = await res.json();
+      if (json.success) {
+        const updatedCall = {
+          ...selectedCall,
+          callOutcome: editOutcome,
+          callNotes: editNotes,
+        };
+        setSelectedCall(updatedCall);
+        setRecordings((prev) =>
+          prev.map((r) =>
+            r.id === selectedCall.id ||
+            (selectedCall.quoteId && selectedCall.quoteId !== "N/A" && r.quoteId === selectedCall.quoteId)
+              ? { ...r, callOutcome: editOutcome, callNotes: editNotes }
+              : r
+          )
+        );
+        setIsEditingReason(false);
+        setSaveSuccessMsg("✅ Call reason & outcome saved successfully!");
+        setTimeout(() => setSaveSuccessMsg(""), 4000);
+      } else {
+        alert(json.error || "Failed to update call reason");
+      }
+    } catch (err: any) {
+      alert(err.message || "Failed to update call reason");
+    } finally {
+      setSavingReason(false);
+    }
+  };
 
   // Close modal on Escape key
   useEffect(() => {
@@ -198,7 +296,17 @@ export default function AdminSupportCallLogsPage() {
       }
 
       if (Array.isArray(list)) {
-        setRecordings(list);
+        const normalized = list.map((item: any) => {
+          const ist = item.createdAtIST || item.callTimeIST || "";
+          const created = item.createdAt || new Date().toISOString();
+          return {
+            ...item,
+            createdAt: created,
+            createdAtIST: ist || (created ? new Date(created).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }) : ""),
+            callTimeIST: ist || item.callTimeIST || "",
+          };
+        });
+        setRecordings(normalized);
         setLastUpdated(new Date().toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata" }));
       }
     } catch (e) {
@@ -681,121 +789,138 @@ export default function AdminSupportCallLogsPage() {
               )}
             </div>
           ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs border-collapse">
+            <div className="w-full overflow-hidden">
+              <table className="w-full text-left border-collapse table-fixed">
+                <colgroup>
+                  <col className="w-[16%]" />
+                  <col className="w-[28%]" />
+                  <col className="w-[14%]" />
+                  <col className="w-[9%]" />
+                  <col className="w-[25%]" />
+                  <col className="w-[8%]" />
+                </colgroup>
                 <thead>
-                  <tr className="border-b border-neutral-700 bg-neutral-850/60 text-neutral-400 uppercase tracking-wider font-extrabold">
-                    <th className="py-3.5 px-4">Support Agent</th>
-                    <th className="py-3.5 px-4">Customer &amp; Device</th>
-                    <th className="py-3.5 px-4">Date &amp; Time (IST)</th>
-                    <th className="py-3.5 px-4">Duration</th>
-                    <th className="py-3.5 px-4">Call Result &amp; Reason (Click to View)</th>
-                    <th className="py-3.5 px-4 text-right">Quick Dial</th>
+                  <tr className="border-b border-neutral-700 bg-neutral-850/60 text-neutral-400 uppercase tracking-wider font-extrabold text-[10px] sm:text-[11px]">
+                    <th className="py-2.5 px-2">Support Agent</th>
+                    <th className="py-2.5 px-2">Customer &amp; Device</th>
+                    <th className="py-2.5 px-2">Date &amp; Time</th>
+                    <th className="py-2.5 px-2">Duration</th>
+                    <th className="py-2.5 px-2">Call Result &amp; Reason</th>
+                    <th className="py-2.5 px-2 text-right">Dial</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-neutral-700/60">
-                  {filteredRecordings.map((rec) => (
-                    <tr key={rec.id} className="hover:bg-neutral-750/50 transition">
-                      {/* AGENT */}
-                      <td className="py-3.5 px-4">
-                        <div className="flex items-center gap-2">
-                          <div className="w-7 h-7 rounded-lg bg-neutral-700 flex items-center justify-center font-bold text-yellow-400 shrink-0">
-                            {rec.supportPersonName.charAt(0) || "A"}
-                          </div>
-                          <div>
-                            <div className="font-bold text-white flex items-center gap-1.5">
-                              <span>{rec.supportPersonName}</span>
+                <tbody className="divide-y divide-neutral-700/60 text-xs">
+                  {filteredRecordings.map((rec) => {
+                    const dt = formatCallDateTime(rec.createdAt, rec.createdAtIST || rec.callTimeIST);
+                    return (
+                      <tr key={rec.id} className="hover:bg-neutral-750/50 transition">
+                        {/* AGENT */}
+                        <td className="py-2.5 px-2 min-w-0">
+                          <div className="flex items-center gap-1.5 min-w-0">
+                            <div className="w-6 h-6 rounded-md bg-neutral-700 flex items-center justify-center font-black text-[11px] text-yellow-400 shrink-0">
+                              {rec.supportPersonName.charAt(0) || "A"}
                             </div>
-                            <div className="text-[11px] text-neutral-400 font-mono">
-                              {rec.supportPersonPhone}
+                            <div className="min-w-0">
+                              <div className="font-bold text-white text-xs truncate" title={rec.supportPersonName}>
+                                {rec.supportPersonName}
+                              </div>
+                              <div className="text-[10px] text-neutral-400 font-mono truncate">
+                                {rec.supportPersonPhone}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </td>
+                        </td>
 
-                      {/* CUSTOMER & DEVICE */}
-                      <td className="py-3.5 px-4">
-                        <div className="font-bold text-white flex items-center gap-1.5">
-                          <User className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
-                          <span>{rec.customerName || "Customer Lead"}</span>
-                        </div>
-                        <div className="text-xs text-neutral-300 font-mono flex items-center gap-1 mt-0.5">
-                          <Phone className="w-3 h-3 text-neutral-400 shrink-0" />
-                          <span>{rec.customerPhone}</span>
-                        </div>
-                        {rec.deviceName && rec.deviceName !== "—" && (
-                          <div className="text-[11px] text-amber-300/90 font-medium flex items-center gap-1 mt-1">
-                            <Smartphone className="w-3 h-3 text-yellow-400 shrink-0" />
-                            <span>{rec.deviceName}</span>
+                        {/* CUSTOMER & DEVICE */}
+                        <td className="py-2.5 px-2 min-w-0">
+                          <div className="font-bold text-white text-xs flex items-center gap-1 truncate" title={rec.customerName || "Customer Lead"}>
+                            <User className="w-3 h-3 text-yellow-400 shrink-0" />
+                            <span className="truncate">{rec.customerName || "Customer Lead"}</span>
                           </div>
-                        )}
-                        {rec.quoteId && rec.quoteId !== "N/A" && (
-                          <div className="inline-block text-[10px] font-mono text-yellow-400 font-extrabold bg-yellow-950/60 border border-yellow-800/80 px-2 py-0.5 rounded mt-1">
-                            Quote: {rec.quoteId}
+                          <div className="text-[10px] text-neutral-300 font-mono flex items-center gap-1 mt-0.5">
+                            <Phone className="w-2.5 h-2.5 text-neutral-400 shrink-0" />
+                            <span>{rec.customerPhone}</span>
                           </div>
-                        )}
-                      </td>
-
-                      {/* DATE & TIME (IST) */}
-                      <td className="py-3.5 px-4 text-neutral-200 font-mono text-xs whitespace-nowrap">
-                        {rec.createdAtIST}
-                      </td>
-
-                      {/* DURATION */}
-                      <td className="py-3.5 px-4">
-                        <span className="inline-flex items-center gap-1 bg-amber-950/80 border border-amber-800 text-amber-300 font-mono font-bold px-2.5 py-1 rounded-xl text-xs">
-                          <Clock className="w-3 h-3 text-amber-400 shrink-0" />
-                          <span>{rec.durationFormatted}</span>
-                        </span>
-                      </td>
-
-                      {/* CALL RESULT / OUTCOME BADGE WITH CLICKABLE POPUP */}
-                      <td className="py-3.5 px-4">
-                        <div className="space-y-1.5">
-                          <button
-                            type="button"
-                            onClick={() => setSelectedCall(rec)}
-                            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-black uppercase tracking-wider transition-all duration-150 transform hover:scale-[1.03] active:scale-[0.98] shadow-sm cursor-pointer ${getOutcomeBadgeStyle(
-                              rec.callOutcome
-                            )}`}
-                            title="Click to view full conversation details and agent notes"
-                          >
-                            {getOutcomeIcon(rec.callOutcome)}
-                            <span>{formatCallOutcome(rec.callOutcome)}</span>
-                            <ExternalLink className="w-3 h-3 ml-0.5 opacity-70" />
-                          </button>
-
-                          {/* REASON / NOTES PREVIEW */}
-                          {rec.callNotes && (
-                            <div
-                              onClick={() => setSelectedCall(rec)}
-                              className="text-[11px] text-neutral-400 hover:text-neutral-200 line-clamp-1 italic cursor-pointer flex items-center gap-1.5 max-w-xs transition"
-                              title="Click to view detailed reason"
-                            >
-                              <MessageSquare className="w-3 h-3 text-yellow-400/80 shrink-0" />
-                              <span className="truncate">"{rec.callNotes}"</span>
+                          {rec.deviceName && rec.deviceName !== "—" && (
+                            <div className="text-[10px] text-amber-300/90 font-medium flex items-center gap-1 mt-0.5 truncate" title={rec.deviceName}>
+                              <Smartphone className="w-2.5 h-2.5 text-yellow-400 shrink-0" />
+                              <span className="truncate">{rec.deviceName}</span>
                             </div>
                           )}
-                        </div>
-                      </td>
+                          {rec.quoteId && rec.quoteId !== "N/A" && (
+                            <div className="inline-block text-[9px] font-mono text-yellow-400 font-bold bg-yellow-950/60 border border-yellow-800/80 px-1.5 py-0.2 rounded mt-0.5">
+                              Quote: {rec.quoteId}
+                            </div>
+                          )}
+                        </td>
 
-                      {/* QUICK CALL ACTION */}
-                      <td className="py-3.5 px-4 text-right">
-                        {rec.customerPhone && rec.customerPhone !== "—" ? (
-                          <a
-                            href={`tel:${rec.customerPhone}`}
-                            className="inline-flex items-center gap-1 text-xs font-bold text-yellow-400 bg-yellow-400/10 hover:bg-yellow-400/20 px-3 py-1.5 rounded-xl border border-yellow-400/30 transition shadow-sm cursor-pointer"
-                            title={`Dial ${rec.customerPhone}`}
-                          >
-                            <Phone className="w-3.5 h-3.5" />
-                            <span>Call</span>
-                          </a>
-                        ) : (
-                          <span className="text-neutral-500 text-xs">—</span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
+                        {/* DATE & TIME (IST) */}
+                        <td className="py-2.5 px-2 whitespace-nowrap">
+                          <div className="font-mono">
+                            <div className="text-xs font-bold text-white">{dt.date}</div>
+                            <div className="text-[10px] text-neutral-400 flex items-center gap-1 mt-0.5">
+                              <Clock className="w-2.5 h-2.5 text-yellow-400/80 shrink-0" />
+                              <span>{dt.time}</span>
+                            </div>
+                          </div>
+                        </td>
+
+                        {/* DURATION */}
+                        <td className="py-2.5 px-2 whitespace-nowrap">
+                          <span className="inline-flex items-center gap-1 bg-amber-950/80 border border-amber-800 text-amber-300 font-mono font-bold px-2 py-0.5 rounded-lg text-[10px]">
+                            <Clock className="w-2.5 h-2.5 text-amber-400 shrink-0" />
+                            <span>{rec.durationFormatted}</span>
+                          </span>
+                        </td>
+
+                        {/* CALL RESULT / OUTCOME BADGE WITH CLICKABLE POPUP */}
+                        <td className="py-2.5 px-2 min-w-0">
+                          <div className="space-y-1 min-w-0">
+                            <button
+                              type="button"
+                              onClick={() => handleOpenCallModal(rec)}
+                              className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border text-[10px] font-black uppercase tracking-wider transition-all duration-150 transform hover:scale-[1.02] active:scale-[0.98] shadow-sm cursor-pointer ${getOutcomeBadgeStyle(
+                                rec.callOutcome
+                              )}`}
+                              title="Click to view full conversation details and agent notes"
+                            >
+                              {getOutcomeIcon(rec.callOutcome)}
+                              <span className="truncate">{formatCallOutcome(rec.callOutcome)}</span>
+                              <ExternalLink className="w-2.5 h-2.5 ml-0.5 opacity-70 shrink-0" />
+                            </button>
+
+                            {/* REASON / NOTES PREVIEW */}
+                            {rec.callNotes && (
+                              <div
+                                onClick={() => handleOpenCallModal(rec)}
+                                className="text-[10px] text-neutral-400 hover:text-neutral-200 truncate italic cursor-pointer flex items-center gap-1 transition"
+                                title={`Click to view: "${rec.callNotes}"`}
+                              >
+                                <MessageSquare className="w-2.5 h-2.5 text-yellow-400/80 shrink-0" />
+                                <span className="truncate">"{rec.callNotes}"</span>
+                              </div>
+                            )}
+                          </div>
+                        </td>
+
+                        {/* QUICK CALL ACTION */}
+                        <td className="py-2.5 px-2 text-right whitespace-nowrap">
+                          {rec.customerPhone && rec.customerPhone !== "—" ? (
+                            <a
+                              href={`tel:${rec.customerPhone}`}
+                              className="inline-flex items-center gap-1 text-[10px] font-extrabold text-black bg-yellow-400 hover:bg-yellow-300 px-2.5 py-1 rounded-lg transition shadow-sm cursor-pointer"
+                              title={`Dial ${rec.customerPhone}`}
+                            >
+                              <Phone className="w-3 h-3" />
+                              <span>Call</span>
+                            </a>
+                          ) : (
+                            <span className="text-neutral-500 text-xs">—</span>
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -855,7 +980,7 @@ export default function AdminSupportCallLogsPage() {
                 <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider block">Call Timestamp</span>
                 <span className="font-mono text-neutral-200 text-xs flex items-center gap-1">
                   <Clock className="w-3 h-3 text-yellow-400 shrink-0" />
-                  {selectedCall.createdAtIST}
+                  <span>{formatCallDateTime(selectedCall.createdAt, selectedCall.createdAtIST || selectedCall.callTimeIST).full}</span>
                 </span>
               </div>
             </div>
@@ -908,11 +1033,30 @@ export default function AdminSupportCallLogsPage() {
               )}
             </div>
 
+            {/* SUCCESS BANNER WHEN NOTES UPDATED */}
+            {saveSuccessMsg && (
+              <div className="p-3 bg-emerald-950/80 border border-emerald-500/80 text-emerald-300 text-xs rounded-2xl flex items-center gap-2 animate-in fade-in">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span className="font-bold">{saveSuccessMsg}</span>
+              </div>
+            )}
+
             {/* CALL OUTCOME BANNER */}
             <div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block mb-1.5">
-                Selected Call Outcome:
-              </span>
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400">
+                  Selected Call Outcome:
+                </span>
+                {!isEditingReason && (
+                  <button
+                    onClick={() => setIsEditingReason(true)}
+                    className="text-[10px] text-yellow-400 hover:text-yellow-300 font-bold flex items-center gap-1 bg-yellow-400/10 hover:bg-yellow-400/20 px-2 py-0.5 rounded-lg border border-yellow-400/30 transition cursor-pointer"
+                  >
+                    <Edit3 className="w-3 h-3" />
+                    <span>Change Outcome &amp; Notes</span>
+                  </button>
+                )}
+              </div>
               <div
                 className={`flex items-center gap-2 p-3.5 rounded-2xl border text-sm font-black uppercase tracking-wide shadow-md ${getOutcomeBadgeStyle(
                   selectedCall.callOutcome
@@ -930,7 +1074,7 @@ export default function AdminSupportCallLogsPage() {
                   <MessageSquare className="w-3.5 h-3.5 text-yellow-400" />
                   <span>Agent Notes &amp; Conversation Reason:</span>
                 </div>
-                {selectedCall.callNotes && (
+                {!isEditingReason && selectedCall.callNotes && (
                   <button
                     onClick={() => handleCopyNotes(selectedCall.callNotes)}
                     className="text-[10px] text-neutral-400 hover:text-white flex items-center gap-1 transition cursor-pointer"
@@ -950,17 +1094,90 @@ export default function AdminSupportCallLogsPage() {
                 )}
               </div>
 
-              <div className="bg-neutral-950 border border-neutral-800 rounded-2xl p-4 relative shadow-inner">
-                {selectedCall.callNotes ? (
-                  <p className="text-neutral-100 text-xs sm:text-sm leading-relaxed whitespace-pre-wrap font-normal">
-                    "{selectedCall.callNotes}"
-                  </p>
-                ) : (
-                  <p className="text-neutral-500 text-xs italic">
-                    No detailed notes entered for this call record.
-                  </p>
-                )}
-              </div>
+              {/* INLINE EDIT FORM OR DISPLAY */}
+              {isEditingReason ? (
+                <div className="bg-neutral-950 border border-yellow-400/40 rounded-2xl p-4 space-y-3.5 shadow-lg">
+                  <div>
+                    <label className="block text-[11px] font-bold text-neutral-300 mb-1">Update Call Outcome:</label>
+                    <select
+                      value={editOutcome}
+                      onChange={(e) => setEditOutcome(e.target.value)}
+                      className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl p-2.5 focus:outline-none focus:border-yellow-400 cursor-pointer"
+                    >
+                      <option value="CUSTOMER_INTERESTED">Customer Interested (Proceeding with Booking)</option>
+                      <option value="CALL_COMPLETED">Call Completed / Discussed Valuation</option>
+                      <option value="PRICE_NEGOTIATION">Price Negotiation (Customer Demands Higher Price)</option>
+                      <option value="RE-SCHEDULED_VISIT">Requested Re-scheduled Visit Time</option>
+                      <option value="RESOLVED_ISSUE">Resolved Customer Inquiry / Question</option>
+                      <option value="NO_ANSWER">No Answer / Line Busy / Switched Off</option>
+                      <option value="NOT_INTERESTED">Not Interested / Cancelled</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-bold text-neutral-300 mb-1">
+                      Detailed Conversation Reason &amp; Remarks:
+                    </label>
+                    <textarea
+                      rows={3}
+                      value={editNotes}
+                      onChange={(e) => setEditNotes(e.target.value)}
+                      placeholder="e.g. Customer agreed to sell at ₹18,000. Wants pickup tomorrow 11 AM..."
+                      className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl p-3 focus:outline-none focus:border-yellow-400 transition"
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-2 pt-1">
+                    <button
+                      type="button"
+                      onClick={() => setIsEditingReason(false)}
+                      className="w-1/2 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-xs rounded-xl transition cursor-pointer"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleSaveReason}
+                      disabled={savingReason}
+                      className="w-1/2 flex items-center justify-center gap-1.5 py-2.5 bg-yellow-400 hover:bg-yellow-300 disabled:opacity-50 text-black font-extrabold text-xs rounded-xl transition shadow cursor-pointer"
+                    >
+                      <Save className="w-3.5 h-3.5" />
+                      <span>{savingReason ? "Saving..." : "Save Call Reason"}</span>
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  {selectedCall.callNotes && !selectedCall.callNotes.includes("CashALL Caller App") ? (
+                    <div className="bg-neutral-950 border border-neutral-800 rounded-2xl p-4 relative shadow-inner">
+                      <p className="text-neutral-100 text-xs sm:text-sm leading-relaxed whitespace-pre-wrap font-normal">
+                        "{selectedCall.callNotes}"
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="p-3.5 rounded-2xl bg-amber-950/30 border border-amber-800/50 text-amber-200 text-xs space-y-2.5">
+                      <div className="flex items-center gap-1.5 font-bold text-amber-300">
+                        <AlertCircle className="w-4 h-4 text-yellow-400 shrink-0" />
+                        <span>No detailed conversation reason recorded yet</span>
+                      </div>
+                      <p className="text-[11px] text-neutral-300">
+                        This call was logged via the caller app. Add the discussion notes and customer outcome below:
+                      </p>
+                      <button
+                        onClick={() => {
+                          setIsEditingReason(true);
+                          setEditOutcome(selectedCall.callOutcome || "CUSTOMER_INTERESTED");
+                          setEditNotes("");
+                        }}
+                        className="bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-xs px-3.5 py-2 rounded-xl transition flex items-center gap-1.5 cursor-pointer shadow"
+                      >
+                        <Edit3 className="w-3.5 h-3.5" />
+                        <span>+ Add Detailed Reason &amp; Outcome</span>
+                      </button>
+                    </div>
+                  )}
+                </>
+              )}
             </div>
 
             {/* AUDIO RECORDING (IF AVAILABLE) */}

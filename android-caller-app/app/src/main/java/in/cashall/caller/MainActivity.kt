@@ -77,6 +77,16 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         if (::binding.isInitialized) {
             checkSetupAndProceed()
+            if (prefs.lastTargetQuoteId.isNotBlank()) {
+                val qId = prefs.lastTargetQuoteId
+                val phone = prefs.lastTargetCustomerPhone
+                binding.webView.postDelayed({
+                    binding.webView.evaluateJavascript(
+                        "if (typeof window.__cashall_onCallFinished === 'function') { window.__cashall_onCallFinished('$qId', '$phone'); }",
+                        null
+                    )
+                }, 600)
+            }
         }
     }
 
