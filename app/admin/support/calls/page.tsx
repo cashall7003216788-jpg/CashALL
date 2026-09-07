@@ -157,6 +157,8 @@ export default function AdminSupportCallLogsPage() {
   const [copiedNotes, setCopiedNotes] = useState(false);
   const [copiedQuote, setCopiedQuote] = useState(false);
 
+  const [lastUpdated, setLastUpdated] = useState<string>("");
+
   // Close modal on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -168,15 +170,36 @@ export default function AdminSupportCallLogsPage() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Fetch call logs from API
+  // Fetch call logs from API with cache busting and fallback
   const fetchLogs = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch("/api/v1/support/calls", { cache: "no-store" });
+      const timestamp = Date.now();
+      const res = await fetch(`/api/v1/support/calls?t=${timestamp}`, {
+        cache: "no-store",
+        headers: {
+          Pragma: "no-cache",
+          "Cache-Control": "no-cache, no-store, must-revalidate",
+        },
+      });
       const json = await res.json();
-      const list = json.calls || json.recordings || json.data || [];
+      let list = json.calls || json.recordings || json.data || [];
+
+      if (!Array.isArray(list) || list.length === 0) {
+        const fallbackRes = await fetch(`/api/v1/support/recordings?t=${timestamp}`, {
+          cache: "no-store",
+          headers: {
+            Pragma: "no-cache",
+            "Cache-Control": "no-cache, no-store, must-revalidate",
+          },
+        });
+        const fallbackJson = await fallbackRes.json();
+        list = fallbackJson.calls || fallbackJson.recordings || fallbackJson.data || [];
+      }
+
       if (Array.isArray(list)) {
         setRecordings(list);
+        setLastUpdated(new Date().toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata" }));
       }
     } catch (e) {
       console.error("Failed to fetch customer call logs:", e);
@@ -236,6 +259,30 @@ export default function AdminSupportCallLogsPage() {
       },
     ];
   }, [recordings]);
+
+  // Counts by date filter for currently selected agent
+  const filterCounts = useMemo(() => {
+    let agentFiltered = recordings;
+    if (selectedAgent === "HARSHITA") {
+      agentFiltered = recordings.filter(
+        (rec) =>
+          rec.supportPersonName.toLowerCase().includes("harshita") ||
+          rec.supportPersonPhone.includes("8981191734")
+      );
+    } else if (selectedAgent === "SANGEET") {
+      agentFiltered = recordings.filter(
+        (rec) =>
+          rec.supportPersonName.toLowerCase().includes("sangeet") ||
+          (rec.supportPersonName.toLowerCase().includes("shaw") && !rec.supportPersonPhone.includes("8981191734"))
+      );
+    }
+
+    const todayCount = agentFiltered.filter((r) => getISTDateString(r.createdAt || r.callStartTime) === todayIST).length;
+    const yestCount = agentFiltered.filter((r) => getISTDateString(r.createdAt || r.callStartTime) === yesterdayIST).length;
+    const allCount = agentFiltered.length;
+
+    return { todayCount, yestCount, allCount };
+  }, [recordings, selectedAgent, todayIST, yesterdayIST]);
 
   // Filtered dataset
   const filteredRecordings = useMemo(() => {
@@ -403,14 +450,21 @@ export default function AdminSupportCallLogsPage() {
               <span>Export CSV</span>
             </button>
 
-            <button
-              onClick={fetchLogs}
-              disabled={loading}
-              className="flex items-center gap-2 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2.5 rounded-xl transition shadow-lg disabled:opacity-50 cursor-pointer"
-            >
-              <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
-              <span>Refresh Calls</span>
-            </button>
+            <div className="flex flex-col items-end">
+              <button
+                onClick={fetchLogs}
+                disabled={loading}
+                className="flex items-center gap-2 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2.5 rounded-xl transition shadow-lg disabled:opacity-50 cursor-pointer"
+              >
+                <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
+                <span>Refresh Calls</span>
+              </button>
+              {lastUpdated && (
+                <span className="text-[10px] text-neutral-500 font-mono mt-1">
+                  Updated: {lastUpdated}
+                </span>
+              )}
+            </div>
           </div>
         </div>
 
@@ -495,7 +549,7 @@ export default function AdminSupportCallLogsPage() {
               }`}
             >
               <Sparkles className="w-3 h-3" />
-              <span>TODAY</span>
+              <span>TODAY ({filterCounts.todayCount})</span>
             </button>
 
             <button
@@ -507,7 +561,7 @@ export default function AdminSupportCallLogsPage() {
               }`}
             >
               <Calendar className="w-3 h-3" />
-              <span>YESTERDAY</span>
+              <span>YESTERDAY ({filterCounts.yestCount})</span>
             </button>
 
             <button
@@ -519,7 +573,7 @@ export default function AdminSupportCallLogsPage() {
               }`}
             >
               <Clock className="w-3 h-3" />
-              <span>ALL TIME</span>
+              <span>ALL TIME ({filterCounts.allCount})</span>
             </button>
           </div>
 
@@ -581,20 +635,50 @@ export default function AdminSupportCallLogsPage() {
               <div className="w-12 h-12 rounded-2xl bg-neutral-750 border border-neutral-700 flex items-center justify-center mx-auto text-neutral-400">
                 <Phone className="w-6 h-6" />
               </div>
-              <div className="text-sm font-bold text-white">No call logs found for this filter</div>
-              <p className="text-xs text-neutral-400 max-w-sm mx-auto">
-                No customer calls logged under {selectedAgent} for {dateFilter}. Try changing the agent, date filter, or clearing search.
-              </p>
-              <button
-                onClick={() => {
-                  setSelectedAgent("ALL");
-                  setDateFilter("ALL");
-                  setSearch("");
-                }}
-                className="text-xs font-bold text-yellow-400 hover:underline pt-2 cursor-pointer"
-              >
-                Reset all filters
-              </button>
+              <div className="text-sm font-bold text-white">No call logs match this filter</div>
+              {recordings.length > 0 ? (
+                <>
+                  <p className="text-xs text-neutral-400 max-w-md mx-auto">
+                    No calls found for <span className="text-yellow-400 font-bold">{selectedAgent}</span> on{" "}
+                    <span className="text-white font-bold">{dateFilter}</span>. There are{" "}
+                    <span className="text-emerald-400 font-bold">{recordings.length} total call records</span> in the
+                    database.
+                  </p>
+                  <div className="flex items-center justify-center gap-3 pt-2">
+                    <button
+                      onClick={() => {
+                        setSelectedAgent("ALL");
+                        setDateFilter("ALL");
+                        setSearch("");
+                      }}
+                      className="bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-xs px-4 py-2 rounded-xl transition shadow-md cursor-pointer"
+                    >
+                      Show All Calls ({recordings.length})
+                    </button>
+                    {dateFilter !== "ALL" && (
+                      <button
+                        onClick={() => setDateFilter("ALL")}
+                        className="bg-neutral-750 hover:bg-neutral-700 text-white font-bold text-xs px-4 py-2 rounded-xl border border-neutral-600 transition cursor-pointer"
+                      >
+                        Switch to ALL TIME
+                      </button>
+                    )}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <p className="text-xs text-neutral-400 max-w-sm mx-auto">
+                    Connecting to Supabase call records... If calls were just made, click refresh to fetch the latest sync.
+                  </p>
+                  <button
+                    onClick={fetchLogs}
+                    className="bg-yellow-400 hover:bg-yellow-300 text-black font-extrabold text-xs px-4 py-2 rounded-xl transition shadow-md cursor-pointer inline-flex items-center gap-1.5"
+                  >
+                    <RefreshCw className="w-3.5 h-3.5" />
+                    <span>Refresh Now</span>
+                  </button>
+                </>
+              )}
             </div>
           ) : (
             <div className="overflow-x-auto">
