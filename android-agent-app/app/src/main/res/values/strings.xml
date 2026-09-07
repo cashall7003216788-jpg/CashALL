@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CashALL Agent</string>
+    <string name="channel_alarm_name">New Lead Urgent Buzzer</string>
+    <string name="channel_alarm_desc">Urgent siren alarms and vibrations when new doorstep leads are assigned to field agents</string>
+</resources>

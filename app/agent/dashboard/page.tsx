@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -26,8 +26,180 @@ import {
   XCircle,
   ListChecks,
   FileText,
+  Search,
+  Filter,
+  Navigation,
+  Bell,
+  BellRing,
+  Volume2,
+  VolumeX,
+  Eye,
+  ArrowRight,
+  RefreshCw,
 } from "lucide-react";
 import { CustomerAnswersModal } from "@/components/admin/CustomerAnswersModal";
+
+type DateFilterType = "ALL" | "TODAY" | "TOMORROW" | "DAY_AFTER_TOMORROW";
+type StatusFilterType = "ALL" | "PENDING" | "COMPLETED" | "CANCELLED";
+
+function getISTDateStrings() {
+  const now = new Date();
+  const getOffset = (days: number) => {
+    const d = new Date(now.getTime() + days * 86400000);
+    return new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Kolkata",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(d);
+  };
+
+  const getDisplay = (days: number) => {
+    const d = new Date(now.getTime() + days * 86400000);
+    return new Intl.DateTimeFormat("en-IN", {
+      timeZone: "Asia/Kolkata",
+      day: "numeric",
+      month: "short",
+    }).format(d);
+  };
+
+  return {
+    today: getOffset(0),
+    todayDisplay: getDisplay(0),
+    tomorrow: getOffset(1),
+    tomorrowDisplay: getDisplay(1),
+    dayAfterTomorrow: getOffset(2),
+    dayAfterTomorrowDisplay: getDisplay(2),
+  };
+}
+
+function matchesPickupDate(orderDateStr: string | undefined, targetDateIso: string, isTodayCheck: boolean): boolean {
+  if (!orderDateStr) return false;
+  const raw = orderDateStr.trim().toLowerCase();
+
+  if (isTodayCheck && (raw === "today" || raw.includes("today"))) return true;
+  if (!isTodayCheck && raw.includes("tomorrow") && !raw.includes("day after")) return true;
+
+  if (raw.includes(targetDateIso)) return true;
+
+  try {
+    const parsed = new Date(orderDateStr);
+    if (!isNaN(parsed.getTime())) {
+      const parsedIso = new Intl.DateTimeFormat("en-CA", {
+        timeZone: "Asia/Kolkata",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }).format(parsed);
+      if (parsedIso === targetDateIso) return true;
+    }
+  } catch {}
+
+  return false;
+}
+
+function getOrderDateBucket(
+  ord: AgentOrder,
+  dates: ReturnType<typeof getISTDateStrings>
+): "TODAY" | "TOMORROW" | "DAY_AFTER_TOMORROW" | "OTHER" {
+  if (matchesPickupDate(ord.pickupDate, dates.today, true)) return "TODAY";
+  if (matchesPickupDate(ord.pickupDate, dates.tomorrow, false)) return "TOMORROW";
+  if (matchesPickupDate(ord.pickupDate, dates.dayAfterTomorrow, false)) return "DAY_AFTER_TOMORROW";
+  return "OTHER";
+}
+
+class InHouseBuzzerAlarm {
+  private audioCtx: AudioContext | null = null;
+  private intervalId: any = null;
+  public isPlaying: boolean = false;
+
+  start() {
+    if (this.isPlaying) return;
+    this.isPlaying = true;
+
+    // 1. Synthetic Web Audio Siren / Alarm Buzzer (Sawtooth wave with pitch ramp)
+    try {
+      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+      if (AudioCtx) {
+        this.audioCtx = new AudioCtx();
+        const playBeep = () => {
+          if (!this.isPlaying || !this.audioCtx) return;
+          try {
+            if (this.audioCtx.state === "suspended") {
+              this.audioCtx.resume();
+            }
+            const osc = this.audioCtx.createOscillator();
+            const gain = this.audioCtx.createGain();
+            osc.type = "sawtooth";
+            osc.frequency.setValueAtTime(920, this.audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(460, this.audioCtx.currentTime + 0.3);
+            gain.gain.setValueAtTime(0.85, this.audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, this.audioCtx.currentTime + 0.35);
+            osc.connect(gain);
+            gain.connect(this.audioCtx.destination);
+            osc.start();
+            osc.stop(this.audioCtx.currentTime + 0.4);
+          } catch (e) {}
+        };
+
+        playBeep();
+        this.intervalId = setInterval(playBeep, 550);
+      }
+    } catch (e) {
+      console.warn("AudioContext error:", e);
+    }
+
+    // 2. Hardware Vibration
+    try {
+      if (typeof navigator !== "undefined" && "vibrate" in navigator) {
+        navigator.vibrate([700, 250, 700, 250, 1000]);
+        const vInterval = setInterval(() => {
+          if (!this.isPlaying) {
+            clearInterval(vInterval);
+            navigator.vibrate(0);
+          } else {
+            navigator.vibrate([700, 250, 700, 250, 1000]);
+          }
+        }, 2500);
+      }
+    } catch (e) {}
+
+    // 3. Android Native App Bridge (CashAllAgentNative)
+    try {
+      if (typeof window !== "undefined" && (window as any).CashAllAgentNative?.startAlarm) {
+        (window as any).CashAllAgentNative.startAlarm();
+      }
+    } catch (e) {}
+  }
+
+  stop() {
+    this.isPlaying = false;
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
+    if (this.audioCtx) {
+      try {
+        this.audioCtx.close();
+      } catch (e) {}
+      this.audioCtx = null;
+    }
+    try {
+      if (typeof navigator !== "undefined" && "vibrate" in navigator) {
+        navigator.vibrate(0);
+      }
+    } catch (e) {}
+
+    // Android Native App Bridge Stop
+    try {
+      if (typeof window !== "undefined" && (window as any).CashAllAgentNative?.stopAlarm) {
+        (window as any).CashAllAgentNative.stopAlarm();
+      }
+    } catch (e) {}
+  }
+}
+
+const buzzerAlarm = new InHouseBuzzerAlarm();
 
 interface AgentOrder {
   id: string;
@@ -65,6 +237,19 @@ export default function AgentDashboardPage() {
   const [notification, setNotification] = useState<{ type: "success" | "error"; msg: string } | null>(null);
   const [selectedOrderForAnswers, setSelectedOrderForAnswers] = useState<any | null>(null);
 
+  // Dynamic Lead Filters & Search
+  const [selectedDateFilter, setSelectedDateFilter] = useState<DateFilterType>("ALL");
+  const [selectedStatusFilter, setSelectedStatusFilter] = useState<StatusFilterType>("ALL");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Real-Time New Lead Alarm & Buzzer
+  const [activeAlertLead, setActiveAlertLead] = useState<AgentOrder | null>(null);
+  const [isAlarmSounding, setIsAlarmSounding] = useState(false);
+  const knownOrderIdsRef = useRef<Set<string>>(new Set());
+  const initialLoadDoneRef = useRef(false);
+
+  const dateStrings = useMemo(() => getISTDateStrings(), []);
+
   // Check agent login session
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -82,23 +267,72 @@ export default function AgentDashboardPage() {
     }
   }, [router]);
 
-  const fetchOrders = useCallback(async () => {
-    setLoading(true);
+  const handleTriggerAlarm = useCallback((ord: AgentOrder) => {
+    setActiveAlertLead(ord);
+    setIsAlarmSounding(true);
+    buzzerAlarm.start();
+
+    // Notify Native Android Bridge if running inside CashALL Agent App
+    if (typeof window !== "undefined" && (window as any).CashAllAgentNative) {
+      try {
+        (window as any).CashAllAgentNative.triggerNewLeadAlarm(JSON.stringify(ord));
+      } catch (e) {}
+    }
+  }, []);
+
+  const handleDismissAlarm = useCallback(() => {
+    buzzerAlarm.stop();
+    setIsAlarmSounding(false);
+    setActiveAlertLead(null);
+    if (typeof window !== "undefined" && (window as any).CashAllAgentNative) {
+      try {
+        (window as any).CashAllAgentNative.stopAlarm();
+      } catch (e) {}
+    }
+  }, []);
+
+  const fetchOrders = useCallback(async (isSilent = false) => {
+    if (!isSilent) setLoading(true);
     try {
       const agentId = agentSession?.id || "";
       const phone = agentSession?.phone || "";
       const name = encodeURIComponent(agentSession?.name || "");
-      const res = await fetch(`/api/v1/agent/orders?agentId=${agentId}&phone=${phone}&name=${name}`);
+      const res = await fetch(`/api/v1/agent/orders?agentId=${agentId}&phone=${phone}&name=${name}&t=${Date.now()}`);
       const json = await res.json();
       if (json.success && Array.isArray(json.orders)) {
-        setOrders(json.orders);
+        const fetchedOrders: AgentOrder[] = json.orders;
+        setOrders(fetchedOrders);
+
+        // Check for new incoming lead alert
+        if (initialLoadDoneRef.current) {
+          const newUnseenLead = fetchedOrders.find(
+            (o) =>
+              !knownOrderIdsRef.current.has(o.id) &&
+              !knownOrderIdsRef.current.has(o.orderNumber) &&
+              o.status !== "COMPLETED" &&
+              o.status !== "CANCELLED"
+          );
+
+          if (newUnseenLead) {
+            handleTriggerAlarm(newUnseenLead);
+          }
+        }
+
+        // Update known order IDs
+        const updatedSet = new Set<string>();
+        for (const o of fetchedOrders) {
+          updatedSet.add(o.id);
+          updatedSet.add(o.orderNumber);
+        }
+        knownOrderIdsRef.current = updatedSet;
+        initialLoadDoneRef.current = true;
       }
     } catch (err: any) {
       console.error("Error loading agent orders:", err);
     } finally {
-      setLoading(false);
+      if (!isSilent) setLoading(false);
     }
-  }, [agentSession]);
+  }, [agentSession, handleTriggerAlarm]);
 
   useEffect(() => {
     if (agentSession) {
@@ -106,7 +340,80 @@ export default function AgentDashboardPage() {
     }
   }, [agentSession, fetchOrders]);
 
+  // Background polling every 12 seconds for real-time lead alerts
+  useEffect(() => {
+    if (!agentSession) return;
+    const interval = setInterval(() => {
+      fetchOrders(true);
+    }, 12000);
+    return () => clearInterval(interval);
+  }, [agentSession, fetchOrders]);
+
+  // Clean up alarm on unmount
+  useEffect(() => {
+    return () => {
+      buzzerAlarm.stop();
+    };
+  }, []);
+
+  const counts = useMemo(() => {
+    let today = 0;
+    let tomorrow = 0;
+    let dayAfterTomorrow = 0;
+
+    for (const ord of orders) {
+      const bucket = getOrderDateBucket(ord, dateStrings);
+      if (bucket === "TODAY") today++;
+      else if (bucket === "TOMORROW") tomorrow++;
+      else if (bucket === "DAY_AFTER_TOMORROW") dayAfterTomorrow++;
+    }
+
+    return {
+      all: orders.length,
+      today,
+      tomorrow,
+      dayAfterTomorrow,
+    };
+  }, [orders, dateStrings]);
+
+  const filteredOrders = useMemo(() => {
+    return orders.filter((ord) => {
+      // 1. Date Filter
+      if (selectedDateFilter !== "ALL") {
+        const bucket = getOrderDateBucket(ord, dateStrings);
+        if (bucket !== selectedDateFilter) return false;
+      }
+
+      // 2. Status Filter
+      if (selectedStatusFilter !== "ALL") {
+        const isCancelled = ord.status === "CANCELLED" || ord.status === "REJECTED";
+        const isCompleted = ord.paymentStatus === "PAID" || ord.status === "COMPLETED";
+        if (selectedStatusFilter === "CANCELLED" && !isCancelled) return false;
+        if (selectedStatusFilter === "COMPLETED" && !isCompleted) return false;
+        if (selectedStatusFilter === "PENDING" && (isCancelled || isCompleted)) return false;
+      }
+
+      // 3. Search Query
+      if (searchQuery.trim()) {
+        const q = searchQuery.trim().toLowerCase();
+        const match =
+          ord.orderNumber.toLowerCase().includes(q) ||
+          ord.customerName.toLowerCase().includes(q) ||
+          ord.customerPhone.includes(q) ||
+          (ord.customerEmail && ord.customerEmail.toLowerCase().includes(q)) ||
+          ord.deviceName.toLowerCase().includes(q) ||
+          ord.address.toLowerCase().includes(q) ||
+          ord.pincode.includes(q) ||
+          (ord.imeiNumber && ord.imeiNumber.includes(q));
+        if (!match) return false;
+      }
+
+      return true;
+    });
+  }, [orders, selectedDateFilter, selectedStatusFilter, searchQuery, dateStrings]);
+
   const handleLogout = () => {
+    buzzerAlarm.stop();
     if (typeof window !== "undefined") {
       localStorage.removeItem("cashall_agent_session");
     }
@@ -384,6 +691,26 @@ export default function AgentDashboardPage() {
         </div>
       </header>
 
+      {/* ACTIVE ALARM STICKY BANNER */}
+      {isAlarmSounding && (
+        <div className="bg-gradient-to-r from-red-700 via-red-600 to-red-800 text-white px-4 py-3 flex flex-wrap items-center justify-between gap-3 shadow-2xl animate-pulse sticky top-16 z-40 border-b-2 border-yellow-400">
+          <div className="flex items-center gap-2.5 font-black text-xs sm:text-sm">
+            <BellRing className="w-5 h-5 animate-bounce text-yellow-300 shrink-0" />
+            <span>⚠️ LOUD ALARM & VIBRATION ACTIVE: New Lead Assigned to You!</span>
+          </div>
+          <button
+            onClick={() => {
+              buzzerAlarm.stop();
+              setIsAlarmSounding(false);
+            }}
+            className="flex items-center gap-1.5 bg-black hover:bg-neutral-900 text-yellow-400 px-4 py-1.5 rounded-xl font-black text-xs shadow-lg transition border border-yellow-400/40 cursor-pointer"
+          >
+            <VolumeX className="w-4 h-4" />
+            <span>Silence Siren</span>
+          </button>
+        </div>
+      )}
+
       {/* MAIN CONTAINER */}
       <main className="flex-grow p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full space-y-6">
         {/* HEADER TOOLBAR */}
@@ -397,14 +724,37 @@ export default function AgentDashboardPage() {
             </p>
           </div>
 
-          <button
-            onClick={fetchOrders}
-            disabled={loading}
-            className="flex items-center gap-2 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2.5 rounded-xl transition shadow-yellowGlow disabled:opacity-60 cursor-pointer"
-          >
-            <Clock className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
-            Refresh Orders
-          </button>
+          <div className="flex items-center gap-2.5 flex-wrap">
+            <button
+              onClick={() => {
+                if (isAlarmSounding) {
+                  buzzerAlarm.stop();
+                  setIsAlarmSounding(false);
+                } else {
+                  buzzerAlarm.start();
+                  setIsAlarmSounding(true);
+                }
+              }}
+              className={`flex items-center gap-2 text-xs font-black px-4 py-2.5 rounded-xl transition cursor-pointer border shadow-md ${
+                isAlarmSounding
+                  ? "bg-red-600 hover:bg-red-500 text-white border-red-400 animate-pulse"
+                  : "bg-neutral-800 hover:bg-neutral-700 text-yellow-400 border-yellow-400/30"
+              }`}
+              title="Test the loud 920Hz-460Hz siren and vibration pattern"
+            >
+              {isAlarmSounding ? <VolumeX className="w-4 h-4 text-white" /> : <Volume2 className="w-4 h-4 text-yellow-400" />}
+              <span>{isAlarmSounding ? "Stop Buzzer" : "Test Siren & Buzzer"}</span>
+            </button>
+
+            <button
+              onClick={() => fetchOrders(false)}
+              disabled={loading}
+              className="flex items-center gap-2 text-xs font-black text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2.5 rounded-xl transition shadow-yellowGlow disabled:opacity-60 cursor-pointer"
+            >
+              <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
+              <span>Refresh Orders</span>
+            </button>
+          </div>
         </div>
 
         {/* NOTIFICATION TOAST */}
@@ -441,6 +791,104 @@ export default function AgentDashboardPage() {
           </div>
         )}
 
+        {/* FILTERS & SEARCH BAR */}
+        <div className="bg-neutral-900 border border-neutral-800 rounded-3xl p-4 sm:p-5 shadow-xl space-y-4">
+          {/* PRIMARY DATE FILTERS: ALL TIME, TODAY, TOMORROW, DAY AFTER TOMORROW */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+            <div className="flex items-center gap-1.5 text-xs font-bold text-neutral-400">
+              <Calendar className="w-4 h-4 text-yellow-400" />
+              <span>Schedule Filter:</span>
+            </div>
+
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 w-full md:w-auto">
+              {(
+                [
+                  { id: "ALL", label: "ALL TIME", count: counts.all },
+                  { id: "TODAY", label: "TODAY", count: counts.today },
+                  { id: "TOMORROW", label: "TOMORROW", count: counts.tomorrow },
+                  { id: "DAY_AFTER_TOMORROW", label: "DAY AFTER TOMORROW", count: counts.dayAfterTomorrow },
+                ] as const
+              ).map((tab) => {
+                const isActive = selectedDateFilter === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setSelectedDateFilter(tab.id)}
+                    className={`flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl text-xs font-black transition cursor-pointer ${
+                      isActive
+                        ? "bg-yellow-400 text-black shadow-yellowGlow"
+                        : "bg-neutral-800/90 text-neutral-300 hover:bg-neutral-700/80 hover:text-white border border-neutral-700/60"
+                    }`}
+                  >
+                    <span>{tab.label}</span>
+                    <span
+                      className={`px-2 py-0.5 rounded-full text-[10px] font-mono ${
+                        isActive
+                          ? "bg-black text-yellow-400"
+                          : tab.count > 0
+                          ? "bg-yellow-400/20 text-yellow-400 border border-yellow-400/40"
+                          : "bg-neutral-700 text-neutral-400"
+                      }`}
+                    >
+                      {tab.count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* SECONDARY ROW: STATUS FILTER PILLS & SEARCH INPUT */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-3 border-t border-neutral-800">
+            <div className="flex items-center gap-1.5 flex-wrap">
+              <span className="text-[11px] font-bold text-neutral-400 mr-1 flex items-center gap-1">
+                <Filter className="w-3.5 h-3.5 text-neutral-500" />
+                Status:
+              </span>
+              {(
+                [
+                  { id: "ALL", label: "All" },
+                  { id: "PENDING", label: "Pending Visit" },
+                  { id: "COMPLETED", label: "Paid & Done" },
+                  { id: "CANCELLED", label: "Cancelled" },
+                ] as const
+              ).map((st) => (
+                <button
+                  key={st.id}
+                  onClick={() => setSelectedStatusFilter(st.id)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${
+                    selectedStatusFilter === st.id
+                      ? "bg-neutral-200 text-black font-black"
+                      : "bg-neutral-800/60 text-neutral-400 hover:text-white hover:bg-neutral-800"
+                  }`}
+                >
+                  {st.label}
+                </button>
+              ))}
+            </div>
+
+            {/* SEARCH INPUT */}
+            <div className="relative min-w-[240px] sm:w-72">
+              <Search className="w-4 h-4 text-neutral-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search order, customer, IMEI..."
+                className="w-full bg-black/60 border border-neutral-700 rounded-xl pl-9 pr-8 py-1.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-yellow-400"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-neutral-300 text-xs"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
         {/* ORDERS LIST */}
         <div className="space-y-4">
           {loading ? (
@@ -456,8 +904,28 @@ export default function AgentDashboardPage() {
                 When an admin assigns a pickup order to you, it will appear here instantly.
               </p>
             </div>
+          ) : filteredOrders.length === 0 ? (
+            <div className="bg-neutral-900 rounded-3xl p-14 text-center border border-neutral-800 space-y-3">
+              <Filter className="w-10 h-10 mx-auto text-neutral-500 opacity-60" />
+              <p className="text-base font-bold text-white">No pickups match your active filter</p>
+              <p className="text-xs text-neutral-400 max-w-md mx-auto">
+                No assigned leads found for date filter: <span className="text-yellow-400 font-bold">{selectedDateFilter.replace(/_/g, " ")}</span>
+                {selectedStatusFilter !== "ALL" ? ` and status: ${selectedStatusFilter}` : ""}.
+              </p>
+              <button
+                onClick={() => {
+                  setSelectedDateFilter("ALL");
+                  setSelectedStatusFilter("ALL");
+                  setSearchQuery("");
+                }}
+                className="inline-flex items-center gap-2 text-xs font-black bg-yellow-400 hover:bg-yellow-300 text-black px-4 py-2 rounded-xl transition shadow-yellowGlow cursor-pointer"
+              >
+                <RefreshCw className="w-3.5 h-3.5" />
+                Reset All Filters
+              </button>
+            </div>
           ) : (
-            orders.map((ord) => {
+            filteredOrders.map((ord) => {
               const isCancelled = ord.status === "CANCELLED" || ord.status === "REJECTED";
               const isCompleted = ord.paymentStatus === "PAID" || ord.status === "COMPLETED";
               const isInspectionDone = Boolean(ord.imeiNumber) || ord.status === "ACCEPTED" || isCompleted;
@@ -510,7 +978,7 @@ export default function AgentDashboardPage() {
 
                   {/* 3 COLUMN INFO GRID */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {/* CUSTOMER & CONTACT */}
+                    {/* CUSTOMER & CONTACT & NAVIGATION */}
                     <div className="space-y-1.5">
                       <div className="text-[11px] font-bold uppercase tracking-wider text-neutral-400">
                         Customer & Address
@@ -525,8 +993,25 @@ export default function AgentDashboardPage() {
                       </a>
                       <div className="flex items-start gap-1.5 text-xs text-neutral-400 mt-2">
                         <MapPin className="w-3.5 h-3.5 text-yellow-400 shrink-0 mt-0.5" />
-                        <span>{ord.address}</span>
+                        <div className="flex-grow">
+                          <span>{ord.address}</span>
+                          {ord.pincode && <span className="ml-1 text-neutral-400 font-semibold">({ord.pincode})</span>}
+                        </div>
                       </div>
+
+                      {/* 1-TAP GOOGLE MAPS NAVIGATION */}
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                          `${ord.address} ${ord.pincode || ""}`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 mt-2 text-[11px] font-black bg-neutral-800 hover:bg-neutral-700 text-yellow-400 hover:text-yellow-300 border border-neutral-700 px-3 py-1.5 rounded-xl transition shadow-sm"
+                        title="Open Google Maps Navigation to customer doorstep"
+                      >
+                        <Navigation className="w-3.5 h-3.5 text-yellow-400" />
+                        <span>Navigate on Google Maps</span>
+                      </a>
                     </div>
 
                     {/* DEVICE & PAYOUT AMOUNT */}
@@ -738,6 +1223,105 @@ export default function AgentDashboardPage() {
           )}
         </div>
       </main>
+
+      {/* FULL-SCREEN PERSISTENT LOUD LEAD ALERT MODAL */}
+      {activeAlertLead && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
+          <div className="bg-neutral-900 border-2 border-yellow-400 rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl space-y-6 relative overflow-hidden">
+            {/* Pulsing Top Bar */}
+            <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-red-600 via-yellow-400 to-red-600 animate-pulse" />
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-red-600/20 border border-red-500 flex items-center justify-center text-red-400 animate-bounce shrink-0">
+                  <BellRing className="w-6 h-6" />
+                </div>
+                <div>
+                  <span className="text-xs font-black uppercase tracking-wider text-red-400 flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
+                    NEW LEAD ASSIGNED!
+                  </span>
+                  <h2 className="text-xl font-black text-white font-price">
+                    Order #{activeAlertLead.orderNumber}
+                  </h2>
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  buzzerAlarm.stop();
+                  setIsAlarmSounding(false);
+                  setActiveAlertLead(null);
+                }}
+                className="text-neutral-400 hover:text-white p-1 rounded-lg text-lg cursor-pointer"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="bg-black/60 rounded-2xl p-4 border border-neutral-800 space-y-3">
+              <div className="flex justify-between items-center text-xs">
+                <span className="text-neutral-400">Device:</span>
+                <span className="font-bold text-white">{activeAlertLead.deviceName}</span>
+              </div>
+              <div className="flex justify-between items-center text-xs">
+                <span className="text-neutral-400">Scheduled Visit:</span>
+                <span className="font-black text-yellow-400">
+                  {activeAlertLead.pickupDate} ({activeAlertLead.pickupTimeSlot})
+                </span>
+              </div>
+              <div className="flex justify-between items-center text-xs">
+                <span className="text-neutral-400">Customer:</span>
+                <span className="font-bold text-white">{activeAlertLead.customerName}</span>
+              </div>
+              <div className="flex justify-between items-center text-xs">
+                <span className="text-neutral-400">Phone:</span>
+                <a href={`tel:${activeAlertLead.customerPhone}`} className="font-bold text-yellow-400 hover:underline">
+                  {activeAlertLead.customerPhone}
+                </a>
+              </div>
+              <div className="flex justify-between items-center text-xs">
+                <span className="text-neutral-400">Address:</span>
+                <span className="font-medium text-neutral-300 text-right max-w-[220px] truncate">
+                  {activeAlertLead.address}
+                </span>
+              </div>
+              <div className="pt-2 border-t border-neutral-800 flex justify-between items-center text-xs">
+                <span className="text-neutral-400 font-bold">Quoted Value:</span>
+                <span className="text-base font-black text-emerald-400 font-price">
+                  ₹{(activeAlertLead.quotedPrice || activeAlertLead.estimatedPrice || 0).toLocaleString("en-IN")}
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={() => {
+                  buzzerAlarm.stop();
+                  setIsAlarmSounding(false);
+                  setActiveAlertLead(null);
+                }}
+                className="flex-1 py-3 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-black text-xs transition shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <VolumeX className="w-4 h-4" />
+                <span>Stop Siren & Dismiss</span>
+              </button>
+
+              <Link
+                href={`/agent/orders/${activeAlertLead.orderNumber}/inspection`}
+                onClick={() => {
+                  buzzerAlarm.stop();
+                  setIsAlarmSounding(false);
+                  setActiveAlertLead(null);
+                }}
+                className="flex-1 py-3 px-4 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-black font-black text-xs transition shadow-yellowGlow flex items-center justify-center gap-2 cursor-pointer text-center"
+              >
+                <span>Start Inspection</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* CUSTOMER ANSWERS & QC AUDIT MODAL */}
       <CustomerAnswersModal
