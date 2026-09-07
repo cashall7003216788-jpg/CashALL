@@ -47,7 +47,6 @@ RESOLVED_MAP = {
     ("VIVO", "Vivo T1", "Standard"): "Rs.5,360",
     ("VIVO", "Vivo T1x", "Standard"): "Rs.4,530",
     ("VIVO", "Vivo X90", "Standard"): "Rs.23,800",
-    ("VIVO", "Vivo V50 Elite", "Standard"): "Rs.18,500 (Market Resale Valuation)",
     ("VIVO", "Vivo V70 Elite", "Standard"): "Rs.35,500",
     
     # Oppo

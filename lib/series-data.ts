@@ -43,7 +43,7 @@ export const BRAND_SERIES_MAP: Record<string, SeriesItem[]> = {
     { id: "s-op-open", name: "Open Series", matchPattern: ["Open"] },
   ],
   vivo: [
-    { id: "s-viv-v", name: "V Series", matchPattern: ["Vivo V", "V1", "V2", "V3", "V4", "V5", "V7", "V9", "V11", "V15", "V17", "V19", "V20", "V21", "V23", "V25", "V27", "V29", "V30", "V40", "V50"] },
+    { id: "s-viv-v", name: "V Series", matchPattern: ["Vivo V", "V1", "V2", "V3", "V4", "V5", "V7", "V9", "V11", "V15", "V17", "V19", "V20", "V21", "V23", "V25", "V27", "V29", "V30", "V40"] },
     { id: "s-viv-y", name: "Y Series", matchPattern: ["Vivo Y", " Y1", " Y2", " Y3", " Y5", " Y7", " Y8", " Y9", " Y100", " Y200"] },
     { id: "s-viv-x", name: "X Series", matchPattern: ["Vivo X", " X50", " X60", " X70", " X80", " X90", " X100"] },
     { id: "s-viv-t", name: "T Series", matchPattern: ["Vivo T", " T1", " T2", " T3"] },

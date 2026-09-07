@@ -562,15 +562,21 @@ export default function AdminOrdersPage() {
     const token = getAdminToken();
 
     try {
-      await fetch(`/api/v1/admin/orders/${ord.orderNumber}/inspection`, {
+      const res = await fetch(`/api/v1/admin/orders/${ord.orderNumber}/email`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-        body: JSON.stringify({
-          imei: "N/A",
-          revisedPrice: ord.revisedPrice || ord.estimatedPrice,
-          customerEmail: cleanEmail,
-        }),
+        body: JSON.stringify({ email: cleanEmail }),
       });
+
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || json.success === false) {
+        throw new Error(json.error || json.message || "Failed to update email.");
+      }
+
+      // Optimistically update local state immediately so UI changes without delay
+      setOrders((prev) =>
+        prev.map((o) => (o.id === ord.id || o.orderNumber === ord.orderNumber ? { ...o, customerEmail: cleanEmail } : o))
+      );
 
       await fetchOrders();
       alert(`✅ Customer email updated to "${cleanEmail}" for Order #${ord.orderNumber}!`);

@@ -20872,9 +20872,6 @@ Total Models in this Brand: 144
 
   -----------------------------------------------------------------
   -----------------------------------------------------------------
-  MODEL : Vivo V50 Lite
-    Cashify URL : https://www.cashify.in/sell-old-mobile-phone/used-vivo-v50-lite-5g
-  -----------------------------------------------------------------
     [VARIANT] : 8 GB/128 GB
       * Storage          : 128 GB
       * RAM              : 8 GB

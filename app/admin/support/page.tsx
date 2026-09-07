@@ -251,6 +251,14 @@ export default function AdminSupportManagementPage() {
 
           <div className="flex items-center gap-3 flex-wrap">
             <Link
+              href="/admin/support/calls"
+              className="flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-400 hover:to-amber-400 text-black text-xs font-black px-4 py-2.5 rounded-xl transition shadow-lg"
+            >
+              <Radio className="w-4 h-4 text-black animate-pulse" />
+              <span>Customer Call Logs ({recordings.length})</span>
+            </Link>
+
+            <Link
               href="/support/dashboard"
               target="_blank"
               className="flex items-center gap-1.5 bg-neutral-900 hover:bg-neutral-750 text-neutral-200 border border-neutral-700 text-xs font-bold px-3.5 py-2.5 rounded-xl transition shadow-md"
@@ -597,7 +605,13 @@ export default function AdminSupportManagementPage() {
               </p>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <Link
+                href="/admin/support/calls"
+                className="inline-flex items-center gap-1.5 text-xs text-black font-extrabold bg-yellow-400 hover:bg-yellow-300 px-3.5 py-1.5 rounded-xl transition shadow-md"
+              >
+                <span>Open Dedicated Calls Sub-Page →</span>
+              </Link>
               <input
                 type="text"
                 placeholder="Search Phone or Agent..."

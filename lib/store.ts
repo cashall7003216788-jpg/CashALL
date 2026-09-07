@@ -11844,19 +11844,6 @@ const MOBILE_MODELS_PART_3: DeviceModelData[] = [
     "category": "MOBILE"
   },
   {
-    "id": "m-vivo-vivo-v50-lite",
-    "brandId": "b-vivo",
-    "brandSlug": "vivo",
-    "name": "Vivo V50 Lite",
-    "slug": "vivo-v50-lite",
-    "imageUrl": "https://s3ng.cashify.in/builder/bd4696800f834b71a0cc8be44e0b148e.jpg",
-    "releaseYear": 2025,
-    "popular": true,
-    "active": true,
-    "contactForPrice": false,
-    "category": "MOBILE"
-  },
-  {
     "id": "m-vivo-vivo-v9-pro",
     "brandId": "b-vivo",
     "brandSlug": "vivo",
@@ -41523,30 +41510,6 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "basePrice": 18382,
     "active": true,
     "ram": "8 GB"
-  },
-  {
-    "id": "v-m-vivo-vivo-v50-lite-128-gb-8-gb",
-    "modelId": "m-vivo-vivo-v50-lite",
-    "storage": "128 GB",
-    "basePrice": 15958,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-vivo-vivo-v50-lite-256-gb-8-gb",
-    "modelId": "m-vivo-vivo-v50-lite",
-    "storage": "256 GB",
-    "basePrice": 17372,
-    "active": true,
-    "ram": "8 GB"
-  },
-  {
-    "id": "v-m-vivo-vivo-v50-lite-512-gb-12-gb",
-    "modelId": "m-vivo-vivo-v50-lite",
-    "storage": "512 GB",
-    "basePrice": 19089,
-    "active": true,
-    "ram": "12 GB"
   },
   {
     "id": "v-m-vivo-vivo-v9-pro-64-gb-4-gb",

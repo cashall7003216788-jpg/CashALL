@@ -7,10 +7,10 @@ import { logger } from "@/lib/utils/logger";
 import { z } from "zod";
 
 const saveInspectionSchema = z.object({
-  imei: z.string().min(5, "IMEI / Serial Number is required"),
+  imei: z.string().optional().default("N/A"),
   screenFinding: z.string().optional(),
   bodyFinding: z.string().optional(),
-  revisedPrice: z.number().min(0, "Revised price must be a valid amount"),
+  revisedPrice: z.number().min(0, "Revised price must be a valid amount").optional(),
   reason: z.string().optional(),
   customerEmail: z.string().optional(),
 });
@@ -46,6 +46,8 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     throw new AppError("Order not found.", 404);
   }
 
+  const effectiveRevisedPrice = revisedPrice ?? order.quote?.estimatedPrice ?? 0;
+
   // Perform inspection transaction in DB
   const updatedOrder = await prisma.$transaction(async (tx) => {
     // 1. Update user email if provided
@@ -65,7 +67,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
           inspectorName: decodedUser.email || "Inspector",
           imeiNumber: imei.trim(),
           physicalAnswersJson: JSON.stringify({ screenFinding, bodyFinding }),
-          revisedPrice,
+          revisedPrice: effectiveRevisedPrice,
           priceDifferenceReason: reason || null,
           status: "APPROVED",
           inspectedAt: new Date(),
@@ -79,7 +81,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
           imeiNumber: imei.trim(),
           declaredAnswersJson: order.quote?.selectedAnswersJson || "{}",
           physicalAnswersJson: JSON.stringify({ screenFinding, bodyFinding }),
-          revisedPrice,
+          revisedPrice: effectiveRevisedPrice,
           priceDifferenceReason: reason || null,
           status: "APPROVED",
           inspectedAt: new Date(),
@@ -109,7 +111,7 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
       where: { id: order.id },
       data: {
         status: "ACCEPTED",
-        finalPrice: revisedPrice,
+        finalPrice: effectiveRevisedPrice,
       },
       include: {
         user: true,
@@ -122,11 +124,11 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     });
   });
 
-  logger.info(`[PHYSICAL INSPECTION] Saved for Order #${order.orderNumber} - IMEI: ${imei}, Revised Price: ₹${revisedPrice}`);
+  logger.info(`[PHYSICAL INSPECTION] Saved for Order #${order.orderNumber} - IMEI: ${imei}, Revised Price: ₹${effectiveRevisedPrice}`);
 
   return NextResponse.json({
     success: true,
-    message: `Physical inspection saved and payout price locked at ₹${revisedPrice.toLocaleString("en-IN")}.`,
+    message: `Physical inspection saved and payout price locked at ₹${effectiveRevisedPrice.toLocaleString("en-IN")}.`,
     data: updatedOrder,
   });
 });

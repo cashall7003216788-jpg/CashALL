@@ -7,7 +7,6 @@ final_5 = [
     ("APPLE", "Apple iPhone SE 2020", ["used-apple-iphone-se-2020-64-gb", "used-apple-iphone-se-2020-128-gb", "used-apple-iphone-se-2020-256-gb"]),
     ("APPLE", "Apple iPhone Air", ["used-apple-iphone-air-256-gb", "used-apple-iphone-air-512-gb", "used-apple-iphone-air-128-gb"]),
     ("XIAOMI", "Xiaomi Redmi Note 4", ["used-xiaomi-redmi-note-4-4-gb-64-gb", "used-xiaomi-redmi-note-4-3-gb-32-gb", "used-xiaomi-redmi-note-4-2-gb-32-gb"]),
-    ("VIVO", "Vivo V50 Elite", ["used-vivo-v50-elite-8-gb-128-gb", "used-vivo-v50-elite-8-gb-256-gb"]),
     ("IQOO", "iQOO 15R", ["used-iqoo-15r-8-gb-128-gb", "used-iqoo-15r-12-gb-256-gb"])
 ]
 
