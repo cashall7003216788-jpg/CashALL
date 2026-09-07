@@ -10,4 +10,5 @@
     <color name="text_muted">#A3A3A3</color>
     <color name="red_alarm">#DC2626</color>
     <color name="green_success">#16A34A</color>
+    <color name="ic_launcher_background">#18181B</color>
 </resources>

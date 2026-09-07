@@ -17,8 +17,11 @@ class AlarmActionReceiver : BroadcastReceiver() {
         Log.i("AlarmActionReceiver", "Received action: ${intent?.action}")
         if (intent?.action == ACTION_SILENCE_ALARM) {
             AlarmSoundManager.stopAlarm(context)
-            val notifManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as? NotificationManager
-            notifManager?.cancel(NOTIF_ID_URGENT_ALARM)
+            try {
+                val notifManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as? NotificationManager
+                notifManager?.cancel(NOTIF_ID_URGENT_ALARM)
+            } catch (ignored: Exception) {}
+            MainActivity.instance?.updateAlarmCard(false)
         }
     }
 }

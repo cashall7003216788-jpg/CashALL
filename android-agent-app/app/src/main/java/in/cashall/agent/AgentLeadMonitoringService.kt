@@ -233,6 +233,7 @@ class AgentLeadMonitoringService : Service() {
                 Intent(this, MainActivity::class.java).apply {
                     flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
                     putExtra("orderNumber", orderNumber)
+                    putExtra("stopAlarm", true)
                 },
                 PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
             )
@@ -246,24 +247,20 @@ class AgentLeadMonitoringService : Service() {
                 PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
             )
 
-            val alarmSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
-                ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE)
-
             val notif = NotificationCompat.Builder(this, CashAllApplication.CHANNEL_URGENT_ALARM_ID)
                 .setContentTitle("🚨 NEW LEAD ASSIGNED! Order #$orderNumber")
                 .setContentText("$deviceName • ₹$quotedPrice • $customerName ($pickupDate $pickupSlot)")
                 .setStyle(NotificationCompat.BigTextStyle().bigText(
                     "Doorstep Pickup Assigned:\n• Device: $deviceName\n• Value: ₹$quotedPrice\n• Customer: $customerName\n• Slot: $pickupDate ($pickupSlot)"
                 ))
-                .setSmallIcon(R.drawable.ic_bell)
+                .setSmallIcon(R.drawable.ic_notification)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setCategory(NotificationCompat.CATEGORY_ALARM)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setContentIntent(openAppIntent)
                 .setFullScreenIntent(openAppIntent, true)
                 .setAutoCancel(true)
-                .setOngoing(true)
-                .setSound(alarmSoundUri)
+                .setOngoing(false)
                 .setVibrate(longArrayOf(0, 800, 300, 800, 300, 1000))
                 .addAction(R.drawable.ic_bell, "Silence Alarm", silenceIntent)
                 .addAction(R.drawable.ic_bell, "Open Lead", openAppIntent)

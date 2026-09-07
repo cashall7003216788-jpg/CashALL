@@ -78,7 +78,38 @@ class CashAllAgentNative(
     }
 
     @JavascriptInterface
+    fun callCustomer(phone: String, customerName: String, deviceName: String, orderNumber: String) {
+        activity.runOnUiThread {
+            Log.i(TAG, "Calling customer: phone=$phone, name=$customerName, device=$deviceName, order=$orderNumber")
+            AgentPreferenceManager.setLastTargetCall(activity, phone, customerName, deviceName, orderNumber)
+
+            try {
+                val cleanPhone = phone.trim()
+                val hasCallPhone = activity.checkSelfPermission(android.Manifest.permission.CALL_PHONE) == android.content.pm.PackageManager.PERMISSION_GRANTED
+                val intent = if (hasCallPhone) {
+                    android.content.Intent(android.content.Intent.ACTION_CALL, android.net.Uri.parse("tel:$cleanPhone"))
+                } else {
+                    android.content.Intent(android.content.Intent.ACTION_DIAL, android.net.Uri.parse("tel:$cleanPhone"))
+                }
+                intent.flags = android.content.Intent.FLAG_ACTIVITY_NEW_TASK
+                activity.startActivity(intent)
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to launch call intent: ${e.message}", e)
+            }
+        }
+    }
+
+    @JavascriptInterface
+    fun openDialerCallSettings() {
+        activity.runOnUiThread {
+            if (activity is MainActivity) {
+                activity.openDialerCallSettings()
+            }
+        }
+    }
+
+    @JavascriptInterface
     fun getAppVersion(): String {
-        return "1.0.1-PROD-BG"
+        return "1.0.2-CALL-RECORD-PROD"
     }
 }

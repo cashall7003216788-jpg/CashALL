@@ -3,6 +3,7 @@ package `in`.cashall.agent
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -24,6 +25,7 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -45,6 +47,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private const val TAG = "CashAllAgentApp"
         const val AGENT_DASHBOARD_URL = "https://cashall.in/agent/dashboard"
+        var instance: MainActivity? = null
     }
 
     // Activity result launcher for camera / file chooser
@@ -70,45 +73,60 @@ class MainActivity : AppCompatActivity() {
         fileUploadCallback = null
     }
 
-    // Permission launcher for Camera and Notifications
+    // Permission launcher for mandatory permissions
     private val permissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
-    ) { permissions ->
-        val cameraGranted = permissions[Manifest.permission.CAMERA] ?: false
-        val notifGranted = permissions[Manifest.permission.POST_NOTIFICATIONS] ?: true
-        Log.i(TAG, "Permissions updated: Camera=$cameraGranted, Notif=$notifGranted")
-        binding.permissionOverlay.visibility = View.GONE
-        binding.swipeRefresh.visibility = View.VISIBLE
-
-        // Once notifications are allowed, start background lead monitor
-        if (AgentPreferenceManager.isAgentLoggedIn(this)) {
-            AgentLeadMonitoringService.start(this)
-        }
+    ) { _ ->
+        checkAndEnforcePermissions()
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        instance = this
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        handleIntentAlarm(intent)
         setupBackPressHandler()
         setupUI()
         setupWebView()
-        checkAndRequestPermissions()
+        checkAndEnforcePermissions()
         requestIgnoreBatteryOptimizations()
 
-        // Start background service if agent is already logged in
-        if (AgentPreferenceManager.isAgentLoggedIn(this)) {
+        if (AgentPreferenceManager.isAgentLoggedIn(this) && areAllPermissionsGranted()) {
             AgentLeadMonitoringService.start(this)
         }
 
         binding.webView.loadUrl(AGENT_DASHBOARD_URL)
     }
 
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        handleIntentAlarm(intent)
+    }
+
+    private fun handleIntentAlarm(intent: Intent?) {
+        if (intent?.getBooleanExtra("stopAlarm", false) == true || intent?.hasExtra("orderNumber") == true) {
+            Log.i(TAG, "Silencing alarm and cancelling notification immediately upon opening.")
+            AlarmSoundManager.stopAlarm(this)
+            updateAlarmCard(false)
+            try {
+                val notifManager = getSystemService(Context.NOTIFICATION_SERVICE) as? NotificationManager
+                notifManager?.cancel(AgentLeadMonitoringService.NOTIF_ID_URGENT_ALARM)
+            } catch (ignored: Exception) {}
+        }
+    }
+
     override fun onResume() {
         super.onResume()
         updateAlarmCard(AlarmSoundManager.isAlarmActive())
+        checkAndEnforcePermissions()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (instance == this) instance = null
     }
 
     private fun setupBackPressHandler() {
@@ -141,8 +159,12 @@ class MainActivity : AppCompatActivity() {
             updateAlarmCard(false)
         }
 
+        binding.btnAutoRecordSettings.setOnClickListener {
+            openDialerCallSettings()
+        }
+
         binding.btnGrantPermissions.setOnClickListener {
-            requestRequiredPermissions()
+            requestMandatoryPermissions()
         }
     }
 
@@ -168,7 +190,7 @@ class MainActivity : AppCompatActivity() {
             mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
         }
 
-        // Expose Native Alarm, Session & Haptics Bridge to JavaScript
+        // Expose Native Alarm, Session, Haptics & Calling Bridge to JavaScript
         val nativeBridge = CashAllAgentNative(this) { active ->
             updateAlarmCard(active)
         }
@@ -237,8 +259,20 @@ class MainActivity : AppCompatActivity() {
                 val url = request?.url?.toString() ?: return false
 
                 if (url.startsWith("tel:")) {
+                    val rawPhone = url.substringAfter("tel:")
+                    val targetName = AgentPreferenceManager.getLastTargetName(this@MainActivity)
+                    val targetDevice = AgentPreferenceManager.getLastTargetDevice(this@MainActivity)
+                    val targetOrder = AgentPreferenceManager.getLastTargetOrder(this@MainActivity)
+                    AgentPreferenceManager.setLastTargetCall(this@MainActivity, rawPhone, targetName, targetDevice, targetOrder)
+
                     try {
-                        startActivity(Intent(Intent.ACTION_DIAL, Uri.parse(url)))
+                        val hasCallPhone = checkSelfPermission(Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED
+                        val intent = if (hasCallPhone) {
+                            Intent(Intent.ACTION_CALL, Uri.parse(url))
+                        } else {
+                            Intent(Intent.ACTION_DIAL, Uri.parse(url))
+                        }
+                        startActivity(intent)
                         return true
                     } catch (e: Exception) {
                         Log.e(TAG, "Cannot launch dialer: ${e.message}")
@@ -310,34 +344,83 @@ class MainActivity : AppCompatActivity() {
         return File.createTempFile("CashALL_Doorstep_${timeStamp}_", ".jpg", storageDir)
     }
 
-    private fun checkAndRequestPermissions() {
-        val neededPermissions = mutableListOf<String>()
+    // ── Mandatory Permissions Gatekeeper ──
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            neededPermissions.add(Manifest.permission.CAMERA)
-        }
-
+    private fun getRequiredPermissions(): List<String> {
+        val list = mutableListOf(
+            Manifest.permission.CAMERA,
+            Manifest.permission.CALL_PHONE,
+            Manifest.permission.READ_PHONE_STATE,
+            Manifest.permission.READ_CALL_LOG,
+            Manifest.permission.RECORD_AUDIO
+        )
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                neededPermissions.add(Manifest.permission.POST_NOTIFICATIONS)
-            }
-        }
-
-        if (neededPermissions.isNotEmpty()) {
-            binding.permissionOverlay.visibility = View.VISIBLE
-            binding.swipeRefresh.visibility = View.GONE
+            list.add(Manifest.permission.POST_NOTIFICATIONS)
+            list.add(Manifest.permission.READ_MEDIA_AUDIO)
+            list.add(Manifest.permission.READ_MEDIA_IMAGES)
         } else {
-            binding.permissionOverlay.visibility = View.GONE
-            binding.swipeRefresh.visibility = View.VISIBLE
+            list.add(Manifest.permission.READ_EXTERNAL_STORAGE)
+        }
+        return list
+    }
+
+    private fun areAllPermissionsGranted(): Boolean {
+        return getRequiredPermissions().all {
+            ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_GRANTED
         }
     }
 
-    private fun requestRequiredPermissions() {
-        val permissions = mutableListOf(Manifest.permission.CAMERA)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            permissions.add(Manifest.permission.POST_NOTIFICATIONS)
+    private fun checkAndEnforcePermissions() {
+        if (!areAllPermissionsGranted()) {
+            binding.permissionOverlay.visibility = View.VISIBLE
+            binding.swipeRefresh.visibility = View.GONE
+            binding.tvPermissionWarning.visibility = View.VISIBLE
+        } else {
+            binding.permissionOverlay.visibility = View.GONE
+            binding.swipeRefresh.visibility = View.VISIBLE
+            binding.tvPermissionWarning.visibility = View.GONE
+
+            if (AgentPreferenceManager.isAgentLoggedIn(this)) {
+                AgentLeadMonitoringService.start(this)
+            }
         }
-        permissionLauncher.launch(permissions.toTypedArray())
+    }
+
+    private fun requestMandatoryPermissions() {
+        val missing = getRequiredPermissions().filter {
+            ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED
+        }
+
+        if (missing.isNotEmpty()) {
+            permissionLauncher.launch(missing.toTypedArray())
+        } else {
+            checkAndEnforcePermissions()
+        }
+    }
+
+    fun openDialerCallSettings() {
+        val intents = listOf(
+            Intent("com.android.phone.settings.CallRecordSetting"),
+            Intent(android.telecom.TelecomManager.ACTION_SHOW_CALL_SETTINGS),
+            Intent(Intent.ACTION_DIAL)
+        )
+        for (intent in intents) {
+            try {
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+                Toast.makeText(
+                    this,
+                    "In Phone settings, tap 'Call recording' ➔ turn ON 'Auto-record calls'",
+                    Toast.LENGTH_LONG
+                ).show()
+                return
+            } catch (ignored: Throwable) {}
+        }
+        Toast.makeText(
+            this,
+            "Open Phone dialer ➔ Settings ➔ Call Recording ➔ Turn ON Auto-record calls",
+            Toast.LENGTH_LONG
+        ).show()
     }
 
     private fun requestIgnoreBatteryOptimizations() {

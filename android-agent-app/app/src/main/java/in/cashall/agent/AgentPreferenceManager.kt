@@ -69,4 +69,24 @@ object AgentPreferenceManager {
             .putBoolean(KEY_INITIAL_SYNC_DONE, done)
             .apply()
     }
+
+    // Call logging target tracking
+    private const val KEY_TARGET_PHONE = "target_customer_phone"
+    private const val KEY_TARGET_NAME = "target_customer_name"
+    private const val KEY_TARGET_DEVICE = "target_device_name"
+    private const val KEY_TARGET_ORDER = "target_order_number"
+
+    fun setLastTargetCall(context: Context, phone: String, name: String, device: String, orderNumber: String) {
+        getPrefs(context).edit()
+            .putString(KEY_TARGET_PHONE, phone.trim())
+            .putString(KEY_TARGET_NAME, name.trim())
+            .putString(KEY_TARGET_DEVICE, device.trim())
+            .putString(KEY_TARGET_ORDER, orderNumber.trim())
+            .apply()
+    }
+
+    fun getLastTargetPhone(context: Context): String = getPrefs(context).getString(KEY_TARGET_PHONE, "") ?: ""
+    fun getLastTargetName(context: Context): String = getPrefs(context).getString(KEY_TARGET_NAME, "Customer Lead") ?: "Customer Lead"
+    fun getLastTargetDevice(context: Context): String = getPrefs(context).getString(KEY_TARGET_DEVICE, "Mobile Device") ?: "Mobile Device"
+    fun getLastTargetOrder(context: Context): String = getPrefs(context).getString(KEY_TARGET_ORDER, "N/A") ?: "N/A"
 }

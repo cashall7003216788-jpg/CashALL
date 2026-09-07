@@ -36,6 +36,7 @@ import {
   Eye,
   ArrowRight,
   RefreshCw,
+  PhoneCall,
 } from "lucide-react";
 import { CustomerAnswersModal } from "@/components/admin/CustomerAnswersModal";
 
@@ -1000,13 +1001,34 @@ export default function AgentDashboardPage() {
                         Customer & Address
                       </div>
                       <div className="font-bold text-white text-base">{ord.customerName}</div>
-                      <a
-                        href={`tel:${ord.customerPhone}`}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-400 hover:underline"
-                      >
-                        <Phone className="w-3.5 h-3.5" />
-                        <span>{ord.customerPhone}</span>
-                      </a>
+                      <div className="flex flex-wrap items-center gap-2 pt-0.5">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            if (typeof window !== "undefined" && (window as any).CashAllAgentNative?.callCustomer) {
+                              (window as any).CashAllAgentNative.callCustomer(
+                                ord.customerPhone,
+                                ord.customerName || "Customer",
+                                ord.deviceName || "Mobile Device",
+                                ord.orderNumber || ord.id
+                              );
+                            } else {
+                              window.location.href = `tel:${ord.customerPhone}`;
+                            }
+                          }}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-sm transition active:scale-95 cursor-pointer"
+                          title="Call customer & automatically log call with audio recording"
+                        >
+                          <PhoneCall className="w-3.5 h-3.5" />
+                          <span>Call &amp; Log</span>
+                        </button>
+                        <a
+                          href={`tel:${ord.customerPhone}`}
+                          className="inline-flex items-center gap-1 text-xs font-semibold text-neutral-300 hover:text-white transition"
+                        >
+                          <span>{ord.customerPhone}</span>
+                        </a>
+                      </div>
                       <div className="flex items-start gap-1.5 text-xs text-neutral-400 mt-2">
                         <MapPin className="w-3.5 h-3.5 text-yellow-400 shrink-0 mt-0.5" />
                         <div className="flex-grow">
@@ -1291,9 +1313,36 @@ export default function AgentDashboardPage() {
               </div>
               <div className="flex justify-between items-center text-xs">
                 <span className="text-neutral-400">Phone:</span>
-                <a href={`tel:${activeAlertLead.customerPhone}`} className="font-bold text-yellow-400 hover:underline">
-                  {activeAlertLead.customerPhone}
-                </a>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      buzzerAlarm.stop();
+                      setIsAlarmSounding(false);
+                      if (typeof window !== "undefined" && (window as any).CashAllAgentNative?.stopAlarm) {
+                        (window as any).CashAllAgentNative.stopAlarm();
+                      }
+                      if (typeof window !== "undefined" && (window as any).CashAllAgentNative?.callCustomer) {
+                        (window as any).CashAllAgentNative.callCustomer(
+                          activeAlertLead.customerPhone,
+                          activeAlertLead.customerName || "Customer",
+                          activeAlertLead.deviceName || "Mobile Device",
+                          activeAlertLead.orderNumber || activeAlertLead.id
+                        );
+                      } else {
+                        window.location.href = `tel:${activeAlertLead.customerPhone}`;
+                      }
+                    }}
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[11px] cursor-pointer shadow-sm active:scale-95 transition"
+                    title="Call customer & automatically log call"
+                  >
+                    <PhoneCall className="w-3 h-3" />
+                    <span>Call &amp; Log</span>
+                  </button>
+                  <a href={`tel:${activeAlertLead.customerPhone}`} className="font-bold text-yellow-400 hover:underline">
+                    {activeAlertLead.customerPhone}
+                  </a>
+                </div>
               </div>
               <div className="flex justify-between items-center text-xs">
                 <span className="text-neutral-400">Address:</span>
@@ -1315,11 +1364,14 @@ export default function AgentDashboardPage() {
                   buzzerAlarm.stop();
                   setIsAlarmSounding(false);
                   setActiveAlertLead(null);
+                  if (typeof window !== "undefined" && (window as any).CashAllAgentNative?.stopAlarm) {
+                    (window as any).CashAllAgentNative.stopAlarm();
+                  }
                 }}
                 className="flex-1 py-3 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-black text-xs transition shadow-lg flex items-center justify-center gap-2 cursor-pointer"
               >
                 <VolumeX className="w-4 h-4" />
-                <span>Stop Siren & Dismiss</span>
+                <span>Stop Siren &amp; Dismiss</span>
               </button>
 
               <Link

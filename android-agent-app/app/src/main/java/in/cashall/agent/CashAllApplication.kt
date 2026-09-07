@@ -50,15 +50,6 @@ class CashAllApplication : Application() {
             manager.createNotificationChannel(monitorChannel)
 
             // 2. High Priority Loud Alarm & Siren Channel
-            val alarmSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
-                ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE)
-
-            val audioAttributes = AudioAttributes.Builder()
-                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                .setUsage(AudioAttributes.USAGE_ALARM)
-                .setFlags(AudioAttributes.FLAG_AUDIBILITY_ENFORCED)
-                .build()
-
             val urgentAlarmChannel = NotificationChannel(
                 CHANNEL_URGENT_ALARM_ID,
                 "Urgent New Lead Siren Alert",
@@ -67,7 +58,9 @@ class CashAllApplication : Application() {
                 description = "Loud alarm sounds and phone vibrations when a new customer lead is assigned"
                 enableVibration(true)
                 vibrationPattern = longArrayOf(0, 800, 300, 800, 300, 1000)
-                setSound(alarmSoundUri, audioAttributes)
+                // Sound is handled exclusively by AlarmSoundManager (STREAM_ALARM)
+                // to prevent double-alarm mixing and enable instant cancellation.
+                setSound(null, null)
                 lockscreenVisibility = Notification.VISIBILITY_PUBLIC
                 setBypassDnd(true)
             }

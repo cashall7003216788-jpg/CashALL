@@ -94,17 +94,23 @@ object AlarmSoundManager {
 
     @Synchronized
     fun stopAlarm(context: Context? = null) {
-        if (!isAlarmPlaying) return
-        Log.i(TAG, "Stopping loud lead buzzer and phone vibration.")
+        Log.i(TAG, "Stopping loud lead buzzer and phone vibration immediately.")
         isAlarmPlaying = false
 
-        // Stop Audio
+        // Stop Audio immediately with zero latency
         try {
             mediaPlayer?.let { player ->
-                if (player.isPlaying) {
-                    player.stop()
-                }
-                player.release()
+                try {
+                    if (player.isPlaying) {
+                        player.stop()
+                    }
+                } catch (ignored: Exception) {}
+                try {
+                    player.reset()
+                } catch (ignored: Exception) {}
+                try {
+                    player.release()
+                } catch (ignored: Exception) {}
             }
         } catch (e: Exception) {
             Log.w(TAG, "Error releasing MediaPlayer: ${e.message}")
@@ -112,7 +118,7 @@ object AlarmSoundManager {
             mediaPlayer = null
         }
 
-        // Stop Vibration
+        // Stop Vibration immediately
         try {
             vibrator?.cancel()
             context?.let { ctx ->
