@@ -8110,6 +8110,19 @@ const MOBILE_MODELS_PART_2: DeviceModelData[] = [
     "category": "MOBILE"
   },
   {
+    "id": "m-realme-realme-p4-5g",
+    "brandId": "b-realme",
+    "brandSlug": "realme",
+    "name": "Realme P4 5G",
+    "slug": "realme-p4-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/a50cfd9b-82b0.jpg?w=800",
+    "releaseYear": 2025,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
     "id": "m-realme-realme-2-pro",
     "brandId": "b-realme",
     "brandSlug": "realme",
@@ -11826,6 +11839,19 @@ const MOBILE_MODELS_PART_3: DeviceModelData[] = [
     "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/14a29ad5-4b02.jpg?w=800",
     "releaseYear": 2024,
     "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "m-vivo-vivo-v50-lite",
+    "brandId": "b-vivo",
+    "brandSlug": "vivo",
+    "name": "Vivo V50 Lite",
+    "slug": "vivo-v50-lite",
+    "imageUrl": "https://s3ng.cashify.in/builder/bd4696800f834b71a0cc8be44e0b148e.jpg",
+    "releaseYear": 2025,
+    "popular": true,
     "active": true,
     "contactForPrice": false,
     "category": "MOBILE"
@@ -36788,6 +36814,30 @@ const MOBILE_VARIANTS_PART_4: DeviceVariantData[] = [
     "ram": "8 GB"
   },
   {
+    "id": "v-m-realme-realme-p4-5g-128-gb-6-gb",
+    "modelId": "m-realme-realme-p4-5g",
+    "storage": "128 GB",
+    "basePrice": 13393,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "v-m-realme-realme-p4-5g-128-gb-8-gb",
+    "modelId": "m-realme-realme-p4-5g",
+    "storage": "128 GB",
+    "basePrice": 13635,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-realme-realme-p4-5g-256-gb-8-gb",
+    "modelId": "m-realme-realme-p4-5g",
+    "storage": "256 GB",
+    "basePrice": 14140,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
     "id": "v-m-realme-realme-2-pro-64-gb-4-gb",
     "modelId": "m-realme-realme-2-pro",
     "storage": "64 GB",
@@ -41473,6 +41523,30 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "basePrice": 18382,
     "active": true,
     "ram": "8 GB"
+  },
+  {
+    "id": "v-m-vivo-vivo-v50-lite-128-gb-8-gb",
+    "modelId": "m-vivo-vivo-v50-lite",
+    "storage": "128 GB",
+    "basePrice": 15958,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-vivo-vivo-v50-lite-256-gb-8-gb",
+    "modelId": "m-vivo-vivo-v50-lite",
+    "storage": "256 GB",
+    "basePrice": 17372,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-vivo-vivo-v50-lite-512-gb-12-gb",
+    "modelId": "m-vivo-vivo-v50-lite",
+    "storage": "512 GB",
+    "basePrice": 19089,
+    "active": true,
+    "ram": "12 GB"
   },
   {
     "id": "v-m-vivo-vivo-v9-pro-64-gb-4-gb",

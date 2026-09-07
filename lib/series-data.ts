@@ -43,7 +43,7 @@ export const BRAND_SERIES_MAP: Record<string, SeriesItem[]> = {
     { id: "s-op-open", name: "Open Series", matchPattern: ["Open"] },
   ],
   vivo: [
-    { id: "s-viv-v", name: "V Series", matchPattern: ["Vivo V", "V1", "V2", "V3", "V4", "V5", "V7", "V9", "V11", "V15", "V17", "V19", "V20", "V21", "V23", "V25", "V27", "V29", "V30", "V40"] },
+    { id: "s-viv-v", name: "V Series", matchPattern: ["Vivo V", "V1", "V2", "V3", "V4", "V5", "V7", "V9", "V11", "V15", "V17", "V19", "V20", "V21", "V23", "V25", "V27", "V29", "V30", "V40", "V50"] },
     { id: "s-viv-y", name: "Y Series", matchPattern: ["Vivo Y", " Y1", " Y2", " Y3", " Y5", " Y7", " Y8", " Y9", " Y100", " Y200"] },
     { id: "s-viv-x", name: "X Series", matchPattern: ["Vivo X", " X50", " X60", " X70", " X80", " X90", " X100"] },
     { id: "s-viv-t", name: "T Series", matchPattern: ["Vivo T", " T1", " T2", " T3"] },
@@ -62,7 +62,7 @@ export const BRAND_SERIES_MAP: Record<string, SeriesItem[]> = {
     { id: "s-rea-num", name: "Number Series", matchPattern: ["Realme 1", "Realme 2", "Realme 3", "Realme 5", "Realme 6", "Realme 7", "Realme 8", "Realme 9", "Realme 10", "Realme 11", "Realme 12", "Realme 13", "Realme 14", "Realme 15", "15x", "15X"] },
     { id: "s-rea-c", name: "C Series", matchPattern: [" C", "C1", "C2", "C3", "C11", "C12", "C15", "C21", "C25", "C30", "C31", "C33", "C35", "C51", "C53", "C55", "C65", "C67"] },
     { id: "s-rea-narzo", name: "Narzo Series", matchPattern: ["Narzo"] },
-    { id: "s-rea-p", name: "P Series", matchPattern: [" P1", " P2"] },
+    { id: "s-rea-p", name: "P Series", matchPattern: [" P1", " P2", " P4", "Realme P", "P4"] },
     { id: "s-rea-x", name: "X Series", matchPattern: [" X", "X2", "X3", "X7", "X50", "15x", "15X", "Realme 15x"] },
   ],
   poco: [

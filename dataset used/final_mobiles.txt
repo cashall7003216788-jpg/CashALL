@@ -13692,6 +13692,38 @@ Total Models in this Brand: 48
 ===========================================================================
 
   -----------------------------------------------------------------
+  -----------------------------------------------------------------
+  MODEL : Realme P4 5G
+    Cashify URL : https://www.cashify.in/sell-old-mobile-phone/used-realme-p4-5g
+  -----------------------------------------------------------------
+    [VARIANT] : 6 GB/128 GB
+      * Storage          : 128 GB
+      * RAM              : 6 GB
+      * Cashify Price    : ₹13,260
+      * Cashkr Price     : Not Listed
+      * Comparison       : Available Only on Cashify
+      * Base Best Price  : ₹13,260
+      * FINAL PRICE (+1%): ₹13,393
+
+    [VARIANT] : 8 GB/128 GB
+      * Storage          : 128 GB
+      * RAM              : 8 GB
+      * Cashify Price    : ₹13,500
+      * Cashkr Price     : Not Listed
+      * Comparison       : Available Only on Cashify
+      * Base Best Price  : ₹13,500
+      * FINAL PRICE (+1%): ₹13,635
+
+    [VARIANT] : 8 GB/256 GB
+      * Storage          : 256 GB
+      * RAM              : 8 GB
+      * Cashify Price    : ₹14,000
+      * Cashkr Price     : Not Listed
+      * Comparison       : Available Only on Cashify
+      * Base Best Price  : ₹14,000
+      * FINAL PRICE (+1%): ₹14,140
+
+
   MODEL : Realme 2 Pro
     Cashify URL : https://www.cashify.in/sell-old-mobile-phone/used-realme-2-pro
   -----------------------------------------------------------------
@@ -20839,6 +20871,38 @@ Total Models in this Brand: 144
 ===========================================================================
 
   -----------------------------------------------------------------
+  -----------------------------------------------------------------
+  MODEL : Vivo V50 Lite
+    Cashify URL : https://www.cashify.in/sell-old-mobile-phone/used-vivo-v50-lite-5g
+  -----------------------------------------------------------------
+    [VARIANT] : 8 GB/128 GB
+      * Storage          : 128 GB
+      * RAM              : 8 GB
+      * Cashify Price    : ₹15,800
+      * Cashkr Price     : Not Listed
+      * Comparison       : Available Only on Cashify
+      * Base Best Price  : ₹15,800
+      * FINAL PRICE (+1%): ₹15,958
+
+    [VARIANT] : 8 GB/256 GB
+      * Storage          : 256 GB
+      * RAM              : 8 GB
+      * Cashify Price    : ₹17,200
+      * Cashkr Price     : Not Listed
+      * Comparison       : Available Only on Cashify
+      * Base Best Price  : ₹17,200
+      * FINAL PRICE (+1%): ₹17,372
+
+    [VARIANT] : 12 GB/512 GB
+      * Storage          : 512 GB
+      * RAM              : 12 GB
+      * Cashify Price    : ₹18,900
+      * Cashkr Price     : Not Listed
+      * Comparison       : Available Only on Cashify
+      * Base Best Price  : ₹18,900
+      * FINAL PRICE (+1%): ₹19,089
+
+
   MODEL : Vivo V9 Pro
     Cashify URL : https://www.cashify.in/sell-old-mobile-phone/used-vivo-v9-pro
   -----------------------------------------------------------------
