@@ -22,10 +22,10 @@ export async function GET(req: NextRequest) {
 
     const logs = await prisma.auditLog.findMany({
       where: {
-        action: "SUPPORT_CALL_RECORDING",
+        action: { in: ["SUPPORT_CALL_RECORDING", "SUPPORT_CALL_LOGGED"] },
       },
       orderBy: { createdAt: "desc" },
-      take: 150,
+      take: 250,
     });
 
     const recordings = logs.map((log) => {
@@ -36,10 +36,17 @@ export async function GET(req: NextRequest) {
         } catch {}
       }
 
+      let agentPhone = data.supportPersonPhone || "—";
+      const agentName = data.supportPersonName || "Support Agent";
+      if ((agentPhone === "—" || !agentPhone) && agentName.toLowerCase().includes("harshita")) {
+        agentPhone = "8981191734";
+      }
+
       return {
         id: log.id,
-        supportPersonName: data.supportPersonName || "Support Agent",
-        supportPersonPhone: data.supportPersonPhone || "—",
+        action: log.action,
+        supportPersonName: agentName,
+        supportPersonPhone: agentPhone,
         customerName: data.customerName || "Customer Lead",
         customerPhone: data.customerPhone || "—",
         deviceName: data.deviceName || "Mobile Device",
@@ -47,8 +54,8 @@ export async function GET(req: NextRequest) {
         durationSeconds: Number(data.durationSeconds) || 0,
         durationFormatted: data.durationFormatted || formatDuration(Number(data.durationSeconds) || 0),
         audioUrl: data.audioUrl || "",
-        callOutcome: data.callOutcome || "CALL_COMPLETED",
-        callNotes: data.callNotes || "Recorded via CashALL Android Caller App.",
+        callOutcome: data.callOutcome || (log.action === "SUPPORT_CALL_RECORDING" ? "CALL_COMPLETED" : "CALL_ATTEMPTED"),
+        callNotes: data.callNotes || (log.action === "SUPPORT_CALL_RECORDING" ? "Recorded via CashALL Android Caller App." : ""),
         callStartTime: data.callStartTime || log.createdAt.toISOString(),
         callEndTime: data.callEndTime || log.createdAt.toISOString(),
         createdAtIST: data.callTimeIST || new Date(log.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
@@ -83,6 +90,8 @@ export async function GET(req: NextRequest) {
       success: true,
       count: deduplicatedRecordings.length,
       recordings: deduplicatedRecordings,
+      data: deduplicatedRecordings,
+      calls: deduplicatedRecordings,
     });
   } catch (error: any) {
     console.error("Error fetching call recordings:", error);
