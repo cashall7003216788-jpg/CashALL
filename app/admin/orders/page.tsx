@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { Badge } from "@/components/ui/Badge";
@@ -30,6 +30,8 @@ import {
   AlertCircle,
   ListChecks,
   Sparkles,
+  Filter,
+  Search,
 } from "lucide-react";
 import { CustomerAnswersModal } from "@/components/admin/CustomerAnswersModal";
 import { ReQuotationModal } from "@/components/admin/ReQuotationModal";
@@ -139,6 +141,46 @@ function getAdminToken() {
   }
 }
 
+type OrderFilterType = "ALL" | "PENDING_TO_ASSIGN" | "ASSIGNED" | "COMPLETED" | "CANCELLED";
+
+function getOrderCategory(ord: Order): "COMPLETED" | "CANCELLED" | "ASSIGNED" | "PENDING_TO_ASSIGN" {
+  const normStatus = (ord.status || "").toUpperCase();
+
+  // 1. Cancelled
+  if (normStatus === "CANCELLED" || normStatus === "REJECTED" || normStatus.includes("CANCEL")) {
+    return "CANCELLED";
+  }
+
+  // 2. Completed
+  if (normStatus === "COMPLETED" || normStatus === "BILL_GENERATED" || normStatus === "PAID" || !!ord.completedAt) {
+    return "COMPLETED";
+  }
+
+  // 3. Assigned (has an active agent assigned or assigned status)
+  const hasAgent = Boolean(
+    ord.agentId ||
+      (ord.agentName &&
+        ord.agentName !== "—" &&
+        ord.agentName.toLowerCase() !== "unassigned" &&
+        !ord.agentName.toLowerCase().includes("no agent") &&
+        ord.agentName !== "Assigned Agent")
+  );
+
+  if (
+    hasAgent ||
+    normStatus === "PARTNER_ASSIGNED" ||
+    normStatus === "ASSIGNED" ||
+    normStatus === "INSPECTION_PENDING" ||
+    normStatus === "INSPECTION_COMPLETED" ||
+    normStatus === "PICKUP_IN_PROGRESS"
+  ) {
+    return "ASSIGNED";
+  }
+
+  // 4. Pending to Assign
+  return "PENDING_TO_ASSIGN";
+}
+
 export default function AdminOrdersPage() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [availableAgents, setAvailableAgents] = useState<{ id: string; name: string; phone: string }[]>([]);
@@ -147,6 +189,60 @@ export default function AdminOrdersPage() {
   const [actionLoading, setActionLoading] = useState<string | null>(null);
   const [selectedOrderForAnswers, setSelectedOrderForAnswers] = useState<any | null>(null);
   const [selectedOrderForReQuote, setSelectedOrderForReQuote] = useState<any | null>(null);
+
+  // Operational Filters State
+  const [selectedFilter, setSelectedFilter] = useState<OrderFilterType>("ALL");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const counts = useMemo(() => {
+    let pending = 0;
+    let assigned = 0;
+    let completed = 0;
+    let cancelled = 0;
+
+    for (const ord of orders) {
+      const cat = getOrderCategory(ord);
+      if (cat === "PENDING_TO_ASSIGN") pending++;
+      else if (cat === "ASSIGNED") assigned++;
+      else if (cat === "COMPLETED") completed++;
+      else if (cat === "CANCELLED") cancelled++;
+    }
+
+    return {
+      all: orders.length,
+      pendingToAssign: pending,
+      assigned,
+      completed,
+      cancelled,
+    };
+  }, [orders]);
+
+  const filteredOrders = useMemo(() => {
+    return orders.filter((ord) => {
+      // 1. Status Filter
+      if (selectedFilter !== "ALL") {
+        const cat = getOrderCategory(ord);
+        if (cat !== selectedFilter) return false;
+      }
+
+      // 2. Search Query Filter
+      if (searchQuery.trim()) {
+        const q = searchQuery.trim().toLowerCase();
+        const match =
+          ord.orderNumber.toLowerCase().includes(q) ||
+          (ord.customerName && ord.customerName.toLowerCase().includes(q)) ||
+          (ord.customerPhone && ord.customerPhone.includes(q)) ||
+          (ord.customerEmail && ord.customerEmail.toLowerCase().includes(q)) ||
+          (ord.deviceName && ord.deviceName.toLowerCase().includes(q)) ||
+          (ord.pincode && ord.pincode.includes(q)) ||
+          (ord.agentName && ord.agentName.toLowerCase().includes(q)) ||
+          (ord.status && ord.status.toLowerCase().includes(q));
+        if (!match) return false;
+      }
+
+      return true;
+    });
+  }, [orders, selectedFilter, searchQuery]);
 
   const fetchOrders = useCallback(async () => {
     setLoading(true);
@@ -682,7 +778,11 @@ export default function AdminOrdersPage() {
 
   // 1. Export Admin Data CSV (Complete raw operational dataset)
   const handleDownloadAdminDataCSV = () => {
-    if (orders.length === 0) return;
+    const targetOrders = filteredOrders.length > 0 || selectedFilter !== "ALL" || searchQuery.trim() ? filteredOrders : orders;
+    if (targetOrders.length === 0) {
+      alert("No orders available to export.");
+      return;
+    }
     const headers = [
       "Order Number",
       "Order Placed Date & Time",
@@ -704,7 +804,7 @@ export default function AdminOrdersPage() {
       "Cancellation Reason",
       "Payment Status",
     ];
-    const rows = orders.map((ord) => [
+    const rows = targetOrders.map((ord) => [
       ord.orderNumber,
       ord.createdAt ? `"${new Date(ord.createdAt).toLocaleString("en-IN")}"` : "—",
       `"${ord.pickupDate} (${ord.pickupTimeSlot})"`,
@@ -739,7 +839,11 @@ export default function AdminOrdersPage() {
 
   // 2. Export Cleaned Data CSV (Specific clean business fields)
   const handleDownloadCleanedDataCSV = () => {
-    if (orders.length === 0) return;
+    const targetOrders = filteredOrders.length > 0 || selectedFilter !== "ALL" || searchQuery.trim() ? filteredOrders : orders;
+    if (targetOrders.length === 0) {
+      alert("No orders available to export.");
+      return;
+    }
     const headers = [
       "ORDER NUMBER",
       "ORDER COMPLETED DATE & TIME",
@@ -753,7 +857,7 @@ export default function AdminOrdersPage() {
       "ORDER STATUS",
       "CANCELLATION REASON",
     ];
-    const rows = orders.map((ord) => [
+    const rows = targetOrders.map((ord) => [
       ord.orderNumber,
       ord.completedAt ? `"${new Date(ord.completedAt).toLocaleString("en-IN")}"` : (ord.status === "COMPLETED" && ord.createdAt ? `"${new Date(ord.createdAt).toLocaleString("en-IN")}"` : "—"),
       `"${getOrderPincode(ord)}"`,
@@ -838,6 +942,150 @@ export default function AdminOrdersPage() {
           </div>
         </div>
 
+        {/* OPERATIONAL LIFECYCLE FILTERS BAR */}
+        <div className="bg-neutral-800 p-4 sm:p-5 rounded-3xl border border-neutral-700 shadow-xl space-y-4 print:hidden">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            {/* Filter Pills */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0 scrollbar-none">
+              {/* 1. All Orders */}
+              <button
+                type="button"
+                onClick={() => setSelectedFilter("ALL")}
+                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+                  selectedFilter === "ALL"
+                    ? "bg-yellow-400 text-black border-yellow-400 shadow-md"
+                    : "bg-neutral-900/70 text-neutral-300 border-neutral-700 hover:border-neutral-500 hover:text-white"
+                }`}
+              >
+                <span>All Orders</span>
+                <span
+                  className={`px-1.5 py-0.5 rounded-md text-[10px] font-black ${
+                    selectedFilter === "ALL"
+                      ? "bg-black/20 text-black"
+                      : "bg-neutral-800 text-neutral-400"
+                  }`}
+                >
+                  {counts.all}
+                </span>
+              </button>
+
+              {/* 2. Pending to Assign */}
+              <button
+                type="button"
+                onClick={() => setSelectedFilter("PENDING_TO_ASSIGN")}
+                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+                  selectedFilter === "PENDING_TO_ASSIGN"
+                    ? "bg-amber-500 text-black border-amber-400 shadow-md shadow-amber-500/20"
+                    : "bg-neutral-900/70 text-amber-400/90 border-neutral-700 hover:border-amber-500/50 hover:text-amber-300"
+                }`}
+              >
+                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                <span>Pending to Assign</span>
+                <span
+                  className={`px-1.5 py-0.5 rounded-md text-[10px] font-black ${
+                    selectedFilter === "PENDING_TO_ASSIGN"
+                      ? "bg-black/25 text-black"
+                      : "bg-amber-950/60 text-amber-400 border border-amber-800/40"
+                  }`}
+                >
+                  {counts.pendingToAssign}
+                </span>
+              </button>
+
+              {/* 3. Assigned */}
+              <button
+                type="button"
+                onClick={() => setSelectedFilter("ASSIGNED")}
+                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+                  selectedFilter === "ASSIGNED"
+                    ? "bg-blue-500 text-white border-blue-400 shadow-md shadow-blue-500/20"
+                    : "bg-neutral-900/70 text-blue-400/90 border-neutral-700 hover:border-blue-500/50 hover:text-blue-300"
+                }`}
+              >
+                <UserCheck className="w-3.5 h-3.5" />
+                <span>Assigned</span>
+                <span
+                  className={`px-1.5 py-0.5 rounded-md text-[10px] font-black ${
+                    selectedFilter === "ASSIGNED"
+                      ? "bg-black/25 text-white"
+                      : "bg-blue-950/60 text-blue-400 border border-blue-800/40"
+                  }`}
+                >
+                  {counts.assigned}
+                </span>
+              </button>
+
+              {/* 4. Completed */}
+              <button
+                type="button"
+                onClick={() => setSelectedFilter("COMPLETED")}
+                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+                  selectedFilter === "COMPLETED"
+                    ? "bg-emerald-500 text-black border-emerald-400 shadow-md shadow-emerald-500/20"
+                    : "bg-neutral-900/70 text-emerald-400/90 border-neutral-700 hover:border-emerald-500/50 hover:text-emerald-300"
+                }`}
+              >
+                <CheckCircle2 className="w-3.5 h-3.5" />
+                <span>Completed</span>
+                <span
+                  className={`px-1.5 py-0.5 rounded-md text-[10px] font-black ${
+                    selectedFilter === "COMPLETED"
+                      ? "bg-black/25 text-black"
+                      : "bg-emerald-950/60 text-emerald-400 border border-emerald-800/40"
+                  }`}
+                >
+                  {counts.completed}
+                </span>
+              </button>
+
+              {/* 5. Cancelled */}
+              <button
+                type="button"
+                onClick={() => setSelectedFilter("CANCELLED")}
+                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+                  selectedFilter === "CANCELLED"
+                    ? "bg-rose-500 text-white border-rose-400 shadow-md shadow-rose-500/20"
+                    : "bg-neutral-900/70 text-rose-400/90 border-neutral-700 hover:border-rose-500/50 hover:text-rose-300"
+                }`}
+              >
+                <XCircle className="w-3.5 h-3.5" />
+                <span>Cancelled</span>
+                <span
+                  className={`px-1.5 py-0.5 rounded-md text-[10px] font-black ${
+                    selectedFilter === "CANCELLED"
+                      ? "bg-black/25 text-white"
+                      : "bg-rose-950/60 text-rose-400 border border-rose-800/40"
+                  }`}
+                >
+                  {counts.cancelled}
+                </span>
+              </button>
+            </div>
+
+            {/* Quick Search */}
+            <div className="relative flex-1 max-w-md min-w-[240px]">
+              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400 pointer-events-none" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search order #, customer, phone, device, PIN..."
+                className="w-full bg-neutral-900 border border-neutral-700 rounded-xl pl-10 pr-9 py-2 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 transition"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-white text-xs px-1"
+                  title="Clear search"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
         {/* MAIN CARDS LIST CONTAINER */}
         <div className="space-y-4">
           {loading && (
@@ -861,7 +1109,27 @@ export default function AdminOrdersPage() {
             </div>
           )}
 
-          {!loading && orders.map((ord: Order) => (
+          {!loading && orders.length > 0 && filteredOrders.length === 0 && (
+            <div className="bg-neutral-800 rounded-3xl p-12 text-center border border-neutral-700 space-y-3">
+              <Filter className="w-8 h-8 mx-auto text-neutral-500 opacity-60" />
+              <p className="text-base font-bold text-white">No orders match the selected filter</p>
+              <p className="text-xs text-neutral-400 max-w-md mx-auto">
+                No orders found under {selectedFilter !== "ALL" ? `"${selectedFilter.replace(/_/g, " ").toLowerCase()}"` : "this criteria"}{searchQuery ? ` matching "${searchQuery}"` : ""}.
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedFilter("ALL");
+                  setSearchQuery("");
+                }}
+                className="mt-2 text-xs font-bold px-4 py-2 bg-neutral-700 hover:bg-neutral-600 text-yellow-400 rounded-xl transition inline-block"
+              >
+                Reset Filters
+              </button>
+            </div>
+          )}
+
+          {!loading && filteredOrders.map((ord: Order) => (
             <div
               key={ord.id}
               className="bg-neutral-800 border border-neutral-700 rounded-3xl p-6 shadow-xl hover:border-neutral-600 transition-all space-y-4"
