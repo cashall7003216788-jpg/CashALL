@@ -42,6 +42,16 @@ export default function AgentLoginPage() {
             loggedInAt: new Date().toISOString(),
           })
         );
+        // Persist session to Android native bridge for 24/7 background monitoring when app is closed
+        try {
+          if (typeof window !== "undefined" && (window as any).CashAllAgentNative?.saveAgentSession) {
+            (window as any).CashAllAgentNative.saveAgentSession(
+              json.agent.phone || "",
+              json.agent.name || "",
+              json.agent.id || ""
+            );
+          }
+        } catch (e) {}
         router.replace("/agent/dashboard");
       } else {
         setError(json.error || "Authentication failed. Please check your agent credentials.");

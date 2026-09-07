@@ -260,7 +260,18 @@ export default function AgentDashboardPage() {
       }
       try {
         const parsed = JSON.parse(saved);
-        setAgentSession(parsed.agent || { name: "Field Agent" });
+        const session = parsed.agent || { name: "Field Agent" };
+        setAgentSession(session);
+        // Persist session to Android native bridge for 24/7 background lead monitoring when app is closed
+        try {
+          if (session?.phone && (window as any).CashAllAgentNative?.saveAgentSession) {
+            (window as any).CashAllAgentNative.saveAgentSession(
+              session.phone,
+              session.name || "",
+              session.id || ""
+            );
+          }
+        } catch (e) {}
       } catch (e) {
         router.replace("/agent/login");
       }
@@ -414,6 +425,11 @@ export default function AgentDashboardPage() {
 
   const handleLogout = () => {
     buzzerAlarm.stop();
+    try {
+      if (typeof window !== "undefined" && (window as any).CashAllAgentNative?.clearAgentSession) {
+        (window as any).CashAllAgentNative.clearAgentSession();
+      }
+    } catch (e) {}
     if (typeof window !== "undefined") {
       localStorage.removeItem("cashall_agent_session");
     }

@@ -3,7 +3,7 @@ package `in`.cashall.agent
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.ClipData
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -11,7 +11,9 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.os.PowerManager
 import android.provider.MediaStore
+import android.provider.Settings
 import android.util.Log
 import android.view.View
 import android.webkit.GeolocationPermissions
@@ -22,7 +24,6 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -55,10 +56,8 @@ class MainActivity : AppCompatActivity() {
         val results: Array<Uri>? = if (result.resultCode == Activity.RESULT_OK) {
             val intent = result.data
             if (intent != null && intent.data != null) {
-                // User picked an existing image from gallery
                 arrayOf(intent.data!!)
             } else if (cameraImageUri != null) {
-                // User took a fresh camera photo
                 arrayOf(cameraImageUri!!)
             } else {
                 null
@@ -76,9 +75,15 @@ class MainActivity : AppCompatActivity() {
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
         val cameraGranted = permissions[Manifest.permission.CAMERA] ?: false
-        Log.i(TAG, "Permissions updated: Camera granted = $cameraGranted")
+        val notifGranted = permissions[Manifest.permission.POST_NOTIFICATIONS] ?: true
+        Log.i(TAG, "Permissions updated: Camera=$cameraGranted, Notif=$notifGranted")
         binding.permissionOverlay.visibility = View.GONE
         binding.swipeRefresh.visibility = View.VISIBLE
+
+        // Once notifications are allowed, start background lead monitor
+        if (AgentPreferenceManager.isAgentLoggedIn(this)) {
+            AgentLeadMonitoringService.start(this)
+        }
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -91,14 +96,24 @@ class MainActivity : AppCompatActivity() {
         setupUI()
         setupWebView()
         checkAndRequestPermissions()
+        requestIgnoreBatteryOptimizations()
+
+        // Start background service if agent is already logged in
+        if (AgentPreferenceManager.isAgentLoggedIn(this)) {
+            AgentLeadMonitoringService.start(this)
+        }
 
         binding.webView.loadUrl(AGENT_DASHBOARD_URL)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateAlarmCard(AlarmSoundManager.isAlarmActive())
     }
 
     private fun setupBackPressHandler() {
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                // If alarm is ringing, stop alarm on back press
                 if (AlarmSoundManager.isAlarmActive()) {
                     AlarmSoundManager.stopAlarm(this@MainActivity)
                     updateAlarmCard(false)
@@ -153,7 +168,7 @@ class MainActivity : AppCompatActivity() {
             mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
         }
 
-        // Expose Native Alarm and Haptics Bridge to JavaScript
+        // Expose Native Alarm, Session & Haptics Bridge to JavaScript
         val nativeBridge = CashAllAgentNative(this) { active ->
             updateAlarmCard(active)
         }
@@ -221,36 +236,30 @@ class MainActivity : AppCompatActivity() {
             ): Boolean {
                 val url = request?.url?.toString() ?: return false
 
-                // 1. Phone Dialing
                 if (url.startsWith("tel:")) {
                     try {
-                        val dialIntent = Intent(Intent.ACTION_DIAL, Uri.parse(url))
-                        startActivity(dialIntent)
+                        startActivity(Intent(Intent.ACTION_DIAL, Uri.parse(url)))
                         return true
                     } catch (e: Exception) {
-                        Log.e(TAG, "Cannot launch dialer for $url: ${e.message}")
+                        Log.e(TAG, "Cannot launch dialer: ${e.message}")
                     }
                 }
 
-                // 2. Google Maps Navigation
                 if (url.contains("maps.google.com") || url.contains("google.com/maps")) {
                     try {
-                        val mapIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                        startActivity(mapIntent)
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
                         return true
                     } catch (e: Exception) {
-                        Log.e(TAG, "Cannot open Google Maps for $url: ${e.message}")
+                        Log.e(TAG, "Cannot open Maps: ${e.message}")
                     }
                 }
 
-                // 3. WhatsApp Direct Chat
                 if (url.startsWith("whatsapp:") || url.contains("api.whatsapp.com") || url.contains("wa.me")) {
                     try {
-                        val waIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                        startActivity(waIntent)
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
                         return true
                     } catch (e: Exception) {
-                        Log.e(TAG, "Cannot open WhatsApp for $url: ${e.message}")
+                        Log.e(TAG, "Cannot open WhatsApp: ${e.message}")
                     }
                 }
 
@@ -259,14 +268,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * Creates an Intent Chooser containing both Camera (to take doorstep defect / barcode photos)
-     * and Gallery (to upload UPI payment screenshots for Tesseract.js OCR).
-     */
     private fun openCameraOrGalleryChooser() {
         val intentsList = mutableListOf<Intent>()
 
-        // 1. Camera Intent
         val captureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         try {
             val photoFile = createTempImageFile()
@@ -284,7 +288,6 @@ class MainActivity : AppCompatActivity() {
             Log.e(TAG, "Failed to create temp photo file: ${e.message}")
         }
 
-        // 2. Gallery / File Picker Intent
         val galleryIntent = Intent(Intent.ACTION_GET_CONTENT).apply {
             type = "image/*"
             addCategory(Intent.CATEGORY_OPENABLE)
@@ -337,8 +340,20 @@ class MainActivity : AppCompatActivity() {
         permissionLauncher.launch(permissions.toTypedArray())
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        AlarmSoundManager.stopAlarm(this)
+    private fun requestIgnoreBatteryOptimizations() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val pm = getSystemService(Context.POWER_SERVICE) as? PowerManager
+            if (pm != null && !pm.isIgnoringBatteryOptimizations(packageName)) {
+                try {
+                    @SuppressLint("BatteryLife")
+                    val intent = Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS).apply {
+                        data = Uri.parse("package:$packageName")
+                    }
+                    startActivity(intent)
+                } catch (e: Exception) {
+                    Log.w(TAG, "Battery opt intent error: ${e.message}")
+                }
+            }
+        }
     }
 }
