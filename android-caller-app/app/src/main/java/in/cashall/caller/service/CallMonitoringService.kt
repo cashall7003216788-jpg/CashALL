@@ -201,15 +201,12 @@ class CallMonitoringService : Service() {
             isRecording = false
         }
 
-        val file = recordingFile
-        val validAudioFile = if (file != null && file.exists() && file.length() > 100) file else null
-
         val prefs = PreferenceManager(this)
         val phone = overridePhone.ifBlank { prefs.lastTargetCustomerPhone }.ifBlank { "Unknown" }
 
-        // Fetch exact duration from Android CallLog with a brief delay for system write
+        // Fetch exact duration & search for native recording asynchronously
         CoroutineScope(Dispatchers.IO).launch {
-            delay(800)
+            delay(500)
             val exactDuration = getExactDurationFromCallLog(phone)
             val fallbackDuration = ((endTime - startTime) / 1000).toInt()
             val finalDuration = exactDuration ?: fallbackDuration
@@ -222,18 +219,52 @@ class CallMonitoringService : Service() {
             lastUploadTime = now
             lastUploadedPhone = phone
 
-            Log.i(TAG, "📊 Call ended: phone=$phone, duration=${finalDuration}s (exactCallLog=$exactDuration, fallback=$fallbackDuration) — uploading to Supabase")
+            Log.i(TAG, "📊 Call ended: phone=$phone, duration=${finalDuration}s (exactCallLog=$exactDuration, fallback=$fallbackDuration)")
+
+            // 1. Search for Native System Call Recording (Samsung, Xiaomi, Vivo, OnePlus, Oppo, Realme)
+            val nativeRecordingFile = NativeCallRecordFinder.findRecentRecording(
+                context = this@CallMonitoringService,
+                rawCustomerPhone = phone,
+                callStartTime = startTime,
+                callEndTime = endTime
+            )
+
+            val inAppFile = recordingFile
+            val validInAppAudio = if (inAppFile != null && inAppFile.exists() && inAppFile.length() >= 5000) inAppFile else null
+
+            // Delete in-app dummy file if under 5KB or if native file was already found
+            if (inAppFile != null && (validInAppAudio == null || nativeRecordingFile != null)) {
+                try { inAppFile.delete() } catch (ignored: Exception) {}
+            }
+
+            val finalAudioFile: File?
+            val callNotes: String
+
+            if (nativeRecordingFile != null && nativeRecordingFile.exists() && nativeRecordingFile.length() >= 5000) {
+                finalAudioFile = nativeRecordingFile
+                callNotes = "Recorded via Native System Call Recorder (HD 2-Way Audio)"
+                Log.i(TAG, "🎉 Using Native System Recording (${finalAudioFile.length()} bytes): ${finalAudioFile.name}")
+            } else if (validInAppAudio != null) {
+                finalAudioFile = validInAppAudio
+                callNotes = "Recorded via CashALL In-App Audio Capture"
+                Log.i(TAG, "🎙 Using In-App Recording (${finalAudioFile.length()} bytes): ${finalAudioFile.name}")
+            } else {
+                finalAudioFile = null
+                callNotes = "Logged via CashALL Caller App (Turn on Auto-record in Phone Settings for HD Audio)"
+                Log.w(TAG, "⚠️ No valid audio recording found (>=5KB). Uploading call metadata cleanly without blank audio.")
+            }
 
             CallUploader.uploadCallRecording(
                 context       = this@CallMonitoringService,
-                audioFile     = validAudioFile,
+                audioFile     = finalAudioFile,
                 customerPhone = phone,
                 customerName  = prefs.lastTargetCustomerName,
                 deviceName    = prefs.lastTargetDeviceName,
                 supportPersonName  = prefs.agentName,
                 supportPersonPhone = prefs.agentPhone,
                 quoteId       = prefs.lastTargetQuoteId,
-                durationSeconds = finalDuration
+                durationSeconds = finalDuration,
+                callNotes     = callNotes
             )
 
             recordingFile = null

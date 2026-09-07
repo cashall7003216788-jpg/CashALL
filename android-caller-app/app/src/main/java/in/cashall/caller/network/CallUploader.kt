@@ -31,12 +31,13 @@ object CallUploader {
         supportPersonName: String,
         supportPersonPhone: String,
         quoteId: String,
-        durationSeconds: Int
+        durationSeconds: Int,
+        callNotes: String = "Logged via CashALL Caller App"
     ) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val hasAudio = audioFile != null && audioFile.exists() && audioFile.length() > 100
-                Log.d(TAG, "Uploading call log (hasAudio=$hasAudio, duration=${durationSeconds}s) to ${CashAllApplication.BACKEND_URL}")
+                val hasAudio = audioFile != null && audioFile.exists() && audioFile.length() >= 5000
+                Log.d(TAG, "Uploading call log (hasAudio=$hasAudio, size=${audioFile?.length() ?: 0} bytes, duration=${durationSeconds}s) to ${CashAllApplication.BACKEND_URL}")
 
                 val multipartBuilder = MultipartBody.Builder()
                     .setType(MultipartBody.FORM)
@@ -48,10 +49,19 @@ object CallUploader {
                     .addFormDataPart("durationSeconds", durationSeconds.toString())
                     .addFormDataPart("quoteId", quoteId)
                     .addFormDataPart("callOutcome", "CALL_COMPLETED")
-                    .addFormDataPart("callNotes", "Logged via CashALL Caller App")
+                    .addFormDataPart("callNotes", callNotes)
 
                 if (hasAudio && audioFile != null) {
-                    val audioBody = audioFile.asRequestBody("audio/m4a".toMediaTypeOrNull())
+                    val mimeType = when (audioFile.extension.lowercase()) {
+                        "mp3" -> "audio/mpeg"
+                        "m4a" -> "audio/m4a"
+                        "aac" -> "audio/aac"
+                        "amr" -> "audio/amr"
+                        "wav" -> "audio/wav"
+                        "3gp" -> "audio/3gpp"
+                        else -> "audio/m4a"
+                    }
+                    val audioBody = audioFile.asRequestBody(mimeType.toMediaTypeOrNull())
                     multipartBuilder.addFormDataPart("audio", audioFile.name, audioBody)
                 }
 

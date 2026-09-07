@@ -136,6 +136,16 @@
             android:layout_marginBottom="12dp" />
 
         <Button
+            android:id="@+id/btnOpenDialerSettings"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="🎙️ Turn ON Auto-Record in Phone"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:backgroundTint="#374151"
+            android:layout_marginBottom="12dp" />
+
+        <Button
             android:id="@+id/btnOpenAccessibility"
             android:layout_width="match_parent"
             android:layout_height="52dp"

@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity() {
             )
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 list.add(Manifest.permission.POST_NOTIFICATIONS)
+                list.add(Manifest.permission.READ_MEDIA_AUDIO)
+            } else {
+                list.add(Manifest.permission.READ_EXTERNAL_STORAGE)
             }
             return list.toTypedArray()
         }
@@ -49,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             Toast.makeText(
                 this,
-                "Phone and Notification permissions are required to track calling shifts",
+                "Phone, Audio & Call Log permissions are required to record & sync calls",
                 Toast.LENGTH_LONG
             ).show()
             updatePermissionUi()
@@ -95,6 +98,10 @@ class MainActivity : AppCompatActivity() {
             permissionLauncher.launch(requiredPermissions)
         }
 
+        binding.btnOpenDialerSettings.setOnClickListener {
+            openDialerCallSettings()
+        }
+
         binding.btnOpenAccessibility.setOnClickListener {
             try {
                 val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS).apply {
@@ -114,6 +121,31 @@ class MainActivity : AppCompatActivity() {
         binding.swipeRefresh.setOnRefreshListener {
             binding.webView.reload()
         }
+    }
+
+    fun openDialerCallSettings() {
+        val intents = listOf(
+            Intent("com.android.phone.settings.CallRecordSetting"),
+            Intent(android.telecom.TelecomManager.ACTION_SHOW_CALL_SETTINGS),
+            Intent(Intent.ACTION_DIAL)
+        )
+        for (intent in intents) {
+            try {
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+                Toast.makeText(
+                    this,
+                    "In Phone settings, tap 'Call recording' ➔ turn ON 'Auto-record calls'",
+                    Toast.LENGTH_LONG
+                ).show()
+                return
+            } catch (ignored: Throwable) {}
+        }
+        Toast.makeText(
+            this,
+            "Open your Phone dialer app ➔ Settings ➔ Call Recording ➔ Turn ON Auto-record calls",
+            Toast.LENGTH_LONG
+        ).show()
     }
 
     private fun hasRuntimePermissions(): Boolean {

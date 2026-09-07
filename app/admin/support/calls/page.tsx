@@ -865,12 +865,25 @@ export default function AdminSupportCallLogsPage() {
                           </div>
                         </td>
 
-                        {/* DURATION */}
+                        {/* DURATION & AUDIO BADGE */}
                         <td className="py-2.5 px-2 whitespace-nowrap">
-                          <span className="inline-flex items-center gap-1 bg-amber-950/80 border border-amber-800 text-amber-300 font-mono font-bold px-2 py-0.5 rounded-lg text-[10px]">
-                            <Clock className="w-2.5 h-2.5 text-amber-400 shrink-0" />
-                            <span>{rec.durationFormatted}</span>
-                          </span>
+                          <div className="flex flex-col items-start gap-1">
+                            <span className="inline-flex items-center gap-1 bg-amber-950/80 border border-amber-800 text-amber-300 font-mono font-bold px-2 py-0.5 rounded-lg text-[10px]">
+                              <Clock className="w-2.5 h-2.5 text-amber-400 shrink-0" />
+                              <span>{rec.durationFormatted}</span>
+                            </span>
+                            {rec.audioUrl && (
+                              <button
+                                type="button"
+                                onClick={() => handleOpenCallModal(rec)}
+                                className="inline-flex items-center gap-1 bg-emerald-950/90 border border-emerald-700/80 text-emerald-300 hover:text-emerald-200 hover:bg-emerald-900 font-bold px-1.5 py-0.5 rounded-md text-[9px] transition cursor-pointer"
+                                title="HD Recording Available - Click to Listen"
+                              >
+                                <Volume2 className="w-2.5 h-2.5 text-emerald-400 animate-pulse" />
+                                <span>HD Audio</span>
+                              </button>
+                            )}
+                          </div>
                         </td>
 
                         {/* CALL RESULT / OUTCOME BADGE WITH CLICKABLE POPUP */}
@@ -1181,13 +1194,32 @@ export default function AdminSupportCallLogsPage() {
             </div>
 
             {/* AUDIO RECORDING (IF AVAILABLE) */}
-            {selectedCall.audioUrl && (
-              <div className="bg-neutral-950 p-3.5 rounded-2xl border border-neutral-800 space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-neutral-300">
-                  <Volume2 className="w-4 h-4 text-emerald-400" />
-                  <span>Recorded Audio Clip</span>
+            {selectedCall.audioUrl ? (
+              <div className="bg-neutral-950 p-4 rounded-2xl border border-emerald-900/60 space-y-2.5 shadow-inner">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-xs font-bold text-emerald-300">
+                    <Volume2 className="w-4 h-4 text-emerald-400 animate-pulse" />
+                    <span>HD 2-Way Call Audio Recording</span>
+                  </div>
+                  <a
+                    href={selectedCall.audioUrl}
+                    download={`CashALL_Call_${selectedCall.customerPhone || "lead"}_${selectedCall.id}.m4a`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-[10px] text-neutral-400 hover:text-yellow-400 flex items-center gap-1 transition"
+                  >
+                    <Download className="w-3 h-3" />
+                    <span>Download Audio</span>
+                  </a>
                 </div>
-                <audio controls src={selectedCall.audioUrl} className="w-full h-8" />
+                <audio controls src={selectedCall.audioUrl} className="w-full h-9 rounded-lg" />
+              </div>
+            ) : (
+              <div className="bg-neutral-950/60 p-3.5 rounded-2xl border border-neutral-800/80 text-neutral-400 text-xs flex items-center gap-2">
+                <Volume2 className="w-4 h-4 text-neutral-500 opacity-60 shrink-0" />
+                <div className="text-[11px] leading-relaxed">
+                  <strong className="text-neutral-300">No Audio File:</strong> Call was logged via caller app. To enable automatic HD audio capture, turn ON <span className="text-yellow-400 font-semibold">'Auto-record calls'</span> in Phone Dialer Settings.
+                </div>
               </div>
             )}
 
