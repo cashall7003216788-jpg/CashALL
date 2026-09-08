@@ -11844,6 +11844,19 @@ const MOBILE_MODELS_PART_3: DeviceModelData[] = [
     "category": "MOBILE"
   },
   {
+    "id": "m-vivo-vivo-y39-5g",
+    "brandId": "b-vivo",
+    "brandSlug": "vivo",
+    "name": "Vivo Y39 5G",
+    "slug": "vivo-y39-5g",
+    "imageUrl": "https://s3ng.cashify.in/cashify/product/img/xhdpi/dae78d65-0e7f.jpg?w=800",
+    "releaseYear": 2025,
+    "popular": true,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
     "id": "m-vivo-vivo-v9-pro",
     "brandId": "b-vivo",
     "brandSlug": "vivo",
@@ -41508,6 +41521,22 @@ const MOBILE_VARIANTS_PART_6: DeviceVariantData[] = [
     "modelId": "m-tecno-tecno-pova-curve-2-5g",
     "storage": "256 GB",
     "basePrice": 18382,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-vivo-vivo-y39-5g-128-gb-8-gb",
+    "modelId": "m-vivo-vivo-y39-5g",
+    "storage": "128 GB",
+    "basePrice": 12600,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "v-m-vivo-vivo-y39-5g-256-gb-8-gb",
+    "modelId": "m-vivo-vivo-y39-5g",
+    "storage": "256 GB",
+    "basePrice": 12670,
     "active": true,
     "ram": "8 GB"
   },
