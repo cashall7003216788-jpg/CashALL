@@ -38,8 +38,15 @@ export async function GET(req: NextRequest) {
       where: {
         action: { in: actionFilter },
       },
+      select: {
+        id: true,
+        action: true,
+        actorRole: true,
+        newValuesJson: true,
+        createdAt: true,
+      },
       orderBy: { createdAt: "desc" },
-      take: 350,
+      take: 300,
     });
 
     const isSupportPerson = (name: string = "", phoneNum: string = "") => {

@@ -639,6 +639,7 @@ model AuditLog {
   deletedAt     DateTime?
 
   @@index([recordId])
+  @@index([action, createdAt(sort: Desc)])
 }
 
 model UserNotificationToken {

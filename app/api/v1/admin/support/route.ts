@@ -26,13 +26,15 @@ export async function GET() {
       }),
       prisma.auditLog.findMany({
         where: { action: { in: ["SUPPORT_CALL_LOGGED", "SUPPORT_CALL_RECORDING"] } },
+        select: { id: true, action: true, newValuesJson: true, createdAt: true },
         orderBy: { createdAt: "desc" },
-        take: 250,
+        take: 200,
       }),
       prisma.auditLog.findMany({
         where: {
           action: { in: ["SUPPORT_LOGIN", "SUPPORT_LOGOUT"] },
         },
+        select: { id: true, action: true, newValuesJson: true, createdAt: true },
         orderBy: {
           createdAt: "desc",
         },
@@ -40,6 +42,7 @@ export async function GET() {
       }),
       prisma.auditLog.findMany({
         where: { action: "SUPPORT_STAFF_CREDENTIALS" },
+        select: { id: true, actorId: true, recordId: true, newValuesJson: true, createdAt: true },
         orderBy: { createdAt: "desc" },
         take: 50,
       }),
