@@ -36,18 +36,18 @@ if (!dbUrl.includes("pgbouncer=true")) {
   dbUrl += (dbUrl.includes("?") ? "&" : "?") + "pgbouncer=true";
 }
 
-// Set connection limit to 3 for serverless environments to prevent saturating Supabase pooler (max 200)
+// Set connection limit to 5 so parallel queries and relation includes run smoothly without queuing
 if (dbUrl.includes("connection_limit=")) {
-  dbUrl = dbUrl.replace(/connection_limit=\d+/, "connection_limit=3");
+  dbUrl = dbUrl.replace(/connection_limit=\d+/, "connection_limit=5");
 } else {
-  dbUrl += "&connection_limit=3";
+  dbUrl += "&connection_limit=5";
 }
 
-// Set pool timeout to 15s so stale queries fail fast rather than locking pooler slots
+// Set pool timeout to 25s so queries have sufficient headroom
 if (dbUrl.includes("pool_timeout=")) {
-  dbUrl = dbUrl.replace(/pool_timeout=\d+/, "pool_timeout=15");
+  dbUrl = dbUrl.replace(/pool_timeout=\d+/, "pool_timeout=25");
 } else {
-  dbUrl += "&pool_timeout=15";
+  dbUrl += "&pool_timeout=25";
 }
 
 if (!dbUrl.includes("sslmode=")) {
