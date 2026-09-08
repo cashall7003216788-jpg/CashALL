@@ -24,6 +24,7 @@ import {
   Clock,
   Calendar,
   Smartphone,
+  Copy,
 } from "lucide-react";
 
 interface Agent {
@@ -52,6 +53,7 @@ export default function AdminAgentsPage() {
   const [loadingCallLogs, setLoadingCallLogs] = useState(false);
   const [callSearchTerm, setCallSearchTerm] = useState("");
   const [selectedAgentFilter, setSelectedAgentFilter] = useState("ALL");
+  const [copiedLink, setCopiedLink] = useState(false);
 
   // Form State: Full Name, User Name, Phone Number, Password
   const [formData, setFormData] = useState({
@@ -172,7 +174,32 @@ export default function AdminAgentsPage() {
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-wrap">
+            <a
+              href="/CashALL-Agent.apk"
+              download="CashALL-Agent.apk"
+              className="flex items-center gap-2 text-xs font-bold text-white bg-neutral-700 hover:bg-neutral-600 px-3.5 py-2.5 rounded-xl transition border border-neutral-600 shadow-md cursor-pointer"
+              title="Download Latest CashALL Agent APK (v1.0.3)"
+            >
+              <Download className="w-3.5 h-3.5 text-yellow-400" />
+              <span>Agent APK (v1.0.3)</span>
+            </a>
+
+            <button
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  navigator.clipboard.writeText("https://cashall.in/download/agent");
+                  setCopiedLink(true);
+                  setTimeout(() => setCopiedLink(false), 2500);
+                }
+              }}
+              className="flex items-center gap-1.5 text-xs font-bold text-yellow-400 bg-yellow-400/10 hover:bg-yellow-400/20 border border-yellow-400/30 px-3.5 py-2.5 rounded-xl transition cursor-pointer"
+              title="Copy Agent Download Link to share with agents"
+            >
+              {copiedLink ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+              <span>{copiedLink ? "Link Copied!" : "Copy Link"}</span>
+            </button>
+
             <button
               onClick={() => {
                 setShowCallLogModal(true);

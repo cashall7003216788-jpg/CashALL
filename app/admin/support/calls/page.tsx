@@ -195,6 +195,7 @@ export default function AdminSupportCallLogsPage() {
   const [selectedCall, setSelectedCall] = useState<CallRecordingItem | null>(null);
   const [copiedNotes, setCopiedNotes] = useState(false);
   const [copiedQuote, setCopiedQuote] = useState(false);
+  const [copiedCallerLink, setCopiedCallerLink] = useState(false);
   const [lastUpdated, setLastUpdated] = useState<string>("");
 
   // Edit call reason / outcome states
@@ -564,13 +565,38 @@ export default function AdminSupportCallLogsPage() {
           </div>
 
           <div className="flex items-center gap-3 flex-wrap">
+            <a
+              href="/CashALL-Caller.apk"
+              download="CashALL-Caller.apk"
+              className="flex items-center gap-2 bg-neutral-700 hover:bg-neutral-600 text-white text-xs font-bold px-3.5 py-2.5 rounded-xl transition shadow-md border border-neutral-600 cursor-pointer"
+              title="Download Latest CashALL Caller APK (v1.0.3)"
+            >
+              <Download className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Caller APK (v1.0.3)</span>
+            </a>
+
+            <button
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  navigator.clipboard.writeText("https://cashall.in/download/caller");
+                  setCopiedCallerLink(true);
+                  setTimeout(() => setCopiedCallerLink(false), 2500);
+                }
+              }}
+              className="flex items-center gap-1.5 text-xs font-bold text-emerald-400 bg-emerald-400/10 hover:bg-emerald-400/20 border border-emerald-400/30 px-3.5 py-2.5 rounded-xl transition cursor-pointer"
+              title="Copy Caller Download Link to share with team"
+            >
+              {copiedCallerLink ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+              <span>{copiedCallerLink ? "Link Copied!" : "Copy Link"}</span>
+            </button>
+
             <Link
               href="/download/caller"
               target="_blank"
-              className="flex items-center gap-2 bg-neutral-700 hover:bg-neutral-600 text-yellow-400 text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-lg cursor-pointer border border-neutral-600"
+              className="flex items-center gap-1.5 text-xs font-bold text-yellow-400 hover:underline px-2 py-2"
             >
-              <Smartphone className="w-4 h-4 text-yellow-400" />
-              <span>Caller App APK (v1.0.2)</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+              <span>Setup Guide</span>
             </Link>
 
             <button

@@ -145,7 +145,7 @@ export function Footer() {
 
           {/* COMPANY */}
           <div>
-            <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-4">Company</h3>
+            <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-4">Company &amp; Apps</h3>
             <ul className="space-y-2 text-xs">
               <li>
                 <Link href="/about" className="hover:text-brand-yellow transition-colors">
@@ -157,12 +157,27 @@ export function Footer() {
                   Contact Us
                 </Link>
               </li>
+              <li className="pt-2 border-t border-neutral-800/80">
+                <Link href="/download" className="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+                  <span>Download Mobile Apps</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/download/agent" className="hover:text-brand-yellow transition-colors text-neutral-400">
+                  Field Agent App (v1.0.3)
+                </Link>
+              </li>
+              <li>
+                <Link href="/download/caller" className="hover:text-brand-yellow transition-colors text-neutral-400">
+                  Support Caller App (v1.0.3)
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* SUPPORT & LEGAL */}
           <div>
-            <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-4">Support & Legal</h3>
+            <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-4">Support &amp; Legal</h3>
             <ul className="space-y-2 text-xs">
               <li>
                 <Link href="/faq" className="hover:text-brand-yellow transition-colors">
@@ -183,7 +198,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/terms" className="hover:text-brand-yellow transition-colors">
-                  Terms & Conditions
+                  Terms &amp; Conditions
                 </Link>
               </li>
             </ul>
@@ -192,8 +207,21 @@ export function Footer() {
         </div>
 
         {/* BOTTOM COPYRIGHT */}
-        <div className="pt-8 border-t border-neutral-800 flex items-center justify-between text-xs text-gray-400">
+        <div className="pt-8 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
           <p className="font-medium text-gray-300">@ 2026 Aarna Enterprise (CashALL). All Rights Reserved</p>
+          <div className="flex items-center gap-4 text-[11px]">
+            <Link href="/download" className="text-brand-yellow hover:underline font-bold flex items-center gap-1">
+              <span>Android Apps Hub</span>
+            </Link>
+            <span className="text-neutral-700">•</span>
+            <Link href="/download/agent" className="text-gray-400 hover:text-white transition">
+              Agent APK
+            </Link>
+            <span className="text-neutral-700">•</span>
+            <Link href="/download/caller" className="text-gray-400 hover:text-white transition">
+              Caller APK
+            </Link>
+          </div>
         </div>
 
       </div>

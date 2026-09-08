@@ -90,13 +90,39 @@ export default function DownloadAgentPage() {
             </div>
             <div className="flex items-start gap-2">
               <span className="font-bold text-yellow-400">2.</span>
-              <span>Open the file. If asked to allow installation, turn ON <strong>Allow from this source</strong>.</span>
+              <span>Open the file. Tap <strong>Update</strong> when prompted (no need to uninstall).</span>
             </div>
             <div className="flex items-start gap-2">
               <span className="font-bold text-yellow-400">3.</span>
-              <span>If your phone security scanner or Google Play Protect shows a scan prompt, tap <strong>More details ➔ Install anyway</strong> or <strong>Allow</strong>.</span>
+              <span>If your phone security scanner or Google Play Protect shows a scan prompt, tap <strong>Install anyway</strong> or <strong>Allow</strong>.</span>
             </div>
           </div>
+        </div>
+
+        {/* HELPFUL LINKS */}
+        <div className="flex items-center justify-between text-xs text-neutral-400 pt-2 px-1">
+          <Link href="/download/caller" className="hover:text-emerald-400 transition">
+            Looking for Support Caller App? ➔
+          </Link>
+          <a href="/CashALL-Agent.apk" download="CashALL-Agent.apk" className="text-neutral-500 hover:text-white underline">
+            Direct File Download
+          </a>
+        </div>
+
+        {/* ADMIN & HUB SHORTCUTS */}
+        <div className="pt-2 flex items-center justify-between text-xs text-neutral-500">
+          <Link
+            href="/download"
+            className="hover:text-yellow-400 transition"
+          >
+            ← View All Apps Hub
+          </Link>
+          <Link
+            href="/agent/login"
+            className="hover:text-yellow-400 transition"
+          >
+            Agent Web Portal →
+          </Link>
         </div>
       </div>
     </div>

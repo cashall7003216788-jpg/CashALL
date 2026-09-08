@@ -32,7 +32,7 @@ export default function DownloadCallerPage() {
               CashALL <span className="text-yellow-400">Caller App</span>
             </h1>
             <p className="text-xs text-neutral-400 mt-1 font-medium">
-              Customer Support Desk &amp; HD Call Assurance v1.0.2
+              Customer Support Desk &amp; HD Call Assurance v1.0.3
             </p>
           </div>
         </div>
@@ -62,14 +62,14 @@ export default function DownloadCallerPage() {
           <button
             onClick={handleDownload}
             disabled={downloading}
-            className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black font-black text-sm transition shadow-xl active:scale-95 flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-50"
+            className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600 hover:from-emerald-300 hover:to-teal-400 text-black font-black text-sm transition shadow-xl active:scale-95 flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-50"
           >
             <Download className="w-5 h-5 stroke-[2.5]" />
-            <span>{downloading ? "Starting Download..." : "Download CashALL Caller APK"}</span>
+            <span>{downloading ? "Starting Download..." : "Download / Update CashALL Caller APK"}</span>
           </button>
           <div className="text-[11px] text-neutral-400 flex items-center justify-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span>Version 1.0.2 (Android 10 - 15 Compatible)</span>
+            <span>Version 1.0.3 • In-Place Update • Android 10 - 15</span>
           </div>
         </div>
 
@@ -186,13 +186,29 @@ export default function DownloadCallerPage() {
           </p>
         </div>
 
-        {/* ADMIN SHORTCUT */}
-        <div className="pt-2">
+        {/* HELPFUL LINKS */}
+        <div className="flex items-center justify-between text-xs text-neutral-400 pt-2 px-1">
+          <Link href="/download/agent" className="hover:text-yellow-400 transition">
+            Looking for Field Agent App? ➔
+          </Link>
+          <a href="/CashALL-Caller.apk" download="CashALL-Caller.apk" className="text-neutral-500 hover:text-white underline">
+            Direct File Download
+          </a>
+        </div>
+
+        {/* ADMIN & HUB SHORTCUTS */}
+        <div className="pt-2 flex items-center justify-between text-xs text-neutral-500">
+          <Link
+            href="/download"
+            className="hover:text-yellow-400 transition"
+          >
+            ← View All Apps Hub
+          </Link>
           <Link
             href="/admin/support/calls"
-            className="text-xs text-neutral-500 hover:text-yellow-400 transition"
+            className="hover:text-yellow-400 transition"
           >
-            ← Back to Support Call Desk Console
+            Back to Call Console →
           </Link>
         </div>
       </div>
