@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Menu, X, User, ChevronDown, HelpCircle, LogIn, LogOut, ShoppingBag, ShoppingCart, Smartphone } from "lucide-react";
-import { Button } from "@/components/ui/Button";
 import { DeviceChoiceModal } from "@/components/common/DeviceChoiceModal";
 import { CustomerAuthModal } from "@/components/common/CustomerAuthModal";
 import { LocationModal } from "@/components/common/LocationModal";
@@ -220,16 +219,6 @@ export function Header() {
                   <span>Customer Login</span>
                 </button>
               )}
-
-              {/* SELL NOW CTA */}
-              <Button
-                onClick={() => setDeviceChoiceOpen(true)}
-                variant="primary"
-                size="md"
-                className="font-extrabold tracking-wide shadow-yellowGlow"
-              >
-                SELL NOW
-              </Button>
             </div>
 
             {/* MOBILE TRIGGER & CTAs (COMPACT FLUID LAYOUT) */}
@@ -257,16 +246,6 @@ export function Header() {
                 <MapPin className="w-3 h-3 shrink-0" />
                 <span className="truncate">{selectedLocation ? selectedLocation.city : "Location"}</span>
               </button>
-
-              {/* MOBILE SELL NOW BUTTON */}
-              <Button
-                onClick={() => setDeviceChoiceOpen(true)}
-                variant="primary"
-                size="sm"
-                className="font-extrabold text-[11px] shadow-yellowGlow px-2.5 py-1 h-8 rounded-lg whitespace-nowrap"
-              >
-                SELL NOW
-              </Button>
 
               {/* MOBILE MENU TOGGLE */}
               <button
