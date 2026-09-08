@@ -10,55 +10,29 @@ export async function GET() {
         action: { in: ["SUPPORT_CALL_LOGGED", "SUPPORT_CALL_RECORDING"] },
         actorRole: { not: "AGENT" },
       },
+      select: {
+        id: true,
+        action: true,
+        actorRole: true,
+        newValuesJson: true,
+        createdAt: true,
+      },
       orderBy: { createdAt: "desc" },
-      take: 300,
+      take: 200,
     });
 
-    // Collect quote numbers to resolve device name if missing
-    const quoteNumbers = Array.from(
-      new Set(
-        logs
-          .map((l) => {
-            try {
-              const d = JSON.parse(l.newValuesJson || "{}");
-              return d.quoteId;
-            } catch {
-              return null;
-            }
-          })
-          .filter((q): q is string => typeof q === "string" && (q.startsWith("CAQ") || q.startsWith("Q")))
-      )
-    );
-
-    const quotes =
-      quoteNumbers.length > 0
-        ? await prisma.quote.findMany({
-            where: { quoteNumber: { in: quoteNumbers } },
-            include: {
-              variant: {
-                include: {
-                  model: {
-                    include: { brand: true },
-                  },
-                },
-              },
-            },
-          })
-        : [];
-
-    const quoteDeviceMap = new Map<string, string>();
-    for (const q of quotes) {
-      let devName = q.variant
-        ? `${q.variant.model.brand.name} ${q.variant.model.name} (${q.variant.storage})`
-        : "";
-      if (!devName && q.breakdownJson) {
-        try {
-          const bd = JSON.parse(q.breakdownJson);
-          if (bd.deviceName) devName = bd.deviceName;
-        } catch {}
-      }
-      if (devName) quoteDeviceMap.set(q.quoteNumber, devName);
-    }
+    const isFieldAgent = (name: string = "", notes: string = "") => {
+      const lower = name.toLowerCase();
+      const lowerNotes = notes.toLowerCase();
+      return (
+        lower.includes("arshad") ||
+        lower.includes("aman") ||
+        lower.includes("hyder") ||
+        lower.includes("ankit") ||
+        lowerNotes.includes("field agent") ||
+        lowerNotes.includes("agent app")
+      );
+    };
 
     const rawItems = logs.map((log) => {
       let data: any = {};
@@ -69,7 +43,7 @@ export async function GET() {
       }
 
       const quoteId = data.quoteId || "N/A";
-      const resolvedDevice = data.deviceName || quoteDeviceMap.get(quoteId) || "Mobile Device";
+      const resolvedDevice = data.deviceName || "Mobile Device";
 
       let agentPhone = data.supportPersonPhone || "—";
       const agentName = data.supportPersonName || "Support Agent";
@@ -107,24 +81,11 @@ export async function GET() {
       };
     });
 
-    const isFieldAgent = (name: string = "", notes: string = "") => {
-      const lower = name.toLowerCase();
-      const lowerNotes = notes.toLowerCase();
-      return (
-        lower.includes("arshad") ||
-        lower.includes("aman") ||
-        lower.includes("hyder") ||
-        lower.includes("ankit") ||
-        lowerNotes.includes("field agent") ||
-        lowerNotes.includes("agent app")
-      );
-    };
-
     const supportOnlyItems = rawItems.filter(
       (item) => !isFieldAgent(item.supportPersonName, item.callNotes)
     );
 
-    // Merge recording and logged outcome within 24 hours for the same quote or 10-digit customer phone
+    // Merge recording and logged outcome within 45 minutes for the same quote or 10-digit customer phone
     const mergedCalls: typeof supportOnlyItems = [];
     const usedIds = new Set<string>();
 
@@ -136,38 +97,46 @@ export async function GET() {
 
       const matchIndex = supportOnlyItems.findIndex((other, idx) => {
         if (idx <= i || usedIds.has(other.id)) return false;
-        // Only merge a phone call recording with a dashboard notes log, not two identical logs of the same type!
+        // Only merge complementary actions (RECORDING + LOGGED)
         if (item.action === other.action) return false;
+
+        // Must belong to the same support person (or generic support agent fallback)
+        const name1 = item.supportPersonName.toLowerCase().trim();
+        const name2 = other.supportPersonName.toLowerCase().trim();
+        const isSamePerson =
+          name1 === name2 ||
+          name1.includes(name2) ||
+          name2.includes(name1) ||
+          name1 === "support agent" ||
+          name2 === "support agent";
+        if (!isSamePerson) return false;
 
         const sameQuote = item.quoteId !== "N/A" && other.quoteId !== "N/A" && item.quoteId === other.quoteId;
         const p2 = (other.customerPhone || "").replace(/\D/g, "").slice(-10);
         const samePhone = p1.length === 10 && p1 === p2;
         if (!sameQuote && !samePhone) return false;
 
+        // Only merge calls from the same active session (within 45 minutes, not whole days)
         const timeDiffMs = Math.abs(new Date(item.createdAt).getTime() - new Date(other.createdAt).getTime());
-        return timeDiffMs < 24 * 60 * 60 * 1000; // Within 24 hours
+        return timeDiffMs < 45 * 60 * 1000;
       });
 
       if (matchIndex !== -1) {
-        const other = rawItems[matchIndex];
+        const other = supportOnlyItems[matchIndex]; // FIXED: Access supportOnlyItems, NEVER rawItems
         usedIds.add(other.id);
 
         const loggedEntry = item.action === "SUPPORT_CALL_LOGGED" ? item : other.action === "SUPPORT_CALL_LOGGED" ? other : null;
         const recordingEntry = item.action === "SUPPORT_CALL_RECORDING" ? item : other.action === "SUPPORT_CALL_RECORDING" ? other : null;
 
-        // Choose the real callNotes (avoid placeholder if one of them has a real note)
+        // Choose the real callNotes (avoid generic placeholder if a real note exists)
         const isPlaceholder = (n?: string) => !n || n.includes("CashALL Caller App") || n.includes("Android Caller App");
         let resolvedNotes = "";
         if (loggedEntry && !isPlaceholder(loggedEntry.callNotes)) {
           resolvedNotes = loggedEntry.callNotes;
         } else if (recordingEntry && !isPlaceholder(recordingEntry.callNotes)) {
           resolvedNotes = recordingEntry.callNotes;
-        } else if (!isPlaceholder(item.callNotes)) {
-          resolvedNotes = item.callNotes;
-        } else if (!isPlaceholder(other.callNotes)) {
-          resolvedNotes = other.callNotes;
         } else {
-          resolvedNotes = loggedEntry?.callNotes || item.callNotes || other.callNotes || "";
+          resolvedNotes = item.callNotes || other.callNotes || "";
         }
 
         let resolvedOutcome = item.callOutcome;
@@ -177,21 +146,30 @@ export async function GET() {
           resolvedOutcome = other.callOutcome;
         }
 
+        // Preserve genuine support person name
+        let resolvedName = item.supportPersonName;
+        if (resolvedName === "Support Agent" && other.supportPersonName !== "Support Agent") {
+          resolvedName = other.supportPersonName;
+        }
+
         const combined = {
-          ...(recordingEntry || item),
           id: (recordingEntry || item).id,
+          action: item.action,
+          supportPersonName: resolvedName,
+          supportPersonPhone: item.supportPersonPhone !== "—" ? item.supportPersonPhone : other.supportPersonPhone,
+          quoteId: (item.quoteId !== "N/A" ? item.quoteId : other.quoteId) || "N/A",
+          customerName: item.customerName !== "Customer Lead" ? item.customerName : other.customerName,
+          customerPhone: item.customerPhone !== "—" ? item.customerPhone : other.customerPhone,
+          deviceName: item.deviceName !== "Mobile Device" ? item.deviceName : other.deviceName,
           callOutcome: resolvedOutcome,
           callNotes: resolvedNotes,
           durationSeconds: recordingEntry?.durationSeconds || item.durationSeconds || other.durationSeconds,
           durationFormatted: recordingEntry?.durationFormatted || item.durationFormatted || other.durationFormatted,
           audioUrl: recordingEntry?.audioUrl || item.audioUrl || other.audioUrl,
           hasRecording: !!(recordingEntry?.audioUrl || item.audioUrl || other.audioUrl),
-          deviceName: (item.deviceName && item.deviceName !== "Mobile Device" ? item.deviceName : other.deviceName) || "Mobile Device",
-          customerName: (item.customerName && item.customerName !== "Customer Lead" ? item.customerName : other.customerName) || "Customer Lead",
-          customerPhone: (item.customerPhone && item.customerPhone !== "—" ? item.customerPhone : other.customerPhone) || "—",
-          supportPersonPhone: item.supportPersonPhone !== "—" ? item.supportPersonPhone : other.supportPersonPhone,
           createdAtIST: item.createdAtIST || other.createdAtIST,
           callTimeIST: item.callTimeIST || other.callTimeIST,
+          createdAt: new Date(item.createdAt).getTime() > new Date(other.createdAt).getTime() ? item.createdAt : other.createdAt,
         };
 
         mergedCalls.push(combined);

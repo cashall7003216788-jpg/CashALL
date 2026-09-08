@@ -132,7 +132,7 @@ export default function SupportDashboardPage() {
     setError("");
     try {
       const [quotesRes, callsRes] = await Promise.all([
-        fetch("/api/v1/admin/quotes"),
+        fetch("/api/v1/admin/quotes?limit=100"),
         fetch("/api/v1/support/calls"),
       ]);
 
@@ -199,6 +199,10 @@ export default function SupportDashboardPage() {
     e.preventDefault();
     if (!selectedQuote) return;
 
+    const currentQuote = selectedQuote;
+    const currentNotes = callNotes;
+    const currentOutcome = callOutcome;
+
     setSubmittingCall(true);
     try {
       const res = await fetch("/api/v1/support/calls", {
@@ -206,29 +210,46 @@ export default function SupportDashboardPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           supportPersonName: supportSession?.name || "Support Agent",
-          quoteId: selectedQuote.quoteNumber,
-          customerName: selectedQuote.customerName || "Customer Lead",
-          customerPhone: selectedQuote.customerPhone || "—",
-          callOutcome,
-          callNotes,
+          quoteId: currentQuote.quoteNumber,
+          customerName: currentQuote.customerName || "Customer Lead",
+          customerPhone: currentQuote.customerPhone || "—",
+          callOutcome: currentOutcome,
+          callNotes: currentNotes,
         }),
       });
 
       const json = await res.json();
       if (json.success) {
-        setSuccessToast(`✅ Call logged successfully for Quote ${selectedQuote.quoteNumber}!`);
+        // Optimistic instant UI update: immediately add to call list and dismiss modal
+        const newRecord: CallRecord = {
+          id: json.callLog?.id || Date.now().toString(),
+          supportPersonName: supportSession?.name || "Support Agent",
+          quoteId: currentQuote.quoteNumber,
+          customerName: currentQuote.customerName || "Customer Lead",
+          customerPhone: currentQuote.customerPhone || "—",
+          callOutcome: currentOutcome,
+          callNotes: currentNotes,
+          callTimeIST: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+        };
+
+        setCallLogs((prev) => [newRecord, ...prev.filter((c) => c.id !== newRecord.id)]);
+        setSuccessToast(`✅ Call logged successfully for Quote ${currentQuote.quoteNumber}!`);
         setSelectedQuote(null);
         setCallNotes("");
+        setSubmittingCall(false);
+
         try {
           sessionStorage.removeItem("cashall_pending_call_quote");
         } catch {}
-        await fetchData();
+
+        // Background sync to ensure server consistency without UI blocking
+        fetchData();
       } else {
         alert(json.error || "Failed to log call");
+        setSubmittingCall(false);
       }
     } catch (err: any) {
       alert(err.message || "Error logging call");
-    } finally {
       setSubmittingCall(false);
     }
   };

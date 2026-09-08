@@ -163,10 +163,6 @@ export function Header() {
               <Link href="/sell/tablet" className="hover:text-brand-yellow transition-colors">
                 Sell Tablet
               </Link>
-              <Link href="/download" className="hover:text-brand-yellow transition-colors flex items-center gap-1.5 text-yellow-400 font-bold">
-                <Smartphone className="w-3.5 h-3.5 text-yellow-400" />
-                <span>Apps</span>
-              </Link>
             </nav>
 
             {/* RIGHT ACTION BUTTONS */}
@@ -377,14 +373,6 @@ export function Header() {
               className="block py-2 text-base font-semibold text-gray-200 hover:text-brand-yellow"
             >
               Sell Tablet
-            </Link>
-            <Link
-              href="/download"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2.5 text-base font-bold text-yellow-400 hover:text-yellow-300 flex items-center gap-2 border-t border-neutral-800/80 pt-3"
-            >
-              <Smartphone className="w-4 h-4 text-yellow-400" />
-              <span>Download Mobile Apps (Agent &amp; Caller)</span>
             </Link>
           </div>
         )}
