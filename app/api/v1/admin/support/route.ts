@@ -3,9 +3,22 @@ import { prisma } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+let cachedSupportData: { data: any; timestamp: number } | null = null;
+
+export async function GET(req: Request) {
   try {
-    const [supportUsers, callLogs, sessionLogs, credLogs] = await Promise.all([
+    const url = new URL(req.url);
+    const noCache = url.searchParams.get("nocache") === "true";
+
+    // 8-second in-memory server cache to make page reloads instantaneous
+    if (!noCache && cachedSupportData && Date.now() - cachedSupportData.timestamp < 8000) {
+      return NextResponse.json(cachedSupportData.data, {
+        headers: { "Cache-Control": "private, s-maxage=5, stale-while-revalidate=15" },
+      });
+    }
+
+    // Consolidated: 2 queries instead of 4
+    const [supportUsers, allLogs] = await Promise.all([
       prisma.user.findMany({
         where: {
           role: "EMPLOYEE",
@@ -25,28 +38,26 @@ export async function GET() {
         },
       }),
       prisma.auditLog.findMany({
-        where: { action: { in: ["SUPPORT_CALL_LOGGED", "SUPPORT_CALL_RECORDING"] } },
-        select: { id: true, action: true, newValuesJson: true, createdAt: true },
-        orderBy: { createdAt: "desc" },
-        take: 200,
-      }),
-      prisma.auditLog.findMany({
         where: {
-          action: { in: ["SUPPORT_LOGIN", "SUPPORT_LOGOUT"] },
+          action: {
+            in: [
+              "SUPPORT_CALL_LOGGED",
+              "SUPPORT_CALL_RECORDING",
+              "SUPPORT_LOGIN",
+              "SUPPORT_LOGOUT",
+              "SUPPORT_STAFF_CREDENTIALS",
+            ],
+          },
         },
-        select: { id: true, action: true, newValuesJson: true, createdAt: true },
-        orderBy: {
-          createdAt: "desc",
-        },
-        take: 100,
-      }),
-      prisma.auditLog.findMany({
-        where: { action: "SUPPORT_STAFF_CREDENTIALS" },
-        select: { id: true, actorId: true, recordId: true, newValuesJson: true, createdAt: true },
+        select: { id: true, action: true, actorId: true, recordId: true, newValuesJson: true, createdAt: true },
         orderBy: { createdAt: "desc" },
-        take: 50,
+        take: 250,
       }),
     ]);
+
+    const callLogs = allLogs.filter((l) => l.action === "SUPPORT_CALL_LOGGED" || l.action === "SUPPORT_CALL_RECORDING");
+    const sessionLogs = allLogs.filter((l) => l.action === "SUPPORT_LOGIN" || l.action === "SUPPORT_LOGOUT");
+    const credLogs = allLogs.filter((l) => l.action === "SUPPORT_STAFF_CREDENTIALS");
 
     // Ensure default test user "SANGEET SHAW" is present if not yet returned
     const staffList: any[] = [...supportUsers];
@@ -216,10 +227,59 @@ export async function GET() {
       };
     });
 
-    return NextResponse.json({
+    const isFieldAgent = (name: string = "") => {
+      const lower = name.toLowerCase();
+      return lower.includes("arshad") || lower.includes("aman") || lower.includes("hyder") || lower.includes("ankit");
+    };
+
+    const formattedCalls = callLogs
+      .map((log) => {
+        let d: any = {};
+        try {
+          d = log.newValuesJson ? JSON.parse(log.newValuesJson) : {};
+        } catch {}
+        const agentName = d.supportPersonName || "Support Agent";
+        let agentPhone = d.supportPersonPhone || "—";
+        if ((agentPhone === "—" || !agentPhone) && agentName.toLowerCase().includes("harshita")) {
+          agentPhone = "8981191734";
+        }
+        const durationSec = Number(d.durationSeconds) || 0;
+        return {
+          id: log.id,
+          supportPersonName: agentName,
+          supportPersonPhone: agentPhone,
+          customerName: d.customerName || "Customer Lead",
+          customerPhone: d.customerPhone || "—",
+          deviceName: d.deviceName || "Mobile Device",
+          quoteId: d.quoteId || "N/A",
+          durationSeconds: durationSec,
+          durationFormatted: d.durationFormatted || formatDurationSec(durationSec),
+          audioUrl: d.audioUrl || "",
+          callOutcome: d.callOutcome || (log.action === "SUPPORT_CALL_RECORDING" ? "CALL_COMPLETED" : "CALL_ATTEMPTED"),
+          callNotes: d.callNotes || "",
+          callStartTime: d.callStartTime || log.createdAt.toISOString(),
+          callEndTime: d.callEndTime || log.createdAt.toISOString(),
+          createdAtIST: d.callTimeIST || formatIST(log.createdAt),
+          createdAt: log.createdAt.toISOString(),
+        };
+      })
+      .filter((c) => !isFieldAgent(c.supportPersonName));
+
+    const responsePayload = {
       success: true,
       supportStaff: mapped,
       sessionLogs: formattedSessions,
+      recordings: formattedCalls,
+    };
+
+    // Cache for 8 seconds
+    cachedSupportData = {
+      data: responsePayload,
+      timestamp: Date.now(),
+    };
+
+    return NextResponse.json(responsePayload, {
+      headers: { "Cache-Control": "private, s-maxage=5, stale-while-revalidate=15" },
     });
   } catch (error: any) {
     console.error("Error fetching support staff:", error);
@@ -234,6 +294,8 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const { name, username, phone, password } = body;
+
+    cachedSupportData = null;
 
     if (!name && !username) {
       return NextResponse.json(

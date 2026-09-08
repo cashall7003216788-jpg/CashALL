@@ -269,29 +269,15 @@ export default function AdminSupportCallLogsPage() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Fetch call logs from API with cache busting and fallback
+  // Fetch call logs from API with cache and SWR
   const fetchLogs = useCallback(async () => {
-    setLoading(true);
     try {
-      const timestamp = Date.now();
-      const res = await fetch(`/api/v1/support/calls?role=SUPPORT&t=${timestamp}`, {
-        cache: "no-store",
-        headers: {
-          Pragma: "no-cache",
-          "Cache-Control": "no-cache, no-store, must-revalidate",
-        },
-      });
+      const res = await fetch(`/api/v1/support/calls?role=SUPPORT`);
       const json = await res.json();
       let list = json.calls || json.recordings || json.data || [];
 
-      if (!Array.isArray(list) || list.length === 0) {
-        const fallbackRes = await fetch(`/api/v1/support/recordings?role=SUPPORT&t=${timestamp}`, {
-          cache: "no-store",
-          headers: {
-            Pragma: "no-cache",
-            "Cache-Control": "no-cache, no-store, must-revalidate",
-          },
-        });
+      if (!json.success || !Array.isArray(list)) {
+        const fallbackRes = await fetch(`/api/v1/support/recordings?role=SUPPORT`);
         const fallbackJson = await fallbackRes.json();
         list = fallbackJson.calls || fallbackJson.recordings || fallbackJson.data || [];
       }
@@ -324,6 +310,11 @@ export default function AdminSupportCallLogsPage() {
           });
         setRecordings(normalized);
         setLastUpdated(new Date().toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata" }));
+
+        // Cache in sessionStorage for instantaneous subsequent page loads
+        try {
+          sessionStorage.setItem("cashall_admin_call_logs_cache", JSON.stringify(normalized));
+        } catch {}
       }
     } catch (e) {
       console.error("Failed to fetch customer call logs:", e);
@@ -333,6 +324,17 @@ export default function AdminSupportCallLogsPage() {
   }, []);
 
   useEffect(() => {
+    // Instant initial render from local cache if available (0ms loading)
+    try {
+      const cached = sessionStorage.getItem("cashall_admin_call_logs_cache");
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setRecordings(parsed);
+          setLoading(false);
+        }
+      }
+    } catch {}
     fetchLogs();
   }, [fetchLogs]);
 

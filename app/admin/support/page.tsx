@@ -90,28 +90,26 @@ export default function AdminSupportManagementPage() {
   });
 
   const fetchStaff = useCallback(async () => {
-    setLoading(true);
     setError("");
     try {
-      const [staffRes, recRes] = await Promise.all([
-        fetch("/api/v1/admin/support"),
-        fetch("/api/v1/support/recordings?role=SUPPORT"),
-      ]);
-      const json = await staffRes.json();
-      const recJson = await recRes.json();
+      const res = await fetch("/api/v1/admin/support");
+      const json = await res.json();
       if (json.success) {
-        setSupportStaff(json.supportStaff || []);
-        setSessionLogs(json.sessionLogs || []);
+        const staff = json.supportStaff || [];
+        const sessions = json.sessionLogs || [];
+        const recs = json.recordings || [];
+        setSupportStaff(staff);
+        setSessionLogs(sessions);
+        setRecordings(recs);
+
+        // Cache in sessionStorage for instantaneous subsequent page loads
+        try {
+          sessionStorage.setItem("cashall_admin_support_staff", JSON.stringify(staff));
+          sessionStorage.setItem("cashall_admin_support_sessions", JSON.stringify(sessions));
+          sessionStorage.setItem("cashall_admin_support_recs", JSON.stringify(recs));
+        } catch {}
       } else {
         setError(json.error || "Failed to fetch support staff");
-      }
-      if (recJson.success && Array.isArray(recJson.recordings)) {
-        const isFieldAgent = (name: string = "") => {
-          const lower = name.toLowerCase();
-          return lower.includes("arshad") || lower.includes("aman") || lower.includes("hyder") || lower.includes("ankit");
-        };
-        const supportOnly = recJson.recordings.filter((r: any) => !isFieldAgent(r.supportPersonName || ""));
-        setRecordings(supportOnly);
       }
     } catch (err: any) {
       setError(err.message || "Network error fetching support staff");
@@ -121,6 +119,18 @@ export default function AdminSupportManagementPage() {
   }, []);
 
   useEffect(() => {
+    // Instant initial render from local cache if available (0ms loading)
+    try {
+      const cachedStaff = sessionStorage.getItem("cashall_admin_support_staff");
+      const cachedSessions = sessionStorage.getItem("cashall_admin_support_sessions");
+      const cachedRecs = sessionStorage.getItem("cashall_admin_support_recs");
+      if (cachedStaff) {
+        setSupportStaff(JSON.parse(cachedStaff));
+        if (cachedSessions) setSessionLogs(JSON.parse(cachedSessions));
+        if (cachedRecs) setRecordings(JSON.parse(cachedRecs));
+        setLoading(false);
+      }
+    } catch {}
     fetchStaff();
   }, [fetchStaff]);
 

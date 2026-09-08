@@ -3,8 +3,20 @@ import { prisma } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+let callsCache: { data: any; timestamp: number } | null = null;
+
+export async function GET(req: NextRequest) {
   try {
+    const url = new URL(req.url);
+    const noCache = url.searchParams.get("nocache") === "true";
+
+    // 6-second in-memory cache to make reloads and navigation instantaneous
+    if (!noCache && callsCache && Date.now() - callsCache.timestamp < 6000) {
+      return NextResponse.json(callsCache.data, {
+        headers: { "Cache-Control": "private, s-maxage=5, stale-while-revalidate=15" },
+      });
+    }
+
     const logs = await prisma.auditLog.findMany({
       where: {
         action: { in: ["SUPPORT_CALL_LOGGED", "SUPPORT_CALL_RECORDING"] },
@@ -97,8 +109,6 @@ export async function GET() {
 
       const matchIndex = supportOnlyItems.findIndex((other, idx) => {
         if (idx <= i || usedIds.has(other.id)) return false;
-        // Only merge complementary actions (RECORDING + LOGGED)
-        if (item.action === other.action) return false;
 
         // Must belong to the same support person (or generic support agent fallback)
         const name1 = item.supportPersonName.toLowerCase().trim();
@@ -116,13 +126,16 @@ export async function GET() {
         const samePhone = p1.length === 10 && p1 === p2;
         if (!sameQuote && !samePhone) return false;
 
-        // Only merge calls from the same active session (within 45 minutes, not whole days)
         const timeDiffMs = Math.abs(new Date(item.createdAt).getTime() - new Date(other.createdAt).getTime());
-        return timeDiffMs < 45 * 60 * 1000;
+        // Merge complementary actions (RECORDING + LOGGED within 45 mins) OR identical action duplicates within 60 mins
+        const isDuplicateSameAction = item.action === other.action && timeDiffMs < 60 * 60 * 1000;
+        const isComplementary = item.action !== other.action && timeDiffMs < 45 * 60 * 1000;
+
+        return isComplementary || isDuplicateSameAction;
       });
 
       if (matchIndex !== -1) {
-        const other = supportOnlyItems[matchIndex]; // FIXED: Access supportOnlyItems, NEVER rawItems
+        const other = supportOnlyItems[matchIndex];
         usedIds.add(other.id);
 
         const loggedEntry = item.action === "SUPPORT_CALL_LOGGED" ? item : other.action === "SUPPORT_CALL_LOGGED" ? other : null;
@@ -179,12 +192,18 @@ export async function GET() {
       usedIds.add(item.id);
     }
 
-    return NextResponse.json({
+    const responsePayload = {
       success: true,
       count: mergedCalls.length,
       calls: mergedCalls,
       recordings: mergedCalls,
       data: mergedCalls,
+    };
+
+    callsCache = { data: responsePayload, timestamp: Date.now() };
+
+    return NextResponse.json(responsePayload, {
+      headers: { "Cache-Control": "private, s-maxage=5, stale-while-revalidate=15" },
     });
   } catch (error: any) {
     console.error("Error fetching support calls:", error);
@@ -273,9 +292,67 @@ export async function POST(req: NextRequest) {
         },
       });
 
+      callsCache = null;
+
       return NextResponse.json({
         success: true,
         message: "Support call recording outcome updated successfully",
+        callLog: updated,
+      });
+    }
+
+    // Check if an existing SUPPORT_CALL_LOGGED exists within the last 30 minutes for this quote or phone
+    let existingLogged: { logItem: any; data: any } | null = null;
+    try {
+      const recentLoggedList = await prisma.auditLog.findMany({
+        where: {
+          action: "SUPPORT_CALL_LOGGED",
+          createdAt: { gte: new Date(Date.now() - 30 * 60 * 1000) },
+        },
+        orderBy: { createdAt: "desc" },
+        take: 10,
+      });
+
+      for (const logItem of recentLoggedList) {
+        try {
+          const d = JSON.parse(logItem.newValuesJson || "{}");
+          const matchQuote = quoteId && quoteId !== "N/A" && d.quoteId === quoteId;
+          const matchPhone = cleanCustomerDigits && d.customerPhone && d.customerPhone.replace(/\D/g, "").slice(-10) === cleanCustomerDigits;
+
+          if (matchQuote || matchPhone) {
+            existingLogged = { logItem, data: d };
+            break;
+          }
+        } catch {}
+      }
+    } catch (e) {
+      console.warn("Could not check existing logged call:", e);
+    }
+
+    if (existingLogged) {
+      const updatedValues = {
+        ...existingLogged.data,
+        callOutcome: callOutcome || existingLogged.data.callOutcome || "CUSTOMER_INTERESTED",
+        callNotes: callNotes || existingLogged.data.callNotes,
+        customerName: customerName && customerName !== "Customer Lead" ? customerName : existingLogged.data.customerName,
+        supportPersonName: supportPersonName || existingLogged.data.supportPersonName || "Support Agent",
+        supportPersonPhone: finalAgentPhone || existingLogged.data.supportPersonPhone,
+        updatedAtIST: callTimeIST,
+      };
+
+      const updated = await prisma.auditLog.update({
+        where: { id: existingLogged.logItem.id },
+        data: {
+          newValuesJson: JSON.stringify(updatedValues),
+          updatedAt: new Date(),
+        },
+      });
+
+      callsCache = null;
+
+      return NextResponse.json({
+        success: true,
+        message: "Support call log updated successfully",
         callLog: updated,
       });
     }
@@ -302,6 +379,8 @@ export async function POST(req: NextRequest) {
       },
     });
 
+    callsCache = null;
+
     return NextResponse.json({
       success: true,
       message: "Support call recorded in database successfully",
@@ -318,6 +397,7 @@ export async function POST(req: NextRequest) {
 
 export async function PATCH(req: NextRequest) {
   try {
+    callsCache = null;
     const body = await req.json();
     const { id, quoteId, customerPhone, callOutcome, callNotes, supportPersonName } = body;
 
