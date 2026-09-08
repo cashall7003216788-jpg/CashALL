@@ -246,16 +246,18 @@ export async function POST(req: NextRequest) {
       finalAgentPhone = "8981191734";
     }
 
-    // Check if there is an existing SUPPORT_CALL_RECORDING from today for this quote or customer phone to update directly
+    // Find the single most recent SUPPORT_CALL_RECORDING from the active call session (last 15 minutes)
     const cleanCustomerDigits = (customerPhone || "").replace(/\D/g, "").slice(-10);
+    let matchedRecording: { logItem: any; data: any } | null = null;
+
     try {
       const recentAuditLogs = await prisma.auditLog.findMany({
         where: {
-          action: { in: ["SUPPORT_CALL_RECORDING", "SUPPORT_CALL_LOGGED"] },
-          createdAt: { gte: new Date(Date.now() - 24 * 60 * 60 * 1000) },
+          action: "SUPPORT_CALL_RECORDING",
+          createdAt: { gte: new Date(Date.now() - 15 * 60 * 1000) },
         },
         orderBy: { createdAt: "desc" },
-        take: 50,
+        take: 10,
       });
 
       for (const logItem of recentAuditLogs) {
@@ -265,27 +267,39 @@ export async function POST(req: NextRequest) {
           const matchPhone = cleanCustomerDigits && d.customerPhone && d.customerPhone.replace(/\D/g, "").slice(-10) === cleanCustomerDigits;
 
           if (matchQuote || matchPhone) {
-            const updatedValues = {
-              ...d,
-              callOutcome: callOutcome || d.callOutcome || "CUSTOMER_INTERESTED",
-              callNotes: callNotes || d.callNotes,
-              supportPersonName: supportPersonName || d.supportPersonName || "Support Agent",
-              supportPersonPhone: finalAgentPhone || d.supportPersonPhone,
-              updatedAtIST: callTimeIST,
-            };
-
-            await prisma.auditLog.update({
-              where: { id: logItem.id },
-              data: {
-                newValuesJson: JSON.stringify(updatedValues),
-                updatedAt: new Date(),
-              },
-            });
+            matchedRecording = { logItem, data: d };
+            break; // Strictly match ONLY the single most recent recording from this call session
           }
         } catch {}
       }
     } catch (updateErr) {
-      console.warn("Could not batch update existing call records:", updateErr);
+      console.warn("Could not check recent recording:", updateErr);
+    }
+
+    if (matchedRecording) {
+      const updatedValues = {
+        ...matchedRecording.data,
+        callOutcome: callOutcome || matchedRecording.data.callOutcome || "CUSTOMER_INTERESTED",
+        callNotes: callNotes || matchedRecording.data.callNotes,
+        customerName: customerName && customerName !== "Customer Lead" ? customerName : matchedRecording.data.customerName,
+        supportPersonName: supportPersonName || matchedRecording.data.supportPersonName || "Support Agent",
+        supportPersonPhone: finalAgentPhone || matchedRecording.data.supportPersonPhone,
+        updatedAtIST: callTimeIST,
+      };
+
+      const updated = await prisma.auditLog.update({
+        where: { id: matchedRecording.logItem.id },
+        data: {
+          newValuesJson: JSON.stringify(updatedValues),
+          updatedAt: new Date(),
+        },
+      });
+
+      return NextResponse.json({
+        success: true,
+        message: "Support call recording outcome updated successfully",
+        callLog: updated,
+      });
     }
 
     const callLog = await prisma.auditLog.create({
