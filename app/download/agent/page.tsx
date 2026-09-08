@@ -31,7 +31,7 @@ export default function DownloadAgentPage() {
               CashALL <span className="text-yellow-400">Agent App</span>
             </h1>
             <p className="text-xs text-neutral-400 mt-1 font-medium">
-              Official Doorstep Field Operations &amp; Call Desk v1.0.2
+              Official Doorstep Field Operations &amp; Call Desk v1.0.3
             </p>
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function DownloadAgentPage() {
           </div>
           <div className="flex items-center gap-2 text-neutral-300">
             <PhoneCall className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>HD Call Recording</span>
+            <span>In-App Call Recording</span>
           </div>
           <div className="flex items-center gap-2 text-neutral-300">
             <Smartphone className="w-4 h-4 text-blue-400 shrink-0" />
@@ -52,7 +52,7 @@ export default function DownloadAgentPage() {
           </div>
           <div className="flex items-center gap-2 text-neutral-300">
             <ShieldCheck className="w-4 h-4 text-purple-400 shrink-0" />
-            <span>Universal Android Fix</span>
+            <span>Seamless In-Place Update</span>
           </div>
         </div>
 
@@ -64,11 +64,11 @@ export default function DownloadAgentPage() {
             className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black font-black text-sm transition shadow-xl active:scale-95 flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-50"
           >
             <Download className="w-5 h-5 stroke-[2.5]" />
-            <span>{downloading ? "Starting Download..." : "Download CashALL Agent APK"}</span>
+            <span>{downloading ? "Starting Download..." : "Download / Update CashALL Agent APK"}</span>
           </button>
           <div className="text-[11px] text-neutral-400 flex items-center justify-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span>Officially Signed • 100% Virus-Free • Android 7.0 - 15</span>
+            <span>Seamless Update • No Uninstall Needed • Android 7.0 - 15</span>
           </div>
         </div>
 

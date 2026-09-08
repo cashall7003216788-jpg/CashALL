@@ -109,7 +109,14 @@ class CashAllAgentNative(
     }
 
     @JavascriptInterface
+    fun checkForAppUpdate() {
+        activity.runOnUiThread {
+            AutoUpdateManager.checkAndPromptUpdate(activity)
+        }
+    }
+
+    @JavascriptInterface
     fun getAppVersion(): String {
-        return "1.0.2-CALL-RECORD-PROD"
+        return "1.0.3-CALL-RECORD-PROD"
     }
 }

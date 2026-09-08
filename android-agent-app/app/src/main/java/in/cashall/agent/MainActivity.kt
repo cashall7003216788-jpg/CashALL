@@ -99,6 +99,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.webView.loadUrl(AGENT_DASHBOARD_URL)
+        AutoUpdateManager.checkAndPromptUpdate(this)
     }
 
     override fun onNewIntent(intent: Intent?) {
@@ -122,6 +123,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         updateAlarmCard(AlarmSoundManager.isAlarmActive())
         checkAndEnforcePermissions()
+        AutoUpdateManager.checkAndPromptUpdate(this)
     }
 
     override fun onDestroy() {
