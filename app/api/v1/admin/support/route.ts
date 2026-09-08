@@ -26,6 +26,8 @@ export async function GET() {
       }),
       prisma.auditLog.findMany({
         where: { action: { in: ["SUPPORT_CALL_LOGGED", "SUPPORT_CALL_RECORDING"] } },
+        orderBy: { createdAt: "desc" },
+        take: 250,
       }),
       prisma.auditLog.findMany({
         where: {
@@ -39,6 +41,7 @@ export async function GET() {
       prisma.auditLog.findMany({
         where: { action: "SUPPORT_STAFF_CREDENTIALS" },
         orderBy: { createdAt: "desc" },
+        take: 50,
       }),
     ]);
 

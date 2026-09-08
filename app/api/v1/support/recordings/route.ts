@@ -21,17 +21,22 @@ export async function GET(req: NextRequest) {
     const phone = searchParams.get("phone");
     const roleParam = (searchParams.get("role") || "").toUpperCase(); // "AGENT" or "SUPPORT"
 
-    // Fetch call recordings and logs
-    const logs = await prisma.auditLog.findMany({
-      where: {
-        action: {
-          in: [
+    // Fetch call recordings and logs strictly filtered by role action
+    const actionFilter =
+      roleParam === "SUPPORT"
+        ? ["SUPPORT_CALL_RECORDING", "SUPPORT_CALL_LOGGED"]
+        : roleParam === "AGENT"
+        ? ["AGENT_CALL_RECORDING", "AGENT_CALL_LOGGED"]
+        : [
             "SUPPORT_CALL_RECORDING",
             "SUPPORT_CALL_LOGGED",
             "AGENT_CALL_RECORDING",
             "AGENT_CALL_LOGGED",
-          ],
-        },
+          ];
+
+    const logs = await prisma.auditLog.findMany({
+      where: {
+        action: { in: actionFilter },
       },
       orderBy: { createdAt: "desc" },
       take: 350,

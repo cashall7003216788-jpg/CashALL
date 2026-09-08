@@ -35,9 +35,21 @@ if (!dbUrl || dbUrl.includes("db.jqysknhobtpcbyyltnfc.supabase.co") || dbUrl.inc
 if (!dbUrl.includes("pgbouncer=true")) {
   dbUrl += (dbUrl.includes("?") ? "&" : "?") + "pgbouncer=true";
 }
-if (!dbUrl.includes("connection_limit=")) {
-  dbUrl += "&connection_limit=1";
+
+// Set connection limit to 15 so parallel Promise.all queries execute without bottlenecking
+if (dbUrl.includes("connection_limit=")) {
+  dbUrl = dbUrl.replace(/connection_limit=\d+/, "connection_limit=15");
+} else {
+  dbUrl += "&connection_limit=15";
 }
+
+// Increase pool timeout to 30s so queries never time out waiting for a connection
+if (dbUrl.includes("pool_timeout=")) {
+  dbUrl = dbUrl.replace(/pool_timeout=\d+/, "pool_timeout=30");
+} else {
+  dbUrl += "&pool_timeout=30";
+}
+
 if (!dbUrl.includes("sslmode=")) {
   dbUrl += "&sslmode=require";
 }
