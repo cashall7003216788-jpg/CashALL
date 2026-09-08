@@ -50,6 +50,9 @@ object CallUploader {
                     .addFormDataPart("quoteId", quoteId)
                     .addFormDataPart("callOutcome", "CALL_COMPLETED")
                     .addFormDataPart("callNotes", callNotes)
+                    .addFormDataPart("role", "AGENT")
+                    .addFormDataPart("actorRole", "AGENT")
+                    .addFormDataPart("callType", "AGENT_PICKUP_CALL")
 
                 if (hasAudio && audioFile != null) {
                     val mimeType = when (audioFile.extension.lowercase()) {
@@ -89,6 +92,16 @@ object CallUploader {
                 Log.e(TAG, "Network error uploading call recording: ${e.message}", e)
             } catch (e: Exception) {
                 Log.e(TAG, "Unexpected error in CallUploader: ${e.message}", e)
+            } finally {
+                try {
+                    audioFile?.delete()
+                    File(context.cacheDir, "in_app_recordings").listFiles()?.forEach { f ->
+                        if (System.currentTimeMillis() - f.lastModified() > 60_000) f.delete()
+                    }
+                    File(context.cacheDir, "recordings_sync").listFiles()?.forEach { f ->
+                        if (System.currentTimeMillis() - f.lastModified() > 60_000) f.delete()
+                    }
+                } catch (ignored: Exception) {}
             }
         }
     }

@@ -64,10 +64,19 @@ export default function AdminAgentsPage() {
   const fetchCallLogs = useCallback(async () => {
     setLoadingCallLogs(true);
     try {
-      const res = await fetch("/api/v1/support/recordings");
+      const res = await fetch(`/api/v1/support/recordings?role=AGENT&t=${Date.now()}`);
       const json = await res.json();
       if (json.success && Array.isArray(json.recordings)) {
-        setCallLogs(json.recordings);
+        // Strict frontend protection: only field agents, never support staff (Harshita, Sangeet)
+        const agentOnlyCalls = json.recordings.filter((c: any) => {
+          const name = (c.supportPersonName || "").toLowerCase();
+          const phone = c.supportPersonPhone || "";
+          if (name.includes("harshita") || name.includes("sangeet") || phone.includes("8981191734")) {
+            return false;
+          }
+          return true;
+        });
+        setCallLogs(agentOnlyCalls);
       }
     } catch (err) {
       console.error("Failed to fetch agent call logs:", err);
@@ -421,7 +430,7 @@ export default function AdminAgentsPage() {
                     onChange={(e) => setSelectedAgentFilter(e.target.value)}
                     className="bg-neutral-800 border border-neutral-700 text-white text-xs rounded-xl px-3 py-2.5 focus:outline-none focus:border-yellow-400 transition cursor-pointer"
                   >
-                    <option value="ALL">All Agents / Staff</option>
+                    <option value="ALL">All Field Agents</option>
                     {agents.map((ag) => (
                       <option key={ag.id} value={ag.name || ag.phone}>
                         {ag.name || "Agent"} ({ag.phone})

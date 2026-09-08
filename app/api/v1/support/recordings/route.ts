@@ -19,49 +19,113 @@ export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const phone = searchParams.get("phone");
+    const roleParam = (searchParams.get("role") || "").toUpperCase(); // "AGENT" or "SUPPORT"
 
+    // Fetch call recordings and logs
     const logs = await prisma.auditLog.findMany({
       where: {
-        action: { in: ["SUPPORT_CALL_RECORDING", "SUPPORT_CALL_LOGGED"] },
+        action: {
+          in: [
+            "SUPPORT_CALL_RECORDING",
+            "SUPPORT_CALL_LOGGED",
+            "AGENT_CALL_RECORDING",
+            "AGENT_CALL_LOGGED",
+          ],
+        },
       },
       orderBy: { createdAt: "desc" },
-      take: 250,
+      take: 350,
     });
 
-    const recordings = logs.map((log) => {
-      let data: any = {};
-      if (log.newValuesJson) {
-        try {
-          data = JSON.parse(log.newValuesJson);
-        } catch {}
-      }
+    const isSupportPerson = (name: string = "", phoneNum: string = "") => {
+      const lower = name.toLowerCase();
+      return (
+        lower.includes("harshita") ||
+        lower.includes("sangeet") ||
+        phoneNum.includes("8981191734")
+      );
+    };
 
-      let agentPhone = data.supportPersonPhone || "—";
-      const agentName = data.supportPersonName || "Support Agent";
-      if ((agentPhone === "—" || !agentPhone) && agentName.toLowerCase().includes("harshita")) {
-        agentPhone = "8981191734";
-      }
+    const isAgentPerson = (name: string = "", notes: string = "") => {
+      const lower = name.toLowerCase();
+      const lowerNotes = notes.toLowerCase();
+      return (
+        lower.includes("arshad") ||
+        lower.includes("aman") ||
+        lower.includes("hyder") ||
+        lower.includes("ankit") ||
+        lowerNotes.includes("field agent") ||
+        lowerNotes.includes("agent app")
+      );
+    };
 
-      return {
-        id: log.id,
-        action: log.action,
-        supportPersonName: agentName,
-        supportPersonPhone: agentPhone,
-        customerName: data.customerName || "Customer Lead",
-        customerPhone: data.customerPhone || "—",
-        deviceName: data.deviceName || "Mobile Device",
-        quoteId: data.quoteId || "N/A",
-        durationSeconds: Number(data.durationSeconds) || 0,
-        durationFormatted: data.durationFormatted || formatDuration(Number(data.durationSeconds) || 0),
-        audioUrl: data.audioUrl || "",
-        callOutcome: data.callOutcome || (log.action === "SUPPORT_CALL_RECORDING" ? "CALL_COMPLETED" : "CALL_ATTEMPTED"),
-        callNotes: data.callNotes || (log.action === "SUPPORT_CALL_RECORDING" ? "Recorded via CashALL Android Caller App." : ""),
-        callStartTime: data.callStartTime || log.createdAt.toISOString(),
-        createdAtIST: data.callTimeIST || new Date(log.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
-        callTimeIST: data.callTimeIST || new Date(log.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
-        createdAt: log.createdAt.toISOString(),
-      };
-    });
+    const recordings = logs
+      .map((log) => {
+        let data: any = {};
+        if (log.newValuesJson) {
+          try {
+            data = JSON.parse(log.newValuesJson);
+          } catch {}
+        }
+
+        let agentPhone = data.supportPersonPhone || "—";
+        const agentName = data.supportPersonName || (log.actorRole === "AGENT" ? "Field Agent" : "Support Agent");
+        if ((agentPhone === "—" || !agentPhone) && agentName.toLowerCase().includes("harshita")) {
+          agentPhone = "8981191734";
+        }
+
+        const callNotes =
+          data.callNotes ||
+          (log.action.includes("AGENT")
+            ? "Recorded via CashALL Field Agent App"
+            : "Recorded via CashALL Android Caller App.");
+
+        // Determine effective role: AGENT or SUPPORT
+        let effectiveRole: "AGENT" | "SUPPORT" = "SUPPORT";
+        if (
+          log.actorRole === "AGENT" ||
+          log.action.startsWith("AGENT_") ||
+          data.role === "AGENT" ||
+          data.actorRole === "AGENT" ||
+          isAgentPerson(agentName, callNotes)
+        ) {
+          effectiveRole = "AGENT";
+        }
+        if (isSupportPerson(agentName, agentPhone)) {
+          effectiveRole = "SUPPORT";
+        }
+
+        return {
+          id: log.id,
+          action: log.action,
+          role: effectiveRole,
+          actorRole: effectiveRole,
+          supportPersonName: agentName,
+          supportPersonPhone: agentPhone,
+          customerName: data.customerName || "Customer Lead",
+          customerPhone: data.customerPhone || "—",
+          deviceName: data.deviceName || "Mobile Device",
+          quoteId: data.quoteId || "N/A",
+          durationSeconds: Number(data.durationSeconds) || 0,
+          durationFormatted: data.durationFormatted || formatDuration(Number(data.durationSeconds) || 0),
+          audioUrl: data.audioUrl || "",
+          callOutcome: data.callOutcome || (log.action.includes("RECORDING") ? "CALL_COMPLETED" : "CALL_ATTEMPTED"),
+          callNotes,
+          callStartTime: data.callStartTime || log.createdAt.toISOString(),
+          createdAtIST: data.callTimeIST || new Date(log.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+          callTimeIST: data.callTimeIST || new Date(log.createdAt).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+          createdAt: log.createdAt.toISOString(),
+        };
+      })
+      .filter((r) => {
+        // Strict separation:
+        if (roleParam === "AGENT") {
+          return r.role === "AGENT" && !isSupportPerson(r.supportPersonName, r.supportPersonPhone);
+        } else if (roleParam === "SUPPORT") {
+          return r.role === "SUPPORT" && !isAgentPerson(r.supportPersonName, r.callNotes);
+        }
+        return true;
+      });
 
     const filtered = phone
       ? recordings.filter((r) => r.supportPersonPhone === phone || r.customerPhone === phone)
@@ -281,11 +345,32 @@ export async function POST(req: NextRequest) {
     const durationFormatted = formatDuration(durationSeconds);
     const callTimeIST = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
 
+    const roleInput = ((formData.get("role") as string) || (formData.get("actorRole") as string) || "").toUpperCase();
+
+    const isSupport =
+      supportPersonName.toLowerCase().includes("harshita") ||
+      supportPersonName.toLowerCase().includes("sangeet") ||
+      supportPersonPhone.includes("8981191734");
+
+    const isAgent =
+      !isSupport &&
+      (roleInput === "AGENT" ||
+        formData.get("callType") === "AGENT_PICKUP_CALL" ||
+        callNotes.toLowerCase().includes("field agent") ||
+        callNotes.toLowerCase().includes("agent app") ||
+        supportPersonName.toLowerCase().includes("arshad") ||
+        supportPersonName.toLowerCase().includes("aman") ||
+        supportPersonName.toLowerCase().includes("hyder") ||
+        supportPersonName.toLowerCase().includes("ankit"));
+
+    const finalActorRole: "AGENT" | "SUPPORT" = isAgent ? "AGENT" : "SUPPORT";
+    const finalAction = isAgent ? "AGENT_CALL_RECORDING" : "SUPPORT_CALL_RECORDING";
+
     // Deduplication check within last 45 seconds
     const fortyFiveSecondsAgo = new Date(Date.now() - 45000);
     const recentLogs = await prisma.auditLog.findMany({
       where: {
-        action: "SUPPORT_CALL_RECORDING",
+        action: finalAction,
         createdAt: { gte: fortyFiveSecondsAgo },
       },
       orderBy: { createdAt: "desc" },
@@ -320,13 +405,16 @@ export async function POST(req: NextRequest) {
           console.log(`[Deduplication] Updating existing 0s call event with true duration ${durationSeconds}s`);
           recentData.durationSeconds = durationSeconds;
           recentData.durationFormatted = durationFormatted;
-          if (supportPersonName && supportPersonName !== "Support Staff" && supportPersonName !== "Support Agent") {
+          if (supportPersonName && !supportPersonName.includes("Staff") && !supportPersonName.includes("Agent")) {
             recentData.supportPersonName = supportPersonName;
           }
           if (audioUrl) {
             recentData.audioUrl = audioUrl;
             recentData.storageType = storageType;
           }
+          recentData.role = finalActorRole;
+          recentData.actorRole = finalActorRole;
+
           await prisma.auditLog.update({
             where: { id: recent.id },
             data: { newValuesJson: JSON.stringify(recentData) },
@@ -345,11 +433,13 @@ export async function POST(req: NextRequest) {
     const record = await prisma.auditLog.create({
       data: {
         actorId: "00000000-0000-0000-0000-000000000000",
-        actorRole: "SUPPORT",
-        action: "SUPPORT_CALL_RECORDING",
-        tableName: "SupportCallRecord",
+        actorRole: finalActorRole,
+        action: finalAction,
+        tableName: isAgent ? "AgentCallRecord" : "SupportCallRecord",
         recordId: "00000000-0000-0000-0000-000000000000",
         newValuesJson: JSON.stringify({
+          role: finalActorRole,
+          actorRole: finalActorRole,
           supportPersonName,
           supportPersonPhone,
           customerName,

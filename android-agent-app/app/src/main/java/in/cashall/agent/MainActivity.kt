@@ -159,10 +159,6 @@ class MainActivity : AppCompatActivity() {
             updateAlarmCard(false)
         }
 
-        binding.btnAutoRecordSettings.setOnClickListener {
-            openDialerCallSettings()
-        }
-
         binding.btnGrantPermissions.setOnClickListener {
             requestMandatoryPermissions()
         }
@@ -383,27 +379,6 @@ class MainActivity : AppCompatActivity() {
             if (AgentPreferenceManager.isAgentLoggedIn(this)) {
                 AgentLeadMonitoringService.start(this)
             }
-
-            checkCallRecordingOnboarding()
-        }
-    }
-
-    private fun checkCallRecordingOnboarding() {
-        if (!AgentPreferenceManager.isCallRecordingConfigured(this)) {
-            androidx.appcompat.app.AlertDialog.Builder(this)
-                .setTitle("🎙️ One-Time Setup: Auto Call Recording")
-                .setMessage("To verify customer doorstep coordination, please enable 'Auto-record calls' in your phone dialer settings.\n\n🛡️ 100% Privacy Protection: Only calls made to customers through the CashALL App are recorded. Your personal calls to family and friends are NEVER recorded or uploaded.")
-                .setPositiveButton("Open Call Settings") { dialog, _ ->
-                    AgentPreferenceManager.setCallRecordingConfigured(this, true)
-                    openDialerCallSettings()
-                    dialog.dismiss()
-                }
-                .setNegativeButton("Already Enabled") { dialog, _ ->
-                    AgentPreferenceManager.setCallRecordingConfigured(this, true)
-                    dialog.dismiss()
-                }
-                .setCancelable(false)
-                .show()
         }
     }
 

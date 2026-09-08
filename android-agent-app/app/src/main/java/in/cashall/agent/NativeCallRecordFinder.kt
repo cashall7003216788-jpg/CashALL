@@ -190,21 +190,11 @@ object NativeCallRecordFinder {
                             lowerName.contains("voice") ||
                             lowerName.contains("phone")
 
-                    if ((isCallRecFolder || isCallRecName) && bestCandidateUri == null) {
-                        bestCandidateUri = contentUri
-                        bestCandidateName = name
-                    }
                 }
 
                 // If customer contact name matched
                 if (nameCandidateUri != null) {
                     val cached = copyUriToCache(context, nameCandidateUri, nameCandidateName, cleanDigits)
-                    if (cached != null) return cached
-                }
-
-                // If recent recording in call recording directory matched
-                if (bestCandidateUri != null) {
-                    val cached = copyUriToCache(context, bestCandidateUri, bestCandidateName, cleanDigits)
                     if (cached != null) return cached
                 }
 
@@ -287,16 +277,10 @@ object NativeCallRecordFinder {
                     Log.i(TAG, "OEM Folder name match in ${dir.path}: ${file.name}")
                     return file
                 }
-
-                // Check 3: Keep track of newest file in a known call folder
-                if (modTime > newestModifiedTime) {
-                    newestModifiedTime = modTime
-                    bestRecentFile = file
-                }
             }
         }
 
-        return bestRecentFile
+        return null
     }
 
     /**

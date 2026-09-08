@@ -95,7 +95,7 @@ export default function AdminSupportManagementPage() {
     try {
       const [staffRes, recRes] = await Promise.all([
         fetch("/api/v1/admin/support"),
-        fetch("/api/v1/support/recordings"),
+        fetch("/api/v1/support/recordings?role=SUPPORT"),
       ]);
       const json = await staffRes.json();
       const recJson = await recRes.json();
@@ -105,8 +105,13 @@ export default function AdminSupportManagementPage() {
       } else {
         setError(json.error || "Failed to fetch support staff");
       }
-      if (recJson.success) {
-        setRecordings(recJson.recordings || []);
+      if (recJson.success && Array.isArray(recJson.recordings)) {
+        const isFieldAgent = (name: string = "") => {
+          const lower = name.toLowerCase();
+          return lower.includes("arshad") || lower.includes("aman") || lower.includes("hyder") || lower.includes("ankit");
+        };
+        const supportOnly = recJson.recordings.filter((r: any) => !isFieldAgent(r.supportPersonName || ""));
+        setRecordings(supportOnly);
       }
     } catch (err: any) {
       setError(err.message || "Network error fetching support staff");

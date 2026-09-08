@@ -42,20 +42,24 @@ class AgentCallReceiver : BroadcastReceiver() {
         if (action == TelephonyManager.ACTION_PHONE_STATE_CHANGED) {
             val state = intent.getStringExtra(TelephonyManager.EXTRA_STATE)
 
-            @Suppress("DEPRECATION")
-            val incoming = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER)
-            if (!incoming.isNullOrBlank()) {
-                lastDialedNumber = incoming
-                Log.d(TAG, "📥 Incoming call state change: $incoming")
+            // Ignore incoming calls completely on agent's personal phone
+            if (state == TelephonyManager.EXTRA_STATE_RINGING) {
+                Log.d(TAG, "📳 Incoming call detected on personal phone — ignored.")
+                return
             }
 
             val savedTargetPhone = AgentPreferenceManager.getLastTargetPhone(context)
-            val effectivePhone = lastDialedNumber.ifBlank { savedTargetPhone }.ifBlank { "Unknown" }
+            if (savedTargetPhone.isBlank()) {
+                // No active customer call was initiated from app
+                return
+            }
+
+            val effectivePhone = lastDialedNumber.ifBlank { savedTargetPhone }
 
             // Strict Privacy Check: Only record and upload if initiated via CashALL "Call Customer"
             val isAppCall = AgentPreferenceManager.isAppInitiatedCallActive(context, effectivePhone)
             if (!isAppCall) {
-                Log.d(TAG, "🔒 Privacy Filter: Call is personal/outside CashALL. Ignoring recording & upload.")
+                Log.d(TAG, "🔒 Privacy Filter: Call ($effectivePhone) is personal/outside CashALL. Ignoring recording & upload.")
                 if (state == TelephonyManager.EXTRA_STATE_IDLE) {
                     lastDialedNumber = ""
                     isCallActive = false

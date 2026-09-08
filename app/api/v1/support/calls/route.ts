@@ -8,6 +8,7 @@ export async function GET() {
     const logs = await prisma.auditLog.findMany({
       where: {
         action: { in: ["SUPPORT_CALL_LOGGED", "SUPPORT_CALL_RECORDING"] },
+        actorRole: { not: "AGENT" },
       },
       orderBy: { createdAt: "desc" },
       take: 300,
@@ -106,17 +107,34 @@ export async function GET() {
       };
     });
 
+    const isFieldAgent = (name: string = "", notes: string = "") => {
+      const lower = name.toLowerCase();
+      const lowerNotes = notes.toLowerCase();
+      return (
+        lower.includes("arshad") ||
+        lower.includes("aman") ||
+        lower.includes("hyder") ||
+        lower.includes("ankit") ||
+        lowerNotes.includes("field agent") ||
+        lowerNotes.includes("agent app")
+      );
+    };
+
+    const supportOnlyItems = rawItems.filter(
+      (item) => !isFieldAgent(item.supportPersonName, item.callNotes)
+    );
+
     // Merge recording and logged outcome within 24 hours for the same quote or 10-digit customer phone
-    const mergedCalls: typeof rawItems = [];
+    const mergedCalls: typeof supportOnlyItems = [];
     const usedIds = new Set<string>();
 
-    for (let i = 0; i < rawItems.length; i++) {
-      const item = rawItems[i];
+    for (let i = 0; i < supportOnlyItems.length; i++) {
+      const item = supportOnlyItems[i];
       if (usedIds.has(item.id)) continue;
 
       const p1 = (item.customerPhone || "").replace(/\D/g, "").slice(-10);
 
-      const matchIndex = rawItems.findIndex((other, idx) => {
+      const matchIndex = supportOnlyItems.findIndex((other, idx) => {
         if (idx <= i || usedIds.has(other.id)) return false;
         // Only merge a phone call recording with a dashboard notes log, not two identical logs of the same type!
         if (item.action === other.action) return false;

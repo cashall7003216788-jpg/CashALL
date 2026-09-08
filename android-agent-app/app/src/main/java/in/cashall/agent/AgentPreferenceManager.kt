@@ -2,6 +2,7 @@ package `in`.cashall.agent
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 
 object AgentPreferenceManager {
     private const val PREFS_NAME = "cashall_agent_prefs"
@@ -102,7 +103,7 @@ object AgentPreferenceManager {
 
     /**
      * Strict privacy protection: Only returns true if the call was explicitly initiated
-     * by clicking "Call Customer" inside the CashALL App within the last 15 minutes.
+     * by clicking "Call Customer" inside the CashALL App within the last 3 minutes.
      * Personal calls to family/friends will return FALSE and will NEVER be recorded or uploaded.
      */
     fun isAppInitiatedCallActive(context: Context, dialedNumber: String?): Boolean {
@@ -111,25 +112,39 @@ object AgentPreferenceManager {
         val timestamp = prefs.getLong(KEY_TARGET_TIMESTAMP, 0L)
         val targetPhone = prefs.getString(KEY_TARGET_PHONE, "") ?: ""
 
-        // Expire session after 15 minutes
-        if (!isInitiated || (System.currentTimeMillis() - timestamp) > 15 * 60 * 1000L) {
+        if (!isInitiated) {
             return false
         }
 
-        if (dialedNumber.isNullOrBlank()) {
-            return true
+        // Expire session after 3 minutes
+        if ((System.currentTimeMillis() - timestamp) > 3 * 60 * 1000L) {
+            clearAppInitiatedCall(context)
+            return false
         }
 
-        val cleanDialed = dialedNumber.replace("\\D".toRegex(), "").takeLast(10)
         val cleanTarget = targetPhone.replace("\\D".toRegex(), "").takeLast(10)
+        if (cleanTarget.length < 7) {
+            clearAppInitiatedCall(context)
+            return false
+        }
 
-        // If either is empty, allow fallback to active session, else verify 10-digit match
-        return cleanDialed.isEmpty() || cleanTarget.isEmpty() || cleanDialed == cleanTarget
+        // If dialedNumber is provided, it MUST strictly match the target customer phone
+        if (!dialedNumber.isNullOrBlank()) {
+            val cleanDialed = dialedNumber.replace("\\D".toRegex(), "").takeLast(10)
+            if (cleanDialed.length >= 7 && cleanDialed != cleanTarget && !cleanDialed.endsWith(cleanTarget) && !cleanTarget.endsWith(cleanDialed)) {
+                Log.d("AgentPreference", "🔒 Dialed number '$cleanDialed' != target '$cleanTarget' — PERSONAL CALL IGNORED.")
+                return false
+            }
+        }
+
+        return true
     }
 
     fun clearAppInitiatedCall(context: Context) {
         getPrefs(context).edit()
             .putBoolean(KEY_APP_INITIATED, false)
+            .putString(KEY_TARGET_PHONE, "")
+            .putLong(KEY_TARGET_TIMESTAMP, 0L)
             .apply()
     }
 

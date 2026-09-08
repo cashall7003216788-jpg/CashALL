@@ -50,6 +50,9 @@ object CallUploader {
                     .addFormDataPart("quoteId", quoteId)
                     .addFormDataPart("callOutcome", "CALL_COMPLETED")
                     .addFormDataPart("callNotes", callNotes)
+                    .addFormDataPart("role", "SUPPORT")
+                    .addFormDataPart("actorRole", "SUPPORT")
+                    .addFormDataPart("callType", "SUPPORT_DESK_CALL")
 
                 if (hasAudio && audioFile != null) {
                     val mimeType = when (audioFile.extension.lowercase()) {

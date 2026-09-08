@@ -273,7 +273,7 @@ export default function AdminSupportCallLogsPage() {
     setLoading(true);
     try {
       const timestamp = Date.now();
-      const res = await fetch(`/api/v1/support/calls?t=${timestamp}`, {
+      const res = await fetch(`/api/v1/support/calls?role=SUPPORT&t=${timestamp}`, {
         cache: "no-store",
         headers: {
           Pragma: "no-cache",
@@ -284,7 +284,7 @@ export default function AdminSupportCallLogsPage() {
       let list = json.calls || json.recordings || json.data || [];
 
       if (!Array.isArray(list) || list.length === 0) {
-        const fallbackRes = await fetch(`/api/v1/support/recordings?t=${timestamp}`, {
+        const fallbackRes = await fetch(`/api/v1/support/recordings?role=SUPPORT&t=${timestamp}`, {
           cache: "no-store",
           headers: {
             Pragma: "no-cache",
@@ -296,16 +296,31 @@ export default function AdminSupportCallLogsPage() {
       }
 
       if (Array.isArray(list)) {
-        const normalized = list.map((item: any) => {
-          const ist = item.createdAtIST || item.callTimeIST || "";
-          const created = item.createdAt || new Date().toISOString();
-          return {
-            ...item,
-            createdAt: created,
-            createdAtIST: ist || (created ? new Date(created).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }) : ""),
-            callTimeIST: ist || item.callTimeIST || "",
-          };
-        });
+        const isFieldAgent = (name: string = "", notes: string = "") => {
+          const lower = name.toLowerCase();
+          const lowerNotes = notes.toLowerCase();
+          return (
+            lower.includes("arshad") ||
+            lower.includes("aman") ||
+            lower.includes("hyder") ||
+            lower.includes("ankit") ||
+            lowerNotes.includes("field agent") ||
+            lowerNotes.includes("agent app")
+          );
+        };
+
+        const normalized = list
+          .filter((item: any) => !isFieldAgent(item.supportPersonName || "", item.callNotes || ""))
+          .map((item: any) => {
+            const ist = item.createdAtIST || item.callTimeIST || "";
+            const created = item.createdAt || new Date().toISOString();
+            return {
+              ...item,
+              createdAt: created,
+              createdAtIST: ist || (created ? new Date(created).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }) : ""),
+              callTimeIST: ist || item.callTimeIST || "",
+            };
+          });
         setRecordings(normalized);
         setLastUpdated(new Date().toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata" }));
       }

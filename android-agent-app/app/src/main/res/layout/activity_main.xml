@@ -168,7 +168,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🎙️ Audio &amp; Media Storage\nDiscovers 2-way call recordings from your phone dialer for QA sync."
+                        android:text="🎙️ In-App Customer Call Recording\nAutomatically records customer calls in-app when tapping Call. Auto-uploaded with zero storage used on your phone."
                         android:textColor="#E5E7EB"
                         android:textSize="12sp"
                         android:layout_marginBottom="10dp" />
@@ -182,27 +182,6 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-            <!-- Auto-Call Record Setting Button -->
-            <Button
-                android:id="@+id/btnAutoRecordSettings"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="🎙️ Turn ON Auto Call Recording in Phone"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="13sp"
-                android:backgroundTint="@color/yellow_primary"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tap to open Phone Settings ➔ Turn ON 'Auto-record calls' so all customer conversations are saved in HD."
-                android:textColor="@color/text_muted"
-                android:textSize="11sp"
-                android:gravity="center"
-                android:layout_marginBottom="16dp" />
 
             <!-- Grant All Permissions Button -->
             <Button

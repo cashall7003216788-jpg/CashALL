@@ -67,7 +67,7 @@
         <service
             android:name=".AgentLeadMonitoringService"
             android:exported="false"
-            android:foregroundServiceType="dataSync" />
+            android:foregroundServiceType="dataSync|microphone" />
 
         <!-- Notification Action Receiver (Silence Alarm) -->
         <receiver
