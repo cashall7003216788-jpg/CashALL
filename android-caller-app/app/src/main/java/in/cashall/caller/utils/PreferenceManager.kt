@@ -30,4 +30,8 @@ class PreferenceManager(context: Context) {
     var lastTargetQuoteId: String
         get() = prefs.getString("last_quote_id", "") ?: ""
         set(value) = prefs.edit().putString("last_quote_id", value).apply()
+
+    var hasSeenCallRecordPrompt: Boolean
+        get() = prefs.getBoolean("has_seen_call_record_prompt", false)
+        set(value) = prefs.edit().putBoolean("has_seen_call_record_prompt", value).apply()
 }

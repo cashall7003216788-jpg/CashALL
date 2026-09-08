@@ -549,6 +549,15 @@ export default function AdminSupportCallLogsPage() {
           </div>
 
           <div className="flex items-center gap-3 flex-wrap">
+            <Link
+              href="/download/caller"
+              target="_blank"
+              className="flex items-center gap-2 bg-neutral-700 hover:bg-neutral-600 text-yellow-400 text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-lg cursor-pointer border border-neutral-600"
+            >
+              <Smartphone className="w-4 h-4 text-yellow-400" />
+              <span>Caller App APK (v1.0.2)</span>
+            </Link>
+
             <button
               onClick={handleExportCSV}
               disabled={filteredRecordings.length === 0}

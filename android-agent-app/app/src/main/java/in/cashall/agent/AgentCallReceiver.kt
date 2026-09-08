@@ -125,6 +125,7 @@ class AgentCallReceiver : BroadcastReceiver() {
                 val nativeAudioFile = NativeCallRecordFinder.findRecentRecording(
                     context = context,
                     rawCustomerPhone = phone,
+                    customerName = customerName,
                     callStartTime = startTime,
                     callEndTime = endTime
                 )

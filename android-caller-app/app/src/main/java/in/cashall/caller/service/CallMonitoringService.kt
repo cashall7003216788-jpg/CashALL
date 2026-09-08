@@ -95,7 +95,11 @@ class CallMonitoringService : Service() {
                 .build()
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                startForeground(NOTIF_ID, notification, ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC)
+                var serviceType = ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    serviceType = serviceType or ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE
+                }
+                startForeground(NOTIF_ID, notification, serviceType)
             } else {
                 startForeground(NOTIF_ID, notification)
             }
@@ -225,6 +229,7 @@ class CallMonitoringService : Service() {
             val nativeRecordingFile = NativeCallRecordFinder.findRecentRecording(
                 context = this@CallMonitoringService,
                 rawCustomerPhone = phone,
+                customerName = prefs.lastTargetCustomerName,
                 callStartTime = startTime,
                 callEndTime = endTime
             )

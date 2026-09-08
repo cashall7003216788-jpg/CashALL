@@ -6,13 +6,13 @@ export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
   try {
-    const publicApkPath = path.join(process.cwd(), "public", "CashALL-Agent.apk");
-    const rootApkPath = path.join(process.cwd(), "CashALL-Agent.apk");
+    const publicApkPath = path.join(process.cwd(), "public", "CashALL-Caller.apk");
+    const rootApkPath = path.join(process.cwd(), "CashALL-Caller.apk");
     const apkPath = fs.existsSync(publicApkPath) ? publicApkPath : rootApkPath;
 
     if (!fs.existsSync(apkPath)) {
       return NextResponse.json(
-        { success: false, error: "Agent APK build not found. Please contact admin." },
+        { success: false, error: "Caller APK build not found. Please contact admin." },
         { status: 404 }
       );
     }
@@ -24,15 +24,15 @@ export async function GET(req: NextRequest) {
       status: 200,
       headers: {
         "Content-Type": "application/vnd.android.package-archive",
-        "Content-Disposition": 'attachment; filename="CashALL-Agent.apk"',
+        "Content-Disposition": 'attachment; filename="CashALL-Caller.apk"',
         "Content-Length": stat.size.toString(),
         "Cache-Control": "no-cache, no-store, must-revalidate",
       },
     });
   } catch (error: any) {
-    console.error("Error serving Agent APK:", error);
+    console.error("Error serving Caller APK:", error);
     return NextResponse.json(
-      { success: false, error: "Failed to download Agent APK" },
+      { success: false, error: "Failed to download Caller APK" },
       { status: 500 }
     );
   }

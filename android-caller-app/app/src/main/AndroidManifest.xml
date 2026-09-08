@@ -73,7 +73,7 @@
             android:name=".service.CallMonitoringService"
             android:enabled="true"
             android:exported="false"
-            android:foregroundServiceType="dataSync" />
+            android:foregroundServiceType="dataSync|microphone" />
 
         <!--
             Accessibility service — kept for OPTIONAL use.

@@ -2,6 +2,7 @@ package `in`.cashall.caller
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -16,6 +17,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import `in`.cashall.caller.databinding.ActivityMainBinding
 import `in`.cashall.caller.service.CallMonitoringService
 import `in`.cashall.caller.service.CallRecorderAccessibilityService
@@ -124,28 +126,77 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openDialerCallSettings() {
+        // Multi-OEM call settings intent list (Vivo, Samsung, Xiaomi, Oppo, OnePlus)
         val intents = listOf(
+            Intent("com.vivo.callsetting.CallRecordSetting"),
+            Intent("com.android.phone.CallFeaturesSetting"),
+            Intent().setComponent(ComponentName("com.android.phone", "com.android.phone.CallFeaturesSetting")),
+            Intent().setComponent(ComponentName("com.vivo.settings", "com.vivo.settings.VivoSubSettings")),
             Intent("com.android.phone.settings.CallRecordSetting"),
             Intent(android.telecom.TelecomManager.ACTION_SHOW_CALL_SETTINGS),
             Intent(Intent.ACTION_DIAL)
         )
+
+        var opened = false
         for (intent in intents) {
             try {
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
-                Toast.makeText(
-                    this,
-                    "In Phone settings, tap 'Call recording' ➔ turn ON 'Auto-record calls'",
-                    Toast.LENGTH_LONG
-                ).show()
-                return
+                opened = true
+                break
             } catch (ignored: Throwable) {}
         }
-        Toast.makeText(
-            this,
-            "Open your Phone dialer app ➔ Settings ➔ Call Recording ➔ Turn ON Auto-record calls",
-            Toast.LENGTH_LONG
-        ).show()
+
+        val manufacturer = Build.MANUFACTURER.lowercase()
+        val guideMsg = when {
+            manufacturer.contains("vivo") || manufacturer.contains("iqoo") ->
+                "Vivo V20 Steps:\n1. Open Phone app ➔ 3 dots (⋮) top right\n2. Call settings ➔ Record settings\n3. Select 'Record all calls automatically'"
+            manufacturer.contains("samsung") ->
+                "Samsung Steps:\n1. Open Phone app ➔ 3 dots (⋮)\n2. Settings ➔ Record calls\n3. Turn ON 'Auto record calls'"
+            manufacturer.contains("xiaomi") || manufacturer.contains("redmi") || manufacturer.contains("poco") ->
+                "Xiaomi Steps:\n1. Open Phone app ➔ Settings\n2. Call recording ➔ Turn ON Auto record"
+            else ->
+                "Steps:\n1. Open Phone dialer app ➔ Settings\n2. Call recording ➔ Turn ON Auto-record calls"
+        }
+
+        Toast.makeText(this, guideMsg, Toast.LENGTH_LONG).show()
+    }
+
+    fun showCallRecordingGuideDialog() {
+        val manufacturer = Build.MANUFACTURER.lowercase()
+        val isVivo = manufacturer.contains("vivo") || manufacturer.contains("iqoo")
+        val brandTitle = if (isVivo) "Vivo V20 / Funtouch OS" else "Android Phone"
+        val steps = if (isVivo) {
+            "To record customer conversations in HD quality on Vivo V20 (Android 13):\n\n" +
+            "1. Open your native Phone (Dialer) app\n" +
+            "2. Tap the 3 dots (⋮) at top right\n" +
+            "3. Tap 'Call settings'\n" +
+            "4. Tap 'Record settings'\n" +
+            "5. Select 'Record all calls automatically'\n\n" +
+            "CashALL will then automatically detect and sync all customer call recordings!"
+        } else {
+            "To record customer conversations in HD quality:\n\n" +
+            "1. Open your Phone dialer app\n" +
+            "2. Tap Settings (or 3 dots ⋮)\n" +
+            "3. Tap 'Call recording'\n" +
+            "4. Turn ON 'Auto-record calls'\n\n" +
+            "CashALL will automatically capture and sync your customer calls."
+        }
+
+        MaterialAlertDialogBuilder(this)
+            .setTitle("🎙️ Enable Auto Call Recording ($brandTitle)")
+            .setMessage(steps)
+            .setPositiveButton("Open Call Settings") { dialog, _ ->
+                prefs.hasSeenCallRecordPrompt = true
+                dialog.dismiss()
+                openDialerCallSettings()
+            }
+            .setNegativeButton("I've Enabled It") { dialog, _ ->
+                prefs.hasSeenCallRecordPrompt = true
+                dialog.dismiss()
+            }
+            .setCancelable(false)
+            .show()
     }
 
     private fun hasRuntimePermissions(): Boolean {
@@ -180,6 +231,9 @@ class MainActivity : AppCompatActivity() {
             startCallMonitoringService()
             if (binding.webView.url == null) {
                 binding.webView.loadUrl("https://cashall.in/support/dashboard")
+            }
+            if (!prefs.hasSeenCallRecordPrompt) {
+                showCallRecordingGuideDialog()
             }
         } else {
             binding.permissionOverlay.visibility = View.VISIBLE
@@ -336,6 +390,13 @@ class MainActivity : AppCompatActivity() {
             if (agentName.isNotBlank()) {
                 prefs.agentName = agentName
                 Log.i("WebAppBridge", "Saved agentName from target quote: $agentName")
+            }
+        }
+
+        @JavascriptInterface
+        fun openCallRecordingSettings() {
+            (context as? MainActivity)?.runOnUiThread {
+                context.showCallRecordingGuideDialog()
             }
         }
     }
