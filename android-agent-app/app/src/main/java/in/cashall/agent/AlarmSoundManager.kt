@@ -38,19 +38,21 @@ object AlarmSoundManager {
         isAlarmPlaying = true
         Log.i(TAG, "Starting loud lead buzzer and phone vibration...")
 
-        // 1. Play loud alarm sound via USAGE_ALARM
+        // 1. Play unique high-decibel emergency siren (R.raw.loud_buzzer) via USAGE_ALARM
+        // NOTE: Never use RingtoneManager.TYPE_ALARM so user's morning alarm never plays or mixes!
         try {
-            var alarmUri: Uri? = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
-            if (alarmUri == null) {
-                alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE)
-            }
-            if (alarmUri == null) {
-                alarmUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+            // Maximize alarm stream volume
+            val audioManager = context.getSystemService(Context.AUDIO_SERVICE) as? AudioManager
+            audioManager?.let { am ->
+                val maxVol = am.getStreamMaxVolume(AudioManager.STREAM_ALARM)
+                am.setStreamVolume(AudioManager.STREAM_ALARM, maxVol, 0)
             }
 
             mediaPlayer?.release()
+            val afd = context.resources.openRawResourceFd(R.raw.loud_buzzer)
             mediaPlayer = MediaPlayer().apply {
-                setDataSource(context.applicationContext, alarmUri!!)
+                setDataSource(afd.fileDescriptor, afd.startOffset, afd.length)
+                afd.close()
                 setAudioAttributes(
                     AudioAttributes.Builder()
                         .setUsage(AudioAttributes.USAGE_ALARM)
@@ -62,8 +64,9 @@ object AlarmSoundManager {
                 prepare()
                 start()
             }
+            Log.i(TAG, "Unique loud buzzer playing at max ALARM stream volume.")
         } catch (e: Exception) {
-            Log.e(TAG, "Error initializing MediaPlayer for alarm: ${e.message}", e)
+            Log.e(TAG, "Error initializing MediaPlayer for loud_buzzer: ${e.message}", e)
         }
 
         // 2. Continuous high-intensity haptic vibration

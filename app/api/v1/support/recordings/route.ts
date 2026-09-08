@@ -186,6 +186,49 @@ export async function POST(req: NextRequest) {
           }
         }
       }
+
+      // Comprehensive fallback: Search prisma.user & prisma.order by clean phone digits
+      if ((!customerName || customerName === "Customer Lead") && cleanDigits) {
+        const matchedUser = await prisma.user.findFirst({
+          where: { phone: { contains: cleanDigits } },
+          select: { name: true },
+        });
+        if (matchedUser?.name) {
+          customerName = matchedUser.name;
+        }
+
+        const matchedOrder = await prisma.order.findFirst({
+          where: {
+            OR: [
+              { user: { phone: { contains: cleanDigits } } },
+              { address: { phone: { contains: cleanDigits } } },
+            ],
+          },
+          include: {
+            user: true,
+            address: true,
+            quote: {
+              include: {
+                variant: { include: { model: { include: { brand: true } } } },
+              },
+            },
+          },
+          orderBy: { createdAt: "desc" },
+        });
+
+        if (matchedOrder) {
+          if (!customerName || customerName === "Customer Lead") {
+            if (matchedOrder.address?.fullName) customerName = matchedOrder.address.fullName;
+            else if (matchedOrder.user?.name) customerName = matchedOrder.user.name;
+          }
+          if ((!deviceName || deviceName === "Mobile Device") && matchedOrder.quote?.variant) {
+            deviceName = `${matchedOrder.quote.variant.model.brand.name} ${matchedOrder.quote.variant.model.name} (${matchedOrder.quote.variant.storage})`;
+          }
+          if ((!quoteId || quoteId === "N/A") && matchedOrder.quote?.quoteNumber) {
+            quoteId = matchedOrder.quote.quoteNumber;
+          }
+        }
+      }
     } catch (e: any) {
       console.warn("Could not enrich quote metadata:", e.message);
     }

@@ -383,6 +383,27 @@ class MainActivity : AppCompatActivity() {
             if (AgentPreferenceManager.isAgentLoggedIn(this)) {
                 AgentLeadMonitoringService.start(this)
             }
+
+            checkCallRecordingOnboarding()
+        }
+    }
+
+    private fun checkCallRecordingOnboarding() {
+        if (!AgentPreferenceManager.isCallRecordingConfigured(this)) {
+            androidx.appcompat.app.AlertDialog.Builder(this)
+                .setTitle("🎙️ One-Time Setup: Auto Call Recording")
+                .setMessage("To verify customer doorstep coordination, please enable 'Auto-record calls' in your phone dialer settings.\n\n🛡️ 100% Privacy Protection: Only calls made to customers through the CashALL App are recorded. Your personal calls to family and friends are NEVER recorded or uploaded.")
+                .setPositiveButton("Open Call Settings") { dialog, _ ->
+                    AgentPreferenceManager.setCallRecordingConfigured(this, true)
+                    openDialerCallSettings()
+                    dialog.dismiss()
+                }
+                .setNegativeButton("Already Enabled") { dialog, _ ->
+                    AgentPreferenceManager.setCallRecordingConfigured(this, true)
+                    dialog.dismiss()
+                }
+                .setCancelable(false)
+                .show()
         }
     }
 
@@ -399,12 +420,29 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openDialerCallSettings() {
-        val intents = listOf(
+        AgentPreferenceManager.setCallRecordingConfigured(this, true)
+        val intentList = listOf(
+            // Realme / Oppo / ColorOS
+            Intent().setClassName("com.android.phone", "com.android.phone.settings.CallRecordSetting"),
             Intent("com.android.phone.settings.CallRecordSetting"),
+            Intent("com.oppo.callsetting.CallRecordSetting"),
+            Intent("com.oplus.callsetting.CallRecordSetting"),
+            // OnePlus OxygenOS
+            Intent("com.oneplus.phone.settings.CallRecordSetting"),
+            // Xiaomi / Redmi / Poco (MIUI / HyperOS)
+            Intent("miui.intent.action.APP_SETTINGS").setPackage("com.android.contacts"),
+            // Samsung OneUI
+            Intent().setClassName("com.samsung.android.incallui", "com.samsung.android.incallui.callrecord.CallRecordSettingActivity"),
+            Intent().setClassName("com.samsung.android.dialer", "com.samsung.android.dialer.callrecord.CallRecordSettingActivity"),
+            // Vivo / iQOO FuntouchOS
+            Intent("com.vivo.callsetting.CallRecordSetting"),
+            // Google Dialer / Stock Android
+            Intent().setClassName("com.google.android.dialer", "com.google.android.dialer.callrecord.settings.CallRecordSettingsActivity"),
+            // Standard Telecom Action
             Intent(android.telecom.TelecomManager.ACTION_SHOW_CALL_SETTINGS),
             Intent(Intent.ACTION_DIAL)
         )
-        for (intent in intents) {
+        for (intent in intentList) {
             try {
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)

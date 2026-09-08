@@ -437,6 +437,16 @@ export default function AgentDashboardPage() {
     router.replace("/agent/login");
   };
 
+  const handleOpenDialerSettings = () => {
+    if (typeof window !== "undefined" && (window as any).CashAllAgentNative?.openDialerCallSettings) {
+      (window as any).CashAllAgentNative.openDialerCallSettings();
+    } else {
+      alert(
+        "🎙️ Auto Call Recording Setup:\n\n1. Open your Phone Dialer\n2. Tap Settings (3 dots) ➔ Call Recording\n3. Turn ON 'Auto-record calls' / 'Record all calls'.\n\n🛡️ 100% Privacy: Only customer calls initiated inside CashALL are recorded. Personal calls are NEVER recorded or uploaded."
+      );
+    }
+  };
+
   // OCR Extraction with Tesseract.js & Upload Handler
   const handleFileUpload = async (ord: AgentOrder, e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -692,6 +702,16 @@ export default function AgentDashboardPage() {
         </div>
 
         <div className="flex items-center gap-2 sm:gap-4">
+          <button
+            onClick={handleOpenDialerSettings}
+            className="flex items-center gap-1.5 text-xs font-black text-yellow-400 bg-neutral-800 hover:bg-neutral-700 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl border border-yellow-400/30 transition shadow-sm cursor-pointer"
+            title="Open phone dialer settings to configure auto call recording"
+          >
+            <span>🎙️</span>
+            <span className="hidden sm:inline">Auto-Record Settings</span>
+            <span className="sm:hidden">Settings</span>
+          </button>
+
           <div className="hidden md:flex items-center gap-2 bg-neutral-800 border border-neutral-700 px-3 py-1.5 rounded-xl text-xs">
             <UserCheck className="w-4 h-4 text-yellow-400" />
             <span className="font-bold text-white">{agentSession?.name || "Agent"}</span>
@@ -742,6 +762,15 @@ export default function AgentDashboardPage() {
           </div>
 
           <div className="flex items-center gap-2.5 flex-wrap">
+            <button
+              onClick={handleOpenDialerSettings}
+              className="flex items-center gap-2 text-xs font-black bg-neutral-800 hover:bg-neutral-700 text-yellow-400 px-3.5 py-2.5 rounded-xl transition border border-yellow-400/30 shadow-md cursor-pointer"
+              title="Open phone dialer settings to verify auto call recording"
+            >
+              <span>🎙️</span>
+              <span>Auto-Record Settings</span>
+            </button>
+
             <button
               onClick={() => {
                 if (isAlarmSounding) {

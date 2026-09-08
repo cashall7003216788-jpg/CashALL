@@ -52,24 +52,39 @@ class AgentCallReceiver : BroadcastReceiver() {
             val savedTargetPhone = AgentPreferenceManager.getLastTargetPhone(context)
             val effectivePhone = lastDialedNumber.ifBlank { savedTargetPhone }.ifBlank { "Unknown" }
 
+            // Strict Privacy Check: Only record and upload if initiated via CashALL "Call Customer"
+            val isAppCall = AgentPreferenceManager.isAppInitiatedCallActive(context, effectivePhone)
+            if (!isAppCall) {
+                Log.d(TAG, "🔒 Privacy Filter: Call is personal/outside CashALL. Ignoring recording & upload.")
+                if (state == TelephonyManager.EXTRA_STATE_IDLE) {
+                    lastDialedNumber = ""
+                    isCallActive = false
+                    callStartTime = 0L
+                    InAppAudioRecorder.stopRecording()?.delete()
+                }
+                return
+            }
+
             when (state) {
                 TelephonyManager.EXTRA_STATE_OFFHOOK -> {
                     if (!isCallActive) {
                         isCallActive = true
                         callStartTime = System.currentTimeMillis()
-                        Log.i(TAG, "📞 Call CONNECTED to $effectivePhone at $callStartTime")
+                        Log.i(TAG, "📞 CashALL Lead Call CONNECTED to $effectivePhone at $callStartTime")
+                        InAppAudioRecorder.startRecording(context, effectivePhone)
                     }
                 }
 
                 TelephonyManager.EXTRA_STATE_IDLE -> {
+                    val inAppFile = InAppAudioRecorder.stopRecording()
                     if (isCallActive && callStartTime > 0L) {
                         isCallActive = false
                         val startTime = callStartTime
                         val endTime = System.currentTimeMillis()
                         callStartTime = 0L
 
-                        Log.i(TAG, "🔴 Call DISCONNECTED from $effectivePhone. Processing call log & audio sync...")
-                        processCallEnd(context.applicationContext, effectivePhone, startTime, endTime)
+                        Log.i(TAG, "🔴 CashALL Lead Call DISCONNECTED from $effectivePhone. Processing sync...")
+                        processCallEnd(context.applicationContext, effectivePhone, startTime, endTime, inAppFile)
                     }
                     lastDialedNumber = ""
                 }
@@ -77,9 +92,12 @@ class AgentCallReceiver : BroadcastReceiver() {
         }
     }
 
-    private fun processCallEnd(context: Context, phone: String, startTime: Long, endTime: Long) {
+    private fun processCallEnd(context: Context, phone: String, startTime: Long, endTime: Long, inAppFile: File? = null) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
+                // Clear active call session immediately to protect privacy on next calls
+                AgentPreferenceManager.clearAppInitiatedCall(context)
+
                 delay(600) // Small delay for system dialer to register call in CallLog
 
                 val exactDuration = getExactDurationFromCallLog(context, phone)
@@ -89,6 +107,7 @@ class AgentCallReceiver : BroadcastReceiver() {
                 val now = System.currentTimeMillis()
                 if (now - lastUploadTime < 3000 && phone == lastUploadedPhone) {
                     Log.w(TAG, "Duplicate upload suppressed within 3s window for $phone")
+                    inAppFile?.delete()
                     return@launch
                 }
                 lastUploadTime = now
@@ -102,7 +121,7 @@ class AgentCallReceiver : BroadcastReceiver() {
 
                 Log.i(TAG, "📊 Processing call summary: Agent=$agentName ($agentPhone), Customer=$customerName ($phone), Order=$orderNumber, Duration=${finalDuration}s")
 
-                // Scan device for native 2-way call recording (Samsung, Xiaomi/MIUI, Vivo, OnePlus, Oppo, Realme)
+                // 1. Scan device for native 2-way call recording (Samsung, Xiaomi/MIUI, Vivo, OnePlus, Oppo, Realme)
                 val nativeAudioFile = NativeCallRecordFinder.findRecentRecording(
                     context = context,
                     rawCustomerPhone = phone,
@@ -117,10 +136,15 @@ class AgentCallReceiver : BroadcastReceiver() {
                     finalAudio = nativeAudioFile
                     callNotes = "Recorded via Native System Call Recorder (HD 2-Way Audio)"
                     Log.i(TAG, "🎉 Native recording verified (${finalAudio.length()} bytes): ${finalAudio.name}")
+                    inAppFile?.delete()
+                } else if (inAppFile != null && inAppFile.exists() && inAppFile.length() >= 5000) {
+                    finalAudio = inAppFile
+                    callNotes = "Recorded via CashALL In-App Audio Engine"
+                    Log.i(TAG, "🎙 Using In-App Recording (${finalAudio.length()} bytes): ${finalAudio.name}")
                 } else {
                     finalAudio = null
-                    callNotes = "Logged via CashALL Field Agent App (Auto-record not detected for this call)"
-                    Log.w(TAG, "⚠️ No valid native recording found. Logging metadata without audio.")
+                    callNotes = "Logged via CashALL Field Agent App (Auto-record not detected)"
+                    Log.w(TAG, "⚠️ No audio recording found. Logging metadata.")
                 }
 
                 CallUploader.uploadCallRecording(

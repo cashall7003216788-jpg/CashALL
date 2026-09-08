@@ -70,11 +70,24 @@ object AgentPreferenceManager {
             .apply()
     }
 
-    // Call logging target tracking
+    // Call logging target tracking & Privacy Protection
     private const val KEY_TARGET_PHONE = "target_customer_phone"
     private const val KEY_TARGET_NAME = "target_customer_name"
     private const val KEY_TARGET_DEVICE = "target_device_name"
     private const val KEY_TARGET_ORDER = "target_order_number"
+    private const val KEY_TARGET_TIMESTAMP = "target_call_timestamp"
+    private const val KEY_APP_INITIATED = "target_is_app_initiated"
+    private const val KEY_CALL_RECORDING_CONFIGURED = "call_recording_configured_once"
+
+    fun isCallRecordingConfigured(context: Context): Boolean {
+        return getPrefs(context).getBoolean(KEY_CALL_RECORDING_CONFIGURED, false)
+    }
+
+    fun setCallRecordingConfigured(context: Context, configured: Boolean = true) {
+        getPrefs(context).edit()
+            .putBoolean(KEY_CALL_RECORDING_CONFIGURED, configured)
+            .apply()
+    }
 
     fun setLastTargetCall(context: Context, phone: String, name: String, device: String, orderNumber: String) {
         getPrefs(context).edit()
@@ -82,6 +95,41 @@ object AgentPreferenceManager {
             .putString(KEY_TARGET_NAME, name.trim())
             .putString(KEY_TARGET_DEVICE, device.trim())
             .putString(KEY_TARGET_ORDER, orderNumber.trim())
+            .putLong(KEY_TARGET_TIMESTAMP, System.currentTimeMillis())
+            .putBoolean(KEY_APP_INITIATED, true)
+            .apply()
+    }
+
+    /**
+     * Strict privacy protection: Only returns true if the call was explicitly initiated
+     * by clicking "Call Customer" inside the CashALL App within the last 15 minutes.
+     * Personal calls to family/friends will return FALSE and will NEVER be recorded or uploaded.
+     */
+    fun isAppInitiatedCallActive(context: Context, dialedNumber: String?): Boolean {
+        val prefs = getPrefs(context)
+        val isInitiated = prefs.getBoolean(KEY_APP_INITIATED, false)
+        val timestamp = prefs.getLong(KEY_TARGET_TIMESTAMP, 0L)
+        val targetPhone = prefs.getString(KEY_TARGET_PHONE, "") ?: ""
+
+        // Expire session after 15 minutes
+        if (!isInitiated || (System.currentTimeMillis() - timestamp) > 15 * 60 * 1000L) {
+            return false
+        }
+
+        if (dialedNumber.isNullOrBlank()) {
+            return true
+        }
+
+        val cleanDialed = dialedNumber.replace("\\D".toRegex(), "").takeLast(10)
+        val cleanTarget = targetPhone.replace("\\D".toRegex(), "").takeLast(10)
+
+        // If either is empty, allow fallback to active session, else verify 10-digit match
+        return cleanDialed.isEmpty() || cleanTarget.isEmpty() || cleanDialed == cleanTarget
+    }
+
+    fun clearAppInitiatedCall(context: Context) {
+        getPrefs(context).edit()
+            .putBoolean(KEY_APP_INITIATED, false)
             .apply()
     }
 
