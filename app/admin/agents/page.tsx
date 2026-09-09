@@ -69,11 +69,11 @@ export default function AdminAgentsPage() {
       const res = await fetch(`/api/v1/support/recordings?role=AGENT&t=${Date.now()}`);
       const json = await res.json();
       if (json.success && Array.isArray(json.recordings)) {
-        // Strict frontend protection: only field agents, never support staff (Harshita, Sangeet)
+        // Strict frontend protection: only field agents, never support staff (Harshita)
         const agentOnlyCalls = json.recordings.filter((c: any) => {
           const name = (c.supportPersonName || "").toLowerCase();
           const phone = c.supportPersonPhone || "";
-          if (name.includes("harshita") || name.includes("sangeet") || phone.includes("8981191734")) {
+          if (name.includes("harshita") || phone.includes("8981191734")) {
             return false;
           }
           return true;

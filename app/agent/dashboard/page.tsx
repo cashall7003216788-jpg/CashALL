@@ -1053,6 +1053,17 @@ export default function AgentDashboardPage() {
                         </button>
                         <a
                           href={`tel:${ord.customerPhone}`}
+                          onClick={(e) => {
+                            if (typeof window !== "undefined" && (window as any).CashAllAgentNative?.callCustomer) {
+                              e.preventDefault();
+                              (window as any).CashAllAgentNative.callCustomer(
+                                ord.customerPhone,
+                                ord.customerName || "Customer",
+                                ord.deviceName || "Mobile Device",
+                                ord.orderNumber || ord.id
+                              );
+                            }
+                          }}
                           className="inline-flex items-center gap-1 text-xs font-semibold text-neutral-300 hover:text-white transition"
                         >
                           <span>{ord.customerPhone}</span>

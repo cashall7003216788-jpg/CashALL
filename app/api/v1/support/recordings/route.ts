@@ -53,7 +53,6 @@ export async function GET(req: NextRequest) {
       const lower = name.toLowerCase();
       return (
         lower.includes("harshita") ||
-        lower.includes("sangeet") ||
         phoneNum.includes("8981191734")
       );
     };
@@ -62,6 +61,7 @@ export async function GET(req: NextRequest) {
       const lower = name.toLowerCase();
       const lowerNotes = notes.toLowerCase();
       return (
+        lower.includes("sangeet") ||
         lower.includes("arshad") ||
         lower.includes("aman") ||
         lower.includes("hyder") ||
@@ -359,21 +359,21 @@ export async function POST(req: NextRequest) {
 
     const roleInput = ((formData.get("role") as string) || (formData.get("actorRole") as string) || "").toUpperCase();
 
-    const isSupport =
-      supportPersonName.toLowerCase().includes("harshita") ||
-      supportPersonName.toLowerCase().includes("sangeet") ||
-      supportPersonPhone.includes("8981191734");
-
     const isAgent =
-      !isSupport &&
-      (roleInput === "AGENT" ||
-        formData.get("callType") === "AGENT_PICKUP_CALL" ||
-        callNotes.toLowerCase().includes("field agent") ||
-        callNotes.toLowerCase().includes("agent app") ||
-        supportPersonName.toLowerCase().includes("arshad") ||
-        supportPersonName.toLowerCase().includes("aman") ||
-        supportPersonName.toLowerCase().includes("hyder") ||
-        supportPersonName.toLowerCase().includes("ankit"));
+      roleInput === "AGENT" ||
+      formData.get("callType") === "AGENT_PICKUP_CALL" ||
+      callNotes.toLowerCase().includes("field agent") ||
+      callNotes.toLowerCase().includes("agent app") ||
+      supportPersonPhone === "6289477287" ||
+      supportPersonName.toLowerCase().includes("arshad") ||
+      supportPersonName.toLowerCase().includes("aman") ||
+      supportPersonName.toLowerCase().includes("hyder") ||
+      supportPersonName.toLowerCase().includes("ankit");
+
+    const isSupport =
+      !isAgent &&
+      (supportPersonName.toLowerCase().includes("harshita") ||
+        supportPersonPhone.includes("8981191734"));
 
     const finalActorRole: "AGENT" | "SUPPORT" = isAgent ? "AGENT" : "SUPPORT";
     const finalAction = isAgent ? "AGENT_CALL_RECORDING" : "SUPPORT_CALL_RECORDING";

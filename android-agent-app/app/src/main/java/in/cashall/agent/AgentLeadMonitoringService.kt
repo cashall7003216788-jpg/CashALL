@@ -133,17 +133,19 @@ class AgentLeadMonitoringService : Service() {
                     Log.w(TAG, "Error in poll loop: ${e.message}")
                 }
 
-                // Poll every 6 seconds for instantaneous lead dispatch
-                delay(6000)
+                // Poll every 2.5 seconds for instantaneous lead dispatch
+                delay(2500)
             }
         }
     }
 
     private fun pollAgentLeads(phone: String, name: String?) {
         try {
+            val agentId = AgentPreferenceManager.getAgentId(this) ?: ""
             val encodedPhone = URLEncoder.encode(phone, "UTF-8")
             val encodedName = if (!name.isNullOrBlank()) URLEncoder.encode(name, "UTF-8") else ""
-            val url = "https://cashall.in/api/v1/agent/orders?phone=$encodedPhone&name=$encodedName&t=${System.currentTimeMillis()}"
+            val encodedId = if (agentId.isNotBlank()) URLEncoder.encode(agentId, "UTF-8") else ""
+            val url = "https://cashall.in/api/v1/agent/orders?phone=$encodedPhone&name=$encodedName&agentId=$encodedId&t=${System.currentTimeMillis()}"
 
             val request = Request.Builder()
                 .url(url)

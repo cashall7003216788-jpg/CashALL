@@ -7,12 +7,12 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({
       success: true,
       agent: {
-        versionCode: 3,
-        versionName: "1.0.3",
+        versionCode: 4,
+        versionName: "1.0.4",
         downloadUrl: "https://cashall.in/api/v1/download/agent",
         forceUpdate: false,
-        title: "CashALL Agent Update Available",
-        releaseNotes: "In-app customer call recording, zero phone storage buildup, strict field agent call logging.",
+        title: "CashALL Agent Update Available (v1.0.4)",
+        releaseNotes: "Instant 2.5s lead buzzer dispatch, 30s auto-silence alarm timer, and seamless call recording audio sync.",
       },
       caller: {
         versionCode: 3,

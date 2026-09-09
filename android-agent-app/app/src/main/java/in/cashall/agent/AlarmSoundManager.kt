@@ -25,6 +25,7 @@ object AlarmSoundManager {
 
     // Vibration pattern: wait 0ms, vibrate 800ms, pause 300ms, vibrate 800ms, pause 300ms, vibrate 1000ms
     private val VIBRATION_PATTERN = longArrayOf(0, 800, 300, 800, 300, 1000)
+    private var autoSilenceHandler: android.os.Handler? = null
 
     @Synchronized
     fun isAlarmActive(): Boolean = isAlarmPlaying
@@ -36,7 +37,18 @@ object AlarmSoundManager {
             return
         }
         isAlarmPlaying = true
-        Log.i(TAG, "Starting loud lead buzzer and phone vibration...")
+        Log.i(TAG, "Starting loud lead buzzer and phone vibration (30s auto-silence enabled)...")
+
+        // Auto-silence after 30 seconds so it never keeps buzzering for minutes if unattended
+        autoSilenceHandler?.removeCallbacksAndMessages(null)
+        autoSilenceHandler = android.os.Handler(android.os.Looper.getMainLooper()).apply {
+            postDelayed({
+                if (isAlarmPlaying) {
+                    Log.i(TAG, "⏰ Auto-silencing lead buzzer after 30s timeout.")
+                    stopAlarm(context)
+                }
+            }, 30_000L)
+        }
 
         // 1. Play unique high-decibel emergency siren (R.raw.loud_buzzer) via USAGE_ALARM
         // NOTE: Never use RingtoneManager.TYPE_ALARM so user's morning alarm never plays or mixes!
@@ -99,6 +111,9 @@ object AlarmSoundManager {
     fun stopAlarm(context: Context? = null) {
         Log.i(TAG, "Stopping loud lead buzzer and phone vibration immediately.")
         isAlarmPlaying = false
+
+        autoSilenceHandler?.removeCallbacksAndMessages(null)
+        autoSilenceHandler = null
 
         // Stop Audio immediately with zero latency
         try {

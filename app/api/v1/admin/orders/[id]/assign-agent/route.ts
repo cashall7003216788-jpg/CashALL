@@ -6,29 +6,29 @@ import { AppError } from "@/lib/utils/AppError";
 export const dynamic = "force-dynamic";
 
 export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { id: string } }) => {
-  const orderIdentifier = params.id;
+  const rawId = params.id ? decodeURIComponent(params.id).trim() : "";
   const body = await req.json().catch(() => ({}));
 
   const { agentId, agentName } = body;
 
-  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(orderIdentifier);
-  const cleanOrderNum = orderIdentifier.replace(/^#/, "");
+  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(rawId);
+  const cleanOrderNum = rawId.replace(/^#/, "");
 
   const order = await prisma.order.findFirst({
     where: {
       OR: isUuid
-        ? [{ id: orderIdentifier }, { orderNumber: cleanOrderNum }]
+        ? [{ id: rawId }, { orderNumber: cleanOrderNum }]
         : [{ orderNumber: cleanOrderNum }, { orderNumber: `#${cleanOrderNum}` }],
       deletedAt: null,
     },
   });
 
   if (!order) {
-    throw new AppError("Order not found.", 404);
+    throw new AppError(`Order "${rawId}" not found in database.`, 404);
   }
 
-  let resolvedAgentId = agentId;
-  let selectedAgentName = agentName;
+  let resolvedAgentId: string | null = agentId || null;
+  let selectedAgentName = agentName || "";
 
   if (agentId) {
     const isAgentUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(agentId);
@@ -57,52 +57,57 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     }
   }
 
-  const updatedOrder = await prisma.$transaction(async (tx) => {
-    // Update or create pickup notes
-    const existingPickup = await tx.pickup.findFirst({
-      where: { orderId: order.id },
-    });
+  // Update or create pickup record sequentially (PgBouncer-safe, zero pool exhaustion)
+  const existingPickup = await prisma.pickup.findFirst({
+    where: { orderId: order.id },
+  });
 
-    const isAlreadyCompleted = ["COMPLETED", "BILL_GENERATED"].includes(order.status);
+  const isAlreadyCompleted = ["COMPLETED", "PAID"].includes(order.status as string);
 
-    if (existingPickup) {
-      await tx.pickup.update({
-        where: { id: existingPickup.id },
-        data: {
-          notes: selectedAgentName || "Assigned Agent",
-          status: isAlreadyCompleted ? "COMPLETED" : "ASSIGNED",
-          assignedAt: new Date(),
-        },
-      });
-    } else {
-      await tx.pickup.create({
-        data: {
-          orderId: order.id,
-          date: order.pickupDate || "Today",
-          timeSlot: order.pickupTimeSlot || "10 AM - 1 PM",
-          status: isAlreadyCompleted ? "COMPLETED" : "ASSIGNED",
-          notes: selectedAgentName || "Assigned Agent",
-          assignedAt: new Date(),
-        },
-      });
-    }
-
-    return tx.order.update({
-      where: { id: order.id },
+  if (existingPickup) {
+    await prisma.pickup.update({
+      where: { id: existingPickup.id },
       data: {
-        agentId: resolvedAgentId || null,
-        status: isAlreadyCompleted ? order.status : "PARTNER_ASSIGNED",
-      },
-      include: {
-        agent: true,
-        user: true,
+        notes: selectedAgentName || (resolvedAgentId ? "Assigned Agent" : "Unassigned"),
+        status: isAlreadyCompleted ? "COMPLETED" : (resolvedAgentId ? "ASSIGNED" : "SCHEDULED"),
+        assignedAt: resolvedAgentId ? new Date() : null,
       },
     });
+  } else {
+    await prisma.pickup.create({
+      data: {
+        orderId: order.id,
+        date: order.pickupDate || "Today",
+        timeSlot: order.pickupTimeSlot || "10 AM - 1 PM",
+        status: isAlreadyCompleted ? "COMPLETED" : (resolvedAgentId ? "ASSIGNED" : "SCHEDULED"),
+        notes: selectedAgentName || (resolvedAgentId ? "Assigned Agent" : "Unassigned"),
+        assignedAt: resolvedAgentId ? new Date() : null,
+      },
+    });
+  }
+
+  const updatedOrder = await prisma.order.update({
+    where: { id: order.id },
+    data: {
+      agentId: resolvedAgentId || null,
+      status: isAlreadyCompleted
+        ? order.status
+        : resolvedAgentId
+        ? "PARTNER_ASSIGNED"
+        : "PICKUP_SCHEDULED",
+    },
+    include: {
+      agent: true,
+      user: true,
+      pickups: true,
+    },
   });
 
   return NextResponse.json({
     success: true,
-    message: "Agent assigned successfully",
+    message: resolvedAgentId
+      ? `Agent "${selectedAgentName}" assigned successfully to order #${order.orderNumber}`
+      : `Agent unassigned from order #${order.orderNumber}`,
     order: updatedOrder,
   });
 });
