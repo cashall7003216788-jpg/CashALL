@@ -27799,7 +27799,4028 @@ const TABLET_MODELS_PART_2: DeviceModelData[] = [
   }
 ];
 
-export const INITIAL_MODELS: DeviceModelData[] = [...MOBILE_MODELS_PART_1, ...MOBILE_MODELS_PART_2, ...MOBILE_MODELS_PART_3, ...MOBILE_MODELS_PART_4, ...LAPTOP_MODELS_PART_1, ...LAPTOP_MODELS_PART_2, ...TABLET_MODELS_PART_1, ...TABLET_MODELS_PART_2];
+
+const MOBILE_MODELS_PART_5: DeviceModelData[] = [
+  {
+    "id": "57fc294d-9e6b-402c-9d92-0c62f4d1f086",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y51 Pro 5G",
+    "slug": "vivo-y51-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/7a5f15be-d957.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a042b2ac-5004-479d-a848-c00b760e904f",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 9 5G Speed Edition",
+    "slug": "realme-9-5g-speed-edition",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/7a75a21d-780f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "9546f47b-960b-4b8b-bb6c-1f2df37f79be",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo X200 FE",
+    "slug": "vivo-x200-fe",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/431dbf0c-4b63.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e392fabb-6b0b-4057-9f82-c36504ab249b",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy A57 5G",
+    "slug": "samsung-galaxy-a57-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/fa2e8e9b-ec22.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a0b4a525-1f69-4831-b25d-ac62f996b1b5",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi 10A",
+    "slug": "xiaomi-redmi-10a",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/f0a592c4-34c3.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "ad65fc4e-d0f2-40a5-b23c-9dffebb4576d",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Razr 60 Ultra",
+    "slug": "motorola-moto-razr-60-ultra",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a3a140e6-7a7a.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e0a51ea6-0996-4da0-b1f1-3b4caabfbace",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 12 Pro Plus 5G",
+    "slug": "realme-12-pro-plus-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/c8a3e04c-21f6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "957e2558-13f6-4e12-a8e2-b1001126a37c",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C63",
+    "slug": "realme-c63",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d8adadba-169e.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "9f4148df-49e9-48c6-ba4b-4ad8145ab776",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C61",
+    "slug": "realme-c61",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/6761d3b5-9cbe.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "1f146fc2-89cd-428f-95f8-27a12bbfce04",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme P3 5G",
+    "slug": "realme-p3-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/realme-p3-5g-6-gb-128-gb.PNG",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "0e8eac4d-d99c-4015-a360-1e8a17f45ffd",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y400 5G",
+    "slug": "vivo-y400-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/36786a14-b0bd.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "4e5f0a2c-cda1-48a2-9136-4ee728dc9788",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy A52",
+    "slug": "samsung-galaxy-a522",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/e3c1be96-fe47.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "ae5ff80a-7ffb-4dae-9a10-3f2efa813397",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Turbo 5",
+    "slug": "xiaomi-redmi-turbo-5",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/39afcfbb-4caf.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "b60b6bc7-f453-47c6-ab65-629ff64d6b39",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Signature",
+    "slug": "motorola-moto-signature",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/15444939-f16c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "14f92231-15df-46f4-a606-27e82b610547",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi 12c",
+    "slug": "xiaomi-redmi-12c",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/f47a61d1-671e.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "1b29f668-e579-476c-a19b-400d371b14ff",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi A5",
+    "slug": "xiaomi-redmi-a5",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/2fb21a89-8e4d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "2a0b90f3-8a57-4bf2-bdba-2b7a9638431a",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Razr 50 Ultra",
+    "slug": "motorola-moto-razr-50-ultra",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/4b808d3b-d6cc.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8c6c975e-92c1-4733-a16e-1055041cc9b0",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 15 5G",
+    "slug": "xiaomi-redmi-note-15-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/940dfda2-12d6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "351b849b-3e58-44cd-bbb4-6abe975188ef",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi 9 Activ",
+    "slug": "xiaomi-redmi-9-activ",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/6aa4e53a-5e0b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "1644fc4d-f02d-4005-8b08-111827cdc3b4",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy Z Fold 8",
+    "slug": "samsung-galaxy-z-fold-8",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/be51158f-aeaa.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "44181354-1380-4bb5-9527-541dca259ef8",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi 11t Pro 5G",
+    "slug": "xiaomi-11t-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b329433f-f952.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "cee76e79-75a8-4f87-81dd-f250905e81f5",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "17T",
+    "slug": "xiaomi-17t",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b2951983-0eb6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "cd970116-58be-46ae-b6a8-0cf2347589b3",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo T4 Ultra 5G",
+    "slug": "vivo-t4-ultra-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/929ba52e-43b7.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "bc6c4c16-5d7c-4abf-b06e-e062384d17bc",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi A7 Pro 5G",
+    "slug": "xiaomi-redmi-a7-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/3e2de71f-f21f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "94d6984e-5ecf-462b-b5a7-e47828a5ae2f",
+    "brandId": "bb130e78-b23d-4d18-a76e-56965a4cd72f",
+    "brandSlug": "nothing",
+    "name": "CMF by Nothing Phone 2 Pro 5G",
+    "slug": "cmf-by-nothing-phoe-2-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5e309a4e-5056.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "01d445cb-dc35-4325-9f24-c662c1e3b0da",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme P3 Pro 5G",
+    "slug": "realme-p3-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/realme-p3-pro-5g-8-gb-256-gb.PNG",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "c54d70e7-a6b3-45d3-87b5-fedb3a1f641a",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT 7",
+    "slug": "realme-gt-7",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b2134b9a-2e56.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "46d291ee-1932-470d-b444-37c75e0ebc0b",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 14T 5G",
+    "slug": "realme-14t-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/0aa898f0-f9e5.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "3f89a2e8-c34d-455a-994b-b7c92838e87a",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 9i",
+    "slug": "realme-9i",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5f406440-f5c5.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "4cd5a88a-dcbe-48e8-abe2-f5554ead2c9a",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y31 Pro 5G",
+    "slug": "vivo-y31-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/8e1cd0f4-d09f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "ef50240e-f9b7-464d-9d5c-5a045b672a0f",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 50 Pro",
+    "slug": "motorola-moto-edge-50-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/007f4ca6-b05d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a4ee6c9a-a6ae-4135-902b-bd6041434a49",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy S26",
+    "slug": "samsung-galaxy-s26",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/6717a2a3-6a42.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "bb2a05a1-a07c-4ea3-9071-eb260149956d",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy A17 5G",
+    "slug": "samsung-galaxy-a17-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d3caa84e-3a86.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "def9a5ff-6ef4-453c-a044-c076346f4fab",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy Z Flip 7",
+    "slug": "samsung-galaxy-z-flip-7",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/c164ac07-15c2.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "fd699827-373c-4a9a-908e-83ae7f88992c",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 15 Pro 5G",
+    "slug": "xiaomi-redmi-note-15-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/4d99f0b4-0a15.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "5a205838-0db2-4300-8c5f-02df5443c55c",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 13 Pro Plus 5G",
+    "slug": "xiaomi-redmi-note-13-pro-plus-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/622b1570-ec5c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "6cbc9e93-09a9-4bd8-bfe8-c5ac0c17cbfe",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo T4x 5G (8 GB/128 GB)",
+    "slug": "vivo-t4x-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/e2ef053d-2117.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "d22152ce-fc5d-4f4b-838e-7d3da05100c9",
+    "brandId": "a304427f-242d-4c90-ac8c-c88f96eb6482",
+    "brandSlug": "oppo",
+    "name": "OPPO Reno16c 5G",
+    "slug": "oppo-reno16c-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/31ffa4ce-588a.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "ab2c7473-ea3c-4ff5-914d-1b563d01df04",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi 11T Pro 5G",
+    "slug": "xiaomi-mi-11t-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a2b83e2d-f12d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "f79ff190-4d78-4b6d-8db7-ccc0064a66d9",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 10 Lite",
+    "slug": "xiaomi-redmi-note-10-lite",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/be5722f1-31b0.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "3fbecf19-f201-4be1-b031-496d370886c3",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 6 Pro",
+    "slug": "xiaomi-redmi-note-6-pro-6-gb-64gb",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-lsl54uvo-f2k5.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "26d20dd6-d2b2-4003-8fb6-7d1fa8d0fa9f",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 11S",
+    "slug": "xiaomi-redmi-note-11s",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/13a8b798-69fd.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "214468be-2013-4edd-af47-e48d1767f884",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 12 Pro Plus 5G",
+    "slug": "xiaomi-redmi-note-12-pro-plus-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/c02cc03c-036a.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "16fd611b-d1d9-4142-92f5-1a978b68c235",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme P3 Ultra 5G",
+    "slug": "realme-p3-ultra-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/f870c715-63a0.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "7288ca55-6766-41d3-9226-cbd298ee7e08",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 50 Pro",
+    "slug": "motorola-moto-edge-50-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a458c2a9-693c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "0bad33ca-ebd1-413d-b112-61f6c6aabd08",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT Master Edition",
+    "slug": "realme-gt-master-edition",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/ed7545cd-83d8.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "fb0fc732-d63b-4017-bf28-7b57a278291b",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy J7 Pro",
+    "slug": "samsung-galaxy-j7-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-9ssxmycw-jifs.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "c2de740a-f37e-4a54-a9bb-e13f7ae6b115",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi A1",
+    "slug": "xiaomi-redmi-a1",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/2ad74634-c4c1.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a66dddf0-c6b8-42fd-abee-504f0118c934",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT 7T",
+    "slug": "realme-gt-7t",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/fd11d5e4-a6b2.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "b92744cc-e512-4ca7-abfa-ea81a203d2b0",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy J8",
+    "slug": "samsung-galaxy-j8",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-pcy3wifl-v95y.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "24922068-36cc-4a14-b9dc-cd58ea63aa18",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 15 Pro Plus 5G",
+    "slug": "xiaomi-redmi-note-15-pro-plus-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/30781121-d056.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "28709a32-c2d9-47dd-88f6-3552813987d5",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo T4 Pro 5G",
+    "slug": "vivo-t4-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b9720b14-67dd.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "21855ef2-b802-498f-aab5-cd284fea0fa5",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 15 5G",
+    "slug": "realme-15-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5ef8cbc0-fff5.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "6b174dee-2ee8-4ccc-a8d8-5db59adb2794",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo N63",
+    "slug": "realme-narzo-n63",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/f7ca0c60-80ee.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "fc84bc0b-8998-4c32-aa83-f458482bacb2",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi 15A 5G",
+    "slug": "xiaomi-redmi-15a-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/e73c4adc-61e1.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "4c206336-1a7a-47ec-8bc2-27d8a2a1859a",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo Power 5G",
+    "slug": "realme-narzo-power-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b9d8eee8-00a0.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "50cd484e-20ad-4e87-9f58-f44294a2eacf",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G04",
+    "slug": "motorola-moto-g04",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b984ce7c-2c94.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "cd4f052b-4e67-4ee8-b92e-d8e843be9d04",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 50 Neo",
+    "slug": "motorola-moto-edge-50-neo",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/0a2eb131-da90.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "58081b01-6d07-40e3-a399-dcec2735cdab",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y21 5G",
+    "slug": "vivo-y21-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/f433f257-ef16.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8dea4d16-a9d6-48ba-bd2e-32423e4a4125",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT 5G",
+    "slug": "realme-gt-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/de4ade2a-96ed.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "5d06a895-5635-4bcd-831a-9b34125fdd97",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 80 Lite 5G",
+    "slug": "realme-narzo-80-lite-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/657753bb-532b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "cc41e0cb-2b2b-4667-b5c5-ec82e9f1b31e",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 50A Prime",
+    "slug": "realme-narzo-50a-prime",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/624974ed-0559.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "c547d48d-221a-4e9e-b4d9-c47844d9574c",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C65 5G",
+    "slug": "realme-c65-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/9b5059f7-e8e9.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "239e76ae-6ac6-4b42-9163-944d0fd76f11",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 14 SE 5G",
+    "slug": "xiaomi-redmi-note-14-se-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a79f6a55-4459.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e1c7523f-e0e9-4f5d-b140-518b1aa57a2b",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi 15C 5G",
+    "slug": "xiaomi-redmi-15c-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/8be646e2-7d98.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "721e549b-528d-4306-b86e-c7bc5bd87c19",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme P4 Lite 5G",
+    "slug": "realme-p4-lite-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/f6edf3b8-d49c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "6df4eff4-e858-4af0-9ac4-0ba7186b7430",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo T5 Pro 5G",
+    "slug": "vivo-t5-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/fc3c8dfb-db2e.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "27ee4e09-c4bc-4424-8079-db22b7a0c69b",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 9",
+    "slug": "realme-9",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/34300d08-1c29.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "49ae097e-f836-4fb8-aa5c-d131805af7b5",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT NEO 3T",
+    "slug": "realme-gt-neo-3t",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a381411f-2631.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "f3b44129-3277-4658-8cb5-602a3dd8acd1",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi A2",
+    "slug": "xiaomi-redmi-a2",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/7d7c82cc-1fb3.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "9fc9636a-3d15-49f2-9802-579c507e54f7",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C51",
+    "slug": "realme-c51",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/cc673f88-4909.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "0a249600-fc67-4e5f-aa3e-751e90998b75",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi 10 Prime 2022",
+    "slug": "xiaomi-redmi-10-prime-2022",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/f901852c-a341.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "d739f242-04b5-4c9c-8de0-720411efd7c7",
+    "brandId": "bb130e78-b23d-4d18-a76e-56965a4cd72f",
+    "brandSlug": "nothing",
+    "name": "Nothing Phone 4b",
+    "slug": "nothing-phone-4b",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/3ac6eb0e-5bb0.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "368b052c-0da1-4ca1-b2bc-fd10c57670a4",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 16 Pro Plus 5G",
+    "slug": "realme-16-pro-plus-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/e295444e-c565.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a33fc1f0-6cfb-4290-be1b-ba01bace51d5",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi A3",
+    "slug": "xiaomi-redmi-a3",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/e4f5d307-0f00.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "17985e49-3e75-434b-a552-486fc792a77c",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 11 Pro Plus 5G",
+    "slug": "xiaomi-redmi-note-11-pro-plus-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/58d54762-1c64.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "78ccad15-45e3-431f-8bbb-aa4d060530f4",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 9 Pro Plus 5G",
+    "slug": "realme-9-pro-plus-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/058c7153-3af7.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "bda7038c-13bc-40db-a137-e4e4e633d966",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi 15 5G",
+    "slug": "xiaomi-redmi-15-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/337718cf-2ee1.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8444ec81-d116-4401-9535-6ec7e3d1636e",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 70 Turbo 5G",
+    "slug": "realme-narzo-70-turbo-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/998e067c-d1aa.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e93572fc-7a7e-4f8a-8ad5-f28f29d5ded4",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy On Max",
+    "slug": "samsung-galaxy-on-max",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-iies4kbz-5hbd.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "1a196396-a6f2-4a2f-ac30-e4880e1d4232",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy Z Fold 8 Ultra",
+    "slug": "samsung-galaxy-z-fold-8-ultra",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/42a9a510-cc66.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "1645778c-b39c-4581-b1ad-80e369f42af9",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 8s 5G",
+    "slug": "realme-8s-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/913232c8-42b6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e31036b9-7ce9-4a09-a576-dd6dab357a58",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C25Y",
+    "slug": "realme-c25y",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/44c75786-15eb.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "5e4c20e0-86bf-42c3-9532-7cefe26b56b1",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G96 5G",
+    "slug": "motorola-moto-g96-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/2593f7fa-e05a.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "b641ea5e-8056-4304-80c3-d03cef9df099",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 50 Pro 5G",
+    "slug": "realme-narzo-50-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/19290ef6-b75c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "5ac6e20e-d01e-48f7-82af-23ffde300791",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 60 Pro",
+    "slug": "motorola-moto-edge-60-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a13d03c7-0f67.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "bb0352fb-9522-424b-83f7-3e48e5ea5d1b",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi Note 10s",
+    "slug": "xiaomi-redmi-note-10s",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/48fd1e92-b18a.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "175386cd-e337-42f8-b829-e9e6904b95ff",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 80 Pro 5G",
+    "slug": "realme-narzo-80-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d4501e1f-0f25.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "37d0e085-6c92-4bcf-88f8-7c8de58e7a08",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "15 Ultra",
+    "slug": "xiaomi-15-ultra",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/2cddf2a9-6b14.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "ce5de1c6-a626-488b-b58a-f345dfb36f81",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 70 Fusion",
+    "slug": "motorola-moto-edge-70-fusion",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/909d78ec-96d9.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "494c3c2a-0097-4bbe-89a0-a4873abdd6c8",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "11i Hypercharge 5G",
+    "slug": "xiaomi-11i-hypercharge-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/3a9b5a8e-afca.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "4abae69c-faa6-41b1-ad21-a547c663c679",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Razr 60",
+    "slug": "motorola-moto-razr-60",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/8031d8d2-f1fb.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "545c531d-1ee6-4ae4-b090-5ccdaec2ea1b",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme P4R 5G",
+    "slug": "realme-p4r-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/9e9c1204-dbfd.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "3a575f15-e228-4e04-a38a-d180a1b53d00",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi A3x",
+    "slug": "xiaomi-redmi-a3x",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/05c00724-cbc7.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "632eea02-ac1b-4638-9d4a-d769a8e762ed",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 9 5G",
+    "slug": "realme-9-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/86caa22c-23c6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e8a59c75-31e8-4190-a80e-7a26648db7bc",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi 11 Lite NE 5G",
+    "slug": "xiaomi-mi-11-lite-ne-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a11fe54a-a171.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "fa2bebe7-5fd5-4869-9ec6-faa8c4646e4f",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 60 Fusion",
+    "slug": "motorola-moto-edge-60-fusion",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/00e45dd2-b19f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "39c78025-523a-48be-979b-67478ea04b43",
+    "brandId": "91d4a166-f469-4090-b9b5-86278151a114",
+    "brandSlug": "infinix",
+    "name": "Infinix Note 60 Pro",
+    "slug": "infinix-note-60-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/9c4a1644-8e7f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "298c9596-d006-4251-875b-b3f2693ae2df",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 11 5G",
+    "slug": "realme-11-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d1c941b1-75fa.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "526692f3-0eb2-4b0e-8eeb-5a4568bb402f",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C55",
+    "slug": "realme-c55",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/588e1d7e-8875.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "0680625c-4c2d-4ce4-ac9e-8d3d761b1345",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT Neo 3",
+    "slug": "realme-gt-neo-3",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/8025ea6c-4b41.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "c0ae8456-a652-4027-aac1-45105dec2057",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT 2",
+    "slug": "realme-gt-2",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a392b476-0b5e.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "f135194d-dd5c-4628-a873-1e30dc9f7954",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo N55",
+    "slug": "realme-narzo-n55",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5f75ceae-fdfb.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "fbdd1120-c0ab-4810-b4d1-57bdb64df1e6",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 50i Prime",
+    "slug": "realme-narzo-50i-prime",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d2184ad8-1d2e.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "085aee0d-e91e-487f-baed-cde878bb3f6e",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy S26 Plus",
+    "slug": "samsung-galaxy-s26-plus",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/ea664abf-b24c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "fe1ecaa8-5495-4f71-b5f4-4936a149572f",
+    "brandId": "63e86623-18e5-4177-b609-886990cd774a",
+    "brandSlug": "lg",
+    "name": "LG Velvet Dual Screen",
+    "slug": "lg-velvet",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b5f4c9fd-74f9.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a3b6bdba-8ee5-4edb-9915-b08873965103",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi 12C",
+    "slug": "xiaomi-redmi-12-c",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/88c3a69c-3ef1.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "f4c89e6f-d6c9-400e-b717-1c95fddae23b",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 12 5G",
+    "slug": "realme-12-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/91f71bde-cae5.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "bc8acfec-efc2-43cb-8091-d701471d4e84",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo N53",
+    "slug": "realme-narzo-n53",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/8a62a1af-a04e.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "6be51a00-68e4-4798-aff1-d3fe9373b548",
+    "brandId": "a304427f-242d-4c90-ac8c-c88f96eb6482",
+    "brandSlug": "oppo",
+    "name": "OPPO A6c",
+    "slug": "oppo-a6c",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d424f360-844f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "25753045-fa4f-4aad-adb0-f34315d5b932",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 12 Plus 5G",
+    "slug": "realme-12-plus",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/8a6cc9bb-c808.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "1d15babf-3f11-4f84-bbd5-bea2b54697c8",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo X200T",
+    "slug": "vivo-x200t",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/38f73ca0-7380.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "9948bcb5-72f0-4c4e-842e-b7300615e1b1",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 9 Pro 5G",
+    "slug": "realme-9-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/ae875a99-a371.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "5fd4e6c1-8add-469e-b31f-6c2330ff9c42",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy J6",
+    "slug": "samsung-galaxy-j6",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-21kspyel-q8t5.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8389a846-17b4-4ef4-9339-90aad5e0a822",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 50 5G",
+    "slug": "realme-narzo-50-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b7f12d4b-f315.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "bbba07e3-2bf5-4ba5-adf4-9377606b7359",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G35 5G",
+    "slug": "motorola-moto-g35-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/3330affa-892d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "b0ea66c6-b505-44ef-8530-971189696537",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme P3 Lite 5G",
+    "slug": "realme-p3-lite-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/49c9a0f1-3fa6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "9cd738c4-f9a8-4f67-9d7f-5d79a5afa1be",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 70 5G",
+    "slug": "realme-narzo-70-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/fa08c00f-f7d1.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "9de5d710-f715-4d78-a249-a431dc7663c7",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT NEO 2",
+    "slug": "realme-gt-neo-2",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/52e0e90e-46e6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "4eeaeb8d-3d87-4e9e-b498-8b81bb721960",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C75 5G",
+    "slug": "realme-c75-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/22174f6d-33da.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "edf7013c-6843-4026-9f1c-b5668c8fe221",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi 11 Prime",
+    "slug": "xiaomi-redmi-11-prime",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/74f079a4-a1e9.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "9a9dc048-2fe4-4b63-8c47-18d0da845927",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy S10e",
+    "slug": "samsung-galaxy-s-10e",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-zsxpbhpp-fsyb.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "3430cece-a443-4dd8-ae73-a99133fcb9a6",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT 2",
+    "slug": "realme-gt-2-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b8b3a91a-60fc.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "973d616e-3424-49e9-a858-6ae9cd41adcc",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 16T 5G",
+    "slug": "realme-16t-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/9695bc4f-807e.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8bebbb75-1cfe-4eb3-8721-9359f2789408",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi A4 5G",
+    "slug": "xiaomi-redmi-a4-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/799f83f2-0704.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "24ca2266-248b-4687-aeac-c111e849d27d",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT 7 Pro 5G",
+    "slug": "realme-gt-7-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a4b1efc9-d729.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e39fe596-3147-4218-b154-da8b542ddeb1",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo T4 5G (8 GB/256 GB)",
+    "slug": "vivo-t4-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/765d29de-b7d2.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "9f1de841-7644-480b-a10d-d718eee438b0",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Mi 10",
+    "slug": "xiaomi-mi-10",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/628cfdfd-dc9a.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "353bc616-4248-47f9-a90b-8f793c9f910c",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "15",
+    "slug": "xiaomi-15",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/c7d0ab61-6afa.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "31959c12-add4-458d-b768-fd82de4e5230",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 12 Plus 5G",
+    "slug": "realme-12-plus-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/45aeb95d-bec4.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "f8781547-69d5-4008-86fb-fc769cdc5d12",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C67 5G",
+    "slug": "realme-c67-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/1dd2de32-4cd1.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "5fbc6185-f4fe-4849-a1b9-40c800170a56",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT NEO 3 150W",
+    "slug": "realme-gt-neo-3-15-w",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d212ac22-485f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "94a7f32b-2ff3-4740-8f84-2205ae1f20ef",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi 14C 5G",
+    "slug": "xiaomi-redmi-14c-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5d7655b4-bc20.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "df501e7e-5ca5-4d57-9c32-f124ffbb43db",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 11 Pro",
+    "slug": "xiaomi-redmi-note-11-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/6b93b908-074f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "1878a5f5-ecd3-462a-95d4-4d20331f5c52",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi 13 5G",
+    "slug": "xiaomi-redmi-13-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/309536b3-b044.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "d23f10a5-e030-4f29-ae45-93f475a50d21",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C85 5G",
+    "slug": "realme-c85-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/fcd47f7d-7901.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "75b2611b-c8ba-45fb-8f78-d7945dfd2953",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G67 Power 5G",
+    "slug": "motorola-moto-g67-power-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/45db4fa3-e9b4.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "1977362c-3f65-4522-8df3-3adede79eb1c",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 80 Pro 5G",
+    "slug": "realme-narzo-80-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b3ff714f-879d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "30031b21-bbe3-4dc1-8325-068d83ab26f1",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy J7 Duo",
+    "slug": "samsung-galaxy-j7-duo",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-90cid7xe-eqez.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "75dcc237-814e-4130-9524-9b0819a34ade",
+    "brandId": "91d4a166-f469-4090-b9b5-86278151a114",
+    "brandSlug": "infinix",
+    "name": "Infinix Smart HD 2021",
+    "slug": "infinix-smart-hd",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/9f72e987-cc07.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "c2cc3437-53ca-4c23-ac8d-9b8e33cb575f",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy F54 5G",
+    "slug": "samsung-galaxy-f54-5g-8-gb-256gb",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5b6e3bad-512b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "88808c97-0dc8-4c20-a1fb-92338118b6c7",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C35",
+    "slug": "realme-c35",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/cdc4420c-2e31.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e19ac8b1-a575-400f-a086-55bdf748ff3c",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y11 5G",
+    "slug": "vivo-y11-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/1125fe99-e5ca.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a6c2574b-45bd-4024-81a1-5bac7c41fddb",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C31",
+    "slug": "realme-c31",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/32bc6ec4-5881.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "14ce08f6-ada2-47ae-b7a3-deb9793d0f57",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi A2 Plus",
+    "slug": "xiaomi-redmi-a2-plus",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a8c685ec-1898.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "b79149ec-bdc3-48e2-9c0f-bccfc3cf9af2",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C53",
+    "slug": "realme-c53",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/76606d9f-ed03.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "b593d6a0-3fd6-4d67-9b13-f523377d4230",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C33",
+    "slug": "realme-c33",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/97b5e939-c893.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8adf2eb6-3dfc-4f1a-b959-0d66d5830f31",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi 10 Prime",
+    "slug": "xiaomi-redmi-10-prime",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/1a25f1fe-917c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a2eeba8e-a872-44a1-a060-7cb41e4fad50",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C30",
+    "slug": "realme-c30",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/52bac962-f9f6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "2a8347d2-8e49-49a1-a0d9-065a472b9733",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy Z Fold 7",
+    "slug": "samsung-galaxy-fold-7",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/9036c8ff-d90a.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "7a74aac7-e627-48c9-843d-61a8cf19cd5a",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C21Y",
+    "slug": "realme-c21y",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/e91145db-0336.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "c0a92b13-ed90-462d-93fd-dbb59a6e6b3c",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo X300",
+    "slug": "vivo-x300",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/7ed83c0b-9067.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "0d580f51-895f-4ce9-b22b-ac3167a4cf64",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 14 Pro Plus 5G",
+    "slug": "realme-14-pro-plus-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/016b899f-a5cb.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "1dde27a8-63cf-4c6b-b271-5926ebf8175f",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 60 5G",
+    "slug": "realme-narzo-60",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/4a0d0bc4-5b69.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "d95511cc-b964-40a8-9b33-522b43aee86b",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 13 5G",
+    "slug": "realme-13-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/434ada90-89d0.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "91467640-d292-4122-aadc-8b21070643f1",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G13",
+    "slug": "motorola-moto-g13",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a24fcac7-e25b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "ea4cc213-b678-4846-8ec7-06bd222e856e",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 50",
+    "slug": "realme-narzo-50",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/8b5aeca6-52ec.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e5a8b63f-c09e-47fb-877b-04b255eeed5f",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y19s 5G",
+    "slug": "vivo-y19s-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d10928a9-5fa8.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "9f4afceb-f9c1-4321-a1eb-45f429828e7e",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy S26 Ultra",
+    "slug": "samsung-galaxy-s26-ultra",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/44993712-50cd.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "119198b0-441a-4bb4-b35b-ce507e81d158",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 16 5G",
+    "slug": "realme-16-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/18217480-b25e.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "53b0f722-c881-458b-9bbb-900f38e41e07",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 9i 5G",
+    "slug": "realme-9i-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/f9451eb3-181f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "1dc888ec-343c-470f-bb8e-f2daf71a5d21",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo T4 Pro 5G",
+    "slug": "vivo-t4-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b9720b14-67dd.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "2881ab0c-785f-4388-812e-70fc1d5d60c2",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 90 5G",
+    "slug": "realme-narzo-90-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/bf63fe22-99b7.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "abe78900-ad29-42ee-8017-18ed99780b17",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 90x 5G",
+    "slug": "realme-narzo-90x-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/41086b6b-f4d5.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "995c4dd7-3801-46ea-a881-cf44764aba52",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT 8 Pro",
+    "slug": "realme-gt-8-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/2584fd8c-ea4c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "db30b600-24a1-4733-84c3-d73183df2b8f",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi 11 Prime 5G",
+    "slug": "xiaomi-redmi-11-prime-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5283a18f-0de3.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "40fc03b4-d731-4cb0-80b7-e818cea77426",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 50A",
+    "slug": "realme-narzo-50a",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/2e26b7cf-18c1.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8674d37f-26db-4bb7-9df4-13af372f7a47",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme P4 Lite",
+    "slug": "realme-p4-lite",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/595a86f6-544b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "d11fbe17-70d6-433b-9722-88f877f8229a",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy Z Flip 8",
+    "slug": "samsung-galaxy-z-flip-8",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/bbeed348-24c6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "61febfea-0bab-458e-a9f9-a3bac0df00c4",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy Z Fold 7",
+    "slug": "samsung-galaxy-z-fold-7",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/e57d558d-1bee.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "7c845244-1d5d-457c-a6be-7cd690edc2c9",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 8i",
+    "slug": "realme-8i",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/1bc6f107-7d3c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "5651f329-0655-4398-8259-3c7eaef1d49a",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "17 Ultra",
+    "slug": "xiaomi-17-ultra",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d354b1af-b9f5.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "404b1ddc-9aaa-4107-a7cc-8e246bc0339c",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "11 Lite NE 5G",
+    "slug": "xiaomi-11-lite-ne-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b33590f1-ce89.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "669d8533-0af4-4328-858a-d56372ecbcd2",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo X300 Pro",
+    "slug": "vivo-x300-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/59aafe32-2f2f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a2aba2c4-6dff-4348-8062-7bf55e734162",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi A1 Plus",
+    "slug": "xiaomi-redmi-a1-plus",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/25495f29-8761.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "0dedb125-fab7-4c26-982d-a5c80ad4ab88",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 9 Pro 5G",
+    "slug": "realme-9-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5af71d55-7c87.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "d7af6305-239e-4013-ae43-46d8338cb56d",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 30",
+    "slug": "realme-narzo-30",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/837d2206-d93a.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "4564ca3d-04be-4236-b6c4-7774d698aceb",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G37 Power 5G",
+    "slug": "motorola-moto-g37-power-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/0b322679-6773.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "bf5000bb-15d6-475d-865a-25a32eaef210",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi 10",
+    "slug": "xiaomi-redmi-10",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/1b0ddab0-2b41.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "18ee9180-b44a-466c-9529-24cadc9b700e",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme P4x 5G",
+    "slug": "realme-p4x-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/3fcb5a22-99d7.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "3b41ec75-53e5-4374-83ac-5b4a8c9ae0f1",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo X Fold 5",
+    "slug": "vivo-x-fold-5",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5f069251-031e.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "6404d416-04ab-4ec4-a8cc-4e40bfaa25d6",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C73 5G",
+    "slug": "realme-c73-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/7e9377c6-b18e.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "52b493fe-680f-43c9-8895-88438cf476ca",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT Neo 3",
+    "slug": "realme-gt-neo-3-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5c53b325-cd16.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8b2b7faa-3d12-4f37-bf82-6a1def99c218",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 100 Lite 5G",
+    "slug": "realme-narzo-100-lite-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/9fefd542-de54.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "f9beb1ec-8ede-4b31-86a4-5dd3dfb12f37",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo X300 Ultra",
+    "slug": "vivo-x300-ultra",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/7531b42e-2b26.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "c00cf86a-9b5c-42fe-921c-fb550561e474",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo T4 Lite 5G",
+    "slug": "vivo-t4-lite-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/e666c94e-948d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "ffb9b4d6-7e6c-4953-96d4-bcd96bfc5d7a",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy On7 Prime",
+    "slug": "samsung-galaxy-on7-prime",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-gtplk8oq-jtxt.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "2e01a5d6-6f19-4ea3-bcd8-da4765dbc678",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y400 Pro 5G",
+    "slug": "vivo-y400-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a2cf4a0e-6da2.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "64fa1ef1-6320-476b-9120-3f01c526197a",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo T4R 5G",
+    "slug": "vivo-t4r-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/dfb13784-60ce.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "3378a9ba-b4c9-4425-a2e5-c8e15d856661",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 12 Pro Plus 5G",
+    "slug": "realme-12-pro-plus",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/4ee8e43a-cff9.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "3b8b191b-785b-46da-b172-f37e0e4087aa",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 70 Pro 5G",
+    "slug": "realme-narzo-7-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/f9fc4086-f3d9.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "fa5957fc-a7dd-40a9-ba5d-84ee80503f66",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme P4 Power 5G",
+    "slug": "realme-p4-power-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/04750925-05b5.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a7c486d7-5381-4add-8a27-6c628cb9ab9f",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y15c",
+    "slug": "vivo-y15c",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/fa4b7fa8-752e.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e44c8b29-bcd3-4127-aa7e-cedc260bab3b",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi Note 10T 5G",
+    "slug": "xiaomi-redmi-note-10t-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/777545b3-56cf.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "d041591a-1c0e-4058-ab63-66d37dc6e8eb",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi Note 11 Pro",
+    "slug": "xiaomi-redmi-note-11-pro-4g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d5f781bf-ab7d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8d07d6a3-8b18-48f7-b975-5b7415c50fd9",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi K50i 5G",
+    "slug": "xiaomi-redmi--k50i",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/80a54f98-dfce.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "61fd6c58-d6b7-4f22-afca-a66f280af4e2",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy J7 Max",
+    "slug": "samsung-galaxy-j7-max",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-ehtaxabf-bewm.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "edb58480-7e85-4d86-908a-a9bd508f9b23",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G24 Power",
+    "slug": "motorola-moto-g24-power",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/7052454c-df26.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "659eae8f-c20d-4a6a-a6b6-2700265e0b6a",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi A7",
+    "slug": "xiaomi-redmi-a7",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/cd312130-8545.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "05ca10f8-14a4-4d3e-99f8-b2bf09740d29",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi Note 11 Pro Plus 5G",
+    "slug": "xiaomi-redmi-note-11-pro-plus",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/99f4b17c-264b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e8163bb3-a746-4a33-a6a7-fabffe1f0546",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 11",
+    "slug": "xiaomi-redmi-note-11",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/e960b8f6-47be.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "b8630adc-9d65-4edf-b613-60401e3f7ed2",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 11SE",
+    "slug": "xiaomi-redmi-note-11-se",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/ad5111be-8058.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "d89a6674-113a-4c73-9a8c-2471a2131dff",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 60 Stylus",
+    "slug": "motorola-moto-edge-60-stylus",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/9621ebbf-134b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "cff78cea-d983-4837-abb6-fc8d1710bd17",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo N65 5G",
+    "slug": "realme-narzo-n65",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/2da947cf-e657.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e0b2c8b3-bc2c-4bc0-99fc-586f4c17545f",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C33 2023",
+    "slug": "realme-c33-2023",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/1eb82508-aa60.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "fccd3369-319f-44b3-ae7a-aaa86a12479f",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo N61",
+    "slug": "realme-narzo-n61",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/394d9450-c61c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "7a001fc9-a658-4bfc-9f76-295a8a08a090",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy M40",
+    "slug": "samsung-galaxy-m40",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5fda1742-7e9b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "19e25c0c-82fc-4bf8-a4d6-7e45a92d191f",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 80 Lite 4G",
+    "slug": "realme-narzo-80-lite",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/3d5aad4a-f338.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "0687901a-da84-4ae4-83dc-33fe9733d562",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y29 5G",
+    "slug": "vivo-y29-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/79c596d2-8452.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8dcdfbc4-d452-4284-a80b-6fdfd24030cf",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 60X 5G",
+    "slug": "realme-narzo-60x-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/85cf2e57-4e0d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "cc2946b8-e180-4531-9be8-5eecc26e6d23",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi 12 Pro 5G",
+    "slug": "xiaomi-mi-12-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d213a621-d6e6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8cdc9be9-a0a1-49a9-a4cc-03925ffd1c5a",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo T5 Lite 5G",
+    "slug": "vivo-t5-lite-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/dbab9034-4c6f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "7cd10f4f-7b6f-49e7-a1c7-3809f364a676",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo T4 5G",
+    "slug": "vivo-t4",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/527fccbd-5597.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "f790d9d7-89dd-4a2e-9eea-125206a5328e",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy On6",
+    "slug": "samsung-galaxy-on6",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-i08wrl5l-rbxr.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "44fd7cff-d3de-46bb-ad86-7e67da749578",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi Note 11T 5G",
+    "slug": "xiaomi-redmi-note-11t-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/8b8e13d6-1d2b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "fd2ae427-366a-4cdb-9d79-a5d5225fc570",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "17",
+    "slug": "xiaomi-17",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/31516f45-89f7.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "7bc43bcd-57f7-49a3-bc24-f5de2588ea14",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy M01",
+    "slug": "samsung-galaxy-m01",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/c3abaf96-2834.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "fd6ace07-b2f5-4c1c-bc0d-eb6013514bde",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y300 Plus 5G",
+    "slug": "vivo-y300-plus-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/833c7262-3c04.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "222f7a09-8dcc-49fd-9b99-93b4be828efa",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy J7 Nxt",
+    "slug": "samsung-galaxy-j7-nxt",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-df3eccv0-t5fe.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8452adcd-2bbd-4e1d-89bd-a6aa488e2609",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 10",
+    "slug": "realme-10",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/4de1cfa2-7e4f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "f2a2f5ae-6fe4-4f2b-98c7-05394ccb7c90",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy M07",
+    "slug": "samsung-galaxy-m07",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b1ed74df-86b7.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "9489af8f-4fde-4505-804f-3de5301b72f0",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy M10s",
+    "slug": "samsung-galaxy-m10s",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/6eb73068-383d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "c93e04b0-eaab-4dee-a7ec-160063a62581",
+    "brandId": "a304427f-242d-4c90-ac8c-c88f96eb6482",
+    "brandSlug": "oppo",
+    "name": "OPPO F11 Pro Avenger Edition",
+    "slug": "oppo-f11-pro-avenger-edition",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/f91feb24-cdb4.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "ea4dbc4b-ff59-47c0-bf7c-760cfbab5e98",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C63 5G",
+    "slug": "realme-c63-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d837c491-0abf.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "822aded2-c52e-402c-a3ed-1b6004e276ed",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 80x 5G",
+    "slug": "realme-narzo-80x-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/cf3427c1-761d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8fb1f284-3fd6-49d6-bd11-f863818a44b2",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo T5x 5G",
+    "slug": "vivo-t5x-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/4e7233e2-2542.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "19b1f5c9-cb14-4bb5-ac84-31b5aa7d5ec3",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C11 2021",
+    "slug": "realme-c11-2021",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/6e1a49a9-455b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a6c9b053-0b44-41bb-a3bb-2b2464b1f314",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy J6 Plus",
+    "slug": "samsung-galaxy-j6-plus",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-rcd0rnhc-labj.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "be9da761-f505-43bb-99ab-3aea568919b9",
+    "brandId": "a304427f-242d-4c90-ac8c-c88f96eb6482",
+    "brandSlug": "oppo",
+    "name": "OPPO Reno16c 5G",
+    "slug": "oppo-reno-16c-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/68bb8ba2-f4fe.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "840093bb-3649-4592-898d-d75c50f3872e",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme P3X 5G",
+    "slug": "realme-p3x-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/realme-p3x-5g-6-gb-128-gb.PNG",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "4612a72f-35ac-4d38-a745-0aed030eed28",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi Note 15 SE 5G",
+    "slug": "xiaomi-redmi-note-15-se-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/6b92cae1-45e4.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8bb667e2-175d-44f4-b5ad-474a77145d06",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 60 5G",
+    "slug": "realme-narzo-60-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/fb70f703-5934.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "5f19f7a3-21e9-4e52-940b-7b740ae766ad",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y31 5G",
+    "slug": "vivo-y31-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d151b1bd-98ae.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "87b9fc5a-0b58-4118-8757-295cec0ab8b5",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme P4 Pro 5G",
+    "slug": "realme-p4-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/dd1474fe-7205.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "cad8cbeb-2e01-482b-9c74-50bc43492407",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT 7 Pro 5G",
+    "slug": "realme-gt-7-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/77c79c12-ab51.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "5a38b1f7-5bf2-4157-bf1a-4306920b36e0",
+    "brandId": "3092f207-359c-4270-8f47-abae496e9a47",
+    "brandSlug": "iqoo",
+    "name": "iQOO Z6 Lite 5G",
+    "slug": "iqoo-z6-lite-5g-4gb",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/ccf77c00-209c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "0ca6538e-937d-403d-a5a5-4d7dc9197ae5",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi Note 15 Pro Plus 5G",
+    "slug": "xiaomi-redmi-note-15-pro-plus",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/e7388055-1e9c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "80f9f8f4-52ab-49b4-a694-983431428e28",
+    "brandId": "b44f7571-812c-4f9b-8dfa-d96ba3e6e377",
+    "brandSlug": "asus",
+    "name": "Asus ROG Phone II ZS660KL",
+    "slug": "asus-rog-phonr-ii-zs660kl",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/988fbca7-7f7b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "3a016a11-aefe-4ca2-884d-b1e11adce484",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo X300 FE",
+    "slug": "vivo-x300-fe",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/7fe99e83-bb3a.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "387f12f9-50cc-4c6f-b484-def010fe504c",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy A37 5G",
+    "slug": "samsung-galaxy-a37-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/33eb7dd6-d8a6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8544aae1-da2e-47e3-b9af-a28521d7ae92",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 16 Pro 5G",
+    "slug": "realme-16-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/0d09374e-c87d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "2dbfd876-3401-48a7-bb9a-9db3a53e5693",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C71",
+    "slug": "realme-c71",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/eff2ccc2-cdb2.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "fe8368fb-0ad4-44d9-9121-35f59b3bfeae",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G57 Power 5G",
+    "slug": "motorola-moto-g57-power-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/790fd4ce-9ea6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "9f4bd1f5-f249-4fab-a573-d851abb1c1e2",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo N65 5G",
+    "slug": "realme-narzo-n65-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/78c01dc6-4bfb.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "2fe622cf-7af6-47a2-98cc-aca43edd39c8",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy Z Flip7 FE 5G",
+    "slug": "samsung-galaxy-z-flip7-fe-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/ca6598b1-cc45.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "f3ca41ab-7c9e-487c-ac45-121445ba5885",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 60 Pro 5G",
+    "slug": "realme-narzo-60-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/32f552be-272b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "4e208dfb-db9b-4384-b931-a375abeb2f90",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G06 Power",
+    "slug": "motorola-moto-g06-power",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/657f3ce6-da6b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "b2f190d3-556e-4d60-8b44-f22812c9afe2",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 60",
+    "slug": "motorola-moto-edge-60",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/da673a8b-0433.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "d55362d8-1290-4452-8d29-ff147ddee991",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G37 5G",
+    "slug": "motorola-moto-g37-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/dacefb3d-6298.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "68b7480f-c6c4-41bb-92af-67ceb62417f3",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo T1",
+    "slug": "vivo-t1-44w",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/537e7248-d102.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e3e290a2-14ea-4a49-bdb7-30eb4310abd7",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "14 Ultra",
+    "slug": "xiaomi-14-ultra",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a037ddf3-05d9.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "4ee164a7-1678-498a-8373-549355a1a976",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C30s",
+    "slug": "realme-c30s",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/45630331-0d11.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "b3da33d3-4320-429e-bf35-340060dcd41a",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT Master Edition",
+    "slug": "realme-gt-master-edition-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/2a33453e-2d3a.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e928e134-cdfd-496f-9ed7-f8735818532b",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi Note 15",
+    "slug": "xiaomi-redmi-note-15",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/f7e4ce32-614f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a313eb5b-34da-4b0e-b1b9-308d4747f50d",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C83 5G",
+    "slug": "realme-c83-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b1e12ee2-b3f9.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "ebb37713-543b-4369-9078-bd77cdc9c0c0",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT 2 Pro",
+    "slug": "realme-gt-2-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/8dfd6fee-81e5.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "77b1c2c1-4369-40cd-b23f-4d67def9df05",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi K50i 5G",
+    "slug": "xiaomi-redmi-k50i",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/70720a89-610e.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8c9442d4-8572-4089-a058-a497ba5ee0eb",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 50i",
+    "slug": "realme-narzo-50i",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/33a87ef5-ff54.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "133e3a15-f5bc-4f01-bbcd-54a151ca9a48",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "13 Pro 5G",
+    "slug": "xiaomi-13-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/2c6c1fa5-91d9.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "6538a1fd-da1a-41c3-94d7-60a749bf869d",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 12 5G",
+    "slug": "realme-12",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5e437c7e-b941.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "25fa0bc1-8e6c-4803-97a5-46c50184e380",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Razr 50",
+    "slug": "motorola-moto-razr-50",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/376b667f-01b2.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8d05586d-5918-4f9b-8709-e58ceb4a0745",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 13 5G",
+    "slug": "realme-13",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b2ea5471-1c65.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "442c04b2-c9b9-4eca-86b3-5a22347ac3d3",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 80 Lite 4G",
+    "slug": "realme-narzo-80-lite-4g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/3d5aad4a-f338.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "090899ad-f45e-4f65-820f-36c179b9f099",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT 8 Pro",
+    "slug": "realme-gt-8-pto",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/60efc95b-e404.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "72d7abe4-2531-40ae-9601-0c2f270fe7ab",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "12 Pro 5G",
+    "slug": "xiaomi-12-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5f7f3d40-6976.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "96704750-4c26-48c5-92e7-c8ae5451992b",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y81i",
+    "slug": "vivo-y81i-2-gb-16gb",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-kgkf3onw-2yqj.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "91096bf3-5d86-4f77-aa8c-49b071b53c3f",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Mi 10",
+    "slug": "xiaomi-mi-10-8-gb-1280gb",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/e4426f4d-2c94.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "04806001-235f-4a9f-92bc-601da558491f",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 70 Pro Plus 5G",
+    "slug": "motorola-moto-edge-70-pro-plus-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/f15bbaa8-f321.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "1658860a-ba22-4a83-8e30-18a979b9df45",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 11 5G",
+    "slug": "realme-11",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/23de6d65-524b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "9435448d-72cb-4f31-b8a8-265ef8e26649",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 14 Pro Lite 5G",
+    "slug": "realme-14-pro-lite-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/6b3bf7b7-ec14.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "91705fcb-d930-4a34-aa5e-76a067e4bebe",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi 11i 5G",
+    "slug": "xiaomi-11i",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/32f6095e-400c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "ab994911-4cb9-4338-a713-98bd0fe1e026",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G05",
+    "slug": "motorola-moto-g05",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5a3bd008-9fe6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "b850a4a4-34f5-4d73-b00b-dbe7e53d8ac8",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 70 Pro 5G",
+    "slug": "motorola-moto-edge-70-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/5b5bde0f-2627.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "7698efd2-d002-43fc-a250-c6a1c1564608",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT Neo 2",
+    "slug": "realme-gt-neo-2-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/3ac4a9e7-0c57.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "1c4cebf3-5b87-41d7-b27e-f3ed6b8a03f9",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G84 5G",
+    "slug": "motorola-moto-g84-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/952d33f8-250e.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "041841f5-3798-45ec-8097-dffd8b8303cb",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C53",
+    "slug": "realme-c53-4-gb-128gb",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/8c7c7752-de4b.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "21043dfa-3493-4b8e-8cbe-877fe0e59048",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi Note 15 Pro 5G",
+    "slug": "xiaomi-redmi-note-15-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/0a166ec1-32b6.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "bdf24bf6-f9fd-4ec0-a384-d35cb3659a9c",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme C100x",
+    "slug": "realme-c100x",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/88dfd915-f4ca.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "38cfb6e6-32e9-4c4c-be39-7820cf6a488e",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y28e 5G",
+    "slug": "vivo-y28e-5g-4gb",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/6bce45f8-c81a.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "f8988fb5-7cdc-4bdd-92af-62ecc3b9c23b",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi Redmi Note 11",
+    "slug": "xiaomi-redmi-note-11-4g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/2d93f49f-eeb8.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "3a60f0c7-aad2-42ac-a3dc-21520d52510c",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G04s",
+    "slug": "motorola-moto-g04s",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/38604777-4deb.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "3ea5ba30-216e-411d-b18d-fc23a81bd4fe",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy M01s",
+    "slug": "samsung-galaxy-m01s",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b0f521dd-326f.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "41d5a72e-3c74-40b5-83ed-8d070fbf411d",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy Z Flip7 FE 5G",
+    "slug": "samsung-galaxy-z-flip-7-fe",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/2db446da-f5cf.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "910ec691-23b5-4c7e-a2cc-7385bcd8b403",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y05",
+    "slug": "vivo-y05",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/0d49eb70-3982.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "5973f62b-7c86-4dc1-8250-7f3523165573",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 30 5G",
+    "slug": "realme-narzo-30-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/23cbfcf7-33d5.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8a31dbcf-2db5-441f-a767-23edf0f0dcb9",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Xiaomi 11i HyperCharge 5G",
+    "slug": "xiaomi-11i-hypercharge",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/128a38c0-6932.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "29f2e0b9-96e3-4228-9874-b7ceea0ce397",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 9 Pro Plus 5G",
+    "slug": "realme-9-pro-plus",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a009f63e-f435.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8b700b9e-eaca-4686-ac03-12d99664100b",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 50",
+    "slug": "motorola-moto-edge-50",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/51a349d2-28ab.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "2b5d809e-f6d2-4f5c-8d18-762be1f5704f",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 70",
+    "slug": "motorola-moto-edge-70",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/0122701f-9b25.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "3bf1705d-72fe-4523-828d-d8bcf336a120",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme Narzo 60X 5G",
+    "slug": "realme-narzo-60x",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/c21c9870-409c.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "13b51d56-4c09-40c2-83c9-dd6dcf793cbd",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y400 Pro 5G",
+    "slug": "vivo-y400-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/99327571-f458.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "da2dc74f-fe5b-4c6c-a12c-a41d45da4510",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo T4X 5G",
+    "slug": "vivo-t4x",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/b1d700ee-cad7.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "054a9e9b-ae06-46c1-a69b-549f1ad4b1a5",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "Redmi A7 Pro",
+    "slug": "xiaomi-redmi-a7-pro",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/7094dc3c-a863.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "3a9ce52a-a95d-41d3-8477-e69d25a098bd",
+    "brandId": "8e635d5e-8ede-43e2-b895-66429b962fc2",
+    "brandSlug": "xiaomi",
+    "name": "11i 5G",
+    "slug": "xiaomi-11i-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/683bb313-2881.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "4b566116-1ab4-4303-9d62-5189d4ee855d",
+    "brandId": "6673cd55-a5d2-4d5a-a129-9d96400d6cf4",
+    "brandSlug": "poco",
+    "name": "POCO F3 GT",
+    "slug": "poco-fe-gt",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a77d66ef-4315.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "5a56cb20-3098-4c76-a594-2ecbfd12246a",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Razr 40 Ultra",
+    "slug": "motorola-moto-razr-40-ultra",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a117f01a-ee71.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e3d71055-4569-45bb-aa47-c1928d992643",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G8 Plus",
+    "slug": "motorola-moto-g8-plus",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/32df8080-b860.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "ac9a8c31-a808-4497-9a25-1c5844025864",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 70 Pro 5G",
+    "slug": "motorola-moto-edge-70-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/0faf5cb3-1dc5.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "93d9d7b5-adb1-4942-8570-cef3bdc80b53",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G86 Power 5G",
+    "slug": "motorola-moto-g86-power-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/254b25c1-dbe5.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a554587a-a907-4a3c-ab10-a37a5158eb26",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme GT Neo 3T",
+    "slug": "realme-gt-neo-3t-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/d2c26923-e58d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "a18252d9-f4c7-4109-b457-21da14e956e6",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 14 Pro Lite 5G",
+    "slug": "realme-14-pro-lite",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/316a76a0-1b67.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "e0e0fb49-7451-4d62-8545-a089b37e7ffb",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo Y19e",
+    "slug": "vivo-y19e",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/ad332079-0927.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "f6d1d547-6459-4dc8-911c-5bedcc5bc182",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Razr 40",
+    "slug": "motorola-moto-razr-40",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/88a4ca1e-f15d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "eb8467ec-fcb4-421e-b669-d2f6c736360f",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto Edge 60 Pro",
+    "slug": "motorola-moto-edge-60-pro-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/e3d735d0-832d.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "5937730b-6ab6-4c15-b27f-19ea5c8e4b83",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy A06",
+    "slug": "samsung-galaxya-a06",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/3db7e14e-30c8.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "3d73d29c-e2ee-49c3-b6cd-88e883166fd0",
+    "brandId": "adb0ff54-40d2-4a24-89a7-aed4c9e50221",
+    "brandSlug": "motorola",
+    "name": "Motorola Moto G14",
+    "slug": "motorola-moto-g14",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/a3954b94-81df.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "9bc40e77-9a4f-4220-b73f-62f29607de54",
+    "brandId": "9c556d50-b9ff-4a70-b92e-2cd26d15217f",
+    "brandSlug": "vivo",
+    "name": "Vivo V70 Elite",
+    "slug": "vivo-v70-elite-5g",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/8f6436e3-7eb9.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "8c7c0ac9-545b-485d-bc63-e6c413c18ff9",
+    "brandId": "550e8400-e29b-41d4-a716-446655440002",
+    "brandSlug": "samsung",
+    "name": "Samsung Galaxy S8",
+    "slug": "samsung-galaxy-s8",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/csh-im7ohvek-alsj.png",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  },
+  {
+    "id": "6d51cfc8-01e5-4a74-a11e-4c8fdbf809e9",
+    "brandId": "c51ce35b-b4d4-4349-979d-02cad1bab152",
+    "brandSlug": "realme",
+    "name": "Realme 14 Pro Plus 5G",
+    "slug": "realme-14-pro-plus",
+    "imageUrl": "https://s3n.cashify.in/cashify/product/ee7ec527-93a5.jpg",
+    "releaseYear": 2024,
+    "popular": false,
+    "active": true,
+    "contactForPrice": false,
+    "category": "MOBILE"
+  }
+];
+
+export const INITIAL_MODELS: DeviceModelData[] = [...MOBILE_MODELS_PART_5, ...MOBILE_MODELS_PART_1, ...MOBILE_MODELS_PART_2, ...MOBILE_MODELS_PART_3, ...MOBILE_MODELS_PART_4, ...LAPTOP_MODELS_PART_1, ...LAPTOP_MODELS_PART_2, ...TABLET_MODELS_PART_1, ...TABLET_MODELS_PART_2];
 
 const MOBILE_VARIANTS_PART_1: DeviceVariantData[] = [
   {
@@ -65075,7 +69096,13600 @@ const TABLET_VARIANTS_PART_3: DeviceVariantData[] = [
   }
 ];
 
-export const INITIAL_VARIANTS: DeviceVariantData[] = [...MOBILE_VARIANTS_PART_1, ...MOBILE_VARIANTS_PART_2, ...MOBILE_VARIANTS_PART_3, ...MOBILE_VARIANTS_PART_4, ...MOBILE_VARIANTS_PART_5, ...MOBILE_VARIANTS_PART_6, ...MOBILE_VARIANTS_PART_7, ...MOBILE_VARIANTS_PART_8, ...MOBILE_VARIANTS_PART_9, ...MOBILE_VARIANTS_PART_10, ...MOBILE_VARIANTS_PART_11, ...MOBILE_VARIANTS_PART_12, ...LAPTOP_VARIANTS_PART_1, ...LAPTOP_VARIANTS_PART_2, ...TABLET_VARIANTS_PART_1, ...TABLET_VARIANTS_PART_2, ...TABLET_VARIANTS_PART_3];
+
+const MOBILE_VARIANTS_PART_13: DeviceVariantData[] = [
+  {
+    "id": "0b591d95-5556-4a2d-b64b-a36b57c08b7a",
+    "modelId": "57fc294d-9e6b-402c-9d92-0c62f4d1f086",
+    "storage": "256 GB",
+    "basePrice": 19500,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "923d7f58-a11a-4335-97fe-509b1ec3cfb1",
+    "modelId": "57fc294d-9e6b-402c-9d92-0c62f4d1f086",
+    "storage": "128 GB",
+    "basePrice": 19500,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "1976b6bb-db7a-4f2e-8eef-9a7205055b56",
+    "modelId": "a042b2ac-5004-479d-a848-c00b760e904f",
+    "storage": "128 GB",
+    "basePrice": 7650,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "8c8118c5-06f6-4c5d-8ed2-1cde02b5abf4",
+    "modelId": "a042b2ac-5004-479d-a848-c00b760e904f",
+    "storage": "128 GB",
+    "basePrice": 7650,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "e4c3e0e1-185c-470b-bbc3-a4080cb90bc9",
+    "modelId": "9546f47b-960b-4b8b-bb6c-1f2df37f79be",
+    "storage": "256 GB",
+    "basePrice": 34250,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "5f60f6fa-6d4b-47a6-bd7c-ab067afc0fa1",
+    "modelId": "9546f47b-960b-4b8b-bb6c-1f2df37f79be",
+    "storage": "512 GB",
+    "basePrice": 34250,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "59eeae1a-0e25-42c9-bf6a-5e2d205ff9f6",
+    "modelId": "e392fabb-6b0b-4057-9f82-c36504ab249b",
+    "storage": "256 GB",
+    "basePrice": 29370,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "9fb855c6-fd16-4e22-a158-656eec998512",
+    "modelId": "e392fabb-6b0b-4057-9f82-c36504ab249b",
+    "storage": "256 GB",
+    "basePrice": 32070,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "a4694ee9-f76a-4846-bb80-1bd7c9288847",
+    "modelId": "a0b4a525-1f69-4831-b25d-ac62f996b1b5",
+    "storage": "32 GB",
+    "basePrice": 2850,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "e1ecca3c-ee7a-4fe3-a3a2-572198a7cafd",
+    "modelId": "a0b4a525-1f69-4831-b25d-ac62f996b1b5",
+    "storage": "64 GB",
+    "basePrice": 3510,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "0cca57a1-3a11-4770-99d4-598fbb38036a",
+    "modelId": "ad65fc4e-d0f2-40a5-b23c-9dffebb4576d",
+    "storage": "512 GB",
+    "basePrice": 45740,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "5a08d69e-37b7-4886-9fc6-23617d900728",
+    "modelId": "e0a51ea6-0996-4da0-b1f1-3b4caabfbace",
+    "storage": "256 GB",
+    "basePrice": 16660,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "cea3eaaa-8fea-48bb-8e97-2c9a31e7fe51",
+    "modelId": "e0a51ea6-0996-4da0-b1f1-3b4caabfbace",
+    "storage": "128 GB",
+    "basePrice": 16660,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "86006797-94db-420f-812f-c2d3c381b381",
+    "modelId": "e0a51ea6-0996-4da0-b1f1-3b4caabfbace",
+    "storage": "256 GB",
+    "basePrice": 16660,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a0185701-503c-4c6a-8c08-4fb9709d1d35",
+    "modelId": "957e2558-13f6-4e12-a8e2-b1001126a37c",
+    "storage": "64 GB",
+    "basePrice": 4380,
+    "active": true
+  },
+  {
+    "id": "1bdb6543-55c4-411f-bf6a-d7b36bc58f35",
+    "modelId": "957e2558-13f6-4e12-a8e2-b1001126a37c",
+    "storage": "128 GB",
+    "basePrice": 4930,
+    "active": true
+  },
+  {
+    "id": "edf83c19-f80e-45e0-af1d-aaa8fcdbaa31",
+    "modelId": "9f4148df-49e9-48c6-ba4b-4ad8145ab776",
+    "storage": "64 GB",
+    "basePrice": 3780,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "e3a862fc-2bdf-4755-8286-3047d3515828",
+    "modelId": "9f4148df-49e9-48c6-ba4b-4ad8145ab776",
+    "storage": "128 GB",
+    "basePrice": 4190,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "03160870-900b-4432-ae2d-e7226ff2c20f",
+    "modelId": "9f4148df-49e9-48c6-ba4b-4ad8145ab776",
+    "storage": "128 GB",
+    "basePrice": 4470,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "b8b96c00-def1-4ec3-ab60-4db1eaee97d4",
+    "modelId": "1f146fc2-89cd-428f-95f8-27a12bbfce04",
+    "storage": "128 GB",
+    "basePrice": 10050,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "d467acac-3af9-47b4-af05-9a07c91b9aee",
+    "modelId": "1f146fc2-89cd-428f-95f8-27a12bbfce04",
+    "storage": "128 GB",
+    "basePrice": 10050,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "47da716b-d7c3-4f10-86c0-8f89734b6879",
+    "modelId": "1f146fc2-89cd-428f-95f8-27a12bbfce04",
+    "storage": "256 GB",
+    "basePrice": 10050,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "05b6638f-8bc0-499e-96a5-1e8503df7656",
+    "modelId": "0e8eac4d-d99c-4015-a360-1e8a17f45ffd",
+    "storage": "256 GB",
+    "basePrice": 16930,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "633a4ca2-3b21-4494-b254-4edace6388e4",
+    "modelId": "0e8eac4d-d99c-4015-a360-1e8a17f45ffd",
+    "storage": "128 GB",
+    "basePrice": 16930,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "488a7c59-e2a7-49db-9372-e86546e4c47a",
+    "modelId": "4e5f0a2c-cda1-48a2-9136-4ee728dc9788",
+    "storage": "128 GB",
+    "basePrice": 5960,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "8f41add8-76a0-49dd-993f-96b393acf789",
+    "modelId": "3f320a24-19aa-4e2b-b503-442aa82d48ab",
+    "storage": "128 GB",
+    "basePrice": 18900,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "3a1782bb-ffb1-41d6-b73d-26d900efc0cc",
+    "modelId": "3f320a24-19aa-4e2b-b503-442aa82d48ab",
+    "storage": "256 GB",
+    "basePrice": 18900,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0c8c5152-6ec3-4a8e-a189-7fc885ee4288",
+    "modelId": "ae5ff80a-7ffb-4dae-9a10-3f2efa813397",
+    "storage": "256 GB",
+    "basePrice": 26240,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "c133e746-9fa9-4b7f-beb0-d870c8ee1a54",
+    "modelId": "ae5ff80a-7ffb-4dae-9a10-3f2efa813397",
+    "storage": "256 GB",
+    "basePrice": 26240,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b86eaa57-45fe-4835-abb7-62a6bba361a2",
+    "modelId": "b60b6bc7-f453-47c6-ab65-629ff64d6b39",
+    "storage": "1 TB",
+    "basePrice": 42080,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "7c173c52-c0f6-427e-9895-cc66758f1c12",
+    "modelId": "b60b6bc7-f453-47c6-ab65-629ff64d6b39",
+    "storage": "512 GB",
+    "basePrice": 42080,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "b878596d-b868-40e0-83cd-24795ff421d1",
+    "modelId": "b60b6bc7-f453-47c6-ab65-629ff64d6b39",
+    "storage": "256 GB",
+    "basePrice": 42080,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "59026e67-1e64-4e91-802b-7ea1d64dbde0",
+    "modelId": "14f92231-15df-46f4-a606-27e82b610547",
+    "storage": "64 GB",
+    "basePrice": 8075,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "f06a7926-8378-4cfc-9acf-f3eb76c4f550",
+    "modelId": "1b29f668-e579-476c-a19b-400d371b14ff",
+    "storage": "64 GB",
+    "basePrice": 4510,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "67c7d1ec-c57e-4ae7-8d2d-6c0490253845",
+    "modelId": "1b29f668-e579-476c-a19b-400d371b14ff",
+    "storage": "128 GB",
+    "basePrice": 4510,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "9cc538eb-780d-49f3-8989-8c0b03b36fb9",
+    "modelId": "2a0b90f3-8a57-4bf2-bdba-2b7a9638431a",
+    "storage": "512 GB",
+    "basePrice": 31350,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "14aa4b4c-ee74-481f-bb95-963fa32280d3",
+    "modelId": "8c6c975e-92c1-4733-a16e-1055041cc9b0",
+    "storage": "128 GB",
+    "basePrice": 15690,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "773b38de-60bf-461a-a47f-b4d1c468ad85",
+    "modelId": "8c6c975e-92c1-4733-a16e-1055041cc9b0",
+    "storage": "256 GB",
+    "basePrice": 15690,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "4222d1e7-02f9-4455-8df4-ad737278f231",
+    "modelId": "351b849b-3e58-44cd-bbb4-6abe975188ef",
+    "storage": "64 GB",
+    "basePrice": 3010,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "0aafed0b-1f2e-41d5-ae72-1d4a03478baf",
+    "modelId": "351b849b-3e58-44cd-bbb4-6abe975188ef",
+    "storage": "128 GB",
+    "basePrice": 3210,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "57553bd4-cfff-4c3b-b0af-6e6b78940890",
+    "modelId": "1644fc4d-f02d-4005-8b08-111827cdc3b4",
+    "storage": "256 GB",
+    "basePrice": 96030,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "5e5a70b5-39f6-4d73-a73f-3bb7f96c88b1",
+    "modelId": "1644fc4d-f02d-4005-8b08-111827cdc3b4",
+    "storage": "1 TB",
+    "basePrice": 96030,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "43b1fa7e-edef-49a1-be24-98a097ed48e9",
+    "modelId": "1644fc4d-f02d-4005-8b08-111827cdc3b4",
+    "storage": "512 GB",
+    "basePrice": 96030,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "80cd6cc6-3824-4514-aecd-4633adda83be",
+    "modelId": "44181354-1380-4bb5-9527-541dca259ef8",
+    "storage": "128 GB",
+    "basePrice": 14000,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b4ad7623-5464-4c48-96c9-8b7b3ee4fd74",
+    "modelId": "44181354-1380-4bb5-9527-541dca259ef8",
+    "storage": "256 GB",
+    "basePrice": 16520,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "66e30538-bcca-4457-b83c-e3cc576b7bbd",
+    "modelId": "44181354-1380-4bb5-9527-541dca259ef8",
+    "storage": "256 GB",
+    "basePrice": 16520,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "925ca6ab-4d0e-4e9a-96e1-a1eecf7cd9ef",
+    "modelId": "cee76e79-75a8-4f87-81dd-f250905e81f5",
+    "storage": "256 GB",
+    "basePrice": 36140,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "4dde9c45-804e-4cc8-b214-c30468ab0d66",
+    "modelId": "cee76e79-75a8-4f87-81dd-f250905e81f5",
+    "storage": "512 GB",
+    "basePrice": 36140,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "40815f33-a5c6-4fef-9978-1a40840d40ea",
+    "modelId": "cd970116-58be-46ae-b6a8-0cf2347589b3",
+    "storage": "256 GB",
+    "basePrice": 24550,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "07a8b37b-46b0-4b18-bab4-5089a380cd70",
+    "modelId": "cd970116-58be-46ae-b6a8-0cf2347589b3",
+    "storage": "512 GB",
+    "basePrice": 24550,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "57090bfb-673a-4ede-ad27-d1c10784103d",
+    "modelId": "cd970116-58be-46ae-b6a8-0cf2347589b3",
+    "storage": "256 GB",
+    "basePrice": 24550,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a7553772-6ae6-4a31-8268-55c8bbdb9ed5",
+    "modelId": "bc6c4c16-5d7c-4abf-b06e-e062384d17bc",
+    "storage": "64 GB",
+    "basePrice": 7640,
+    "active": true
+  },
+  {
+    "id": "d0a92655-7a6b-4e0c-98b9-fdc363409de7",
+    "modelId": "bc6c4c16-5d7c-4abf-b06e-e062384d17bc",
+    "storage": "128 GB",
+    "basePrice": 8090,
+    "active": true
+  },
+  {
+    "id": "456957a9-251e-4fb2-ab34-979d8918919d",
+    "modelId": "94d6984e-5ecf-462b-b5a7-e47828a5ae2f",
+    "storage": "128 GB",
+    "basePrice": 13710,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "44084201-df01-496c-b6c9-aa1340c28059",
+    "modelId": "01d445cb-dc35-4325-9f24-c662c1e3b0da",
+    "storage": "256 GB",
+    "basePrice": 13170,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "e13b8c71-8ffc-4057-b31a-eaa97d4a9315",
+    "modelId": "01d445cb-dc35-4325-9f24-c662c1e3b0da",
+    "storage": "128 GB",
+    "basePrice": 13170,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "4bafd424-618a-4f3e-8043-bfb761de04a7",
+    "modelId": "01d445cb-dc35-4325-9f24-c662c1e3b0da",
+    "storage": "256 GB",
+    "basePrice": 13170,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "09f8dab1-2e31-450d-afc4-724eaba5a6a0",
+    "modelId": "c54d70e7-a6b3-45d3-87b5-fedb3a1f641a",
+    "storage": "512 GB",
+    "basePrice": 26730,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "6891e5f0-89f0-4efe-b99b-34a784a042e7",
+    "modelId": "c54d70e7-a6b3-45d3-87b5-fedb3a1f641a",
+    "storage": "256 GB",
+    "basePrice": 26730,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "e78bd9ca-9527-468e-8d04-9c1275411d42",
+    "modelId": "c54d70e7-a6b3-45d3-87b5-fedb3a1f641a",
+    "storage": "512 GB",
+    "basePrice": 26730,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "2ce38456-ab09-4a0c-99f3-d10b9724ff7a",
+    "modelId": "c54d70e7-a6b3-45d3-87b5-fedb3a1f641a",
+    "storage": "256 GB",
+    "basePrice": 26730,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "73495d74-98de-493f-a702-c87279228a48",
+    "modelId": "46d291ee-1932-470d-b444-37c75e0ebc0b",
+    "storage": "128 GB",
+    "basePrice": 11440,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "9d94da98-db27-4ce7-9af9-292743ffb11e",
+    "modelId": "46d291ee-1932-470d-b444-37c75e0ebc0b",
+    "storage": "256 GB",
+    "basePrice": 11440,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "46605ddc-370f-4dd7-ab67-4d391b473372",
+    "modelId": "3f89a2e8-c34d-455a-994b-b7c92838e87a",
+    "storage": "64 GB",
+    "basePrice": 4390,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "f268fdb1-0df0-48df-abf0-6912c4cec173",
+    "modelId": "3f89a2e8-c34d-455a-994b-b7c92838e87a",
+    "storage": "128 GB",
+    "basePrice": 4390,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "78bc8155-13fd-4bfb-86fd-690f83bb1374",
+    "modelId": "3f89a2e8-c34d-455a-994b-b7c92838e87a",
+    "storage": "128 GB",
+    "basePrice": 4390,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "9cb809c0-0c79-4487-af5e-06b85e96386b",
+    "modelId": "3f89a2e8-c34d-455a-994b-b7c92838e87a",
+    "storage": "128 GB",
+    "basePrice": 4390,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b8c93b41-59fd-4380-be0d-da0149bf1b50",
+    "modelId": "4cd5a88a-dcbe-48e8-abe2-f5554ead2c9a",
+    "storage": "128 GB",
+    "basePrice": 12460,
+    "active": true
+  },
+  {
+    "id": "b5062a49-cf2b-498d-9c07-82223442ef0f",
+    "modelId": "4cd5a88a-dcbe-48e8-abe2-f5554ead2c9a",
+    "storage": "256 GB",
+    "basePrice": 13830,
+    "active": true
+  },
+  {
+    "id": "26155d6f-b743-4d53-9ce6-a945acc93345",
+    "modelId": "ef50240e-f9b7-464d-9d5c-5a045b672a0f",
+    "storage": "256 GB",
+    "basePrice": 17700,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "2d061b89-d629-4b04-b2e4-cec5419871c6",
+    "modelId": "ef50240e-f9b7-464d-9d5c-5a045b672a0f",
+    "storage": "256 GB",
+    "basePrice": 17700,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b35b65bb-374f-48fd-a54f-4ced39cb9f85",
+    "modelId": "a4ee6c9a-a6ae-4135-902b-bd6041434a49",
+    "storage": "512 GB",
+    "basePrice": 60640,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "194c09c7-82b3-48eb-aa2b-29ae86951123",
+    "modelId": "a4ee6c9a-a6ae-4135-902b-bd6041434a49",
+    "storage": "256 GB",
+    "basePrice": 60640,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "4307eb12-ad68-4b31-ba4a-307da62dc9c5",
+    "modelId": "bb2a05a1-a07c-4ea3-9071-eb260149956d",
+    "storage": "128 GB",
+    "basePrice": 11450,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "fa32f81b-9d8b-41f9-87ef-113378b5e183",
+    "modelId": "bb2a05a1-a07c-4ea3-9071-eb260149956d",
+    "storage": "128 GB",
+    "basePrice": 11450,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "c02eb034-8845-4d83-bcea-51fa92a90fe0",
+    "modelId": "bb2a05a1-a07c-4ea3-9071-eb260149956d",
+    "storage": "256 GB",
+    "basePrice": 11450,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "3689621a-4f0d-4e46-9979-5eadeae13ae5",
+    "modelId": "def9a5ff-6ef4-453c-a044-c076346f4fab",
+    "storage": "512 GB",
+    "basePrice": 54450,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "3b07dd4d-7ce5-4008-923f-a61b74ceaec8",
+    "modelId": "def9a5ff-6ef4-453c-a044-c076346f4fab",
+    "storage": "256 GB",
+    "basePrice": 54450,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "493dece0-b957-4cd5-a6fe-3e813005951b",
+    "modelId": "fd699827-373c-4a9a-908e-83ae7f88992c",
+    "storage": "128 GB",
+    "basePrice": 20940,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "e1d66dcb-5c07-4ef1-8870-acd9e07fbd2e",
+    "modelId": "fd699827-373c-4a9a-908e-83ae7f88992c",
+    "storage": "256 GB",
+    "basePrice": 20940,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "6257874e-b3dd-4209-972f-716db92193fe",
+    "modelId": "5a205838-0db2-4300-8c5f-02df5443c55c",
+    "storage": "256 GB",
+    "basePrice": 16340,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "acb25329-96e1-4933-96d7-f83bef88038d",
+    "modelId": "5a205838-0db2-4300-8c5f-02df5443c55c",
+    "storage": "256 GB",
+    "basePrice": 16340,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "232aadbc-c064-430b-b324-45ac221f843f",
+    "modelId": "5a205838-0db2-4300-8c5f-02df5443c55c",
+    "storage": "512 GB",
+    "basePrice": 16340,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "cb87506f-88d6-49ba-a68a-4008e81f32a0",
+    "modelId": "6cbc9e93-09a9-4bd8-bfe8-c5ac0c17cbfe",
+    "storage": "128 GB",
+    "basePrice": 10990,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b5cafad5-d6c4-4752-b1e1-11c38b6f20ac",
+    "modelId": "6cbc9e93-09a9-4bd8-bfe8-c5ac0c17cbfe",
+    "storage": "128 GB",
+    "basePrice": 10990,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "3a5d8ad9-7f27-449a-ac2d-3db84856f066",
+    "modelId": "6cbc9e93-09a9-4bd8-bfe8-c5ac0c17cbfe",
+    "storage": "256 GB",
+    "basePrice": 10990,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "82a77b71-0ef5-41ba-a961-5f651fb7ebd3",
+    "modelId": "d22152ce-fc5d-4f4b-838e-7d3da05100c9",
+    "storage": "128 GB",
+    "basePrice": 26990,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "2dbcbcb9-7db6-4363-9e6c-ddb6bc0416d9",
+    "modelId": "d22152ce-fc5d-4f4b-838e-7d3da05100c9",
+    "storage": "256 GB",
+    "basePrice": 28590,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "366e171e-0903-4bcb-950b-aa13ecc39f6b",
+    "modelId": "d22152ce-fc5d-4f4b-838e-7d3da05100c9",
+    "storage": "256 GB",
+    "basePrice": 31040,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "2b365358-1271-43d8-87ae-193875ccc199",
+    "modelId": "ab2c7473-ea3c-4ff5-914d-1b563d01df04",
+    "storage": "128 GB",
+    "basePrice": 8050,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5a81d07f-c272-4c8f-9030-0bfe03e7dca3",
+    "modelId": "ab2c7473-ea3c-4ff5-914d-1b563d01df04",
+    "storage": "256 GB",
+    "basePrice": 8630,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "aa8a0528-1aa2-4181-bde6-35b961730302",
+    "modelId": "ab2c7473-ea3c-4ff5-914d-1b563d01df04",
+    "storage": "256 GB",
+    "basePrice": 9050,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "88f383d4-8966-4b0e-8544-d518d2e53e64",
+    "modelId": "f79ff190-4d78-4b6d-8db7-ccc0064a66d9",
+    "storage": "128 GB",
+    "basePrice": 4320,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "0b29bec6-9102-4ce7-9158-58de14b23dfc",
+    "modelId": "f79ff190-4d78-4b6d-8db7-ccc0064a66d9",
+    "storage": "128 GB",
+    "basePrice": 4320,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "da45a681-dc47-487d-964b-0b84ad2ad39e",
+    "modelId": "f79ff190-4d78-4b6d-8db7-ccc0064a66d9",
+    "storage": "64 GB",
+    "basePrice": 4320,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "ee920936-4621-45b5-9a51-f81c66d0eed1",
+    "modelId": "3fbecf19-f201-4be1-b031-496d370886c3",
+    "storage": "128 GB",
+    "basePrice": 14000,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "ff5ae82c-5303-40a7-b836-0681792ba23e",
+    "modelId": "3fbecf19-f201-4be1-b031-496d370886c3",
+    "storage": "128 GB",
+    "basePrice": 14000,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "3bef0bd9-f96b-43c0-b3bf-e5ad2af5bf32",
+    "modelId": "3fbecf19-f201-4be1-b031-496d370886c3",
+    "storage": "256 GB",
+    "basePrice": 16520,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "f59769a9-2722-49a1-9649-927f2b3701eb",
+    "modelId": "26d20dd6-d2b2-4003-8fb6-7d1fa8d0fa9f",
+    "storage": "128 GB",
+    "basePrice": 5440,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "40632b43-28d2-490d-8436-f9acb16439e4",
+    "modelId": "26d20dd6-d2b2-4003-8fb6-7d1fa8d0fa9f",
+    "storage": "128 GB",
+    "basePrice": 5440,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "fc5e1f9c-6a20-4a4d-99b2-bf6be631e746",
+    "modelId": "26d20dd6-d2b2-4003-8fb6-7d1fa8d0fa9f",
+    "storage": "64 GB",
+    "basePrice": 5440,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "dcacdcb2-7704-4730-8ae4-c8702bea7f4b",
+    "modelId": "214468be-2013-4edd-af47-e48d1767f884",
+    "storage": "256 GB",
+    "basePrice": 11510,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "d23f1d59-0ce1-4afc-87c1-37aa654194a9",
+    "modelId": "214468be-2013-4edd-af47-e48d1767f884",
+    "storage": "256 GB",
+    "basePrice": 11510,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "f0bae29c-d4c8-43d2-afcb-edc0061403a8",
+    "modelId": "16fd611b-d1d9-4142-92f5-1a978b68c235",
+    "storage": "128 GB",
+    "basePrice": 13720,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "11b04d3b-3b50-494c-9ac3-6edf6e68174d",
+    "modelId": "16fd611b-d1d9-4142-92f5-1a978b68c235",
+    "storage": "256 GB",
+    "basePrice": 14860,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "1daeaf45-6522-4aa0-9fc9-3f7634fff72c",
+    "modelId": "16fd611b-d1d9-4142-92f5-1a978b68c235",
+    "storage": "256 GB",
+    "basePrice": 15280,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "f00a953d-8934-465d-a8c3-908438c03cff",
+    "modelId": "7288ca55-6766-41d3-9226-cbd298ee7e08",
+    "storage": "256 GB",
+    "basePrice": 16370,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "4789441f-22c9-4c02-9629-ec044befd0a8",
+    "modelId": "7288ca55-6766-41d3-9226-cbd298ee7e08",
+    "storage": "256 GB",
+    "basePrice": 16810,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "450bdfba-a333-4524-b835-7fcf41f2e93b",
+    "modelId": "0bad33ca-ebd1-413d-b112-61f6c6aabd08",
+    "storage": "256 GB",
+    "basePrice": 8570,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5a75cb38-fae8-4b44-a38d-251db3fef636",
+    "modelId": "0bad33ca-ebd1-413d-b112-61f6c6aabd08",
+    "storage": "128 GB",
+    "basePrice": 8570,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "42bcdd79-0f41-4fd7-b761-9553ff9dc7ac",
+    "modelId": "0bad33ca-ebd1-413d-b112-61f6c6aabd08",
+    "storage": "128 GB",
+    "basePrice": 8570,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0f77f552-07bd-4145-b198-bf3170362dab",
+    "modelId": "fb0fc732-d63b-4017-bf28-7b57a278291b",
+    "storage": "64 GB",
+    "basePrice": 1100,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "33c1bc1a-84ad-43a7-85ee-089950ce0c6b",
+    "modelId": "fb0fc732-d63b-4017-bf28-7b57a278291b",
+    "storage": "32 GB",
+    "basePrice": 1100,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "615fde0b-86c4-410e-af89-461fb12fb171",
+    "modelId": "c2de740a-f37e-4a54-a9bb-e13f7ae6b115",
+    "storage": "32 GB",
+    "basePrice": 2440,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "ae28d641-61d5-4a1c-ab8c-6120e1b222c0",
+    "modelId": "a66dddf0-c6b8-42fd-abee-504f0118c934",
+    "storage": "512 GB",
+    "basePrice": 22280,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "b3820eba-7d30-43c9-b1d7-14a9954ef055",
+    "modelId": "a66dddf0-c6b8-42fd-abee-504f0118c934",
+    "storage": "256 GB",
+    "basePrice": 22280,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "79dbf384-1252-48db-8ae4-78a9a91df5cd",
+    "modelId": "a66dddf0-c6b8-42fd-abee-504f0118c934",
+    "storage": "256 GB",
+    "basePrice": 22280,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "2221e84d-6e77-4bc8-b315-97fc9dfb412e",
+    "modelId": "b92744cc-e512-4ca7-abfa-ea81a203d2b0",
+    "storage": "64 GB",
+    "basePrice": 2250,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "1dfa6b78-5dc5-4eb5-a79b-8f7d3ecd0a65",
+    "modelId": "24922068-36cc-4a14-b9dc-cd58ea63aa18",
+    "storage": "256 GB",
+    "basePrice": 27030,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "fce72226-9da0-46be-abee-bd90d75147fd",
+    "modelId": "24922068-36cc-4a14-b9dc-cd58ea63aa18",
+    "storage": "256 GB",
+    "basePrice": 27030,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "558d348b-d7ec-4f87-b7b4-2a862506efca",
+    "modelId": "24922068-36cc-4a14-b9dc-cd58ea63aa18",
+    "storage": "512 GB",
+    "basePrice": 27030,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "b27b791d-f242-4b7a-ba25-3cdb3e475456",
+    "modelId": "28709a32-c2d9-47dd-88f6-3552813987d5",
+    "storage": "128 GB",
+    "basePrice": 17070,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "86108638-c895-4071-8c3d-6f0269aa4981",
+    "modelId": "28709a32-c2d9-47dd-88f6-3552813987d5",
+    "storage": "256 GB",
+    "basePrice": 18250,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "ed89bd31-6970-4e0c-aa7d-9dfddf806bb8",
+    "modelId": "28709a32-c2d9-47dd-88f6-3552813987d5",
+    "storage": "256 GB",
+    "basePrice": 19230,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "0f2f9a23-db3a-47de-8e94-d0d5dc384d2c",
+    "modelId": "922275b5-53cf-4619-b73a-bd6aa24b3668",
+    "storage": "128 GB",
+    "basePrice": 18900,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "83d31fab-38ed-4264-a2b6-e8ee98acef8e",
+    "modelId": "922275b5-53cf-4619-b73a-bd6aa24b3668",
+    "storage": "256 GB",
+    "basePrice": 21160,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "4f8837ae-637e-4e31-909a-f90deda8f051",
+    "modelId": "922275b5-53cf-4619-b73a-bd6aa24b3668",
+    "storage": "512 GB",
+    "basePrice": 21630,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "a23a8e16-5a4a-46c3-a2a3-bc14d508c13a",
+    "modelId": "21855ef2-b802-498f-aab5-cd284fea0fa5",
+    "storage": "256 GB",
+    "basePrice": 18730,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "de1e361c-f8ec-42bf-b1ec-acfcdb6dc444",
+    "modelId": "21855ef2-b802-498f-aab5-cd284fea0fa5",
+    "storage": "256 GB",
+    "basePrice": 18730,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "059d7856-5168-4796-ba6a-93c8ee4444c0",
+    "modelId": "21855ef2-b802-498f-aab5-cd284fea0fa5",
+    "storage": "128 GB",
+    "basePrice": 18730,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5b7881ee-e0be-4fba-8d45-5206328382c6",
+    "modelId": "6b174dee-2ee8-4ccc-a8d8-5db59adb2794",
+    "storage": "64 GB",
+    "basePrice": 3940,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "5d78946a-68a2-4fc4-bfd8-2d9472849b62",
+    "modelId": "6b174dee-2ee8-4ccc-a8d8-5db59adb2794",
+    "storage": "128 GB",
+    "basePrice": 3940,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "99bc2658-8876-49c3-9e04-c47048c806b2",
+    "modelId": "fc84bc0b-8998-4c32-aa83-f458482bacb2",
+    "storage": "128 GB",
+    "basePrice": 11090,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "1fa9deb4-8c83-4443-be61-c359578d9ac9",
+    "modelId": "fc84bc0b-8998-4c32-aa83-f458482bacb2",
+    "storage": "128 GB",
+    "basePrice": 11090,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "cfd241f2-ef93-48e9-95c1-4aafa638a245",
+    "modelId": "fc84bc0b-8998-4c32-aa83-f458482bacb2",
+    "storage": "64 GB",
+    "basePrice": 11090,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "89d73a8b-14c5-4ee3-ab8a-bc04b009f7f4",
+    "modelId": "4c206336-1a7a-47ec-8bc2-27d8a2a1859a",
+    "storage": "128 GB",
+    "basePrice": 17570,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "4cae75c1-fdc0-4574-9a62-ba2925aad4f1",
+    "modelId": "4c206336-1a7a-47ec-8bc2-27d8a2a1859a",
+    "storage": "256 GB",
+    "basePrice": 17570,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "9f361306-a703-4f70-a31a-f4ea3de8c95d",
+    "modelId": "50cd484e-20ad-4e87-9f58-f44294a2eacf",
+    "storage": "128 GB",
+    "basePrice": 3690,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "96897038-4d23-499c-879a-2e57a2c681b1",
+    "modelId": "50cd484e-20ad-4e87-9f58-f44294a2eacf",
+    "storage": "64 GB",
+    "basePrice": 3690,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "286c93e9-cd91-45fb-ad0d-3de5febb51df",
+    "modelId": "44f3ffe7-0139-48dd-9106-07bc257bd8b7",
+    "storage": "256 GB",
+    "basePrice": 29780,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "7ffa4128-9b36-4a8b-a566-777f500eccb2",
+    "modelId": "44f3ffe7-0139-48dd-9106-07bc257bd8b7",
+    "storage": "256 GB",
+    "basePrice": 31920,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "429bfd90-e3e6-4e1a-957d-079768b64f18",
+    "modelId": "cd4f052b-4e67-4ee8-b92e-d8e843be9d04",
+    "storage": "256 GB",
+    "basePrice": 15530,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "98200da1-3e70-46ee-9f01-4717ee3033bf",
+    "modelId": "58081b01-6d07-40e3-a399-dcec2735cdab",
+    "storage": "128 GB",
+    "basePrice": 14850,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "ee12d2ec-ba33-4ab8-9394-9690ec495652",
+    "modelId": "58081b01-6d07-40e3-a399-dcec2735cdab",
+    "storage": "128 GB",
+    "basePrice": 14850,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "493374fe-ff6a-4879-8af5-07586bd0164f",
+    "modelId": "58081b01-6d07-40e3-a399-dcec2735cdab",
+    "storage": "128 GB",
+    "basePrice": 14850,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "e5afd415-e5b5-41e9-a462-74824c0c6c76",
+    "modelId": "8dea4d16-a9d6-48ba-bd2e-32423e4a4125",
+    "storage": "128 GB",
+    "basePrice": 22200,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "950c2cba-455a-44e2-99d3-8e1f90f06831",
+    "modelId": "8dea4d16-a9d6-48ba-bd2e-32423e4a4125",
+    "storage": "256 GB",
+    "basePrice": 25470,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "48585187-4cdd-4eef-b737-ba1e3656944c",
+    "modelId": "5d06a895-5635-4bcd-831a-9b34125fdd97",
+    "storage": "128 GB",
+    "basePrice": 6680,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "63f856a9-6ba4-4024-b22f-4760fdd7a9ed",
+    "modelId": "5d06a895-5635-4bcd-831a-9b34125fdd97",
+    "storage": "128 GB",
+    "basePrice": 6680,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "95b0339e-a4ec-4bb1-8d83-fd39dba97edf",
+    "modelId": "cc41e0cb-2b2b-4667-b5c5-ec82e9f1b31e",
+    "storage": "64 GB",
+    "basePrice": 3740,
+    "active": true
+  },
+  {
+    "id": "7e5760e2-ade9-4294-afe1-c1b81c9a0901",
+    "modelId": "cc41e0cb-2b2b-4667-b5c5-ec82e9f1b31e",
+    "storage": "128 GB",
+    "basePrice": 4170,
+    "active": true
+  },
+  {
+    "id": "59d75400-6097-4808-bb19-b627b6ec57fe",
+    "modelId": "c547d48d-221a-4e9e-b4d9-c47844d9574c",
+    "storage": "64 GB",
+    "basePrice": 4360,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "a92e71c1-8904-489f-8e32-ccba10c155b8",
+    "modelId": "c547d48d-221a-4e9e-b4d9-c47844d9574c",
+    "storage": "128 GB",
+    "basePrice": 4360,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "6d749de4-afeb-480d-83dc-1e0270cb2101",
+    "modelId": "c547d48d-221a-4e9e-b4d9-c47844d9574c",
+    "storage": "128 GB",
+    "basePrice": 4360,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "d25178b0-e4a8-44a8-8a56-1c7aa1d07fc0",
+    "modelId": "c547d48d-221a-4e9e-b4d9-c47844d9574c",
+    "storage": "128 GB",
+    "basePrice": 4360,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "2ee108ad-2a14-4fee-9b06-5b9972cd98d2",
+    "modelId": "239e76ae-6ac6-4b42-9163-944d0fd76f11",
+    "storage": "128 GB",
+    "basePrice": 9260,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "ba359d3e-3c1c-4f1f-a833-a1a173a629e4",
+    "modelId": "91e123d6-85c5-4c45-8476-b3f79da19098",
+    "storage": "128 GB",
+    "basePrice": 21260,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0072c183-586c-4af1-b21e-e2d1a7c36fa2",
+    "modelId": "91e123d6-85c5-4c45-8476-b3f79da19098",
+    "storage": "256 GB",
+    "basePrice": 22480,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "39561df1-4e08-4dc6-ad43-eb1a453f3afa",
+    "modelId": "91e123d6-85c5-4c45-8476-b3f79da19098",
+    "storage": "256 GB",
+    "basePrice": 24810,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "9347f8ed-1402-48a8-b28a-de5e0919d404",
+    "modelId": "91e123d6-85c5-4c45-8476-b3f79da19098",
+    "storage": "512 GB",
+    "basePrice": 26590,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "872ec102-c4a8-4429-9f6e-10f8b2aaecef",
+    "modelId": "e1c7523f-e0e9-4f5d-b140-518b1aa57a2b",
+    "storage": "128 GB",
+    "basePrice": 8810,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "8cc6cede-485e-4997-b266-fdb69a9a1cd9",
+    "modelId": "e1c7523f-e0e9-4f5d-b140-518b1aa57a2b",
+    "storage": "128 GB",
+    "basePrice": 8810,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "2b410a71-57e3-4590-b72c-81685bb94373",
+    "modelId": "e1c7523f-e0e9-4f5d-b140-518b1aa57a2b",
+    "storage": "128 GB",
+    "basePrice": 8810,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "5b77abc1-ea7e-4e21-afec-4ce8fd03c814",
+    "modelId": "721e549b-528d-4306-b86e-c7bc5bd87c19",
+    "storage": "128 GB",
+    "basePrice": 10690,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "15e35a54-67c7-423d-9f64-d2f07906244a",
+    "modelId": "721e549b-528d-4306-b86e-c7bc5bd87c19",
+    "storage": "128 GB",
+    "basePrice": 10690,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "c2a8e416-65e5-47f3-829d-82077a904813",
+    "modelId": "721e549b-528d-4306-b86e-c7bc5bd87c19",
+    "storage": "64 GB",
+    "basePrice": 10690,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "7e13dfee-1f5d-4974-92b4-b8aa05fc3fd3",
+    "modelId": "6df4eff4-e858-4af0-9ac4-0ba7186b7430",
+    "storage": "128 GB",
+    "basePrice": 19600,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "17ea958d-3d62-4110-8222-506767235425",
+    "modelId": "6df4eff4-e858-4af0-9ac4-0ba7186b7430",
+    "storage": "256 GB",
+    "basePrice": 19600,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "df1a43fe-1f5d-49c2-9799-d3a03236383a",
+    "modelId": "27ee4e09-c4bc-4424-8079-db22b7a0c69b",
+    "storage": "128 GB",
+    "basePrice": 5780,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "2d5ae402-7044-48a2-b31c-13fdc8690c15",
+    "modelId": "49ae097e-f836-4fb8-aa5c-d131805af7b5",
+    "storage": "128 GB",
+    "basePrice": 8550,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "c4ae6e4d-0276-4a24-b10c-280b671fd1f3",
+    "modelId": "49ae097e-f836-4fb8-aa5c-d131805af7b5",
+    "storage": "128 GB",
+    "basePrice": 8550,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b9e5d17b-33ab-4d6e-b278-e1a7ab4206c4",
+    "modelId": "49ae097e-f836-4fb8-aa5c-d131805af7b5",
+    "storage": "256 GB",
+    "basePrice": 8550,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5f6525f0-ecb7-41f1-9e9a-980e6ef34496",
+    "modelId": "f3b44129-3277-4658-8cb5-602a3dd8acd1",
+    "storage": "32 GB",
+    "basePrice": 3100,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "0735312b-6516-4d13-abc0-be0b3c81e9b1",
+    "modelId": "f3b44129-3277-4658-8cb5-602a3dd8acd1",
+    "storage": "64 GB",
+    "basePrice": 3330,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "2ce3da2c-776f-40b2-bd5d-3cdf489654d5",
+    "modelId": "f3b44129-3277-4658-8cb5-602a3dd8acd1",
+    "storage": "64 GB",
+    "basePrice": 3650,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "58a1d0ef-dfed-48a5-aebe-753ac7e7181b",
+    "modelId": "9fc9636a-3d15-49f2-9802-579c507e54f7",
+    "storage": "128 GB",
+    "basePrice": 5230,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "c18c14fa-6e4c-4bd6-b0ac-2977492f2d63",
+    "modelId": "9fc9636a-3d15-49f2-9802-579c507e54f7",
+    "storage": "64 GB",
+    "basePrice": 5230,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "dd701a1f-6d31-464e-be1f-dcd40efd152e",
+    "modelId": "0a249600-fc67-4e5f-aa3e-751e90998b75",
+    "storage": "64 GB",
+    "basePrice": 3950,
+    "active": true
+  },
+  {
+    "id": "a3a9a02a-0e6c-41c4-aab0-42d1119bdfb2",
+    "modelId": "0a249600-fc67-4e5f-aa3e-751e90998b75",
+    "storage": "128 GB",
+    "basePrice": 4200,
+    "active": true
+  },
+  {
+    "id": "32a16f46-81e9-4321-a354-354d8a73372a",
+    "modelId": "d739f242-04b5-4c9c-8de0-720411efd7c7",
+    "storage": "128 GB",
+    "basePrice": 21580,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "021145d4-92c5-49db-8bce-87721bd4b50b",
+    "modelId": "d739f242-04b5-4c9c-8de0-720411efd7c7",
+    "storage": "256 GB",
+    "basePrice": 23920,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "27dded5a-7f4d-4fb4-b5b3-7f4413fda40c",
+    "modelId": "368b052c-0da1-4ca1-b2bc-fd10c57670a4",
+    "storage": "256 GB",
+    "basePrice": 28220,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "097865a7-4128-4f52-aa73-146d7d851595",
+    "modelId": "368b052c-0da1-4ca1-b2bc-fd10c57670a4",
+    "storage": "256 GB",
+    "basePrice": 28220,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "298b5a2b-9bba-4273-bfdd-c0742a2f83d3",
+    "modelId": "368b052c-0da1-4ca1-b2bc-fd10c57670a4",
+    "storage": "128 GB",
+    "basePrice": 28220,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "f28dc231-ca76-4d72-a4a5-a56d5961ff02",
+    "modelId": "a33fc1f0-6cfb-4290-be1b-ba01bace51d5",
+    "storage": "64 GB",
+    "basePrice": 3780,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "13f8ada2-74d7-4273-a40c-5628457d3580",
+    "modelId": "a33fc1f0-6cfb-4290-be1b-ba01bace51d5",
+    "storage": "128 GB",
+    "basePrice": 4270,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "003222ad-5240-4e4a-80ff-3850f5ca4097",
+    "modelId": "a33fc1f0-6cfb-4290-be1b-ba01bace51d5",
+    "storage": "128 GB",
+    "basePrice": 4470,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "124fc0eb-54ec-4286-ab3d-5506cd68d82d",
+    "modelId": "17985e49-3e75-434b-a552-486fc792a77c",
+    "storage": "128 GB",
+    "basePrice": 8360,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "c2a0d793-f717-4bcc-b89a-7eb6d65caa12",
+    "modelId": "17985e49-3e75-434b-a552-486fc792a77c",
+    "storage": "256 GB",
+    "basePrice": 8360,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "13a43056-c9a9-4fc9-b5a7-cbe747eb50ae",
+    "modelId": "17985e49-3e75-434b-a552-486fc792a77c",
+    "storage": "128 GB",
+    "basePrice": 8360,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "16bce474-d109-4ace-9d66-3f588c54f4a7",
+    "modelId": "78ccad15-45e3-431f-8bbb-aa4d060530f4",
+    "storage": "256 GB",
+    "basePrice": 9150,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a3f7b77e-ce67-4080-9935-a2fc79765a38",
+    "modelId": "78ccad15-45e3-431f-8bbb-aa4d060530f4",
+    "storage": "128 GB",
+    "basePrice": 9150,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a8276524-eb5c-4958-a285-7b0dc69c57a5",
+    "modelId": "78ccad15-45e3-431f-8bbb-aa4d060530f4",
+    "storage": "128 GB",
+    "basePrice": 9150,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "b267c35e-e769-4ecc-8807-c9a978bd199a",
+    "modelId": "bda7038c-13bc-40db-a137-e4e4e633d966",
+    "storage": "256 GB",
+    "basePrice": 13580,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "15c1a8b1-c7ee-4b1b-b34d-880272a28fbe",
+    "modelId": "bda7038c-13bc-40db-a137-e4e4e633d966",
+    "storage": "128 GB",
+    "basePrice": 13580,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "56ad2f96-2b06-4858-8a73-072c9518a573",
+    "modelId": "bda7038c-13bc-40db-a137-e4e4e633d966",
+    "storage": "128 GB",
+    "basePrice": 13580,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a733b1cf-5c34-4ec9-ae18-51b152a75408",
+    "modelId": "8444ec81-d116-4401-9535-6ec7e3d1636e",
+    "storage": "256 GB",
+    "basePrice": 10480,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "278635a3-1e8e-4669-9f13-c21ce7267fe6",
+    "modelId": "8444ec81-d116-4401-9535-6ec7e3d1636e",
+    "storage": "128 GB",
+    "basePrice": 10480,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "dc398fb5-04f0-47a0-824c-697a47f7cabe",
+    "modelId": "8444ec81-d116-4401-9535-6ec7e3d1636e",
+    "storage": "128 GB",
+    "basePrice": 10480,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "80a6bb0c-3422-40cd-8de9-607ffcee3234",
+    "modelId": "e93572fc-7a7e-4f8a-8ad5-f28f29d5ded4",
+    "storage": "32 GB",
+    "basePrice": 1460,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "8e1ddecf-144f-43c7-b2e9-3eb6d4c34203",
+    "modelId": "1a196396-a6f2-4a2f-ac30-e4880e1d4232",
+    "storage": "256 GB",
+    "basePrice": 118800,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "57c81354-f69f-48f3-a52c-80f5cbbaf897",
+    "modelId": "1a196396-a6f2-4a2f-ac30-e4880e1d4232",
+    "storage": "512 GB",
+    "basePrice": 118800,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "0c87af26-019d-465f-866a-b66b1ac6583a",
+    "modelId": "1a196396-a6f2-4a2f-ac30-e4880e1d4232",
+    "storage": "1 TB",
+    "basePrice": 118800,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "3fce28e0-7ab2-403f-88ff-5ecaeb6b937c",
+    "modelId": "1645778c-b39c-4581-b1ad-80e369f42af9",
+    "storage": "128 GB",
+    "basePrice": 7910,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a23b61cd-2c9e-4bf4-9e9f-f156cba9f64d",
+    "modelId": "1645778c-b39c-4581-b1ad-80e369f42af9",
+    "storage": "128 GB",
+    "basePrice": 7910,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "a05056f7-56e4-4e2c-b64f-25bb3d2b2ba0",
+    "modelId": "e31036b9-7ce9-4a09-a576-dd6dab357a58",
+    "storage": "64 GB",
+    "basePrice": 3860,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "382ee9e9-f9d8-4d61-b477-f0a71e918e96",
+    "modelId": "e31036b9-7ce9-4a09-a576-dd6dab357a58",
+    "storage": "128 GB",
+    "basePrice": 3860,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "ef21dce8-d7ac-4946-bac9-3167585e5e02",
+    "modelId": "5e4c20e0-86bf-42c3-9532-7cefe26b56b1",
+    "storage": "256 GB",
+    "basePrice": 13460,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "4f3a9452-47f5-4ac9-abe9-2430bbecf45e",
+    "modelId": "5e4c20e0-86bf-42c3-9532-7cefe26b56b1",
+    "storage": "128 GB",
+    "basePrice": 13460,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "2f0c28fa-b0ce-49d9-9d42-f2d8700a4969",
+    "modelId": "b641ea5e-8056-4304-80c3-d03cef9df099",
+    "storage": "128 GB",
+    "basePrice": 7480,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "c7a558f9-f7fd-4a1e-ade5-94b30b1c920a",
+    "modelId": "b641ea5e-8056-4304-80c3-d03cef9df099",
+    "storage": "128 GB",
+    "basePrice": 7690,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "6b254366-522e-49e5-87eb-8961491f4204",
+    "modelId": "5ac6e20e-d01e-48f7-82af-23ffde300791",
+    "storage": "512 GB",
+    "basePrice": 23360,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "535f5e7e-83e0-4490-9f8d-7d2f1e7c7979",
+    "modelId": "5ac6e20e-d01e-48f7-82af-23ffde300791",
+    "storage": "256 GB",
+    "basePrice": 23360,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "af8fd5b7-8ae3-4330-a2bd-f323cc7e773e",
+    "modelId": "5ac6e20e-d01e-48f7-82af-23ffde300791",
+    "storage": "256 GB",
+    "basePrice": 23360,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "2bc22854-23e9-4885-8b72-6b943a38c949",
+    "modelId": "bb0352fb-9522-424b-83f7-3e48e5ea5d1b",
+    "storage": "64 GB",
+    "basePrice": 7280,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "36511718-e622-491f-9de3-d291c5e4af4a",
+    "modelId": "bb0352fb-9522-424b-83f7-3e48e5ea5d1b",
+    "storage": "128 GB",
+    "basePrice": 7750,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "ea5f710f-36c3-4d02-9c7e-ba2d86017363",
+    "modelId": "bb0352fb-9522-424b-83f7-3e48e5ea5d1b",
+    "storage": "128 GB",
+    "basePrice": 4740,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a380dc0f-19f0-42cd-9366-c51d698326cc",
+    "modelId": "175386cd-e337-42f8-b829-e9e6904b95ff",
+    "storage": "128 GB",
+    "basePrice": 11080,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b25bb346-185b-4880-92ed-f0c1ae37d90c",
+    "modelId": "175386cd-e337-42f8-b829-e9e6904b95ff",
+    "storage": "256 GB",
+    "basePrice": 11570,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "9923ea83-b870-48df-926a-95d5da8ecca3",
+    "modelId": "175386cd-e337-42f8-b829-e9e6904b95ff",
+    "storage": "256 GB",
+    "basePrice": 12320,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "4f83b960-5323-413d-88a3-a33f94b31ca4",
+    "modelId": "37d0e085-6c92-4bcf-88f8-7c8de58e7a08",
+    "storage": "512 GB",
+    "basePrice": 59950,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "a576d2af-8a31-4f01-ab10-741acee3a453",
+    "modelId": "ce5de1c6-a626-488b-b58a-f345dfb36f81",
+    "storage": "128 GB",
+    "basePrice": 17220,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "e84b438d-792a-4203-bab0-ca60e552cd7a",
+    "modelId": "ce5de1c6-a626-488b-b58a-f345dfb36f81",
+    "storage": "256 GB",
+    "basePrice": 17220,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "858a8fc5-8fa0-4c2d-b7f4-19a211bdc0b5",
+    "modelId": "ce5de1c6-a626-488b-b58a-f345dfb36f81",
+    "storage": "256 GB",
+    "basePrice": 17220,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "8549a7f7-61b8-48da-ad6b-e6fc467453c9",
+    "modelId": "494c3c2a-0097-4bbe-89a0-a4873abdd6c8",
+    "storage": "128 GB",
+    "basePrice": 7420,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "be270fc2-da46-4e87-9d24-cae8b9c04ebc",
+    "modelId": "494c3c2a-0097-4bbe-89a0-a4873abdd6c8",
+    "storage": "128 GB",
+    "basePrice": 7420,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "099ed50d-10fd-4c9d-8aae-c10154428eec",
+    "modelId": "4abae69c-faa6-41b1-ad21-a547c663c679",
+    "storage": "256 GB",
+    "basePrice": 26590,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "ef5d213f-c4a8-4ae2-868f-c820fdd76c79",
+    "modelId": "545c531d-1ee6-4ae4-b090-5ccdaec2ea1b",
+    "storage": "256 GB",
+    "basePrice": 16340,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "c7f73cce-58ea-4959-946f-090ad92c9044",
+    "modelId": "545c531d-1ee6-4ae4-b090-5ccdaec2ea1b",
+    "storage": "128 GB",
+    "basePrice": 16340,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "4dde3cdd-615d-4995-99bb-63f46498f262",
+    "modelId": "545c531d-1ee6-4ae4-b090-5ccdaec2ea1b",
+    "storage": "128 GB",
+    "basePrice": 16340,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "4a621d9d-eb3a-46c6-97c8-8ce182108d6b",
+    "modelId": "3a575f15-e228-4e04-a38a-d180a1b53d00",
+    "storage": "64 GB",
+    "basePrice": 4010,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "1af465cf-925f-4462-8c7f-f49e86a9bce6",
+    "modelId": "3a575f15-e228-4e04-a38a-d180a1b53d00",
+    "storage": "128 GB",
+    "basePrice": 4010,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "9a4ab340-2d36-4359-89da-cf4f7e392945",
+    "modelId": "632eea02-ac1b-4638-9d4a-d769a8e762ed",
+    "storage": "64 GB",
+    "basePrice": 6370,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "143a01aa-2c20-4d44-9eec-a770989c8f3a",
+    "modelId": "632eea02-ac1b-4638-9d4a-d769a8e762ed",
+    "storage": "128 GB",
+    "basePrice": 7370,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "7c4714cf-cf66-49c8-b422-d1e7478c678d",
+    "modelId": "e8a59c75-31e8-4190-a80e-7a26648db7bc",
+    "storage": "128 GB",
+    "basePrice": 15680,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "b2229913-8b09-4c13-ae68-60d00c5db1e3",
+    "modelId": "e8a59c75-31e8-4190-a80e-7a26648db7bc",
+    "storage": "128 GB",
+    "basePrice": 16720,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a6d18997-f1a5-4e02-bb49-802b6e89b682",
+    "modelId": "fa2bebe7-5fd5-4869-9ec6-faa8c4646e4f",
+    "storage": "128 GB",
+    "basePrice": 14700,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "1ed96fe0-b375-4da7-bd50-46046496f557",
+    "modelId": "fa2bebe7-5fd5-4869-9ec6-faa8c4646e4f",
+    "storage": "256 GB",
+    "basePrice": 14700,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "dda599e8-8e76-4e40-be9e-38471325dacc",
+    "modelId": "fa2bebe7-5fd5-4869-9ec6-faa8c4646e4f",
+    "storage": "256 GB",
+    "basePrice": 14700,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "d228777d-842d-45c4-bc36-c2cb9890d6c7",
+    "modelId": "39c78025-523a-48be-979b-67478ea04b43",
+    "storage": "256 GB",
+    "basePrice": 25350,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "2cda450d-1d14-4c5f-b4fc-9b5f4d196d54",
+    "modelId": "298c9596-d006-4251-875b-b3f2693ae2df",
+    "storage": "128 GB",
+    "basePrice": 9560,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "eeabf20d-15ec-470b-b045-1d183212c8cc",
+    "modelId": "298c9596-d006-4251-875b-b3f2693ae2df",
+    "storage": "256 GB",
+    "basePrice": 9560,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "4a50e8ac-516d-4f96-9760-c8a1b2e5df22",
+    "modelId": "526692f3-0eb2-4b0e-8eeb-5a4568bb402f",
+    "storage": "128 GB",
+    "basePrice": 7290,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "493e2aa0-54b7-4c24-9155-451ad45df031",
+    "modelId": "526692f3-0eb2-4b0e-8eeb-5a4568bb402f",
+    "storage": "64 GB",
+    "basePrice": 7290,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "88302555-b1f3-4918-944f-3f5f8a6b3d6d",
+    "modelId": "526692f3-0eb2-4b0e-8eeb-5a4568bb402f",
+    "storage": "64 GB",
+    "basePrice": 7290,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "c5e2b6df-dfd9-4173-a135-04358961c8d9",
+    "modelId": "0680625c-4c2d-4ce4-ac9e-8d3d761b1345",
+    "storage": "128 GB",
+    "basePrice": 9370,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "d2549a3b-0368-4756-bafe-b390217d1208",
+    "modelId": "0680625c-4c2d-4ce4-ac9e-8d3d761b1345",
+    "storage": "256 GB",
+    "basePrice": 9370,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "c72b27b8-5765-4369-a83b-249d64e19cad",
+    "modelId": "c0ae8456-a652-4027-aac1-45105dec2057",
+    "storage": "256 GB",
+    "basePrice": 9640,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "14d8cf3e-11cf-4256-a993-8b1ce8cc4770",
+    "modelId": "c0ae8456-a652-4027-aac1-45105dec2057",
+    "storage": "128 GB",
+    "basePrice": 9640,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "421aefc5-04bd-495f-9b8f-a83a37fa916a",
+    "modelId": "f135194d-dd5c-4628-a873-1e30dc9f7954",
+    "storage": "128 GB",
+    "basePrice": 6460,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "79e3495d-e821-4c2f-a299-771275a97b40",
+    "modelId": "f135194d-dd5c-4628-a873-1e30dc9f7954",
+    "storage": "64 GB",
+    "basePrice": 6460,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "d681bd32-6508-4794-8523-8765d714b66f",
+    "modelId": "fbdd1120-c0ab-4810-b4d1-57bdb64df1e6",
+    "storage": "64 GB",
+    "basePrice": 3450,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "499e47ea-80a1-4dd8-a73d-7d9e3433113a",
+    "modelId": "fbdd1120-c0ab-4810-b4d1-57bdb64df1e6",
+    "storage": "32 GB",
+    "basePrice": 3450,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "05687101-74e8-455c-a3c8-f9c5db2d969b",
+    "modelId": "085aee0d-e91e-487f-baed-cde878bb3f6e",
+    "storage": "512 GB",
+    "basePrice": 70790,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "a43dd0fe-4187-42fd-b780-979af50cc9b2",
+    "modelId": "085aee0d-e91e-487f-baed-cde878bb3f6e",
+    "storage": "256 GB",
+    "basePrice": 70790,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "ac6d655b-d0d1-4a3b-a50e-3db0cc080444",
+    "modelId": "fe1ecaa8-5495-4f71-b5f4-4936a149572f",
+    "storage": "128 GB",
+    "basePrice": 12580,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "38ea0830-d330-414f-9e8b-d2bfd6a7c054",
+    "modelId": "fe1ecaa8-5495-4f71-b5f4-4936a149572f",
+    "storage": "128 GB",
+    "basePrice": 13520,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b7399a80-8368-49d3-be72-e55e8bc5e324",
+    "modelId": "a3b6bdba-8ee5-4edb-9915-b08873965103",
+    "storage": "128 GB",
+    "basePrice": 5380,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "5c8f6bcc-d66f-450c-8546-b35d9c555991",
+    "modelId": "a3b6bdba-8ee5-4edb-9915-b08873965103",
+    "storage": "128 GB",
+    "basePrice": 5380,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "a5ac0bcd-8c3c-41ed-a7da-6a5c12ea8558",
+    "modelId": "f4c89e6f-d6c9-400e-b717-1c95fddae23b",
+    "storage": "128 GB",
+    "basePrice": 9700,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "39cb988b-318e-42ad-9e04-bc3620a317f8",
+    "modelId": "f4c89e6f-d6c9-400e-b717-1c95fddae23b",
+    "storage": "128 GB",
+    "basePrice": 9700,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "94e44cc0-23e3-43e1-83e4-f5fbb1c4667e",
+    "modelId": "bc8acfec-efc2-43cb-8091-d701471d4e84",
+    "storage": "64 GB",
+    "basePrice": 5570,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "ae5d4da8-7c0c-409b-8051-59463f0326e7",
+    "modelId": "bc8acfec-efc2-43cb-8091-d701471d4e84",
+    "storage": "128 GB",
+    "basePrice": 5570,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "2f28dbc6-7685-4da3-b3b6-aa3db41d1154",
+    "modelId": "bc8acfec-efc2-43cb-8091-d701471d4e84",
+    "storage": "128 GB",
+    "basePrice": 5570,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "21f65a78-f583-4259-9375-8701bd4b4415",
+    "modelId": "6be51a00-68e4-4798-aff1-d3fe9373b548",
+    "storage": "128 GB",
+    "basePrice": 10890,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "0be3f36f-0b1e-41e9-8fdc-beee2e13ed4a",
+    "modelId": "6be51a00-68e4-4798-aff1-d3fe9373b548",
+    "storage": "64 GB",
+    "basePrice": 10890,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "c1988793-218f-40ef-ae86-4ac77055891b",
+    "modelId": "25753045-fa4f-4aad-adb0-f34315d5b932",
+    "storage": "128 GB",
+    "basePrice": 10250,
+    "active": true
+  },
+  {
+    "id": "7a79f0cc-ded3-4b84-b1ac-1e117a16bfb3",
+    "modelId": "25753045-fa4f-4aad-adb0-f34315d5b932",
+    "storage": "256 GB",
+    "basePrice": 11820,
+    "active": true
+  },
+  {
+    "id": "10acaa21-fc3c-4ce7-86ab-22ba304cf333",
+    "modelId": "1d15babf-3f11-4f84-bbd5-bea2b54697c8",
+    "storage": "512 GB",
+    "basePrice": 40590,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "a5de76a3-18dd-486b-8198-3fdb21b9d7f3",
+    "modelId": "1d15babf-3f11-4f84-bbd5-bea2b54697c8",
+    "storage": "256 GB",
+    "basePrice": 40590,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "237a3bf7-dcd2-4b5a-a4e1-f46447dea32c",
+    "modelId": "9948bcb5-72f0-4c4e-842e-b7300615e1b1",
+    "storage": "128 GB",
+    "basePrice": 7370,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "1430f23d-0792-4358-af14-ffc333c116f6",
+    "modelId": "9948bcb5-72f0-4c4e-842e-b7300615e1b1",
+    "storage": "128 GB",
+    "basePrice": 7760,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "9c5aa9cb-6594-46b0-b87d-aa9ef32b43f5",
+    "modelId": "5fd4e6c1-8add-469e-b31f-6c2330ff9c42",
+    "storage": "64 GB",
+    "basePrice": 1610,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "a690115e-28e8-4556-8bcc-f4bec81732fc",
+    "modelId": "5fd4e6c1-8add-469e-b31f-6c2330ff9c42",
+    "storage": "32 GB",
+    "basePrice": 1610,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "7aa630ba-d087-4d95-9f81-b941fa07223e",
+    "modelId": "8389a846-17b4-4ef4-9339-90aad5e0a822",
+    "storage": "128 GB",
+    "basePrice": 6220,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "7a66472d-87f5-41f7-8906-f2929dd8c91b",
+    "modelId": "8389a846-17b4-4ef4-9339-90aad5e0a822",
+    "storage": "128 GB",
+    "basePrice": 6220,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "1003a682-ac80-4daf-bf13-38f1cb232066",
+    "modelId": "8389a846-17b4-4ef4-9339-90aad5e0a822",
+    "storage": "64 GB",
+    "basePrice": 6220,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "37b167a7-e64e-48a0-a320-4e2faba6ff8a",
+    "modelId": "bbba07e3-2bf5-4ba5-adf4-9377606b7359",
+    "storage": "128 GB",
+    "basePrice": 8810,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "dc647e1c-4221-4ecc-bea1-4bf6f76dfeb2",
+    "modelId": "b0ea66c6-b505-44ef-8530-971189696537",
+    "storage": "128 GB",
+    "basePrice": 7220,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "6741a801-0858-4d20-9f7e-0d3484f84026",
+    "modelId": "b0ea66c6-b505-44ef-8530-971189696537",
+    "storage": "128 GB",
+    "basePrice": 7220,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "9958a450-aeb9-4dd8-81d4-f3e15a72b30a",
+    "modelId": "9cd738c4-f9a8-4f67-9d7f-5d79a5afa1be",
+    "storage": "128 GB",
+    "basePrice": 8590,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b3807578-e8f4-409c-a4fe-efdbbcda503e",
+    "modelId": "9cd738c4-f9a8-4f67-9d7f-5d79a5afa1be",
+    "storage": "128 GB",
+    "basePrice": 8590,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "5b443b5b-6302-402c-aec2-51165042a36f",
+    "modelId": "9de5d710-f715-4d78-a249-a431dc7663c7",
+    "storage": "256 GB",
+    "basePrice": 8850,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "78570bae-df87-46cb-b5e7-fe37475446b9",
+    "modelId": "9de5d710-f715-4d78-a249-a431dc7663c7",
+    "storage": "128 GB",
+    "basePrice": 8850,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b3576c9c-276a-4372-89ef-55b58581e09c",
+    "modelId": "4eeaeb8d-3d87-4e9e-b498-8b81bb721960",
+    "storage": "128 GB",
+    "basePrice": 8890,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "ce67388f-7606-4a22-a8b7-39d772c7873f",
+    "modelId": "4eeaeb8d-3d87-4e9e-b498-8b81bb721960",
+    "storage": "128 GB",
+    "basePrice": 8890,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "270c19ba-15db-4f15-9a5b-44ec128521fc",
+    "modelId": "edf7013c-6843-4026-9f1c-b5668c8fe221",
+    "storage": "64 GB",
+    "basePrice": 4460,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "cb6a8b9f-1b49-4088-b6ec-8cf33d38a440",
+    "modelId": "edf7013c-6843-4026-9f1c-b5668c8fe221",
+    "storage": "128 GB",
+    "basePrice": 4460,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "b99b6a70-25d7-4a0e-8870-70a43f89d1ed",
+    "modelId": "9a9dc048-2fe4-4b63-8c47-18d0da845927",
+    "storage": "128 GB",
+    "basePrice": 5640,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "abf4c33c-282b-4319-871b-5b35cb7d4d5d",
+    "modelId": "3430cece-a443-4dd8-ae73-a99133fcb9a6",
+    "storage": "128 GB",
+    "basePrice": 8900,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0714efcf-7c32-455f-8ca7-09865b238ca2",
+    "modelId": "3430cece-a443-4dd8-ae73-a99133fcb9a6",
+    "storage": "256 GB",
+    "basePrice": 9150,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "e35ac2df-4760-4e2f-ada0-d77f468e5231",
+    "modelId": "973d616e-3424-49e9-a858-6ae9cd41adcc",
+    "storage": "128 GB",
+    "basePrice": 18320,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "3ebe8a77-3e56-4e9c-b3a3-11baea44db71",
+    "modelId": "973d616e-3424-49e9-a858-6ae9cd41adcc",
+    "storage": "128 GB",
+    "basePrice": 18320,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "77e038f5-32cb-48bf-9fed-9de2f2f9c02e",
+    "modelId": "973d616e-3424-49e9-a858-6ae9cd41adcc",
+    "storage": "256 GB",
+    "basePrice": 18320,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "34929ae2-8714-45fc-bcd5-4e3b9522c6c0",
+    "modelId": "8bebbb75-1cfe-4eb3-8721-9359f2789408",
+    "storage": "64 GB",
+    "basePrice": 6090,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "792f7a7d-f8fc-4103-9ccb-fbe794cc3827",
+    "modelId": "8bebbb75-1cfe-4eb3-8721-9359f2789408",
+    "storage": "128 GB",
+    "basePrice": 6090,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "2ff0e78b-8ad0-4a7a-a75f-fc46e5d8c35e",
+    "modelId": "8bebbb75-1cfe-4eb3-8721-9359f2789408",
+    "storage": "128 GB",
+    "basePrice": 6090,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "a2a67ae9-8287-47ab-bfd6-349bbd8159e9",
+    "modelId": "24ca2266-248b-4687-aeac-c111e849d27d",
+    "storage": "512 GB",
+    "basePrice": 34550,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "effa7968-e781-4969-b798-0985b540c6e5",
+    "modelId": "24ca2266-248b-4687-aeac-c111e849d27d",
+    "storage": "256 GB",
+    "basePrice": 34550,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "9e1be834-3f2e-4934-ac63-ad39179a5b48",
+    "modelId": "e39fe596-3147-4218-b154-da8b542ddeb1",
+    "storage": "256 GB",
+    "basePrice": 16970,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "2a4194ca-ddbf-416a-8e31-476e0600899a",
+    "modelId": "e39fe596-3147-4218-b154-da8b542ddeb1",
+    "storage": "128 GB",
+    "basePrice": 16970,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "2f5e47b6-3581-4ba0-a8b4-bcc7811bcd71",
+    "modelId": "e39fe596-3147-4218-b154-da8b542ddeb1",
+    "storage": "256 GB",
+    "basePrice": 16970,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "2edccefd-f4b2-4721-a687-2822dfc9905a",
+    "modelId": "9f1de841-7644-480b-a10d-d718eee438b0",
+    "storage": "128 GB",
+    "basePrice": 22170,
+    "active": true
+  },
+  {
+    "id": "0a46e8fd-2279-4748-8cd0-73c3677db73e",
+    "modelId": "9f1de841-7644-480b-a10d-d718eee438b0",
+    "storage": "256 GB",
+    "basePrice": 24450,
+    "active": true
+  },
+  {
+    "id": "68a20023-8429-46fc-bcd2-6b95acf10644",
+    "modelId": "353bc616-4248-47f9-a90b-8f793c9f910c",
+    "storage": "512 GB",
+    "basePrice": 37320,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "6ddcb69e-ebf0-43d6-bd57-7a281a1917c4",
+    "modelId": "31959c12-add4-458d-b768-fd82de4e5230",
+    "storage": "128 GB",
+    "basePrice": 10790,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "f626683d-38d9-484c-902d-2b815cc45cbb",
+    "modelId": "31959c12-add4-458d-b768-fd82de4e5230",
+    "storage": "256 GB",
+    "basePrice": 10790,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "ce7b6c4c-fa64-4419-824f-bc0fdcf06392",
+    "modelId": "f8781547-69d5-4008-86fb-fc769cdc5d12",
+    "storage": "128 GB",
+    "basePrice": 8140,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "a7d2b8e8-cae4-4ced-9fe2-f8031c2d3312",
+    "modelId": "f8781547-69d5-4008-86fb-fc769cdc5d12",
+    "storage": "128 GB",
+    "basePrice": 8140,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "c577a87d-fa6b-4388-bd1a-dba549847192",
+    "modelId": "5fbc6185-f4fe-4849-a1b9-40c800170a56",
+    "storage": "256 GB",
+    "basePrice": 10630,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "ed7407e3-bf5b-4fc0-b2d9-fd1fdf14af44",
+    "modelId": "94a7f32b-2ff3-4740-8f84-2205ae1f20ef",
+    "storage": "64 GB",
+    "basePrice": 7090,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "1ec2f2b3-6a88-4c3e-bdd6-fe09dafa7a1b",
+    "modelId": "94a7f32b-2ff3-4740-8f84-2205ae1f20ef",
+    "storage": "128 GB",
+    "basePrice": 7090,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "5ad75627-9367-4f0f-b702-686271a3fe1a",
+    "modelId": "94a7f32b-2ff3-4740-8f84-2205ae1f20ef",
+    "storage": "128 GB",
+    "basePrice": 7090,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "0cceb518-6fb6-4720-8136-d6f0c27f0a87",
+    "modelId": "df501e7e-5ca5-4d57-9c32-f124ffbb43db",
+    "storage": "128 GB",
+    "basePrice": 6110,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "e75e69d0-77a0-42ed-929c-54b642a677af",
+    "modelId": "df501e7e-5ca5-4d57-9c32-f124ffbb43db",
+    "storage": "128 GB",
+    "basePrice": 6110,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "9c7de271-0a28-41cc-85a8-b06718e6deed",
+    "modelId": "1878a5f5-ecd3-462a-95d4-4d20331f5c52",
+    "storage": "128 GB",
+    "basePrice": 8360,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "40b3ef1a-92c2-425d-8486-0814d0c97af0",
+    "modelId": "1878a5f5-ecd3-462a-95d4-4d20331f5c52",
+    "storage": "128 GB",
+    "basePrice": 8710,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "da5467e8-c5ae-4aa2-ae18-1f520af2b923",
+    "modelId": "d23f10a5-e030-4f29-ae45-93f475a50d21",
+    "storage": "128 GB",
+    "basePrice": 11410,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "439181de-622c-4043-80bd-005be4cf5928",
+    "modelId": "d23f10a5-e030-4f29-ae45-93f475a50d21",
+    "storage": "128 GB",
+    "basePrice": 11410,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "baef2649-2066-4d34-bb6f-018c125bf9c4",
+    "modelId": "75b2611b-c8ba-45fb-8f78-d7945dfd2953",
+    "storage": "128 GB",
+    "basePrice": 10300,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "53be49e6-e8b1-4187-95c5-897694349ada",
+    "modelId": "75b2611b-c8ba-45fb-8f78-d7945dfd2953",
+    "storage": "256 GB",
+    "basePrice": 10300,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "6d34f500-465b-4aee-8bd9-65a89720f53d",
+    "modelId": "1977362c-3f65-4522-8df3-3adede79eb1c",
+    "storage": "128 GB",
+    "basePrice": 11660,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "1ecf8f17-4cc4-4756-8b81-812a4ec874a6",
+    "modelId": "1977362c-3f65-4522-8df3-3adede79eb1c",
+    "storage": "256 GB",
+    "basePrice": 11660,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "fcb5fedd-e500-463a-8d73-164ae3b06a91",
+    "modelId": "1977362c-3f65-4522-8df3-3adede79eb1c",
+    "storage": "256 GB",
+    "basePrice": 11660,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "bf2b38ef-0811-45fe-aa62-777267f19b84",
+    "modelId": "30031b21-bbe3-4dc1-8325-068d83ab26f1",
+    "storage": "32 GB",
+    "basePrice": 1350,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "31d8f679-3956-42f1-909d-6ea862abc2a7",
+    "modelId": "75dcc237-814e-4130-9524-9b0819a34ade",
+    "storage": "32 GB",
+    "basePrice": 1760,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "9e1af7ff-18de-4d38-a0f2-51f6836b570b",
+    "modelId": "c2cc3437-53ca-4c23-ac8d-9b8e33cb575f",
+    "storage": "128 GB",
+    "basePrice": 9500,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "69e487f4-124d-46ce-8ec7-3860c934c889",
+    "modelId": "c2cc3437-53ca-4c23-ac8d-9b8e33cb575f",
+    "storage": "128 GB",
+    "basePrice": 9500,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "7f1e9c5a-1eb0-410d-880f-519dda63c88d",
+    "modelId": "c2cc3437-53ca-4c23-ac8d-9b8e33cb575f",
+    "storage": "256 GB",
+    "basePrice": 11210,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "6708f86c-b73b-499a-9ed9-bfff9de6876a",
+    "modelId": "88808c97-0dc8-4c20-a1fb-92338118b6c7",
+    "storage": "64 GB",
+    "basePrice": 3650,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "10e29223-e761-4371-ae26-c4660934bd6a",
+    "modelId": "88808c97-0dc8-4c20-a1fb-92338118b6c7",
+    "storage": "128 GB",
+    "basePrice": 4420,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "41711a50-47ab-4481-9132-b30a97e2e362",
+    "modelId": "88808c97-0dc8-4c20-a1fb-92338118b6c7",
+    "storage": "128 GB",
+    "basePrice": 4560,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "3098e015-e3a2-45a3-83f9-97ce202ee827",
+    "modelId": "e19ac8b1-a575-400f-a086-55bdf748ff3c",
+    "storage": "128 GB",
+    "basePrice": 10380,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "b322b39e-35f3-4980-8a55-7e218c11bd13",
+    "modelId": "e19ac8b1-a575-400f-a086-55bdf748ff3c",
+    "storage": "64 GB",
+    "basePrice": 10380,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "29f2d65b-46ad-4bb0-a262-d1076c87aeac",
+    "modelId": "a6c2574b-45bd-4024-81a1-5bac7c41fddb",
+    "storage": "32 GB",
+    "basePrice": 2490,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "02bd9ea0-1f18-4a02-886c-bf16f3c25ced",
+    "modelId": "a6c2574b-45bd-4024-81a1-5bac7c41fddb",
+    "storage": "64 GB",
+    "basePrice": 3140,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "5b8f66fc-3ea4-4a68-a9b7-6fe503b7e759",
+    "modelId": "14ce08f6-ada2-47ae-b7a3-deb9793d0f57",
+    "storage": "32 GB",
+    "basePrice": 3620,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "603bcccb-3615-4105-91cb-d1be5e83f885",
+    "modelId": "14ce08f6-ada2-47ae-b7a3-deb9793d0f57",
+    "storage": "64 GB",
+    "basePrice": 3790,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "4ff06d1f-5cb8-4199-9d89-e940a8dad208",
+    "modelId": "14ce08f6-ada2-47ae-b7a3-deb9793d0f57",
+    "storage": "128 GB",
+    "basePrice": 3920,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "fa84dba9-112d-4100-8f35-da5f01a0ab09",
+    "modelId": "b79149ec-bdc3-48e2-9c0f-bccfc3cf9af2",
+    "storage": "128 GB",
+    "basePrice": 5190,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "45f75191-f63a-4869-b289-e45690b1c3dc",
+    "modelId": "b79149ec-bdc3-48e2-9c0f-bccfc3cf9af2",
+    "storage": "64 GB",
+    "basePrice": 4840,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "35123e10-9163-41bd-91da-eaf390e8838c",
+    "modelId": "b79149ec-bdc3-48e2-9c0f-bccfc3cf9af2",
+    "storage": "128 GB",
+    "basePrice": 5210,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "0ffc7a2b-719f-42be-a91b-5bccc8c0953f",
+    "modelId": "b593d6a0-3fd6-4d67-9b13-f523377d4230",
+    "storage": "32 GB",
+    "basePrice": 2780,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "620ad637-e052-4543-8530-ecc156d145c7",
+    "modelId": "b593d6a0-3fd6-4d67-9b13-f523377d4230",
+    "storage": "64 GB",
+    "basePrice": 3870,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "3a319699-18cf-4b7d-81b4-6cebfe159dba",
+    "modelId": "8adf2eb6-3dfc-4f1a-b959-0d66d5830f31",
+    "storage": "64 GB",
+    "basePrice": 7840,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "556a3dd5-d3c2-4dba-8ce5-1333ba7050be",
+    "modelId": "8adf2eb6-3dfc-4f1a-b959-0d66d5830f31",
+    "storage": "128 GB",
+    "basePrice": 8830,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "022e71a7-bde3-488a-bcf9-8aaf671f10a4",
+    "modelId": "a2eeba8e-a872-44a1-a060-7cb41e4fad50",
+    "storage": "32 GB",
+    "basePrice": 2580,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "b82bdefc-fbef-48be-a79c-f9965ff38f01",
+    "modelId": "a2eeba8e-a872-44a1-a060-7cb41e4fad50",
+    "storage": "32 GB",
+    "basePrice": 3000,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "c006764c-078c-4a0b-aaca-f52cce16e09e",
+    "modelId": "2a8347d2-8e49-49a1-a0d9-065a472b9733",
+    "storage": "512 GB",
+    "basePrice": 93850,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "65644cf3-3f2e-4549-9b8b-56da4224b0fc",
+    "modelId": "7a74aac7-e627-48c9-843d-61a8cf19cd5a",
+    "storage": "64 GB",
+    "basePrice": 3300,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "e9729568-e609-4cd5-844f-8211aa35ece3",
+    "modelId": "7a74aac7-e627-48c9-843d-61a8cf19cd5a",
+    "storage": "32 GB",
+    "basePrice": 3300,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "1d8c058f-889f-42a9-8dee-b74d1b7fe6ef",
+    "modelId": "c0a92b13-ed90-462d-93fd-dbb59a6e6b3c",
+    "storage": "512 GB",
+    "basePrice": 48510,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "39e39cbc-73d0-4449-900a-ba91ec4d6e2d",
+    "modelId": "c0a92b13-ed90-462d-93fd-dbb59a6e6b3c",
+    "storage": "256 GB",
+    "basePrice": 48510,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "48ea5718-35ce-44ff-83a1-a5d93ea13ad4",
+    "modelId": "c0a92b13-ed90-462d-93fd-dbb59a6e6b3c",
+    "storage": "512 GB",
+    "basePrice": 48510,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "f938de87-a250-4515-afe4-d3f2eda97e31",
+    "modelId": "0d580f51-895f-4ce9-b22b-ac3167a4cf64",
+    "storage": "512 GB",
+    "basePrice": 20850,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "85ce29b0-fd8c-42c9-888e-5eb4101bb583",
+    "modelId": "0d580f51-895f-4ce9-b22b-ac3167a4cf64",
+    "storage": "256 GB",
+    "basePrice": 20850,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "d5bf0ac8-36f9-43bc-bf2b-6d8891831af3",
+    "modelId": "0d580f51-895f-4ce9-b22b-ac3167a4cf64",
+    "storage": "256 GB",
+    "basePrice": 20850,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "0606ed1b-fdac-4ec5-9dde-441873b2fbf4",
+    "modelId": "0d580f51-895f-4ce9-b22b-ac3167a4cf64",
+    "storage": "128 GB",
+    "basePrice": 20850,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "4400097e-9bad-4f3f-b36e-c36f45355e6c",
+    "modelId": "1dde27a8-63cf-4c6b-b271-5926ebf8175f",
+    "storage": "128 GB",
+    "basePrice": 10280,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0bb0679d-74d6-4f50-9500-0b1fe1df2a4b",
+    "modelId": "1dde27a8-63cf-4c6b-b271-5926ebf8175f",
+    "storage": "256 GB",
+    "basePrice": 10450,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "8a9fffd0-e19e-45ff-978c-57bc467b8e65",
+    "modelId": "d95511cc-b964-40a8-9b33-522b43aee86b",
+    "storage": "256 GB",
+    "basePrice": 11020,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "58072d71-c757-4578-8c16-57033c680edf",
+    "modelId": "d95511cc-b964-40a8-9b33-522b43aee86b",
+    "storage": "128 GB",
+    "basePrice": 11020,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5a16e0f2-c26d-43fe-a3a8-9e1a59719283",
+    "modelId": "91467640-d292-4122-aadc-8b21070643f1",
+    "storage": "64 GB",
+    "basePrice": 2290,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "4002cbb3-c672-4e4b-8d21-adacb8a4d429",
+    "modelId": "91467640-d292-4122-aadc-8b21070643f1",
+    "storage": "128 GB",
+    "basePrice": 2290,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "239c3848-8054-42d6-8875-4bd7991e7a0a",
+    "modelId": "ea4cc213-b678-4846-8ec7-06bd222e856e",
+    "storage": "64 GB",
+    "basePrice": 4430,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "03c32e65-f5ad-4f98-a8ca-2d77c68b3f9a",
+    "modelId": "ea4cc213-b678-4846-8ec7-06bd222e856e",
+    "storage": "128 GB",
+    "basePrice": 4690,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "cc0f7519-c8d1-48fd-8e27-e8dc6f5776b8",
+    "modelId": "e5a8b63f-c09e-47fb-877b-04b255eeed5f",
+    "storage": "64 GB",
+    "basePrice": 7620,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "92c1d5bf-3e1a-4bb9-87d9-1ba06645ee0e",
+    "modelId": "e5a8b63f-c09e-47fb-877b-04b255eeed5f",
+    "storage": "128 GB",
+    "basePrice": 7620,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "4609fae5-5c7c-4753-9579-5b789401c433",
+    "modelId": "e5a8b63f-c09e-47fb-877b-04b255eeed5f",
+    "storage": "128 GB",
+    "basePrice": 7620,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "626ff33c-1387-4d78-afa4-78bff626b4a3",
+    "modelId": "9f4afceb-f9c1-4321-a1eb-45f429828e7e",
+    "storage": "256 GB",
+    "basePrice": 78060,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "28e9a3a2-5d17-4dc1-8e10-e51924b5c0ed",
+    "modelId": "9f4afceb-f9c1-4321-a1eb-45f429828e7e",
+    "storage": "512 GB",
+    "basePrice": 82760,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "9045aeba-00d8-4bcc-9218-597175e39466",
+    "modelId": "9f4afceb-f9c1-4321-a1eb-45f429828e7e",
+    "storage": "1 TB",
+    "basePrice": 97810,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "f0563b61-c9e9-4e8d-94a3-a62061c581f5",
+    "modelId": "119198b0-441a-4bb4-b35b-ce507e81d158",
+    "storage": "128 GB",
+    "basePrice": 20880,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "7fa70160-f547-4ab8-aa36-a26ae3a16f1a",
+    "modelId": "119198b0-441a-4bb4-b35b-ce507e81d158",
+    "storage": "256 GB",
+    "basePrice": 20880,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "adbaf881-5691-446b-90ab-7e7c5abf8117",
+    "modelId": "119198b0-441a-4bb4-b35b-ce507e81d158",
+    "storage": "256 GB",
+    "basePrice": 20880,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "e6f10f35-630a-496d-a753-c96292046a37",
+    "modelId": "53b0f722-c881-458b-9bbb-900f38e41e07",
+    "storage": "64 GB",
+    "basePrice": 5010,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "5a768c6b-b4a6-478a-8139-2678dcbdcdac",
+    "modelId": "53b0f722-c881-458b-9bbb-900f38e41e07",
+    "storage": "128 GB",
+    "basePrice": 5810,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "09f58649-fd86-4f88-a6dd-e3c70bb0ce54",
+    "modelId": "1dc888ec-343c-470f-bb8e-f2daf71a5d21",
+    "storage": "256 GB",
+    "basePrice": 20250,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "d4ed2d0a-80f8-4c7a-a086-fb246ed4ca55",
+    "modelId": "1dc888ec-343c-470f-bb8e-f2daf71a5d21",
+    "storage": "128 GB",
+    "basePrice": 20250,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "67c73013-2ae7-4998-895a-4724c5845e0c",
+    "modelId": "1dc888ec-343c-470f-bb8e-f2daf71a5d21",
+    "storage": "256 GB",
+    "basePrice": 20250,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "ffd9e43a-1e63-49ad-9433-79f26ab3b127",
+    "modelId": "2881ab0c-785f-4388-812e-70fc1d5d60c2",
+    "storage": "128 GB",
+    "basePrice": 10820,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "fe62c5ab-5100-466e-9217-daf6053e343f",
+    "modelId": "2881ab0c-785f-4388-812e-70fc1d5d60c2",
+    "storage": "128 GB",
+    "basePrice": 11900,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "fa6b1ad8-4a0b-466d-bd00-987a3e61e008",
+    "modelId": "abe78900-ad29-42ee-8017-18ed99780b17",
+    "storage": "128 GB",
+    "basePrice": 11090,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "eb9a1313-eb71-4744-81fc-412e8707f135",
+    "modelId": "abe78900-ad29-42ee-8017-18ed99780b17",
+    "storage": "128 GB",
+    "basePrice": 11090,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "b1a8085f-2c69-4f4d-9e33-3370d1aa489d",
+    "modelId": "abe78900-ad29-42ee-8017-18ed99780b17",
+    "storage": "128 GB",
+    "basePrice": 11090,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "06b0e701-9b11-451e-aa5b-844eb2cfb92c",
+    "modelId": "995c4dd7-3801-46ea-a881-cf44764aba52",
+    "storage": "256 GB",
+    "basePrice": 37410,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "330ddf6a-1e77-4bb9-afb7-3a3aa34f1dad",
+    "modelId": "995c4dd7-3801-46ea-a881-cf44764aba52",
+    "storage": "512 GB)",
+    "basePrice": 39880,
+    "active": true,
+    "ram": "Realme GT 8 Pro (16 GB"
+  },
+  {
+    "id": "aad6c5fd-b111-466b-b4d1-0f6d7f90a33e",
+    "modelId": "db30b600-24a1-4733-84c3-d73183df2b8f",
+    "storage": "64 GB",
+    "basePrice": 5410,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "5bcde0f7-67ba-4389-89c1-c3c559b1c503",
+    "modelId": "db30b600-24a1-4733-84c3-d73183df2b8f",
+    "storage": "128 GB",
+    "basePrice": 5820,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "8bec30ab-861b-41cd-a2fe-bbbb99beca4c",
+    "modelId": "40fc03b4-d731-4cb0-80b7-e818cea77426",
+    "storage": "64 GB",
+    "basePrice": 4090,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "e72b5262-4fb9-4c4f-a033-e43dee79d9c7",
+    "modelId": "40fc03b4-d731-4cb0-80b7-e818cea77426",
+    "storage": "128 GB",
+    "basePrice": 4090,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "271884ba-5ce1-4508-937b-0ce58261ff9b",
+    "modelId": "8674d37f-26db-4bb7-9df4-13af372f7a47",
+    "storage": "128 GB",
+    "basePrice": 9260,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "4526a042-876a-4d45-9978-d39d75a113e3",
+    "modelId": "8674d37f-26db-4bb7-9df4-13af372f7a47",
+    "storage": "64 GB",
+    "basePrice": 9260,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "5740eefe-5449-497c-afa0-236233e21753",
+    "modelId": "8674d37f-26db-4bb7-9df4-13af372f7a47",
+    "storage": "128 GB",
+    "basePrice": 9260,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "5a128170-767c-41f1-b0b5-6f56ccddf684",
+    "modelId": "d11fbe17-70d6-433b-9722-88f877f8229a",
+    "storage": "512 GB",
+    "basePrice": 79200,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "841edbd0-2f90-4f48-9773-2d75d2970ba3",
+    "modelId": "d11fbe17-70d6-433b-9722-88f877f8229a",
+    "storage": "256 GB",
+    "basePrice": 79200,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "483e80ab-48c1-4888-8d4a-1a68e8091216",
+    "modelId": "61febfea-0bab-458e-a9f9-a3bac0df00c4",
+    "storage": "256 GB",
+    "basePrice": 91580,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "59681912-3b5f-4183-874b-a9a00588723e",
+    "modelId": "61febfea-0bab-458e-a9f9-a3bac0df00c4",
+    "storage": "1 TB",
+    "basePrice": 91580,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "2b3e4b7d-c824-4480-a2bd-e33b772e0470",
+    "modelId": "7c845244-1d5d-457c-a6be-7cd690edc2c9",
+    "storage": "64 GB",
+    "basePrice": 4420,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "1b4980ee-65ba-4f9a-8589-6e3b8c2d0189",
+    "modelId": "7c845244-1d5d-457c-a6be-7cd690edc2c9",
+    "storage": "128 GB",
+    "basePrice": 4420,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "63f76987-5895-4536-a7d2-e74e928759b9",
+    "modelId": "5651f329-0655-4398-8259-3c7eaef1d49a",
+    "storage": "512 GB",
+    "basePrice": 75830,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "19142283-7bc9-49cf-89d8-41ab5498ec2d",
+    "modelId": "404b1ddc-9aaa-4107-a7cc-8e246bc0339c",
+    "storage": "128 GB",
+    "basePrice": 9000,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "34181a27-b5c3-46c4-b990-ae518c9264b4",
+    "modelId": "404b1ddc-9aaa-4107-a7cc-8e246bc0339c",
+    "storage": "128 GB",
+    "basePrice": 9000,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "e41749a4-cc4b-41b0-b98d-81cdba1d325e",
+    "modelId": "5f3c60b0-fa51-477f-b558-a441bdee11d1",
+    "storage": "64 GB",
+    "basePrice": 4900,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "e5587826-5285-4b04-863f-a1df65588a94",
+    "modelId": "669d8533-0af4-4328-858a-d56372ecbcd2",
+    "storage": "512 GB",
+    "basePrice": 61880,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "e877965f-3cbb-44fe-8fc3-544527500762",
+    "modelId": "a2aba2c4-6dff-4348-8062-7bf55e734162",
+    "storage": "32 GB",
+    "basePrice": 2770,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "be0d9e7a-811f-4776-a85d-946a410b9558",
+    "modelId": "a2aba2c4-6dff-4348-8062-7bf55e734162",
+    "storage": "32 GB",
+    "basePrice": 2770,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "1b216d67-55f7-42e0-a5fd-dcf4bdaf894c",
+    "modelId": "0dedb125-fab7-4c26-982d-a5c80ad4ab88",
+    "storage": "128 GB",
+    "basePrice": 7760,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "f5c93c21-145f-48a1-87c8-00f7f4144cf9",
+    "modelId": "0dedb125-fab7-4c26-982d-a5c80ad4ab88",
+    "storage": "128 GB",
+    "basePrice": 7760,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5decf3f5-d3bc-47a5-a551-c9b0d50ace58",
+    "modelId": "d7af6305-239e-4013-ae43-46d8338cb56d",
+    "storage": "128 GB",
+    "basePrice": 4910,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "ef680202-bd3a-4a8a-92bb-7a3e075a8cd8",
+    "modelId": "d7af6305-239e-4013-ae43-46d8338cb56d",
+    "storage": "64 GB",
+    "basePrice": 4910,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "974c3958-d2fc-48ef-b522-5ee7c6f80233",
+    "modelId": "d7af6305-239e-4013-ae43-46d8338cb56d",
+    "storage": "64 GB",
+    "basePrice": 4910,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "d921b8b0-c076-4915-ba94-8fdce42b18a0",
+    "modelId": "4564ca3d-04be-4236-b6c4-7774d698aceb",
+    "storage": "128 GB",
+    "basePrice": 10310,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "b20aaee7-3960-46a8-afc8-67cd2d0e31a8",
+    "modelId": "4564ca3d-04be-4236-b6c4-7774d698aceb",
+    "storage": "128 GB",
+    "basePrice": 12560,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "9472dfc0-766f-489e-add5-4d91a6b0d1a5",
+    "modelId": "27f72109-be52-48bb-aeb6-29022bb92e09",
+    "storage": "256 GB",
+    "basePrice": 37220,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "07a8f241-33b8-4e96-8cfc-ea950d228b75",
+    "modelId": "27f72109-be52-48bb-aeb6-29022bb92e09",
+    "storage": "256 GB",
+    "basePrice": 37220,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "f098779c-50e9-4dbe-8011-8e02d5bc27dc",
+    "modelId": "27f72109-be52-48bb-aeb6-29022bb92e09",
+    "storage": "512 GB",
+    "basePrice": 37220,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "47870f53-2357-4e1d-a967-7979795a7a60",
+    "modelId": "bf5000bb-15d6-475d-865a-25a32eaef210",
+    "storage": "64 GB",
+    "basePrice": 3930,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "2d110deb-2217-4aea-8ade-362e5a982657",
+    "modelId": "bf5000bb-15d6-475d-865a-25a32eaef210",
+    "storage": "128 GB",
+    "basePrice": 4350,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "0c58b538-914c-4b61-9e72-eb57012a8475",
+    "modelId": "18ee9180-b44a-466c-9529-24cadc9b700e",
+    "storage": "128 GB",
+    "basePrice": 10890,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "307f4711-a45b-4802-afea-f8bde58a98b1",
+    "modelId": "18ee9180-b44a-466c-9529-24cadc9b700e",
+    "storage": "256 GB",
+    "basePrice": 10890,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "dab533fa-b13d-48ed-8b92-668e5a614148",
+    "modelId": "18ee9180-b44a-466c-9529-24cadc9b700e",
+    "storage": "128 GB",
+    "basePrice": 10890,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "25ca6a20-028d-423e-9f74-eca912d26de2",
+    "modelId": "3b41ec75-53e5-4374-83ac-5b4a8c9ae0f1",
+    "storage": "512 GB",
+    "basePrice": 79000,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "2be00410-60fa-4d55-8274-e6883b3a8417",
+    "modelId": "6404d416-04ab-4ec4-a8cc-4e40bfaa25d6",
+    "storage": "128 GB",
+    "basePrice": 8020,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "419fa50d-83c0-4e63-b2ae-5a3d4b4c2f7b",
+    "modelId": "6404d416-04ab-4ec4-a8cc-4e40bfaa25d6",
+    "storage": "64 GB",
+    "basePrice": 8020,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "c85ef149-0f6d-446a-968a-ef5410766af6",
+    "modelId": "52b493fe-680f-43c9-8895-88438cf476ca",
+    "storage": "128 GB",
+    "basePrice": 8900,
+    "active": true
+  },
+  {
+    "id": "a381b9b3-c2fc-43b7-be72-6fdd6108ee65",
+    "modelId": "52b493fe-680f-43c9-8895-88438cf476ca",
+    "storage": "256 GB",
+    "basePrice": 9010,
+    "active": true
+  },
+  {
+    "id": "ddbe5dcb-ab99-44d3-a6d2-120505a435b8",
+    "modelId": "8b2b7faa-3d12-4f37-bf82-6a1def99c218",
+    "storage": "64 GB",
+    "basePrice": 8420,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "f7755525-6433-4306-a7f3-0cd86dc71607",
+    "modelId": "8b2b7faa-3d12-4f37-bf82-6a1def99c218",
+    "storage": "128 GB",
+    "basePrice": 9220,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "4691b721-e744-41e5-a70f-6e53bc73bfea",
+    "modelId": "8b2b7faa-3d12-4f37-bf82-6a1def99c218",
+    "storage": "128 GB",
+    "basePrice": 10630,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "7079529c-3290-48f8-bb85-dc6dc7fe2e1a",
+    "modelId": "f9beb1ec-8ede-4b31-86a4-5dd3dfb12f37",
+    "storage": "512 GB",
+    "basePrice": 78210,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "081bbb51-c722-4ca0-bdf3-eca35bbfbe7b",
+    "modelId": "c00cf86a-9b5c-42fe-921c-fb550561e474",
+    "storage": "128 GB",
+    "basePrice": 7920,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "afc3d0b5-b765-4e0e-a497-480c15b2418d",
+    "modelId": "c00cf86a-9b5c-42fe-921c-fb550561e474",
+    "storage": "256 GB",
+    "basePrice": 7920,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "cbbe7b4b-8258-44d0-a0f3-af0256a4180a",
+    "modelId": "c00cf86a-9b5c-42fe-921c-fb550561e474",
+    "storage": "128 GB",
+    "basePrice": 7920,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "e48e4fa2-6e2d-4667-9055-ed39afc414e0",
+    "modelId": "c00cf86a-9b5c-42fe-921c-fb550561e474",
+    "storage": "64 GB",
+    "basePrice": 7920,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "497b60bd-7dfb-414b-b240-0aaf69a2ff0c",
+    "modelId": "ffb9b4d6-7e6c-4953-96d4-bcd96bfc5d7a",
+    "storage": "32 GB",
+    "basePrice": 4360,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "d02470d7-d505-4792-a2bc-52b73c85013b",
+    "modelId": "ffb9b4d6-7e6c-4953-96d4-bcd96bfc5d7a",
+    "storage": "64 GB",
+    "basePrice": 4600,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "e6ae713c-8aeb-496b-999c-ae62b1132212",
+    "modelId": "2e01a5d6-6f19-4ea3-bcd8-da4765dbc678",
+    "storage": "256 GB",
+    "basePrice": 17100,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "e9b18edb-e1e2-428f-936d-45e4510ca95c",
+    "modelId": "2e01a5d6-6f19-4ea3-bcd8-da4765dbc678",
+    "storage": "128 GB",
+    "basePrice": 17100,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "16cc34d7-0568-48b9-9173-6e2c5520538e",
+    "modelId": "64fa1ef1-6320-476b-9120-3f01c526197a",
+    "storage": "256 GB",
+    "basePrice": 15350,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5d580002-0d34-4b3e-8cf7-0687c7d3a47f",
+    "modelId": "64fa1ef1-6320-476b-9120-3f01c526197a",
+    "storage": "256 GB",
+    "basePrice": 15350,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "e0d5b310-8cbf-42d2-8013-854cf3f1be78",
+    "modelId": "64fa1ef1-6320-476b-9120-3f01c526197a",
+    "storage": "128 GB",
+    "basePrice": 15350,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5c2cfb65-0fc2-4e16-b867-a242a644d1b6",
+    "modelId": "3378a9ba-b4c9-4425-a2e5-c8e15d856661",
+    "storage": "128 GB",
+    "basePrice": 13860,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "bd0113c4-5830-44b6-9768-061f19b8b0ea",
+    "modelId": "3378a9ba-b4c9-4425-a2e5-c8e15d856661",
+    "storage": "256 GB",
+    "basePrice": 15050,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "4a9a18ac-93bd-411c-926e-bfb6f50e49f4",
+    "modelId": "3378a9ba-b4c9-4425-a2e5-c8e15d856661",
+    "storage": "256 GB",
+    "basePrice": 15830,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "cedfe60c-e160-4c4a-8e74-18405d846c46",
+    "modelId": "3b8b191b-785b-46da-b172-f37e0e4087aa",
+    "storage": "256 GB",
+    "basePrice": 11010,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b66e223c-29e2-47de-9778-028edd0195e7",
+    "modelId": "fa5957fc-a7dd-40a9-ba5d-84ee80503f66",
+    "storage": "256 GB",
+    "basePrice": 20600,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "d2e0531e-73f6-47c7-942c-4da4a25cc659",
+    "modelId": "fa5957fc-a7dd-40a9-ba5d-84ee80503f66",
+    "storage": "128 GB",
+    "basePrice": 20600,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "454cd138-a4cd-43bf-84ec-135d0721ab75",
+    "modelId": "fa5957fc-a7dd-40a9-ba5d-84ee80503f66",
+    "storage": "256 GB",
+    "basePrice": 20600,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "f13250e4-ca06-437a-821d-8a77b6b3a322",
+    "modelId": "a7c486d7-5381-4add-8a27-6c628cb9ab9f",
+    "storage": "64 GB",
+    "basePrice": 3270,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "8ccd9db1-7e55-4e44-8f5f-3a76ae77eadf",
+    "modelId": "a7c486d7-5381-4add-8a27-6c628cb9ab9f",
+    "storage": "32 GB",
+    "basePrice": 3270,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "52ba97dc-95bc-4776-ae0b-8976466ee976",
+    "modelId": "e44c8b29-bcd3-4127-aa7e-cedc260bab3b",
+    "storage": "64 GB",
+    "basePrice": 8680,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "e253c3fe-27b0-43c3-8b4b-065986cfc25f",
+    "modelId": "e44c8b29-bcd3-4127-aa7e-cedc260bab3b",
+    "storage": "128 GB",
+    "basePrice": 9570,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "8e273b44-2ce0-41d1-8687-6775f4b3bae2",
+    "modelId": "d041591a-1c0e-4058-ab63-66d37dc6e8eb",
+    "storage": "128 GB",
+    "basePrice": 5450,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "e5a65973-e971-4315-b7f7-f2dcee53044d",
+    "modelId": "d041591a-1c0e-4058-ab63-66d37dc6e8eb",
+    "storage": "128 GB",
+    "basePrice": 5790,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "931ab0ae-4c2d-4f3e-852f-19908bac4148",
+    "modelId": "8d07d6a3-8b18-48f7-b975-5b7415c50fd9",
+    "storage": "128 GB",
+    "basePrice": 8700,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "eeff64af-1875-49dc-a2bb-4ad84747f743",
+    "modelId": "61fd6c58-d6b7-4f22-afca-a66f280af4e2",
+    "storage": "32 GB",
+    "basePrice": 1420,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "7a274e96-928c-46ae-afa3-3dbd222643ca",
+    "modelId": "edb58480-7e85-4d86-908a-a9bd508f9b23",
+    "storage": "128 GB",
+    "basePrice": 3150,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "67cae3a8-941c-4715-b992-665c51fd4669",
+    "modelId": "edb58480-7e85-4d86-908a-a9bd508f9b23",
+    "storage": "128 GB",
+    "basePrice": 3150,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "945ae2ca-6fc8-4188-a5a4-32bd2c700973",
+    "modelId": "659eae8f-c20d-4a6a-a6b6-2700265e0b6a",
+    "storage": "64 GB",
+    "basePrice": 6730,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "124ef97b-baac-4b74-8598-a145e8089f75",
+    "modelId": "05ca10f8-14a4-4d3e-99f8-b2bf09740d29",
+    "storage": "128 GB",
+    "basePrice": 7740,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "46c5f986-32a6-408c-8560-91c77d2ed474",
+    "modelId": "05ca10f8-14a4-4d3e-99f8-b2bf09740d29",
+    "storage": "128 GB",
+    "basePrice": 7920,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a214976a-6a0b-4714-a622-df9ec36bf962",
+    "modelId": "05ca10f8-14a4-4d3e-99f8-b2bf09740d29",
+    "storage": "256 GB",
+    "basePrice": 8170,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b39c16cd-6cee-4b72-80fc-5cffbf36bafb",
+    "modelId": "e8163bb3-a746-4a33-a6a7-fabffe1f0546",
+    "storage": "64 GB",
+    "basePrice": 4820,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "86b8801d-1642-4dbd-a13a-f13801eed655",
+    "modelId": "e8163bb3-a746-4a33-a6a7-fabffe1f0546",
+    "storage": "128 GB",
+    "basePrice": 4820,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "95efd3cd-a33c-49c9-a92a-4ffd11245424",
+    "modelId": "e8163bb3-a746-4a33-a6a7-fabffe1f0546",
+    "storage": "64 GB",
+    "basePrice": 4820,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "9a16b0b8-20d3-426a-834b-8341bafe58e1",
+    "modelId": "b8630adc-9d65-4edf-b613-60401e3f7ed2",
+    "storage": "64 GB",
+    "basePrice": 4750,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "25f530bd-4372-4654-8eaf-a8fb9d87e28f",
+    "modelId": "d89a6674-113a-4c73-9a8c-2471a2131dff",
+    "storage": "256 GB",
+    "basePrice": 15370,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "f8f16533-832d-4c37-8a9e-a33508e9a778",
+    "modelId": "cff78cea-d983-4837-abb6-fc8d1710bd17",
+    "storage": "128 GB",
+    "basePrice": 5480,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "28bf9b88-5995-4111-ab6d-1a4b95a5774f",
+    "modelId": "cff78cea-d983-4837-abb6-fc8d1710bd17",
+    "storage": "128 GB",
+    "basePrice": 6110,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "641c2476-eac5-4360-9a1b-558519ec4179",
+    "modelId": "cff78cea-d983-4837-abb6-fc8d1710bd17",
+    "storage": "128 GB",
+    "basePrice": 6450,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "2673561a-4ff5-40e6-8e45-4332aa8ebcb2",
+    "modelId": "e0b2c8b3-bc2c-4bc0-99fc-586f4c17545f",
+    "storage": "64 GB",
+    "basePrice": 4120,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "8ce1d182-12c9-48f0-b96f-ecc1381d33f4",
+    "modelId": "e0b2c8b3-bc2c-4bc0-99fc-586f4c17545f",
+    "storage": "128 GB",
+    "basePrice": 4120,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "cf4d5f7d-0e15-4ce1-bd31-7f4adcadff6e",
+    "modelId": "fccd3369-319f-44b3-ae7a-aaa86a12479f",
+    "storage": "64 GB",
+    "basePrice": 3470,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "5d8677f1-0014-42d3-b003-08b183e7ab2b",
+    "modelId": "fccd3369-319f-44b3-ae7a-aaa86a12479f",
+    "storage": "128 GB",
+    "basePrice": 4240,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "bb5a2874-1c53-4136-9a6a-ca44ccb239e6",
+    "modelId": "7a001fc9-a658-4bfc-9f76-295a8a08a090",
+    "storage": "128 GB",
+    "basePrice": 3110,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "aa453414-0a8a-49c4-8c0f-979493fe0c27",
+    "modelId": "19e25c0c-82fc-4bf8-a4d6-7e45a92d191f",
+    "storage": "64 GB",
+    "basePrice": 4890,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "fc5af965-78f3-418c-9a8d-492da5f502a2",
+    "modelId": "19e25c0c-82fc-4bf8-a4d6-7e45a92d191f",
+    "storage": "128 GB",
+    "basePrice": 5460,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "81f2462d-e31f-4d85-95a5-620d954eb598",
+    "modelId": "0687901a-da84-4ae4-83dc-33fe9733d562",
+    "storage": "128 GB",
+    "basePrice": 11110,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "2672aa4f-bb85-4d17-9fe8-0d1ea516efc6",
+    "modelId": "0687901a-da84-4ae4-83dc-33fe9733d562",
+    "storage": "256 GB",
+    "basePrice": 11110,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a4b3e90a-c36c-4c3a-a413-c1110904a955",
+    "modelId": "0687901a-da84-4ae4-83dc-33fe9733d562",
+    "storage": "128 GB",
+    "basePrice": 11110,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "462160b5-68e8-4a81-a8b5-e5b311164c62",
+    "modelId": "0687901a-da84-4ae4-83dc-33fe9733d562",
+    "storage": "128 GB",
+    "basePrice": 11110,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "7de2f2ea-39d3-47d7-968e-abd6b6f80b0c",
+    "modelId": "8dcdfbc4-d452-4284-a80b-6fdfd24030cf",
+    "storage": "128 GB",
+    "basePrice": 9270,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "28ffe805-434c-464d-9ec1-54014b8f1182",
+    "modelId": "8dcdfbc4-d452-4284-a80b-6fdfd24030cf",
+    "storage": "128 GB",
+    "basePrice": 9270,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "e9f6f297-c3cf-4619-b835-346ebfd805bf",
+    "modelId": "cc2946b8-e180-4531-9be8-5eecc26e6d23",
+    "storage": "256 GB",
+    "basePrice": 13140,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b205b17e-85aa-449a-ae09-ab6e318ad800",
+    "modelId": "cc2946b8-e180-4531-9be8-5eecc26e6d23",
+    "storage": "256 GB",
+    "basePrice": 13930,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "7f4b922e-4670-4fae-bde2-a114580025cd",
+    "modelId": "8cdc9be9-a0a1-49a9-a4cc-03925ffd1c5a",
+    "storage": "256 GB",
+    "basePrice": 16340,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "0528b110-39ae-48a9-ae3d-e930c55207be",
+    "modelId": "8cdc9be9-a0a1-49a9-a4cc-03925ffd1c5a",
+    "storage": "128 GB",
+    "basePrice": 16340,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "3e1c73ce-5162-4f36-bcb6-4afafbed3b04",
+    "modelId": "8cdc9be9-a0a1-49a9-a4cc-03925ffd1c5a",
+    "storage": "128 GB",
+    "basePrice": 16340,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "20e8a621-7c63-44cc-b9d2-84637dac679f",
+    "modelId": "7cd10f4f-7b6f-49e7-a1c7-3809f364a676",
+    "storage": "128 GB",
+    "basePrice": 15050,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "17d743e2-ef4b-4986-b2e3-550b5fef00e8",
+    "modelId": "7cd10f4f-7b6f-49e7-a1c7-3809f364a676",
+    "storage": "256 GB",
+    "basePrice": 16120,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "f11b5d90-955e-4680-8535-23ec6e0767dd",
+    "modelId": "7cd10f4f-7b6f-49e7-a1c7-3809f364a676",
+    "storage": "256 GB",
+    "basePrice": 16550,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "be3d6781-1c91-42d3-81e0-86565c4cd006",
+    "modelId": "f790d9d7-89dd-4a2e-9eea-125206a5328e",
+    "storage": "64 GB",
+    "basePrice": 1050,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "63d072ab-bea7-4f4d-81ab-f5108c36b1d1",
+    "modelId": "44fd7cff-d3de-46bb-ad86-7e67da749578",
+    "storage": "64 GB",
+    "basePrice": 6230,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "42f66f7f-a201-4a45-893a-24f3ae1c42b6",
+    "modelId": "44fd7cff-d3de-46bb-ad86-7e67da749578",
+    "storage": "128 GB",
+    "basePrice": 6230,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "21eacb9c-1862-4c71-b140-110f701a580b",
+    "modelId": "44fd7cff-d3de-46bb-ad86-7e67da749578",
+    "storage": "128 GB",
+    "basePrice": 6230,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0475105a-380a-41a1-88ff-dbff8720fdb6",
+    "modelId": "fd2ae427-366a-4cdb-9d79-a5d5225fc570",
+    "storage": "256 GB",
+    "basePrice": 54050,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "ca9ce55f-4484-4c24-be6f-da521e415109",
+    "modelId": "fd2ae427-366a-4cdb-9d79-a5d5225fc570",
+    "storage": "512 GB",
+    "basePrice": 54050,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "8190c266-a71a-483c-aa20-709174b56588",
+    "modelId": "7bc43bcd-57f7-49a3-bc24-f5de2588ea14",
+    "storage": "32 GB",
+    "basePrice": 2210,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "8bf3be6e-4210-4008-8164-468823b24e4e",
+    "modelId": "fd6ace07-b2f5-4c1c-bc0d-eb6013514bde",
+    "storage": "128 GB",
+    "basePrice": 15740,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "94607510-7d8a-491a-b579-8be785de6433",
+    "modelId": "222f7a09-8dcc-49fd-9b99-93b4be828efa",
+    "storage": "16 GB",
+    "basePrice": 3520,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "ab5d525f-4557-49a1-be36-a6e04733ac45",
+    "modelId": "222f7a09-8dcc-49fd-9b99-93b4be828efa",
+    "storage": "32 GB",
+    "basePrice": 3750,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "ac67b1dd-d54b-47e9-b8bf-0c3692814b80",
+    "modelId": "8452adcd-2bbd-4e1d-89bd-a6aa488e2609",
+    "storage": "64 GB",
+    "basePrice": 5150,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "8c5c4743-f466-4725-b8b7-cca20c76dc0e",
+    "modelId": "8452adcd-2bbd-4e1d-89bd-a6aa488e2609",
+    "storage": "128 GB",
+    "basePrice": 5150,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0ebf8f22-a9c0-4690-abbd-bd883cfa165a",
+    "modelId": "f2a2f5ae-6fe4-4f2b-98c7-05394ccb7c90",
+    "storage": "64 GB",
+    "basePrice": 4800,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "8e175d86-a8c7-4523-b65b-1da0092cffbe",
+    "modelId": "9489af8f-4fde-4505-804f-3de5301b72f0",
+    "storage": "32 GB",
+    "basePrice": 2140,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "40453793-827b-46d7-97d3-edbcf13c74d0",
+    "modelId": "c93e04b0-eaab-4dee-a7ec-160063a62581",
+    "storage": "128 GB",
+    "basePrice": 4350,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "b8819ae6-dec8-4b64-ae92-0ef2c4db0f9a",
+    "modelId": "ea4dbc4b-ff59-47c0-bf7c-760cfbab5e98",
+    "storage": "128 GB",
+    "basePrice": 5530,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "dfe85c96-a2ff-4fe8-9838-e877cbbd0edd",
+    "modelId": "ea4dbc4b-ff59-47c0-bf7c-760cfbab5e98",
+    "storage": "128 GB",
+    "basePrice": 6110,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "812b0a99-e977-4bf8-bf58-a688c4e9b4de",
+    "modelId": "ea4dbc4b-ff59-47c0-bf7c-760cfbab5e98",
+    "storage": "128 GB",
+    "basePrice": 6310,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5c0435c9-bc30-40fd-bf45-3e32aac1286f",
+    "modelId": "822aded2-c52e-402c-a3ed-1b6004e276ed",
+    "storage": "128 GB",
+    "basePrice": 8710,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b6f18d37-b4cf-4f4a-8826-e90f9284361f",
+    "modelId": "822aded2-c52e-402c-a3ed-1b6004e276ed",
+    "storage": "128 GB",
+    "basePrice": 8710,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "5b038ff5-b878-424d-94b6-4cd79362e614",
+    "modelId": "8fb1f284-3fd6-49d6-bd11-f863818a44b2",
+    "storage": "128 GB",
+    "basePrice": 13170,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "809a1423-c9e4-4a4e-82be-2298e1e98e23",
+    "modelId": "8fb1f284-3fd6-49d6-bd11-f863818a44b2",
+    "storage": "128 GB",
+    "basePrice": 15990,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "be20b52f-621e-498a-9419-765bc0c32c06",
+    "modelId": "8fb1f284-3fd6-49d6-bd11-f863818a44b2",
+    "storage": "256 GB",
+    "basePrice": 16740,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "25e55c63-f2d6-4df5-ae8a-6e7be62f3fbb",
+    "modelId": "202252f5-c463-457f-b4fd-537450889605",
+    "storage": "256 GB",
+    "basePrice": 21320,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "f247c8dd-cac1-4960-830d-72ff1b16f25d",
+    "modelId": "202252f5-c463-457f-b4fd-537450889605",
+    "storage": "128 GB",
+    "basePrice": 21320,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "3df84837-72af-4bc8-9063-a8930595b242",
+    "modelId": "202252f5-c463-457f-b4fd-537450889605",
+    "storage": "256 GB",
+    "basePrice": 21320,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "ded41736-0719-4fc6-8463-010c10458670",
+    "modelId": "19b1f5c9-cb14-4bb5-ac84-31b5aa7d5ec3",
+    "storage": "32 GB",
+    "basePrice": 6650,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "3085044f-57a2-453c-af82-274c6c3257c6",
+    "modelId": "19b1f5c9-cb14-4bb5-ac84-31b5aa7d5ec3",
+    "storage": "64 GB",
+    "basePrice": 8075,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "94da1bd0-690d-4a3d-956a-21819035e6f4",
+    "modelId": "a6c9b053-0b44-41bb-a3bb-2b2464b1f314",
+    "storage": "64 GB",
+    "basePrice": 1870,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "554c5761-23e9-4f01-a36b-ce7798c61dc9",
+    "modelId": "be9da761-f505-43bb-99ab-3aea568919b9",
+    "storage": "128 GB",
+    "basePrice": 28410,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "e233517b-8a9f-41ae-b601-966a8be0e6b3",
+    "modelId": "840093bb-3649-4592-898d-d75c50f3872e",
+    "storage": "128 GB",
+    "basePrice": 8560,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "9e41c78a-b7f7-4c0b-8fbd-af3a4b5d625e",
+    "modelId": "840093bb-3649-4592-898d-d75c50f3872e",
+    "storage": "128 GB",
+    "basePrice": 8560,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "ad559708-ac88-4d41-9543-d72831b9780e",
+    "modelId": "4612a72f-35ac-4d38-a745-0aed030eed28",
+    "storage": "128 GB",
+    "basePrice": 14110,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "e2de0f21-498b-461a-95ef-37ced5df3593",
+    "modelId": "4612a72f-35ac-4d38-a745-0aed030eed28",
+    "storage": "128 GB",
+    "basePrice": 15330,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "fca28c97-1f77-43dc-8f07-52ab9839c6a8",
+    "modelId": "4612a72f-35ac-4d38-a745-0aed030eed28",
+    "storage": "256 GB",
+    "basePrice": 16460,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "ea2b5e9e-e34d-45fe-b943-2f87738cbd9f",
+    "modelId": "8bb667e2-175d-44f4-b5ad-474a77145d06",
+    "storage": "256 GB",
+    "basePrice": 11000,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "3b0d1aab-3bb9-4639-bc94-e3ef560b55e3",
+    "modelId": "8bb667e2-175d-44f4-b5ad-474a77145d06",
+    "storage": "128 GB",
+    "basePrice": 11000,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "e2453821-6efd-45fb-91dc-304346e20d91",
+    "modelId": "5f19f7a3-21e9-4e52-940b-7b740ae766ad",
+    "storage": "128 GB",
+    "basePrice": 12330,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "36b56a90-d23b-4fe9-ba37-be76327bff2c",
+    "modelId": "5f19f7a3-21e9-4e52-940b-7b740ae766ad",
+    "storage": "128 GB",
+    "basePrice": 12330,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "8131a7d7-999d-44d2-9029-f43031253018",
+    "modelId": "87b9fc5a-0b58-4118-8757-295cec0ab8b5",
+    "storage": "128 GB",
+    "basePrice": 15840,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5585d013-a780-4cc9-83fc-54bdf0ff722f",
+    "modelId": "87b9fc5a-0b58-4118-8757-295cec0ab8b5",
+    "storage": "256 GB",
+    "basePrice": 15840,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "1e96f493-0ac6-4623-93d2-3c8805720a7e",
+    "modelId": "87b9fc5a-0b58-4118-8757-295cec0ab8b5",
+    "storage": "256 GB",
+    "basePrice": 15840,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "88d4b030-d13e-4ba3-9cb7-919c49d812f4",
+    "modelId": "cad8cbeb-2e01-482b-9c74-50bc43492407",
+    "storage": "256 GB",
+    "basePrice": 28310,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "2c42e705-b679-4a17-bfcb-448afcebb7ed",
+    "modelId": "cad8cbeb-2e01-482b-9c74-50bc43492407",
+    "storage": "512 GB",
+    "basePrice": 32820,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "68a3a394-4725-4ab2-8a3f-a822bc21c29c",
+    "modelId": "5a38b1f7-5bf2-4157-bf1a-4306920b36e0",
+    "storage": "64 GB",
+    "basePrice": 5770,
+    "active": true
+  },
+  {
+    "id": "5ab01c63-6c79-43d3-8a75-67f159afca44",
+    "modelId": "0ca6538e-937d-403d-a5a5-4d7dc9197ae5",
+    "storage": "256 GB",
+    "basePrice": 23460,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "50791997-07a6-4d14-b92d-e6ecf77c256a",
+    "modelId": "0ca6538e-937d-403d-a5a5-4d7dc9197ae5",
+    "storage": "256 GB",
+    "basePrice": 25680,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "8d1af0f1-0bec-4c51-beea-fc38fe9d0ed7",
+    "modelId": "0ca6538e-937d-403d-a5a5-4d7dc9197ae5",
+    "storage": "512 GB",
+    "basePrice": 26620,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "78e92632-f874-4343-ba45-d36bb2b4c4cd",
+    "modelId": "80f9f8f4-52ab-49b4-a694-983431428e28",
+    "storage": "128 GB",
+    "basePrice": 6950,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "35918700-456a-4f81-b801-607095185f3a",
+    "modelId": "25c4c052-cd63-42aa-a467-a9a5b778ec2c",
+    "storage": "128 GB",
+    "basePrice": 5380,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b8553c4f-c5f4-49a9-8fa4-6cad60130ef6",
+    "modelId": "3a016a11-aefe-4ca2-884d-b1e11adce484",
+    "storage": "256 GB",
+    "basePrice": 45330,
+    "active": true
+  },
+  {
+    "id": "65f9e426-9b27-4ec3-99fd-15c37605d8bd",
+    "modelId": "3a016a11-aefe-4ca2-884d-b1e11adce484",
+    "storage": "512 GB",
+    "basePrice": 50510,
+    "active": true
+  },
+  {
+    "id": "00133d28-9eb6-4880-99b0-8c9d999cadde",
+    "modelId": "387f12f9-50cc-4c6f-b484-def010fe504c",
+    "storage": "128 GB",
+    "basePrice": 21460,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "13f3b525-fb51-4454-91a9-9373f0373283",
+    "modelId": "387f12f9-50cc-4c6f-b484-def010fe504c",
+    "storage": "256 GB",
+    "basePrice": 25210,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "1024b87d-e1d3-460b-a2e6-4445e4480886",
+    "modelId": "387f12f9-50cc-4c6f-b484-def010fe504c",
+    "storage": "256 GB",
+    "basePrice": 29250,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "5963b5eb-0600-4e66-b413-688dd89c22a6",
+    "modelId": "8544aae1-da2e-47e3-b9af-a28521d7ae92",
+    "storage": "256 GB",
+    "basePrice": 26140,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "6fa47c33-c38b-40e2-a4a4-20c5cb0697f6",
+    "modelId": "8544aae1-da2e-47e3-b9af-a28521d7ae92",
+    "storage": "128 GB",
+    "basePrice": 26140,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "587985e4-37c9-4993-9a16-5efbd408fdf3",
+    "modelId": "8544aae1-da2e-47e3-b9af-a28521d7ae92",
+    "storage": "256 GB",
+    "basePrice": 26140,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "dae5ac44-a0f3-4ef9-8203-7473faa48990",
+    "modelId": "2dbfd876-3401-48a7-bb9a-9db3a53e5693",
+    "storage": "128 GB",
+    "basePrice": 5250,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "da5366b7-2732-4e62-8697-b5423293c8c2",
+    "modelId": "fe8368fb-0ad4-44d9-9121-35f59b3bfeae",
+    "storage": "128 GB",
+    "basePrice": 9030,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "1921b01d-5e06-4f9a-a936-9bc53cb5da7d",
+    "modelId": "9f4bd1f5-f249-4fab-a573-d851abb1c1e2",
+    "storage": "128 GB",
+    "basePrice": 6430,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "6dbd700e-90aa-4d9c-a450-30d64b2092d2",
+    "modelId": "9f4bd1f5-f249-4fab-a573-d851abb1c1e2",
+    "storage": "128 GB",
+    "basePrice": 6430,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "3e35d581-c8fa-4705-86f1-4d55d6ab6874",
+    "modelId": "9f4bd1f5-f249-4fab-a573-d851abb1c1e2",
+    "storage": "128 GB",
+    "basePrice": 6430,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "31ff3fde-cf81-4718-9c17-8380a64e96fe",
+    "modelId": "2fe622cf-7af6-47a2-98cc-aca43edd39c8",
+    "storage": "256 GB",
+    "basePrice": 50390,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "c443d909-09e0-4c53-b97d-0909319552d3",
+    "modelId": "f3ca41ab-7c9e-487c-ac45-121445ba5885",
+    "storage": "1 TB",
+    "basePrice": 15930,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "b85f380e-c590-4d14-a627-aa74322abf7c",
+    "modelId": "f3ca41ab-7c9e-487c-ac45-121445ba5885",
+    "storage": "128 GB",
+    "basePrice": 15930,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0a0a94ee-db67-4dfc-8be1-deeb01d8f0f2",
+    "modelId": "f3ca41ab-7c9e-487c-ac45-121445ba5885",
+    "storage": "256 GB",
+    "basePrice": 15930,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "392756f8-d034-41bd-a249-c87a75f62790",
+    "modelId": "4e208dfb-db9b-4384-b931-a375abeb2f90",
+    "storage": "64 GB",
+    "basePrice": 5260,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "8234f0aa-7dda-4a30-aaba-3c44421f45b8",
+    "modelId": "b2f190d3-556e-4d60-8b44-f22812c9afe2",
+    "storage": "256 GB",
+    "basePrice": 17230,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "102f0ebd-e3f9-4e9e-83a9-529e0cd579ac",
+    "modelId": "d55362d8-1290-4452-8d29-ff147ddee991",
+    "storage": "64 GB",
+    "basePrice": 9410,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "8ec1a9e9-611c-4cc3-9308-a774d401ef47",
+    "modelId": "68b7480f-c6c4-41bb-92af-67ceb62417f3",
+    "storage": "128 GB",
+    "basePrice": 5040,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "2e37b372-d247-49eb-abd6-2953c37be06e",
+    "modelId": "68b7480f-c6c4-41bb-92af-67ceb62417f3",
+    "storage": "128 GB",
+    "basePrice": 5410,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "84e69be4-1d96-4256-9111-6db20d8d6da9",
+    "modelId": "68b7480f-c6c4-41bb-92af-67ceb62417f3",
+    "storage": "128 GB",
+    "basePrice": 5810,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "218ebca8-21c6-4ffc-afc7-d0a30b27c0a6",
+    "modelId": "e3e290a2-14ea-4a49-bdb7-30eb4310abd7",
+    "storage": "512 GB",
+    "basePrice": 37400,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "a178aa7d-cac1-4f34-b8eb-06c0c1e15b60",
+    "modelId": "4ee164a7-1678-498a-8373-549355a1a976",
+    "storage": "32 GB",
+    "basePrice": 2850,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "906b0b81-2f69-4efd-b6f2-4d0799759c72",
+    "modelId": "4ee164a7-1678-498a-8373-549355a1a976",
+    "storage": "64 GB",
+    "basePrice": 3060,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "916aca80-f8fd-4956-8eeb-48b301aab928",
+    "modelId": "b3da33d3-4320-429e-bf35-340060dcd41a",
+    "storage": "128 GB",
+    "basePrice": 12600,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "1906bccb-e21b-4933-be3d-f201c8c039d9",
+    "modelId": "b3da33d3-4320-429e-bf35-340060dcd41a",
+    "storage": "128 GB",
+    "basePrice": 13440,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5fed3ab3-9aa1-4fc1-aef7-c5d51c7219a6",
+    "modelId": "b3da33d3-4320-429e-bf35-340060dcd41a",
+    "storage": "256 GB",
+    "basePrice": 14610,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "2ee095ab-f176-45b0-8bca-8667751563d4",
+    "modelId": "e928e134-cdfd-496f-9ed7-f8735818532b",
+    "storage": "128 GB",
+    "basePrice": 14910,
+    "active": true
+  },
+  {
+    "id": "2e62dafc-6a2d-474f-8ca2-73583aa4937a",
+    "modelId": "e928e134-cdfd-496f-9ed7-f8735818532b",
+    "storage": "256 GB",
+    "basePrice": 17150,
+    "active": true
+  },
+  {
+    "id": "a761ca78-5f33-4640-bbcc-0c1bdde5f378",
+    "modelId": "a313eb5b-34da-4b0e-b1b9-308d4747f50d",
+    "storage": "128 GB",
+    "basePrice": 9900,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "dfda8664-ae5c-47d6-82a4-b2de1e9b5946",
+    "modelId": "a313eb5b-34da-4b0e-b1b9-308d4747f50d",
+    "storage": "128 GB",
+    "basePrice": 9900,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "dcffb2a3-3be6-4e20-8836-6877fc7b33a4",
+    "modelId": "a313eb5b-34da-4b0e-b1b9-308d4747f50d",
+    "storage": "64 GB",
+    "basePrice": 9900,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "369c4b92-479a-4409-bddf-7608bcb309bf",
+    "modelId": "ebb37713-543b-4369-9078-bd77cdc9c0c0",
+    "storage": "256 GB",
+    "basePrice": 10020,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "0a73e223-6a6f-4786-b7b8-76cbf5921be8",
+    "modelId": "ebb37713-543b-4369-9078-bd77cdc9c0c0",
+    "storage": "128 GB",
+    "basePrice": 10020,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "3ccc2111-e38b-4503-92ed-582ffece7958",
+    "modelId": "c7346ce2-90d8-47ea-b79c-908a37f0aa2a",
+    "storage": "256 GB",
+    "basePrice": 25440,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "e59fe48b-2422-4c11-9992-17028e065bbf",
+    "modelId": "c7346ce2-90d8-47ea-b79c-908a37f0aa2a",
+    "storage": "128 GB",
+    "basePrice": 25440,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "8f95311c-586c-4920-8542-0d0da28d4c17",
+    "modelId": "c7346ce2-90d8-47ea-b79c-908a37f0aa2a",
+    "storage": "256 GB",
+    "basePrice": 25440,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "56f05ce1-dd90-4902-87ee-dca4593f7bf5",
+    "modelId": "77b1c2c1-4369-40cd-b23f-4d67def9df05",
+    "storage": "128 GB",
+    "basePrice": 8260,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "3b631599-48d4-43c4-836f-d44feca7b52f",
+    "modelId": "77b1c2c1-4369-40cd-b23f-4d67def9df05",
+    "storage": "256 GB",
+    "basePrice": 8480,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "249f51fc-a27c-49d7-b9c4-1d458957118a",
+    "modelId": "8c9442d4-8572-4089-a058-a497ba5ee0eb",
+    "storage": "32 GB",
+    "basePrice": 3150,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "8ee9bebb-0e97-4445-8c9e-2b9922f280aa",
+    "modelId": "8c9442d4-8572-4089-a058-a497ba5ee0eb",
+    "storage": "64 GB",
+    "basePrice": 3150,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "aa4c9b54-4953-4002-978f-fb6ff35388cc",
+    "modelId": "133e3a15-f5bc-4f01-bbcd-54a151ca9a48",
+    "storage": "256 GB",
+    "basePrice": 24970,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "5b954f3b-4e61-4845-b00c-bf80ef56c2e0",
+    "modelId": "6538a1fd-da1a-41c3-94d7-60a749bf869d",
+    "storage": "128 GB",
+    "basePrice": 9210,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "1840f9d6-eba7-4e4f-b3f7-541f779e9d39",
+    "modelId": "6538a1fd-da1a-41c3-94d7-60a749bf869d",
+    "storage": "128 GB",
+    "basePrice": 10530,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "bfe8e3ea-649b-4a30-9a91-b7237e1a4aa4",
+    "modelId": "25fa0bc1-8e6c-4803-97a5-46c50184e380",
+    "storage": "256 GB",
+    "basePrice": 23380,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "9dfddaf1-c58c-4bc1-bd5c-65ce65e97790",
+    "modelId": "8d05586d-5918-4f9b-8709-e58ceb4a0745",
+    "storage": "128 GB",
+    "basePrice": 10160,
+    "active": true
+  },
+  {
+    "id": "e910c6a3-8512-4b2a-83b4-2360cde2a8c7",
+    "modelId": "8d05586d-5918-4f9b-8709-e58ceb4a0745",
+    "storage": "256 GB",
+    "basePrice": 10470,
+    "active": true
+  },
+  {
+    "id": "a0e54844-affd-41eb-8b24-e3f773df78f0",
+    "modelId": "442c04b2-c9b9-4eca-86b3-5a22347ac3d3",
+    "storage": "128 GB",
+    "basePrice": 5740,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "fe6353a1-784a-454d-847b-ea3c4985db5f",
+    "modelId": "442c04b2-c9b9-4eca-86b3-5a22347ac3d3",
+    "storage": "64 GB",
+    "basePrice": 5740,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "240bdcaa-8ecd-4aad-aec5-af634fb3f4ed",
+    "modelId": "090899ad-f45e-4f65-820f-36c179b9f099",
+    "storage": "512 GB",
+    "basePrice": 41980,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "6d407345-bde9-4896-9d30-7db572e5695c",
+    "modelId": "72d7abe4-2531-40ae-9601-0c2f270fe7ab",
+    "storage": "256 GB",
+    "basePrice": 14660,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "bb04857b-b1c9-4604-a1ab-c86a6aa21881",
+    "modelId": "72d7abe4-2531-40ae-9601-0c2f270fe7ab",
+    "storage": "256 GB",
+    "basePrice": 14660,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "30c18555-8008-47c3-a664-e06a914278e7",
+    "modelId": "96704750-4c26-48c5-92e7-c8ae5451992b",
+    "storage": "128 GB",
+    "basePrice": 9500,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "c04b55ef-6910-41fd-a76e-4ba328037b3b",
+    "modelId": "96704750-4c26-48c5-92e7-c8ae5451992b",
+    "storage": "128 GB",
+    "basePrice": 9500,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "813d8d87-7378-484f-8a15-8dda244c0109",
+    "modelId": "96704750-4c26-48c5-92e7-c8ae5451992b",
+    "storage": "256 GB",
+    "basePrice": 11210,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "14c45488-4a8d-4834-949a-3d7d45f901de",
+    "modelId": "91096bf3-5d86-4f77-aa8c-49b071b53c3f",
+    "storage": "128 GB",
+    "basePrice": 9500,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "a42c72ea-7f07-4e59-a149-ff3babda68c6",
+    "modelId": "91096bf3-5d86-4f77-aa8c-49b071b53c3f",
+    "storage": "128 GB",
+    "basePrice": 9500,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "7d6bacb5-7416-4458-a47c-371230e095a1",
+    "modelId": "91096bf3-5d86-4f77-aa8c-49b071b53c3f",
+    "storage": "256 GB",
+    "basePrice": 11210,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "aae5d8b8-2e07-4791-9e2d-5741fb0fda9d",
+    "modelId": "04806001-235f-4a9f-92bc-601da558491f",
+    "storage": "256 GB",
+    "basePrice": 31190,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "e86f9cba-75e3-41cf-83e8-57301ecdf4ad",
+    "modelId": "1658860a-ba22-4a83-8e30-18a979b9df45",
+    "storage": "128 GB",
+    "basePrice": 9080,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a893a9af-e7db-4135-bddb-af37439db94b",
+    "modelId": "1658860a-ba22-4a83-8e30-18a979b9df45",
+    "storage": "256 GB",
+    "basePrice": 10370,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "2f8ce498-b6f5-476c-ba77-15640a8e3bdd",
+    "modelId": "9435448d-72cb-4f31-b8a8-265ef8e26649",
+    "storage": "256 GB",
+    "basePrice": 13980,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "9646369c-dfba-4303-ab62-9841d3dc5955",
+    "modelId": "9435448d-72cb-4f31-b8a8-265ef8e26649",
+    "storage": "128 GB",
+    "basePrice": 13980,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5641168a-b790-4462-9abb-f06e8f0a689d",
+    "modelId": "91705fcb-d930-4a34-aa5e-76a067e4bebe",
+    "storage": "128 GB",
+    "basePrice": 7520,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "2ea26c03-0efe-403b-9001-879005b90aff",
+    "modelId": "91705fcb-d930-4a34-aa5e-76a067e4bebe",
+    "storage": "128 GB",
+    "basePrice": 7870,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "7aeeb076-0cf5-4ec3-9191-244020902d6a",
+    "modelId": "ab994911-4cb9-4338-a713-98bd0fe1e026",
+    "storage": "64 GB",
+    "basePrice": 5100,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "05f94ee4-44bc-40a7-a578-202fb4654d3b",
+    "modelId": "b850a4a4-34f5-4d73-b00b-dbe7e53d8ac8",
+    "storage": "256 GB",
+    "basePrice": 23980,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "4abc1619-554b-46f8-bcdf-1b630d2c05ff",
+    "modelId": "b850a4a4-34f5-4d73-b00b-dbe7e53d8ac8",
+    "storage": "256 GB",
+    "basePrice": 25860,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "ca543285-2c78-400d-84ec-a44f3f19965e",
+    "modelId": "7698efd2-d002-43fc-a250-c6a1c1564608",
+    "storage": "128 GB",
+    "basePrice": 19960,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "62e87aff-7950-4a9e-9ce2-55dff72cc3ba",
+    "modelId": "7698efd2-d002-43fc-a250-c6a1c1564608",
+    "storage": "256 GB",
+    "basePrice": 21860,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "f71c4a96-9592-43ce-8b6f-4c10062827c1",
+    "modelId": "1c4cebf3-5b87-41d7-b27e-f3ed6b8a03f9",
+    "storage": "256 GB",
+    "basePrice": 11670,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "d0889667-bfdc-40f4-94be-5176fd309ceb",
+    "modelId": "041841f5-3798-45ec-8097-dffd8b8303cb",
+    "storage": "128 GB",
+    "basePrice": 9500,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "49b078b9-2f4f-44a3-9a26-bf9b1c74eeb0",
+    "modelId": "041841f5-3798-45ec-8097-dffd8b8303cb",
+    "storage": "128 GB",
+    "basePrice": 9500,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "d6800e3c-5833-4826-9724-b5e1a1b6e484",
+    "modelId": "041841f5-3798-45ec-8097-dffd8b8303cb",
+    "storage": "256 GB",
+    "basePrice": 11210,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0f58ef8d-4709-46b1-9ed1-d0baa7eadc1f",
+    "modelId": "21043dfa-3493-4b8e-8cbe-877fe0e59048",
+    "storage": "128 GB",
+    "basePrice": 19890,
+    "active": true
+  },
+  {
+    "id": "809dd442-524e-43bd-a064-73d3e41025e8",
+    "modelId": "21043dfa-3493-4b8e-8cbe-877fe0e59048",
+    "storage": "256 GB",
+    "basePrice": 21160,
+    "active": true
+  },
+  {
+    "id": "71f3d188-fe7f-47eb-a55c-26a26cf521ee",
+    "modelId": "bdf24bf6-f9fd-4ec0-a384-d35cb3659a9c",
+    "storage": "64 GB",
+    "basePrice": 9700,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "00371692-ef60-4b9c-a08f-e759e3496a32",
+    "modelId": "38cfb6e6-32e9-4c4c-be39-7820cf6a488e",
+    "storage": "64 GB",
+    "basePrice": 7180,
+    "active": true
+  },
+  {
+    "id": "e8b0feae-c009-43fd-b797-7ac4c76f6d07",
+    "modelId": "f8988fb5-7cdc-4bdd-92af-62ecc3b9c23b",
+    "storage": "64 GB",
+    "basePrice": 4560,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "ad5824bc-af24-4b93-9fb3-3b99a485d089",
+    "modelId": "f8988fb5-7cdc-4bdd-92af-62ecc3b9c23b",
+    "storage": "64 GB",
+    "basePrice": 4760,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "032cddf4-5477-49c6-81d5-a3cfbadf520f",
+    "modelId": "f8988fb5-7cdc-4bdd-92af-62ecc3b9c23b",
+    "storage": "128 GB",
+    "basePrice": 5020,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "8e67276c-7a68-4445-8109-1d3a7b3238a0",
+    "modelId": "3a60f0c7-aad2-42ac-a3dc-21520d52510c",
+    "storage": "64 GB",
+    "basePrice": 3880,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "dfd86f7a-5715-47ca-83bb-1d5f204a3a9f",
+    "modelId": "3ea5ba30-216e-411d-b18d-fc23a81bd4fe",
+    "storage": "32 GB",
+    "basePrice": 2060,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "7212f08c-c781-4e90-a367-5143a540a17a",
+    "modelId": "41d5a72e-3c74-40b5-83ed-8d070fbf411d",
+    "storage": "128 GB",
+    "basePrice": 46930,
+    "active": true
+  },
+  {
+    "id": "0828c068-5fc6-49df-9c8b-b4d0d36745d3",
+    "modelId": "41d5a72e-3c74-40b5-83ed-8d070fbf411d",
+    "storage": "256 GB",
+    "basePrice": 47870,
+    "active": true
+  },
+  {
+    "id": "9f4f3a62-bd10-4f99-959c-f485620834fd",
+    "modelId": "910ec691-23b5-4c7e-a2cc-7385bcd8b403",
+    "storage": "64 GB",
+    "basePrice": 8320,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "8620938c-6623-4f95-9f4a-64a1ce62e594",
+    "modelId": "5973f62b-7c86-4dc1-8250-7f3523165573",
+    "storage": "64 GB",
+    "basePrice": 5660,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "4d08cf34-26c8-4a98-84e8-97e3bb2d2aa2",
+    "modelId": "5973f62b-7c86-4dc1-8250-7f3523165573",
+    "storage": "128 GB",
+    "basePrice": 5660,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "7315ed5a-6144-4d6a-aab9-a472003b19c6",
+    "modelId": "8a31dbcf-2db5-441f-a767-23edf0f0dcb9",
+    "storage": "128 GB",
+    "basePrice": 7050,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "325b38dc-d6a6-4055-8c7f-709a4b673c14",
+    "modelId": "8a31dbcf-2db5-441f-a767-23edf0f0dcb9",
+    "storage": "128 GB",
+    "basePrice": 7620,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "03af026a-9c79-4345-91bd-e69a16f05b9e",
+    "modelId": "29f2e0b9-96e3-4228-9874-b7ceea0ce397",
+    "storage": "128 GB",
+    "basePrice": 8000,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "5663e412-4e2d-4241-ab77-66828bf3ef10",
+    "modelId": "29f2e0b9-96e3-4228-9874-b7ceea0ce397",
+    "storage": "128 GB",
+    "basePrice": 8400,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "7b9f2bf7-c7e2-4d37-be62-b8f19b829b18",
+    "modelId": "29f2e0b9-96e3-4228-9874-b7ceea0ce397",
+    "storage": "256 GB",
+    "basePrice": 8690,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "e32562e6-d5c8-4c30-b21c-56d7d8d82597",
+    "modelId": "8b700b9e-eaca-4686-ac03-12d99664100b",
+    "storage": "256 GB",
+    "basePrice": 15300,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "206e6ea3-8d8b-44a3-8203-ab6b27015c0b",
+    "modelId": "2b5d809e-f6d2-4f5c-8d18-762be1f5704f",
+    "storage": "256 GB",
+    "basePrice": 18070,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b5d99d0d-c00d-485e-a3d2-ef15ecfdcb36",
+    "modelId": "3bf1705d-72fe-4523-828d-d8bcf336a120",
+    "storage": "128 GB",
+    "basePrice": 8570,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "a8917680-d8c6-49fa-86c3-435b7e8e6494",
+    "modelId": "3bf1705d-72fe-4523-828d-d8bcf336a120",
+    "storage": "128 GB",
+    "basePrice": 8810,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "8aec99ce-520e-46f5-8012-ff6fa23c67b2",
+    "modelId": "13b51d56-4c09-40c2-83c9-dd6dcf793cbd",
+    "storage": "128 GB",
+    "basePrice": 15890,
+    "active": true
+  },
+  {
+    "id": "c94b298d-a89a-41a6-8c51-9939f2a1c071",
+    "modelId": "13b51d56-4c09-40c2-83c9-dd6dcf793cbd",
+    "storage": "256 GB",
+    "basePrice": 16240,
+    "active": true
+  },
+  {
+    "id": "e06c07e4-1766-4e50-9143-43fe2a57224d",
+    "modelId": "da2dc74f-fe5b-4c6c-a12c-a41d45da4510",
+    "storage": "128 GB",
+    "basePrice": 9690,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "c746e149-9d31-47ea-bea9-6ca1f29c667e",
+    "modelId": "da2dc74f-fe5b-4c6c-a12c-a41d45da4510",
+    "storage": "128 GB",
+    "basePrice": 10440,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "c3c64824-c6b9-4061-b90c-7fe23b4e25d6",
+    "modelId": "da2dc74f-fe5b-4c6c-a12c-a41d45da4510",
+    "storage": "256 GB",
+    "basePrice": 10860,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "46533788-471b-43df-8a5d-69ff0d6c286f",
+    "modelId": "054a9e9b-ae06-46c1-a69b-549f1ad4b1a5",
+    "storage": "64 GB",
+    "basePrice": 7330,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "46ff27c7-81a8-42ef-b902-bc6d091f8353",
+    "modelId": "3a9ce52a-a95d-41d3-8477-e69d25a098bd",
+    "storage": "128 GB",
+    "basePrice": 7910,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "1d8a790c-86ec-4f52-8a6e-7079678247e6",
+    "modelId": "4b566116-1ab4-4303-9d62-5189d4ee855d",
+    "storage": "256 GB",
+    "basePrice": 8400,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "02c17818-3a22-4771-8ef5-bd161256f217",
+    "modelId": "5a56cb20-3098-4c76-a594-2ecbfd12246a",
+    "storage": "256 GB",
+    "basePrice": 22570,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "7d6dce87-5b90-483a-8b39-bdbdeead14e4",
+    "modelId": "e3d71055-4569-45bb-aa47-c1928d992643",
+    "storage": "64 GB",
+    "basePrice": 2660,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "1121eb47-a3cb-4d93-8c67-5430881b9eaa",
+    "modelId": "ac9a8c31-a808-4497-9a25-1c5844025864",
+    "storage": "256 GB",
+    "basePrice": 25250,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "648c973d-5fcf-4ed5-9e73-e502f836d8ca",
+    "modelId": "93d9d7b5-adb1-4942-8570-cef3bdc80b53",
+    "storage": "128 GB",
+    "basePrice": 11920,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "19d592c1-27c9-49c5-9d36-3cf3eeb7b516",
+    "modelId": "a554587a-a907-4a3c-ab10-a37a5158eb26",
+    "storage": "128 GB",
+    "basePrice": 8120,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "4ae3eb02-a4c6-48d3-a512-b6071836cce6",
+    "modelId": "a554587a-a907-4a3c-ab10-a37a5158eb26",
+    "storage": "128 GB",
+    "basePrice": 8410,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "8db01be9-4b58-40ca-a54f-43c0e62052d5",
+    "modelId": "a554587a-a907-4a3c-ab10-a37a5158eb26",
+    "storage": "256 GB",
+    "basePrice": 8720,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "26e49a47-05ee-4846-a4f4-65c9fb51ca2a",
+    "modelId": "a18252d9-f4c7-4109-b457-21da14e956e6",
+    "storage": "128 GB",
+    "basePrice": 12420,
+    "active": true
+  },
+  {
+    "id": "f7ffc5e6-db9e-4fbe-8b52-d305fae2acda",
+    "modelId": "a18252d9-f4c7-4109-b457-21da14e956e6",
+    "storage": "256 GB",
+    "basePrice": 13280,
+    "active": true
+  },
+  {
+    "id": "0e65f851-e493-4464-83e3-55219df7b955",
+    "modelId": "e0e0fb49-7451-4d62-8545-a089b37e7ffb",
+    "storage": "64 GB",
+    "basePrice": 5300,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "6fc1cc77-c663-4d97-9362-b36bf2186069",
+    "modelId": "f6d1d547-6459-4dc8-911c-5bedcc5bc182",
+    "storage": "256 GB",
+    "basePrice": 18530,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "58ed6754-4896-4fd1-b4f5-5301d5e471c3",
+    "modelId": "eb8467ec-fcb4-421e-b669-d2f6c736360f",
+    "storage": "256 GB",
+    "basePrice": 17870,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "452bac1e-a2c5-4479-a7be-5c1811b43363",
+    "modelId": "eb8467ec-fcb4-421e-b669-d2f6c736360f",
+    "storage": "256 GB",
+    "basePrice": 20690,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "4c36eb19-e785-478f-b19d-1066f7e24e3f",
+    "modelId": "eb8467ec-fcb4-421e-b669-d2f6c736360f",
+    "storage": "512 GB",
+    "basePrice": 22200,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "6e5cd451-10d6-4294-b75a-c5fa8cbef731",
+    "modelId": "5937730b-6ab6-4c15-b27f-19ea5c8e4b83",
+    "storage": "128 GB",
+    "basePrice": 4950,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "112fdb8d-3164-4a56-b7f6-be1b7a67fa21",
+    "modelId": "3d73d29c-e2ee-49c3-b6cd-88e883166fd0",
+    "storage": "128 GB",
+    "basePrice": 4610,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "a1a4534d-fafa-44a0-af13-1f984e82ddd4",
+    "modelId": "9bc40e77-9a4f-4220-b73f-62f29607de54",
+    "storage": "256 GB",
+    "basePrice": 32230,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "3e7cb6e5-20c9-4905-8682-dec9530bd05d",
+    "modelId": "9bc40e77-9a4f-4220-b73f-62f29607de54",
+    "storage": "256 GB",
+    "basePrice": 35360,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "d5795801-2e66-4bde-94d6-7bf41dc001ef",
+    "modelId": "9bc40e77-9a4f-4220-b73f-62f29607de54",
+    "storage": "512 GB",
+    "basePrice": 38230,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "55003a00-4934-463b-85d7-bfbdd1a9ad12",
+    "modelId": "8c7c0ac9-545b-485d-bc63-e6c413c18ff9",
+    "storage": "64 GB",
+    "basePrice": 3370,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "98ec9370-157b-4465-905a-47d71649b9a5",
+    "modelId": "6d51cfc8-01e5-4a74-a11e-4c8fdbf809e9",
+    "storage": "128 GB",
+    "basePrice": 16740,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "d5f30ea1-7f1a-4178-bcd1-d99f4d52add4",
+    "modelId": "6d51cfc8-01e5-4a74-a11e-4c8fdbf809e9",
+    "storage": "256 GB",
+    "basePrice": 18010,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "059cb493-821d-4a66-9c9f-a8dc55290c3a",
+    "modelId": "6d51cfc8-01e5-4a74-a11e-4c8fdbf809e9",
+    "storage": "256 GB",
+    "basePrice": 18810,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "2525dc03-ad1f-4741-b2ff-f60f5f022029",
+    "modelId": "6d51cfc8-01e5-4a74-a11e-4c8fdbf809e9",
+    "storage": "512 GB",
+    "basePrice": 19810,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "8c661da0-9cae-450f-aca0-081df545ef37",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "8 GB",
+    "basePrice": 25200,
+    "active": true
+  },
+  {
+    "id": "ab0c93b0-6468-4f34-a4ac-1926ba46a38b",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "8 GB",
+    "basePrice": 25200,
+    "active": true
+  },
+  {
+    "id": "f665c742-8a89-49f1-ace3-0b6cef72431f",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "256 GB",
+    "basePrice": 28748,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "96967e3f-0093-4194-8439-0a4beba81b8e",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "8 GB",
+    "basePrice": 25200,
+    "active": true
+  },
+  {
+    "id": "d5431e1b-83eb-4fdc-a185-5fdb3b6d72e0",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "128 GB",
+    "basePrice": 25644,
+    "active": true
+  },
+  {
+    "id": "ac99d42b-b9a6-4ecf-8fb7-3edae18d1626",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "128 GB",
+    "basePrice": 25644,
+    "active": true
+  },
+  {
+    "id": "b5020b41-de83-4fa8-ae19-1de0cd4247e0",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "128 GB",
+    "basePrice": 25644,
+    "active": true
+  },
+  {
+    "id": "97c82740-f0a3-4788-9d40-bcc4c8abc3e7",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "128 GB",
+    "basePrice": 25644,
+    "active": true
+  },
+  {
+    "id": "13dbc1fb-27b2-46bf-81e7-3afb67d9cfa5",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "128 GB",
+    "basePrice": 25644,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "6adb2ad7-abea-491c-870e-11eff3f1f1df",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "128 GB",
+    "basePrice": 25644,
+    "active": true
+  },
+  {
+    "id": "15e168b9-11dd-4dff-9bbe-614dd010f846",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "128 GB",
+    "basePrice": 25644,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "6cfca0a6-b4f2-46cc-9ab6-8ca5df1eeb92",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "128 GB",
+    "basePrice": 25644,
+    "active": true
+  },
+  {
+    "id": "209ee041-01d3-4fea-972d-6b7d5584a7da",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "128 GB",
+    "basePrice": 25644,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "4905e271-f5a8-44db-8764-0dbf9eea2e39",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "256 GB",
+    "basePrice": 25937,
+    "active": true
+  },
+  {
+    "id": "02c2d972-7700-43fa-9f6c-575c3f57538e",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "256 GB",
+    "basePrice": 25937,
+    "active": true
+  },
+  {
+    "id": "b45da6f7-dfc1-493f-8ffe-2a6a752fefcd",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "256 GB",
+    "basePrice": 25937,
+    "active": true
+  },
+  {
+    "id": "5157b363-9903-490e-a482-3e3dd7bc427a",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "256 GB",
+    "basePrice": 25937,
+    "active": true
+  },
+  {
+    "id": "18703da8-bafe-4653-a5da-d41811fecc30",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "256 GB",
+    "basePrice": 25937,
+    "active": true
+  },
+  {
+    "id": "444cb4c6-f895-4324-805f-13a22a810491",
+    "modelId": "0e81d486-b349-4170-b0c0-ccbdfb9d2f49",
+    "storage": "256 GB",
+    "basePrice": 25937,
+    "active": true
+  },
+  {
+    "id": "73c004d1-9280-4079-9f4b-3e36d2042899",
+    "modelId": "823f36af-3f73-434d-9f39-7714f03ac434",
+    "storage": "512 GB",
+    "basePrice": 99750,
+    "active": true
+  },
+  {
+    "id": "0b2af107-4658-4338-a4be-3fa397ac141c",
+    "modelId": "823f36af-3f73-434d-9f39-7714f03ac434",
+    "storage": "12 GB",
+    "basePrice": 94500,
+    "active": true
+  },
+  {
+    "id": "4953b5d0-8c72-4b62-b89f-429d26596f36",
+    "modelId": "823f36af-3f73-434d-9f39-7714f03ac434",
+    "storage": "512 GB",
+    "basePrice": 99750,
+    "active": true
+  },
+  {
+    "id": "fd2e35d5-92a0-4559-ab99-14757a59a4ae",
+    "modelId": "823f36af-3f73-434d-9f39-7714f03ac434",
+    "storage": "12 GB",
+    "basePrice": 94500,
+    "active": true
+  },
+  {
+    "id": "98354b50-32a9-4537-9904-092676424239",
+    "modelId": "823f36af-3f73-434d-9f39-7714f03ac434",
+    "storage": "512 GB",
+    "basePrice": 119094,
+    "active": true,
+    "ram": "16 GB"
+  },
+  {
+    "id": "98b68b6b-6be6-4559-bdad-79edba1081b8",
+    "modelId": "823f36af-3f73-434d-9f39-7714f03ac434",
+    "storage": "512 GB",
+    "basePrice": 99750,
+    "active": true
+  },
+  {
+    "id": "29dc5a9c-ae3f-49ed-8948-6a8e2cb49544",
+    "modelId": "823f36af-3f73-434d-9f39-7714f03ac434",
+    "storage": "12 GB",
+    "basePrice": 94500,
+    "active": true
+  },
+  {
+    "id": "bc1b9acb-9a47-46fe-9a4c-a32db78f515c",
+    "modelId": "823f36af-3f73-434d-9f39-7714f03ac434",
+    "storage": "16 GB",
+    "basePrice": 95950,
+    "active": true,
+    "ram": "512 GB"
+  },
+  {
+    "id": "a6ba7549-4355-4975-8c88-2332a81127d4",
+    "modelId": "823f36af-3f73-434d-9f39-7714f03ac434",
+    "storage": "16 GB",
+    "basePrice": 95950,
+    "active": true,
+    "ram": "512 GB"
+  },
+  {
+    "id": "7a7d85b0-b659-494c-a74a-0eb4c1160226",
+    "modelId": "823f36af-3f73-434d-9f39-7714f03ac434",
+    "storage": "16 GB",
+    "basePrice": 95950,
+    "active": true,
+    "ram": "512 GB"
+  },
+  {
+    "id": "9a835930-f55a-401e-83dd-d0301285f50c",
+    "modelId": "823f36af-3f73-434d-9f39-7714f03ac434",
+    "storage": "256 GB",
+    "basePrice": 90900,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "f4c625ef-40be-476d-b24a-7ec42f1e4487",
+    "modelId": "823f36af-3f73-434d-9f39-7714f03ac434",
+    "storage": "256 GB",
+    "basePrice": 90900,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "29b61be5-fe40-4324-aee4-e6030ba1e49e",
+    "modelId": "823f36af-3f73-434d-9f39-7714f03ac434",
+    "storage": "256 GB",
+    "basePrice": 90900,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "4e1cf058-20c1-41cb-9c77-4997ec534fac",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "32 GB",
+    "basePrice": 1298,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "3d6590f3-2fd6-43e0-92cf-2d1c94cba99d",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "64 GB",
+    "basePrice": 1298,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "2fbe7976-a9ba-4e66-9982-05760b459a4b",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "32 GB",
+    "basePrice": 1374,
+    "active": true
+  },
+  {
+    "id": "c4040dbe-f6d4-49a8-8f86-70ac3efc987b",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "32 GB",
+    "basePrice": 1374,
+    "active": true
+  },
+  {
+    "id": "27ab6095-83bc-471a-9d55-15d1aadb2856",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "32 GB",
+    "basePrice": 1374,
+    "active": true
+  },
+  {
+    "id": "4f4f1bed-ae09-4029-866f-793ec8d7cc43",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "32 GB",
+    "basePrice": 1374,
+    "active": true
+  },
+  {
+    "id": "01b55518-dd2c-428d-8a5b-8313e2851761",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "32 GB",
+    "basePrice": 1374,
+    "active": true
+  },
+  {
+    "id": "53aa5396-41b4-47f2-b363-902334ad9032",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "32 GB",
+    "basePrice": 1374,
+    "active": true
+  },
+  {
+    "id": "65a536b4-fb67-483b-9d99-220cd57d3405",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "64 GB",
+    "basePrice": 1576,
+    "active": true
+  },
+  {
+    "id": "3995c049-86db-4a9d-b1d8-2a195744def9",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "64 GB",
+    "basePrice": 1576,
+    "active": true
+  },
+  {
+    "id": "0d516d9e-460a-4507-a263-31c013478a09",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "64 GB",
+    "basePrice": 1576,
+    "active": true
+  },
+  {
+    "id": "0cb338a9-4185-4c7b-a3cc-9e12eef42b14",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "64 GB",
+    "basePrice": 1576,
+    "active": true
+  },
+  {
+    "id": "4e350b18-75ef-4a3b-a6f5-e39b585bc69b",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "64 GB",
+    "basePrice": 1576,
+    "active": true
+  },
+  {
+    "id": "9de4f92e-6495-4563-8933-2bf2dc5d8aac",
+    "modelId": "f8b7f388-6a85-4ede-b4a3-8615700a631d",
+    "storage": "64 GB",
+    "basePrice": 1576,
+    "active": true
+  },
+  {
+    "id": "f06a9774-2c08-48c4-9dcf-b427fffabbc4",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "32 GB",
+    "basePrice": 1302,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "5c3747d3-0ac1-4a62-a169-c2edf6e35d57",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "64 GB",
+    "basePrice": 1302,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "bd41e8b4-9cad-4233-af8e-0b623aee63d3",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "32 GB",
+    "basePrice": 1424,
+    "active": true
+  },
+  {
+    "id": "a8eee9e7-fc63-453b-a7d1-dc8489e02fed",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "32 GB",
+    "basePrice": 1424,
+    "active": true
+  },
+  {
+    "id": "a8416b10-8090-42b3-822d-49c36ceaac88",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "32 GB",
+    "basePrice": 1424,
+    "active": true
+  },
+  {
+    "id": "420f636b-499b-4ee0-a451-636d165de9b7",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "32 GB",
+    "basePrice": 1424,
+    "active": true
+  },
+  {
+    "id": "2dd4af66-9ba5-4f4f-9601-e2d3d2c61b72",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "32 GB",
+    "basePrice": 1424,
+    "active": true
+  },
+  {
+    "id": "f68761b0-ecde-4e22-aefe-e9b789782dc9",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "32 GB",
+    "basePrice": 1424,
+    "active": true
+  },
+  {
+    "id": "c04b5598-f3d7-4e8b-b4fb-0afbf341f8c8",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "64 GB",
+    "basePrice": 1535,
+    "active": true
+  },
+  {
+    "id": "8ca3295f-13b0-479b-8c7b-d2f4344b62e0",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "64 GB",
+    "basePrice": 1535,
+    "active": true
+  },
+  {
+    "id": "7ff0e04b-981a-4162-b997-8aee5cbe0d61",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "64 GB",
+    "basePrice": 1535,
+    "active": true
+  },
+  {
+    "id": "9ab09952-fa49-4f3a-ba70-1c87d04450bf",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "64 GB",
+    "basePrice": 1535,
+    "active": true
+  },
+  {
+    "id": "3b4b0dda-4690-42dd-9fd3-48f878e7e691",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "64 GB",
+    "basePrice": 1535,
+    "active": true
+  },
+  {
+    "id": "2e39287e-2e32-4499-baf6-9e88947443fe",
+    "modelId": "9d9aae23-03fc-4089-8ef3-d0337810adc8",
+    "storage": "64 GB",
+    "basePrice": 1535,
+    "active": true
+  },
+  {
+    "id": "36e567bb-48b6-4508-81cc-8fc8e725304d",
+    "modelId": "0649f704-3437-42e9-b6bf-400a50d8d07b",
+    "storage": "6 GB",
+    "basePrice": 4410,
+    "active": true
+  },
+  {
+    "id": "430a2aea-0122-47fb-8a54-1e2f9a73c7eb",
+    "modelId": "0649f704-3437-42e9-b6bf-400a50d8d07b",
+    "storage": "6 GB",
+    "basePrice": 4410,
+    "active": true
+  },
+  {
+    "id": "6cd8e805-9afc-47ba-8143-c0e874b23a8f",
+    "modelId": "0649f704-3437-42e9-b6bf-400a50d8d07b",
+    "storage": "128 GB",
+    "basePrice": 4326,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "93d4e420-39b7-4b31-aad9-c4217370cf7d",
+    "modelId": "0649f704-3437-42e9-b6bf-400a50d8d07b",
+    "storage": "64 GB",
+    "basePrice": 3807,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "2a277127-3d77-4235-bbb6-d30945d19db3",
+    "modelId": "0649f704-3437-42e9-b6bf-400a50d8d07b",
+    "storage": "6 GB",
+    "basePrice": 4410,
+    "active": true
+  },
+  {
+    "id": "37ae6994-0f10-4d78-8001-c7141b765cb4",
+    "modelId": "0649f704-3437-42e9-b6bf-400a50d8d07b",
+    "storage": "64 GB",
+    "basePrice": 4242,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "74a37082-8fc0-4abb-a65f-f4637ce8f5e7",
+    "modelId": "0649f704-3437-42e9-b6bf-400a50d8d07b",
+    "storage": "64 GB",
+    "basePrice": 4242,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "50b1309e-61b8-48a9-a1f9-73e8cbaacfe0",
+    "modelId": "0649f704-3437-42e9-b6bf-400a50d8d07b",
+    "storage": "64 GB",
+    "basePrice": 4242,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "98804178-c957-439f-91a6-fd851897fba5",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "512 GB",
+    "basePrice": 15895,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "6f5035bd-876e-427f-896e-98951be90f53",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "256 GB",
+    "basePrice": 14242,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "bde41c77-4894-4557-ba4a-627b5742e622",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "256 GB",
+    "basePrice": 12272,
+    "active": true
+  },
+  {
+    "id": "9da6e3ba-ef97-469b-bf34-79aa4ef25375",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "256 GB",
+    "basePrice": 12272,
+    "active": true
+  },
+  {
+    "id": "3dbba425-dfcb-4c2b-9c2b-e87d52f577ca",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "256 GB",
+    "basePrice": 12272,
+    "active": true
+  },
+  {
+    "id": "38de8d33-41f8-46e5-a378-a6b1e1200ca9",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "256 GB",
+    "basePrice": 12272,
+    "active": true
+  },
+  {
+    "id": "743d7bfb-23e5-4128-b964-c150f404e55d",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "256 GB",
+    "basePrice": 12272,
+    "active": true
+  },
+  {
+    "id": "8ced5566-2328-4d9f-91f0-9a74d51c1a69",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "256 GB",
+    "basePrice": 12272,
+    "active": true
+  },
+  {
+    "id": "7c853ec7-22fe-40e0-8b2a-549132b2745d",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "512 GB",
+    "basePrice": 13160,
+    "active": true
+  },
+  {
+    "id": "96704683-f521-45e5-a3c9-598981280287",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "512 GB",
+    "basePrice": 13160,
+    "active": true
+  },
+  {
+    "id": "02d7f68c-6caf-4079-80ef-abe0eb62055d",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "512 GB",
+    "basePrice": 13160,
+    "active": true
+  },
+  {
+    "id": "7db33b52-45e0-4ca8-aa53-59e90d7630ac",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "512 GB",
+    "basePrice": 13160,
+    "active": true
+  },
+  {
+    "id": "84564b79-e8cb-4711-8bc5-a552ab3720fb",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "512 GB",
+    "basePrice": 13160,
+    "active": true
+  },
+  {
+    "id": "26bac211-8dc3-45c7-85d6-da1a32a17f82",
+    "modelId": "22c312e4-a15b-4328-adbc-8fe54c038746",
+    "storage": "512 GB",
+    "basePrice": 13160,
+    "active": true
+  },
+  {
+    "id": "7544f18f-8db6-4768-8bdf-c0a0970f6d81",
+    "modelId": "9ab691f2-c1be-4b90-a90a-2993aa087c07",
+    "storage": "12 GB",
+    "basePrice": 7518,
+    "active": true
+  },
+  {
+    "id": "9ef7c193-f2f4-45f4-9a9e-9a37dc00653b",
+    "modelId": "9ab691f2-c1be-4b90-a90a-2993aa087c07",
+    "storage": "12 GB",
+    "basePrice": 7518,
+    "active": true
+  },
+  {
+    "id": "7c478cd6-3840-4aa9-b02e-9aebb9ed9ea9",
+    "modelId": "9ab691f2-c1be-4b90-a90a-2993aa087c07",
+    "storage": "256 GB",
+    "basePrice": 8260,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "2e219cb1-e54d-412d-a4b2-a136b3b39ce4",
+    "modelId": "9ab691f2-c1be-4b90-a90a-2993aa087c07",
+    "storage": "128 GB",
+    "basePrice": 7375,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "3652f0eb-32ad-4719-a7f5-7b18135c271c",
+    "modelId": "9ab691f2-c1be-4b90-a90a-2993aa087c07",
+    "storage": "12 GB",
+    "basePrice": 7518,
+    "active": true
+  },
+  {
+    "id": "c12cc8db-4d5c-4ca6-865f-3134c5453ba3",
+    "modelId": "9ab691f2-c1be-4b90-a90a-2993aa087c07",
+    "storage": "256 GB",
+    "basePrice": 7232,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "fa4f6349-72dd-423f-aa9c-c841253d3840",
+    "modelId": "9ab691f2-c1be-4b90-a90a-2993aa087c07",
+    "storage": "256 GB",
+    "basePrice": 7232,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "567d255b-c4e2-4047-963d-17df1dc815ea",
+    "modelId": "9ab691f2-c1be-4b90-a90a-2993aa087c07",
+    "storage": "256 GB",
+    "basePrice": 7232,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "82db189d-eceb-4892-a70d-6e515f3f71e1",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "128 GB",
+    "basePrice": 8222,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b54153e3-f5cf-40e1-84c4-04b7ca6cdbbd",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "256 GB",
+    "basePrice": 9209,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b40beab0-f1f6-4d2d-a717-d12171589925",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "128 GB",
+    "basePrice": 8030,
+    "active": true
+  },
+  {
+    "id": "8ab29d79-e999-40b3-a433-892ad6c1445e",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "128 GB",
+    "basePrice": 8030,
+    "active": true
+  },
+  {
+    "id": "34a7f498-2b62-4f3b-b77d-241dd1caf2e1",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "128 GB",
+    "basePrice": 8030,
+    "active": true
+  },
+  {
+    "id": "4231fb9a-77bb-42a5-b151-7dfe7ee0f7c3",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "128 GB",
+    "basePrice": 8030,
+    "active": true
+  },
+  {
+    "id": "276d38bd-962f-4632-91c6-2ce7cf890422",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "128 GB",
+    "basePrice": 8030,
+    "active": true
+  },
+  {
+    "id": "78dd2fe6-4845-496f-8936-57254e338e83",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "128 GB",
+    "basePrice": 8030,
+    "active": true
+  },
+  {
+    "id": "4cbafafc-9b93-4f9f-a39b-a7ee8255659d",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "256 GB",
+    "basePrice": 8413,
+    "active": true
+  },
+  {
+    "id": "9c57a7fb-89c5-45d7-bd23-84e3f24d15f7",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "256 GB",
+    "basePrice": 8413,
+    "active": true
+  },
+  {
+    "id": "54eef19b-e480-4155-9b47-66607800eb6a",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "256 GB",
+    "basePrice": 8413,
+    "active": true
+  },
+  {
+    "id": "ee9e3d7f-f2e1-4a32-bf5d-ca29f8fe382d",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "256 GB",
+    "basePrice": 8413,
+    "active": true
+  },
+  {
+    "id": "e7194ece-8b20-4f44-a599-d26a7c0ab04d",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "256 GB",
+    "basePrice": 8413,
+    "active": true
+  },
+  {
+    "id": "c9dea46d-7df7-4bb8-9c98-1e8bb647ba94",
+    "modelId": "08cf52e0-9e5f-4cbf-9bfc-dcfbe2f284b8",
+    "storage": "256 GB",
+    "basePrice": 8413,
+    "active": true
+  },
+  {
+    "id": "c363312a-8a4e-4f54-9022-9e34935e677c",
+    "modelId": "adfa4761-e8db-40db-82da-799d357ab15e",
+    "storage": "8 GB",
+    "basePrice": 13514,
+    "active": true
+  },
+  {
+    "id": "a882ee89-8d70-4fad-ab67-c2f54ed01995",
+    "modelId": "adfa4761-e8db-40db-82da-799d357ab15e",
+    "storage": "8 GB",
+    "basePrice": 13514,
+    "active": true
+  },
+  {
+    "id": "b9d59560-c75b-474a-9751-4c910a9e7daf",
+    "modelId": "adfa4761-e8db-40db-82da-799d357ab15e",
+    "storage": "128 GB",
+    "basePrice": 13257,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "1622eaa9-81fd-4620-851a-9a793e395ad8",
+    "modelId": "adfa4761-e8db-40db-82da-799d357ab15e",
+    "storage": "8 GB",
+    "basePrice": 13514,
+    "active": true
+  },
+  {
+    "id": "3c704d51-1078-4069-8674-0e5396dc5bd5",
+    "modelId": "adfa4761-e8db-40db-82da-799d357ab15e",
+    "storage": "256 GB",
+    "basePrice": 12999,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "cd29f62f-4f34-4bac-a253-b201016ad20c",
+    "modelId": "adfa4761-e8db-40db-82da-799d357ab15e",
+    "storage": "256 GB",
+    "basePrice": 12999,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "45dced35-4779-4d2a-a987-75eb025f30c7",
+    "modelId": "adfa4761-e8db-40db-82da-799d357ab15e",
+    "storage": "256 GB",
+    "basePrice": 12999,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "73e91635-4020-499d-9284-6e62192107a2",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "32 GB",
+    "basePrice": 1236,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "cf13627a-c5e3-4d3a-9b53-18f6138e6b9a",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "16 GB",
+    "basePrice": 1236,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "c1d9735e-fa07-4122-a94c-b4aebe65cd67",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "16 GB",
+    "basePrice": 1273,
+    "active": true
+  },
+  {
+    "id": "eda83f94-d66a-4604-9a95-1972908cf6e7",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "16 GB",
+    "basePrice": 1273,
+    "active": true
+  },
+  {
+    "id": "cafd283f-d5a9-48d7-a200-f85463a8ca26",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "16 GB",
+    "basePrice": 1273,
+    "active": true
+  },
+  {
+    "id": "f36c0011-c285-4a80-ae2c-5b188ccb09c0",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "16 GB",
+    "basePrice": 1273,
+    "active": true
+  },
+  {
+    "id": "afac439b-3210-4d08-b06e-b7a24cd2e63f",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "16 GB",
+    "basePrice": 1273,
+    "active": true
+  },
+  {
+    "id": "e85c24ac-10e9-499d-b62f-201c68e9d34e",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "16 GB",
+    "basePrice": 1273,
+    "active": true
+  },
+  {
+    "id": "745317cd-70b4-4180-855d-6b56153ced9c",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "32 GB",
+    "basePrice": 1535,
+    "active": true
+  },
+  {
+    "id": "5b339453-48a4-4c83-940c-5d93506b2930",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "32 GB",
+    "basePrice": 1535,
+    "active": true
+  },
+  {
+    "id": "75af00ea-92e5-464a-89db-854d15ab1967",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "32 GB",
+    "basePrice": 1535,
+    "active": true
+  },
+  {
+    "id": "e5d300ae-46b1-4f78-ba59-cafcba2ef65a",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "32 GB",
+    "basePrice": 1535,
+    "active": true
+  },
+  {
+    "id": "5bb72fa8-a358-4bf0-b63e-ba6bc7583b21",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "32 GB",
+    "basePrice": 1535,
+    "active": true
+  },
+  {
+    "id": "2fb3c90b-8fad-49e5-91aa-981b3e332dda",
+    "modelId": "e68f26e2-9254-4c17-aa3b-a094a69c33ea",
+    "storage": "32 GB",
+    "basePrice": 1535,
+    "active": true
+  },
+  {
+    "id": "81d64219-f182-4368-963f-5a9bf9b174b1",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "256 GB",
+    "basePrice": 22624,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "026c7862-bf1f-4f57-88ce-e498b312ebab",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "128 GB",
+    "basePrice": 20200,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "ab885ccb-49a6-4e9c-8817-5eb73ba2266e",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "128 GB",
+    "basePrice": 19382,
+    "active": true
+  },
+  {
+    "id": "3ee810ef-00b8-4c8a-8492-e26e99fa156e",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "128 GB",
+    "basePrice": 19382,
+    "active": true
+  },
+  {
+    "id": "3db0f418-8248-4e2f-9ea4-7de5e8aa498d",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "128 GB",
+    "basePrice": 19382,
+    "active": true
+  },
+  {
+    "id": "c0ccd66e-30e3-4cb8-8a51-9574fdd7b0b5",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "128 GB",
+    "basePrice": 19382,
+    "active": true
+  },
+  {
+    "id": "a208079a-1508-4cfe-a5ec-5d14ccf186e2",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "128 GB",
+    "basePrice": 19382,
+    "active": true
+  },
+  {
+    "id": "38d3da6b-261b-411a-b9dc-a87794870656",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "128 GB",
+    "basePrice": 19382,
+    "active": true
+  },
+  {
+    "id": "be0aa820-b874-463d-8611-00ae894567c0",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "256 GB",
+    "basePrice": 21018,
+    "active": true
+  },
+  {
+    "id": "a6c5d76a-71a4-4041-ba29-0197e929e55a",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "256 GB",
+    "basePrice": 21018,
+    "active": true
+  },
+  {
+    "id": "2f17cd46-2dc7-4ed0-814d-fc3798af04e4",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "256 GB",
+    "basePrice": 21018,
+    "active": true
+  },
+  {
+    "id": "0f28a944-36c1-4f6b-9b90-1ef89f205e68",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "256 GB",
+    "basePrice": 21018,
+    "active": true
+  },
+  {
+    "id": "af78f213-d6ef-4e58-a1cf-900b20732d39",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "256 GB",
+    "basePrice": 21018,
+    "active": true
+  },
+  {
+    "id": "7fe3d886-de7b-414b-841a-e9f9d3b9ce98",
+    "modelId": "b9c38312-8c7e-4ce1-8188-d6c24f99551a",
+    "storage": "256 GB",
+    "basePrice": 21018,
+    "active": true
+  },
+  {
+    "id": "ec9a513c-c75a-408d-aaaf-222b99883034",
+    "modelId": "6e7c646d-ea48-4d34-809f-1cc1b4e07078",
+    "storage": "256 GB",
+    "basePrice": 15961,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "e5831b13-8539-488b-a2c3-74744a1deb64",
+    "modelId": "6e7c646d-ea48-4d34-809f-1cc1b4e07078",
+    "storage": "128 GB",
+    "basePrice": 13988,
+    "active": true
+  },
+  {
+    "id": "012bb9da-0c3b-45eb-bdbc-20b1ea8842dc",
+    "modelId": "6e7c646d-ea48-4d34-809f-1cc1b4e07078",
+    "storage": "128 GB",
+    "basePrice": 13988,
+    "active": true
+  },
+  {
+    "id": "cf9a1185-5049-44b4-9d15-0a3fed2bf464",
+    "modelId": "6e7c646d-ea48-4d34-809f-1cc1b4e07078",
+    "storage": "128 GB",
+    "basePrice": 13988,
+    "active": true
+  },
+  {
+    "id": "6af5e320-bf46-4c2d-95f3-c65f1de98411",
+    "modelId": "6e7c646d-ea48-4d34-809f-1cc1b4e07078",
+    "storage": "128 GB",
+    "basePrice": 13988,
+    "active": true
+  },
+  {
+    "id": "bd8c858f-5921-4584-986f-c9466599e864",
+    "modelId": "6e7c646d-ea48-4d34-809f-1cc1b4e07078",
+    "storage": "128 GB",
+    "basePrice": 13988,
+    "active": true
+  },
+  {
+    "id": "1673bb5d-53cd-4080-bfed-3c61b29b7954",
+    "modelId": "6e7c646d-ea48-4d34-809f-1cc1b4e07078",
+    "storage": "128 GB",
+    "basePrice": 13988,
+    "active": true
+  },
+  {
+    "id": "acaee493-e70c-4d15-b9bf-7f16e8d44dce",
+    "modelId": "6e7c646d-ea48-4d34-809f-1cc1b4e07078",
+    "storage": "256 GB",
+    "basePrice": 14514,
+    "active": true
+  },
+  {
+    "id": "daeb8e72-3a27-40a1-a444-019488a68679",
+    "modelId": "6e7c646d-ea48-4d34-809f-1cc1b4e07078",
+    "storage": "256 GB",
+    "basePrice": 14514,
+    "active": true
+  },
+  {
+    "id": "b0871175-8470-431d-9a52-b9a799447e02",
+    "modelId": "6e7c646d-ea48-4d34-809f-1cc1b4e07078",
+    "storage": "256 GB",
+    "basePrice": 14514,
+    "active": true
+  },
+  {
+    "id": "7556db68-e8c7-498e-ad21-a3433ee32073",
+    "modelId": "6e7c646d-ea48-4d34-809f-1cc1b4e07078",
+    "storage": "256 GB",
+    "basePrice": 14514,
+    "active": true
+  },
+  {
+    "id": "20a705bf-0d09-48f8-9525-9ebba73d2ae4",
+    "modelId": "6e7c646d-ea48-4d34-809f-1cc1b4e07078",
+    "storage": "256 GB",
+    "basePrice": 14514,
+    "active": true
+  },
+  {
+    "id": "cb1318a8-57b5-4172-9838-58a26d0a7928",
+    "modelId": "6e7c646d-ea48-4d34-809f-1cc1b4e07078",
+    "storage": "256 GB",
+    "basePrice": 14514,
+    "active": true
+  },
+  {
+    "id": "ae92535c-7197-48a6-b950-e63eb0513ef0",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "128 GB",
+    "basePrice": 15181,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "3c16fde6-583d-4e0b-a96f-3aaf45153526",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "256 GB",
+    "basePrice": 17003,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "ea848b52-c5f6-48df-8e16-c2a94934646e",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "128 GB",
+    "basePrice": 14928,
+    "active": true
+  },
+  {
+    "id": "8a12cec3-dee8-4e82-ba17-1b463cb67029",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "128 GB",
+    "basePrice": 14928,
+    "active": true
+  },
+  {
+    "id": "315c0bec-5b70-4dbf-8060-ace8b962e638",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "128 GB",
+    "basePrice": 14928,
+    "active": true
+  },
+  {
+    "id": "c0d495eb-2b34-403e-8bc9-ca0e7d2b39a1",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "128 GB",
+    "basePrice": 14928,
+    "active": true
+  },
+  {
+    "id": "31bd4e9e-79b5-4942-bef8-52d9f50d38eb",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "128 GB",
+    "basePrice": 14928,
+    "active": true
+  },
+  {
+    "id": "5bae3cd2-8344-4eff-aea9-22549268e346",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "128 GB",
+    "basePrice": 14928,
+    "active": true
+  },
+  {
+    "id": "ad35b816-9876-4335-b882-b6baf43bb1b0",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "256 GB",
+    "basePrice": 15433,
+    "active": true
+  },
+  {
+    "id": "ff690714-2a31-48bf-84e6-a78ff6910df8",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "256 GB",
+    "basePrice": 15433,
+    "active": true
+  },
+  {
+    "id": "d4ba8a89-37b3-4907-8c41-adb39bf79b5a",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "256 GB",
+    "basePrice": 15433,
+    "active": true
+  },
+  {
+    "id": "daf7439d-dc4d-49c8-8767-b1f95eb78d9e",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "256 GB",
+    "basePrice": 15433,
+    "active": true
+  },
+  {
+    "id": "d0588d9f-20b5-4dce-9408-e92d7ff5ba33",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "256 GB",
+    "basePrice": 15433,
+    "active": true
+  },
+  {
+    "id": "b888df7d-3ba8-465c-b185-4a7f62b13d30",
+    "modelId": "9034bb7d-c550-4b1c-873b-117ba23ca7f6",
+    "storage": "256 GB",
+    "basePrice": 15433,
+    "active": true
+  },
+  {
+    "id": "93458c14-c7cc-4973-8c00-544a45d2bcfe",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "64 GB",
+    "basePrice": 1698,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "a40bc1d7-dd30-4164-829d-241f5d7b960d",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "128 GB",
+    "basePrice": 1929,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "31761d75-5a66-45a2-aceb-a848c296148b",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "64 GB",
+    "basePrice": 1798,
+    "active": true
+  },
+  {
+    "id": "cc7c99f0-187e-4322-ac3d-910c88cb6b98",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "64 GB",
+    "basePrice": 1798,
+    "active": true
+  },
+  {
+    "id": "8054c5c0-e259-4721-8837-a46092666afd",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "64 GB",
+    "basePrice": 1798,
+    "active": true
+  },
+  {
+    "id": "3078c39e-0d43-4be8-b169-3bfc62ae3edc",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "64 GB",
+    "basePrice": 1798,
+    "active": true
+  },
+  {
+    "id": "5f268e84-061c-4456-8f56-49d95e66a2da",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "64 GB",
+    "basePrice": 1798,
+    "active": true
+  },
+  {
+    "id": "e96b9319-dcfc-459f-8ebb-f9cabd903f92",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "64 GB",
+    "basePrice": 1798,
+    "active": true
+  },
+  {
+    "id": "a89b317f-d71e-4197-8820-b0fdf9deebf4",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "128 GB",
+    "basePrice": 2060,
+    "active": true
+  },
+  {
+    "id": "2f4c192d-7e12-46d3-85e8-f5fdeecde8c2",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "128 GB",
+    "basePrice": 2060,
+    "active": true
+  },
+  {
+    "id": "be17500a-5f65-40e5-8f2f-19c18805d47c",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "128 GB",
+    "basePrice": 2060,
+    "active": true
+  },
+  {
+    "id": "a4746228-d404-4b77-a672-62ee051bcca4",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "128 GB",
+    "basePrice": 2060,
+    "active": true
+  },
+  {
+    "id": "307891d8-e79c-4d06-b29d-6e8cd7bde600",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "128 GB",
+    "basePrice": 2060,
+    "active": true
+  },
+  {
+    "id": "decc4651-1426-4bdb-89c3-0305607217b6",
+    "modelId": "c2053e34-52bf-4526-a64f-0a84ad37497e",
+    "storage": "128 GB",
+    "basePrice": 2060,
+    "active": true
+  },
+  {
+    "id": "fd7d007c-cd00-4b3b-9d45-fd7bf93557f6",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "256 GB",
+    "basePrice": 17443,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "ad3d5c8a-82ef-42ee-8ba7-f9e3c089d757",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "128 GB",
+    "basePrice": 15574,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b922e7d4-10fb-4921-8377-58c81eaf0cbb",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "128 GB",
+    "basePrice": 14786,
+    "active": true
+  },
+  {
+    "id": "1924c68e-2b33-423a-9ccd-5f412c7a3a57",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "128 GB",
+    "basePrice": 14786,
+    "active": true
+  },
+  {
+    "id": "8c8c9bc8-7a0a-42d4-b518-4c7e314956e9",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "128 GB",
+    "basePrice": 14786,
+    "active": true
+  },
+  {
+    "id": "e702d9e1-4941-45e3-b098-6e9b76cb7c66",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "128 GB",
+    "basePrice": 14786,
+    "active": true
+  },
+  {
+    "id": "f0f4c2a3-8bf3-41f9-8e96-10c3dfc115e0",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "128 GB",
+    "basePrice": 14786,
+    "active": true
+  },
+  {
+    "id": "d51635ee-036c-424c-948e-7e76886ad5d4",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "128 GB",
+    "basePrice": 14786,
+    "active": true
+  },
+  {
+    "id": "5d8ff9b6-c3d3-4644-9fb0-8f4bd682530a",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "256 GB",
+    "basePrice": 16362,
+    "active": true
+  },
+  {
+    "id": "91cfb189-ae48-4d47-b650-52998f2636aa",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "256 GB",
+    "basePrice": 16362,
+    "active": true
+  },
+  {
+    "id": "734073fe-e346-4bb4-943e-66c72239e087",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "256 GB",
+    "basePrice": 16362,
+    "active": true
+  },
+  {
+    "id": "bfe2db9e-e608-4bee-9bf7-9857c51cdb32",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "256 GB",
+    "basePrice": 16362,
+    "active": true
+  },
+  {
+    "id": "09e365c8-6261-48fe-85a3-5f5f4dda7bc6",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "256 GB",
+    "basePrice": 16362,
+    "active": true
+  },
+  {
+    "id": "e3b5cbc4-b6b1-4f84-860c-7acf94853800",
+    "modelId": "bbf316f6-f8f7-4b57-9fdb-252e1decd92b",
+    "storage": "256 GB",
+    "basePrice": 16362,
+    "active": true
+  },
+  {
+    "id": "5cab7c59-4843-4ec1-8da9-7127db7e050f",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "128 GB",
+    "basePrice": 4328,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "5e0dedaa-bab2-4414-9651-187496260060",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "64 GB",
+    "basePrice": 3809,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "d38d3caa-9d10-454b-9fad-a5da8e0cc91f",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "64 GB",
+    "basePrice": 4171,
+    "active": true
+  },
+  {
+    "id": "2925c568-2c77-4995-b268-eda7fffa8571",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "64 GB",
+    "basePrice": 4171,
+    "active": true
+  },
+  {
+    "id": "53d1b62f-e731-4012-89b7-2f326ec7472c",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "64 GB",
+    "basePrice": 4171,
+    "active": true
+  },
+  {
+    "id": "b3268778-c9a0-4fe5-b037-32ad78985e59",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "64 GB",
+    "basePrice": 4171,
+    "active": true
+  },
+  {
+    "id": "28beeec2-0725-48e7-82f8-fb0f8649e2fa",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "64 GB",
+    "basePrice": 4171,
+    "active": true
+  },
+  {
+    "id": "e80d5766-ea79-4a7e-b4d3-4f655cb913cb",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "64 GB",
+    "basePrice": 4171,
+    "active": true
+  },
+  {
+    "id": "46e9e552-7196-46b6-8217-26422d98d95f",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "128 GB",
+    "basePrice": 4484,
+    "active": true
+  },
+  {
+    "id": "1a74f6be-0ab9-44b7-a3cf-be646f3ede26",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "128 GB",
+    "basePrice": 4484,
+    "active": true
+  },
+  {
+    "id": "1f464c6e-8dda-4f4d-a99b-07ea02982894",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "128 GB",
+    "basePrice": 4484,
+    "active": true
+  },
+  {
+    "id": "074336e8-13a4-495f-b6cc-81d8ae625e40",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "128 GB",
+    "basePrice": 4484,
+    "active": true
+  },
+  {
+    "id": "d45597ee-1d73-4c02-be84-7244228a4561",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "128 GB",
+    "basePrice": 4484,
+    "active": true
+  },
+  {
+    "id": "fe7ad64a-570b-4ad2-b2db-c8d99078f38e",
+    "modelId": "3770ebec-bb19-4357-943c-d1878fe5f77e",
+    "storage": "128 GB",
+    "basePrice": 4484,
+    "active": true
+  },
+  {
+    "id": "a7d23a59-cca0-4c93-904f-8443bf42aa6b",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "256 GB",
+    "basePrice": 6601,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "dea90814-8d97-4e20-82f7-229dc97328d2",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "128 GB",
+    "basePrice": 5894,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5ee8ddc3-0684-4ef7-ab0e-463bcc2daab8",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "128 GB",
+    "basePrice": 5777,
+    "active": true
+  },
+  {
+    "id": "95085ab9-a328-4cec-b4cb-969ac0c4ed6f",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "128 GB",
+    "basePrice": 5777,
+    "active": true
+  },
+  {
+    "id": "ec92bb6f-d685-40fc-8a99-79f196362dd4",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "128 GB",
+    "basePrice": 5777,
+    "active": true
+  },
+  {
+    "id": "c13768c1-7adb-41a6-831a-4fd0e7d5f065",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "128 GB",
+    "basePrice": 5777,
+    "active": true
+  },
+  {
+    "id": "43236c40-47cc-4a71-aa87-e5bc536c2ffa",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "128 GB",
+    "basePrice": 5777,
+    "active": true
+  },
+  {
+    "id": "e61dc085-53b9-40e8-b7ea-d3878cf09e6c",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "128 GB",
+    "basePrice": 5777,
+    "active": true
+  },
+  {
+    "id": "d9c963fd-6ff5-4a39-8e99-a9e5b1f3f204",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "256 GB",
+    "basePrice": 6010,
+    "active": true
+  },
+  {
+    "id": "10ca629d-4aac-4e47-9421-40cd3ff9b486",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "256 GB",
+    "basePrice": 6010,
+    "active": true
+  },
+  {
+    "id": "9e0cd1b5-7849-4d14-9e85-d705b7b0a1e4",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "256 GB",
+    "basePrice": 6010,
+    "active": true
+  },
+  {
+    "id": "cf09ca31-26e9-4522-a576-29f481311310",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "256 GB",
+    "basePrice": 6010,
+    "active": true
+  },
+  {
+    "id": "0af4a50d-12f5-4206-ac36-0919e5ccb137",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "256 GB",
+    "basePrice": 6010,
+    "active": true
+  },
+  {
+    "id": "b88f2f9c-9dd2-4b1a-b94a-66ef044a4924",
+    "modelId": "3dd7ca92-6676-483a-a725-10d162bdf384",
+    "storage": "256 GB",
+    "basePrice": 6010,
+    "active": true
+  },
+  {
+    "id": "6d9e583b-441e-46f3-8227-6f0e01374201",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "128 GB",
+    "basePrice": 3671,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "a9a96c0e-58f0-492d-97d8-7fd7924ca445",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "64 GB",
+    "basePrice": 3230,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "8a2e6565-4b86-4a11-addb-9c01824c9700",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "64 GB",
+    "basePrice": 3171,
+    "active": true
+  },
+  {
+    "id": "eaaeafbb-e813-48d4-be32-9cd5a1e8c156",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "64 GB",
+    "basePrice": 3171,
+    "active": true
+  },
+  {
+    "id": "0ecc9165-a45d-42ec-8b79-03799d7f003d",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "64 GB",
+    "basePrice": 3171,
+    "active": true
+  },
+  {
+    "id": "0840981e-d2b9-48a2-85a2-2db18d114328",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "64 GB",
+    "basePrice": 3171,
+    "active": true
+  },
+  {
+    "id": "7340d017-58c0-4c56-b2e4-7a03160d1491",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "64 GB",
+    "basePrice": 3171,
+    "active": true
+  },
+  {
+    "id": "2ebb08c3-7ef2-442e-9909-0dcaee1a5e2a",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "64 GB",
+    "basePrice": 3171,
+    "active": true
+  },
+  {
+    "id": "b3e6bedb-0144-4205-bcb6-a86ccd458a0e",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "128 GB",
+    "basePrice": 4171,
+    "active": true
+  },
+  {
+    "id": "f464c331-7e54-4e06-bd64-566aaca20238",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "128 GB",
+    "basePrice": 4171,
+    "active": true
+  },
+  {
+    "id": "17dd6197-3111-4a53-b02d-bec3cec944e0",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "128 GB",
+    "basePrice": 4171,
+    "active": true
+  },
+  {
+    "id": "d8729c0a-e5c3-4d86-8886-93c2191ea2ce",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "128 GB",
+    "basePrice": 4171,
+    "active": true
+  },
+  {
+    "id": "e1632f7c-e2eb-4a1a-8802-7e127b715883",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "128 GB",
+    "basePrice": 4171,
+    "active": true
+  },
+  {
+    "id": "3e0b7d92-10de-4fbe-87ad-2fb5fe362a79",
+    "modelId": "213b12f7-038c-40ac-8b13-563265899989",
+    "storage": "128 GB",
+    "basePrice": 4171,
+    "active": true
+  },
+  {
+    "id": "a55edc2a-b2e2-48df-88d3-d5d91080d342",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "64 GB",
+    "basePrice": 4116,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "e9bb2f93-3493-40e1-a1f1-bfc2d50be573",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "128 GB",
+    "basePrice": 4677,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "6e065e57-3699-468d-a29b-8f582da60df1",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "64 GB",
+    "basePrice": 4555,
+    "active": true
+  },
+  {
+    "id": "5308e0ec-9c9a-4167-8574-203852940afd",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "64 GB",
+    "basePrice": 4555,
+    "active": true
+  },
+  {
+    "id": "2e98fb5c-f9cd-4127-ba18-59173520edda",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "64 GB",
+    "basePrice": 4555,
+    "active": true
+  },
+  {
+    "id": "e3f998dd-a4ef-4fad-8db2-2ff897a36770",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "64 GB",
+    "basePrice": 4555,
+    "active": true
+  },
+  {
+    "id": "98a5dffb-7eff-4167-970e-e8bb654cb64a",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "64 GB",
+    "basePrice": 4555,
+    "active": true
+  },
+  {
+    "id": "6e964bf9-6654-48ac-babf-2ded8679f057",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "64 GB",
+    "basePrice": 4555,
+    "active": true
+  },
+  {
+    "id": "90f5fb37-6365-49b5-a4b2-138985a61d56",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "128 GB",
+    "basePrice": 4798,
+    "active": true
+  },
+  {
+    "id": "9bbbba01-a4cb-4ec2-818a-ccfa62ecb62f",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "128 GB",
+    "basePrice": 4798,
+    "active": true
+  },
+  {
+    "id": "7986c2d5-303d-477d-890a-95877e7197a7",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "128 GB",
+    "basePrice": 4798,
+    "active": true
+  },
+  {
+    "id": "6e5eecdc-e960-4141-889b-64bcda2003ec",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "128 GB",
+    "basePrice": 4798,
+    "active": true
+  },
+  {
+    "id": "c9e24f95-5db9-478f-9f3a-225eafa25c9e",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "128 GB",
+    "basePrice": 4798,
+    "active": true
+  },
+  {
+    "id": "0b82e710-4f52-4811-93fe-af7fa97ea258",
+    "modelId": "500c784c-a553-4d5c-823f-7a3a416d6c5e",
+    "storage": "128 GB",
+    "basePrice": 4798,
+    "active": true
+  },
+  {
+    "id": "6a73c401-a4d6-4508-bb2f-e70278ed19ac",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "256 GB",
+    "basePrice": 18405,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "d05df332-ea45-4920-be5c-ec5314bc72e5",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "128 GB",
+    "basePrice": 16433,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "211a0831-a589-4431-b8c6-d7833fa8c680",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "128 GB",
+    "basePrice": 15756,
+    "active": true
+  },
+  {
+    "id": "dcf36c1f-9836-4da0-8ba1-1327b3684901",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "128 GB",
+    "basePrice": 15756,
+    "active": true
+  },
+  {
+    "id": "0d8e3381-e69e-4e75-bf97-cc10ffa0f3ae",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "128 GB",
+    "basePrice": 15756,
+    "active": true
+  },
+  {
+    "id": "ec7c753b-1e47-4c12-9269-f1454b3b393b",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "128 GB",
+    "basePrice": 15756,
+    "active": true
+  },
+  {
+    "id": "35f85bd6-ae2e-475a-b3dc-a10e0f8242cf",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "128 GB",
+    "basePrice": 15756,
+    "active": true
+  },
+  {
+    "id": "e83214e2-0a4b-4114-a225-c9b5c630095b",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "128 GB",
+    "basePrice": 15756,
+    "active": true
+  },
+  {
+    "id": "1cd70641-6b06-49fb-a768-a6ef08f86f60",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "256 GB",
+    "basePrice": 17109,
+    "active": true
+  },
+  {
+    "id": "9ec9d45b-d87f-4cca-9669-66a0cc4b9f86",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "256 GB",
+    "basePrice": 17109,
+    "active": true
+  },
+  {
+    "id": "291f691c-1682-46ab-9edf-930c5ec461c4",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "256 GB",
+    "basePrice": 17109,
+    "active": true
+  },
+  {
+    "id": "92f2e314-d1b7-496c-941a-32ec8deae267",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "256 GB",
+    "basePrice": 17109,
+    "active": true
+  },
+  {
+    "id": "f9ac302d-3f84-46ec-b0d6-65d491258151",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "256 GB",
+    "basePrice": 17109,
+    "active": true
+  },
+  {
+    "id": "148a9150-5d33-426e-bae8-f9213536c7c2",
+    "modelId": "45c9b7d0-de26-4240-874b-1abf6f1262e9",
+    "storage": "256 GB",
+    "basePrice": 17109,
+    "active": true
+  },
+  {
+    "id": "89b84c95-3db9-4566-b335-cc0291aebc57",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "256 GB",
+    "basePrice": 15249,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "8f03b308-c379-40c0-bc63-4eac9d6b050b",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "128 GB",
+    "basePrice": 13615,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "d0956251-9cdc-4f41-955d-0a52eac3bf9c",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "128 GB",
+    "basePrice": 13443,
+    "active": true
+  },
+  {
+    "id": "7b8dd4c9-d9a3-46e1-bbf5-8eca68d33a70",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "128 GB",
+    "basePrice": 13443,
+    "active": true
+  },
+  {
+    "id": "71e0a554-4101-434c-b69e-c168dcdf64cf",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "128 GB",
+    "basePrice": 13443,
+    "active": true
+  },
+  {
+    "id": "8700bff0-290f-4994-9dc1-83016776d07e",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "128 GB",
+    "basePrice": 13443,
+    "active": true
+  },
+  {
+    "id": "dd968473-6043-424d-932c-d4b39d56f5dd",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "128 GB",
+    "basePrice": 13443,
+    "active": true
+  },
+  {
+    "id": "ba726fd2-f6bc-41fe-bcda-1724f7d24532",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "128 GB",
+    "basePrice": 13443,
+    "active": true
+  },
+  {
+    "id": "de829434-24c0-41dc-8a5e-551b39df59c0",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "256 GB",
+    "basePrice": 13786,
+    "active": true
+  },
+  {
+    "id": "d8c09565-bba2-465d-93e4-529f8b272c2d",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "256 GB",
+    "basePrice": 13786,
+    "active": true
+  },
+  {
+    "id": "4df5046c-50ec-46ee-845a-8b2e138c566c",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "256 GB",
+    "basePrice": 13786,
+    "active": true
+  },
+  {
+    "id": "2c8685db-e3a2-4473-b7b2-d059d58b494c",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "256 GB",
+    "basePrice": 13786,
+    "active": true
+  },
+  {
+    "id": "61176eb3-76b3-42ca-85bb-fd47ec942aea",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "256 GB",
+    "basePrice": 13786,
+    "active": true
+  },
+  {
+    "id": "c71338fc-c0e2-46cf-9adb-35332f315a8c",
+    "modelId": "f895946f-6892-4b4d-9f0b-1c1e49b87ff5",
+    "storage": "256 GB",
+    "basePrice": 13786,
+    "active": true
+  },
+  {
+    "id": "834b0e48-fa9b-4dab-9916-32c995e8a1ca",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "256 GB",
+    "basePrice": 17285,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "22d72ca0-bf5c-4c51-ab5e-3c4e53ba36fd",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "128 GB",
+    "basePrice": 15433,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "1977f0ed-5fee-4816-bc28-2078ba6e036f",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "128 GB",
+    "basePrice": 14988,
+    "active": true
+  },
+  {
+    "id": "1507d876-857f-44c1-8962-5881b942e2af",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "128 GB",
+    "basePrice": 14988,
+    "active": true
+  },
+  {
+    "id": "fd0f5605-4361-49bc-8519-9d4f0cc5d7c2",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "128 GB",
+    "basePrice": 14988,
+    "active": true
+  },
+  {
+    "id": "8d6466f7-4e7f-494e-b3ee-cb912149fb7e",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "128 GB",
+    "basePrice": 14988,
+    "active": true
+  },
+  {
+    "id": "b9529df1-63bb-495d-9e60-92e9e08c9852",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "128 GB",
+    "basePrice": 14988,
+    "active": true
+  },
+  {
+    "id": "d3ecfb64-ff85-43f9-b327-e4b606a25700",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "128 GB",
+    "basePrice": 14988,
+    "active": true
+  },
+  {
+    "id": "8127b280-4399-47d5-946f-1e8abdf18f54",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "256 GB",
+    "basePrice": 15877,
+    "active": true
+  },
+  {
+    "id": "895b3b64-2167-4601-981a-cdfbb1a6cd2d",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "256 GB",
+    "basePrice": 15877,
+    "active": true
+  },
+  {
+    "id": "a81a0dcb-b860-418c-9519-39ea3cdfc051",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "256 GB",
+    "basePrice": 15877,
+    "active": true
+  },
+  {
+    "id": "c57b2aba-d85f-4b2a-af9d-2f3ab2ce6ff0",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "256 GB",
+    "basePrice": 15877,
+    "active": true
+  },
+  {
+    "id": "bf900faa-2e54-46be-9e1d-9210a8885390",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "256 GB",
+    "basePrice": 15877,
+    "active": true
+  },
+  {
+    "id": "06d0c9d0-4a64-41c3-a08c-d0bd36ba1c0a",
+    "modelId": "536d5bb9-d7e3-49cb-9cb3-79966df148bb",
+    "storage": "256 GB",
+    "basePrice": 15877,
+    "active": true
+  },
+  {
+    "id": "5ca725bf-4362-43b6-b011-36c48e21cef5",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "128 GB",
+    "basePrice": 12080,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "82a67511-7477-4991-8cde-e97f3e72add8",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "256 GB",
+    "basePrice": 13530,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "549e3fa2-d1e6-46c4-8418-6a4336a860a1",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "128 GB",
+    "basePrice": 11686,
+    "active": true
+  },
+  {
+    "id": "22b24beb-9e28-4a44-adf1-1d977ddb8f87",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "128 GB",
+    "basePrice": 11686,
+    "active": true
+  },
+  {
+    "id": "902b7395-7daa-4726-ab10-0bee9c0de768",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "128 GB",
+    "basePrice": 11686,
+    "active": true
+  },
+  {
+    "id": "94706654-7a40-44f1-834d-21f0163da741",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "128 GB",
+    "basePrice": 11686,
+    "active": true
+  },
+  {
+    "id": "0a9753c5-dc2b-4b93-88fb-d8133102e398",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "128 GB",
+    "basePrice": 11686,
+    "active": true
+  },
+  {
+    "id": "c370f010-9e14-4ed7-a097-87614353be6e",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "128 GB",
+    "basePrice": 11686,
+    "active": true
+  },
+  {
+    "id": "6be0bd5e-5c7b-496e-86cd-231e33781fb8",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "256 GB",
+    "basePrice": 12474,
+    "active": true
+  },
+  {
+    "id": "5630a3c7-7fc2-49c0-94cc-500ff0166965",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "256 GB",
+    "basePrice": 12474,
+    "active": true
+  },
+  {
+    "id": "d169f7d2-409d-4df3-90f4-3746b919614f",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "256 GB",
+    "basePrice": 12474,
+    "active": true
+  },
+  {
+    "id": "96d6de23-020d-4a7a-8f37-29006d94b9fd",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "256 GB",
+    "basePrice": 12474,
+    "active": true
+  },
+  {
+    "id": "513d7d42-59ce-4cca-b580-e286e034800a",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "256 GB",
+    "basePrice": 12474,
+    "active": true
+  },
+  {
+    "id": "7d90a4e7-62c3-42f3-b16d-cac57f62ba12",
+    "modelId": "7acb6849-b662-4e59-b1bb-c2dcbd52134a",
+    "storage": "256 GB",
+    "basePrice": 12474,
+    "active": true
+  },
+  {
+    "id": "e7756353-bba8-41b4-be3d-269e4412f71e",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "256 GB",
+    "basePrice": 23122,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "8fb991b8-98c6-4d11-a469-6cd858185ebf",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "512 GB",
+    "basePrice": 26044,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "63b52d40-a881-411b-910e-8b1b4d5acc3d",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "256 GB",
+    "basePrice": 20503,
+    "active": true
+  },
+  {
+    "id": "896ff7c4-2ff7-4a0e-9034-41f788fe0080",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "256 GB",
+    "basePrice": 20503,
+    "active": true
+  },
+  {
+    "id": "03017b10-9b51-4e55-8de6-dc3986c6abc7",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "256 GB",
+    "basePrice": 20503,
+    "active": true
+  },
+  {
+    "id": "baa79d4b-c9fa-4f82-85b6-f44eb903268e",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "256 GB",
+    "basePrice": 20503,
+    "active": true
+  },
+  {
+    "id": "6406142b-ea61-42f5-b66e-997c20d58e52",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "256 GB",
+    "basePrice": 20503,
+    "active": true
+  },
+  {
+    "id": "3eaa50f6-bd49-4138-aa9d-ba2f70a6ac1f",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "256 GB",
+    "basePrice": 20503,
+    "active": true
+  },
+  {
+    "id": "47b89cb4-ba62-4f49-9d4f-28610553e7e7",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "512 GB",
+    "basePrice": 20786,
+    "active": true
+  },
+  {
+    "id": "a23c9558-e779-4449-8117-b8e5408901e5",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "512 GB",
+    "basePrice": 20786,
+    "active": true
+  },
+  {
+    "id": "5915fb36-5f6e-40d8-9866-862370519b50",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "512 GB",
+    "basePrice": 20786,
+    "active": true
+  },
+  {
+    "id": "2743761e-fb0f-4fe6-b36b-e4d695718897",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "512 GB",
+    "basePrice": 20786,
+    "active": true
+  },
+  {
+    "id": "43927931-02de-480f-9e3c-2159b342fd6b",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "512 GB",
+    "basePrice": 20786,
+    "active": true
+  },
+  {
+    "id": "760ee21e-c24e-4944-94ee-c0c8519f6742",
+    "modelId": "65088c9b-e219-4454-98dc-86f29b4f430f",
+    "storage": "512 GB",
+    "basePrice": 20786,
+    "active": true
+  },
+  {
+    "id": "ef20ce48-977d-44a8-84e5-61db800b139d",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "128 GB",
+    "basePrice": 8812,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "09702133-85e0-4ed9-83d3-1f78d095fe28",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "64 GB",
+    "basePrice": 7755,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "aaec12de-9ada-42ad-b988-3b3a74a54981",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "64 GB",
+    "basePrice": 8413,
+    "active": true
+  },
+  {
+    "id": "ee114b97-39d0-4acd-b7f4-107e89b346c6",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "64 GB",
+    "basePrice": 8413,
+    "active": true
+  },
+  {
+    "id": "5ae86c7b-d709-4caa-9b4e-a9a74f7a00f1",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "64 GB",
+    "basePrice": 8413,
+    "active": true
+  },
+  {
+    "id": "b79f3370-6f98-4cf3-a26b-2d0db28926aa",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "64 GB",
+    "basePrice": 8413,
+    "active": true
+  },
+  {
+    "id": "31081fc0-2fea-447e-979b-f7ab30f3f4e7",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "64 GB",
+    "basePrice": 8413,
+    "active": true
+  },
+  {
+    "id": "05a79de7-ab6c-45e0-a6c3-5b3f63b6a7f5",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "64 GB",
+    "basePrice": 8413,
+    "active": true
+  },
+  {
+    "id": "48b1a59f-c82a-4094-ba16-9351236669bd",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "128 GB",
+    "basePrice": 9211,
+    "active": true
+  },
+  {
+    "id": "e4e25663-c4ea-4308-b188-ba4b4e594579",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "128 GB",
+    "basePrice": 9211,
+    "active": true
+  },
+  {
+    "id": "35ae8924-83ff-4094-b14d-496e8ec6b47f",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "128 GB",
+    "basePrice": 9211,
+    "active": true
+  },
+  {
+    "id": "ec3372bd-420e-4edf-972c-4aae49c77abd",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "128 GB",
+    "basePrice": 9211,
+    "active": true
+  },
+  {
+    "id": "76bb7924-7dfe-483e-9357-4e30d1f2641b",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "128 GB",
+    "basePrice": 9211,
+    "active": true
+  },
+  {
+    "id": "19a28f10-474a-4816-b2c0-82ce15996fb8",
+    "modelId": "44635a88-e413-46c0-a0f2-669424375a50",
+    "storage": "128 GB",
+    "basePrice": 9211,
+    "active": true
+  },
+  {
+    "id": "b1f4d9e1-a4ba-4a22-b122-a772b487762e",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "128 GB",
+    "basePrice": 14115,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "f5ca66ed-a4d0-42e1-a696-67e41a578e03",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "256 GB",
+    "basePrice": 15809,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "e2116565-32a5-4447-8e30-14421100d716",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "128 GB",
+    "basePrice": 13413,
+    "active": true
+  },
+  {
+    "id": "06cceac7-3799-4a6c-a695-cab803bfea96",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "128 GB",
+    "basePrice": 13413,
+    "active": true
+  },
+  {
+    "id": "5afca1e8-520d-4bc7-b90f-cef1aed04757",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "128 GB",
+    "basePrice": 13413,
+    "active": true
+  },
+  {
+    "id": "65c26448-67fa-4a5c-802b-96a230c597aa",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "128 GB",
+    "basePrice": 13413,
+    "active": true
+  },
+  {
+    "id": "2680feca-6cdf-4998-9168-8ffcbcbf6572",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "128 GB",
+    "basePrice": 13413,
+    "active": true
+  },
+  {
+    "id": "74d1e8a0-9c89-45c5-9a44-3de98d0e6d02",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "128 GB",
+    "basePrice": 13413,
+    "active": true
+  },
+  {
+    "id": "b8011504-5100-4409-a184-6482cf6a857c",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "256 GB",
+    "basePrice": 14817,
+    "active": true
+  },
+  {
+    "id": "a61ab282-6889-48af-8862-eb6c0b729895",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "256 GB",
+    "basePrice": 14817,
+    "active": true
+  },
+  {
+    "id": "cab70785-7cd7-4bfa-bc4a-b9546f68d924",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "256 GB",
+    "basePrice": 14817,
+    "active": true
+  },
+  {
+    "id": "dc71d5e1-6b36-44a9-825b-6e062da96268",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "256 GB",
+    "basePrice": 14817,
+    "active": true
+  },
+  {
+    "id": "5e16e7de-e60f-47b7-80f6-64d975d0bdcf",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "256 GB",
+    "basePrice": 14817,
+    "active": true
+  },
+  {
+    "id": "621237ec-0208-4cae-a2d4-4d300cf1abaa",
+    "modelId": "defacce6-9797-4336-99ef-9bc19d55a9bb",
+    "storage": "256 GB",
+    "basePrice": 14817,
+    "active": true
+  },
+  {
+    "id": "b2d1df13-1373-4b25-8f0a-7f5da5bc313a",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "64 GB",
+    "basePrice": 4528,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "a5d0ab99-1856-460c-9eb3-7254a72a3a91",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "128 GB",
+    "basePrice": 5146,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "9efda2f9-7578-486c-a6f6-f65f93d94192",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "64 GB",
+    "basePrice": 4949,
+    "active": true
+  },
+  {
+    "id": "f53c298b-7f35-4b2d-94c0-107b9eeae94b",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "64 GB",
+    "basePrice": 4949,
+    "active": true
+  },
+  {
+    "id": "a222cb6e-a8e7-466d-bc01-6bd8ebd422d7",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "64 GB",
+    "basePrice": 4949,
+    "active": true
+  },
+  {
+    "id": "e68e5255-8105-412c-9bb0-eec5f94746f8",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "64 GB",
+    "basePrice": 4949,
+    "active": true
+  },
+  {
+    "id": "cd699f59-a73f-49b0-bed6-956e79fb03c5",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "64 GB",
+    "basePrice": 4949,
+    "active": true
+  },
+  {
+    "id": "e34c470c-8a65-4865-9697-76dbbdea5bed",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "64 GB",
+    "basePrice": 4949,
+    "active": true
+  },
+  {
+    "id": "7e4fa34d-772b-4937-9352-a842bafb29c6",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "128 GB",
+    "basePrice": 5343,
+    "active": true
+  },
+  {
+    "id": "cb2cd27a-8fbc-4424-ac4f-7a43843ac27e",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "128 GB",
+    "basePrice": 5343,
+    "active": true
+  },
+  {
+    "id": "dfa476e5-21a7-4f08-b336-1ae61aced4a1",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "128 GB",
+    "basePrice": 5343,
+    "active": true
+  },
+  {
+    "id": "53b28831-6188-480f-ba03-b11ab0559bfd",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "128 GB",
+    "basePrice": 5343,
+    "active": true
+  },
+  {
+    "id": "8f4432d9-1ef9-432f-b859-8040928b6d07",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "128 GB",
+    "basePrice": 5343,
+    "active": true
+  },
+  {
+    "id": "d7794abb-1915-452e-bd18-59c3a088fc72",
+    "modelId": "830d1db7-fc06-4fd7-80c9-2dd6408ae248",
+    "storage": "128 GB",
+    "basePrice": 5343,
+    "active": true
+  },
+  {
+    "id": "84a36241-d226-4163-bcd8-e852c841224b",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "512 GB",
+    "basePrice": 30490,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "d8a4ecb7-e2e4-4ed7-904d-52fec76ef5f3",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "256 GB",
+    "basePrice": 27319,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "f9f88c4a-8785-4189-800e-e7aa8f274996",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "256 GB",
+    "basePrice": 23432,
+    "active": true
+  },
+  {
+    "id": "84b6b640-28f6-42c0-84d9-dea96c81b4cb",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "256 GB",
+    "basePrice": 23432,
+    "active": true
+  },
+  {
+    "id": "94359008-ab25-4e5f-94a0-c7a7c1a5ffe7",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "256 GB",
+    "basePrice": 23432,
+    "active": true
+  },
+  {
+    "id": "850b9284-8c40-4e95-b2f9-c4207403d7f1",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "256 GB",
+    "basePrice": 23432,
+    "active": true
+  },
+  {
+    "id": "ef0e535c-775c-4fd7-9f43-b91611d36a83",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "256 GB",
+    "basePrice": 23432,
+    "active": true
+  },
+  {
+    "id": "15c2d188-9a22-41d3-b9ab-ebf01a65f4bb",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "256 GB",
+    "basePrice": 23432,
+    "active": true
+  },
+  {
+    "id": "36e9c47f-7bed-4a6b-b7a0-af347cf97a68",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "512 GB",
+    "basePrice": 25351,
+    "active": true
+  },
+  {
+    "id": "e5d57549-462a-4754-a77d-89e4457571a3",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "512 GB",
+    "basePrice": 25351,
+    "active": true
+  },
+  {
+    "id": "7fedc8a1-3cdf-4258-a6e4-bfa4c698194a",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "512 GB",
+    "basePrice": 25351,
+    "active": true
+  },
+  {
+    "id": "ac2fb663-f2a0-4feb-9050-a10df5d511b9",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "512 GB",
+    "basePrice": 25351,
+    "active": true
+  },
+  {
+    "id": "a7f84cf8-d3ff-46ac-b9e7-0bd5e0138c7a",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "512 GB",
+    "basePrice": 25351,
+    "active": true
+  },
+  {
+    "id": "5df5cdba-962d-41cd-b4cd-ac2164a607eb",
+    "modelId": "4ca52af7-bf14-4425-9512-e01cdba734c3",
+    "storage": "512 GB",
+    "basePrice": 25351,
+    "active": true
+  },
+  {
+    "id": "9957ccd6-51fe-44ee-b380-3126ef0792c0",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "128 GB",
+    "basePrice": 16110,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0a1a8282-ac2b-4f47-980c-8a03ea20b07d",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "256 GB",
+    "basePrice": 18043,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "36473735-4d32-4752-8471-753a6a0c75a8",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "128 GB",
+    "basePrice": 15554,
+    "active": true
+  },
+  {
+    "id": "d5235235-c104-44d4-8047-f31736e98e7b",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "128 GB",
+    "basePrice": 15554,
+    "active": true
+  },
+  {
+    "id": "f190e651-aa78-4d41-aef2-d1a922f3b905",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "128 GB",
+    "basePrice": 15554,
+    "active": true
+  },
+  {
+    "id": "acede68a-b7a3-451d-ad6b-cf9a17747259",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "128 GB",
+    "basePrice": 15554,
+    "active": true
+  },
+  {
+    "id": "5cb50276-7f04-40b0-97c2-ecfb22011ced",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "128 GB",
+    "basePrice": 15554,
+    "active": true
+  },
+  {
+    "id": "2a8fae84-13b3-4614-88fc-e158e0fd3866",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "128 GB",
+    "basePrice": 15554,
+    "active": true
+  },
+  {
+    "id": "cb46a37f-be97-4a08-b2b5-103c40d5e516",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "256 GB",
+    "basePrice": 16665,
+    "active": true
+  },
+  {
+    "id": "ee591ad9-e574-49a9-a460-c71a27095f76",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "256 GB",
+    "basePrice": 16665,
+    "active": true
+  },
+  {
+    "id": "49dc148c-0ecc-475f-a90f-8360ffbe4786",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "256 GB",
+    "basePrice": 16665,
+    "active": true
+  },
+  {
+    "id": "11ceaacd-8d92-4f7c-b354-4b117edc0d5e",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "256 GB",
+    "basePrice": 16665,
+    "active": true
+  },
+  {
+    "id": "d542a5e8-2abc-4e70-bba2-f79eb63595fc",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "256 GB",
+    "basePrice": 16665,
+    "active": true
+  },
+  {
+    "id": "a77d21a7-eedd-4767-9ea4-239ce23bae0a",
+    "modelId": "466207ea-9526-4f83-b1fb-1d88de19b4ea",
+    "storage": "256 GB",
+    "basePrice": 16665,
+    "active": true
+  },
+  {
+    "id": "ad13785e-ccbb-40a3-8616-11385826b172",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "256 GB",
+    "basePrice": 15068,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "212124a8-6ce0-4522-80a1-d52d88eeca5b",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "128 GB",
+    "basePrice": 13454,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "5fd2e344-2ebe-4cc3-b3ce-8a603620bfdf",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "128 GB",
+    "basePrice": 12908,
+    "active": true
+  },
+  {
+    "id": "d5dd4ad3-1faf-45ed-b837-f9fd4be53bfe",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "128 GB",
+    "basePrice": 12908,
+    "active": true
+  },
+  {
+    "id": "a1d758d0-1299-4431-a113-c7e1f06b92e5",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "128 GB",
+    "basePrice": 12908,
+    "active": true
+  },
+  {
+    "id": "b3f8fa5b-0ac8-4970-8d81-02283b95c8bd",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "128 GB",
+    "basePrice": 12908,
+    "active": true
+  },
+  {
+    "id": "d0399af2-c9dd-4beb-a73c-d2cf61a88c12",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "128 GB",
+    "basePrice": 12908,
+    "active": true
+  },
+  {
+    "id": "e22048bd-af6d-4b40-8943-e840b6d0c79b",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "128 GB",
+    "basePrice": 12908,
+    "active": true
+  },
+  {
+    "id": "20012305-be37-4b1d-9636-acf841d8c0d1",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "256 GB",
+    "basePrice": 13999,
+    "active": true
+  },
+  {
+    "id": "9d3b5849-bca4-48f9-a247-0a1a700b7f3c",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "256 GB",
+    "basePrice": 13999,
+    "active": true
+  },
+  {
+    "id": "1772df96-aee4-49ca-b0b1-88076fb56f5f",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "256 GB",
+    "basePrice": 13999,
+    "active": true
+  },
+  {
+    "id": "a03d473f-78ab-4514-b54c-1773b54613e2",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "256 GB",
+    "basePrice": 13999,
+    "active": true
+  },
+  {
+    "id": "ecfc60b9-9f15-4184-93ad-8827d5dab926",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "256 GB",
+    "basePrice": 13999,
+    "active": true
+  },
+  {
+    "id": "15877c63-7cf1-40ae-b893-15d8ded17049",
+    "modelId": "5650278e-bf4e-46d4-b446-6b0f4aa2562d",
+    "storage": "256 GB",
+    "basePrice": 13999,
+    "active": true
+  },
+  {
+    "id": "3634f200-f680-480b-84b8-284922d0bc86",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "6 GB",
+    "basePrice": 10983,
+    "active": true
+  },
+  {
+    "id": "e8f36d14-14cf-4dce-80b1-5c96e1be55e7",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "8 GB",
+    "basePrice": 11624,
+    "active": true
+  },
+  {
+    "id": "fe76d6db-856b-426b-be57-5d34d6e3854b",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "6 GB",
+    "basePrice": 10983,
+    "active": true
+  },
+  {
+    "id": "d3fcb7a1-402f-436e-88b1-116e7a554980",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "8 GB",
+    "basePrice": 11624,
+    "active": true
+  },
+  {
+    "id": "44bdc560-58de-443c-8274-e64449359cff",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "32 GB",
+    "basePrice": 9757,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "a8df40b6-44fa-4965-8dc6-af708bf07645",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "64 GB",
+    "basePrice": 9757,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "23c7c996-adcc-47ac-97c4-7be7a2bdd2e2",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "6 GB",
+    "basePrice": 10983,
+    "active": true
+  },
+  {
+    "id": "2f11aae2-080b-4459-a557-6e49c26495ed",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "8 GB",
+    "basePrice": 11624,
+    "active": true
+  },
+  {
+    "id": "f71a651f-a6ab-449c-9dd4-23f497fad7fa",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "128 GB",
+    "basePrice": 10565,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "0478b562-cd5c-4745-9f36-8f4beb6625fb",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "128 GB",
+    "basePrice": 10565,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "55a8f817-6283-405a-af62-03ec637cba3f",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "128 GB",
+    "basePrice": 10565,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "6b42e49f-f673-48ab-8360-c131cd3f9bd9",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "128 GB",
+    "basePrice": 11181,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "8a6ae4ca-b1ac-4c2a-a65c-d976515292d1",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "128 GB",
+    "basePrice": 11181,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "7bbbaeb9-8850-4122-b7cf-83b960d51a4f",
+    "modelId": "5235f14c-26a2-47c7-b9dc-4183dee9c9b7",
+    "storage": "128 GB",
+    "basePrice": 11181,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "cb509190-5fc4-4e01-af7d-eaa5fd5e1150",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "256 GB",
+    "basePrice": 14949,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "4ec8bb73-baab-40f7-8315-ebeb40d60e88",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "128 GB",
+    "basePrice": 13347,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "536c70ac-4fe4-4eb4-b4bb-7554ed78f4e2",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "128 GB",
+    "basePrice": 13059,
+    "active": true
+  },
+  {
+    "id": "5db08728-04b0-4c71-83f5-b830fb8927ff",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "128 GB",
+    "basePrice": 13059,
+    "active": true
+  },
+  {
+    "id": "e4b7aedd-ebc9-433a-9a21-9da872e68ca2",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "128 GB",
+    "basePrice": 13059,
+    "active": true
+  },
+  {
+    "id": "b2a1f42f-de49-41a1-a6c8-754faa96d2e8",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "128 GB",
+    "basePrice": 13059,
+    "active": true
+  },
+  {
+    "id": "a3bf0f94-4ca1-4676-83fe-66d179c0df3d",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "128 GB",
+    "basePrice": 13059,
+    "active": true
+  },
+  {
+    "id": "e45da585-5cc5-407d-8bad-3e1c200db9c7",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "128 GB",
+    "basePrice": 13059,
+    "active": true
+  },
+  {
+    "id": "ce106134-a0ea-45bf-b772-2155e7ea2530",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "256 GB",
+    "basePrice": 13635,
+    "active": true
+  },
+  {
+    "id": "9f8ae3da-4af9-403d-885c-0d987db81124",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "256 GB",
+    "basePrice": 13635,
+    "active": true
+  },
+  {
+    "id": "cdd35d0c-4464-4519-9735-ad0acb4e5128",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "256 GB",
+    "basePrice": 13635,
+    "active": true
+  },
+  {
+    "id": "295becd4-484f-4b63-8df5-e27f15415485",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "256 GB",
+    "basePrice": 13635,
+    "active": true
+  },
+  {
+    "id": "c7859d8b-35f7-48a9-95b0-2511b54e0b35",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "256 GB",
+    "basePrice": 13635,
+    "active": true
+  },
+  {
+    "id": "92ca900d-fa1a-4cc3-83ac-4b7f8e9a8f59",
+    "modelId": "4f579884-06f6-4504-9deb-98bf3076ebc9",
+    "storage": "256 GB",
+    "basePrice": 13635,
+    "active": true
+  },
+  {
+    "id": "494889e9-50c0-46a1-917f-56e65a010bb1",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "256 GB",
+    "basePrice": 30643,
+    "active": true
+  },
+  {
+    "id": "99b6966a-5154-48a9-aac4-fab11b9b0f74",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "512 GB",
+    "basePrice": 34340,
+    "active": true
+  },
+  {
+    "id": "68541a22-e5e4-4ba7-b1ee-df8821f4247a",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "256 GB",
+    "basePrice": 30643,
+    "active": true
+  },
+  {
+    "id": "0c3aed89-8929-4120-8a6c-ac7d78d2669b",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "512 GB",
+    "basePrice": 34340,
+    "active": true
+  },
+  {
+    "id": "c48f9624-2fe8-4f2a-939e-9e21503ff7f2",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "256 GB",
+    "basePrice": 36391,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "0d29843f-f4c8-4033-a5bb-29fb67cc2b14",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "512 GB",
+    "basePrice": 40615,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "cb3224b5-1955-43d7-8e83-58a24213c3b7",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "256 GB",
+    "basePrice": 30643,
+    "active": true
+  },
+  {
+    "id": "eb153ac5-501e-4d45-9e28-f65d82fcc7e9",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "512 GB",
+    "basePrice": 34340,
+    "active": true
+  },
+  {
+    "id": "b9562b00-95f1-4d7e-8423-4ea1d554e251",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "256 GB",
+    "basePrice": 30643,
+    "active": true
+  },
+  {
+    "id": "8c7ab745-737b-47b9-a26c-227ee831e3ce",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "512 GB",
+    "basePrice": 34340,
+    "active": true
+  },
+  {
+    "id": "2cb06bf2-d759-48aa-8eb8-7fe45a2cf8cc",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "256 GB",
+    "basePrice": 30643,
+    "active": true
+  },
+  {
+    "id": "b9f12b6d-4358-4117-a62c-8edc9b54ae12",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "256 GB",
+    "basePrice": 30643,
+    "active": true
+  },
+  {
+    "id": "efa4fc09-9a2d-407e-a9dd-a26510b4a005",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "512 GB",
+    "basePrice": 34340,
+    "active": true
+  },
+  {
+    "id": "ba249ff9-c4f9-4740-8957-7068e1d62f9d",
+    "modelId": "9f35b41f-ca51-463b-adc3-81d6218879b9",
+    "storage": "512 GB",
+    "basePrice": 34340,
+    "active": true
+  },
+  {
+    "id": "a57013a0-76bc-4451-bf3f-cd1a20ec3087",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "64 GB",
+    "basePrice": 5959,
+    "active": true
+  },
+  {
+    "id": "99cfd6b1-5e31-4934-a61a-0f8145634ace",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "128 GB",
+    "basePrice": 6414,
+    "active": true
+  },
+  {
+    "id": "c2006115-e3ea-4c4f-b2b1-6ffcae4ea344",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "64 GB",
+    "basePrice": 5959,
+    "active": true
+  },
+  {
+    "id": "f5b010ed-ad6c-46b0-949d-b08ad69701a9",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "128 GB",
+    "basePrice": 6414,
+    "active": true
+  },
+  {
+    "id": "20b12efc-00b9-44ff-ac67-bd3bf92ae274",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "64 GB",
+    "basePrice": 5445,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "0ebdd386-23d3-4312-ac1f-3c93363944ae",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "128 GB",
+    "basePrice": 6187,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "d467ba24-6960-44cd-994c-391b95954548",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "64 GB",
+    "basePrice": 5959,
+    "active": true
+  },
+  {
+    "id": "e2622e64-5ebc-4c6f-8fb1-0c0f1bd6c5f8",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "128 GB",
+    "basePrice": 6414,
+    "active": true
+  },
+  {
+    "id": "6913aaff-d655-4f96-9732-61178cf4dbf5",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "64 GB",
+    "basePrice": 5959,
+    "active": true
+  },
+  {
+    "id": "01b1baf6-7320-4d84-8d27-ba125e13f630",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "128 GB",
+    "basePrice": 6414,
+    "active": true
+  },
+  {
+    "id": "3c4508b7-1308-4f45-8e5d-9b47f442a5ee",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "64 GB",
+    "basePrice": 5959,
+    "active": true
+  },
+  {
+    "id": "3341e8fa-a693-4064-bae5-dbf1f0480692",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "128 GB",
+    "basePrice": 6414,
+    "active": true
+  },
+  {
+    "id": "d31a4157-7267-4713-b243-e7441edeeeaa",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "64 GB",
+    "basePrice": 5959,
+    "active": true
+  },
+  {
+    "id": "7cdf28ef-264d-43c9-b815-0d2615e52d5f",
+    "modelId": "59cbb880-6268-4444-b046-2b678190b503",
+    "storage": "128 GB",
+    "basePrice": 6414,
+    "active": true
+  },
+  {
+    "id": "897a0162-b8ef-4dbd-8162-84cc37088138",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "128 GB",
+    "basePrice": 17372,
+    "active": true
+  },
+  {
+    "id": "92b5ce14-5f5e-4169-af63-f1c321c8348e",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "256 GB",
+    "basePrice": 18079,
+    "active": true
+  },
+  {
+    "id": "b52dd0b7-df17-46ce-8929-073ef5c50092",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "256 GB",
+    "basePrice": 19853,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "55a5cd17-b77b-48b6-9893-6435402cfaaf",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "128 GB",
+    "basePrice": 17726,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "dd3ed294-3907-4ba0-a025-cbad8de0ba19",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "128 GB",
+    "basePrice": 17372,
+    "active": true
+  },
+  {
+    "id": "756822ba-d647-419a-ae02-7653f89a4ba8",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "256 GB",
+    "basePrice": 18079,
+    "active": true
+  },
+  {
+    "id": "6122bf6a-ff0b-41b2-b931-916ac141df9b",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "128 GB",
+    "basePrice": 17372,
+    "active": true
+  },
+  {
+    "id": "3f603bf2-9e3f-4a30-8574-98beffad1a75",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "256 GB",
+    "basePrice": 18079,
+    "active": true
+  },
+  {
+    "id": "af472fa7-bb3e-442e-a6e9-02317108028e",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "128 GB",
+    "basePrice": 17372,
+    "active": true
+  },
+  {
+    "id": "3f314e5e-2e2d-4606-8d60-12ba7dd34167",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "128 GB",
+    "basePrice": 17372,
+    "active": true
+  },
+  {
+    "id": "faa27d74-afd4-4137-a660-6f52d5b29b31",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "128 GB",
+    "basePrice": 17372,
+    "active": true
+  },
+  {
+    "id": "bc8bf0e3-1744-4770-a580-7c7779a63101",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "256 GB",
+    "basePrice": 18079,
+    "active": true
+  },
+  {
+    "id": "0529c00e-f3bc-4f7a-8168-23fb686f2b21",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "256 GB",
+    "basePrice": 18079,
+    "active": true
+  },
+  {
+    "id": "6be235a5-8f93-43bb-8ebd-ccfba0046e17",
+    "modelId": "5a40ac8d-7405-4ca0-bc77-1644748de27c",
+    "storage": "256 GB",
+    "basePrice": 18079,
+    "active": true
+  },
+  {
+    "id": "0084610b-d6df-44cb-b4ca-3b22db8c889e",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "256 GB",
+    "basePrice": 34542,
+    "active": true
+  },
+  {
+    "id": "27ccb7d6-7a5b-4c00-9fca-076f3c5adb3f",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "512 GB",
+    "basePrice": 38380,
+    "active": true
+  },
+  {
+    "id": "e7d97b44-b473-4677-b7be-b70b3989a2ee",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "512 GB",
+    "basePrice": 45576,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "27814c72-d69d-4ecc-825f-2d4b581a73a1",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "256 GB",
+    "basePrice": 40836,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "99495ee3-1b7c-4c67-aa82-fc2a47e35d88",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "256 GB",
+    "basePrice": 34542,
+    "active": true
+  },
+  {
+    "id": "8968f3ce-b6c3-4987-b232-afffaebab08c",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "512 GB",
+    "basePrice": 38380,
+    "active": true
+  },
+  {
+    "id": "0bfb0853-c320-41ce-9f2a-2cd27d6e5558",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "256 GB",
+    "basePrice": 34542,
+    "active": true
+  },
+  {
+    "id": "f42ba6c8-1ba5-4d62-8cb4-97a8471fb61f",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "256 GB",
+    "basePrice": 34542,
+    "active": true
+  },
+  {
+    "id": "487d087e-8112-4b68-aa13-f05d43233585",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "256 GB",
+    "basePrice": 34542,
+    "active": true
+  },
+  {
+    "id": "221e9c9d-1089-41d1-a23d-a30b1cb69bc7",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "256 GB",
+    "basePrice": 34542,
+    "active": true
+  },
+  {
+    "id": "21d5fdc7-899d-4c3d-9283-69e16f1339d6",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "512 GB",
+    "basePrice": 38380,
+    "active": true
+  },
+  {
+    "id": "f60885be-f1b7-4d35-9759-86f54a194fe3",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "512 GB",
+    "basePrice": 38380,
+    "active": true
+  },
+  {
+    "id": "49d6e2b2-ce65-484a-8781-0cb5283340ef",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "512 GB",
+    "basePrice": 38380,
+    "active": true
+  },
+  {
+    "id": "924759a9-8e9d-4e01-865a-f3978e15e2a4",
+    "modelId": "1632449a-d9c7-4886-89ae-1df4a1082415",
+    "storage": "512 GB",
+    "basePrice": 38380,
+    "active": true
+  },
+  {
+    "id": "9c0f9361-b675-4611-aad5-514953316bc3",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "256 GB",
+    "basePrice": 41915,
+    "active": true
+  },
+  {
+    "id": "cbabc87d-4efa-4f29-9907-44b4c8e4e79b",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "512 GB",
+    "basePrice": 43935,
+    "active": true
+  },
+  {
+    "id": "1ca33fcf-7477-407b-9c90-8545e18c99d4",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "256 GB",
+    "basePrice": 48076,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "b1798d64-da50-4d89-b8ea-82e6101293a8",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "512 GB",
+    "basePrice": 53656,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "53f0b686-4a8a-4f34-9325-bdb458c18e26",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "256 GB",
+    "basePrice": 41915,
+    "active": true
+  },
+  {
+    "id": "ee09a61a-d315-42aa-88d9-45b354e525b6",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "256 GB",
+    "basePrice": 41915,
+    "active": true
+  },
+  {
+    "id": "29299522-e41b-49e8-a9f1-01fce52fda82",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "256 GB",
+    "basePrice": 41915,
+    "active": true
+  },
+  {
+    "id": "d9e63e50-59e4-425c-8c75-3fe7744f64ca",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "256 GB",
+    "basePrice": 41915,
+    "active": true
+  },
+  {
+    "id": "231ae25c-5385-4494-9ed9-cf2bd34c4fdb",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "256 GB",
+    "basePrice": 41915,
+    "active": true
+  },
+  {
+    "id": "9a8db41f-7bda-4162-bb70-9fc048933fd3",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "512 GB",
+    "basePrice": 43935,
+    "active": true
+  },
+  {
+    "id": "8ac74b0d-521d-433d-a56a-fc43144ba459",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "512 GB",
+    "basePrice": 43935,
+    "active": true
+  },
+  {
+    "id": "c2664c20-1c02-4db8-9c5a-3332b045b659",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "512 GB",
+    "basePrice": 43935,
+    "active": true
+  },
+  {
+    "id": "fad9a46f-5e3f-403e-b745-da07283f641c",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "512 GB",
+    "basePrice": 43935,
+    "active": true
+  },
+  {
+    "id": "0be3e83e-22e9-4371-aca5-be33e8a10c41",
+    "modelId": "14913e71-ceba-4f74-8a9b-f6f9e30f0162",
+    "storage": "512 GB",
+    "basePrice": 43935,
+    "active": true
+  },
+  {
+    "id": "ebab928f-51c5-4cc6-8e18-859978064279",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "128 GB",
+    "basePrice": 14665,
+    "active": true
+  },
+  {
+    "id": "c9a88bf2-da6b-40b5-a463-8b8a740ec52e",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "256 GB",
+    "basePrice": 15897,
+    "active": true
+  },
+  {
+    "id": "f79cefe9-e1fd-41ae-a7d5-a0f0a7994e05",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "256 GB",
+    "basePrice": 17115,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "bdff08c7-172e-4d86-b9fd-53b9ebf75325",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "128 GB",
+    "basePrice": 15281,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "135c39e8-8c00-4f04-8063-1962015b3b0c",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "128 GB",
+    "basePrice": 14665,
+    "active": true
+  },
+  {
+    "id": "b0d85fca-164e-44e7-a0b9-222b487c82dc",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "128 GB",
+    "basePrice": 14665,
+    "active": true
+  },
+  {
+    "id": "634b9375-a730-4c70-b763-9e43ddbd0fcc",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "128 GB",
+    "basePrice": 14665,
+    "active": true
+  },
+  {
+    "id": "6b09d8ac-f33d-4732-94b8-0f789b8e57ba",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "128 GB",
+    "basePrice": 14665,
+    "active": true
+  },
+  {
+    "id": "33187869-0bf9-47b7-a71a-6a75777fff66",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "128 GB",
+    "basePrice": 14665,
+    "active": true
+  },
+  {
+    "id": "681ecce4-1d3e-4b28-bd29-36a98fce8e86",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "256 GB",
+    "basePrice": 15897,
+    "active": true
+  },
+  {
+    "id": "d579a714-0841-4ba8-ba41-5d453114df89",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "256 GB",
+    "basePrice": 15897,
+    "active": true
+  },
+  {
+    "id": "f12b7ba1-1369-4409-bf28-600dded39d69",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "256 GB",
+    "basePrice": 15897,
+    "active": true
+  },
+  {
+    "id": "ced77dde-f1d3-40bd-90de-2e0dc507d6db",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "256 GB",
+    "basePrice": 15897,
+    "active": true
+  },
+  {
+    "id": "1bb1c8d7-8ca4-43dc-8c3c-52395218d500",
+    "modelId": "da3ffc29-4566-493f-96b4-d0f1504f4ca9",
+    "storage": "256 GB",
+    "basePrice": 15897,
+    "active": true
+  },
+  {
+    "id": "1476addd-18be-499f-938f-0beb0fae046d",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "256 GB",
+    "basePrice": 48642,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "638d0e70-92f8-430c-90aa-941b092ff62f",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "512 GB",
+    "basePrice": 54288,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "60c9efb8-2fe4-449d-904c-fdae39f018de",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "256 GB",
+    "basePrice": 41915,
+    "active": true
+  },
+  {
+    "id": "620ffaea-2141-4a10-b54f-9b6905da54fa",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "256 GB",
+    "basePrice": 41915,
+    "active": true
+  },
+  {
+    "id": "501f09ed-5383-4551-8ece-549b394d2241",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "256 GB",
+    "basePrice": 41915,
+    "active": true
+  },
+  {
+    "id": "29aae9fb-8685-40f0-a506-28bc9cd867c0",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "256 GB",
+    "basePrice": 41915,
+    "active": true
+  },
+  {
+    "id": "61c729a2-99c8-42af-a7f7-8229fca98e71",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "256 GB",
+    "basePrice": 41915,
+    "active": true
+  },
+  {
+    "id": "aabb965a-9e47-450a-a76f-48b2e568f026",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "256 GB",
+    "basePrice": 41915,
+    "active": true
+  },
+  {
+    "id": "c170a538-655c-4d9e-b8e5-b28c810bd326",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "512 GB",
+    "basePrice": 44945,
+    "active": true
+  },
+  {
+    "id": "c6520466-dc9e-41f3-9c0a-1c69973b5407",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "512 GB",
+    "basePrice": 44945,
+    "active": true
+  },
+  {
+    "id": "4295b124-465a-4aac-9998-a232a69145a6",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "512 GB",
+    "basePrice": 44945,
+    "active": true
+  },
+  {
+    "id": "1029963f-8840-4fd5-9665-56bbe977df0e",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "512 GB",
+    "basePrice": 44945,
+    "active": true
+  },
+  {
+    "id": "6988f78b-26b9-46bb-95c1-c5f104c45b4e",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "512 GB",
+    "basePrice": 44945,
+    "active": true
+  },
+  {
+    "id": "4a01d504-015d-4c0c-b761-1d8125571cc2",
+    "modelId": "d99bf798-6bac-4580-8b85-7e0d4cc68018",
+    "storage": "512 GB",
+    "basePrice": 44945,
+    "active": true
+  },
+  {
+    "id": "00c29530-a910-4f26-8a99-9b2612649289",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "256 GB",
+    "basePrice": 13207,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0baf8431-5603-4174-af13-520b1b18057e",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "128 GB",
+    "basePrice": 11792,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "4f0e3b19-3a6c-4949-b4de-e7da28da7540",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "128 GB",
+    "basePrice": 11464,
+    "active": true
+  },
+  {
+    "id": "ab389d26-3d67-4e08-940b-26b4a813b022",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "128 GB",
+    "basePrice": 11464,
+    "active": true
+  },
+  {
+    "id": "64f0998b-fb89-4e0d-8c5d-07f01ec8d988",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "128 GB",
+    "basePrice": 11464,
+    "active": true
+  },
+  {
+    "id": "f7703807-f0b1-4758-9bde-4ce90c19e95e",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "128 GB",
+    "basePrice": 11464,
+    "active": true
+  },
+  {
+    "id": "b23cb4b4-b23d-4f29-8068-10cf6ba60f60",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "128 GB",
+    "basePrice": 11464,
+    "active": true
+  },
+  {
+    "id": "2769916f-d502-45d7-81c0-816604badb58",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "128 GB",
+    "basePrice": 11464,
+    "active": true
+  },
+  {
+    "id": "3b6121a8-8928-4ac1-b33f-56faafeddf87",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "256 GB",
+    "basePrice": 12120,
+    "active": true
+  },
+  {
+    "id": "fe14870c-1b25-45b6-a938-13b3340c6180",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "256 GB",
+    "basePrice": 12120,
+    "active": true
+  },
+  {
+    "id": "77c45a61-0520-434d-961c-6b31d4028a63",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "256 GB",
+    "basePrice": 12120,
+    "active": true
+  },
+  {
+    "id": "f33415a0-b109-4b3c-916e-48c75e2118f9",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "256 GB",
+    "basePrice": 12120,
+    "active": true
+  },
+  {
+    "id": "74da7cc1-d9e7-42e2-9bf8-6500567988c2",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "256 GB",
+    "basePrice": 12120,
+    "active": true
+  },
+  {
+    "id": "a5da0aa4-6bbe-4ff0-82b0-91219179c9f5",
+    "modelId": "aeb5d953-ae41-40bd-b52b-259b9b4d7973",
+    "storage": "256 GB",
+    "basePrice": 12120,
+    "active": true
+  },
+  {
+    "id": "d698b623-6219-4ea1-93e3-f1b6ce4c2cb0",
+    "modelId": "fb8a6a61-9fff-459f-a7bc-95ccf59964d7",
+    "storage": "4 GB",
+    "basePrice": 5870,
+    "active": true
+  },
+  {
+    "id": "09352964-8239-481e-959a-5b29fd24fca5",
+    "modelId": "fb8a6a61-9fff-459f-a7bc-95ccf59964d7",
+    "storage": "4 GB",
+    "basePrice": 5870,
+    "active": true
+  },
+  {
+    "id": "96019ec0-3c3e-4554-97c1-39f940e5d903",
+    "modelId": "fb8a6a61-9fff-459f-a7bc-95ccf59964d7",
+    "storage": "128 GB",
+    "basePrice": 5909,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "68e64091-06f4-44f7-bcf3-f1fbd3d6c9b6",
+    "modelId": "fb8a6a61-9fff-459f-a7bc-95ccf59964d7",
+    "storage": "4 GB",
+    "basePrice": 5870,
+    "active": true
+  },
+  {
+    "id": "ea97c5b2-26d4-4bab-bf7f-e20fe1f22521",
+    "modelId": "fb8a6a61-9fff-459f-a7bc-95ccf59964d7",
+    "storage": "64 GB",
+    "basePrice": 5646,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "76f0b67d-b703-4078-ae4b-c75e97ebd73f",
+    "modelId": "fb8a6a61-9fff-459f-a7bc-95ccf59964d7",
+    "storage": "64 GB",
+    "basePrice": 5646,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "3d54a316-175b-4e0f-8022-a2e781193097",
+    "modelId": "fb8a6a61-9fff-459f-a7bc-95ccf59964d7",
+    "storage": "64 GB",
+    "basePrice": 5646,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "cdb95e2f-bf96-4bf2-a603-65a49cf936b2",
+    "modelId": "fb8a6a61-9fff-459f-a7bc-95ccf59964d7",
+    "storage": "128 GB",
+    "basePrice": 6060,
+    "active": true
+  },
+  {
+    "id": "47d765ce-cb72-460b-82ae-b8e425e06940",
+    "modelId": "fb8a6a61-9fff-459f-a7bc-95ccf59964d7",
+    "storage": "128 GB",
+    "basePrice": 6060,
+    "active": true
+  },
+  {
+    "id": "017d0b5c-287f-4d44-a821-340f03ad52c7",
+    "modelId": "fb8a6a61-9fff-459f-a7bc-95ccf59964d7",
+    "storage": "128 GB",
+    "basePrice": 6060,
+    "active": true
+  },
+  {
+    "id": "8e6c5ab4-b7d0-4941-8dd0-ccf61a250e7e",
+    "modelId": "fb8a6a61-9fff-459f-a7bc-95ccf59964d7",
+    "storage": "128 GB",
+    "basePrice": 6060,
+    "active": true
+  },
+  {
+    "id": "844bfc2c-fe60-49e3-b51e-206b4847575e",
+    "modelId": "fb8a6a61-9fff-459f-a7bc-95ccf59964d7",
+    "storage": "128 GB",
+    "basePrice": 6060,
+    "active": true
+  },
+  {
+    "id": "8da42734-4a66-4982-8967-e7efdaee641c",
+    "modelId": "fb8a6a61-9fff-459f-a7bc-95ccf59964d7",
+    "storage": "128 GB",
+    "basePrice": 6060,
+    "active": true
+  },
+  {
+    "id": "c99785e1-af0c-48a5-b824-97edc5abc5c5",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "512 GB",
+    "basePrice": 36676,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "90f61480-33fc-40a9-b8a9-e39a04113d5e",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "256 GB",
+    "basePrice": 32862,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "9273f579-7094-4dc0-8fe3-6c648bc994b2",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "256 GB",
+    "basePrice": 28179,
+    "active": true
+  },
+  {
+    "id": "6502878c-e14e-4b91-9ed1-b00be34201f0",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "256 GB",
+    "basePrice": 28179,
+    "active": true
+  },
+  {
+    "id": "2eb99423-2d92-42c8-b72e-348e5ae206d2",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "256 GB",
+    "basePrice": 28179,
+    "active": true
+  },
+  {
+    "id": "e7224372-af8b-4ac7-b652-ee8be6a9bf5a",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "256 GB",
+    "basePrice": 28179,
+    "active": true
+  },
+  {
+    "id": "51f61179-c114-465a-af60-f6ca92a0699b",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "256 GB",
+    "basePrice": 28179,
+    "active": true
+  },
+  {
+    "id": "f32d346b-645d-4cba-8ebf-8c7f2626da33",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "256 GB",
+    "basePrice": 28179,
+    "active": true
+  },
+  {
+    "id": "1f6dedae-6fbb-4282-9176-769c4beb2b6f",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "512 GB",
+    "basePrice": 30502,
+    "active": true
+  },
+  {
+    "id": "a309aef7-d345-45dd-8aa5-8cbb007b139b",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "512 GB",
+    "basePrice": 30502,
+    "active": true
+  },
+  {
+    "id": "111bf79b-5817-4b7b-89e2-c15bc819d844",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "512 GB",
+    "basePrice": 30502,
+    "active": true
+  },
+  {
+    "id": "0f212c5f-ac5f-4a91-85b1-45e13f8587f8",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "512 GB",
+    "basePrice": 30502,
+    "active": true
+  },
+  {
+    "id": "a42c3d65-1beb-44b4-9f4e-07389bec28b5",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "512 GB",
+    "basePrice": 30502,
+    "active": true
+  },
+  {
+    "id": "e9804f38-6e3a-4d5a-8d92-469d7feb25d5",
+    "modelId": "d2184924-fb83-415c-a71b-dc3e02bd8fcb",
+    "storage": "512 GB",
+    "basePrice": 30502,
+    "active": true
+  },
+  {
+    "id": "1c33c843-26d0-448d-9310-3299098a145d",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "128 GB",
+    "basePrice": 3470,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "94fb4de0-7230-4de3-ac77-39f90d62952a",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "64 GB",
+    "basePrice": 3054,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "f91864aa-d8c8-4654-8780-d49cf88ff7c8",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "64 GB",
+    "basePrice": 3232,
+    "active": true
+  },
+  {
+    "id": "053d3e81-ff86-4a20-ad26-ff13ceda0b59",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "64 GB",
+    "basePrice": 3232,
+    "active": true
+  },
+  {
+    "id": "8aa3e686-39d0-4d76-a5d0-e92f315e025d",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "64 GB",
+    "basePrice": 3232,
+    "active": true
+  },
+  {
+    "id": "6e1979f4-84f9-4555-8f3a-9fc3c2768d11",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "64 GB",
+    "basePrice": 3232,
+    "active": true
+  },
+  {
+    "id": "84003459-4a67-4ba2-a744-d608eb9c00be",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "64 GB",
+    "basePrice": 3232,
+    "active": true
+  },
+  {
+    "id": "d6c16804-d765-46c1-8e36-e21e9c23a8db",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "64 GB",
+    "basePrice": 3232,
+    "active": true
+  },
+  {
+    "id": "a0d15a6e-49d2-46aa-90b2-7aad9b9e6f89",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "128 GB",
+    "basePrice": 3707,
+    "active": true
+  },
+  {
+    "id": "b1b72898-96ff-4c86-984b-b60d93ca5787",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "128 GB",
+    "basePrice": 3707,
+    "active": true
+  },
+  {
+    "id": "52081ff6-e9f2-414e-88c8-c6ab7653fe18",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "128 GB",
+    "basePrice": 3707,
+    "active": true
+  },
+  {
+    "id": "c839326b-a26e-4131-a8fb-a0364518e797",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "128 GB",
+    "basePrice": 3707,
+    "active": true
+  },
+  {
+    "id": "f4d3da7f-aec7-4979-b3eb-7598badf4c29",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "128 GB",
+    "basePrice": 3707,
+    "active": true
+  },
+  {
+    "id": "a0a16e07-ecd0-46ac-a23d-2ba61a434065",
+    "modelId": "497c2a44-914c-4948-93fe-68b632ff4b15",
+    "storage": "128 GB",
+    "basePrice": 3707,
+    "active": true
+  },
+  {
+    "id": "86b061fc-a36c-497a-aa8d-52fb1377fe41",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "128 GB",
+    "basePrice": 4606,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "06b9e5c4-2cdb-4101-ac73-b17f2e57ff20",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "64 GB",
+    "basePrice": 4053,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "0c5d4a83-6fb5-4dbf-a374-75bd2b299a93",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "64 GB",
+    "basePrice": 4434,
+    "active": true
+  },
+  {
+    "id": "fcad01ed-bea6-4367-920e-4e4ff9893e17",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "64 GB",
+    "basePrice": 4434,
+    "active": true
+  },
+  {
+    "id": "f9c6371b-eb72-45ad-a614-3bd88674685a",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "64 GB",
+    "basePrice": 4434,
+    "active": true
+  },
+  {
+    "id": "780b77d3-14a9-4d65-8564-2a56dbff0cab",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "64 GB",
+    "basePrice": 4434,
+    "active": true
+  },
+  {
+    "id": "d9ff5012-2412-4365-b91d-d8917d4a93ad",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "64 GB",
+    "basePrice": 4434,
+    "active": true
+  },
+  {
+    "id": "1075dbd2-fb29-46e5-96f7-304355976813",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "64 GB",
+    "basePrice": 4434,
+    "active": true
+  },
+  {
+    "id": "d20a040b-584e-46eb-b110-7925e081f11e",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "128 GB",
+    "basePrice": 4777,
+    "active": true
+  },
+  {
+    "id": "67ec481c-4dbc-4b1c-8795-2aae40813cb6",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "128 GB",
+    "basePrice": 4777,
+    "active": true
+  },
+  {
+    "id": "28f05f38-a7e1-498a-b5d9-796a42da58aa",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "128 GB",
+    "basePrice": 4777,
+    "active": true
+  },
+  {
+    "id": "d40ecec9-17a0-4c2d-8345-876a7a467030",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "128 GB",
+    "basePrice": 4777,
+    "active": true
+  },
+  {
+    "id": "94741b08-8886-497a-8dd9-1354d7257d6a",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "128 GB",
+    "basePrice": 4777,
+    "active": true
+  },
+  {
+    "id": "cf8eb5d3-b704-4ae0-977d-3f7452956c30",
+    "modelId": "201a0f79-e307-450d-b1fa-28cbda22f2cc",
+    "storage": "128 GB",
+    "basePrice": 4777,
+    "active": true
+  },
+  {
+    "id": "6f9715f7-2da3-4f86-8315-18b82679ff73",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "128 GB",
+    "basePrice": 4358,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "9016b27b-da52-4819-ab83-e6dc30a102f2",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "64 GB",
+    "basePrice": 3835,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "676f0474-20f8-4d97-929c-59e653742f4b",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "64 GB",
+    "basePrice": 4090,
+    "active": true
+  },
+  {
+    "id": "5478b5ef-7ace-438a-a868-c4f1c00d0a72",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "64 GB",
+    "basePrice": 4090,
+    "active": true
+  },
+  {
+    "id": "a629c231-4537-4fea-be3d-e1ff4c2647db",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "64 GB",
+    "basePrice": 4090,
+    "active": true
+  },
+  {
+    "id": "10068219-a6cc-4276-afce-d626d23afbca",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "64 GB",
+    "basePrice": 4090,
+    "active": true
+  },
+  {
+    "id": "59574f3f-8ed5-49b5-bb64-dea60e30d19f",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "64 GB",
+    "basePrice": 4090,
+    "active": true
+  },
+  {
+    "id": "c2ae587d-86fd-4301-b295-b6d1489104f9",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "64 GB",
+    "basePrice": 4090,
+    "active": true
+  },
+  {
+    "id": "f4ae9bc8-365f-49a2-a423-6b119756e8aa",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "128 GB",
+    "basePrice": 4626,
+    "active": true
+  },
+  {
+    "id": "3e282daf-e1a9-428a-8e4d-875563853883",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "128 GB",
+    "basePrice": 4626,
+    "active": true
+  },
+  {
+    "id": "6c755816-4923-4258-911d-3a47232e0161",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "128 GB",
+    "basePrice": 4626,
+    "active": true
+  },
+  {
+    "id": "15035109-d08b-4713-9543-24ba7a49a035",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "128 GB",
+    "basePrice": 4626,
+    "active": true
+  },
+  {
+    "id": "5228505c-abea-4836-8c55-0889c944f44f",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "128 GB",
+    "basePrice": 4626,
+    "active": true
+  },
+  {
+    "id": "a2687d92-e581-43ef-83ad-77bbcbb5f9dc",
+    "modelId": "e156c09b-c1f8-4f1f-b3b4-58eea5ab9696",
+    "storage": "128 GB",
+    "basePrice": 4626,
+    "active": true
+  },
+  {
+    "id": "c8496187-b5a6-42a5-8697-da47877676fc",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "4 GB",
+    "basePrice": 5607,
+    "active": true
+  },
+  {
+    "id": "2ab96741-6a12-4350-ab61-44497f3a43c8",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "6 GB",
+    "basePrice": 5764,
+    "active": true
+  },
+  {
+    "id": "80dddd40-88cf-4b84-a100-20cbc3b492d7",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "8 GB",
+    "basePrice": 6248,
+    "active": true
+  },
+  {
+    "id": "6c1294d3-b88c-4fec-ab42-79578bb6982f",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "4 GB",
+    "basePrice": 5607,
+    "active": true
+  },
+  {
+    "id": "91498eb3-8640-48ee-b995-6b62661fd80d",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "6 GB",
+    "basePrice": 5764,
+    "active": true
+  },
+  {
+    "id": "7f547ed2-6b57-4029-a164-d9a48919f9f7",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "8 GB",
+    "basePrice": 6248,
+    "active": true
+  },
+  {
+    "id": "d3d0f542-732f-4246-ad3b-12d1ed6a89a8",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "64 GB",
+    "basePrice": 5070,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "115b1340-4ed5-499a-b792-7a0adf2e99a1",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "4 GB",
+    "basePrice": 5607,
+    "active": true
+  },
+  {
+    "id": "45cf2039-ec9a-4e18-b29f-eba30e0dea02",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "6 GB",
+    "basePrice": 5764,
+    "active": true
+  },
+  {
+    "id": "59033dce-bdd4-42f2-8526-aaa6c60bbd1d",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "8 GB",
+    "basePrice": 6248,
+    "active": true
+  },
+  {
+    "id": "fea69786-445d-4eb3-ae9d-e13d890b5ec7",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "128 GB",
+    "basePrice": 5393,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "f087dbab-bb5e-4194-b649-a5c7cbb7db9d",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "128 GB",
+    "basePrice": 5393,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "f75c7f76-ddac-447e-8c1a-e5e38c0aa1b5",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "128 GB",
+    "basePrice": 5393,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "3c025501-b8b3-4eac-8b90-b4013ffd7bc8",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "128 GB",
+    "basePrice": 5545,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "01d4aca3-9f5f-4e34-b29a-486930a1058e",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "128 GB",
+    "basePrice": 5545,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "236de7c6-cce5-4ead-b6cf-09929353e6e4",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "128 GB",
+    "basePrice": 5545,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "d06e130f-d47b-4296-932b-e324e30865a8",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "128 GB",
+    "basePrice": 6010,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a7388f10-0290-41f6-8bdf-eafbe0886cee",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "128 GB",
+    "basePrice": 6010,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "c1ab83f5-79ae-42d7-807c-e74bdc96e784",
+    "modelId": "b717cc13-9672-480f-80bb-d626232852e1",
+    "storage": "128 GB",
+    "basePrice": 6010,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "439d7b5b-82e4-4016-9b44-4055170700dd",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "128 GB",
+    "basePrice": 3843,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "4a077212-b3e4-4dc4-a591-e0005d885058",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "64 GB",
+    "basePrice": 3382,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "3b1fda27-0dc1-4984-b27d-8b987d4367c4",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "64 GB",
+    "basePrice": 3707,
+    "active": true
+  },
+  {
+    "id": "b5f5e83c-d2c3-4422-96ca-d418ac966258",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "64 GB",
+    "basePrice": 3707,
+    "active": true
+  },
+  {
+    "id": "322e1fda-9c72-40a2-b63f-fc410b78b41e",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "64 GB",
+    "basePrice": 3707,
+    "active": true
+  },
+  {
+    "id": "35bde4e4-b1e7-4a67-aedf-2881a92adb97",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "64 GB",
+    "basePrice": 3707,
+    "active": true
+  },
+  {
+    "id": "af829f11-8f7d-43e2-9eb9-13cbd50032ee",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "64 GB",
+    "basePrice": 3707,
+    "active": true
+  },
+  {
+    "id": "0c329ebf-a07a-488a-b594-216f6f05b84f",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "64 GB",
+    "basePrice": 3707,
+    "active": true
+  },
+  {
+    "id": "3f06f96d-e7a8-4555-aec9-4df0caf27aa0",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "128 GB",
+    "basePrice": 3979,
+    "active": true
+  },
+  {
+    "id": "36797665-8972-4fc2-88ba-de7c2195bd02",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "128 GB",
+    "basePrice": 3979,
+    "active": true
+  },
+  {
+    "id": "a57b4e64-359a-46d2-9295-e4550f2a6016",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "128 GB",
+    "basePrice": 3979,
+    "active": true
+  },
+  {
+    "id": "b6dfe1d2-0d7d-4e25-97d6-790ba2e9d781",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "128 GB",
+    "basePrice": 3979,
+    "active": true
+  },
+  {
+    "id": "670771f7-cb6a-4b00-ad3b-3896f36cf3bd",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "128 GB",
+    "basePrice": 3979,
+    "active": true
+  },
+  {
+    "id": "72959fa9-4029-462c-9aff-525b0ac8c9a1",
+    "modelId": "46b0c9ce-163b-4bc7-8924-7e27e9363231",
+    "storage": "128 GB",
+    "basePrice": 3979,
+    "active": true
+  },
+  {
+    "id": "28c0d1b2-138c-46fd-afe2-333753a9ddb0",
+    "modelId": "178c3aef-ecd7-4175-baf7-8ca8ef83cb28",
+    "storage": "6 GB",
+    "basePrice": 9135,
+    "active": true
+  },
+  {
+    "id": "b87a19a4-ccee-4604-a5ca-a058aa930d64",
+    "modelId": "178c3aef-ecd7-4175-baf7-8ca8ef83cb28",
+    "storage": "8 GB",
+    "basePrice": 9765,
+    "active": true
+  },
+  {
+    "id": "2239d1ef-5813-4b19-be81-4f073a1359ef",
+    "modelId": "178c3aef-ecd7-4175-baf7-8ca8ef83cb28",
+    "storage": "6 GB",
+    "basePrice": 9135,
+    "active": true
+  },
+  {
+    "id": "d125e0e6-89e3-48c0-a071-caa258c206d4",
+    "modelId": "178c3aef-ecd7-4175-baf7-8ca8ef83cb28",
+    "storage": "8 GB",
+    "basePrice": 9765,
+    "active": true
+  },
+  {
+    "id": "9069585a-3ed0-456f-b384-ec91cc4c78a3",
+    "modelId": "178c3aef-ecd7-4175-baf7-8ca8ef83cb28",
+    "storage": "128 GB",
+    "basePrice": 8396,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "c0ea7a19-a383-43e3-a030-2d880b537b31",
+    "modelId": "178c3aef-ecd7-4175-baf7-8ca8ef83cb28",
+    "storage": "6 GB",
+    "basePrice": 9135,
+    "active": true
+  },
+  {
+    "id": "bda07ac4-51fa-4acf-a662-31960c074e4b",
+    "modelId": "178c3aef-ecd7-4175-baf7-8ca8ef83cb28",
+    "storage": "8 GB",
+    "basePrice": 9765,
+    "active": true
+  },
+  {
+    "id": "b5166476-d271-475f-842e-044bb5d76a57",
+    "modelId": "178c3aef-ecd7-4175-baf7-8ca8ef83cb28",
+    "storage": "128 GB",
+    "basePrice": 7082,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "5926446c-b4e1-4e1f-923e-4f335f601ccf",
+    "modelId": "178c3aef-ecd7-4175-baf7-8ca8ef83cb28",
+    "storage": "128 GB",
+    "basePrice": 7082,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "7d1dbe35-6a80-4716-96df-5a316f2b6855",
+    "modelId": "178c3aef-ecd7-4175-baf7-8ca8ef83cb28",
+    "storage": "128 GB",
+    "basePrice": 7082,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "1966bb4c-2cc1-4c74-a0d0-5268d981e36f",
+    "modelId": "178c3aef-ecd7-4175-baf7-8ca8ef83cb28",
+    "storage": "128 GB",
+    "basePrice": 7600,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "92b1a0a2-af84-4aae-8d56-087dbbe24cb4",
+    "modelId": "178c3aef-ecd7-4175-baf7-8ca8ef83cb28",
+    "storage": "128 GB",
+    "basePrice": 7600,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "2e288644-0fd3-4186-8c84-0871949dfe52",
+    "modelId": "178c3aef-ecd7-4175-baf7-8ca8ef83cb28",
+    "storage": "128 GB",
+    "basePrice": 7600,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "663fddeb-3bdb-4bab-885e-7e5699d33421",
+    "modelId": "36e0064c-6c53-4368-be6c-0d50b2c63b4c",
+    "storage": "8 GB",
+    "basePrice": 19950,
+    "active": true
+  },
+  {
+    "id": "6a4d3746-5cb6-47f7-94b5-b93f81c597da",
+    "modelId": "36e0064c-6c53-4368-be6c-0d50b2c63b4c",
+    "storage": "8 GB",
+    "basePrice": 19950,
+    "active": true
+  },
+  {
+    "id": "f9473ce0-21db-452f-8961-b8e2d1c3fea2",
+    "modelId": "36e0064c-6c53-4368-be6c-0d50b2c63b4c",
+    "storage": "128 GB",
+    "basePrice": 19570,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "416bc928-cd49-45a3-8f84-97034ca9ec90",
+    "modelId": "36e0064c-6c53-4368-be6c-0d50b2c63b4c",
+    "storage": "8 GB",
+    "basePrice": 19950,
+    "active": true
+  },
+  {
+    "id": "dce6ec3f-f857-447a-aba1-353b47ca6809",
+    "modelId": "36e0064c-6c53-4368-be6c-0d50b2c63b4c",
+    "storage": "256 GB",
+    "basePrice": 19190,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "1fb10799-3d2d-4be4-b4ed-8c9dcca1edc9",
+    "modelId": "36e0064c-6c53-4368-be6c-0d50b2c63b4c",
+    "storage": "256 GB",
+    "basePrice": 19190,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "cca757be-eb28-428d-a6a7-76546612b035",
+    "modelId": "36e0064c-6c53-4368-be6c-0d50b2c63b4c",
+    "storage": "256 GB",
+    "basePrice": 19190,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "fb7a2ef1-c84e-48e1-95c7-0820d95d4875",
+    "modelId": "8a18be45-4345-4da5-bf52-a4e0be1c308b",
+    "storage": "6 GB",
+    "basePrice": 7560,
+    "active": true
+  },
+  {
+    "id": "86163904-2941-476b-9a1b-f4ccdab6bc5d",
+    "modelId": "8a18be45-4345-4da5-bf52-a4e0be1c308b",
+    "storage": "4 GB",
+    "basePrice": 7245,
+    "active": true
+  },
+  {
+    "id": "f1ec242f-2b30-4fa2-8b5c-ca14987839d5",
+    "modelId": "8a18be45-4345-4da5-bf52-a4e0be1c308b",
+    "storage": "6 GB",
+    "basePrice": 7560,
+    "active": true
+  },
+  {
+    "id": "7bd9b642-067a-467d-a911-55cd8015d53a",
+    "modelId": "8a18be45-4345-4da5-bf52-a4e0be1c308b",
+    "storage": "4 GB",
+    "basePrice": 7245,
+    "active": true
+  },
+  {
+    "id": "549fc725-e562-48e3-b29b-684703dc0448",
+    "modelId": "8a18be45-4345-4da5-bf52-a4e0be1c308b",
+    "storage": "64 GB",
+    "basePrice": 6391,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "797e21f7-bc91-40cb-b662-258afb5b2e20",
+    "modelId": "8a18be45-4345-4da5-bf52-a4e0be1c308b",
+    "storage": "6 GB",
+    "basePrice": 7560,
+    "active": true
+  },
+  {
+    "id": "45b699a0-e9e3-4f0c-80c7-ce5126345905",
+    "modelId": "8a18be45-4345-4da5-bf52-a4e0be1c308b",
+    "storage": "4 GB",
+    "basePrice": 7245,
+    "active": true
+  },
+  {
+    "id": "49caae8a-ee8b-4e3a-a597-d0cb9ba981c5",
+    "modelId": "8a18be45-4345-4da5-bf52-a4e0be1c308b",
+    "storage": "128 GB",
+    "basePrice": 7272,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "aed97242-a7b7-4a30-964f-a6275dd7f82d",
+    "modelId": "8a18be45-4345-4da5-bf52-a4e0be1c308b",
+    "storage": "128 GB",
+    "basePrice": 7272,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "a62a6bdc-6531-4049-aea3-f82bb5740789",
+    "modelId": "8a18be45-4345-4da5-bf52-a4e0be1c308b",
+    "storage": "128 GB",
+    "basePrice": 7272,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "539be4b8-a208-46eb-8696-147a07a194a4",
+    "modelId": "8a18be45-4345-4da5-bf52-a4e0be1c308b",
+    "storage": "128 GB",
+    "basePrice": 6969,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "4cba42cd-b2f3-4047-9854-0930486d5867",
+    "modelId": "8a18be45-4345-4da5-bf52-a4e0be1c308b",
+    "storage": "128 GB",
+    "basePrice": 6969,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "69c7cf72-c4b8-4e9f-a558-252804b2d24f",
+    "modelId": "8a18be45-4345-4da5-bf52-a4e0be1c308b",
+    "storage": "128 GB",
+    "basePrice": 6969,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "cbf2dfc7-80f1-4563-bf54-21d293f23ee0",
+    "modelId": "40c6c132-cedd-402d-8f5c-9fdf590e2dc9",
+    "storage": "2 GB",
+    "basePrice": 2208,
+    "active": true
+  },
+  {
+    "id": "90777cb1-9549-4abf-ac4c-b6565f146b6c",
+    "modelId": "40c6c132-cedd-402d-8f5c-9fdf590e2dc9",
+    "storage": "2 GB",
+    "basePrice": 1995,
+    "active": true
+  },
+  {
+    "id": "afd74d11-311f-4e69-9af2-d8c534b822af",
+    "modelId": "40c6c132-cedd-402d-8f5c-9fdf590e2dc9",
+    "storage": "2 GB",
+    "basePrice": 2208,
+    "active": true
+  },
+  {
+    "id": "562d3912-e7b1-4c89-8a4f-c1c9bad62874",
+    "modelId": "40c6c132-cedd-402d-8f5c-9fdf590e2dc9",
+    "storage": "2 GB",
+    "basePrice": 1995,
+    "active": true
+  },
+  {
+    "id": "b8e8a59a-239d-4450-81b5-4906700d7a52",
+    "modelId": "40c6c132-cedd-402d-8f5c-9fdf590e2dc9",
+    "storage": "16 GB",
+    "basePrice": 1815,
+    "active": true,
+    "ram": "1 GB"
+  },
+  {
+    "id": "54c928d0-fd3c-4595-92bc-68b9bd141ac9",
+    "modelId": "40c6c132-cedd-402d-8f5c-9fdf590e2dc9",
+    "storage": "2 GB",
+    "basePrice": 2208,
+    "active": true
+  },
+  {
+    "id": "5f28a2d2-96c4-40a7-b90b-1f915b520c1c",
+    "modelId": "40c6c132-cedd-402d-8f5c-9fdf590e2dc9",
+    "storage": "2 GB",
+    "basePrice": 1995,
+    "active": true
+  },
+  {
+    "id": "dcb69adb-afbc-4c90-b5cc-5891f03ee2a1",
+    "modelId": "40c6c132-cedd-402d-8f5c-9fdf590e2dc9",
+    "storage": "32 GB",
+    "basePrice": 2124,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "b5625a47-e1bf-40a4-97bc-097aaf719d6b",
+    "modelId": "40c6c132-cedd-402d-8f5c-9fdf590e2dc9",
+    "storage": "32 GB",
+    "basePrice": 2124,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "89988102-f700-4361-a276-72dc91356a60",
+    "modelId": "40c6c132-cedd-402d-8f5c-9fdf590e2dc9",
+    "storage": "32 GB",
+    "basePrice": 2124,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "c65941c0-8811-4ae7-be73-e7fb5160266a",
+    "modelId": "40c6c132-cedd-402d-8f5c-9fdf590e2dc9",
+    "storage": "16 GB",
+    "basePrice": 1919,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "29a5883c-a342-4a0d-9590-6aa5eefafb37",
+    "modelId": "40c6c132-cedd-402d-8f5c-9fdf590e2dc9",
+    "storage": "16 GB",
+    "basePrice": 1919,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "736ad36b-533a-455d-9ebc-b966502a3b3b",
+    "modelId": "40c6c132-cedd-402d-8f5c-9fdf590e2dc9",
+    "storage": "16 GB",
+    "basePrice": 1919,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "d7332d76-efd6-441a-9890-63efc453633d",
+    "modelId": "ca8bbbee-9261-47d5-ad6b-42bb924143a7",
+    "storage": "8 GB",
+    "basePrice": 8715,
+    "active": true
+  },
+  {
+    "id": "a3859f71-b0d6-4368-b014-78fcda1dc5bb",
+    "modelId": "ca8bbbee-9261-47d5-ad6b-42bb924143a7",
+    "storage": "6 GB",
+    "basePrice": 8190,
+    "active": true
+  },
+  {
+    "id": "32c0635a-0e92-4459-8a2b-b4f311d713eb",
+    "modelId": "ca8bbbee-9261-47d5-ad6b-42bb924143a7",
+    "storage": "8 GB",
+    "basePrice": 8715,
+    "active": true
+  },
+  {
+    "id": "77d4b7f0-3d42-48a7-8b87-53c6dd8e268b",
+    "modelId": "ca8bbbee-9261-47d5-ad6b-42bb924143a7",
+    "storage": "6 GB",
+    "basePrice": 8190,
+    "active": true
+  },
+  {
+    "id": "9cc25f8b-986c-45f1-aeba-1ef25ad84af5",
+    "modelId": "ca8bbbee-9261-47d5-ad6b-42bb924143a7",
+    "storage": "64 GB",
+    "basePrice": 7297,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "230dbc39-ec31-48e9-b7e4-6c7ca3eaf5ea",
+    "modelId": "ca8bbbee-9261-47d5-ad6b-42bb924143a7",
+    "storage": "8 GB",
+    "basePrice": 8715,
+    "active": true
+  },
+  {
+    "id": "bdb746dd-252c-4f81-a184-1ca95121c965",
+    "modelId": "ca8bbbee-9261-47d5-ad6b-42bb924143a7",
+    "storage": "6 GB",
+    "basePrice": 8190,
+    "active": true
+  },
+  {
+    "id": "fba6c7c4-cb9c-433d-800a-300153ae9def",
+    "modelId": "ca8bbbee-9261-47d5-ad6b-42bb924143a7",
+    "storage": "128 GB",
+    "basePrice": 8383,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "08efda31-5b63-4298-937a-b337c944fb02",
+    "modelId": "ca8bbbee-9261-47d5-ad6b-42bb924143a7",
+    "storage": "128 GB",
+    "basePrice": 8383,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "cbc9c239-e331-404c-a45c-ea042135f2c6",
+    "modelId": "ca8bbbee-9261-47d5-ad6b-42bb924143a7",
+    "storage": "128 GB",
+    "basePrice": 8383,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b369844d-75bf-45c0-855b-bf98732a1d88",
+    "modelId": "ca8bbbee-9261-47d5-ad6b-42bb924143a7",
+    "storage": "128 GB",
+    "basePrice": 7878,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "a00bbc4e-4d95-4f02-a284-66b45185d12e",
+    "modelId": "ca8bbbee-9261-47d5-ad6b-42bb924143a7",
+    "storage": "128 GB",
+    "basePrice": 7878,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "31cfeaef-dea8-47c6-b7cd-99b30ef52454",
+    "modelId": "ca8bbbee-9261-47d5-ad6b-42bb924143a7",
+    "storage": "128 GB",
+    "basePrice": 7878,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "5c153abb-2edf-4888-9e71-e086e8656580",
+    "modelId": "14dd942a-de25-4290-85df-96e435e27a63",
+    "storage": "8 GB",
+    "basePrice": 9975,
+    "active": true
+  },
+  {
+    "id": "b4abe7e9-765d-483a-912f-f0ab6c56f58a",
+    "modelId": "14dd942a-de25-4290-85df-96e435e27a63",
+    "storage": "8 GB",
+    "basePrice": 9975,
+    "active": true
+  },
+  {
+    "id": "7a05b5a3-8ec9-4733-8e84-ed70a0a43367",
+    "modelId": "14dd942a-de25-4290-85df-96e435e27a63",
+    "storage": "128 GB",
+    "basePrice": 9785,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "9c8b7741-13c3-4268-a9e5-e57a24e0ca1a",
+    "modelId": "14dd942a-de25-4290-85df-96e435e27a63",
+    "storage": "8 GB",
+    "basePrice": 9975,
+    "active": true
+  },
+  {
+    "id": "9784e801-813e-4239-8b1a-7a5ed7f1a1b8",
+    "modelId": "14dd942a-de25-4290-85df-96e435e27a63",
+    "storage": "128 GB",
+    "basePrice": 9595,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "aba90be5-9492-4829-89ac-60683a4e966e",
+    "modelId": "14dd942a-de25-4290-85df-96e435e27a63",
+    "storage": "128 GB",
+    "basePrice": 9595,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0c55ddd7-312e-439d-a165-d14ac65f2cae",
+    "modelId": "14dd942a-de25-4290-85df-96e435e27a63",
+    "storage": "128 GB",
+    "basePrice": 9595,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "7f703dc3-150d-4441-8471-e8b65f3ea765",
+    "modelId": "975e9319-ad63-42a6-bec7-fe04221f6d6a",
+    "storage": "12 GB",
+    "basePrice": 16800,
+    "active": true
+  },
+  {
+    "id": "0319d92d-3da2-4c68-8923-91154d34b2ee",
+    "modelId": "975e9319-ad63-42a6-bec7-fe04221f6d6a",
+    "storage": "256 GB",
+    "basePrice": 18458,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "5da4b832-3a4c-4de4-ba94-aef934eda84f",
+    "modelId": "975e9319-ad63-42a6-bec7-fe04221f6d6a",
+    "storage": "12 GB",
+    "basePrice": 16800,
+    "active": true
+  },
+  {
+    "id": "eb194293-5fbe-4ffe-86d4-2bdb50bdd585",
+    "modelId": "975e9319-ad63-42a6-bec7-fe04221f6d6a",
+    "storage": "12 GB",
+    "basePrice": 16800,
+    "active": true
+  },
+  {
+    "id": "5975f4ea-0f11-4405-88ff-3b0ac8301b2b",
+    "modelId": "975e9319-ad63-42a6-bec7-fe04221f6d6a",
+    "storage": "512 GB",
+    "basePrice": 16160,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "e1202d0b-5076-47b6-b8aa-483595c68205",
+    "modelId": "975e9319-ad63-42a6-bec7-fe04221f6d6a",
+    "storage": "512 GB",
+    "basePrice": 16160,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "7424c3fc-0778-4472-a8f3-60290bb147e1",
+    "modelId": "975e9319-ad63-42a6-bec7-fe04221f6d6a",
+    "storage": "512 GB",
+    "basePrice": 16160,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "0cc45959-2691-4775-af93-5d45ca1f869a",
+    "modelId": "7c0f38d6-88ea-4078-b865-a66b8022e67e",
+    "storage": "8 GB",
+    "basePrice": 13230,
+    "active": true
+  },
+  {
+    "id": "f7540fec-c071-4818-b972-9ce445cbe885",
+    "modelId": "7c0f38d6-88ea-4078-b865-a66b8022e67e",
+    "storage": "8 GB",
+    "basePrice": 13230,
+    "active": true
+  },
+  {
+    "id": "aa298317-0201-4464-8e9c-13c89335533a",
+    "modelId": "7c0f38d6-88ea-4078-b865-a66b8022e67e",
+    "storage": "256 GB",
+    "basePrice": 14535,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "50a02717-c514-4e2f-a569-8ce9c60ae87f",
+    "modelId": "7c0f38d6-88ea-4078-b865-a66b8022e67e",
+    "storage": "8 GB",
+    "basePrice": 13230,
+    "active": true
+  },
+  {
+    "id": "1aa74a37-0f9d-42b4-8e3e-fe73c0a81fce",
+    "modelId": "7c0f38d6-88ea-4078-b865-a66b8022e67e",
+    "storage": "128 GB",
+    "basePrice": 12726,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "fca3f442-2f79-4dcd-893c-baa6b59325ab",
+    "modelId": "7c0f38d6-88ea-4078-b865-a66b8022e67e",
+    "storage": "128 GB",
+    "basePrice": 12726,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "936c34e3-7a2d-4c07-a2f9-257b82d33318",
+    "modelId": "7c0f38d6-88ea-4078-b865-a66b8022e67e",
+    "storage": "128 GB",
+    "basePrice": 12726,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "ef6a09fb-6bee-473c-b58e-b1906d62eb16",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "12 GB",
+    "basePrice": 67725,
+    "active": true
+  },
+  {
+    "id": "40d73c94-5ea6-47b6-a7f8-21bd31848d67",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "12 GB",
+    "basePrice": 67200,
+    "active": true
+  },
+  {
+    "id": "3d4fb69d-23ca-45e2-9d3f-a2e994424f19",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "12 GB",
+    "basePrice": 66360,
+    "active": true
+  },
+  {
+    "id": "63570f07-1840-4e8f-911a-cbcfda565bdc",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "12 GB",
+    "basePrice": 67725,
+    "active": true
+  },
+  {
+    "id": "b118c7b0-d69a-4a38-a7f4-36b57884953e",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "12 GB",
+    "basePrice": 67200,
+    "active": true
+  },
+  {
+    "id": "ac8117a0-0b1c-4fc9-a07e-a637ba31569b",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "12 GB",
+    "basePrice": 66360,
+    "active": true
+  },
+  {
+    "id": "7ae25042-8699-4f20-aaf3-469aaeaf3075",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "1 TB",
+    "basePrice": 57919,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "d36afd59-619f-40f9-901c-6bc8e51f6f33",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "12 GB",
+    "basePrice": 67725,
+    "active": true
+  },
+  {
+    "id": "29fac17a-5375-4fe7-927b-78b1da30e291",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "12 GB",
+    "basePrice": 67200,
+    "active": true
+  },
+  {
+    "id": "996b2a14-5bd3-45a6-95f2-878df081561d",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "12 GB",
+    "basePrice": 66360,
+    "active": true
+  },
+  {
+    "id": "a3c73779-f4c9-4f0b-a0b8-06c886e448d7",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "1021 GB",
+    "basePrice": 65145,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "d0d28523-042e-4bef-8320-b59edabe0062",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "1021 GB",
+    "basePrice": 65145,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "6db553e3-2f31-4b06-9ca2-d2adcceeea3b",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "1021 GB",
+    "basePrice": 65145,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "c0e77d32-d79c-4036-82e0-f988a1f94b11",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "512 GB",
+    "basePrice": 64640,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "dddefea1-2ec6-4dcd-9a83-d91a3b2e2a9c",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "512 GB",
+    "basePrice": 64640,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "4bf4e0c5-fb23-4897-8ca4-a7c125eee8e1",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "512 GB",
+    "basePrice": 64640,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "c1852e5e-1c04-47d0-ae07-fee66ce4c6bf",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "256 GB",
+    "basePrice": 63832,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "9e03c1fb-a221-4c59-b146-eeceb33bd790",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "256 GB",
+    "basePrice": 63832,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "c17f03e7-b79e-409f-8a6b-08084ee60dfa",
+    "modelId": "deffe76b-ee4d-4696-83e5-786fd1f8831e",
+    "storage": "256 GB",
+    "basePrice": 63832,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "aafd23b7-5f9b-4d49-b11b-6d28023bb50d",
+    "modelId": "1cc11faa-9de5-4d3c-b005-d1c54c46da88",
+    "storage": "12 GB",
+    "basePrice": 81900,
+    "active": true
+  },
+  {
+    "id": "8f00d048-e5e2-484d-93c6-ea519f99e5d2",
+    "modelId": "1cc11faa-9de5-4d3c-b005-d1c54c46da88",
+    "storage": "12 GB",
+    "basePrice": 81900,
+    "active": true
+  },
+  {
+    "id": "fce3c56a-5365-4b6d-9709-14e6ce365e48",
+    "modelId": "1cc11faa-9de5-4d3c-b005-d1c54c46da88",
+    "storage": "256 GB",
+    "basePrice": 89981,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "b1c67a69-e792-4b97-b954-358e592721ce",
+    "modelId": "1cc11faa-9de5-4d3c-b005-d1c54c46da88",
+    "storage": "512 GB",
+    "basePrice": 100425,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "0904a65a-a5d6-4c31-a377-ebf8c92a0041",
+    "modelId": "1cc11faa-9de5-4d3c-b005-d1c54c46da88",
+    "storage": "12 GB",
+    "basePrice": 81900,
+    "active": true
+  },
+  {
+    "id": "7cd91af2-7ce6-4f62-ad6c-71a0455dd631",
+    "modelId": "1cc11faa-9de5-4d3c-b005-d1c54c46da88",
+    "storage": "1 TB",
+    "basePrice": 78780,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "834df682-0a5c-4e72-b338-080dd05155b0",
+    "modelId": "1cc11faa-9de5-4d3c-b005-d1c54c46da88",
+    "storage": "1 TB",
+    "basePrice": 78780,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "a2beb68f-b25a-4756-a35e-afebb0659e95",
+    "modelId": "1cc11faa-9de5-4d3c-b005-d1c54c46da88",
+    "storage": "1 TB",
+    "basePrice": 78780,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "186da390-a2a7-4f5a-87ec-a08c3655a443",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "256 GB",
+    "basePrice": 9463,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "7fa60ff2-c3c8-469e-aa1c-f42f16646d08",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "128 GB",
+    "basePrice": 8449,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0c8495f8-d8e3-47d8-88e0-ccd6b986fba9",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "128 GB",
+    "basePrice": 8232,
+    "active": true
+  },
+  {
+    "id": "1b3ffac2-996b-4592-aa6c-eeb7dfd278de",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "128 GB",
+    "basePrice": 8232,
+    "active": true
+  },
+  {
+    "id": "96ce971a-7c3c-435c-a77e-6d7e8160022b",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "128 GB",
+    "basePrice": 8232,
+    "active": true
+  },
+  {
+    "id": "33f3a73e-5de3-4fba-afb9-fc1bf71c2903",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "128 GB",
+    "basePrice": 8232,
+    "active": true
+  },
+  {
+    "id": "9d70f0e1-10f5-4c12-8721-e99ca82efb30",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "128 GB",
+    "basePrice": 8232,
+    "active": true
+  },
+  {
+    "id": "1d9cebf7-0c2f-4102-b890-be6512116cbd",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "128 GB",
+    "basePrice": 8232,
+    "active": true
+  },
+  {
+    "id": "d2a6b734-208c-410e-8889-f5ecf9df0192",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "256 GB",
+    "basePrice": 8666,
+    "active": true
+  },
+  {
+    "id": "5d7cdaae-e672-4521-981e-b1b9dc1c9824",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "256 GB",
+    "basePrice": 8666,
+    "active": true
+  },
+  {
+    "id": "5aa3fea2-5c0f-460c-b107-9e72bbb6cea2",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "256 GB",
+    "basePrice": 8666,
+    "active": true
+  },
+  {
+    "id": "ffc2ffc2-30e9-4304-8c3d-080706d358b3",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "256 GB",
+    "basePrice": 8666,
+    "active": true
+  },
+  {
+    "id": "5bd25e98-def1-4bab-9b51-b86649fe71b0",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "256 GB",
+    "basePrice": 8666,
+    "active": true
+  },
+  {
+    "id": "e7d9a719-d46b-4255-851e-60e09e332735",
+    "modelId": "94f302e8-de40-43b9-b533-6803fe0ae67c",
+    "storage": "256 GB",
+    "basePrice": 8666,
+    "active": true
+  },
+  {
+    "id": "d48bd2b8-6577-4b21-8a40-a8034e2f78bc",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "256 GB",
+    "basePrice": 21018,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "df8c1f50-eb88-4098-8c84-3e098e182f9e",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "512 GB",
+    "basePrice": 23458,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "f84e0bd9-1b58-4321-b027-ca255cfaab3b",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "256 GB",
+    "basePrice": 16827,
+    "active": true
+  },
+  {
+    "id": "693bc41f-3cdb-4c66-97a4-d2b962b47a4b",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "256 GB",
+    "basePrice": 16827,
+    "active": true
+  },
+  {
+    "id": "959f285c-f65c-4884-b9f3-75d322a351b1",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "256 GB",
+    "basePrice": 16827,
+    "active": true
+  },
+  {
+    "id": "84e8375a-02ee-4f5f-a0e2-ac1ff61bc839",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "256 GB",
+    "basePrice": 16827,
+    "active": true
+  },
+  {
+    "id": "d4221d12-43d1-4de7-b92c-c847cb5d9029",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "256 GB",
+    "basePrice": 16827,
+    "active": true
+  },
+  {
+    "id": "856ee159-3c4b-44e0-b780-1958d08765c5",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "256 GB",
+    "basePrice": 16827,
+    "active": true
+  },
+  {
+    "id": "516470c1-b087-45f4-a64f-97fdd229d6cd",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "512 GB",
+    "basePrice": 20705,
+    "active": true
+  },
+  {
+    "id": "73de58b6-ed47-4b3a-beab-0cc653e2813b",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "512 GB",
+    "basePrice": 20705,
+    "active": true
+  },
+  {
+    "id": "1564e42d-d1f8-41ea-a9e9-a79ea216ddd0",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "512 GB",
+    "basePrice": 20705,
+    "active": true
+  },
+  {
+    "id": "bd6429ec-5b7b-4969-85f2-b01b669c37d7",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "512 GB",
+    "basePrice": 20705,
+    "active": true
+  },
+  {
+    "id": "ac17c8d3-4588-479b-8aa7-b782c04c5b6a",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "512 GB",
+    "basePrice": 20705,
+    "active": true
+  },
+  {
+    "id": "d5beb7c6-81e5-4b2b-a910-cd9a9038c487",
+    "modelId": "1edee60e-da74-4fab-8370-0133ab34c592",
+    "storage": "512 GB",
+    "basePrice": 20705,
+    "active": true
+  },
+  {
+    "id": "65e6def7-b01b-45ee-9949-47f19a3f9d9f",
+    "modelId": "c55054a6-b533-4a01-b8a0-c86e3c02be6a",
+    "storage": "4 GB",
+    "basePrice": 4536,
+    "active": true
+  },
+  {
+    "id": "07bdd26e-6eaf-48bc-a23c-9089113038ed",
+    "modelId": "c55054a6-b533-4a01-b8a0-c86e3c02be6a",
+    "storage": "64 GB",
+    "basePrice": 3916,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "05dac37b-77fd-4797-ab59-b5d0e63d799f",
+    "modelId": "c55054a6-b533-4a01-b8a0-c86e3c02be6a",
+    "storage": "128 GB",
+    "basePrice": 4450,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "1eb61488-de3f-43b9-bb84-951c18c94922",
+    "modelId": "c55054a6-b533-4a01-b8a0-c86e3c02be6a",
+    "storage": "4 GB",
+    "basePrice": 4536,
+    "active": true
+  },
+  {
+    "id": "9401cbd7-33d5-40c7-baab-77247684c4b6",
+    "modelId": "c55054a6-b533-4a01-b8a0-c86e3c02be6a",
+    "storage": "4 GB",
+    "basePrice": 4536,
+    "active": true
+  },
+  {
+    "id": "39331f80-f18d-4a15-8994-07c605116f58",
+    "modelId": "c55054a6-b533-4a01-b8a0-c86e3c02be6a",
+    "storage": "128 GB",
+    "basePrice": 4363,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "6b66f0cf-1810-4323-8144-cf71d10ac76a",
+    "modelId": "c55054a6-b533-4a01-b8a0-c86e3c02be6a",
+    "storage": "128 GB",
+    "basePrice": 4363,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "54ad2ffe-499b-4956-9274-f284268f6bb1",
+    "modelId": "c55054a6-b533-4a01-b8a0-c86e3c02be6a",
+    "storage": "128 GB",
+    "basePrice": 4363,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "ddbb5c63-86f0-4153-b1a9-94026fc3891c",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "256 GB",
+    "basePrice": 6805,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "e4875e2e-47e5-4790-8500-3f3d5d55a458",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "128 GB",
+    "basePrice": 6076,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "952bd684-b715-464c-9279-4d5c6aa78f0b",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "128 GB",
+    "basePrice": 6030,
+    "active": true
+  },
+  {
+    "id": "6dedb8f0-2fcc-4ca5-beda-d853bbeebd57",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "128 GB",
+    "basePrice": 6030,
+    "active": true
+  },
+  {
+    "id": "df1f78b7-e444-4efc-9add-a2f03cacb531",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "128 GB",
+    "basePrice": 6030,
+    "active": true
+  },
+  {
+    "id": "c5cf22f4-3ccf-482c-b159-5bb60c18b527",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "128 GB",
+    "basePrice": 6030,
+    "active": true
+  },
+  {
+    "id": "5d434c04-2a7d-4382-b7c1-a34a8d875259",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "128 GB",
+    "basePrice": 6030,
+    "active": true
+  },
+  {
+    "id": "8462df6f-4b78-4cd3-b8f3-160d5c09a58b",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "128 GB",
+    "basePrice": 6030,
+    "active": true
+  },
+  {
+    "id": "fe1f9484-7960-4a6b-aa63-ef15ecf033cd",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "256 GB",
+    "basePrice": 6121,
+    "active": true
+  },
+  {
+    "id": "a4d05c8b-559b-44b1-8d3a-266e6e351143",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "256 GB",
+    "basePrice": 6121,
+    "active": true
+  },
+  {
+    "id": "2fcfb1ea-76e0-4179-99e2-87496d362a8e",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "256 GB",
+    "basePrice": 6121,
+    "active": true
+  },
+  {
+    "id": "ca02a63a-8f17-418e-8c91-b5b820ff6196",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "256 GB",
+    "basePrice": 6121,
+    "active": true
+  },
+  {
+    "id": "1cc31b7f-1ec2-4783-9f57-bfb7317dbc12",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "256 GB",
+    "basePrice": 6121,
+    "active": true
+  },
+  {
+    "id": "e5bcaefd-448d-4384-ae6a-debf4b577cf3",
+    "modelId": "a597b3f8-5607-45fb-be45-2ea1fb2680cd",
+    "storage": "256 GB",
+    "basePrice": 6121,
+    "active": true
+  },
+  {
+    "id": "fb18acbc-fd7b-467a-b23b-73e07ba6fc4f",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "256 GB",
+    "basePrice": 6601,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "d0f1aede-a28d-4808-93a4-e07018773e58",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "128 GB",
+    "basePrice": 5894,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "470616e1-cbe3-4343-b8bf-864a6865c0b4",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "128 GB",
+    "basePrice": 5777,
+    "active": true
+  },
+  {
+    "id": "b134f06f-be46-4c1a-b249-bdf5cf56267a",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "128 GB",
+    "basePrice": 5777,
+    "active": true
+  },
+  {
+    "id": "669210b5-884c-4f34-91a4-9c7c3b047666",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "128 GB",
+    "basePrice": 5777,
+    "active": true
+  },
+  {
+    "id": "0ddb114a-2062-4d5e-8329-9a063f06fd56",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "128 GB",
+    "basePrice": 5777,
+    "active": true
+  },
+  {
+    "id": "249f0c1f-ae51-477d-85f5-cf045f0e6689",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "128 GB",
+    "basePrice": 5777,
+    "active": true
+  },
+  {
+    "id": "4f76c93f-005a-4818-b204-ae915149522d",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "128 GB",
+    "basePrice": 5777,
+    "active": true
+  },
+  {
+    "id": "29dc34d7-ec17-4c78-b858-20b43f80bb64",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "256 GB",
+    "basePrice": 6010,
+    "active": true
+  },
+  {
+    "id": "0f18073f-ffa2-4ee4-bb21-e3f4775a231e",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "256 GB",
+    "basePrice": 6010,
+    "active": true
+  },
+  {
+    "id": "d547d425-6720-4850-af3e-f14dde1fcfc3",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "256 GB",
+    "basePrice": 6010,
+    "active": true
+  },
+  {
+    "id": "ad61313e-ccd9-4847-8b2e-a02d60cd11c0",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "256 GB",
+    "basePrice": 6010,
+    "active": true
+  },
+  {
+    "id": "7c35e31a-f034-4122-889d-d3f6d2a1957d",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "256 GB",
+    "basePrice": 6010,
+    "active": true
+  },
+  {
+    "id": "63e569a4-727d-4f9f-b237-cb04490dae97",
+    "modelId": "550ea415-039d-4b65-85d9-2d55c7759759",
+    "storage": "256 GB",
+    "basePrice": 6010,
+    "active": true
+  },
+  {
+    "id": "6f5b08b8-43cd-40e1-b6f3-581d4e1a3ad8",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "256 GB",
+    "basePrice": 7013,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "1a312441-fba5-4283-9eff-c87c53f40ee5",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "128 GB",
+    "basePrice": 6262,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "eb9e1314-e64c-4445-9e58-a0653386e67d",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "128 GB",
+    "basePrice": 6161,
+    "active": true
+  },
+  {
+    "id": "b2bae90d-71c4-4a66-9eaf-0cac374fb29b",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "128 GB",
+    "basePrice": 6161,
+    "active": true
+  },
+  {
+    "id": "b7b6f3a0-0d9c-4367-aac1-8805c86694e1",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "128 GB",
+    "basePrice": 6161,
+    "active": true
+  },
+  {
+    "id": "fd003806-aa3e-49da-8cec-7687aef7fc92",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "128 GB",
+    "basePrice": 6161,
+    "active": true
+  },
+  {
+    "id": "34261293-ac89-4d1e-a733-8d763f9d5269",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "128 GB",
+    "basePrice": 6161,
+    "active": true
+  },
+  {
+    "id": "b18a5d61-a041-4c73-aee9-6a75ab306e34",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "128 GB",
+    "basePrice": 6161,
+    "active": true
+  },
+  {
+    "id": "5b44536e-b980-4803-9ab1-6e0c8c325959",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "256 GB",
+    "basePrice": 6363,
+    "active": true
+  },
+  {
+    "id": "a37c33b2-5546-452e-b121-796eab7971e5",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "256 GB",
+    "basePrice": 6363,
+    "active": true
+  },
+  {
+    "id": "0346f925-fbe5-4673-bbbf-7918d8dc36b3",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "256 GB",
+    "basePrice": 6363,
+    "active": true
+  },
+  {
+    "id": "b759f205-11ad-46ed-b2f7-61de2903c482",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "256 GB",
+    "basePrice": 6363,
+    "active": true
+  },
+  {
+    "id": "233ca30d-6d16-49d4-afca-7abeccff5551",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "256 GB",
+    "basePrice": 6363,
+    "active": true
+  },
+  {
+    "id": "b8407c53-f04d-41dc-b584-37c9db702846",
+    "modelId": "e98cc05e-b9a4-4d7a-aded-5188a5c7d9ba",
+    "storage": "256 GB",
+    "basePrice": 6363,
+    "active": true
+  },
+  {
+    "id": "3c6d42e5-29b9-462f-8b57-94237c276fb1",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "256 GB",
+    "basePrice": 9531,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "1e3be15b-83ec-4c63-8349-20fe2b6ae3fc",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "128 GB",
+    "basePrice": 8510,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "72596353-8a19-45a1-8262-8ef833d59f29",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "128 GB",
+    "basePrice": 8262,
+    "active": true
+  },
+  {
+    "id": "da98457f-ad31-4c3d-8513-a9995413b445",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "128 GB",
+    "basePrice": 8262,
+    "active": true
+  },
+  {
+    "id": "0894a6ed-d6aa-4372-9b89-b608f2ee3513",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "128 GB",
+    "basePrice": 8262,
+    "active": true
+  },
+  {
+    "id": "85fc8d21-2ec5-4885-8c61-9e8b6c81bc9f",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "128 GB",
+    "basePrice": 8262,
+    "active": true
+  },
+  {
+    "id": "0aa5d05b-17bc-497c-9433-819295bc1210",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "128 GB",
+    "basePrice": 8262,
+    "active": true
+  },
+  {
+    "id": "e298690d-7ad5-4935-aa47-4ca716b9685d",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "128 GB",
+    "basePrice": 8262,
+    "active": true
+  },
+  {
+    "id": "b7046a37-6da9-4959-8df3-fd9037770a68",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "256 GB",
+    "basePrice": 8757,
+    "active": true
+  },
+  {
+    "id": "bdeb511b-03d4-4ec3-9659-ec75962172f9",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "256 GB",
+    "basePrice": 8757,
+    "active": true
+  },
+  {
+    "id": "2926c2a5-c87b-49d2-9780-daf0ecc0ff0a",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "256 GB",
+    "basePrice": 8757,
+    "active": true
+  },
+  {
+    "id": "5a4d5dbd-5dd7-43f9-8264-1a14a3420bcc",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "256 GB",
+    "basePrice": 8757,
+    "active": true
+  },
+  {
+    "id": "b016e78b-09ef-4970-9752-8c59f542bcb8",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "256 GB",
+    "basePrice": 8757,
+    "active": true
+  },
+  {
+    "id": "8ab65e75-1f9f-48d8-a1e6-6dfcfcaee12d",
+    "modelId": "93d07c99-9782-40cf-981e-932c3c490102",
+    "storage": "256 GB",
+    "basePrice": 8757,
+    "active": true
+  },
+  {
+    "id": "f0417403-0cc2-42b8-91ed-ec49601aa479",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "128 GB",
+    "basePrice": 7666,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "d5b893c3-adef-4f9f-b0c1-15e05a9808cd",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "256 GB",
+    "basePrice": 8586,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "7483a785-27ef-4b9a-bcb1-aeb85c316db0",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "128 GB",
+    "basePrice": 7494,
+    "active": true
+  },
+  {
+    "id": "9572b4ff-425c-4230-80c5-a890044e1912",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "128 GB",
+    "basePrice": 7494,
+    "active": true
+  },
+  {
+    "id": "ea7040f6-a5e8-44a8-8084-ea7901599df7",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "128 GB",
+    "basePrice": 7494,
+    "active": true
+  },
+  {
+    "id": "6ed4c9c2-ecf6-4c34-b7ba-282aead4d7ed",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "128 GB",
+    "basePrice": 7494,
+    "active": true
+  },
+  {
+    "id": "568de875-275a-4020-9b60-f949d519e1d5",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "128 GB",
+    "basePrice": 7494,
+    "active": true
+  },
+  {
+    "id": "5fefede0-0287-47af-b066-0877bf361c85",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "128 GB",
+    "basePrice": 7494,
+    "active": true
+  },
+  {
+    "id": "7e8f1aa8-f452-4469-9378-df7043c96c0e",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "256 GB",
+    "basePrice": 7838,
+    "active": true
+  },
+  {
+    "id": "156c7a5c-03c6-47af-8ffc-df1d81b0adaa",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "256 GB",
+    "basePrice": 7838,
+    "active": true
+  },
+  {
+    "id": "2ce3b956-d018-4221-b693-f3b6c4ee45cb",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "256 GB",
+    "basePrice": 7838,
+    "active": true
+  },
+  {
+    "id": "47b0597b-3c5c-41d6-be69-6b6808513cb7",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "256 GB",
+    "basePrice": 7838,
+    "active": true
+  },
+  {
+    "id": "1b08aa31-d23a-43bd-97c3-22618f0dbffc",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "256 GB",
+    "basePrice": 7838,
+    "active": true
+  },
+  {
+    "id": "751f2127-92bc-4b2f-afdc-f4ee1a3f3305",
+    "modelId": "60ed3573-762f-43b7-8a7f-870ce6e77209",
+    "storage": "256 GB",
+    "basePrice": 7838,
+    "active": true
+  },
+  {
+    "id": "9d31e28c-ce94-4fab-a381-b7ea99623972",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "64 GB",
+    "basePrice": 4155,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "e91b850d-ca16-4a41-a4f4-2489fe92d166",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "128 GB",
+    "basePrice": 4722,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "b538b942-f41e-4e3a-b7c1-7c28e50dbec7",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "64 GB",
+    "basePrice": 4434,
+    "active": true
+  },
+  {
+    "id": "53d5f8f4-3171-4822-9728-4697c4926f28",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "64 GB",
+    "basePrice": 4434,
+    "active": true
+  },
+  {
+    "id": "3afe19a5-aae3-4d80-9815-b242670f612a",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "64 GB",
+    "basePrice": 4434,
+    "active": true
+  },
+  {
+    "id": "a801c139-24fb-4134-ac02-a18fd71ced6b",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "64 GB",
+    "basePrice": 4434,
+    "active": true
+  },
+  {
+    "id": "1d110025-32fe-4767-8980-982ad1711f47",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "64 GB",
+    "basePrice": 4434,
+    "active": true
+  },
+  {
+    "id": "3feb672f-ecb6-42b9-a409-00c6de2328bf",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "64 GB",
+    "basePrice": 4434,
+    "active": true
+  },
+  {
+    "id": "2ed4b887-3ced-48b1-a1ef-9ee479cb0730",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "128 GB",
+    "basePrice": 5010,
+    "active": true
+  },
+  {
+    "id": "86882e57-d5fd-47cf-8716-dfee1ffdb895",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "128 GB",
+    "basePrice": 5010,
+    "active": true
+  },
+  {
+    "id": "6f6b6005-6c0c-4696-8451-2e515f4eb532",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "128 GB",
+    "basePrice": 5010,
+    "active": true
+  },
+  {
+    "id": "97a1e0b8-96de-4dac-8f15-09fdf9e20c2d",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "128 GB",
+    "basePrice": 5010,
+    "active": true
+  },
+  {
+    "id": "3a89eb1c-8ea0-440b-8bfd-f64f2afbe8c2",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "128 GB",
+    "basePrice": 5010,
+    "active": true
+  },
+  {
+    "id": "64533400-b2a6-4117-a86b-14cc9faf9c44",
+    "modelId": "d2a69ada-f2e4-4af9-913a-ff787f994f51",
+    "storage": "128 GB",
+    "basePrice": 5010,
+    "active": true
+  },
+  {
+    "id": "6b8d7387-d97a-4933-800e-c86723682cd7",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "256 GB",
+    "basePrice": 12291,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "dcf3e13d-73b7-42fc-ad87-c7cc38be7dff",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "128 GB",
+    "basePrice": 10974,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "f3ec06a6-1e6c-4786-8757-6d79ccc3dd83",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "128 GB",
+    "basePrice": 10777,
+    "active": true
+  },
+  {
+    "id": "a7cd03ea-719d-415a-afe3-98be0d03affb",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "128 GB",
+    "basePrice": 10777,
+    "active": true
+  },
+  {
+    "id": "e51c76bd-d598-4140-8f07-ef2369f9878e",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "128 GB",
+    "basePrice": 10777,
+    "active": true
+  },
+  {
+    "id": "b8247e2d-12af-4895-828a-08afdcd16605",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "128 GB",
+    "basePrice": 10777,
+    "active": true
+  },
+  {
+    "id": "6588fc60-0c2b-4c09-90e6-ffc3b9b9f57a",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "128 GB",
+    "basePrice": 10777,
+    "active": true
+  },
+  {
+    "id": "a3274cd2-f10d-4dcd-bb59-67effb8e74b6",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "128 GB",
+    "basePrice": 10777,
+    "active": true
+  },
+  {
+    "id": "4a2564f0-3645-4fe9-a879-5daa67e27c89",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "256 GB",
+    "basePrice": 11171,
+    "active": true
+  },
+  {
+    "id": "7c3f290e-4104-4562-b1ce-c3a7eb4b51c1",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "256 GB",
+    "basePrice": 11171,
+    "active": true
+  },
+  {
+    "id": "676cc2e1-56c5-49f4-90d3-a16ccbc2525d",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "256 GB",
+    "basePrice": 11171,
+    "active": true
+  },
+  {
+    "id": "43ea4a9b-ba2c-427b-a3de-9992493ed3ed",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "256 GB",
+    "basePrice": 11171,
+    "active": true
+  },
+  {
+    "id": "c4a050b9-11f8-4fb1-b7db-b637eea5a4d6",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "256 GB",
+    "basePrice": 11171,
+    "active": true
+  },
+  {
+    "id": "0fdedb5c-f435-4825-b6fb-8201abca4807",
+    "modelId": "0a43e7cf-4df9-440f-86b1-85e0fa11e9d0",
+    "storage": "256 GB",
+    "basePrice": 11171,
+    "active": true
+  },
+  {
+    "id": "a9d12132-51bd-44ac-87c8-4540b686b088",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "128 GB",
+    "basePrice": 16266,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "53cc3bf4-ba2a-43d0-80f3-549cbcee6759",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "256 GB",
+    "basePrice": 18218,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "6a9f60b6-10ef-474e-876f-4f3051890d8d",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "128 GB",
+    "basePrice": 15776,
+    "active": true
+  },
+  {
+    "id": "354b56a7-9ac9-42fd-8f34-25ad769f3f83",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "128 GB",
+    "basePrice": 15776,
+    "active": true
+  },
+  {
+    "id": "22f94f8a-1e5c-426b-84ee-cf86bcb424b6",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "128 GB",
+    "basePrice": 15776,
+    "active": true
+  },
+  {
+    "id": "625a3834-e9fb-45ea-b34e-87a35e019b1f",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "128 GB",
+    "basePrice": 15776,
+    "active": true
+  },
+  {
+    "id": "9b5c7d09-9473-4836-853d-a0a7943d9db0",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "128 GB",
+    "basePrice": 15776,
+    "active": true
+  },
+  {
+    "id": "c6a33d68-9039-4bca-81c3-a935bf70e9fe",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "128 GB",
+    "basePrice": 15776,
+    "active": true
+  },
+  {
+    "id": "295dc9b9-71ba-4b98-8fd8-a35a62c2bb9e",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "256 GB",
+    "basePrice": 16756,
+    "active": true
+  },
+  {
+    "id": "85af7224-bcfe-44bb-ae97-f73419ecddf1",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "256 GB",
+    "basePrice": 16756,
+    "active": true
+  },
+  {
+    "id": "20d53abf-6c74-4fcb-8af9-fc0fa7eb945b",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "256 GB",
+    "basePrice": 16756,
+    "active": true
+  },
+  {
+    "id": "fe12980a-2c36-4496-80f2-ba1928d46868",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "256 GB",
+    "basePrice": 16756,
+    "active": true
+  },
+  {
+    "id": "d164d93d-0c62-4174-a5cb-e9a5984381e4",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "256 GB",
+    "basePrice": 16756,
+    "active": true
+  },
+  {
+    "id": "6fd03bc1-8069-47f8-b4d4-b4de83218574",
+    "modelId": "ea7c3492-d967-4d07-8028-6e814f803e0c",
+    "storage": "256 GB",
+    "basePrice": 16756,
+    "active": true
+  },
+  {
+    "id": "dc409212-f984-446f-9275-b3fe63d5b67a",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "128 GB",
+    "basePrice": 16135,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0cc72965-731c-4c05-998b-3a2bc7cb991c",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "256 GB",
+    "basePrice": 18071,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "0b953bfe-58a1-4f02-995a-154e5322c9ac",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "128 GB",
+    "basePrice": 15948,
+    "active": true
+  },
+  {
+    "id": "e2102bc1-9bb3-4a89-9c11-f500d8013b5b",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "128 GB",
+    "basePrice": 15948,
+    "active": true
+  },
+  {
+    "id": "1a65f6fe-98b1-4136-99e8-0ff9233f638f",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "128 GB",
+    "basePrice": 15948,
+    "active": true
+  },
+  {
+    "id": "959a5242-2de7-44e5-8494-0b327637e085",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "128 GB",
+    "basePrice": 15948,
+    "active": true
+  },
+  {
+    "id": "d785d105-c87c-43ae-9215-378f82a187ea",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "128 GB",
+    "basePrice": 15948,
+    "active": true
+  },
+  {
+    "id": "836b31ef-d103-4c87-8e46-53efd4019329",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "128 GB",
+    "basePrice": 15948,
+    "active": true
+  },
+  {
+    "id": "46fe3969-8a3d-4ceb-829d-776e04cba370",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "256 GB",
+    "basePrice": 16322,
+    "active": true
+  },
+  {
+    "id": "bcf68d99-79b4-4d19-aaae-b2a23e27527c",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "256 GB",
+    "basePrice": 16322,
+    "active": true
+  },
+  {
+    "id": "19cdf143-aea0-476e-897b-c53ebb9a4508",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "256 GB",
+    "basePrice": 16322,
+    "active": true
+  },
+  {
+    "id": "34814708-7064-480d-87c6-5f21b783ba60",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "256 GB",
+    "basePrice": 16322,
+    "active": true
+  },
+  {
+    "id": "9304a4a0-9936-430c-9e3f-aeeaf3e5c464",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "256 GB",
+    "basePrice": 16322,
+    "active": true
+  },
+  {
+    "id": "2e837678-4d41-4149-9b58-3337cbf31068",
+    "modelId": "4b4142d9-c708-42b8-9d7f-94effcec8d65",
+    "storage": "256 GB",
+    "basePrice": 16322,
+    "active": true
+  },
+  {
+    "id": "ab76c0f3-d3b3-4333-88e7-390e9cdec51a",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "128 GB",
+    "basePrice": 11827,
+    "active": true
+  },
+  {
+    "id": "021f3a4e-2435-4dc6-9bfb-4da7a6791b6d",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "256 GB",
+    "basePrice": 12009,
+    "active": true
+  },
+  {
+    "id": "1e2b92c8-ca44-4c7b-a4c5-294ae1866e76",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "256 GB",
+    "basePrice": 13348,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "6370441c-1378-4214-b775-62eaab7c0e8f",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "128 GB",
+    "basePrice": 11918,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a739ac9a-157f-4a49-a1ba-2ee4450aafa6",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "128 GB",
+    "basePrice": 11827,
+    "active": true
+  },
+  {
+    "id": "108e65ed-fac8-4d2e-bc5f-80797dbb191b",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "256 GB",
+    "basePrice": 12009,
+    "active": true
+  },
+  {
+    "id": "4f15599e-409c-4747-be0c-4ae868f6fcb2",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "128 GB",
+    "basePrice": 11827,
+    "active": true
+  },
+  {
+    "id": "6ae65e5c-afea-418c-8072-8bbf30c879cc",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "256 GB",
+    "basePrice": 12009,
+    "active": true
+  },
+  {
+    "id": "0e29143a-1ca8-4fc5-a58b-b2ce099ccbe7",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "128 GB",
+    "basePrice": 11827,
+    "active": true
+  },
+  {
+    "id": "438cb609-af78-4246-a2da-5bfd55a78064",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "256 GB",
+    "basePrice": 12009,
+    "active": true
+  },
+  {
+    "id": "8569bed1-91fb-4264-b2a8-a920044dd204",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "128 GB",
+    "basePrice": 11827,
+    "active": true
+  },
+  {
+    "id": "a8cc07d3-564f-4737-86b4-168f3e465724",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "128 GB",
+    "basePrice": 11827,
+    "active": true
+  },
+  {
+    "id": "aae50d01-3487-4669-9793-addd724c148b",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "256 GB",
+    "basePrice": 12009,
+    "active": true
+  },
+  {
+    "id": "60549f16-0b17-4a1c-9398-73380b7bfbe4",
+    "modelId": "6927e239-cd66-4d05-86a7-ba88b4861674",
+    "storage": "256 GB",
+    "basePrice": 12009,
+    "active": true
+  },
+  {
+    "id": "5fc1c8be-da44-46d2-ab63-f9476fb42601",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "128 GB",
+    "basePrice": 17645,
+    "active": true
+  },
+  {
+    "id": "265eb056-0163-4754-bc4c-7b30d13de197",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "256 GB",
+    "basePrice": 18261,
+    "active": true
+  },
+  {
+    "id": "f2c41a26-75d3-4e6d-bba9-33fecda36622",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "128 GB",
+    "basePrice": 17953,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "f03205cd-8227-4967-9278-0c276bab3853",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "256 GB",
+    "basePrice": 20107,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "bb99123a-56cd-4d9f-a09c-6593f3dfe3ec",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "128 GB",
+    "basePrice": 17645,
+    "active": true
+  },
+  {
+    "id": "15e8bcd7-df98-46c2-9144-88c4f1e57f9c",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "256 GB",
+    "basePrice": 18261,
+    "active": true
+  },
+  {
+    "id": "9fb145de-bbad-47a9-a812-9abdebbc8ba3",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "128 GB",
+    "basePrice": 17645,
+    "active": true
+  },
+  {
+    "id": "25e5568f-4752-41b1-b229-6b75cfa1fff0",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "256 GB",
+    "basePrice": 18261,
+    "active": true
+  },
+  {
+    "id": "e824c877-66b4-4f36-bb8a-d495231bf3cf",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "128 GB",
+    "basePrice": 17645,
+    "active": true
+  },
+  {
+    "id": "dccb9a71-43f9-4dc9-aa63-f4bcf36a63b6",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "256 GB",
+    "basePrice": 18261,
+    "active": true
+  },
+  {
+    "id": "e4c1e012-1c6f-47e5-86b3-96ba045dc10b",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "128 GB",
+    "basePrice": 17645,
+    "active": true
+  },
+  {
+    "id": "0a0402f3-7d02-487e-a4a1-aeeea278b039",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "128 GB",
+    "basePrice": 17645,
+    "active": true
+  },
+  {
+    "id": "4bc4564b-b3f4-4171-9257-1f2490c96feb",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "256 GB",
+    "basePrice": 18261,
+    "active": true
+  },
+  {
+    "id": "e82a7194-3d98-44c9-9137-304109bb9dd0",
+    "modelId": "3c4cda5c-cf0e-4d50-95ea-97f06fd37700",
+    "storage": "256 GB",
+    "basePrice": 18261,
+    "active": true
+  },
+  {
+    "id": "4733409b-f659-447d-a022-76c6d2e14ab8",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "64 GB",
+    "basePrice": 5020,
+    "active": true
+  },
+  {
+    "id": "2036efba-06f6-4148-b1f1-e6cbb2d883c9",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "128 GB",
+    "basePrice": 5343,
+    "active": true
+  },
+  {
+    "id": "a2675397-b1fc-45c6-bd1c-f907d81af9d7",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "128 GB",
+    "basePrice": 5182,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "830fd08b-a354-4753-9621-9d34c5eaf73e",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "64 GB",
+    "basePrice": 4560,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "cbbcd39c-4110-4abe-a1aa-b7a5817d592b",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "64 GB",
+    "basePrice": 5020,
+    "active": true
+  },
+  {
+    "id": "b6226af9-5c70-47f6-b447-47a34751ea95",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "128 GB",
+    "basePrice": 5343,
+    "active": true
+  },
+  {
+    "id": "d1e3e9f1-32ed-4899-8828-7dde591bd77c",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "64 GB",
+    "basePrice": 5020,
+    "active": true
+  },
+  {
+    "id": "34b711ec-07fb-4af3-94e8-0b9696655247",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "128 GB",
+    "basePrice": 5343,
+    "active": true
+  },
+  {
+    "id": "2c8ea322-82c6-4de0-9475-5b5563987f7e",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "64 GB",
+    "basePrice": 5020,
+    "active": true
+  },
+  {
+    "id": "f5b13462-2b76-4dfb-8c9c-2dbd31d3fda8",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "128 GB",
+    "basePrice": 5343,
+    "active": true
+  },
+  {
+    "id": "c25ae9fa-96e9-47b9-a3d4-dfc524a8ba5f",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "64 GB",
+    "basePrice": 5020,
+    "active": true
+  },
+  {
+    "id": "bcd4abf9-63f8-4509-864d-162a55e0cbde",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "64 GB",
+    "basePrice": 5020,
+    "active": true
+  },
+  {
+    "id": "c39c36ea-f98c-4a4d-a988-3ee2acb1d3b1",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "128 GB",
+    "basePrice": 5343,
+    "active": true
+  },
+  {
+    "id": "db78b1f9-4040-49c7-b68f-01355e6903dd",
+    "modelId": "c224865d-7538-4d7b-9e31-84c678f35d86",
+    "storage": "128 GB",
+    "basePrice": 5343,
+    "active": true
+  },
+  {
+    "id": "5d26cc0e-eaa6-4264-bd14-54e888a18196",
+    "modelId": "9dc47786-3053-4ef0-aa5b-9716c0c170e0",
+    "storage": "128 GB",
+    "basePrice": 7918,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "72ffa74e-2fe6-45f9-926d-0e1f2e4d40d4",
+    "modelId": "9dc47786-3053-4ef0-aa5b-9716c0c170e0",
+    "storage": "64 GB",
+    "basePrice": 7322,
+    "active": true
+  },
+  {
+    "id": "698a5f45-c216-413f-b255-5d5aa80e1def",
+    "modelId": "9dc47786-3053-4ef0-aa5b-9716c0c170e0",
+    "storage": "128 GB",
+    "basePrice": 8514,
+    "active": true
+  },
+  {
+    "id": "9e492026-499a-43b3-a608-0deaf37df938",
+    "modelId": "9dc47786-3053-4ef0-aa5b-9716c0c170e0",
+    "storage": "64 GB",
+    "basePrice": 7322,
+    "active": true
+  },
+  {
+    "id": "d67d3c47-452a-48fe-88c5-f2c8f51dc8e4",
+    "modelId": "9dc47786-3053-4ef0-aa5b-9716c0c170e0",
+    "storage": "128 GB",
+    "basePrice": 8514,
+    "active": true
+  },
+  {
+    "id": "dd4e4efa-1e64-4288-a5a1-d145220faed2",
+    "modelId": "9dc47786-3053-4ef0-aa5b-9716c0c170e0",
+    "storage": "64 GB",
+    "basePrice": 7322,
+    "active": true
+  },
+  {
+    "id": "f5f116ef-d86e-48e8-8455-82453acd2962",
+    "modelId": "9dc47786-3053-4ef0-aa5b-9716c0c170e0",
+    "storage": "64 GB",
+    "basePrice": 7322,
+    "active": true
+  },
+  {
+    "id": "63eac3e8-004b-4279-8b86-958da22a0ea2",
+    "modelId": "9dc47786-3053-4ef0-aa5b-9716c0c170e0",
+    "storage": "64 GB",
+    "basePrice": 7322,
+    "active": true
+  },
+  {
+    "id": "a7e972de-262e-43bb-993c-08944f4b22c2",
+    "modelId": "9dc47786-3053-4ef0-aa5b-9716c0c170e0",
+    "storage": "64 GB",
+    "basePrice": 7322,
+    "active": true
+  },
+  {
+    "id": "aab9c374-d3b5-4df4-9da6-13488ce2bf93",
+    "modelId": "9dc47786-3053-4ef0-aa5b-9716c0c170e0",
+    "storage": "128 GB",
+    "basePrice": 8514,
+    "active": true
+  },
+  {
+    "id": "dfaae804-e367-4a53-b928-954e85d2bf0b",
+    "modelId": "9dc47786-3053-4ef0-aa5b-9716c0c170e0",
+    "storage": "128 GB",
+    "basePrice": 8514,
+    "active": true
+  },
+  {
+    "id": "f0296bb1-aba1-48e8-aba2-4d3107811f9b",
+    "modelId": "9dc47786-3053-4ef0-aa5b-9716c0c170e0",
+    "storage": "128 GB",
+    "basePrice": 8514,
+    "active": true
+  },
+  {
+    "id": "71aba2a2-c055-48f7-9afb-39de28cfc32c",
+    "modelId": "9dc47786-3053-4ef0-aa5b-9716c0c170e0",
+    "storage": "128 GB",
+    "basePrice": 8514,
+    "active": true
+  },
+  {
+    "id": "038ecb9b-e8c9-4e22-ba25-28217e3d2057",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "128 GB",
+    "basePrice": 16205,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "55b7c5f6-2b12-46ba-83e6-2cfcc907c92f",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "256 GB",
+    "basePrice": 18150,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "6697730f-0aa1-40f6-beb3-67b7176349f8",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "128 GB",
+    "basePrice": 15190,
+    "active": true
+  },
+  {
+    "id": "4da8a178-94d1-452a-ad0f-6636544355ed",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "128 GB",
+    "basePrice": 15190,
+    "active": true
+  },
+  {
+    "id": "da4e0f86-16fb-4f78-a619-766a30f9e542",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "128 GB",
+    "basePrice": 15190,
+    "active": true
+  },
+  {
+    "id": "be496afd-82fe-464c-9e27-190a4b0fad64",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "128 GB",
+    "basePrice": 15190,
+    "active": true
+  },
+  {
+    "id": "09d0000c-49b9-4654-8869-7da3d7d4d4ee",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "128 GB",
+    "basePrice": 15190,
+    "active": true
+  },
+  {
+    "id": "8913410f-6e7d-48ef-b9c8-2fe45324b78f",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "128 GB",
+    "basePrice": 15190,
+    "active": true
+  },
+  {
+    "id": "a8d62e60-ceb1-434c-8157-8b2dc652084d",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "256 GB",
+    "basePrice": 17220,
+    "active": true
+  },
+  {
+    "id": "7d400f0d-21aa-415f-8a41-fb517ba755a1",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "256 GB",
+    "basePrice": 17220,
+    "active": true
+  },
+  {
+    "id": "b42fd1d1-1f4d-4f10-b6cc-afba282d8759",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "256 GB",
+    "basePrice": 17220,
+    "active": true
+  },
+  {
+    "id": "d5b6d9e1-1f96-42c9-9694-20c816410822",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "256 GB",
+    "basePrice": 17220,
+    "active": true
+  },
+  {
+    "id": "045b2e33-690a-43b6-b3c7-b442b8b36505",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "256 GB",
+    "basePrice": 17220,
+    "active": true
+  },
+  {
+    "id": "18d6af34-e46f-45fa-a020-70fa787d7ba9",
+    "modelId": "ed7a4e1c-5b21-4632-be28-d43ada9e65b3",
+    "storage": "256 GB",
+    "basePrice": 17220,
+    "active": true
+  },
+  {
+    "id": "d6104bf0-7c2f-421d-a3b9-1b84c136ef68",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "256 GB",
+    "basePrice": 21018,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "82d334bb-6d6a-44c9-9f54-41cfb8cf813b",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "128 GB",
+    "basePrice": 18766,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "b093ffef-7965-4081-931e-9b2bf1f486a9",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "128 GB",
+    "basePrice": 18584,
+    "active": true
+  },
+  {
+    "id": "7c293aba-d8a3-4a38-8202-ffdc9e78d08f",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "128 GB",
+    "basePrice": 18584,
+    "active": true
+  },
+  {
+    "id": "1f068369-a9d9-44ed-a3d0-e5b3e19327cd",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "128 GB",
+    "basePrice": 18584,
+    "active": true
+  },
+  {
+    "id": "9a2758a4-bf9a-4a19-ba3d-6a22f15a794a",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "128 GB",
+    "basePrice": 18584,
+    "active": true
+  },
+  {
+    "id": "16160e4c-4604-4760-93b5-d45fd7655e00",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "128 GB",
+    "basePrice": 18584,
+    "active": true
+  },
+  {
+    "id": "97289493-7cc6-4a31-bd57-83aa59db880f",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "128 GB",
+    "basePrice": 18584,
+    "active": true
+  },
+  {
+    "id": "732fc414-047c-42c9-bdce-46a92e67db7f",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "256 GB",
+    "basePrice": 18948,
+    "active": true
+  },
+  {
+    "id": "460f0353-36c8-4a70-a156-c44efc147b8b",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "256 GB",
+    "basePrice": 18948,
+    "active": true
+  },
+  {
+    "id": "e4556a22-ecd7-4707-9bd7-ddd1f02a21b3",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "256 GB",
+    "basePrice": 18948,
+    "active": true
+  },
+  {
+    "id": "68ac9842-3c6d-4d6f-9080-cbe77308d453",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "256 GB",
+    "basePrice": 18948,
+    "active": true
+  },
+  {
+    "id": "c2490898-ce47-4444-a4a6-c72b8189e968",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "256 GB",
+    "basePrice": 18948,
+    "active": true
+  },
+  {
+    "id": "92ae7c32-e3ca-4df5-9286-b939e8de5bf5",
+    "modelId": "0ab4e437-ce0c-49fd-8fd1-0772cef0fbc1",
+    "storage": "256 GB",
+    "basePrice": 18948,
+    "active": true
+  },
+  {
+    "id": "d8c95005-8cd5-44f9-b446-23cf7e846ddf",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "32 GB",
+    "basePrice": 1654,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "cc4d79e6-e338-4d29-b560-2177e4133c72",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "64 GB",
+    "basePrice": 1654,
+    "active": true,
+    "ram": "3 GB"
+  },
+  {
+    "id": "fc7ff399-cec1-43bf-b970-98a80d9ed82b",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "32 GB",
+    "basePrice": 1838,
+    "active": true
+  },
+  {
+    "id": "17d04db1-9050-40df-b050-0449829c9444",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "32 GB",
+    "basePrice": 1838,
+    "active": true
+  },
+  {
+    "id": "132ca6b7-37f3-4ea5-8a65-14e12cf8fe5b",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "32 GB",
+    "basePrice": 1838,
+    "active": true
+  },
+  {
+    "id": "b7a1025b-21a7-4c4b-9347-7b9441e12350",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "32 GB",
+    "basePrice": 1838,
+    "active": true
+  },
+  {
+    "id": "683a6ff1-0f65-4d44-8308-a364545af417",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "32 GB",
+    "basePrice": 1838,
+    "active": true
+  },
+  {
+    "id": "4d91623c-07a6-44fa-ba0b-f1c1f7417934",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "32 GB",
+    "basePrice": 1838,
+    "active": true
+  },
+  {
+    "id": "805ea3b1-b3ca-4924-88ff-99e4884e511b",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "64 GB",
+    "basePrice": 1919,
+    "active": true
+  },
+  {
+    "id": "5028af2b-01b3-4480-9905-8411466b899c",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "64 GB",
+    "basePrice": 1919,
+    "active": true
+  },
+  {
+    "id": "8493bf00-471f-4729-a8ee-5153e31094e3",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "64 GB",
+    "basePrice": 1919,
+    "active": true
+  },
+  {
+    "id": "05b74b90-4049-44bc-9f5e-4fda4366f167",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "64 GB",
+    "basePrice": 1919,
+    "active": true
+  },
+  {
+    "id": "c84d0549-2bee-4df8-831b-e3a52e01eb5a",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "64 GB",
+    "basePrice": 1919,
+    "active": true
+  },
+  {
+    "id": "63b3d979-23f3-4c77-a0eb-cfe372e6adf0",
+    "modelId": "0842f3b9-9080-44d2-ad43-328f8712331d",
+    "storage": "64 GB",
+    "basePrice": 1919,
+    "active": true
+  },
+  {
+    "id": "260f5478-4a74-4a70-a9c2-f3447927348e",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "32 GB",
+    "basePrice": 1346,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "f81880b7-64f7-42b2-b098-8e764c678885",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "16 GB",
+    "basePrice": 1346,
+    "active": true,
+    "ram": "2 GB"
+  },
+  {
+    "id": "0f6e2f0f-0453-49be-a32d-67090606b350",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "16 GB",
+    "basePrice": 1454,
+    "active": true
+  },
+  {
+    "id": "17c6d673-8dd2-453d-9995-b503323afcc1",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "16 GB",
+    "basePrice": 1454,
+    "active": true
+  },
+  {
+    "id": "9a0f44fa-5902-4147-8208-3df6f4714e30",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "16 GB",
+    "basePrice": 1454,
+    "active": true
+  },
+  {
+    "id": "119d0819-1fa3-4de5-9594-aaa64d1e5a07",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "16 GB",
+    "basePrice": 1454,
+    "active": true
+  },
+  {
+    "id": "99846b4d-b74e-456d-9b3c-c237daa24b91",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "16 GB",
+    "basePrice": 1454,
+    "active": true
+  },
+  {
+    "id": "bb574ed1-faac-4ef7-9851-0c1277e0d37e",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "16 GB",
+    "basePrice": 1454,
+    "active": true
+  },
+  {
+    "id": "c35dd35c-7923-49f5-bdab-dbc5538bd118",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "32 GB",
+    "basePrice": 1606,
+    "active": true
+  },
+  {
+    "id": "721da505-cdff-4ad1-9a91-f0918423bad9",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "32 GB",
+    "basePrice": 1606,
+    "active": true
+  },
+  {
+    "id": "733e38b5-8fdb-4d97-97dd-aa4239499d53",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "32 GB",
+    "basePrice": 1606,
+    "active": true
+  },
+  {
+    "id": "c755d5fd-6912-423c-8d88-6974e861d502",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "32 GB",
+    "basePrice": 1606,
+    "active": true
+  },
+  {
+    "id": "394d8092-83bd-4243-aa1a-5572e75ebaab",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "32 GB",
+    "basePrice": 1606,
+    "active": true
+  },
+  {
+    "id": "2968bf1c-440e-4f61-9c1f-b086c038177f",
+    "modelId": "e297bd47-33ce-4c43-a4e9-d08b556f9137",
+    "storage": "32 GB",
+    "basePrice": 1606,
+    "active": true
+  },
+  {
+    "id": "6fbb232f-c45c-4d62-8b92-a14e4309fe06",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "128 GB",
+    "basePrice": 1980,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "697d3a16-7b90-4605-bdfe-4dbd75d1bd10",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "64 GB",
+    "basePrice": 1742,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "1f33e165-384b-4fde-ae72-08d471a2ed77",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "32 GB",
+    "basePrice": 1742,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "7c41f26f-5901-4349-b542-b9ce97eb67fa",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "32 GB",
+    "basePrice": 1717,
+    "active": true
+  },
+  {
+    "id": "7cfbd7fe-635f-42c5-aa7e-222a2325b38f",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "32 GB",
+    "basePrice": 1717,
+    "active": true
+  },
+  {
+    "id": "439cfb0c-f097-4c59-905f-6d01a0d44fdc",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "32 GB",
+    "basePrice": 1717,
+    "active": true
+  },
+  {
+    "id": "f23a9b9a-a60d-49af-8713-6c2b7c0c1fd1",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "32 GB",
+    "basePrice": 1717,
+    "active": true
+  },
+  {
+    "id": "b13917bd-1fed-441d-9b39-c663d99c0ec9",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "32 GB",
+    "basePrice": 1717,
+    "active": true
+  },
+  {
+    "id": "24a1ac98-5519-45c6-bb6e-c9cd3547ed8d",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "32 GB",
+    "basePrice": 1717,
+    "active": true
+  },
+  {
+    "id": "940329f1-d072-4eb4-a7d5-09bf8092c318",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "64 GB",
+    "basePrice": 1909,
+    "active": true
+  },
+  {
+    "id": "96529817-0ac4-4533-997b-3bb3baf22998",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "64 GB",
+    "basePrice": 1909,
+    "active": true
+  },
+  {
+    "id": "8d827853-78dc-4ed9-8376-0667a2a38c92",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "64 GB",
+    "basePrice": 1909,
+    "active": true
+  },
+  {
+    "id": "d25bc8ad-4ac8-46ee-853b-cf109ab30450",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "64 GB",
+    "basePrice": 1909,
+    "active": true
+  },
+  {
+    "id": "41a81fce-d670-4457-8d62-69a869fc211d",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "64 GB",
+    "basePrice": 1909,
+    "active": true
+  },
+  {
+    "id": "03424e5c-fa0b-4a72-9dac-3e747153f9b3",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "64 GB",
+    "basePrice": 1909,
+    "active": true
+  },
+  {
+    "id": "4a52438a-018c-436a-ac68-105b430e3e00",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "128 GB",
+    "basePrice": 2313,
+    "active": true
+  },
+  {
+    "id": "e591b588-cd92-441c-ae7e-efccc141fbdf",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "128 GB",
+    "basePrice": 2313,
+    "active": true
+  },
+  {
+    "id": "016b3d3c-abac-4c33-895d-72392455acd3",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "128 GB",
+    "basePrice": 2313,
+    "active": true
+  },
+  {
+    "id": "bc2b5c4c-d500-47cf-8ba8-42ea75c814b6",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "128 GB",
+    "basePrice": 2313,
+    "active": true
+  },
+  {
+    "id": "3b4149e4-dd40-4169-b391-0f5e679bb46a",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "128 GB",
+    "basePrice": 2313,
+    "active": true
+  },
+  {
+    "id": "81e6376a-57ed-4574-99bb-c9c91a056e10",
+    "modelId": "1ea61851-1e86-4c07-a1ad-2e09ee5769ed",
+    "storage": "128 GB",
+    "basePrice": 2313,
+    "active": true
+  },
+  {
+    "id": "b8abb6fb-f923-4eb6-9415-2b50f1bf7176",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "16 GB",
+    "basePrice": 876,
+    "active": true,
+    "ram": "1 GB"
+  },
+  {
+    "id": "37beba17-6a55-4a2d-bc16-4d5d56726a39",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "8 GB",
+    "basePrice": 876,
+    "active": true,
+    "ram": "1 GB"
+  },
+  {
+    "id": "a238933b-7ab8-4d05-a509-7b14553a6f8c",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "8 GB",
+    "basePrice": 919,
+    "active": true
+  },
+  {
+    "id": "0f45a9b6-f96c-4290-905d-8cfa4f1dfd88",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "8 GB",
+    "basePrice": 919,
+    "active": true
+  },
+  {
+    "id": "66f4490d-82a5-4ad7-a21d-6678cbb66beb",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "8 GB",
+    "basePrice": 919,
+    "active": true
+  },
+  {
+    "id": "26e10997-bec7-4e6f-b802-a31d718a8c32",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "8 GB",
+    "basePrice": 919,
+    "active": true
+  },
+  {
+    "id": "babf328a-04e3-4c35-ad81-0bb3d5556a7c",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "8 GB",
+    "basePrice": 919,
+    "active": true
+  },
+  {
+    "id": "2fa91b25-85af-4397-b3f3-db81512ec952",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "8 GB",
+    "basePrice": 919,
+    "active": true
+  },
+  {
+    "id": "546ab812-c966-4014-aa14-c3a8f719dc52",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "16 GB",
+    "basePrice": 1071,
+    "active": true
+  },
+  {
+    "id": "65bf2046-6c1b-45cb-89e5-4ce3b2f1ed7d",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "16 GB",
+    "basePrice": 1071,
+    "active": true
+  },
+  {
+    "id": "03123608-1071-4448-abe6-7a3e7a4b5b35",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "16 GB",
+    "basePrice": 1071,
+    "active": true
+  },
+  {
+    "id": "61c389de-afc8-48d6-b3fb-55ab2c15004b",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "16 GB",
+    "basePrice": 1071,
+    "active": true
+  },
+  {
+    "id": "c1b20520-4cec-47b5-bdc5-ed16f86b6d7d",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "16 GB",
+    "basePrice": 1071,
+    "active": true
+  },
+  {
+    "id": "69159a09-cdce-41e5-b0a2-8b39490d03fe",
+    "modelId": "11f61045-6d76-4d85-af28-eb02020b6ee4",
+    "storage": "16 GB",
+    "basePrice": 1071,
+    "active": true
+  },
+  {
+    "id": "7e3e07c9-9e84-4def-8624-bf9c5cd14cc5",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "64 GB",
+    "basePrice": 4329,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "8fddf03c-dd7e-47af-b209-8cf2c7e8a524",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "128 GB",
+    "basePrice": 4919,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "26c8bfa0-7d54-45f4-83a3-2ae1ed50fff0",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "64 GB",
+    "basePrice": 4747,
+    "active": true
+  },
+  {
+    "id": "43ba898b-43e8-4776-a228-1a4d8b022dba",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "64 GB",
+    "basePrice": 4747,
+    "active": true
+  },
+  {
+    "id": "1ea0ae9d-29c2-49d0-8c8a-7538b73d730e",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "64 GB",
+    "basePrice": 4747,
+    "active": true
+  },
+  {
+    "id": "8f37aae8-c011-4ff3-b275-c3b2a703e3f4",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "64 GB",
+    "basePrice": 4747,
+    "active": true
+  },
+  {
+    "id": "83fbf698-dc60-43f1-bb2b-877da5109278",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "64 GB",
+    "basePrice": 4747,
+    "active": true
+  },
+  {
+    "id": "df5f2c86-c701-4bcc-af75-92b519618056",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "64 GB",
+    "basePrice": 4747,
+    "active": true
+  },
+  {
+    "id": "f30a2a59-ed29-4fbc-a0c9-54c842297148",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "128 GB",
+    "basePrice": 5090,
+    "active": true
+  },
+  {
+    "id": "29323c91-c676-40c2-a337-0848dd76984b",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "128 GB",
+    "basePrice": 5090,
+    "active": true
+  },
+  {
+    "id": "8b545185-0e64-4b13-bc98-8c3c75c838f2",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "128 GB",
+    "basePrice": 5090,
+    "active": true
+  },
+  {
+    "id": "97a0bb84-6d61-45a3-b1fb-5a284e615e14",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "128 GB",
+    "basePrice": 5090,
+    "active": true
+  },
+  {
+    "id": "a775223f-8646-450e-b061-2bf66e9acd3f",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "128 GB",
+    "basePrice": 5090,
+    "active": true
+  },
+  {
+    "id": "2c3d3178-a555-44f2-8ed8-f781d95d0c3a",
+    "modelId": "b5f7678d-1b27-4221-8fa3-492f77663135",
+    "storage": "128 GB",
+    "basePrice": 5090,
+    "active": true
+  },
+  {
+    "id": "d473a2ec-ff16-4cf2-bbd2-5363f4287161",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "64 GB",
+    "basePrice": 3395,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "2470346d-d2a1-4658-9aa2-3a8474c1c6bb",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "128 GB",
+    "basePrice": 3858,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "2cc1f922-5db1-400c-82f4-8c2cadc80bb7",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "64 GB",
+    "basePrice": 3777,
+    "active": true
+  },
+  {
+    "id": "b6a7cc5a-9154-43bb-86ef-01790a8d4f00",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "64 GB",
+    "basePrice": 3777,
+    "active": true
+  },
+  {
+    "id": "9fa1626b-d721-48fb-b711-369ab4a75bbf",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "64 GB",
+    "basePrice": 3777,
+    "active": true
+  },
+  {
+    "id": "a0b9b3ad-563a-48b4-89fa-e453d3c821ff",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "64 GB",
+    "basePrice": 3777,
+    "active": true
+  },
+  {
+    "id": "da7e36c9-f20e-40e3-a28f-2da0c9a2d9a8",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "64 GB",
+    "basePrice": 3777,
+    "active": true
+  },
+  {
+    "id": "61051c12-79f5-4162-88cc-998e6bf0d3c4",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "64 GB",
+    "basePrice": 3777,
+    "active": true
+  },
+  {
+    "id": "3fc60ed1-58d9-46bb-ad41-db216efdb595",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "128 GB",
+    "basePrice": 3939,
+    "active": true
+  },
+  {
+    "id": "f59cdf97-b90b-40b0-8202-cff56e7645c6",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "128 GB",
+    "basePrice": 3939,
+    "active": true
+  },
+  {
+    "id": "c8269365-3e35-4338-a8ba-15eef4e2756b",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "128 GB",
+    "basePrice": 3939,
+    "active": true
+  },
+  {
+    "id": "eba9dde0-53e9-446d-92c9-f93f3e6530f9",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "128 GB",
+    "basePrice": 3939,
+    "active": true
+  },
+  {
+    "id": "4cdba2db-85c6-4416-ad84-f50808e82390",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "128 GB",
+    "basePrice": 3939,
+    "active": true
+  },
+  {
+    "id": "aea5d51a-9087-4df3-be7b-9b6d9d7ee229",
+    "modelId": "5a97b6e4-70d8-46f8-a622-8fce295fa056",
+    "storage": "128 GB",
+    "basePrice": 3939,
+    "active": true
+  },
+  {
+    "id": "f9dce20d-64c7-47b3-8ae8-51db13f2b90f",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "128 GB",
+    "basePrice": 3404,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "0ba3595e-1d0d-4a9a-b05c-066a2852d81c",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "64 GB",
+    "basePrice": 2996,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "b5f64417-9674-4882-97c6-c217737231b9",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "64 GB",
+    "basePrice": 3212,
+    "active": true
+  },
+  {
+    "id": "b9b91600-bfcf-42b3-8434-3935fb433005",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "64 GB",
+    "basePrice": 3212,
+    "active": true
+  },
+  {
+    "id": "74f4e72b-8c92-4456-a160-c0d6721126c9",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "64 GB",
+    "basePrice": 3212,
+    "active": true
+  },
+  {
+    "id": "6da1a050-c50a-40b5-8419-d09bec805a9d",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "64 GB",
+    "basePrice": 3212,
+    "active": true
+  },
+  {
+    "id": "a3ff452c-406b-42bf-9f8a-93c7efd50477",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "64 GB",
+    "basePrice": 3212,
+    "active": true
+  },
+  {
+    "id": "f214f1cc-4491-4d7f-8be0-6f0db8c242a3",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "64 GB",
+    "basePrice": 3212,
+    "active": true
+  },
+  {
+    "id": "f17c073e-e210-4d05-929f-16745e26271d",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "128 GB",
+    "basePrice": 3596,
+    "active": true
+  },
+  {
+    "id": "aadeb80c-77a9-4990-954c-6e6e8e3ba919",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "128 GB",
+    "basePrice": 3596,
+    "active": true
+  },
+  {
+    "id": "6c9031a0-d497-4b10-bc19-4dde8b7288bf",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "128 GB",
+    "basePrice": 3596,
+    "active": true
+  },
+  {
+    "id": "544bbbb0-0be0-4744-a3ef-71d480f087c4",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "128 GB",
+    "basePrice": 3596,
+    "active": true
+  },
+  {
+    "id": "cc550870-4d7f-47cd-aeec-af071c74f1c9",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "128 GB",
+    "basePrice": 3596,
+    "active": true
+  },
+  {
+    "id": "3dd36464-f043-46a0-a63a-cd9f40a6339d",
+    "modelId": "236216be-b66c-484b-a68b-c321de84d961",
+    "storage": "128 GB",
+    "basePrice": 3596,
+    "active": true
+  },
+  {
+    "id": "240e55cd-8ebe-4d4f-85a9-dcc400050f4c",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "64 GB",
+    "basePrice": 2915,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "f05dabc5-b133-4d55-8207-0745268e87b0",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "128 GB",
+    "basePrice": 3313,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "e5cb0d83-3f0f-405a-a9e5-c1a12870957a",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "64 GB",
+    "basePrice": 3171,
+    "active": true
+  },
+  {
+    "id": "705e8b75-4784-42af-9151-508d46f69444",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "64 GB",
+    "basePrice": 3171,
+    "active": true
+  },
+  {
+    "id": "b33bb8ce-b2bd-460a-9fb1-741532c40917",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "64 GB",
+    "basePrice": 3171,
+    "active": true
+  },
+  {
+    "id": "06dced81-c032-43b1-9f14-eda8ce05ba21",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "64 GB",
+    "basePrice": 3171,
+    "active": true
+  },
+  {
+    "id": "9b01f47e-beb8-45c3-9727-82d1dd133de9",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "64 GB",
+    "basePrice": 3171,
+    "active": true
+  },
+  {
+    "id": "b0fc719c-dcca-4609-a8ab-74d39fc1751d",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "64 GB",
+    "basePrice": 3171,
+    "active": true
+  },
+  {
+    "id": "6e1a1783-e6ea-4fe3-851e-1a06eef793ba",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "128 GB",
+    "basePrice": 3454,
+    "active": true
+  },
+  {
+    "id": "f95df4fd-34b7-40ba-9a51-e30c55443252",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "128 GB",
+    "basePrice": 3454,
+    "active": true
+  },
+  {
+    "id": "4289546b-9089-439c-b699-f79ce3214b71",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "128 GB",
+    "basePrice": 3454,
+    "active": true
+  },
+  {
+    "id": "05b14d96-082c-4aa7-a404-d7eb861a4bc8",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "128 GB",
+    "basePrice": 3454,
+    "active": true
+  },
+  {
+    "id": "5005cd08-d8bb-416c-8170-454fe7d146a2",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "128 GB",
+    "basePrice": 3454,
+    "active": true
+  },
+  {
+    "id": "2795c313-ca74-4d1f-8685-30613639d78e",
+    "modelId": "b832b787-6baf-4e30-b9ed-8fdc7b87ef9e",
+    "storage": "128 GB",
+    "basePrice": 3454,
+    "active": true
+  },
+  {
+    "id": "c55ff82c-74e8-4609-8f8d-6858ed2ff2df",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "256 GB",
+    "basePrice": 9168,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "dd9cb1f8-114d-4868-9b17-59950e35dc23",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "128 GB",
+    "basePrice": 8186,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "8513db8e-3b04-4ada-85cb-51adff0caa67",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "128 GB",
+    "basePrice": 7878,
+    "active": true
+  },
+  {
+    "id": "3e4dcb9c-6ae4-40eb-b009-907e6086f807",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "128 GB",
+    "basePrice": 7878,
+    "active": true
+  },
+  {
+    "id": "9087d872-6502-4928-9f76-9eddd6326bda",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "128 GB",
+    "basePrice": 7878,
+    "active": true
+  },
+  {
+    "id": "aabde59d-ee8b-4131-93b7-751c5b235a4d",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "128 GB",
+    "basePrice": 7878,
+    "active": true
+  },
+  {
+    "id": "e3d8eb6d-53c1-4a63-90f1-d0e5e8626e5e",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "128 GB",
+    "basePrice": 7878,
+    "active": true
+  },
+  {
+    "id": "b333b8da-d638-46c3-adf2-7b1f752f20c5",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "128 GB",
+    "basePrice": 7878,
+    "active": true
+  },
+  {
+    "id": "819bc8dd-c88b-4c0f-97b0-bab68a177c42",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "256 GB",
+    "basePrice": 8494,
+    "active": true
+  },
+  {
+    "id": "05752fa2-1905-4f81-bd3a-33e0cddcdaa7",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "256 GB",
+    "basePrice": 8494,
+    "active": true
+  },
+  {
+    "id": "7ce94554-76cc-4a2f-b613-e26d8bd31f8d",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "256 GB",
+    "basePrice": 8494,
+    "active": true
+  },
+  {
+    "id": "3ddd2f5a-da0b-4d8b-b8e1-d227f5050933",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "256 GB",
+    "basePrice": 8494,
+    "active": true
+  },
+  {
+    "id": "5fe7795d-1d7d-4a3c-b030-816c70c76354",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "256 GB",
+    "basePrice": 8494,
+    "active": true
+  },
+  {
+    "id": "dea16144-33ee-40e1-ac08-90090d35231a",
+    "modelId": "f3548079-ea8d-43e6-97f7-ac2e60c4b94e",
+    "storage": "256 GB",
+    "basePrice": 8494,
+    "active": true
+  },
+  {
+    "id": "bf1b1049-b205-4070-a671-5f657433a1fa",
+    "modelId": "45b501d4-d9c7-482b-884b-1f0425f6240f",
+    "storage": "256 GB",
+    "basePrice": 9171,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "2ca91756-881c-426d-b9f1-ce1d34634a4f",
+    "modelId": "45b501d4-d9c7-482b-884b-1f0425f6240f",
+    "storage": "128 GB",
+    "basePrice": 9171,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "29cb1332-e81b-4289-a1f7-b7d274dccbbf",
+    "modelId": "45b501d4-d9c7-482b-884b-1f0425f6240f",
+    "storage": "128 GB",
+    "basePrice": 9171,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "9b91bf9b-c4a3-403d-89e1-6362b989260c",
+    "modelId": "45b501d4-d9c7-482b-884b-1f0425f6240f",
+    "storage": "256 GB",
+    "basePrice": 10272,
+    "active": true,
+    "ram": "12 GB"
+  },
+  {
+    "id": "0dbf07ee-a299-4b95-a647-959407fc8590",
+    "modelId": "f5e95f2e-6867-4ce0-a576-87e44702f605",
+    "storage": "128 GB",
+    "basePrice": 8807,
+    "active": true,
+    "ram": "4 GB"
+  },
+  {
+    "id": "181a0028-7c4a-424b-958b-0c3861577d3b",
+    "modelId": "f5e95f2e-6867-4ce0-a576-87e44702f605",
+    "storage": "256 GB",
+    "basePrice": 9767,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "a3a3122f-2986-47a0-a855-c54b40b02754",
+    "modelId": "f5e95f2e-6867-4ce0-a576-87e44702f605",
+    "storage": "128 GB",
+    "basePrice": 9353,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "00c38738-7f2a-486a-9b9e-9c64bfeeed6e",
+    "modelId": "f5e95f2e-6867-4ce0-a576-87e44702f605",
+    "storage": "64 GB",
+    "basePrice": 8192,
+    "active": true,
+    "ram": "6 GB"
+  },
+  {
+    "id": "3bd0bed4-2d58-4775-98da-c63e97b4908b",
+    "modelId": "590b03a2-758e-4e88-9809-b91c6827e8b6",
+    "storage": "128 GB",
+    "basePrice": 27482,
+    "active": true,
+    "ram": "8 GB"
+  },
+  {
+    "id": "31dbd7fd-8d17-437d-bdf4-e074b57fea90",
+    "modelId": "590b03a2-758e-4e88-9809-b91c6827e8b6",
+    "storage": "512 GB",
+    "basePrice": 34353,
+    "active": true,
+    "ram": "12 GB"
+  }
+];
+
+export const INITIAL_VARIANTS: DeviceVariantData[] = [...MOBILE_VARIANTS_PART_13, ...MOBILE_VARIANTS_PART_1, ...MOBILE_VARIANTS_PART_2, ...MOBILE_VARIANTS_PART_3, ...MOBILE_VARIANTS_PART_4, ...MOBILE_VARIANTS_PART_5, ...MOBILE_VARIANTS_PART_6, ...MOBILE_VARIANTS_PART_7, ...MOBILE_VARIANTS_PART_8, ...MOBILE_VARIANTS_PART_9, ...MOBILE_VARIANTS_PART_10, ...MOBILE_VARIANTS_PART_11, ...MOBILE_VARIANTS_PART_12, ...LAPTOP_VARIANTS_PART_1, ...LAPTOP_VARIANTS_PART_2, ...TABLET_VARIANTS_PART_1, ...TABLET_VARIANTS_PART_2, ...TABLET_VARIANTS_PART_3];
 
 export const INITIAL_QUESTIONS: QuestionData[] = [
   // STEP 1: BASIC HEALTH & WARRANTY
