@@ -64,7 +64,7 @@ class AgentCallReceiver : BroadcastReceiver() {
                     lastDialedNumber = ""
                     isCallActive = false
                     callStartTime = 0L
-                    InAppAudioRecorder.stopRecording()?.delete()
+                    InAppAudioRecorder.stopRecording(context)?.delete()
                 }
                 return
             }
@@ -80,7 +80,7 @@ class AgentCallReceiver : BroadcastReceiver() {
                 }
 
                 TelephonyManager.EXTRA_STATE_IDLE -> {
-                    val inAppFile = InAppAudioRecorder.stopRecording()
+                    val inAppFile = InAppAudioRecorder.stopRecording(context)
                     if (isCallActive && callStartTime > 0L) {
                         isCallActive = false
                         val startTime = callStartTime
