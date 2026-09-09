@@ -93,47 +93,45 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     }
   }
 
-  // Update order status and pickup record in PostgreSQL database
-  const updatedOrder = await prisma.$transaction(async (tx) => {
-    const existingPickup = await tx.pickup.findFirst({
-      where: { orderId: order.id },
-    });
+  // Update order status and pickup record in PostgreSQL database (sequential PgBouncer-safe)
+  const existingPickup = await prisma.pickup.findFirst({
+    where: { orderId: order.id },
+  });
 
-    if (existingPickup) {
-      await tx.pickup.update({
-        where: { id: existingPickup.id },
-        data: {
-          partnerId: partner.id,
-          date: pickupDate,
-          timeSlot: pickupTimeSlot,
-          status: "ASSIGNED",
-          notes: agentName,
-          assignedAt: new Date(),
-        },
-      });
-    } else {
-      await tx.pickup.create({
-        data: {
-          orderId: order.id,
-          partnerId: partner.id,
-          date: pickupDate,
-          timeSlot: pickupTimeSlot,
-          status: "ASSIGNED",
-          notes: agentName,
-          assignedAt: new Date(),
-        },
-      });
-    }
-
-    return tx.order.update({
-      where: { id: order.id },
+  if (existingPickup) {
+    await prisma.pickup.update({
+      where: { id: existingPickup.id },
       data: {
-        agentId: agentUser?.id || order.agentId || null,
-        status: "PARTNER_ASSIGNED",
-        pickupDate,
-        pickupTimeSlot,
+        partnerId: partner.id,
+        date: pickupDate,
+        timeSlot: pickupTimeSlot,
+        status: "ASSIGNED",
+        notes: agentName,
+        assignedAt: new Date(),
       },
     });
+  } else {
+    await prisma.pickup.create({
+      data: {
+        orderId: order.id,
+        partnerId: partner.id,
+        date: pickupDate,
+        timeSlot: pickupTimeSlot,
+        status: "ASSIGNED",
+        notes: agentName,
+        assignedAt: new Date(),
+      },
+    });
+  }
+
+  const updatedOrder = await prisma.order.update({
+    where: { id: order.id },
+    data: {
+      agentId: agentUser?.id || order.agentId || null,
+      status: "PARTNER_ASSIGNED",
+      pickupDate,
+      pickupTimeSlot,
+    },
   });
 
   logger.info(`[PARTNER ASSIGNED] Order #${order.orderNumber} assigned to ${agentName}`);

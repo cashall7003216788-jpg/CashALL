@@ -48,80 +48,77 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
 
   const effectiveRevisedPrice = revisedPrice ?? order.quote?.estimatedPrice ?? 0;
 
-  // Perform inspection transaction in DB
-  const updatedOrder = await prisma.$transaction(async (tx) => {
-    // 1. Update user email if provided
-    if (customerEmail && customerEmail.includes("@")) {
-      await tx.user.update({
-        where: { id: order.userId },
-        data: { email: customerEmail.trim() },
-      });
-    }
+  // 1. Update user email if provided
+  if (customerEmail && customerEmail.includes("@")) {
+    await prisma.user.update({
+      where: { id: order.userId },
+      data: { email: customerEmail.trim() },
+    }).catch(() => {});
+  }
 
-    // 2. Create or Update QC Report
-    const existingQc = await tx.qcReport.findFirst({ where: { orderId: order.id } });
-    if (existingQc) {
-      await tx.qcReport.update({
-        where: { id: existingQc.id },
-        data: {
-          inspectorName: decodedUser.email || "Inspector",
-          imeiNumber: imei.trim(),
-          physicalAnswersJson: JSON.stringify({ screenFinding, bodyFinding }),
-          revisedPrice: effectiveRevisedPrice,
-          priceDifferenceReason: reason || null,
-          status: "APPROVED",
-          inspectedAt: new Date(),
-        },
-      });
-    } else {
-      await tx.qcReport.create({
-        data: {
-          orderId: order.id,
-          inspectorName: decodedUser.email || "Inspector",
-          imeiNumber: imei.trim(),
-          declaredAnswersJson: order.quote?.selectedAnswersJson || "{}",
-          physicalAnswersJson: JSON.stringify({ screenFinding, bodyFinding }),
-          revisedPrice: effectiveRevisedPrice,
-          priceDifferenceReason: reason || null,
-          status: "APPROVED",
-          inspectedAt: new Date(),
-        },
-      });
-    }
-
-    // 3. Record IMEI Record
-    const existingImei = await tx.imei.findFirst({ where: { code: imei.trim() } });
-    if (!existingImei) {
-      await tx.imei.create({
-        data: {
-          orderId: order.id,
-          code: imei.trim(),
-          status: "VERIFIED",
-        },
-      });
-    } else if (!existingImei.orderId) {
-      await tx.imei.update({
-        where: { id: existingImei.id },
-        data: { orderId: order.id },
-      });
-    }
-
-    // 4. Update Order Status and Revised Final Price
-    return tx.order.update({
-      where: { id: order.id },
+  // 2. Create or Update QC Report
+  const existingQc = await prisma.qcReport.findFirst({ where: { orderId: order.id } });
+  if (existingQc) {
+    await prisma.qcReport.update({
+      where: { id: existingQc.id },
       data: {
-        status: "ACCEPTED",
-        finalPrice: effectiveRevisedPrice,
-      },
-      include: {
-        user: true,
-        address: true,
-        quote: true,
-        pickups: { include: { partner: true } },
-        qcReports: true,
-        imeiRecords: true,
+        inspectorName: decodedUser.email || "Inspector",
+        imeiNumber: imei.trim(),
+        physicalAnswersJson: JSON.stringify({ screenFinding, bodyFinding }),
+        revisedPrice: effectiveRevisedPrice,
+        priceDifferenceReason: reason || null,
+        status: "APPROVED",
+        inspectedAt: new Date(),
       },
     });
+  } else {
+    await prisma.qcReport.create({
+      data: {
+        orderId: order.id,
+        inspectorName: decodedUser.email || "Inspector",
+        imeiNumber: imei.trim(),
+        declaredAnswersJson: order.quote?.selectedAnswersJson || "{}",
+        physicalAnswersJson: JSON.stringify({ screenFinding, bodyFinding }),
+        revisedPrice: effectiveRevisedPrice,
+        priceDifferenceReason: reason || null,
+        status: "APPROVED",
+        inspectedAt: new Date(),
+      },
+    });
+  }
+
+  // 3. Record IMEI Record
+  const existingImei = await prisma.imei.findFirst({ where: { code: imei.trim() } });
+  if (!existingImei) {
+    await prisma.imei.create({
+      data: {
+        orderId: order.id,
+        code: imei.trim(),
+        status: "VERIFIED",
+      },
+    }).catch(() => {});
+  } else if (!existingImei.orderId) {
+    await prisma.imei.update({
+      where: { id: existingImei.id },
+      data: { orderId: order.id },
+    }).catch(() => {});
+  }
+
+  // 4. Update Order Status and Revised Final Price
+  const updatedOrder = await prisma.order.update({
+    where: { id: order.id },
+    data: {
+      status: "ACCEPTED",
+      finalPrice: effectiveRevisedPrice,
+    },
+    include: {
+      user: true,
+      address: true,
+      quote: true,
+      pickups: { include: { partner: true } },
+      qcReports: true,
+      imeiRecords: true,
+    },
   });
 
   logger.info(`[PHYSICAL INSPECTION] Saved for Order #${order.orderNumber} - IMEI: ${imei}, Revised Price: ₹${effectiveRevisedPrice}`);

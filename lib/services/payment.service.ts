@@ -30,35 +30,34 @@ export class PaymentService implements IPaymentService {
       const status = success ? "PAID" : "FAILED";
       const message = success ? "Payout processed successfully." : "Payment provider rejected transaction.";
 
-      await prisma.$transaction(async (tx) => {
-        const payment = await tx.payment.create({
-          data: {
-            orderId: order.id,
-            method: details.paymentMethod,
-            amount: details.amount,
-            status,
-            transactionRef: transactionId,
-            paidAt: success ? new Date() : null,
-          },
-        });
-
-        await tx.paymentHistory.create({
-          data: {
-            paymentId: payment.id,
-            event: success ? "SUCCESS" : "FAILED",
-            details: `Payout simulation completed: ${message} (Ref: ${referenceId})`,
-          },
-        });
-
-        if (success) {
-          await tx.order.update({
-            where: { id: order.id },
-            data: {
-              status: "PAID",
-            },
-          });
-        }
+      // Sequential updates (PgBouncer-safe)
+      const payment = await prisma.payment.create({
+        data: {
+          orderId: order.id,
+          method: details.paymentMethod,
+          amount: details.amount,
+          status,
+          transactionRef: transactionId,
+          paidAt: success ? new Date() : null,
+        },
       });
+
+      await prisma.paymentHistory.create({
+        data: {
+          paymentId: payment.id,
+          event: success ? "SUCCESS" : "FAILED",
+          details: `Payout simulation completed: ${message} (Ref: ${referenceId})`,
+        },
+      });
+
+      if (success) {
+        await prisma.order.update({
+          where: { id: order.id },
+          data: {
+            status: "PAID",
+          },
+        });
+      }
 
       if (success) {
         await NotificationHelper.triggerMilestoneNotification(

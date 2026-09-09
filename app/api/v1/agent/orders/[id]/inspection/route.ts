@@ -59,94 +59,91 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
     const physicalAnswersData = inspectedAnswers || { screenFinding, bodyFinding };
     const physicalAnswersString = typeof physicalAnswersData === "object" ? JSON.stringify(physicalAnswersData) : String(physicalAnswersData);
 
-    const updatedOrder = await prisma.$transaction(async (tx) => {
-      // 1. Update customer email if provided
-      if (customerEmail && String(customerEmail).includes("@")) {
-        await tx.user.update({
-          where: { id: order.userId },
-          data: { email: String(customerEmail).trim() },
-        });
-      }
+    // 1. Update customer email if provided
+    if (customerEmail && String(customerEmail).includes("@")) {
+      await prisma.user.update({
+        where: { id: order.userId },
+        data: { email: String(customerEmail).trim() },
+      }).catch(() => {});
+    }
 
-      // 2. Create or Update QC Report with doorstep re-quote price (revisedPriceVal)
-      const existingQc = await tx.qcReport.findFirst({ where: { orderId: order.id } });
-      if (existingQc) {
-        await tx.qcReport.update({
-          where: { id: existingQc.id },
-          data: {
-            inspectorName: agentName || "Field Logistics Agent",
-            imeiNumber: String(imei).trim(),
-            physicalAnswersJson: physicalAnswersString,
-            revisedPrice: revisedPriceVal,
-            priceDifferenceReason: reason || null,
-            status: "APPROVED",
-            inspectedAt: new Date(),
-          },
-        });
-      } else {
-        await tx.qcReport.create({
-          data: {
-            orderId: order.id,
-            inspectorName: agentName || "Field Logistics Agent",
-            imeiNumber: String(imei).trim(),
-            declaredAnswersJson: order.quote?.selectedAnswersJson || "{}",
-            physicalAnswersJson: physicalAnswersString,
-            revisedPrice: revisedPriceVal,
-            priceDifferenceReason: reason || null,
-            status: "APPROVED",
-            inspectedAt: new Date(),
-          },
-        });
-      }
-
-      // 3. Update Quote selectedAnswersJson with inspected physical data
-      // PRESERVE initial estimatedPrice so original customer online quote is never lost!
-      if (order.quoteId && inspectedAnswers) {
-        try {
-          await tx.quote.update({
-            where: { id: order.quoteId },
-            data: {
-              selectedAnswersJson: physicalAnswersString,
-            },
-          });
-        } catch (qErr) {
-          logger.warn("Could not update quote answers with inspected data:", qErr);
-        }
-      }
-
-      // 4. Record IMEI
-      const existingImei = await tx.imei.findFirst({ where: { code: String(imei).trim() } });
-      if (!existingImei) {
-        await tx.imei.create({
-          data: {
-            orderId: order.id,
-            code: String(imei).trim(),
-            status: "VERIFIED",
-          },
-        });
-      } else if (!existingImei.orderId) {
-        await tx.imei.update({
-          where: { id: existingImei.id },
-          data: { orderId: order.id },
-        });
-      }
-
-      // 5. Update Order Status and Revised Price (preserve completed or cancelled status)
-      const shouldPreserveStatus = ["COMPLETED", "CANCELLED", "REJECTED", "BILL_GENERATED"].includes(order.status);
-      return tx.order.update({
-        where: { id: order.id },
+    // 2. Create or Update QC Report with doorstep re-quote price (revisedPriceVal)
+    const existingQc = await prisma.qcReport.findFirst({ where: { orderId: order.id } });
+    if (existingQc) {
+      await prisma.qcReport.update({
+        where: { id: existingQc.id },
         data: {
-          status: shouldPreserveStatus ? order.status : "ACCEPTED",
-          finalPrice: finalPriceVal,
-        },
-        include: {
-          user: true,
-          address: true,
-          quote: true,
-          qcReports: true,
-          imeiRecords: true,
+          inspectorName: agentName || "Field Logistics Agent",
+          imeiNumber: String(imei).trim(),
+          physicalAnswersJson: physicalAnswersString,
+          revisedPrice: revisedPriceVal,
+          priceDifferenceReason: reason || null,
+          status: "APPROVED",
+          inspectedAt: new Date(),
         },
       });
+    } else {
+      await prisma.qcReport.create({
+        data: {
+          orderId: order.id,
+          inspectorName: agentName || "Field Logistics Agent",
+          imeiNumber: String(imei).trim(),
+          declaredAnswersJson: order.quote?.selectedAnswersJson || "{}",
+          physicalAnswersJson: physicalAnswersString,
+          revisedPrice: revisedPriceVal,
+          priceDifferenceReason: reason || null,
+          status: "APPROVED",
+          inspectedAt: new Date(),
+        },
+      });
+    }
+
+    // 3. Update Quote selectedAnswersJson with inspected physical data
+    if (order.quoteId && inspectedAnswers) {
+      try {
+        await prisma.quote.update({
+          where: { id: order.quoteId },
+          data: {
+            selectedAnswersJson: physicalAnswersString,
+          },
+        });
+      } catch (qErr) {
+        logger.warn("Could not update quote answers with inspected data:", qErr);
+      }
+    }
+
+    // 4. Record IMEI
+    const existingImei = await prisma.imei.findFirst({ where: { code: String(imei).trim() } });
+    if (!existingImei) {
+      await prisma.imei.create({
+        data: {
+          orderId: order.id,
+          code: String(imei).trim(),
+          status: "VERIFIED",
+        },
+      }).catch(() => {});
+    } else if (!existingImei.orderId) {
+      await prisma.imei.update({
+        where: { id: existingImei.id },
+        data: { orderId: order.id },
+      }).catch(() => {});
+    }
+
+    // 5. Update Order Status and Revised Price (preserve completed or cancelled status)
+    const shouldPreserveStatus = ["COMPLETED", "CANCELLED", "REJECTED", "BILL_GENERATED"].includes(order.status);
+    const updatedOrder = await prisma.order.update({
+      where: { id: order.id },
+      data: {
+        status: shouldPreserveStatus ? order.status : "ACCEPTED",
+        finalPrice: finalPriceVal,
+      },
+      include: {
+        user: true,
+        address: true,
+        quote: true,
+        qcReports: true,
+        imeiRecords: true,
+      },
     });
 
     logger.info(`[AGENT INSPECTION COMPLETED] Order #${order.orderNumber} - IMEI: ${imei}, Final Offer: ₹${finalPriceVal}`);

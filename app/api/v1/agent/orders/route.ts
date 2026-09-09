@@ -25,16 +25,27 @@ export async function GET(req: NextRequest) {
       });
     }
     if (!targetAgentUser && name) {
-      const normalize = (str?: string | null) => (str || "").toLowerCase().replace(/[^a-z0-9]/g, "").trim();
-      const normInput = normalize(name);
-
-      const allAgents = await prisma.user.findMany({
-        where: { role: "AGENT", deletedAt: null },
+      targetAgentUser = await prisma.user.findFirst({
+        where: {
+          role: "AGENT",
+          deletedAt: null,
+          name: { equals: name.trim(), mode: "insensitive" },
+        },
       });
 
-      targetAgentUser = allAgents.find((a) => {
-        return normalize(a.name) === normInput || normalize(a.email?.split("@")[0]) === normInput;
-      });
+      if (!targetAgentUser) {
+        const normalize = (str?: string | null) => (str || "").toLowerCase().replace(/[^a-z0-9]/g, "").trim();
+        const normInput = normalize(name);
+
+        const allAgents = await prisma.user.findMany({
+          where: { role: "AGENT", deletedAt: null },
+          select: { id: true, name: true, email: true, phone: true },
+        });
+
+        targetAgentUser = allAgents.find((a) => {
+          return normalize(a.name) === normInput || normalize(a.email?.split("@")[0]) === normInput;
+        });
+      }
     }
 
     const whereOrConditions: any[] = [];

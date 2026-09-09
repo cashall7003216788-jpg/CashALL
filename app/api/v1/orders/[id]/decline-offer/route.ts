@@ -40,22 +40,20 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
     throw new AppError("No pending revised offer found for this order.", 400);
   }
 
-  // Update offer status and order status in a transaction
-  const updatedOrder = await prisma.$transaction(async (tx) => {
-    await tx.offer.update({
-      where: { id: pendingOffer.id },
-      data: {
-        status: "DECLINED",
-        customerResponseAt: new Date(),
-      },
-    });
+  // Update offer status and order status sequentially (PgBouncer-safe)
+  await prisma.offer.update({
+    where: { id: pendingOffer.id },
+    data: {
+      status: "DECLINED",
+      customerResponseAt: new Date(),
+    },
+  });
 
-    return tx.order.update({
-      where: { id: order.id },
-      data: {
-        status: "DECLINED",
-      },
-    });
+  const updatedOrder = await prisma.order.update({
+    where: { id: order.id },
+    data: {
+      status: "DECLINED",
+    },
   });
 
   // Log user activity

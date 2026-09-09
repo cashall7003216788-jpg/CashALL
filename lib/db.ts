@@ -36,18 +36,18 @@ if (!dbUrl.includes("pgbouncer=true")) {
   dbUrl += (dbUrl.includes("?") ? "&" : "?") + "pgbouncer=true";
 }
 
-// Set connection limit to 5 so parallel queries and relation includes run smoothly without queuing
+// Set connection limit to 20 for PgBouncer so parallel queries and concurrent users run instantly without queuing
 if (dbUrl.includes("connection_limit=")) {
-  dbUrl = dbUrl.replace(/connection_limit=\d+/, "connection_limit=5");
+  dbUrl = dbUrl.replace(/connection_limit=\d+/, "connection_limit=20");
 } else {
-  dbUrl += "&connection_limit=5";
+  dbUrl += "&connection_limit=20";
 }
 
-// Set pool timeout to 25s so queries have sufficient headroom
+// Set pool timeout to 12s so queries fail fast and never lock up the application
 if (dbUrl.includes("pool_timeout=")) {
-  dbUrl = dbUrl.replace(/pool_timeout=\d+/, "pool_timeout=25");
+  dbUrl = dbUrl.replace(/pool_timeout=\d+/, "pool_timeout=12");
 } else {
-  dbUrl += "&pool_timeout=25";
+  dbUrl += "&pool_timeout=12";
 }
 
 if (!dbUrl.includes("sslmode=")) {

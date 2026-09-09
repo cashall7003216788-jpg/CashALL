@@ -60,59 +60,58 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
 
   const isPriceDifferent = originalPrice !== revisedPrice;
 
-  const updatedOrder = await prisma.$transaction(async (tx) => {
-    // 1. Create QC Report
-    await tx.qcReport.create({
-      data: {
-        orderId: order.id,
-        inspectorName: decodedUser.email || "Inspector",
-        imeiNumber: imei,
-        declaredAnswersJson: order.quote.selectedAnswersJson,
-        physicalAnswersJson: JSON.stringify(answers),
-        revisedPrice,
-        priceDifferenceReason: inspectorNotes || (isPriceDifferent ? "Doorstep physical inspection mismatch." : null),
-        status: isPriceDifferent ? "PENDING_APPROVAL" : "APPROVED",
-        inspectedAt: new Date(),
-      },
-    });
-
-    // 2. Create IMEI Record
-    await tx.imei.create({
-      data: {
-        orderId: order.id,
-        code: imei,
-        status: "VERIFIED",
-      },
-    });
-
-    // 3. Handle revised pricing offer
-    if (isPriceDifferent) {
-      await tx.offer.create({
-        data: {
-          orderId: order.id,
-          originalPrice,
-          revisedPrice,
-          priceDifferenceReason: inspectorNotes || "Doorstep physical inspection mismatch.",
-          status: "PENDING",
-        },
-      });
-
-      return tx.order.update({
-        where: { id: order.id },
-        data: {
-          status: "FINAL_OFFER_PENDING",
-        },
-      });
-    } else {
-      return tx.order.update({
-        where: { id: order.id },
-        data: {
-          status: "ACCEPTED",
-          finalPrice: originalPrice,
-        },
-      });
-    }
+  // 1. Create QC Report
+  await prisma.qcReport.create({
+    data: {
+      orderId: order.id,
+      inspectorName: decodedUser.email || "Inspector",
+      imeiNumber: imei,
+      declaredAnswersJson: order.quote.selectedAnswersJson,
+      physicalAnswersJson: JSON.stringify(answers),
+      revisedPrice,
+      priceDifferenceReason: inspectorNotes || (isPriceDifferent ? "Doorstep physical inspection mismatch." : null),
+      status: isPriceDifferent ? "PENDING_APPROVAL" : "APPROVED",
+      inspectedAt: new Date(),
+    },
   });
+
+  // 2. Create IMEI Record
+  await prisma.imei.create({
+    data: {
+      orderId: order.id,
+      code: imei,
+      status: "VERIFIED",
+    },
+  }).catch(() => {});
+
+  // 3. Handle revised pricing offer
+  let updatedOrder;
+  if (isPriceDifferent) {
+    await prisma.offer.create({
+      data: {
+        orderId: order.id,
+        originalPrice,
+        revisedPrice,
+        priceDifferenceReason: inspectorNotes || "Doorstep physical inspection mismatch.",
+        status: "PENDING",
+      },
+    }).catch(() => {});
+
+    updatedOrder = await prisma.order.update({
+      where: { id: order.id },
+      data: {
+        status: "FINAL_OFFER_PENDING",
+      },
+    });
+  } else {
+    updatedOrder = await prisma.order.update({
+      where: { id: order.id },
+      data: {
+        status: "ACCEPTED",
+        finalPrice: originalPrice,
+      },
+    });
+  }
 
   // Log action
   await prisma.adminLog.create({
