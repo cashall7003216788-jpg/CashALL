@@ -93,19 +93,154 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    const quotePromise = prisma.quote.findFirst({
+    const quoteConditions = [];
+    if (incomingQuoteNum) quoteConditions.push({ quoteNumber: incomingQuoteNum });
+    if (incomingQuoteId) {
+      if (isQuoteUuid) quoteConditions.push({ id: incomingQuoteId });
+      else quoteConditions.push({ quoteNumber: incomingQuoteId });
+    }
+
+    const quotePromise = quoteConditions.length > 0
+      ? prisma.quote.findFirst({
+          where: {
+            OR: quoteConditions,
+            deletedAt: null,
+          },
+          orderBy: { createdAt: "desc" },
+        })
+      : null;
+
+    let [user, quote] = await Promise.all([userPromise, quotePromise]);
+
+    // DEDUPLICATION CHECK 1: If an active order already exists for this quote, return it immediately
+    if (quote) {
+      const existingOrderForQuote = await prisma.order.findFirst({
+        where: {
+          quoteId: quote.id,
+          deletedAt: null,
+        },
+        include: {
+          user: true,
+          address: true,
+          quote: true,
+          pickups: true,
+        },
+        orderBy: { createdAt: "desc" },
+      });
+
+      if (existingOrderForQuote) {
+        logger.info(`[ORDER CREATE IDEMPOTENCY] Order #${existingOrderForQuote.orderNumber} already exists for quote ${quote.quoteNumber || quote.id}. Returning existing order.`);
+        const fullAddr = existingOrderForQuote.address
+          ? `${existingOrderForQuote.address.house || ""}, ${existingOrderForQuote.address.street || ""}, ${existingOrderForQuote.address.area || ""}, ${existingOrderForQuote.address.city || ""}, ${existingOrderForQuote.address.state || ""} - ${existingOrderForQuote.address.pincode || ""}`
+          : `${house}, ${street}, ${area}, ${city}, ${state} - ${pincode}`;
+
+        return NextResponse.json({
+          success: true,
+          data: {
+            id: existingOrderForQuote.id,
+            orderNumber: existingOrderForQuote.orderNumber,
+            customerName: existingOrderForQuote.user?.name || fullName,
+            customerPhone: existingOrderForQuote.user?.phone || cleanPhone,
+            deviceName: deviceName,
+            pincode: existingOrderForQuote.address?.pincode || pincode,
+            addressSummary: fullAddr,
+            pickupDate: existingOrderForQuote.pickupDate || pickupDate,
+            pickupTimeSlot: existingOrderForQuote.pickupTimeSlot || pickupTimeSlot,
+            estimatedPrice: existingOrderForQuote.finalPrice || estimatedPrice,
+            status: existingOrderForQuote.status,
+            createdAt: existingOrderForQuote.createdAt.toISOString(),
+          },
+        });
+      }
+    }
+
+    // DEDUPLICATION CHECK 2: If derived orderNumber already exists, return it immediately
+    let targetOrderNumber = "";
+    if (quote?.quoteNumber) {
+      const digits = quote.quoteNumber.replace(/^(CAQ|Q)-?/i, "").replace(/[^0-9]/g, "");
+      if (digits) {
+        targetOrderNumber = `CA${digits}`;
+      }
+    }
+
+    if (targetOrderNumber) {
+      const existingOrderByNum = await prisma.order.findUnique({
+        where: { orderNumber: targetOrderNumber },
+        include: {
+          user: true,
+          address: true,
+          quote: true,
+          pickups: true,
+        },
+      });
+
+      if (existingOrderByNum) {
+        logger.info(`[ORDER CREATE IDEMPOTENCY] Order #${targetOrderNumber} already exists. Returning existing order.`);
+        const fullAddr = existingOrderByNum.address
+          ? `${existingOrderByNum.address.house || ""}, ${existingOrderByNum.address.street || ""}, ${existingOrderByNum.address.area || ""}, ${existingOrderByNum.address.city || ""}, ${existingOrderByNum.address.state || ""} - ${existingOrderByNum.address.pincode || ""}`
+          : `${house}, ${street}, ${area}, ${city}, ${state} - ${pincode}`;
+
+        return NextResponse.json({
+          success: true,
+          data: {
+            id: existingOrderByNum.id,
+            orderNumber: existingOrderByNum.orderNumber,
+            customerName: existingOrderByNum.user?.name || fullName,
+            customerPhone: existingOrderByNum.user?.phone || cleanPhone,
+            deviceName: deviceName,
+            pincode: existingOrderByNum.address?.pincode || pincode,
+            addressSummary: fullAddr,
+            pickupDate: existingOrderByNum.pickupDate || pickupDate,
+            pickupTimeSlot: existingOrderByNum.pickupTimeSlot || pickupTimeSlot,
+            estimatedPrice: existingOrderByNum.finalPrice || estimatedPrice,
+            status: existingOrderByNum.status,
+            createdAt: existingOrderByNum.createdAt.toISOString(),
+          },
+        });
+      }
+    }
+
+    // DEDUPLICATION CHECK 3: Check if the same user placed an order for the same device/price within the last 5 minutes
+    const recentDuplicate = await prisma.order.findFirst({
       where: {
-        OR: [
-          ...(incomingQuoteNum ? [{ quoteNumber: incomingQuoteNum }] : []),
-          ...(incomingQuoteId ? (isQuoteUuid ? [{ id: incomingQuoteId }] : [{ quoteNumber: incomingQuoteId }]) : []),
-          { estimatedPrice: estimatedPrice, deletedAt: null },
-        ],
+        userId: user.id,
+        finalPrice: estimatedPrice,
+        createdAt: { gte: new Date(Date.now() - 5 * 60 * 1000) },
         deletedAt: null,
+      },
+      include: {
+        user: true,
+        address: true,
+        quote: true,
+        pickups: true,
       },
       orderBy: { createdAt: "desc" },
     });
 
-    let [user, quote] = await Promise.all([userPromise, quotePromise]);
+    if (recentDuplicate) {
+      logger.info(`[ORDER CREATE IDEMPOTENCY] Duplicate placement detected for user ${cleanPhone} (#${recentDuplicate.orderNumber}) within 5 min. Returning existing order.`);
+      const fullAddr = recentDuplicate.address
+        ? `${recentDuplicate.address.house || ""}, ${recentDuplicate.address.street || ""}, ${recentDuplicate.address.area || ""}, ${recentDuplicate.address.city || ""}, ${recentDuplicate.address.state || ""} - ${recentDuplicate.address.pincode || ""}`
+        : `${house}, ${street}, ${area}, ${city}, ${state} - ${pincode}`;
+
+      return NextResponse.json({
+        success: true,
+        data: {
+          id: recentDuplicate.id,
+          orderNumber: recentDuplicate.orderNumber,
+          customerName: recentDuplicate.user?.name || fullName,
+          customerPhone: recentDuplicate.user?.phone || cleanPhone,
+          deviceName: deviceName,
+          pincode: recentDuplicate.address?.pincode || pincode,
+          addressSummary: fullAddr,
+          pickupDate: recentDuplicate.pickupDate || pickupDate,
+          pickupTimeSlot: recentDuplicate.pickupTimeSlot || pickupTimeSlot,
+          estimatedPrice: recentDuplicate.finalPrice || estimatedPrice,
+          status: recentDuplicate.status,
+          createdAt: recentDuplicate.createdAt.toISOString(),
+        },
+      });
+    }
 
     const rawIncomingAnswers = data.selectedAnswersJson || body.selectedAnswersJson || null;
     const incomingAnswersJson = typeof rawIncomingAnswers === "object" && rawIncomingAnswers !== null
@@ -191,8 +326,8 @@ export async function POST(req: NextRequest) {
     });
 
     // 3. Create Order Record with matching Order ID (CAQ12345 -> CA12345) & direct Pickup relation
-    let orderNumber = "";
-    if (quote?.quoteNumber) {
+    let orderNumber = targetOrderNumber;
+    if (!orderNumber && quote?.quoteNumber) {
       const digits = quote.quoteNumber.replace(/^(CAQ|Q)-?/i, "").replace(/[^0-9]/g, "");
       if (digits) {
         orderNumber = `CA${digits}`;
@@ -202,9 +337,8 @@ export async function POST(req: NextRequest) {
       orderNumber = `CA${Math.floor(10000 + Math.random() * 90000)}`;
     }
 
-    // Avoid collision if order already exists with this orderNumber
-    const existingOrder = await prisma.order.findUnique({ where: { orderNumber } });
-    if (existingOrder) {
+    // Ensure uniqueness for fallback random numbers
+    while (await prisma.order.findUnique({ where: { orderNumber } })) {
       orderNumber = `CA${Math.floor(10000 + Math.random() * 90000)}`;
     }
 

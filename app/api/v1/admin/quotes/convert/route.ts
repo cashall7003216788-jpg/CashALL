@@ -61,13 +61,30 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 2. Generate matching Order ID (e.g. CAQ12345 -> CA12345)
+    // 2. Check if order already exists for this quote
+    const existingOrderForQuote = await prisma.order.findFirst({
+      where: { quoteId: quote.id, deletedAt: null },
+      include: { user: true, address: true },
+    });
+    if (existingOrderForQuote) {
+      return NextResponse.json({
+        success: true,
+        data: existingOrderForQuote,
+        message: `Order #${existingOrderForQuote.orderNumber} already exists for this quote.`,
+      });
+    }
+
+    // Generate matching Order ID (e.g. CAQ12345 -> CA12345)
     const digits = quote.quoteNumber.replace(/^(CAQ|Q)-?/i, "").replace(/[^0-9]/g, "");
     let orderNumber = digits ? `CA${digits}` : `CA${Math.floor(10000 + Math.random() * 90000)}`;
 
     const existingOrder = await prisma.order.findUnique({ where: { orderNumber } });
     if (existingOrder) {
-      orderNumber = `CA${Math.floor(10000 + Math.random() * 90000)}`;
+      return NextResponse.json({
+        success: true,
+        data: existingOrder,
+        message: `Order #${existingOrder.orderNumber} already exists.`,
+      });
     }
 
     // 3. Find or create user

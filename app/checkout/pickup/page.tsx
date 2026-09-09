@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
@@ -50,6 +50,7 @@ function PickupCheckoutContent() {
   const [pickupDate, setPickupDate] = useState("Tomorrow");
   const [pickupSlot, setPickupSlot] = useState("10 AM - 1 PM");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isSubmittingRef = useRef(false);
 
   const ALL_INDIAN_STATES = [
     "West Bengal",
@@ -173,6 +174,11 @@ function PickupCheckoutContent() {
   const handleConfirmOrder = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Prevent duplicate clicks or submissions immediately
+    if (isSubmittingRef.current || isSubmitting) {
+      return;
+    }
+
     // Validate mandatory PIN code
     const cleanPin = pincode.trim();
     if (!cleanPin || cleanPin.length !== 6) {
@@ -200,6 +206,8 @@ function PickupCheckoutContent() {
       return;
     }
 
+    // Lock submission immediately to prevent duplicate requests
+    isSubmittingRef.current = true;
     setIsSubmitting(true);
 
     const finalName = fullName.trim() || "Customer";
@@ -218,63 +226,59 @@ function PickupCheckoutContent() {
 
     let createdOrderNum = "";
     let apiSuccess = false;
-
     let serverErrorMsg = "";
-    // Try to reach the server with a 12s timeout
-    for (let attempt = 1; attempt <= 2; attempt++) {
-      try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 12000);
 
-        const res = await fetch("/api/v1/orders/create", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            quoteId: quote?.id || quoteId,
-            quoteNumber: quote?.quoteNumber || "",
-            fullName: finalName,
-            phone: finalPhone,
-            email: finalEmail,
-            house: finalHouse,
-            street: finalStreet,
-            area: finalArea,
-            landmark,
-            city: finalCity,
-            state: selectedState,
-            pincode,
-            pickupDate,
-            pickupTimeSlot: pickupSlot,
-            deviceName: fullDeviceName,
-            estimatedPrice: quote?.estimatedPrice || 32500,
-            selectedAnswersJson: quote?.selectedAnswersJson || "{}",
-            breakdownJson: quote?.breakdownJson || "{}",
-          }),
-          signal: controller.signal,
-        });
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 25000);
 
-        clearTimeout(timeoutId);
+      const res = await fetch("/api/v1/orders/create", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          quoteId: quote?.id || quoteId,
+          quoteNumber: quote?.quoteNumber || "",
+          fullName: finalName,
+          phone: finalPhone,
+          email: finalEmail,
+          house: finalHouse,
+          street: finalStreet,
+          area: finalArea,
+          landmark,
+          city: finalCity,
+          state: selectedState,
+          pincode,
+          pickupDate,
+          pickupTimeSlot: pickupSlot,
+          deviceName: fullDeviceName,
+          estimatedPrice: quote?.estimatedPrice || 32500,
+          selectedAnswersJson: quote?.selectedAnswersJson || "{}",
+          breakdownJson: quote?.breakdownJson || "{}",
+        }),
+        signal: controller.signal,
+      });
 
-        const json = await res.json().catch(() => null);
+      clearTimeout(timeoutId);
 
-        if (json && json.success && json.data?.orderNumber) {
-          createdOrderNum = json.data.orderNumber;
-          apiSuccess = true;
-          break; // Success — stop retrying
-        } else if (json && json.error) {
-          serverErrorMsg = json.error;
-          console.warn(`Order API attempt ${attempt} returned error: ${json.error}`);
-        } else {
-          console.warn(`Order API attempt ${attempt} failed: HTTP ${res.status}`);
-        }
-      } catch (err: any) {
-        console.warn(`Order API attempt ${attempt} error:`, err);
+      const json = await res.json().catch(() => null);
+
+      if (json && json.success && json.data?.orderNumber) {
+        createdOrderNum = json.data.orderNumber;
+        apiSuccess = true;
+      } else if (json && json.error) {
+        serverErrorMsg = json.error;
+      } else {
+        serverErrorMsg = `Order confirmation failed (HTTP ${res.status}). Please try again.`;
       }
-      // Wait 500ms before retry if first attempt failed
-      if (attempt < 2) await new Promise((r) => setTimeout(r, 500));
+    } catch (err: any) {
+      console.warn("Order creation error:", err);
+      serverErrorMsg = err.name === "AbortError"
+        ? "Network timeout while confirming your order. Please check your Orders page or try again."
+        : (err.message || "An unexpected error occurred. Please try again.");
     }
 
-    // If API failed after retries, halt and inform user
     if (!apiSuccess) {
+      isSubmittingRef.current = false;
       setIsSubmitting(false);
       alert(serverErrorMsg || "Unable to process order right now. Please check your details and try again.");
       return;
