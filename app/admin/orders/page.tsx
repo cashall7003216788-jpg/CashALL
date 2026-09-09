@@ -413,11 +413,17 @@ export default function AdminOrdersPage() {
     setActionLoading(ord.id + "-agent");
     try {
       const token = getAdminToken();
-      const targetParam = encodeURIComponent(ord.id || ord.orderNumber.replace(/^#/, ""));
+      const cleanNum = ord.orderNumber ? ord.orderNumber.replace(/^[#\s]+/, "") : "";
+      const targetParam = encodeURIComponent(cleanNum || ord.id || "");
       const res = await fetch(`/api/v1/admin/orders/${targetParam}/assign-agent`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-        body: JSON.stringify({ agentId: selectedAgentId, agentName }),
+        body: JSON.stringify({
+          agentId: selectedAgentId,
+          agentName,
+          orderNumber: cleanNum,
+          orderId: ord.id,
+        }),
       });
 
       if (res.ok) {
@@ -696,17 +702,22 @@ export default function AdminOrdersPage() {
     const token = getAdminToken();
 
     try {
-      // 1. Assign agent via API to persist in DB
-      await fetch(`/api/v1/admin/orders/${ord.orderNumber}/assign-pickup`, {
+      const cleanNum = ord.orderNumber ? ord.orderNumber.replace(/^[#\s]+/, "") : "";
+      const targetParam = encodeURIComponent(cleanNum || ord.id || "");
+      const res = await fetch(`/api/v1/admin/orders/${targetParam}/assign-agent`, {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({
-          partnerId: "p-inhouse-custom",
-          partnerName: agentName,
-          pickupDate: ord.pickupDate || "Today",
-          pickupTimeSlot: ord.pickupTimeSlot || "10 AM - 1 PM",
+          agentName,
+          orderNumber: cleanNum,
+          orderId: ord.id,
         }),
       });
+
+      if (!res.ok) {
+        const json = await res.json().catch(() => ({}));
+        throw new Error(json.error || "Server error");
+      }
 
       // 2. Save in local storage & update UI state
       if (typeof window !== "undefined") {

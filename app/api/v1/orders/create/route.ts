@@ -73,69 +73,39 @@ export async function POST(req: NextRequest) {
 
     const rawEmail = (data.email || body.email) ? String(data.email || body.email).trim() : null;
 
-    // 1. Find or Create User
-    let user = await prisma.user.findFirst({
-      where: { phone: cleanPhone },
-    });
-
-    if (!user) {
-      user = await prisma.user.create({
-        data: {
-          phone: cleanPhone,
-          name: fullName,
-          email: rawEmail,
-          firebaseUid: `uid_${cleanPhone}_${Date.now()}`,
-          role: "CUSTOMER",
-        },
-      });
-    } else {
-      user = await prisma.user.update({
-        where: { id: user.id },
-        data: {
-          name: fullName || user.name,
-          ...(rawEmail ? { email: rawEmail } : {}),
-        },
-      });
-    }
-
-    // 2. Find or Create Quote (100% Guaranteed Resolution with Exact Quote ID & Quote Number)
-    let quote = null;
+    // 1. Parallelize User Upsert and Quote Resolution for ultra-fast placement
     const incomingQuoteNum = (data.quoteNumber || body.quoteNumber || "").trim();
     const incomingQuoteId = (data.quoteId || body.quoteId || "").trim();
+    const isQuoteUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(incomingQuoteId);
 
-    if (incomingQuoteNum) {
-      quote = await prisma.quote.findFirst({
-        where: { quoteNumber: incomingQuoteNum },
-      });
-    }
+    const userPromise = prisma.user.upsert({
+      where: { phone: cleanPhone },
+      update: {
+        name: fullName,
+        ...(rawEmail ? { email: rawEmail } : {}),
+      },
+      create: {
+        phone: cleanPhone,
+        name: fullName,
+        email: rawEmail,
+        firebaseUid: `uid_${cleanPhone}_${Date.now()}`,
+        role: "CUSTOMER",
+      },
+    });
 
-    if (!quote && incomingQuoteId) {
-      const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(incomingQuoteId);
-      try {
-        if (isUuid) {
-          quote = await prisma.quote.findUnique({
-            where: { id: incomingQuoteId },
-          });
-        } else {
-          quote = await prisma.quote.findFirst({
-            where: { quoteNumber: incomingQuoteId },
-          });
-        }
-      } catch (e) {
-        logger.warn("Quote lookup warning:", e);
-      }
-    }
+    const quotePromise = prisma.quote.findFirst({
+      where: {
+        OR: [
+          ...(incomingQuoteNum ? [{ quoteNumber: incomingQuoteNum }] : []),
+          ...(incomingQuoteId ? (isQuoteUuid ? [{ id: incomingQuoteId }] : [{ quoteNumber: incomingQuoteId }]) : []),
+          { estimatedPrice: estimatedPrice, deletedAt: null },
+        ],
+        deletedAt: null,
+      },
+      orderBy: { createdAt: "desc" },
+    });
 
-    // If still not found, check if an active quote was recently created for this device/valuation
-    if (!quote) {
-      quote = await prisma.quote.findFirst({
-        where: {
-          estimatedPrice: estimatedPrice,
-          deletedAt: null,
-        },
-        orderBy: { createdAt: "desc" },
-      });
-    }
+    let [user, quote] = await Promise.all([userPromise, quotePromise]);
 
     const rawIncomingAnswers = data.selectedAnswersJson || body.selectedAnswersJson || null;
     const incomingAnswersJson = typeof rawIncomingAnswers === "object" && rawIncomingAnswers !== null
@@ -147,25 +117,8 @@ export async function POST(req: NextRequest) {
       ? JSON.stringify(rawIncomingBreakdown)
       : (typeof rawIncomingBreakdown === "string" && rawIncomingBreakdown.trim() && rawIncomingBreakdown !== "{}" ? rawIncomingBreakdown : null);
 
-    if (quote) {
-      try {
-        quote = await prisma.quote.update({
-          where: { id: quote.id },
-          data: {
-            status: "ORDERED",
-            estimatedPrice: estimatedPrice || quote.estimatedPrice,
-            basePrice: Math.max(quote.basePrice, estimatedPrice || 0),
-            ...(incomingAnswersJson ? { selectedAnswersJson: incomingAnswersJson } : {}),
-            ...(incomingBreakdownJson ? { breakdownJson: incomingBreakdownJson } : {}),
-          },
-        });
-      } catch (e) {
-        logger.warn("Failed to update quote status to ORDERED:", e);
-      }
-    }
-
+    // Fallback if quote is not found
     if (!quote) {
-      // Parse brand name from deviceName (e.g., "Motorola Moto G52" -> Brand "Motorola", Model "Moto G52")
       const firstWord = deviceName.trim().split(" ")[0] || "CashALL";
       let brand = await prisma.brand.findFirst({
         where: { name: { contains: firstWord, mode: "insensitive" } },
@@ -199,60 +152,18 @@ export async function POST(req: NextRequest) {
           data: {
             quoteNumber: generatedQuoteNumber,
             variantId: variant.id,
-            selectedAnswersJson: incomingAnswersJson || JSON.stringify({
-              device: deviceName,
-              customerName: fullName,
-              customerPhone: cleanPhone,
-              powerWorking: true,
-              callsWorking: true,
-              touchWorking: true,
-              screenOriginal: true,
-              underWarranty: false,
-              validBill: false,
-              selectedMajorDefects: [],
-              scratchLevel: "no_scratches",
-              dentLevel: "no_dents",
-              selectedFunctionalIssues: [],
-              selectedAccessories: ["charger", "box"],
-            }),
-            basePrice: Math.max(variant.basePrice, estimatedPrice),
+            selectedAnswersJson: incomingAnswersJson || JSON.stringify({ device: deviceName }),
+            basePrice: Math.max(variant.basePrice || 0, estimatedPrice),
             totalDeductions: 0,
             estimatedPrice: estimatedPrice,
-            breakdownJson: incomingBreakdownJson || JSON.stringify({
-              deviceName: deviceName,
-              basePrice: estimatedPrice,
-              estimatedPrice: estimatedPrice,
-              customerName: fullName,
-              customerPhone: cleanPhone,
-              summary: "Customer declared valuation",
-            }),
-            status: "ORDERED",
+            breakdownJson: incomingBreakdownJson || JSON.stringify({ deviceName, basePrice: estimatedPrice }),
+            status: "CONVERTED",
             expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
           },
         });
       } catch (quoteErr) {
         logger.error("Quote creation fallback error:", quoteErr);
-        quote = await prisma.quote.findFirst();
-      }
-    }
-
-    // Ultimate fail-safe for quote
-    if (!quote) {
-      const fallbackVariant = await prisma.deviceVariant.findFirst();
-      if (fallbackVariant) {
-        quote = await prisma.quote.create({
-          data: {
-            quoteNumber: `Q${Date.now()}`,
-            variantId: fallbackVariant.id,
-            selectedAnswersJson: JSON.stringify({ device: deviceName }),
-            basePrice: estimatedPrice,
-            totalDeductions: 0,
-            estimatedPrice: estimatedPrice,
-            breakdownJson: JSON.stringify({ deviceName }),
-            status: "ORDERED",
-            expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
-          },
-        });
+        quote = await prisma.quote.findFirst({ where: { deletedAt: null }, orderBy: { createdAt: "desc" } });
       }
     }
 
@@ -263,7 +174,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 3. Create Address Record
+    // 2. Create Address Record
     const address = await prisma.address.create({
       data: {
         userId: user.id,
@@ -279,7 +190,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    // 4. Create Order Record with matching Order ID (CAQ12345 -> CA12345)
+    // 3. Create Order Record with matching Order ID (CAQ12345 -> CA12345) & direct Pickup relation
     let orderNumber = "";
     if (quote?.quoteNumber) {
       const digits = quote.quoteNumber.replace(/^(CAQ|Q)-?/i, "").replace(/[^0-9]/g, "");
@@ -307,93 +218,88 @@ export async function POST(req: NextRequest) {
         pickupTimeSlot: pickupTimeSlot,
         status: "PICKUP_SCHEDULED",
         finalPrice: estimatedPrice,
-      },
-    });
-
-    // Mark Quote as CONVERTED
-    try {
-      await prisma.quote.update({
-        where: { id: quote.id },
-        data: { status: "CONVERTED" },
-      });
-    } catch (e) {}
-
-    // 5. Create Pickup Schedule
-    await prisma.pickup.create({
-      data: {
-        orderId: order.id,
-        date: pickupDate,
-        timeSlot: pickupTimeSlot,
-        status: "SCHEDULED",
-        notes: "Doorstep pickup order confirmed.",
+        pickups: {
+          create: {
+            date: pickupDate,
+            timeSlot: pickupTimeSlot,
+            status: "SCHEDULED",
+            notes: "Doorstep pickup order confirmed.",
+          },
+        },
       },
     });
 
     const fullAddress = `${house}, ${street}, ${area}${data.landmark ? ", " + data.landmark : ""}, ${state} - ${pincode}`;
 
-    // 6. Trigger WhatsApp Notification to Admin (7604092333)
-    WhatsAppService.notifyNewOrder({
-      orderNumber: order.orderNumber,
-      customerName: fullName,
-      customerPhone: cleanPhone,
-      deviceName: deviceName,
-      estimatedPrice: estimatedPrice,
-      pickupDate: pickupDate,
-      pickupTimeSlot: pickupTimeSlot,
-      address: fullAddress,
-    }).catch((err) => logger.error("WhatsApp notification error:", err));
+    // 4. Detached asynchronous tasks (Never block or delay the customer HTTP response)
+    const quoteIdToConvert = quote.id;
+    const clientMeta = extractClientMetadata(req);
+    const capiUserData = {
+      email: rawEmail || undefined,
+      phone: cleanPhone,
+      firstName: fullName,
+      city: city || undefined,
+      state: state || undefined,
+      pincode: pincode,
+      clientIpAddress: clientMeta.clientIpAddress,
+      clientUserAgent: clientMeta.clientUserAgent,
+      fbp: clientMeta.fbp,
+      fbc: clientMeta.fbc,
+    };
 
-    // 7. Dispatch Meta Conversions API (CAPI) events with SHA-256 deduplication
-    try {
-      const clientMeta = extractClientMetadata(req);
-      const capiUserData = {
-        email: rawEmail || undefined,
-        phone: cleanPhone,
-        firstName: fullName,
-        city: city || undefined,
-        state: state || undefined,
-        pincode: pincode,
-        clientIpAddress: clientMeta.clientIpAddress,
-        clientUserAgent: clientMeta.clientUserAgent,
-        fbp: clientMeta.fbp,
-        fbc: clientMeta.fbc,
-      };
+    // Fire non-blocking tasks asynchronously
+    (async () => {
+      try {
+        // Mark quote converted
+        await prisma.quote.update({
+          where: { id: quoteIdToConvert },
+          data: { status: "CONVERTED" },
+        }).catch(() => {});
 
-      // Non-blocking fire of Lead, Schedule, and PickupBooked CAPI events
-      Promise.allSettled([
-        sendServerLeadEvent({
+        // WhatsApp notification to admin
+        WhatsAppService.notifyNewOrder({
           orderNumber: order.orderNumber,
-          value: estimatedPrice,
-          contentName: deviceName,
-          userData: capiUserData,
-        }),
-        sendServerScheduleEvent({
-          orderNumber: order.orderNumber,
-          value: estimatedPrice,
-          contentName: deviceName,
+          customerName: fullName,
+          customerPhone: cleanPhone,
+          deviceName: deviceName,
+          estimatedPrice: estimatedPrice,
           pickupDate: pickupDate,
           pickupTimeSlot: pickupTimeSlot,
-          userData: capiUserData,
-        }),
-        sendServerPickupBookedEvent({
-          orderNumber: order.orderNumber,
-          value: estimatedPrice,
-          contentName: deviceName,
-          contentCategory: (quote as any)?.variant?.model?.category || "MOBILE",
-          pincode: pincode,
-          city: city,
-          pickupDate: pickupDate,
-          pickupTimeSlot: pickupTimeSlot,
-          userData: capiUserData,
-        }),
-      ]).then(() => {
-        logger.info(`[META CAPI] Dispatched Lead, Schedule, and PickupBooked for #${order.orderNumber}`);
-      }).catch((capiErr) => {
-        logger.error("[META CAPI ERROR]", capiErr);
-      });
-    } catch (capiErr) {
-      logger.error("[META CAPI SETUP ERROR]", capiErr);
-    }
+          address: fullAddress,
+        }).catch((err) => logger.error("WhatsApp notification error:", err));
+
+        // Meta CAPI server events
+        Promise.allSettled([
+          sendServerLeadEvent({
+            orderNumber: order.orderNumber,
+            value: estimatedPrice,
+            contentName: deviceName,
+            userData: capiUserData,
+          }),
+          sendServerScheduleEvent({
+            orderNumber: order.orderNumber,
+            value: estimatedPrice,
+            contentName: deviceName,
+            pickupDate: pickupDate,
+            pickupTimeSlot: pickupTimeSlot,
+            userData: capiUserData,
+          }),
+          sendServerPickupBookedEvent({
+            orderNumber: order.orderNumber,
+            value: estimatedPrice,
+            contentName: deviceName,
+            contentCategory: (quote as any)?.variant?.model?.category || "MOBILE",
+            pincode: pincode,
+            city: city,
+            pickupDate: pickupDate,
+            pickupTimeSlot: pickupTimeSlot,
+            userData: capiUserData,
+          }),
+        ]).catch(() => {});
+      } catch (bgErr) {
+        logger.error("[ORDER ASYNC BG ERROR]", bgErr);
+      }
+    })();
 
     logger.info(`[ORDER SUCCESS] Created Order #${order.orderNumber} for ${fullName}`);
 

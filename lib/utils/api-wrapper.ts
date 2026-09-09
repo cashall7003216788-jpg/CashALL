@@ -29,12 +29,10 @@ export function apiWrapper(handler: ApiHandler) {
         );
       }
 
-      // Hide internal server errors in production
-      const isProduction = process.env.NODE_ENV === "production";
       return NextResponse.json(
         {
           success: false,
-          error: isProduction ? "Internal Server Error" : error.message,
+          error: error.message || "Internal Server Error",
         },
         { status: 500 }
       );

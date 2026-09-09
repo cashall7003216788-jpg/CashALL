@@ -9,22 +9,40 @@ export const POST = apiWrapper(async (req: NextRequest, { params }: { params: { 
   const rawId = params.id ? decodeURIComponent(params.id).trim() : "";
   const body = await req.json().catch(() => ({}));
 
-  const { agentId, agentName } = body;
+  const { agentId, agentName, orderNumber: bodyOrderNum, orderId: bodyOrderId } = body;
 
-  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(rawId);
-  const cleanOrderNum = rawId.replace(/^#/, "");
+  const candidateNumbers = [
+    rawId,
+    rawId.replace(/^[#\s]+/, "").trim(),
+    bodyOrderNum ? String(bodyOrderNum).trim() : "",
+    bodyOrderNum ? String(bodyOrderNum).replace(/^[#\s]+/, "").trim() : "",
+    bodyOrderId ? String(bodyOrderId).trim() : "",
+  ].filter((c): c is string => Boolean(c));
+
+  const isUuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+  const orConditions: any[] = [];
+  for (const cand of candidateNumbers) {
+    if (isUuidRegex.test(cand)) {
+      orConditions.push({ id: cand });
+    }
+    const clean = cand.replace(/^[#\s]+/, "").trim();
+    if (clean) {
+      orConditions.push({ orderNumber: clean });
+      orConditions.push({ orderNumber: `#${clean}` });
+      orConditions.push({ orderNumber: { equals: clean, mode: "insensitive" } });
+    }
+  }
 
   const order = await prisma.order.findFirst({
     where: {
-      OR: isUuid
-        ? [{ id: rawId }, { orderNumber: cleanOrderNum }]
-        : [{ orderNumber: cleanOrderNum }, { orderNumber: `#${cleanOrderNum}` }],
+      OR: orConditions.length > 0 ? orConditions : [{ orderNumber: rawId }],
       deletedAt: null,
     },
   });
 
   if (!order) {
-    throw new AppError(`Order "${rawId}" not found in database.`, 404);
+    throw new AppError(`Order "${rawId || bodyOrderNum || "unknown"}" not found in database.`, 404);
   }
 
   let resolvedAgentId: string | null = agentId || null;

@@ -220,9 +220,12 @@ function PickupCheckoutContent() {
     let apiSuccess = false;
 
     let serverErrorMsg = "";
-    // Try up to 2 times to reach the server
+    // Try to reach the server with a 12s timeout
     for (let attempt = 1; attempt <= 2; attempt++) {
       try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 12000);
+
         const res = await fetch("/api/v1/orders/create", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -246,7 +249,10 @@ function PickupCheckoutContent() {
             selectedAnswersJson: quote?.selectedAnswersJson || "{}",
             breakdownJson: quote?.breakdownJson || "{}",
           }),
+          signal: controller.signal,
         });
+
+        clearTimeout(timeoutId);
 
         const json = await res.json().catch(() => null);
 
@@ -260,11 +266,11 @@ function PickupCheckoutContent() {
         } else {
           console.warn(`Order API attempt ${attempt} failed: HTTP ${res.status}`);
         }
-      } catch (err) {
+      } catch (err: any) {
         console.warn(`Order API attempt ${attempt} error:`, err);
       }
-      // Wait 1s before retry
-      if (attempt < 2) await new Promise((r) => setTimeout(r, 1000));
+      // Wait 500ms before retry if first attempt failed
+      if (attempt < 2) await new Promise((r) => setTimeout(r, 500));
     }
 
     // If API failed after retries, halt and inform user
@@ -368,10 +374,9 @@ function PickupCheckoutContent() {
       }
     }
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      router.push(`/order/${createdOrderNum}`);
-    }, 600);
+    // Instant transition — zero artificial wait
+    setIsSubmitting(false);
+    router.push(`/order/${createdOrderNum}`);
   };
 
   // Resolve display device name for sidebar - read from stored data, never fall back to INITIAL_VARIANTS[0]
