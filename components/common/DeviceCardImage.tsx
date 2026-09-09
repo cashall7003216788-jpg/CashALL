@@ -43,6 +43,7 @@ export function DeviceCardImage({
       src={src}
       alt={alt}
       loading="lazy"
+      referrerPolicy="no-referrer"
       onError={() => setHasError(true)}
       className={className}
     />
