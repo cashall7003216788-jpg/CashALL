@@ -17,8 +17,15 @@ import {
 } from "lucide-react";
 
 export default function AppDownloadHubPage() {
+  const [downloadingAdmin, setDownloadingAdmin] = useState(false);
   const [downloadingAgent, setDownloadingAgent] = useState(false);
   const [downloadingCaller, setDownloadingCaller] = useState(false);
+
+  const handleDownloadAdmin = () => {
+    setDownloadingAdmin(true);
+    window.location.href = "/api/v1/download/admin";
+    setTimeout(() => setDownloadingAdmin(false), 4000);
+  };
 
   const handleDownloadAgent = () => {
     setDownloadingAgent(true);
@@ -54,7 +61,72 @@ export default function AppDownloadHubPage() {
         </div>
 
         {/* APP CARDS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* CARD 0: ADMIN APP */}
+          <div className="bg-neutral-900/90 border border-yellow-500/40 hover:border-yellow-400 rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition duration-300 shadow-xl relative overflow-hidden group">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="w-12 h-12 rounded-2xl bg-yellow-400/10 border border-yellow-400/30 flex items-center justify-center text-yellow-400">
+                  <ShieldCheck className="w-6 h-6" />
+                </div>
+                <span className="text-[11px] font-bold uppercase tracking-wider bg-yellow-400/10 text-yellow-400 border border-yellow-400/30 px-3 py-1 rounded-full">
+                  v1.0.0 • Admin Desk
+                </span>
+              </div>
+
+              <div>
+                <h2 className="text-xl font-black text-white group-hover:text-yellow-400 transition">
+                  CashALL Admin App
+                </h2>
+                <p className="text-xs text-neutral-400 mt-1 leading-relaxed">
+                  For the 4 administrators. 10s auto-stopping loud siren &amp; vibration on real customer orders, Google Maps turn-by-turn navigation, and mobile command.
+                </p>
+              </div>
+
+              <div className="space-y-2 text-xs text-neutral-300 bg-neutral-950/70 border border-neutral-800/80 p-3 rounded-2xl">
+                <div className="flex items-center gap-2">
+                  <Bell className="w-4 h-4 text-yellow-400 shrink-0" />
+                  <span>10s Siren on Real Orders Only</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Smartphone className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Google Navigation Integration</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                  <span>Full Mobile Admin Console</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-3 pt-5">
+              <button
+                onClick={handleDownloadAdmin}
+                disabled={downloadingAdmin}
+                className="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black font-black text-xs uppercase tracking-wider transition shadow-lg flex items-center justify-center gap-2 cursor-pointer active:scale-95 disabled:opacity-50"
+              >
+                <Download className="w-4 h-4 stroke-[2.5]" />
+                <span>{downloadingAdmin ? "Starting Download..." : "Download Admin APK"}</span>
+              </button>
+
+              <div className="flex items-center justify-between text-[11px] text-neutral-400 px-1">
+                <Link
+                  href="/download/admin"
+                  className="hover:text-yellow-400 flex items-center gap-1 transition"
+                >
+                  <span>Admin App Guide</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+                <a
+                  href="/CashALL-Admin.apk"
+                  download="CashALL-Admin.apk"
+                  className="text-neutral-500 hover:text-white underline"
+                >
+                  Direct APK
+                </a>
+              </div>
+            </div>
+          </div>
           {/* CARD 1: AGENT APP */}
           <div className="bg-neutral-900/90 border border-neutral-800 hover:border-yellow-500/50 rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition duration-300 shadow-xl relative overflow-hidden group">
             <div className="space-y-5">

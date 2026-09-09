@@ -32,6 +32,7 @@ import {
   Sparkles,
   Filter,
   Search,
+  Navigation,
 } from "lucide-react";
 import { CustomerAnswersModal } from "@/components/admin/CustomerAnswersModal";
 import { ReQuotationModal } from "@/components/admin/ReQuotationModal";
@@ -1233,9 +1234,26 @@ export default function AdminOrdersPage() {
                     </button>
                   </div>
 
-                  <div className="flex items-start gap-1.5 text-xs text-neutral-400 mt-2">
-                    <MapPin className="w-3.5 h-3.5 text-yellow-400 shrink-0 mt-0.5" />
-                    <span className="line-clamp-2">{ord.location}</span>
+                  <div className="flex flex-col gap-2 mt-2">
+                    <div className="flex items-start gap-1.5 text-xs text-neutral-300">
+                      <MapPin className="w-3.5 h-3.5 text-yellow-400 shrink-0 mt-0.5" />
+                      <span className="line-clamp-2">{ord.location}</span>
+                    </div>
+
+                    {ord.location && ord.location !== "—" && (
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                          ord.location + (ord.pincode ? ` ${ord.pincode}` : "")
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-[11px] font-black text-black bg-yellow-400 hover:bg-yellow-300 px-3 py-1.5 rounded-xl transition shadow-md w-fit cursor-pointer border border-yellow-300"
+                        title="Open Google Maps Turn-by-Turn Navigation for this doorstep address"
+                      >
+                        <Navigation className="w-3.5 h-3.5 text-black shrink-0" />
+                        <span>Google Navigation</span>
+                      </a>
+                    )}
                   </div>
                 </div>
 

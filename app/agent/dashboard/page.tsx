@@ -110,62 +110,14 @@ function getOrderDateBucket(
 }
 
 class InHouseBuzzerAlarm {
-  private audioCtx: AudioContext | null = null;
-  private intervalId: any = null;
   public isPlaying: boolean = false;
 
   start() {
     if (this.isPlaying) return;
     this.isPlaying = true;
 
-    // 1. Synthetic Web Audio Siren / Alarm Buzzer (Sawtooth wave with pitch ramp)
-    try {
-      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
-      if (AudioCtx) {
-        this.audioCtx = new AudioCtx();
-        const playBeep = () => {
-          if (!this.isPlaying || !this.audioCtx) return;
-          try {
-            if (this.audioCtx.state === "suspended") {
-              this.audioCtx.resume();
-            }
-            const osc = this.audioCtx.createOscillator();
-            const gain = this.audioCtx.createGain();
-            osc.type = "sawtooth";
-            osc.frequency.setValueAtTime(920, this.audioCtx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(460, this.audioCtx.currentTime + 0.3);
-            gain.gain.setValueAtTime(0.85, this.audioCtx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.01, this.audioCtx.currentTime + 0.35);
-            osc.connect(gain);
-            gain.connect(this.audioCtx.destination);
-            osc.start();
-            osc.stop(this.audioCtx.currentTime + 0.4);
-          } catch (e) {}
-        };
-
-        playBeep();
-        this.intervalId = setInterval(playBeep, 550);
-      }
-    } catch (e) {
-      console.warn("AudioContext error:", e);
-    }
-
-    // 2. Hardware Vibration
-    try {
-      if (typeof navigator !== "undefined" && "vibrate" in navigator) {
-        navigator.vibrate([700, 250, 700, 250, 1000]);
-        const vInterval = setInterval(() => {
-          if (!this.isPlaying) {
-            clearInterval(vInterval);
-            navigator.vibrate(0);
-          } else {
-            navigator.vibrate([700, 250, 700, 250, 1000]);
-          }
-        }, 2500);
-      }
-    } catch (e) {}
-
-    // 3. Android Native App Bridge (CashAllAgentNative)
+    // Web browser is completely silent (no Web Audio oscillators).
+    // Native Android App bridge only (sounds alarm in the native app)
     try {
       if (typeof window !== "undefined" && (window as any).CashAllAgentNative?.startAlarm) {
         (window as any).CashAllAgentNative.startAlarm();
@@ -175,23 +127,7 @@ class InHouseBuzzerAlarm {
 
   stop() {
     this.isPlaying = false;
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-      this.intervalId = null;
-    }
-    if (this.audioCtx) {
-      try {
-        this.audioCtx.close();
-      } catch (e) {}
-      this.audioCtx = null;
-    }
-    try {
-      if (typeof navigator !== "undefined" && "vibrate" in navigator) {
-        navigator.vibrate(0);
-      }
-    } catch (e) {}
-
-    // Android Native App Bridge Stop
+    // Native Android App bridge stop
     try {
       if (typeof window !== "undefined" && (window as any).CashAllAgentNative?.stopAlarm) {
         (window as any).CashAllAgentNative.stopAlarm();
@@ -728,22 +664,21 @@ export default function AgentDashboardPage() {
         </div>
       </header>
 
-      {/* ACTIVE ALARM STICKY BANNER */}
+      {/* ACTIVE LEAD STICKY BANNER (SILENT WEB) */}
       {isAlarmSounding && (
-        <div className="bg-gradient-to-r from-red-700 via-red-600 to-red-800 text-white px-4 py-3 flex flex-wrap items-center justify-between gap-3 shadow-2xl animate-pulse sticky top-16 z-40 border-b-2 border-yellow-400">
+        <div className="bg-neutral-900 border-b border-yellow-400/40 text-white px-4 py-3 flex flex-wrap items-center justify-between gap-3 shadow-xl sticky top-16 z-40">
           <div className="flex items-center gap-2.5 font-black text-xs sm:text-sm">
-            <BellRing className="w-5 h-5 animate-bounce text-yellow-300 shrink-0" />
-            <span>⚠️ LOUD ALARM & VIBRATION ACTIVE: New Lead Assigned to You!</span>
+            <BellRing className="w-5 h-5 text-yellow-400 shrink-0" />
+            <span>🔔 New Lead Assigned to You! Check your orders list below.</span>
           </div>
           <button
             onClick={() => {
               buzzerAlarm.stop();
               setIsAlarmSounding(false);
             }}
-            className="flex items-center gap-1.5 bg-black hover:bg-neutral-900 text-yellow-400 px-4 py-1.5 rounded-xl font-black text-xs shadow-lg transition border border-yellow-400/40 cursor-pointer"
+            className="flex items-center gap-1.5 bg-neutral-800 hover:bg-neutral-700 text-yellow-400 px-4 py-1.5 rounded-xl font-bold text-xs shadow transition border border-yellow-400/40 cursor-pointer"
           >
-            <VolumeX className="w-4 h-4" />
-            <span>Silence Siren</span>
+            <span>Dismiss</span>
           </button>
         </div>
       )}
@@ -769,27 +704,6 @@ export default function AgentDashboardPage() {
             >
               <span>🎙️</span>
               <span>Auto-Record Settings</span>
-            </button>
-
-            <button
-              onClick={() => {
-                if (isAlarmSounding) {
-                  buzzerAlarm.stop();
-                  setIsAlarmSounding(false);
-                } else {
-                  buzzerAlarm.start();
-                  setIsAlarmSounding(true);
-                }
-              }}
-              className={`flex items-center gap-2 text-xs font-black px-4 py-2.5 rounded-xl transition cursor-pointer border shadow-md ${
-                isAlarmSounding
-                  ? "bg-red-600 hover:bg-red-500 text-white border-red-400 animate-pulse"
-                  : "bg-neutral-800 hover:bg-neutral-700 text-yellow-400 border-yellow-400/30"
-              }`}
-              title="Test the loud 920Hz-460Hz siren and vibration pattern"
-            >
-              {isAlarmSounding ? <VolumeX className="w-4 h-4 text-white" /> : <Volume2 className="w-4 h-4 text-yellow-400" />}
-              <span>{isAlarmSounding ? "Stop Buzzer" : "Test Siren & Buzzer"}</span>
             </button>
 
             <button
@@ -1408,10 +1322,9 @@ export default function AgentDashboardPage() {
                     (window as any).CashAllAgentNative.stopAlarm();
                   }
                 }}
-                className="flex-1 py-3 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white font-black text-xs transition shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                className="flex-1 py-3 px-4 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-neutral-200 font-bold text-xs transition shadow-lg flex items-center justify-center gap-2 cursor-pointer border border-neutral-700"
               >
-                <VolumeX className="w-4 h-4" />
-                <span>Stop Siren &amp; Dismiss</span>
+                <span>Dismiss</span>
               </button>
 
               <Link

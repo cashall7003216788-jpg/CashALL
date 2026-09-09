@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CashALL Admin</string>
+    <string name="channel_alarm_name">Real Order Urgent Alarm</string>
+    <string name="channel_alarm_desc">10-second siren alarm and haptic vibration when an actual customer order is placed</string>
+    <string name="channel_info_name">Admin System Notifications</string>
+    <string name="channel_info_desc">CashALL platform status and operational updates</string>
+</resources>
