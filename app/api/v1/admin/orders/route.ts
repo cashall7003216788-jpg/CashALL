@@ -6,20 +6,15 @@ export const dynamic = "force-dynamic";
 export const GET = apiWrapper(async (req: NextRequest) => {
   const { searchParams } = new URL(req.url);
   const page = parseInt(searchParams.get("page") || "1", 10);
-  const limit = parseInt(searchParams.get("limit") || "200", 10);
+  // Default to 50 per page (was 200 — massive query eating a DB connection for seconds)
+  const limit = Math.min(parseInt(searchParams.get("limit") || "50", 10), 100);
   const status = searchParams.get("status");
   const query = searchParams.get("query");
 
   const skip = (page - 1) * limit;
 
-  const where: any = {
-    deletedAt: null,
-  };
-
-  if (status) {
-    where.status = status;
-  }
-
+  const where: any = { deletedAt: null };
+  if (status) where.status = status;
   if (query) {
     where.OR = [
       { orderNumber: { contains: query, mode: "insensitive" } },
@@ -28,86 +23,87 @@ export const GET = apiWrapper(async (req: NextRequest) => {
     ];
   }
 
-  let orders: any[] = [];
-  let total = 0;
-
-  try {
-    const res = await Promise.all([
-      prisma.order.findMany({
-        where,
-        include: {
-          user: true,
-          agent: true,
-          address: true,
-          quote: {
-            include: {
-              variant: {
-                include: {
-                  model: {
-                    include: {
-                      brand: true,
-                    },
+  const [orders, total] = await Promise.all([
+    prisma.order.findMany({
+      where,
+      select: {
+        id: true,
+        orderNumber: true,
+        status: true,
+        finalPrice: true,
+        agentId: true,
+        urn: true,
+        paymentScreenshotUrl: true,
+        cancellationReason: true,
+        pickupDate: true,
+        pickupTimeSlot: true,
+        createdAt: true,
+        updatedAt: true,
+        user: {
+          select: { id: true, name: true, phone: true, email: true },
+        },
+        agent: {
+          select: { id: true, name: true, role: true, phone: true },
+        },
+        address: {
+          select: {
+            house: true, street: true, area: true,
+            city: true, state: true, pincode: true, phone: true,
+          },
+        },
+        quote: {
+          select: {
+            quoteNumber: true,
+            estimatedPrice: true,
+            breakdownJson: true,
+            selectedAnswersJson: true,
+            variant: {
+              select: {
+                storage: true,
+                model: {
+                  select: {
+                    name: true,
+                    brand: { select: { name: true } },
                   },
                 },
               },
             },
           },
-          pickups: {
-            include: { partner: true },
-          },
-          payments: true,
-          qcReports: {
-            orderBy: { inspectedAt: "desc" },
-          },
-          imeiRecords: true,
         },
-        orderBy: { createdAt: "desc" },
-        skip,
-        take: limit,
-      }),
-      prisma.order.count({ where }),
-    ]);
-    orders = res[0];
-    total = res[1];
-  } catch (dbErr) {
-    console.warn("DB findMany with agent relation failed, falling back without agent relation:", dbErr);
-    const res = await Promise.all([
-      prisma.order.findMany({
-        where,
-        include: {
-          user: true,
-          address: true,
-          quote: {
-            include: {
-              variant: {
-                include: {
-                  model: {
-                    include: {
-                      brand: true,
-                    },
-                  },
-                },
-              },
-            },
+        pickups: {
+          take: 1,
+          orderBy: { createdAt: "desc" },
+          select: {
+            id: true, date: true, timeSlot: true,
+            status: true, notes: true, assignedAt: true,
+            partner: { select: { id: true, name: true, phone: true } },
           },
-          pickups: {
-            include: { partner: true },
-          },
-          payments: true,
-          qcReports: {
-            orderBy: { inspectedAt: "desc" },
-          },
-          imeiRecords: true,
         },
-        orderBy: { createdAt: "desc" },
-        skip,
-        take: limit,
-      }),
-      prisma.order.count({ where }),
-    ]);
-    orders = res[0];
-    total = res[1];
-  }
+        payments: {
+          take: 1,
+          orderBy: { createdAt: "desc" },
+          select: { id: true, amount: true, status: true, transactionRef: true, method: true },
+        },
+        qcReports: {
+          take: 1,
+          orderBy: { inspectedAt: "desc" },
+          select: {
+            id: true, revisedPrice: true, imeiNumber: true,
+            priceDifferenceReason: true, status: true,
+          },
+        },
+        imeiRecords: {
+          take: 1,
+          orderBy: { createdAt: "desc" },
+          select: { id: true, code: true },
+        },
+      },
+      orderBy: { createdAt: "desc" },
+      skip,
+      take: limit,
+    }),
+    prisma.order.count({ where }),
+  ]);
 
   const formattedOrders = orders.map((ord: any) => {
     // Resolve deviceName: breakdownJson → variant→model chain → fallback
@@ -133,35 +129,33 @@ export const GET = apiWrapper(async (req: NextRequest) => {
 
     const pickup = ord.pickups?.[0];
     const assignedPartner = pickup?.partner;
-    const pickupNotes = (pickup?.notes && pickup.notes !== "Doorstep pickup order confirmed." && pickup.notes !== "Order synced to database automatically.")
-      ? pickup.notes
-      : null;
+    const pickupNotes =
+      pickup?.notes &&
+      pickup.notes !== "Doorstep pickup order confirmed." &&
+      pickup.notes !== "Order synced to database automatically."
+        ? pickup.notes
+        : null;
 
     let agentName = null;
-    // Only resolve agentName if ord.agent has role AGENT
-    if (ord.agent && ord.agent.role === "AGENT") {
-      agentName = ord.agent.name;
-    }
-    if (!agentName && pickupNotes) {
-      agentName = pickupNotes;
-    }
+    if (ord.agent && ord.agent.role === "AGENT") agentName = ord.agent.name;
+    if (!agentName && pickupNotes) agentName = pickupNotes;
 
-    const customerEmail = ord.user?.email || ord.customerEmail || null;
-
+    const customerEmail = ord.user?.email || null;
     const imeiNumber =
       ord.imeiRecords?.[0]?.code ||
       ord.qcReports?.[0]?.imeiNumber ||
-      ord.imeiNumber ||
       (ord.orderNumber === "CA36738" ? "864932057391842" : null);
 
     const qcReport = ord.qcReports?.[0];
-    const priceDifferenceReason = qcReport?.priceDifferenceReason || ord.offers?.[0]?.priceDifferenceReason || (ord as any).priceDifferenceReason || null;
-    const selectedAnswersJson = ord.quote?.selectedAnswersJson || (ord as any).selectedAnswersJson || null;
-    const breakdownJson = ord.quote?.breakdownJson || (ord as any).breakdownJson || null;
+    const priceDifferenceReason = qcReport?.priceDifferenceReason || null;
+    const selectedAnswersJson = ord.quote?.selectedAnswersJson || null;
+    const breakdownJson = ord.quote?.breakdownJson || null;
 
-    const paymentRef = ord.urn || (ord as any).utr || ord.payments?.[0]?.transactionRef || (ord.orderNumber === "CA83848" ? "659789934722" : null);
+    const paymentRef =
+      ord.urn ||
+      ord.payments?.[0]?.transactionRef ||
+      (ord.orderNumber === "CA83848" ? "659789934722" : null);
 
-    // 1. Resolve initial online quote price
     let quotedPrice = 0;
     if (ord.quote?.breakdownJson) {
       try {
@@ -171,17 +165,11 @@ export const GET = apiWrapper(async (req: NextRequest) => {
         }
       } catch {}
     }
-    if (!quotedPrice) {
-      quotedPrice = ord.quote?.estimatedPrice ?? ord.estimatedPrice ?? 0;
-    }
+    if (!quotedPrice) quotedPrice = ord.quote?.estimatedPrice ?? 0;
 
-    // 2. Resolve doorstep physical inspection re-quote valuation
-    const requotedPrice = qcReport?.revisedPrice ?? ord.offers?.[0]?.amount ?? ord.revisedPrice ?? quotedPrice;
-
-    // 3. Resolve final agreed deal payout to seller
+    const requotedPrice = qcReport?.revisedPrice ?? quotedPrice;
     const finalPrice = ord.finalPrice ?? ord.payments?.[0]?.amount ?? requotedPrice ?? quotedPrice;
-
-    const pincode = ord.address?.pincode || (ord as any).pincode || null;
+    const pincode = ord.address?.pincode || null;
 
     return {
       ...ord,
@@ -198,7 +186,12 @@ export const GET = apiWrapper(async (req: NextRequest) => {
       selectedAnswersJson,
       breakdownJson,
       priceDifferenceReason,
-      cancellationReason: ord.cancellationReason || (ord.pickups?.[0]?.notes?.startsWith("Order Cancelled:") ? ord.pickups[0].notes.replace(/^Order Cancelled:\s*/i, "") : null) || null,
+      cancellationReason:
+        ord.cancellationReason ||
+        (ord.pickups?.[0]?.notes?.startsWith("Order Cancelled:")
+          ? ord.pickups[0].notes.replace(/^Order Cancelled:\s*/i, "")
+          : null) ||
+        null,
       quotedPrice,
       estimatedPrice: quotedPrice,
       requotedPrice,
