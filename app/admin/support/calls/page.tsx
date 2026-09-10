@@ -841,153 +841,110 @@ export default function AdminSupportCallLogsPage() {
               )}
             </div>
           ) : (
-            <div className="w-full overflow-hidden">
-              <table className="w-full text-left border-collapse table-fixed">
-                <colgroup>
-                  <col className="w-[16%]" />
-                  <col className="w-[28%]" />
-                  <col className="w-[14%]" />
-                  <col className="w-[9%]" />
-                  <col className="w-[25%]" />
-                  <col className="w-[8%]" />
-                </colgroup>
-                <thead>
-                  <tr className="border-b border-neutral-700 bg-neutral-850/60 text-neutral-400 uppercase tracking-wider font-extrabold text-[10px] sm:text-[11px]">
-                    <th className="py-2.5 px-2">Support Agent</th>
-                    <th className="py-2.5 px-2">Customer &amp; Device</th>
-                    <th className="py-2.5 px-2">Date &amp; Time</th>
-                    <th className="py-2.5 px-2">Duration</th>
-                    <th className="py-2.5 px-2">Call Result &amp; Reason</th>
-                    <th className="py-2.5 px-2 text-right">Dial</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-700/60 text-xs">
-                  {filteredRecordings.map((rec) => {
-                    const dt = formatCallDateTime(rec.createdAt, rec.createdAtIST || rec.callTimeIST);
-                    return (
-                      <tr key={rec.id} className="hover:bg-neutral-750/50 transition">
-                        {/* AGENT */}
-                        <td className="py-2.5 px-2 min-w-0">
-                          <div className="flex items-center gap-1.5 min-w-0">
-                            <div className="w-6 h-6 rounded-md bg-neutral-700 flex items-center justify-center font-black text-[11px] text-yellow-400 shrink-0">
-                              {rec.supportPersonName.charAt(0) || "A"}
-                            </div>
-                            <div className="min-w-0">
-                              <div className="font-bold text-white text-xs truncate" title={rec.supportPersonName}>
-                                {rec.supportPersonName}
-                              </div>
-                              <div className="text-[10px] text-neutral-400 font-mono truncate">
-                                {rec.supportPersonPhone}
-                              </div>
-                            </div>
-                          </div>
-                        </td>
+            <div className="space-y-3">
+              {filteredRecordings.map((rec) => {
+                const dt = formatCallDateTime(rec.createdAt, rec.createdAtIST || rec.callTimeIST);
+                return (
+                  <div
+                    key={rec.id}
+                    className="bg-neutral-900 border border-neutral-800 hover:border-neutral-700 rounded-2xl p-4 transition shadow-md space-y-3"
+                  >
+                    {/* CARD HEADER: OUTCOME + DURATION + TIME */}
+                    <div className="flex items-center justify-between gap-2 flex-wrap">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <button
+                          type="button"
+                          onClick={() => handleOpenCallModal(rec)}
+                          className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl border text-[10px] font-black uppercase tracking-wider transition ${getOutcomeBadgeStyle(
+                            rec.callOutcome
+                          )}`}
+                        >
+                          {getOutcomeIcon(rec.callOutcome)}
+                          <span>{formatCallOutcome(rec.callOutcome)}</span>
+                          <ExternalLink className="w-3 h-3 ml-0.5 opacity-70" />
+                        </button>
 
-                        {/* CUSTOMER & DEVICE */}
-                        <td className="py-2.5 px-2 min-w-0">
-                          <div className="font-bold text-white text-xs flex items-center gap-1 truncate" title={rec.customerName || "Customer Lead"}>
-                            <User className="w-3 h-3 text-yellow-400 shrink-0" />
-                            <span className="truncate">{rec.customerName || "Customer Lead"}</span>
-                          </div>
-                          <div className="text-[10px] text-neutral-300 font-mono flex items-center gap-1 mt-0.5">
-                            <Phone className="w-2.5 h-2.5 text-neutral-400 shrink-0" />
-                            <span>{rec.customerPhone}</span>
-                          </div>
-                          {rec.deviceName && rec.deviceName !== "—" && (
-                            <div className="text-[10px] text-amber-300/90 font-medium flex items-center gap-1 mt-0.5 truncate" title={rec.deviceName}>
-                              <Smartphone className="w-2.5 h-2.5 text-yellow-400 shrink-0" />
-                              <span className="truncate">{rec.deviceName}</span>
-                            </div>
-                          )}
-                          {rec.quoteId && rec.quoteId !== "N/A" && (
-                            <div className="inline-block text-[9px] font-mono text-yellow-400 font-bold bg-yellow-950/60 border border-yellow-800/80 px-1.5 py-0.2 rounded mt-0.5">
-                              Quote: {rec.quoteId}
-                            </div>
-                          )}
-                        </td>
+                        <span className="inline-flex items-center gap-1 bg-amber-950/80 border border-amber-800 text-amber-300 font-mono font-bold px-2 py-0.5 rounded-lg text-[10px]">
+                          <Clock className="w-2.5 h-2.5 text-amber-400 shrink-0" />
+                          <span>{rec.durationFormatted}</span>
+                        </span>
+                      </div>
 
-                        {/* DATE & TIME (IST) */}
-                        <td className="py-2.5 px-2 whitespace-nowrap">
-                          <div className="font-mono">
-                            <div className="text-xs font-bold text-white">{dt.date}</div>
-                            <div className="text-[10px] text-neutral-400 flex items-center gap-1 mt-0.5">
-                              <Clock className="w-2.5 h-2.5 text-yellow-400/80 shrink-0" />
-                              <span>{dt.time}</span>
-                            </div>
-                          </div>
-                        </td>
+                      <div className="text-right text-neutral-400 font-mono text-[10px]">
+                        <span className="font-bold text-white">{dt.date}</span> • {dt.time}
+                      </div>
+                    </div>
 
-                        {/* DURATION & AUDIO BADGE */}
-                        <td className="py-2.5 px-2 whitespace-nowrap">
-                          <div className="flex flex-col items-start gap-1">
-                            <span className="inline-flex items-center gap-1 bg-amber-950/80 border border-amber-800 text-amber-300 font-mono font-bold px-2 py-0.5 rounded-lg text-[10px]">
-                              <Clock className="w-2.5 h-2.5 text-amber-400 shrink-0" />
-                              <span>{rec.durationFormatted}</span>
-                            </span>
-                            {rec.audioUrl && (
-                              <button
-                                type="button"
-                                onClick={() => handleOpenCallModal(rec)}
-                                className="inline-flex items-center gap-1 bg-emerald-950/90 border border-emerald-700/80 text-emerald-300 hover:text-emerald-200 hover:bg-emerald-900 font-bold px-1.5 py-0.5 rounded-md text-[9px] transition cursor-pointer"
-                                title="HD Recording Available - Click to Listen"
-                              >
-                                <Volume2 className="w-2.5 h-2.5 text-emerald-400 animate-pulse" />
-                                <span>HD Audio</span>
-                              </button>
-                            )}
-                          </div>
-                        </td>
+                    {/* CUSTOMER & DEVICE INFO */}
+                    <div className="bg-black/40 border border-neutral-800/80 rounded-xl p-3 space-y-1.5">
+                      <div className="flex items-center justify-between gap-2 flex-wrap">
+                        <div className="font-bold text-white text-xs sm:text-sm flex items-center gap-1.5">
+                          <User className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
+                          <span>{rec.customerName || "Customer Lead"}</span>
+                        </div>
+                        {rec.quoteId && rec.quoteId !== "N/A" && (
+                          <span className="text-[9px] font-mono font-bold text-yellow-400 bg-yellow-950/60 border border-yellow-800/80 px-2 py-0.5 rounded-md">
+                            Quote: #{rec.quoteId}
+                          </span>
+                        )}
+                      </div>
 
-                        {/* CALL RESULT / OUTCOME BADGE WITH CLICKABLE POPUP */}
-                        <td className="py-2.5 px-2 min-w-0">
-                          <div className="space-y-1 min-w-0">
-                            <button
-                              type="button"
-                              onClick={() => handleOpenCallModal(rec)}
-                              className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border text-[10px] font-black uppercase tracking-wider transition-all duration-150 transform hover:scale-[1.02] active:scale-[0.98] shadow-sm cursor-pointer ${getOutcomeBadgeStyle(
-                                rec.callOutcome
-                              )}`}
-                              title="Click to view full conversation details and agent notes"
-                            >
-                              {getOutcomeIcon(rec.callOutcome)}
-                              <span className="truncate">{formatCallOutcome(rec.callOutcome)}</span>
-                              <ExternalLink className="w-2.5 h-2.5 ml-0.5 opacity-70 shrink-0" />
-                            </button>
+                      {rec.deviceName && rec.deviceName !== "—" && (
+                        <div className="text-[11px] text-neutral-300 flex items-center gap-1.5">
+                          <Smartphone className="w-3 h-3 text-yellow-400 shrink-0" />
+                          <span>{rec.deviceName}</span>
+                        </div>
+                      )}
+                    </div>
 
-                            {/* REASON / NOTES PREVIEW */}
-                            {rec.callNotes && (
-                              <div
-                                onClick={() => handleOpenCallModal(rec)}
-                                className="text-[10px] text-neutral-400 hover:text-neutral-200 truncate italic cursor-pointer flex items-center gap-1 transition"
-                                title={`Click to view: "${rec.callNotes}"`}
-                              >
-                                <MessageSquare className="w-2.5 h-2.5 text-yellow-400/80 shrink-0" />
-                                <span className="truncate">"{rec.callNotes}"</span>
-                              </div>
-                            )}
-                          </div>
-                        </td>
+                    {/* NOTES SNIPPET (IF ANY) */}
+                    {rec.callNotes && (
+                      <div
+                        onClick={() => handleOpenCallModal(rec)}
+                        className="text-[11px] text-neutral-400 hover:text-neutral-200 bg-neutral-850/60 border border-neutral-800 p-2.5 rounded-xl cursor-pointer flex items-start gap-1.5 transition"
+                      >
+                        <MessageSquare className="w-3.5 h-3.5 text-yellow-400 shrink-0 mt-0.5" />
+                        <span className="line-clamp-2">"{rec.callNotes}"</span>
+                      </div>
+                    )}
 
-                        {/* QUICK CALL ACTION */}
-                        <td className="py-2.5 px-2 text-right whitespace-nowrap">
-                          {rec.customerPhone && rec.customerPhone !== "—" ? (
-                            <a
-                              href={`tel:${rec.customerPhone}`}
-                              className="inline-flex items-center gap-1 text-[10px] font-extrabold text-black bg-yellow-400 hover:bg-yellow-300 px-2.5 py-1 rounded-lg transition shadow-sm cursor-pointer"
-                              title={`Dial ${rec.customerPhone}`}
-                            >
-                              <Phone className="w-3 h-3" />
-                              <span>Call</span>
-                            </a>
-                          ) : (
-                            <span className="text-neutral-500 text-xs">—</span>
-                          )}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+                    {/* FOOTER: AGENT + AUDIO + CALL ACTION */}
+                    <div className="pt-2 border-t border-neutral-800 flex items-center justify-between gap-2 flex-wrap">
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded-lg bg-neutral-800 border border-neutral-700 flex items-center justify-center font-bold text-[10px] text-yellow-400">
+                          {rec.supportPersonName.charAt(0) || "A"}
+                        </div>
+                        <span className="text-xs font-bold text-neutral-300">
+                          {rec.supportPersonName}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        {rec.audioUrl && (
+                          <button
+                            type="button"
+                            onClick={() => handleOpenCallModal(rec)}
+                            className="inline-flex items-center gap-1 bg-emerald-950/90 border border-emerald-700/80 text-emerald-300 hover:text-emerald-200 px-2.5 py-1 rounded-xl text-xs font-bold transition"
+                          >
+                            <Volume2 className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+                            <span>Audio</span>
+                          </button>
+                        )}
+
+                        {rec.customerPhone && rec.customerPhone !== "—" && (
+                          <a
+                            href={`tel:${rec.customerPhone}`}
+                            className="inline-flex items-center gap-1.5 text-xs font-black text-black bg-yellow-400 hover:bg-yellow-300 px-3 py-1 rounded-xl transition shadow-yellowGlow"
+                          >
+                            <Phone className="w-3 h-3" />
+                            <span>Dial</span>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>

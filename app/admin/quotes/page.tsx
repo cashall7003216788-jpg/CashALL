@@ -270,11 +270,11 @@ export default function AdminQuotesPage() {
           </div>
         </div>
 
-        {/* TABLE CONTAINER */}
-        <div className="bg-neutral-800 border border-neutral-700 p-6 rounded-3xl shadow-xl space-y-4">
+        {/* QUOTES FEED CONTAINER */}
+        <div className="bg-neutral-800 border border-neutral-700 p-4 sm:p-6 rounded-2xl sm:rounded-3xl shadow-xl space-y-4">
           {/* SEARCH FILTER */}
-          <div className="flex items-center justify-between gap-4">
-            <div className="relative flex-grow max-w-md">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="relative flex-grow">
               <Search className="w-4 h-4 text-neutral-400 absolute left-3.5 top-3" />
               <input
                 type="text"
@@ -284,7 +284,7 @@ export default function AdminQuotesPage() {
                 className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-10 pr-4 py-2.5 focus:outline-none focus:border-yellow-400 transition"
               />
             </div>
-            <span className="text-xs text-neutral-400 font-semibold">
+            <span className="text-xs text-neutral-400 font-semibold shrink-0">
               Showing {filteredQuotes.length} of {quotes.length} quotes
             </span>
           </div>
@@ -306,155 +306,127 @@ export default function AdminQuotesPage() {
               <p className="text-xs mt-1">Customer valuation quotes will populate here in real-time.</p>
             </div>
           ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider font-extrabold">
-                    <th className="py-3 px-3">Quote ID</th>
-                    <th className="py-3 px-3">Customer Lead & Mobile</th>
-                    <th className="py-3 px-3">Device Purchased & Valuation</th>
-                    <th className="py-3 px-3">Scheduled Agent Visit</th>
-                    <th className="py-3 px-3">Booking Status</th>
-                    <th className="py-3 px-3">Generated Date & Time</th>
-                    <th className="py-3 px-3">Action</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-700/60">
-                  {filteredQuotes.map((q) => (
-                    <tr key={q.id} className="hover:bg-neutral-750/50 transition">
-                      {/* QUOTE ID */}
-                      <td className="py-4 px-3">
-                        <div className="font-mono font-black text-yellow-400 text-sm">
-                          {q.quoteNumber}
-                        </div>
-                        <div className="text-[11px] text-neutral-400 flex items-center gap-1.5 mt-1 font-medium" title="Time when quote was generated">
-                          <Clock className="w-3 h-3 text-yellow-400/80 shrink-0" />
-                          <span>
-                            {q.createdAt
-                              ? new Date(q.createdAt).toLocaleString("en-IN", {
-                                  day: "2-digit",
-                                  month: "short",
-                                  year: "numeric",
-                                  hour: "2-digit",
-                                  minute: "2-digit",
-                                  hour12: true,
-                                })
-                              : "—"}
-                          </span>
-                        </div>
-                      </td>
+            <div className="space-y-3">
+              {filteredQuotes.map((q) => (
+                <div
+                  key={q.id}
+                  className="bg-neutral-900 border border-neutral-800 hover:border-neutral-700 rounded-2xl p-4 sm:p-5 transition shadow-md space-y-3"
+                >
+                  {/* CARD TOP ROW: ID + TIME + STATUS */}
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono font-black text-yellow-400 text-sm tracking-wide">
+                        #{q.quoteNumber}
+                      </span>
+                      <span className="text-[11px] text-neutral-400 flex items-center gap-1 font-medium">
+                        <Clock className="w-3 h-3 text-neutral-500" />
+                        {q.createdAt
+                          ? new Date(q.createdAt).toLocaleString("en-IN", {
+                              day: "numeric",
+                              month: "short",
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            })
+                          : "—"}
+                      </span>
+                    </div>
 
-                      {/* CUSTOMER & PHONE */}
-                      <td className="py-4 px-3">
-                        <div className="space-y-1">
-                          <div className="font-bold text-white flex items-center gap-1.5">
-                            <User className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
-                            <span>{q.customerName || "Customer Lead"}</span>
-                          </div>
-                          <div className="text-neutral-300 font-mono text-[11px] flex items-center gap-1.5">
-                            <Phone className="w-3 h-3 text-neutral-400 shrink-0" />
-                            <a href={`tel:${q.customerPhone}`} className="hover:text-yellow-400 transition underline decoration-dotted">
-                              {q.customerPhone || "—"}
-                            </a>
-                          </div>
-                        </div>
-                      </td>
+                    <span
+                      className={`text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
+                        q.status === "COMPLETED"
+                          ? "bg-green-950 text-green-400 border border-green-700"
+                          : q.status === "ORDERED" || q.status === "CONVERTED"
+                          ? "bg-blue-950 text-blue-400 border border-blue-700"
+                          : q.status === "CANCELLED"
+                          ? "bg-red-950 text-red-400 border border-red-800"
+                          : "bg-amber-950 text-amber-400 border border-amber-700"
+                      }`}
+                    >
+                      {q.status}
+                    </span>
+                  </div>
 
-                      {/* DEVICE & VALUATION */}
-                      <td className="py-4 px-3">
-                        <div className="space-y-1">
-                          <div className="font-bold text-white flex items-center gap-1.5">
-                            <Smartphone className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
-                            <span>{q.deviceName}</span>
-                          </div>
-                          <div className="text-[11px] text-neutral-400">
-                            CashALL Valuation: <span className="font-black text-green-400 font-price">₹{q.estimatedPrice.toLocaleString("en-IN")}</span>
-                          </div>
-                        </div>
-                      </td>
+                  {/* DEVICE & VALUATION ROW */}
+                  <div className="flex items-center justify-between gap-2 bg-black/40 border border-neutral-800/80 rounded-xl p-3">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <Smartphone className="w-4 h-4 text-yellow-400 shrink-0" />
+                      <span className="font-bold text-white text-xs sm:text-sm truncate">
+                        {q.deviceName}
+                      </span>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <span className="text-[10px] text-neutral-400 block font-semibold">Valuation</span>
+                      <span className="font-black text-green-400 font-price text-sm sm:text-base">
+                        ₹{q.estimatedPrice.toLocaleString("en-IN")}
+                      </span>
+                    </div>
+                  </div>
 
-                      {/* VISIT TIME & SLOT */}
-                      <td className="py-4 px-3">
-                        {q.pickupDate ? (
-                          <div className="inline-flex items-center gap-1.5 bg-neutral-900 border border-neutral-700 px-2.5 py-1 rounded-xl text-neutral-200 text-[11px] font-semibold">
-                            <Calendar className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
-                            <span>{q.pickupDate} ({q.pickupTimeSlot || "Standard Slot"})</span>
-                          </div>
-                        ) : (
-                          <span className="text-neutral-500 text-[11px]">Not Scheduled</span>
-                        )}
-                      </td>
+                  {/* CUSTOMER & CALL & SCHEDULE */}
+                  <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <div className="font-bold text-white flex items-center gap-1.5">
+                        <User className="w-3.5 h-3.5 text-neutral-400" />
+                        <span>{q.customerName || "Customer Lead"}</span>
+                      </div>
+                      {q.customerPhone && (
+                        <a
+                          href={`tel:${q.customerPhone}`}
+                          className="inline-flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-mono font-bold bg-emerald-950/60 border border-emerald-800/60 px-2 py-0.5 rounded-lg active:scale-95 transition"
+                          title="Call customer lead"
+                        >
+                          <Phone className="w-3 h-3" />
+                          <span>{q.customerPhone}</span>
+                        </a>
+                      )}
+                    </div>
 
-                      {/* BOOKING STATUS */}
-                      <td className="py-4 px-3">
-                        <span className={`text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider ${
-                          q.status === "COMPLETED"
-                            ? "bg-green-950 text-green-400 border border-green-700"
-                            : q.status === "ORDERED" || q.status === "CONVERTED"
-                            ? "bg-blue-950 text-blue-400 border border-blue-700"
-                            : "bg-amber-950 text-amber-400 border border-amber-700"
-                        }`}>
-                          {q.status}
-                        </span>
-                      </td>
+                    {q.pickupDate && (
+                      <div className="inline-flex items-center gap-1 text-neutral-300 text-[11px] bg-neutral-800 px-2.5 py-1 rounded-lg">
+                        <Calendar className="w-3 h-3 text-yellow-400" />
+                        <span>{q.pickupDate} ({q.pickupTimeSlot || "Slot"})</span>
+                      </div>
+                    )}
+                  </div>
 
-                      {/* GENERATED DATE & TIME */}
-                      <td className="py-4 px-3 text-neutral-300 font-mono text-[11px] whitespace-nowrap">
-                        {new Date(q.createdAt).toLocaleString("en-IN", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" })}
-                      </td>
+                  {/* ACTION BUTTONS TOOLBAR */}
+                  <div className="pt-2 border-t border-neutral-800/80 flex items-center gap-2">
+                    <button
+                      onClick={() => setSelectedQuoteForAnswers(q)}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 bg-neutral-800 hover:bg-neutral-700 text-cyan-300 border border-cyan-800/60 font-bold text-xs py-2 px-3 rounded-xl transition"
+                    >
+                      <ListChecks className="w-3.5 h-3.5 text-cyan-400" />
+                      <span>Answers</span>
+                    </button>
 
-                      {/* ACTION CONVERT, ANSWERS & CANCEL */}
-                      <td className="py-4 px-3">
-                        <div className="flex items-center gap-1.5 flex-wrap">
-                          <button
-                            onClick={() => setSelectedQuoteForAnswers(q)}
-                            className="inline-flex items-center gap-1 bg-cyan-950/80 hover:bg-cyan-900 text-cyan-300 border border-cyan-700 font-bold text-xs px-2.5 py-1.5 rounded-xl transition shadow-sm"
-                            title="View Customer Evaluation Answers & Conditions"
-                          >
-                            <ListChecks className="w-3.5 h-3.5 text-cyan-400" />
-                            <span>Answers</span>
-                          </button>
-
-                          {q.status !== "ORDERED" && q.status !== "COMPLETED" && q.status !== "CONVERTED" && q.status !== "CANCELLED" ? (
-                            <>
-                              <button
-                                onClick={() => {
-                                  setQuoteToConvert(q);
-                                  setConvertForm((prev) => ({
-                                    ...prev,
-                                    customerName: q.customerName || "",
-                                    customerPhone: q.customerPhone || "",
-                                  }));
-                                }}
-                                className="inline-flex items-center gap-1.5 bg-yellow-400 hover:bg-yellow-300 text-black font-black text-xs px-3 py-1.5 rounded-xl transition shadow-yellowGlow"
-                                title="Convert Quote into Order (CA...)"
-                              >
-                                <CheckCircle2 className="w-3.5 h-3.5" />
-                                <span>Convert (CA...)</span>
-                              </button>
-
-                              <button
-                                onClick={() => handleCancelQuoteAdmin(q)}
-                                className="inline-flex items-center gap-1 bg-red-950/80 hover:bg-red-900 text-red-300 border border-red-800 font-bold text-xs px-2.5 py-1.5 rounded-xl transition shadow-sm"
-                                title="Cancel / Reject Quote"
-                              >
-                                <Ban className="w-3.5 h-3.5 text-red-400" />
-                                <span>Cancel</span>
-                              </button>
-                            </>
-                          ) : q.status === "CANCELLED" ? (
-                            <span className="text-red-400 text-[11px] font-bold bg-red-950/60 border border-red-800 px-2 py-0.5 rounded-lg">
-                              CANCELLED
-                            </span>
-                          ) : (
-                            <span className="text-neutral-500 text-[11px] font-bold">Converted</span>
-                          )}
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                    {q.status !== "ORDERED" && q.status !== "COMPLETED" && q.status !== "CONVERTED" && q.status !== "CANCELLED" ? (
+                      <>
+                        <button
+                          onClick={() => {
+                            setQuoteToConvert(q);
+                            setConvertForm((prev) => ({
+                              ...prev,
+                              customerName: q.customerName || "",
+                              customerPhone: q.customerPhone || "",
+                            }));
+                          }}
+                          className="flex-1 inline-flex items-center justify-center gap-1.5 bg-yellow-400 hover:bg-yellow-300 text-black font-black text-xs py-2 px-3 rounded-xl transition shadow-yellowGlow"
+                        >
+                          <CheckCircle2 className="w-3.5 h-3.5" />
+                          <span>Convert (CA...)</span>
+                        </button>
+                        <button
+                          onClick={() => handleCancelQuoteAdmin(q)}
+                          className="p-2 bg-red-950/60 hover:bg-red-900/80 text-red-400 border border-red-800/60 rounded-xl transition"
+                          title="Cancel Quote"
+                        >
+                          <Ban className="w-3.5 h-3.5" />
+                        </button>
+                      </>
+                    ) : null}
+                  </div>
+                </div>
+              ))}
             </div>
           )}
         </div>

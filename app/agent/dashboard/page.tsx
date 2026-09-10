@@ -760,7 +760,7 @@ export default function AgentDashboardPage() {
               <span>Schedule Filter:</span>
             </div>
 
-            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 w-full md:w-auto">
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none flex-nowrap sm:flex-wrap w-full md:w-auto">
               {(
                 [
                   { id: "ALL", label: "ALL TIME", count: counts.all },
@@ -800,7 +800,7 @@ export default function AgentDashboardPage() {
 
           {/* SECONDARY ROW: STATUS FILTER PILLS & SEARCH INPUT */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-3 border-t border-neutral-800">
-            <div className="flex items-center gap-1.5 flex-wrap">
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none flex-nowrap sm:flex-wrap">
               <span className="text-[11px] font-bold text-neutral-400 mr-1 flex items-center gap-1">
                 <Filter className="w-3.5 h-3.5 text-neutral-500" />
                 Status:

@@ -11,105 +11,86 @@ export async function GET(req: NextRequest) {
     const phone = searchParams.get("phone");
     const name = searchParams.get("name");
 
-    let targetAgentUser: any = null;
+    // ─── SINGLE efficient agent lookup (one DB call) ──────────────────
+    let targetAgentId: string | null = null;
+    let targetAgentName: string | null = null;
 
-    if (agentId && agentId !== "undefined") {
-      const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(agentId);
-      if (isUuid) {
-        targetAgentUser = await prisma.user.findUnique({ where: { id: agentId } });
+    if (agentId && agentId !== "undefined" && /^[0-9a-f-]{36}$/i.test(agentId)) {
+      // Already have a UUID — use it directly, no extra DB lookup needed
+      targetAgentId = agentId;
+    } else {
+      // Build a single OR query to find the agent by phone or name in one shot
+      const orConditions: any[] = [];
+      if (phone) orConditions.push({ phone, role: "AGENT" as const });
+      if (name) {
+        orConditions.push({ name: { equals: name.trim(), mode: "insensitive" as const }, role: "AGENT" as const });
       }
-    }
-    if (!targetAgentUser && phone) {
-      targetAgentUser = await prisma.user.findFirst({
-        where: { phone, role: "AGENT", deletedAt: null },
-      });
-    }
-    if (!targetAgentUser && name) {
-      targetAgentUser = await prisma.user.findFirst({
-        where: {
-          role: "AGENT",
-          deletedAt: null,
-          name: { equals: name.trim(), mode: "insensitive" },
-        },
-      });
 
-      if (!targetAgentUser) {
-        const normalize = (str?: string | null) => (str || "").toLowerCase().replace(/[^a-z0-9]/g, "").trim();
-        const normInput = normalize(name);
-
-        const allAgents = await prisma.user.findMany({
-          where: { role: "AGENT", deletedAt: null },
-          select: { id: true, name: true, email: true, phone: true },
+      if (orConditions.length > 0) {
+        const agent = await prisma.user.findFirst({
+          where: {
+            deletedAt: null,
+            OR: orConditions,
+          },
+          select: { id: true, name: true },
         });
 
-        targetAgentUser = allAgents.find((a) => {
-          return normalize(a.name) === normInput || normalize(a.email?.split("@")[0]) === normInput;
-        });
+        if (agent) {
+          targetAgentId = agent.id;
+          targetAgentName = agent.name;
+        } else if (name) {
+          // Fuzzy fallback: normalize and compare in JS — fetch only agents (lightweight)
+          const normalize = (str?: string | null) =>
+            (str || "").toLowerCase().replace(/[^a-z0-9]/g, "").trim();
+          const normInput = normalize(name);
+          const allAgents = await prisma.user.findMany({
+            where: { role: "AGENT", deletedAt: null },
+            select: { id: true, name: true, email: true },
+          });
+          const matched = allAgents.find(
+            (a) =>
+              normalize(a.name) === normInput ||
+              normalize(a.email?.split("@")[0]) === normInput
+          );
+          if (matched) {
+            targetAgentId = matched.id;
+            targetAgentName = matched.name;
+          }
+        }
       }
     }
 
-    const whereOrConditions: any[] = [];
-
-    if (targetAgentUser?.id) {
-      whereOrConditions.push({ agentId: targetAgentUser.id });
-    }
-    if (targetAgentUser?.name) {
-      whereOrConditions.push({
-        agent: { name: { equals: targetAgentUser.name, mode: "insensitive" } },
-      });
-      whereOrConditions.push({
-        pickups: {
-          some: {
-            notes: { contains: targetAgentUser.name, mode: "insensitive" },
-          },
-        },
-      });
-    }
-    if (name) {
-      whereOrConditions.push({
-        agent: { name: { equals: name, mode: "insensitive" } },
-      });
-      whereOrConditions.push({
-        pickups: {
-          some: {
-            notes: { contains: name, mode: "insensitive" },
-          },
-        },
-      });
+    // If we couldn't identify any agent, return empty immediately
+    if (!targetAgentId) {
+      return NextResponse.json({ success: true, orders: [] });
     }
 
-    // STRICT ISOLATION FILTERING:
-    // If no agent identification criteria is provided or matched, return an empty array (0 orders).
-    if (whereOrConditions.length === 0) {
-      return NextResponse.json({
-        success: true,
-        orders: [],
-      });
-    }
-
-    const where: any = {
-      deletedAt: null,
-      OR: whereOrConditions,
-    };
-
+    // ─── Main order query — scoped strictly to this agent ────────────
     const orders = await prisma.order.findMany({
-      where,
+      where: {
+        deletedAt: null,
+        agentId: targetAgentId,
+      },
       include: {
-        user: true,
+        user: { select: { name: true, phone: true, email: true } },
         address: true,
-        pickups: true,
-        qcReports: {
-          orderBy: { inspectedAt: "desc" },
-        },
-        imeiRecords: true,
-        payments: true,
+        pickups: { take: 1, orderBy: { createdAt: "desc" } },
+        qcReports: { take: 1, orderBy: { inspectedAt: "desc" } },
+        imeiRecords: { take: 1, orderBy: { createdAt: "desc" } },
+        payments: { take: 1, orderBy: { createdAt: "desc" } },
         quote: {
-          include: {
+          select: {
+            quoteNumber: true,
+            estimatedPrice: true,
+            breakdownJson: true,
+            selectedAnswersJson: true,
             variant: {
-              include: {
+              select: {
+                storage: true,
                 model: {
-                  include: {
-                    brand: true,
+                  select: {
+                    name: true,
+                    brand: { select: { name: true } },
                   },
                 },
               },
@@ -117,10 +98,10 @@ export async function GET(req: NextRequest) {
           },
         },
       },
-      orderBy: {
-        createdAt: "desc",
-      },
+      orderBy: { createdAt: "desc" },
     });
+
+    const agentDisplayName = targetAgentName || "CashALL Agent";
 
     const mapped = orders.map((ord: any) => {
       let fullAddress = "Doorstep Location";
@@ -130,12 +111,13 @@ export async function GET(req: NextRequest) {
           ord.address.street,
           ord.address.area,
           ord.address.city,
-          ord.address.state ? `${ord.address.state} - ${ord.address.pincode}` : ord.address.pincode,
+          ord.address.state
+            ? `${ord.address.state} - ${ord.address.pincode}`
+            : ord.address.pincode,
         ].filter(Boolean);
         fullAddress = parts.join(", ");
       }
 
-      // Resolve accurate clean device name (priority on evaluated breakdownJson/selectedAnswersJson)
       let explicitDeviceName = "";
       if (ord.quote?.breakdownJson) {
         try {
@@ -146,23 +128,29 @@ export async function GET(req: NextRequest) {
       if (!explicitDeviceName && ord.quote?.selectedAnswersJson) {
         try {
           const sa = JSON.parse(ord.quote.selectedAnswersJson);
-          if (sa?.device && sa.device !== "Customer Mobile Device") explicitDeviceName = sa.device;
+          if (sa?.device && sa.device !== "Customer Mobile Device")
+            explicitDeviceName = sa.device;
         } catch {}
       }
 
-      let brandName = ord.quote?.variant?.model?.brand?.name || "";
-      let modelName = ord.quote?.variant?.model?.name || "";
-      let storage = ord.quote?.variant?.storage || "";
-
-      let deviceName = explicitDeviceName || formatDeviceName(brandName, modelName, storage) || "Mobile Device";
+      const brandName = ord.quote?.variant?.model?.brand?.name || "";
+      const modelName = ord.quote?.variant?.model?.name || "";
+      const storage = ord.quote?.variant?.storage || "";
+      let deviceName =
+        explicitDeviceName ||
+        formatDeviceName(brandName, modelName, storage) ||
+        "Mobile Device";
       deviceName = cleanDeviceName(deviceName);
 
       const activePickup = ord.pickups?.[0];
       const qcReport = ord.qcReports?.[0];
-      const imeiCode = ord.imeiRecords?.[0]?.code || qcReport?.imeiNumber || (ord as any).imeiNumber || "";
+      const imeiCode =
+        ord.imeiRecords?.[0]?.code ||
+        qcReport?.imeiNumber ||
+        (ord as any).imeiNumber ||
+        "";
       const activePayment = ord.payments?.[0];
 
-      // 1. Resolve initial online quote price
       let quotedPrice = 0;
       if (ord.quote?.breakdownJson) {
         try {
@@ -172,15 +160,13 @@ export async function GET(req: NextRequest) {
           }
         } catch {}
       }
-      if (!quotedPrice) {
-        quotedPrice = ord.quote?.estimatedPrice || 0;
-      }
+      if (!quotedPrice) quotedPrice = ord.quote?.estimatedPrice || 0;
 
-      // 2. Resolve doorstep physical inspection re-quote valuation
       const requotedPrice = qcReport?.revisedPrice ?? quotedPrice;
-
-      // 3. Resolve final agreed deal payout to seller
-      const finalSettled = ord.finalPrice ?? activePayment?.amount ?? (ord.status === "COMPLETED" ? (requotedPrice || quotedPrice) : null);
+      const finalSettled =
+        ord.finalPrice ??
+        activePayment?.amount ??
+        (ord.status === "COMPLETED" ? requotedPrice || quotedPrice : null);
       const finalPrice = finalSettled ?? requotedPrice ?? quotedPrice;
 
       return {
@@ -203,23 +189,45 @@ export async function GET(req: NextRequest) {
         pickupTimeSlot: ord.pickupTimeSlot || activePickup?.timeSlot || "Standard",
         pincode: ord.address?.pincode || "700001",
         status: ord.status,
-        paymentStatus: activePayment?.status || (ord.status === "COMPLETED" ? "PAID" : "PENDING"),
-        urn: ord.urn && !ord.urn.startsWith("PAID-") && ord.urn !== "128158907549" && ord.urn !== "623480124575" ? ord.urn : (activePayment?.transactionRef && !activePayment.transactionRef.startsWith("PAID-") && activePayment.transactionRef !== "128158907549" ? activePayment.transactionRef : null),
+        paymentStatus:
+          activePayment?.status ||
+          (ord.status === "COMPLETED" ? "PAID" : "PENDING"),
+        urn:
+          ord.urn &&
+          !ord.urn.startsWith("PAID-") &&
+          ord.urn !== "128158907549" &&
+          ord.urn !== "623480124575"
+            ? ord.urn
+            : activePayment?.transactionRef &&
+              !activePayment.transactionRef.startsWith("PAID-") &&
+              activePayment.transactionRef !== "128158907549"
+            ? activePayment.transactionRef
+            : null,
         paymentScreenshotUrl: ord.paymentScreenshotUrl || null,
-        agentName: targetAgentUser?.name || "CashALL Agent",
-        selectedAnswersJson: ord.quote?.selectedAnswersJson || (ord as any).selectedAnswersJson || null,
-        breakdownJson: ord.quote?.breakdownJson || (ord as any).breakdownJson || null,
-        priceDifferenceReason: qcReport?.priceDifferenceReason || ord.offers?.[0]?.priceDifferenceReason || (ord as any).priceDifferenceReason || null,
+        agentName: agentDisplayName,
+        selectedAnswersJson:
+          ord.quote?.selectedAnswersJson ||
+          (ord as any).selectedAnswersJson ||
+          null,
+        breakdownJson:
+          ord.quote?.breakdownJson || (ord as any).breakdownJson || null,
+        priceDifferenceReason:
+          qcReport?.priceDifferenceReason ||
+          ord.offers?.[0]?.priceDifferenceReason ||
+          (ord as any).priceDifferenceReason ||
+          null,
         quoteNumber: ord.quote?.quoteNumber || null,
-        cancellationReason: ord.cancellationReason || (activePickup?.notes?.startsWith("Order Cancelled:") ? activePickup.notes.replace(/^Order Cancelled:\s*/i, "") : null) || null,
+        cancellationReason:
+          ord.cancellationReason ||
+          (activePickup?.notes?.startsWith("Order Cancelled:")
+            ? activePickup.notes.replace(/^Order Cancelled:\s*/i, "")
+            : null) ||
+          null,
         createdAt: ord.createdAt,
       };
     });
 
-    return NextResponse.json({
-      success: true,
-      orders: mapped,
-    });
+    return NextResponse.json({ success: true, orders: mapped });
   } catch (error: any) {
     console.error("Agent orders API error:", error);
     return NextResponse.json(

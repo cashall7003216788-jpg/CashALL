@@ -258,31 +258,28 @@ export default function AdminReportsPage() {
           {adminLogins.length === 0 ? (
             <div className="text-center py-6 text-neutral-500 text-xs">No admin logins logged yet in database.</div>
           ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider font-extrabold">
-                    <th className="py-2.5 px-3">Admin Operator Name</th>
-                    <th className="py-2.5 px-3">Role</th>
-                    <th className="py-2.5 px-3">Exact Login Time (IST)</th>
-                    <th className="py-2.5 px-3">IP Address</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-700/60">
-                  {adminLogins.map((log) => (
-                    <tr key={log.id} className="hover:bg-neutral-750/50 transition">
-                      <td className="py-3 px-3 font-bold text-yellow-400">{log.adminName}</td>
-                      <td className="py-3 px-3">
-                        <span className="bg-yellow-950 text-yellow-400 border border-yellow-700 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">
-                          ADMIN
-                        </span>
-                      </td>
-                      <td className="py-3 px-3 text-neutral-300 font-mono">{log.loginTimeIST}</td>
-                      <td className="py-3 px-3 text-neutral-400 font-mono">{log.ipAddress}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+              {adminLogins.map((log) => (
+                <div
+                  key={log.id}
+                  className="bg-neutral-900 border border-neutral-800 hover:border-neutral-700 rounded-2xl p-4 transition shadow-md space-y-2"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-bold text-yellow-400 text-xs sm:text-sm">{log.adminName}</span>
+                    <span className="bg-yellow-950 text-yellow-400 border border-yellow-700 text-[9px] font-black px-2 py-0.5 rounded-full uppercase">
+                      ADMIN
+                    </span>
+                  </div>
+                  <div className="text-xs text-neutral-300 font-mono">
+                    <div className="text-[11px] text-neutral-400">Login Time (IST):</div>
+                    <div className="font-semibold">{log.loginTimeIST}</div>
+                  </div>
+                  <div className="pt-1.5 border-t border-neutral-800 text-[10px] text-neutral-400 font-mono flex items-center justify-between">
+                    <span>IP Address:</span>
+                    <span className="text-neutral-300">{log.ipAddress}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           )}
         </div>
@@ -302,35 +299,40 @@ export default function AdminReportsPage() {
               No support calls recorded yet. Logged calls will populate here automatically.
             </div>
           ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider font-extrabold">
-                    <th className="py-2.5 px-3">Support Agent</th>
-                    <th className="py-2.5 px-3">Quote ID</th>
-                    <th className="py-2.5 px-3">Customer & Phone</th>
-                    <th className="py-2.5 px-3">Call Outcome</th>
-                    <th className="py-2.5 px-3">Timestamp (IST)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-700/60">
-                  {supportCalls.map((sc) => (
-                    <tr key={sc.id} className="hover:bg-neutral-750/50 transition">
-                      <td className="py-3 px-3 font-bold text-white">{sc.supportPersonName}</td>
-                      <td className="py-3 px-3 font-mono font-bold text-yellow-400">{sc.quoteId}</td>
-                      <td className="py-3 px-3 text-neutral-300">
-                        {sc.customerName} ({sc.customerPhone})
-                      </td>
-                      <td className="py-3 px-3">
-                        <span className="bg-blue-950 text-blue-300 border border-blue-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">
-                          {sc.callOutcome.replace(/_/g, " ")}
-                        </span>
-                      </td>
-                      <td className="py-3 px-3 text-neutral-400 font-mono">{sc.callTimeIST}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {supportCalls.map((sc) => (
+                <div
+                  key={sc.id}
+                  className="bg-neutral-900 border border-neutral-800 hover:border-neutral-700 rounded-2xl p-4 transition shadow-md space-y-2.5"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-bold text-white text-xs">{sc.supportPersonName}</span>
+                    <span className="bg-blue-950 text-blue-300 border border-blue-800 text-[9px] font-black px-2 py-0.5 rounded-full uppercase">
+                      {sc.callOutcome.replace(/_/g, " ")}
+                    </span>
+                  </div>
+
+                  <div className="bg-black/40 border border-neutral-800/80 rounded-xl p-2.5 space-y-1 text-xs">
+                    <div className="flex items-center justify-between gap-1 font-mono text-[11px]">
+                      <span className="text-neutral-400">Quote:</span>
+                      <span className="text-yellow-400 font-bold">#{sc.quoteId}</span>
+                    </div>
+                    <div className="font-bold text-white truncate">{sc.customerName}</div>
+                    {sc.customerPhone && (
+                      <a
+                        href={`tel:${sc.customerPhone}`}
+                        className="inline-flex items-center gap-1 text-[11px] text-emerald-400 font-mono font-bold hover:underline"
+                      >
+                        📞 {sc.customerPhone}
+                      </a>
+                    )}
+                  </div>
+
+                  <div className="text-[10px] text-neutral-400 font-mono text-right">
+                    {sc.callTimeIST}
+                  </div>
+                </div>
+              ))}
             </div>
           )}
         </div>

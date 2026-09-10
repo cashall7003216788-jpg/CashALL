@@ -347,44 +347,59 @@ export default function AdminAgentsPage() {
                 No field agents registered yet. Use the form on the left to add your first field agent.
               </div>
             ) : (
-              <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs border-collapse">
-                  <thead>
-                    <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider">
-                      <th className="py-3 px-3">Agent Full Name</th>
-                      <th className="py-3 px-3">Mobile Number</th>
-                      <th className="py-3 px-3">Status</th>
-                      <th className="py-3 px-3">Leads Assigned</th>
-                      <th className="py-3 px-3">Date Registered</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-neutral-700/60">
-                    {agents.map((agent) => (
-                      <tr key={agent.id} className="hover:bg-neutral-750/50 transition">
-                        <td className="py-3.5 px-3 font-bold text-white">
-                          <div className="flex items-center gap-2">
-                            <User className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
-                            <span>{agent.name || "Field Agent"}</span>
-                          </div>
-                        </td>
-                        <td className="py-3.5 px-3 text-neutral-300 font-mono">
-                          {agent.phone || "—"}
-                        </td>
-                        <td className="py-3.5 px-3">
-                          <span className="bg-emerald-950 text-emerald-400 border border-emerald-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">
-                            {agent.status || "ACTIVE"}
+              <div className="space-y-3">
+                {agents.map((agent) => (
+                  <div
+                    key={agent.id}
+                    className="bg-neutral-900 border border-neutral-800 hover:border-neutral-700 rounded-2xl p-4 sm:p-5 transition shadow-md space-y-3"
+                  >
+                    {/* TOP ROW: NAME & STATUS */}
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <div className="w-8 h-8 rounded-xl bg-yellow-400/10 border border-yellow-400/30 flex items-center justify-center shrink-0">
+                          <User className="w-4 h-4 text-yellow-400" />
+                        </div>
+                        <div className="min-w-0">
+                          <span className="font-extrabold text-white text-sm block truncate">
+                            {agent.name || "Field Agent"}
                           </span>
-                        </td>
-                        <td className="py-3.5 px-3 font-bold text-yellow-400">
+                          <span className="text-[10px] text-neutral-400">
+                            Joined {new Date(agent.createdAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
+                          </span>
+                        </div>
+                      </div>
+
+                      <span className="bg-emerald-950 text-emerald-400 border border-emerald-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase shrink-0">
+                        {agent.status || "ACTIVE"}
+                      </span>
+                    </div>
+
+                    {/* CONTACT & ASSIGNMENT STATS */}
+                    <div className="flex items-center justify-between gap-2 bg-black/40 border border-neutral-800/80 rounded-xl p-3 flex-wrap">
+                      <div>
+                        <span className="text-[10px] text-neutral-400 block font-semibold">Mobile Contact</span>
+                        {agent.phone ? (
+                          <a
+                            href={`tel:${agent.phone}`}
+                            className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-mono font-bold text-xs mt-0.5 active:scale-95 transition"
+                          >
+                            <Phone className="w-3.5 h-3.5" />
+                            <span>{agent.phone}</span>
+                          </a>
+                        ) : (
+                          <span className="text-xs text-neutral-500">No phone</span>
+                        )}
+                      </div>
+
+                      <div className="text-right">
+                        <span className="text-[10px] text-neutral-400 block font-semibold">Assigned Leads</span>
+                        <span className="inline-flex items-center gap-1 text-xs font-black text-yellow-400 bg-yellow-400/10 border border-yellow-400/30 px-2.5 py-0.5 rounded-lg mt-0.5">
                           {agent._count?.assignedOrders ?? 0} Orders
-                        </td>
-                        <td className="py-3.5 px-3 text-neutral-400">
-                          {new Date(agent.createdAt).toLocaleDateString("en-IN")}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             )}
           </div>

@@ -25,6 +25,9 @@ import {
   Clock,
   Radio,
   Smartphone,
+  Copy,
+  Check,
+  PhoneCall,
 } from "lucide-react";
 
 interface CallRecordingItem {
@@ -80,6 +83,7 @@ export default function AdminSupportManagementPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
 
   // Form State: Full Name, User Name, Phone Number, Password
   const [formData, setFormData] = useState({
@@ -102,7 +106,6 @@ export default function AdminSupportManagementPage() {
         setSessionLogs(sessions);
         setRecordings(recs);
 
-        // Cache in sessionStorage for instantaneous subsequent page loads
         try {
           sessionStorage.setItem("cashall_admin_support_staff", JSON.stringify(staff));
           sessionStorage.setItem("cashall_admin_support_sessions", JSON.stringify(sessions));
@@ -119,7 +122,6 @@ export default function AdminSupportManagementPage() {
   }, []);
 
   useEffect(() => {
-    // Instant initial render from local cache if available (0ms loading)
     try {
       const cachedStaff = sessionStorage.getItem("cashall_admin_support_staff");
       const cachedSessions = sessionStorage.getItem("cashall_admin_support_sessions");
@@ -185,6 +187,12 @@ export default function AdminSupportManagementPage() {
     }
   };
 
+  const copyPassword = (id: string, text: string) => {
+    navigator.clipboard?.writeText(text);
+    setCopiedId(id);
+    setTimeout(() => setCopiedId(null), 2000);
+  };
+
   const handleDownloadCSV = () => {
     if (supportStaff.length === 0) return;
     const headers = [
@@ -246,67 +254,58 @@ export default function AdminSupportManagementPage() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-900 text-white flex flex-col lg:flex-row w-full max-w-full overflow-x-hidden">
+    <div className="min-h-screen bg-neutral-950 text-white flex flex-col lg:flex-row w-full max-w-full overflow-x-hidden">
       <AdminSidebar />
 
       <main className="flex-1 w-full max-w-full p-4 sm:p-6 lg:p-8 overflow-x-hidden space-y-6">
         {/* HEADER */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-neutral-800 p-6 rounded-3xl border border-neutral-700 shadow-xl print:hidden">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-neutral-900 p-6 rounded-3xl border border-neutral-800 shadow-xl print:hidden">
           <div>
             <div className="flex items-center gap-2">
               <Headset className="w-6 h-6 text-yellow-400" />
-              <h1 className="text-2xl font-black text-yellow-400 tracking-wide font-price">
-                Support Team Management
+              <h1 className="text-2xl font-black text-white tracking-wide font-price">
+                Support Team Console
               </h1>
             </div>
             <p className="text-xs text-neutral-400 mt-1">
-              Create support staff credentials, manage user names and passwords, and monitor customer call performance.
+              Register support personnel, manage access credentials, and monitor customer call productivity.
             </p>
           </div>
 
-          <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-2 flex-wrap">
             <Link
               href="/admin/support/calls"
-              className="flex items-center gap-2 bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-400 hover:to-amber-400 text-black text-xs font-black px-4 py-2.5 rounded-xl transition shadow-lg"
+              className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black text-xs font-black px-4 py-2.5 rounded-xl transition shadow-md"
             >
               <Radio className="w-4 h-4 text-black animate-pulse" />
-              <span>Customer Call Logs ({recordings.length})</span>
+              <span>Call Logs ({recordings.length})</span>
             </Link>
 
             <Link
               href="/support/dashboard"
               target="_blank"
-              className="flex items-center gap-1.5 bg-neutral-900 hover:bg-neutral-750 text-neutral-200 border border-neutral-700 text-xs font-bold px-3.5 py-2.5 rounded-xl transition shadow-md"
+              className="flex items-center gap-1.5 bg-neutral-950 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 text-xs font-bold px-3.5 py-2.5 rounded-xl transition"
             >
               <ExternalLink className="w-3.5 h-3.5 text-yellow-400" />
-              <span>Open Support Console</span>
+              <span>Support App</span>
             </Link>
 
             <button
               onClick={handleDownloadCSV}
               disabled={supportStaff.length === 0}
-              className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-lg disabled:opacity-50"
+              className="flex items-center gap-1.5 bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600/30 text-xs font-bold px-3.5 py-2.5 rounded-xl transition disabled:opacity-50"
             >
-              <Download className="w-4 h-4" />
-              <span>Download CSV</span>
-            </button>
-
-            <button
-              onClick={handleDownloadPDF}
-              disabled={supportStaff.length === 0}
-              className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shadow-lg disabled:opacity-50"
-            >
-              <Printer className="w-4 h-4" />
-              <span>Download PDF</span>
+              <Download className="w-3.5 h-3.5" />
+              <span>CSV</span>
             </button>
 
             <button
               onClick={fetchStaff}
               disabled={loading}
-              className="flex items-center gap-2 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2.5 rounded-xl transition shadow-lg disabled:opacity-50"
+              className="flex items-center gap-1.5 text-xs font-bold text-neutral-300 bg-neutral-800 hover:bg-neutral-700 px-3.5 py-2.5 rounded-xl border border-neutral-700 transition disabled:opacity-50"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
-              <span>Refresh Staff</span>
+              <span>Refresh</span>
             </button>
           </div>
         </div>
@@ -320,91 +319,90 @@ export default function AdminSupportManagementPage() {
         )}
 
         {success && (
-          <div className="flex items-center gap-2 bg-emerald-950/90 border border-emerald-800 text-emerald-300 text-xs p-4 rounded-2xl font-medium">
+          <div className="flex items-center gap-2 bg-emerald-950/80 border border-emerald-800 text-emerald-300 text-xs p-4 rounded-2xl font-medium">
             <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-400" />
             <span>{success}</span>
           </div>
         )}
 
-        {/* MAIN 2-COLUMN GRID: FORM + STAFF LIST */}
+        {/* 2-COLUMN LAYOUT: REGISTRATION FORM + ACTIVE STAFF CARDS */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          
-          {/* COLUMN 1: ONBOARDING FORM */}
-          <div className="lg:col-span-1 bg-neutral-800 border border-neutral-700 p-6 rounded-3xl shadow-xl space-y-5 h-fit print:hidden">
-            <div className="border-b border-neutral-700 pb-3 flex items-center gap-2">
+          {/* REGISTRATION FORM */}
+          <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-3xl shadow-xl space-y-4 print:hidden">
+            <div className="flex items-center gap-2 border-b border-neutral-800 pb-3">
               <UserPlus className="w-5 h-5 text-yellow-400" />
-              <h2 className="text-base font-extrabold text-white">Add New Support Staff</h2>
+              <h2 className="text-base font-extrabold text-white">Create Staff Member</h2>
             </div>
+            <p className="text-xs text-neutral-400">
+              Provide credentials for support agents to log into the CashALL Support App.
+            </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4" autoComplete="off">
-              {/* FULL NAME */}
+            <form onSubmit={handleSubmit} className="space-y-3.5 pt-2">
               <div>
-                <label className="block text-xs font-bold text-neutral-300 mb-1.5">
-                  Full Name <span className="text-red-400">*</span>
+                <label className="block text-[11px] font-bold text-neutral-300 uppercase tracking-wider mb-1.5">
+                  Full Legal Name
                 </label>
                 <div className="relative">
                   <User className="w-4 h-4 text-neutral-500 absolute left-3.5 top-3.5" />
                   <input
                     type="text"
                     required
-                    placeholder="Enter Full Name"
+                    placeholder="e.g., Ankan Ghosh"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:border-yellow-400 transition"
+                    className="w-full bg-neutral-950 border border-neutral-800 text-white text-xs rounded-xl pl-10 pr-3 py-3 focus:outline-none focus:border-yellow-400 transition"
                   />
                 </div>
               </div>
 
-              {/* USER NAME */}
               <div>
-                <label className="block text-xs font-bold text-neutral-300 mb-1.5">
-                  User Name <span className="text-red-400">*</span>
+                <label className="block text-[11px] font-bold text-neutral-300 uppercase tracking-wider mb-1.5">
+                  User Name / Email Handle
                 </label>
                 <div className="relative">
                   <ShieldCheck className="w-4 h-4 text-neutral-500 absolute left-3.5 top-3.5" />
                   <input
                     type="text"
                     required
-                    placeholder="Enter User Name"
+                    placeholder="e.g., ankan or ankan@cashall.in"
                     value={formData.username}
                     onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-                    className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:border-yellow-400 transition"
+                    className="w-full bg-neutral-950 border border-neutral-800 text-white text-xs rounded-xl pl-10 pr-3 py-3 focus:outline-none focus:border-yellow-400 transition"
                   />
                 </div>
               </div>
 
-              {/* PHONE NUMBER */}
               <div>
-                <label className="block text-xs font-bold text-neutral-300 mb-1.5">
-                  Phone Number <span className="text-red-400">*</span>
+                <label className="block text-[11px] font-bold text-neutral-300 uppercase tracking-wider mb-1.5">
+                  Official Phone Number (10 Digits)
                 </label>
                 <div className="relative">
                   <Phone className="w-4 h-4 text-neutral-500 absolute left-3.5 top-3.5" />
                   <input
                     type="tel"
                     required
-                    placeholder="Enter 10-digit Phone Number"
+                    placeholder="e.g., 9339676767"
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:border-yellow-400 transition"
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, "") })}
+                    maxLength={10}
+                    className="w-full bg-neutral-950 border border-neutral-800 text-white text-xs rounded-xl pl-10 pr-3 py-3 focus:outline-none focus:border-yellow-400 transition"
                   />
                 </div>
               </div>
 
-              {/* PASSWORD */}
               <div>
-                <label className="block text-xs font-bold text-neutral-300 mb-1.5">
-                  Login Password <span className="text-red-400">*</span>
+                <label className="block text-[11px] font-bold text-neutral-300 uppercase tracking-wider mb-1.5">
+                  Login Password
                 </label>
                 <div className="relative">
                   <Lock className="w-4 h-4 text-neutral-500 absolute left-3.5 top-3.5" />
                   <input
                     type={showPassword ? "text" : "password"}
                     required
-                    placeholder="Enter Login Password (or phone number)"
+                    placeholder="Set login password"
                     value={formData.password}
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                    className="w-full bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl pl-10 pr-10 py-3 focus:outline-none focus:border-yellow-400 transition"
+                    className="w-full bg-neutral-950 border border-neutral-800 text-white text-xs rounded-xl pl-10 pr-10 py-3 focus:outline-none focus:border-yellow-400 transition"
                   />
                   <button
                     type="button"
@@ -419,7 +417,7 @@ export default function AdminSupportManagementPage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-black text-xs py-3 rounded-xl transition shadow-yellowGlow disabled:opacity-60 mt-2"
+                className="w-full flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-black text-xs py-3 rounded-xl transition shadow-md disabled:opacity-60 mt-2"
               >
                 {submitting ? (
                   <Loader2 className="w-4 h-4 animate-spin text-black" />
@@ -433,14 +431,14 @@ export default function AdminSupportManagementPage() {
             </form>
           </div>
 
-          {/* COLUMN 2: ACTIVE SUPPORT STAFF TABLE */}
-          <div className="lg:col-span-2 bg-neutral-800 border border-neutral-700 p-6 rounded-3xl shadow-xl space-y-4 print:bg-white print:text-black print:p-0 print:border-none print:shadow-none">
-            <div className="flex items-center justify-between border-b border-neutral-700 pb-3">
+          {/* ACTIVE SUPPORT STAFF CARDS */}
+          <div className="lg:col-span-2 bg-neutral-900 border border-neutral-800 p-6 rounded-3xl shadow-xl space-y-4">
+            <div className="flex items-center justify-between border-b border-neutral-800 pb-3">
               <h2 className="text-base font-extrabold text-white flex items-center gap-2">
-                <Headset className="w-5 h-5 text-blue-400" />
-                <span>Active Support Team Staff ({supportStaff.length})</span>
+                <Headset className="w-5 h-5 text-yellow-400" />
+                <span>Active Support Team ({supportStaff.length})</span>
               </h2>
-              <span className="text-xs text-neutral-400 font-mono">Recorded in Database</span>
+              <span className="text-xs text-neutral-400 font-mono">Real-time Session Status</span>
             </div>
 
             {loading ? (
@@ -453,89 +451,113 @@ export default function AdminSupportManagementPage() {
                 No support team staff members registered yet.
               </div>
             ) : (
-              <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs border-collapse">
-                  <thead>
-                    <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider font-extrabold print:text-black print:border-gray-300">
-                      <th className="py-3 px-3">Staff Name</th>
-                      <th className="py-3 px-3">Phone & Email</th>
-                      <th className="py-3 px-3">Login Password</th>
-                      <th className="py-3 px-3">Session Status</th>
-                      <th className="py-3 px-3">Last Log In</th>
-                      <th className="py-3 px-3">Last Log Out</th>
-                      <th className="py-3 px-3">Calls Logged</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-neutral-700/60 print:divide-gray-200">
-                    {supportStaff.map((staff) => (
-                      <tr key={staff.id} className="hover:bg-neutral-750/50 transition">
-                        <td className="py-4 px-3">
-                          <div className="font-bold text-white flex items-center gap-1.5 print:text-black">
-                            <User className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
-                            <span>{staff.name}</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                {supportStaff.map((staff) => {
+                  const password = staff.loginPassword || staff.phone || "Ank933967@";
+                  const isOnline = staff.sessionStatus === "ONLINE";
+
+                  return (
+                    <div
+                      key={staff.id}
+                      className="bg-neutral-950 border border-neutral-800/90 hover:border-neutral-700 transition rounded-2xl p-4 space-y-3 shadow-sm flex flex-col justify-between"
+                    >
+                      <div>
+                        {/* HEADER: NAME + ONLINE STATUS */}
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="flex items-center gap-2 min-w-0">
+                            <div className="w-8 h-8 rounded-xl bg-yellow-400/10 text-yellow-400 flex items-center justify-center font-bold text-xs shrink-0 border border-yellow-400/20">
+                              {staff.name.charAt(0).toUpperCase()}
+                            </div>
+                            <div className="min-w-0">
+                              <h3 className="font-extrabold text-white text-sm truncate">{staff.name}</h3>
+                              <p className="text-[11px] text-neutral-400 truncate">{staff.email}</p>
+                            </div>
                           </div>
-                        </td>
-                        <td className="py-4 px-3">
-                          <div className="text-neutral-300 font-mono text-xs">{staff.phone}</div>
-                          <div className="text-neutral-400 text-[11px]">{staff.email}</div>
-                        </td>
-                        <td className="py-4 px-3">
-                          <span className="font-mono text-xs bg-neutral-900 border border-neutral-700 px-2.5 py-1 rounded-lg text-yellow-400 font-bold select-all inline-block">
-                            {staff.loginPassword || staff.phone || "Ank933967@"}
-                          </span>
-                        </td>
-                        <td className="py-4 px-3">
-                          <span className={`inline-flex items-center gap-1 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
-                            staff.sessionStatus === "ONLINE"
-                              ? "bg-emerald-950 text-emerald-400 border border-emerald-700"
-                              : "bg-neutral-800 text-neutral-400 border border-neutral-700"
-                          }`}>
-                            <span className={`w-1.5 h-1.5 rounded-full ${staff.sessionStatus === "ONLINE" ? "bg-emerald-400 animate-pulse" : "bg-neutral-500"}`} />
+
+                          <span
+                            className={`inline-flex items-center gap-1 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shrink-0 ${
+                              isOnline
+                                ? "bg-emerald-950/80 text-emerald-400 border border-emerald-700/60"
+                                : "bg-neutral-900 text-neutral-400 border border-neutral-800"
+                            }`}
+                          >
+                            <span
+                              className={`w-1.5 h-1.5 rounded-full ${
+                                isOnline ? "bg-emerald-400 animate-pulse" : "bg-neutral-600"
+                              }`}
+                            />
                             <span>{staff.sessionStatus || "OFFLINE"}</span>
                           </span>
-                        </td>
-                        <td className="py-4 px-3 text-green-400 font-medium text-[11px] whitespace-nowrap">
-                          {staff.lastLoginTime || "—"}
-                        </td>
-                        <td className="py-4 px-3 text-neutral-400 text-[11px] whitespace-nowrap">
-                          {staff.lastLogoutTime || "—"}
-                        </td>
-                        <td className="py-4 px-3">
-                          <div className="flex flex-col gap-1">
-                            <div className="inline-flex items-center gap-1 bg-blue-950/80 border border-blue-800 text-blue-300 px-2.5 py-0.5 rounded-lg text-xs font-bold font-mono w-fit">
-                              <MessageSquare className="w-3 h-3 text-blue-400" />
-                              <span>{staff.callsCount || 0} Calls</span>
-                            </div>
-                            {staff.totalTalkTime && (
-                              <div className="inline-flex items-center gap-1 text-[11px] text-amber-400 font-mono">
-                                <Clock className="w-3 h-3" />
-                                <span>{staff.totalTalkTime} Talk</span>
-                              </div>
-                            )}
-                            {(staff.recordingsCount ?? 0) > 0 && (
-                              <div className="inline-flex items-center gap-1 text-[10px] text-emerald-400 font-mono">
-                                <Volume2 className="w-2.5 h-2.5" />
-                                <span>{staff.recordingsCount} Audios</span>
-                              </div>
-                            )}
+                        </div>
+
+                        {/* PHONE & DIRECT CALL */}
+                        <div className="mt-3 flex items-center justify-between gap-2 bg-neutral-900/80 px-3 py-2 rounded-xl border border-neutral-800/80">
+                          <div className="flex items-center gap-2 min-w-0">
+                            <Phone className="w-3.5 h-3.5 text-neutral-400 shrink-0" />
+                            <span className="font-mono text-xs text-neutral-200">{staff.phone}</span>
                           </div>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                          {staff.phone && (
+                            <a
+                              href={`tel:${staff.phone}`}
+                              className="text-[10px] font-bold text-yellow-400 hover:text-yellow-300 transition"
+                            >
+                              Direct Call
+                            </a>
+                          )}
+                        </div>
+
+                        {/* PASSWORD BADGE WITH 1-TAP COPY */}
+                        <div className="mt-2.5 flex items-center justify-between gap-2 bg-neutral-900/60 px-3 py-2 rounded-xl border border-neutral-800/60">
+                          <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider">
+                            Password:
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => copyPassword(staff.id, password)}
+                            className="flex items-center gap-1.5 font-mono text-xs text-yellow-400 hover:text-yellow-300 transition bg-yellow-400/10 px-2 py-0.5 rounded border border-yellow-400/20"
+                            title="Click to copy password"
+                          >
+                            <span>{password}</span>
+                            {copiedId === staff.id ? (
+                              <Check className="w-3 h-3 text-emerald-400" />
+                            ) : (
+                              <Copy className="w-3 h-3 text-yellow-400" />
+                            )}
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* STATS FOOTER */}
+                      <div className="pt-2 border-t border-neutral-800/80 flex items-center justify-between text-[11px] text-neutral-400">
+                        <div className="flex items-center gap-1 font-semibold text-white">
+                          <PhoneCall className="w-3.5 h-3.5 text-yellow-400" />
+                          <span>{staff.callsCount || 0} Calls</span>
+                        </div>
+                        {staff.totalTalkTime && (
+                          <div className="flex items-center gap-1 font-mono text-amber-300">
+                            <Clock className="w-3 h-3" />
+                            <span>{staff.totalTalkTime}</span>
+                          </div>
+                        )}
+                        <span className="text-[10px] font-mono text-neutral-500">
+                          {staff.lastLoginTime ? `Active: ${staff.lastLoginTime.split(" ")[0]}` : "No login yet"}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             )}
           </div>
         </div>
 
-        {/* SUPPORT LOGIN & LOGOUT ATTENDANCE AUDIT LOG */}
-        <div className="bg-neutral-800 border border-neutral-700 p-6 rounded-3xl shadow-xl space-y-4 print:hidden">
-          <div className="flex items-center justify-between border-b border-neutral-700 pb-3">
+        {/* SUPPORT ATTENDANCE & SESSION AUDIT LOG CARDS */}
+        <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-3xl shadow-xl space-y-4 print:hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-neutral-800 pb-3">
             <div>
               <h2 className="text-base font-extrabold text-white flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-yellow-400" />
-                <span>Support Team Attendance & Session Audit Log ({sessionLogs.length})</span>
+                <span>Support Attendance &amp; Activity Stream ({sessionLogs.length})</span>
               </h2>
               <p className="text-xs text-neutral-400 mt-0.5">
                 Exact log in and log out timestamps recorded for support staff members
@@ -556,7 +578,7 @@ export default function AdminSupportManagementPage() {
                 className="flex items-center gap-1.5 text-xs text-yellow-400 bg-yellow-400/10 hover:bg-yellow-400/20 px-3 py-1.5 rounded-xl border border-yellow-400/20 transition"
               >
                 <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
-                <span>Refresh Sessions</span>
+                <span>Refresh</span>
               </button>
             </div>
           </div>
@@ -566,57 +588,53 @@ export default function AdminSupportManagementPage() {
               No recent session logs recorded. Activity will automatically log when staff signs in or signs out.
             </div>
           ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider font-extrabold">
-                    <th className="py-3 px-3">Staff Name</th>
-                    <th className="py-3 px-3">Session Event</th>
-                    <th className="py-3 px-3">Date & Time</th>
-                    <th className="py-3 px-3">Contact Phone</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-700/60">
-                  {sessionLogs.map((log) => (
-                    <tr key={log.id} className="hover:bg-neutral-750/50 transition">
-                      <td className="py-3.5 px-3 font-bold text-white flex items-center gap-2">
-                        <User className="w-3.5 h-3.5 text-yellow-400" />
-                        <span>{log.staffName}</span>
-                      </td>
-                      <td className="py-3.5 px-3">
-                        <span className={`inline-flex items-center gap-1.5 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider ${
-                          log.action === "SUPPORT_LOGIN"
-                            ? "bg-green-950 text-green-400 border border-green-700"
-                            : "bg-neutral-800 text-neutral-300 border border-neutral-600"
-                        }`}>
-                          <span className={`w-1.5 h-1.5 rounded-full ${log.action === "SUPPORT_LOGIN" ? "bg-green-400 animate-pulse" : "bg-neutral-400"}`} />
-                          <span>{log.event}</span>
-                        </span>
-                      </td>
-                      <td className="py-3.5 px-3 text-neutral-200 font-mono text-xs">
-                        {log.timestamp}
-                      </td>
-                      <td className="py-3.5 px-3 text-neutral-400 font-mono">
-                        {log.phone}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {sessionLogs.map((log) => (
+                <div
+                  key={log.id}
+                  className="bg-neutral-950 border border-neutral-800 rounded-2xl p-3.5 space-y-2.5 shadow-sm"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <User className="w-4 h-4 text-yellow-400 shrink-0" />
+                      <span className="font-extrabold text-white text-xs truncate">{log.staffName}</span>
+                    </div>
+                    <span
+                      className={`inline-flex items-center gap-1 text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider ${
+                        log.action === "SUPPORT_LOGIN"
+                          ? "bg-green-950 text-green-400 border border-green-700/60"
+                          : "bg-neutral-900 text-neutral-400 border border-neutral-800"
+                      }`}
+                    >
+                      <span
+                        className={`w-1.5 h-1.5 rounded-full ${
+                          log.action === "SUPPORT_LOGIN" ? "bg-green-400 animate-pulse" : "bg-neutral-500"
+                        }`}
+                      />
+                      <span>{log.event}</span>
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between text-[11px] text-neutral-400 font-mono pt-1 border-t border-neutral-800/80">
+                    <span>{log.timestamp}</span>
+                    <span>{log.phone}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           )}
         </div>
 
-        {/* SECTION 4: CALL LOG FEED */}
-        <div className="bg-neutral-800 border border-neutral-700 p-6 rounded-3xl shadow-xl space-y-4 print:hidden">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-neutral-700 pb-3">
+        {/* CUSTOMER CALL LOGS CARDS */}
+        <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-3xl shadow-xl space-y-4 print:hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-neutral-800 pb-3">
             <div>
               <h2 className="text-base font-extrabold text-white flex items-center gap-2">
                 <Radio className="w-5 h-5 text-emerald-400 animate-pulse" />
                 <span>Customer Call Logs ({recordings.length})</span>
               </h2>
               <p className="text-xs text-neutral-400 mt-0.5">
-                Automatically synced by the CashALL Android Caller App — Date, Time, Duration &amp; Details
+                Synced automatically by CashALL Caller App with duration, outcomes, and timestamps
               </p>
             </div>
 
@@ -625,18 +643,18 @@ export default function AdminSupportManagementPage() {
                 href="/admin/support/calls"
                 className="inline-flex items-center gap-1.5 text-xs text-black font-extrabold bg-yellow-400 hover:bg-yellow-300 px-3.5 py-1.5 rounded-xl transition shadow-md"
               >
-                <span>Open Dedicated Calls Sub-Page →</span>
+                <span>Dedicated Audio Logs →</span>
               </Link>
               <input
                 type="text"
-                placeholder="Search Phone or Agent..."
+                placeholder="Search phone or agent..."
                 value={recordingSearch}
                 onChange={(e) => setRecordingSearch(e.target.value)}
-                className="bg-neutral-900 border border-neutral-700 text-white text-xs rounded-xl px-3 py-1.5 focus:outline-none focus:border-yellow-400"
+                className="bg-neutral-950 border border-neutral-800 text-white text-xs rounded-xl px-3 py-1.5 focus:outline-none focus:border-yellow-400 transition"
               />
               <button
                 onClick={fetchStaff}
-                className="inline-flex items-center gap-1.5 text-xs text-neutral-300 bg-neutral-700 hover:bg-neutral-600 px-3 py-1.5 rounded-xl font-bold transition"
+                className="inline-flex items-center gap-1.5 text-xs text-neutral-300 bg-neutral-800 hover:bg-neutral-700 px-3 py-1.5 rounded-xl font-bold transition border border-neutral-700"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
                 <span>Refresh</span>
@@ -649,85 +667,89 @@ export default function AdminSupportManagementPage() {
               No customer calls logged yet. Once the caller app dials customers, call logs will appear here automatically.
             </div>
           ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs border-collapse">
-                <thead>
-                  <tr className="border-b border-neutral-700 text-neutral-400 uppercase tracking-wider font-extrabold">
-                    <th className="py-3 px-3">Agent</th>
-                    <th className="py-3 px-3">Customer &amp; Device</th>
-                    <th className="py-3 px-3">Date &amp; Time (IST)</th>
-                    <th className="py-3 px-3">Duration</th>
-                    <th className="py-3 px-3">Call Outcome</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-700/60">
-                  {recordings
-                    .filter((rec) => {
-                      if (!recordingSearch.trim()) return true;
-                      const q = recordingSearch.toLowerCase();
-                      return (
-                        rec.customerPhone.includes(q) ||
-                        rec.customerName?.toLowerCase().includes(q) ||
-                        rec.deviceName?.toLowerCase().includes(q) ||
-                        rec.supportPersonName.toLowerCase().includes(q) ||
-                        rec.supportPersonPhone.includes(q) ||
-                        rec.quoteId?.toLowerCase().includes(q)
-                      );
-                    })
-                    .map((rec) => (
-                      <tr key={rec.id} className="hover:bg-neutral-750/50 transition">
-                        <td className="py-3.5 px-3 font-bold text-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+              {recordings
+                .filter((rec) => {
+                  if (!recordingSearch.trim()) return true;
+                  const q = recordingSearch.toLowerCase();
+                  return (
+                    rec.customerPhone.includes(q) ||
+                    rec.customerName?.toLowerCase().includes(q) ||
+                    rec.deviceName?.toLowerCase().includes(q) ||
+                    rec.supportPersonName.toLowerCase().includes(q) ||
+                    rec.supportPersonPhone.includes(q) ||
+                    rec.quoteId?.toLowerCase().includes(q)
+                  );
+                })
+                .map((rec) => (
+                  <div
+                    key={rec.id}
+                    className="bg-neutral-950 border border-neutral-800 hover:border-neutral-700 transition rounded-2xl p-4 space-y-3 shadow-sm flex flex-col justify-between"
+                  >
+                    <div>
+                      {/* CALL HEADER: AGENT & OUTCOME */}
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="min-w-0">
                           <div className="flex items-center gap-1.5">
                             <User className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
-                            <span>{rec.supportPersonName}</span>
+                            <span className="font-bold text-white text-xs truncate">{rec.supportPersonName}</span>
                           </div>
-                          <div className="text-[10px] text-neutral-400 font-mono">{rec.supportPersonPhone}</div>
-                        </td>
-                        <td className="py-3.5 px-3">
-                          <div className="font-bold text-white flex items-center gap-1.5">
-                            <User className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
-                            <span>{rec.customerName || "Customer Lead"}</span>
-                          </div>
-                          <div className="text-xs text-neutral-300 font-mono flex items-center gap-1 mt-0.5">
-                            <Phone className="w-3 h-3 text-neutral-400 shrink-0" />
-                            <span>{rec.customerPhone}</span>
-                          </div>
-                          {rec.deviceName && rec.deviceName !== "—" && (
-                            <div className="text-[11px] text-amber-300/90 font-medium flex items-center gap-1 mt-1">
-                              <Smartphone className="w-3 h-3 text-yellow-400 shrink-0" />
-                              <span>{rec.deviceName}</span>
-                            </div>
-                          )}
-                          {rec.quoteId && rec.quoteId !== "N/A" && (
-                            <div className="inline-block text-[10px] font-mono text-yellow-400 font-extrabold bg-yellow-950/60 border border-yellow-800/80 px-2 py-0.5 rounded mt-1">
-                              Quote: {rec.quoteId}
-                            </div>
-                          )}
-                        </td>
-                        <td className="py-3.5 px-3 text-neutral-300 font-mono text-[11px] whitespace-nowrap">
-                          {rec.createdAtIST}
-                        </td>
-                        <td className="py-3.5 px-3">
-                          <span className="inline-flex items-center gap-1 bg-amber-950/80 border border-amber-800 text-amber-300 font-mono font-bold px-2 py-0.5 rounded-lg text-xs">
-                            <Clock className="w-3 h-3 text-amber-400" />
-                            <span>{rec.durationFormatted}</span>
-                          </span>
-                        </td>
-                        <td className="py-3.5 px-3">
-                          <span className={`text-[10px] font-black uppercase px-2.5 py-1 rounded-full border ${
+                          <span className="text-[10px] text-neutral-400 font-mono">{rec.supportPersonPhone}</span>
+                        </div>
+
+                        <span
+                          className={`text-[9px] font-black uppercase px-2.5 py-0.5 rounded-full border shrink-0 ${
                             rec.callOutcome === "CALL_COMPLETED"
-                              ? "bg-emerald-950 border-emerald-700 text-emerald-400"
+                              ? "bg-emerald-950 border-emerald-700/70 text-emerald-400"
                               : rec.callOutcome === "CUSTOMER_INTERESTED"
-                              ? "bg-blue-950 border-blue-700 text-blue-400"
-                              : "bg-neutral-900 border-neutral-700 text-neutral-300"
-                          }`}>
-                            {rec.callOutcome.replace(/_/g, " ")}
+                              ? "bg-blue-950 border-blue-700/70 text-blue-400"
+                              : "bg-neutral-900 border-neutral-800 text-neutral-300"
+                          }`}
+                        >
+                          {rec.callOutcome.replace(/_/g, " ")}
+                        </span>
+                      </div>
+
+                      {/* CUSTOMER & DEVICE */}
+                      <div className="mt-3 bg-neutral-900/80 p-3 rounded-xl border border-neutral-800/80 space-y-1.5">
+                        <div className="flex items-center justify-between">
+                          <span className="font-bold text-white text-xs truncate">
+                            {rec.customerName || "Customer Lead"}
                           </span>
-                        </td>
-                      </tr>
-                    ))}
-                </tbody>
-              </table>
+                          <a
+                            href={`tel:${rec.customerPhone}`}
+                            className="text-emerald-400 hover:text-emerald-300 font-mono text-xs flex items-center gap-1 font-semibold"
+                          >
+                            <Phone className="w-3 h-3" />
+                            <span>{rec.customerPhone}</span>
+                          </a>
+                        </div>
+
+                        {rec.deviceName && rec.deviceName !== "—" && (
+                          <div className="text-[11px] text-amber-300/90 font-medium flex items-center gap-1.5 truncate">
+                            <Smartphone className="w-3.5 h-3.5 text-yellow-400 shrink-0" />
+                            <span className="truncate">{rec.deviceName}</span>
+                          </div>
+                        )}
+
+                        {rec.quoteId && rec.quoteId !== "N/A" && (
+                          <div className="inline-block text-[10px] font-mono text-yellow-400 font-extrabold bg-yellow-400/10 border border-yellow-400/20 px-2 py-0.5 rounded mt-0.5">
+                            Quote: {rec.quoteId}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* FOOTER: DURATION & TIMESTAMP */}
+                    <div className="pt-2 border-t border-neutral-800/80 flex items-center justify-between text-[11px] font-mono">
+                      <span className="text-neutral-400">{rec.createdAtIST}</span>
+                      <span className="inline-flex items-center gap-1 text-amber-300 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/20 font-bold">
+                        <Clock className="w-3 h-3" />
+                        <span>{rec.durationFormatted}</span>
+                      </span>
+                    </div>
+                  </div>
+                ))}
             </div>
           )}
         </div>

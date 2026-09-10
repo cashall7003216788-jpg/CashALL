@@ -957,21 +957,21 @@ export default function AdminOrdersPage() {
         </div>
 
         {/* OPERATIONAL LIFECYCLE FILTERS BAR */}
-        <div className="bg-neutral-800 p-4 sm:p-5 rounded-3xl border border-neutral-700 shadow-xl space-y-4 print:hidden">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <div className="bg-neutral-800 p-3.5 sm:p-5 rounded-2xl sm:rounded-3xl border border-neutral-700 shadow-xl space-y-3 sm:space-y-4 print:hidden">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4">
             {/* Filter Pills */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0 scrollbar-none">
+            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none flex-nowrap sm:flex-wrap">
               {/* 1. All Orders */}
               <button
                 type="button"
                 onClick={() => setSelectedFilter("ALL")}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+                className={`flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs font-bold transition-all border ${
                   selectedFilter === "ALL"
                     ? "bg-yellow-400 text-black border-yellow-400 shadow-md"
                     : "bg-neutral-900/70 text-neutral-300 border-neutral-700 hover:border-neutral-500 hover:text-white"
                 }`}
               >
-                <span>All Orders</span>
+                <span>All</span>
                 <span
                   className={`px-1.5 py-0.5 rounded-md text-[10px] font-black ${
                     selectedFilter === "ALL"
@@ -987,14 +987,14 @@ export default function AdminOrdersPage() {
               <button
                 type="button"
                 onClick={() => setSelectedFilter("PENDING_TO_ASSIGN")}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+                className={`flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs font-bold transition-all border ${
                   selectedFilter === "PENDING_TO_ASSIGN"
                     ? "bg-amber-500 text-black border-amber-400 shadow-md shadow-amber-500/20"
                     : "bg-neutral-900/70 text-amber-400/90 border-neutral-700 hover:border-amber-500/50 hover:text-amber-300"
                 }`}
               >
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                <span>Pending to Assign</span>
+                <span>Pending</span>
                 <span
                   className={`px-1.5 py-0.5 rounded-md text-[10px] font-black ${
                     selectedFilter === "PENDING_TO_ASSIGN"
@@ -1010,7 +1010,7 @@ export default function AdminOrdersPage() {
               <button
                 type="button"
                 onClick={() => setSelectedFilter("ASSIGNED")}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+                className={`flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs font-bold transition-all border ${
                   selectedFilter === "ASSIGNED"
                     ? "bg-blue-500 text-white border-blue-400 shadow-md shadow-blue-500/20"
                     : "bg-neutral-900/70 text-blue-400/90 border-neutral-700 hover:border-blue-500/50 hover:text-blue-300"
@@ -1033,9 +1033,9 @@ export default function AdminOrdersPage() {
               <button
                 type="button"
                 onClick={() => setSelectedFilter("COMPLETED")}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+                className={`flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs font-bold transition-all border ${
                   selectedFilter === "COMPLETED"
-                    ? "bg-emerald-500 text-black border-emerald-400 shadow-md shadow-emerald-500/20"
+                    ? "bg-emerald-500 text-white border-emerald-400 shadow-md shadow-emerald-500/20"
                     : "bg-neutral-900/70 text-emerald-400/90 border-neutral-700 hover:border-emerald-500/50 hover:text-emerald-300"
                 }`}
               >
@@ -1044,7 +1044,7 @@ export default function AdminOrdersPage() {
                 <span
                   className={`px-1.5 py-0.5 rounded-md text-[10px] font-black ${
                     selectedFilter === "COMPLETED"
-                      ? "bg-black/25 text-black"
+                      ? "bg-black/25 text-white"
                       : "bg-emerald-950/60 text-emerald-400 border border-emerald-800/40"
                   }`}
                 >
@@ -1052,11 +1052,11 @@ export default function AdminOrdersPage() {
                 </span>
               </button>
 
-              {/* 5. Cancelled */}
+              {/* 7. Cancelled */}
               <button
                 type="button"
                 onClick={() => setSelectedFilter("CANCELLED")}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap border ${
+                className={`flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs font-bold transition-all border ${
                   selectedFilter === "CANCELLED"
                     ? "bg-rose-500 text-white border-rose-400 shadow-md shadow-rose-500/20"
                     : "bg-neutral-900/70 text-rose-400/90 border-neutral-700 hover:border-rose-500/50 hover:text-rose-300"
@@ -1077,7 +1077,7 @@ export default function AdminOrdersPage() {
             </div>
 
             {/* Quick Search */}
-            <div className="relative flex-1 max-w-md min-w-[240px]">
+            <div className="relative flex-1 max-w-md w-full">
               <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400 pointer-events-none" />
               <input
                 type="text"
@@ -1146,7 +1146,7 @@ export default function AdminOrdersPage() {
           {!loading && filteredOrders.map((ord: Order) => (
             <div
               key={ord.id}
-              className="bg-neutral-800 border border-neutral-700 rounded-3xl p-6 shadow-xl hover:border-neutral-600 transition-all space-y-4"
+              className="bg-neutral-800 border border-neutral-700 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-xl hover:border-neutral-600 transition-all space-y-4"
             >
               {/* ROW 1: TOP BADGES & TIMESTAMPS */}
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-neutral-700 pb-4">

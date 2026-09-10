@@ -378,62 +378,78 @@ function AdminInspectionsContent() {
           </div>
         ) : null}
 
-        {/* ALL ORDERS TABLE FOR QUICK INSPECTION SELECTION */}
-        <div className="bg-neutral-800 border border-neutral-700 rounded-3xl p-6 shadow-xl space-y-4">
+        {/* ALL ORDERS CARDS FOR QUICK INSPECTION SELECTION */}
+        <div className="bg-neutral-800 border border-neutral-700 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-xl space-y-4">
           <div className="flex items-center justify-between border-b border-neutral-700 pb-3">
             <h2 className="text-sm font-bold text-white uppercase tracking-wider">
               Doorstep Physical Inspection Log ({allOrders.length} Orders)
             </h2>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
-              <thead>
-                <tr className="bg-neutral-900 text-neutral-400 font-bold uppercase tracking-wider border-b border-neutral-700">
-                  <th className="p-3">Order ID</th>
-                  <th className="p-3">Customer & Location</th>
-                  <th className="p-3">Device</th>
-                  <th className="p-3">Base Valuation</th>
-                  <th className="p-3">Settled Payout</th>
-                  <th className="p-3">Status</th>
-                  <th className="p-3 text-right">Action</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-neutral-700">
-                {allOrders.map((ord) => (
-                  <tr key={ord.id} className={`hover:bg-neutral-750 transition ${order?.id === ord.id ? "bg-neutral-750/80" : ""}`}>
-                    <td className="p-3 font-extrabold text-yellow-400 font-price">#{ord.orderNumber}</td>
-                    <td className="p-3">
-                      <div className="font-bold text-white">{ord.customerName}</div>
-                      <div className="text-[11px] text-neutral-400">{ord.customerPhone}</div>
-                    </td>
-                    <td className="p-3 font-bold text-neutral-200">{ord.deviceName}</td>
-                    <td className="p-3 text-neutral-400">₹{(ord.estimatedPrice || 0).toLocaleString("en-IN")}</td>
-                    <td className="p-3 font-bold text-green-400 font-price">
+          <div className="space-y-3">
+            {allOrders.map((ord) => (
+              <div
+                key={ord.id}
+                className={`bg-neutral-900 border ${
+                  order?.id === ord.id ? "border-yellow-400/80 bg-neutral-850" : "border-neutral-800 hover:border-neutral-700"
+                } rounded-2xl p-4 transition shadow-md space-y-3`}
+              >
+                {/* TOP ROW: ID + STATUS */}
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-mono font-black text-yellow-400 text-sm">
+                    #{ord.orderNumber}
+                  </span>
+                  <span
+                    className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
+                      ["COMPLETED", "INSPECTION_COMPLETED"].includes(ord.status)
+                        ? "bg-green-950 text-green-400 border border-green-800"
+                        : "bg-amber-950 text-yellow-400 border border-yellow-800"
+                    }`}
+                  >
+                    {ord.status.replace(/_/g, " ")}
+                  </span>
+                </div>
+
+                {/* DEVICE & PAYOUT ROW */}
+                <div className="flex items-center justify-between gap-2 bg-black/40 border border-neutral-800/80 rounded-xl p-3">
+                  <div className="min-w-0">
+                    <span className="text-[11px] text-neutral-400 block font-semibold">Device</span>
+                    <span className="font-bold text-white text-xs sm:text-sm truncate block">
+                      {ord.deviceName}
+                    </span>
+                  </div>
+                  <div className="text-right shrink-0">
+                    <span className="text-[10px] text-neutral-400 block font-semibold">Settled Payout</span>
+                    <span className="font-black text-green-400 font-price text-sm sm:text-base">
                       ₹{(ord.revisedPrice || ord.estimatedPrice || 0).toLocaleString("en-IN")}
-                    </td>
-                    <td className="p-3">
-                      <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full ${
-                        ["COMPLETED", "INSPECTION_COMPLETED"].includes(ord.status)
-                          ? "bg-green-950 text-green-400 border border-green-800"
-                          : "bg-amber-950 text-yellow-400 border border-yellow-800"
-                      }`}>
-                        {ord.status.replace(/_/g, " ")}
-                      </span>
-                    </td>
-                    <td className="p-3 text-right">
-                      <button
-                        onClick={() => handleSelectOrder(ord)}
-                        className="inline-flex items-center gap-1 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-3 py-1 rounded-lg transition"
+                    </span>
+                  </div>
+                </div>
+
+                {/* CUSTOMER & ACTION */}
+                <div className="flex items-center justify-between gap-3 pt-1">
+                  <div className="min-w-0">
+                    <div className="font-bold text-white text-xs truncate">{ord.customerName}</div>
+                    {ord.customerPhone && (
+                      <a
+                        href={`tel:${ord.customerPhone}`}
+                        className="text-[11px] text-neutral-400 hover:text-yellow-400 font-mono transition"
                       >
-                        <span>Inspect</span>
-                        <ArrowRight className="w-3 h-3" />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                        {ord.customerPhone}
+                      </a>
+                    )}
+                  </div>
+
+                  <button
+                    onClick={() => handleSelectOrder(ord)}
+                    className="inline-flex items-center gap-1.5 text-xs font-black text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2 rounded-xl transition shadow-yellowGlow shrink-0"
+                  >
+                    <span>Inspect</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

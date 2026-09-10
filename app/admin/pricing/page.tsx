@@ -164,81 +164,78 @@ export default function AdminPricingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-bg flex flex-col lg:flex-row w-full max-w-full overflow-x-hidden">
+    <div className="min-h-screen bg-neutral-900 text-white flex flex-col lg:flex-row w-full max-w-full overflow-x-hidden">
       <AdminSidebar />
 
-      <main className="flex-1 w-full max-w-full p-4 sm:p-6 lg:p-8 overflow-x-hidden space-y-6 sm:space-y-8">
-        
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <main className="flex-1 w-full max-w-full p-4 sm:p-6 lg:p-8 overflow-x-hidden space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-neutral-800 p-6 rounded-3xl border border-neutral-700 shadow-xl">
           <div>
-            <h1 className="text-2xl font-black text-brand-black flex items-center gap-2">
-              <Calculator className="w-6 h-6 text-brand-black" />
+            <h1 className="text-2xl font-black text-yellow-400 tracking-wide font-price flex items-center gap-2">
+              <Calculator className="w-6 h-6 text-yellow-400" />
               <span>Percentage-Based Pricing Engine</span>
             </h1>
-            <p className="text-xs text-brand-muted mt-0.5">
+            <p className="text-xs text-neutral-400 mt-1">
               Set x% percentage deductions on base variant prices for Mobile Phones & Laptops.
             </p>
           </div>
 
-          <Button
+          <button
             onClick={handleSave}
-            variant="primary"
-            size="md"
-            className="font-extrabold gap-2 shadow-yellowGlow"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-400 hover:bg-yellow-300 text-black text-xs font-black rounded-xl shadow-yellowGlow transition self-start sm:self-auto"
           >
             <Save className="w-4 h-4" />
             <span>PUBLISH {category} PRICING MATRIX</span>
-          </Button>
+          </button>
         </div>
 
         {/* CATEGORY SWITCHER TABS (MOBILE VS LAPTOP) */}
-        <div className="flex bg-white p-1.5 rounded-2xl border border-brand-border shadow-subtleCard max-w-md">
+        <div className="flex bg-neutral-800 p-1.5 rounded-2xl border border-neutral-700 shadow-md max-w-md">
           <button
             type="button"
             onClick={() => { setCategory("MOBILE"); setSampleBasePrice(60000); }}
-            className={`flex-1 py-3 text-xs font-black rounded-xl flex items-center justify-center gap-2 transition-all ${category === "MOBILE" ? "bg-brand-yellow text-brand-black shadow-md" : "text-gray-500 hover:text-brand-black"}`}
+            className={`flex-1 py-2.5 text-xs font-black rounded-xl flex items-center justify-center gap-2 transition-all ${category === "MOBILE" ? "bg-yellow-400 text-black shadow-md" : "text-neutral-400 hover:text-white"}`}
           >
             <Smartphone className="w-4 h-4" />
-            <span>PHONE PRICING MATRIX</span>
+            <span>PHONE PRICING</span>
           </button>
           <button
             type="button"
             onClick={() => { setCategory("LAPTOP"); setSampleBasePrice(45000); }}
-            className={`flex-1 py-3 text-xs font-black rounded-xl flex items-center justify-center gap-2 transition-all ${category === "LAPTOP" ? "bg-brand-yellow text-brand-black shadow-md" : "text-gray-500 hover:text-brand-black"}`}
+            className={`flex-1 py-2.5 text-xs font-black rounded-xl flex items-center justify-center gap-2 transition-all ${category === "LAPTOP" ? "bg-yellow-400 text-black shadow-md" : "text-neutral-400 hover:text-white"}`}
           >
             <Laptop className="w-4 h-4" />
-            <span>LAPTOP PRICING MATRIX</span>
+            <span>LAPTOP PRICING</span>
           </button>
         </div>
 
         {savedSuccess && (
-          <div className="bg-green-50 p-4 rounded-2xl border border-green-200 text-xs text-green-900 flex items-center gap-2 font-bold animate-fadeIn">
-            <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" />
+          <div className="bg-green-950 p-4 rounded-2xl border border-green-800 text-xs text-green-300 flex items-center gap-2 font-bold animate-fadeIn">
+            <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" />
             <span>{category} percentage pricing matrix published successfully! Live valuation quotes will now use these exact x% deduction rules.</span>
           </div>
         )}
 
         {/* LIVE SIMULATION CALCULATOR */}
-        <div className="bg-white rounded-3xl p-6 border border-brand-border shadow-subtleCard flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="bg-neutral-800 rounded-3xl p-6 border border-neutral-700 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-1">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-muted">{category} Valuation Rule Simulator</span>
-            <h3 className="text-lg font-black text-brand-black">Test Percentage Impact ({category === "MOBILE" ? "Mobile Phone" : "Laptop"})</h3>
-            <p className="text-xs text-gray-500">Enter a sample {category.toLowerCase()} base price to preview percentage deductions in real time.</p>
+            <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">{category} Valuation Rule Simulator</span>
+            <h3 className="text-lg font-black text-white">Test Percentage Impact ({category === "MOBILE" ? "Mobile Phone" : "Laptop"})</h3>
+            <p className="text-xs text-neutral-400">Enter a sample {category.toLowerCase()} base price to preview percentage deductions in real time.</p>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-2xl border border-gray-200">
-              <span className="text-xs font-extrabold text-gray-500">Sample Base Price: ₹</span>
+          <div className="flex items-center gap-4 flex-wrap">
+            <div className="flex items-center gap-2 bg-neutral-900 px-4 py-2 rounded-2xl border border-neutral-700">
+              <span className="text-xs font-extrabold text-neutral-400">Sample Base Price: ₹</span>
               <input
                 type="number"
                 value={sampleBasePrice === 0 ? "" : sampleBasePrice}
                 placeholder="10000"
                 onChange={(e) => setSampleBasePrice(e.target.value === "" ? 0 : Number(e.target.value))}
-                className="w-28 text-sm font-extrabold bg-transparent border-none focus:outline-none text-brand-black"
+                className="w-28 text-sm font-extrabold bg-transparent border-none focus:outline-none text-white font-price"
               />
             </div>
-            <div className="px-4 py-2 bg-brand-yellow/20 rounded-2xl border border-brand-yellow/40">
-              <span className="text-[10px] font-bold text-gray-500 block">Sample 10% Deduction</span>
-              <span className="text-sm font-black text-brand-black">₹{((sampleBasePrice * 10) / 100).toLocaleString()}</span>
+            <div className="px-4 py-2 bg-yellow-400/10 rounded-2xl border border-yellow-400/30">
+              <span className="text-[10px] font-bold text-neutral-400 block">Sample 10% Deduction</span>
+              <span className="text-sm font-black text-yellow-400 font-price">₹{((sampleBasePrice * 10) / 100).toLocaleString()}</span>
             </div>
           </div>
         </div>
@@ -250,17 +247,19 @@ export default function AdminPricingPage() {
             const stepTitle = stepNames[question.group] || `Group: ${question.group}`;
 
             return (
-              <div key={question.id} className="bg-white rounded-3xl p-6 border border-brand-border shadow-subtleCard space-y-4">
-                <div className="flex items-center justify-between border-b border-gray-100 pb-3">
+              <div key={question.id} className="bg-neutral-800 rounded-3xl p-6 border border-neutral-700 shadow-xl space-y-4">
+                <div className="flex items-center justify-between border-b border-neutral-700 pb-3">
                   <div>
-                    <span className="text-xs font-black text-brand-muted uppercase tracking-wider block mb-0.5">
+                    <span className="text-xs font-black text-neutral-400 uppercase tracking-wider block mb-0.5">
                       {stepTitle}
                     </span>
-                    <h2 className="text-base font-extrabold text-brand-black">
+                    <h2 className="text-base font-extrabold text-white">
                       {question.title}
                     </h2>
                   </div>
-                  <Badge variant="yellow">{questionRules.length} Percentage Rules</Badge>
+                  <span className="bg-yellow-950 text-yellow-400 border border-yellow-800 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">
+                    {questionRules.length} Rules
+                  </span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -272,13 +271,13 @@ export default function AdminPricingPage() {
                     const rupeeImpact = Math.round((sampleBasePrice * currentVal) / 100);
 
                     return (
-                      <div key={opt.id} className="p-4 bg-gray-50 rounded-2xl border border-gray-200 space-y-3">
+                      <div key={opt.id} className="p-4 bg-neutral-900 rounded-2xl border border-neutral-800 hover:border-neutral-700 transition space-y-3">
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-bold text-brand-black">{opt.label}</span>
+                          <span className="text-xs font-bold text-white">{opt.label}</span>
                           <select
                             value={currentType}
                             onChange={(e) => rule && handleTypeChange(rule.id, e.target.value as any)}
-                            className="text-[10px] font-bold bg-white px-2 py-1 rounded-lg border border-gray-200 text-brand-black focus:outline-none"
+                            className="text-[10px] font-bold bg-neutral-800 px-2 py-1 rounded-lg border border-neutral-700 text-neutral-200 focus:outline-none cursor-pointer"
                           >
                             <option value="PERCENTAGE_DEDUCTION">Deduction (-%)</option>
                             <option value="PERCENTAGE_BONUS">Bonus (+%)</option>
@@ -287,7 +286,7 @@ export default function AdminPricingPage() {
 
                         <div className="flex items-center justify-between gap-3 pt-1">
                           <div className="flex items-center gap-2">
-                            <span className="text-xs font-bold text-gray-500">Percentage (x%):</span>
+                            <span className="text-xs font-bold text-neutral-400">Percentage (x%):</span>
                             <div className="relative">
                               <input
                                 type="number"
@@ -296,17 +295,17 @@ export default function AdminPricingPage() {
                                 placeholder="0"
                                 value={currentVal === 0 ? "" : currentVal}
                                 onChange={(e) => rule && handleRuleChange(rule.id, e.target.value === "" ? 0 : Number(e.target.value))}
-                                className="w-24 pl-3 pr-6 py-1.5 text-xs font-extrabold bg-white rounded-xl border border-gray-300 focus:outline-none focus:border-brand-yellow shadow-sm"
+                                className="w-24 pl-3 pr-6 py-1.5 text-xs font-extrabold bg-neutral-800 text-white rounded-xl border border-neutral-700 focus:outline-none focus:border-yellow-400 shadow-sm font-price"
                               />
-                              <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs font-black text-gray-400">
+                              <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs font-black text-neutral-500">
                                 %
                               </span>
                             </div>
                           </div>
 
                           <div className="text-right">
-                            <span className="text-[10px] font-semibold text-gray-400 block">Est. Rupee Impact</span>
-                            <span className={`text-xs font-black ${currentType === 'PERCENTAGE_DEDUCTION' ? 'text-red-600' : 'text-green-600'}`}>
+                            <span className="text-[10px] font-semibold text-neutral-400 block">Est. Rupee Impact</span>
+                            <span className={`text-xs font-black font-price ${currentType === 'PERCENTAGE_DEDUCTION' ? 'text-red-400' : 'text-green-400'}`}>
                               {currentType === 'PERCENTAGE_DEDUCTION' ? '-' : '+'}₹{rupeeImpact.toLocaleString()}
                             </span>
                           </div>
@@ -319,7 +318,6 @@ export default function AdminPricingPage() {
             );
           })}
         </div>
-
       </main>
     </div>
   );

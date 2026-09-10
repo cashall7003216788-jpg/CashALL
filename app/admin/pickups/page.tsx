@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { AdminSidebar } from "@/components/admin/AdminSidebar";
 import { DEFAULT_PARTNERS, OrderData } from "@/lib/store";
-import { Truck, CheckCircle2, UserCheck, Phone, Building2, Loader2, ArrowRight } from "lucide-react";
+import { Truck, CheckCircle2, UserCheck, Phone, Building2, Loader2, ArrowRight, Smartphone, MapPin, Navigation, Calendar } from "lucide-react";
 
 function getAdminToken() {
   if (typeof window === "undefined") return "";
@@ -183,74 +183,109 @@ export default function AdminPickupsPage() {
           )}
 
           {!loading && pickups.length > 0 && (
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs">
-                <thead>
-                  <tr className="bg-neutral-900 text-neutral-400 font-bold uppercase tracking-wider border-b border-neutral-700">
-                    <th className="p-3">Order ID & Device</th>
-                    <th className="p-3">Customer & Address</th>
-                    <th className="p-3">Scheduled Pickup Window</th>
-                    <th className="p-3">Assigned Logistics Partner</th>
-                    <th className="p-3">Status</th>
-                    <th className="p-3 text-right">Action</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-700">
-                  {pickups.map((order) => (
-                    <tr key={order.id} className="hover:bg-neutral-750 transition">
-                      <td className="p-3 font-extrabold text-white">
-                        <div className="text-sm font-black text-yellow-400 font-price">#{order.orderNumber}</div>
-                        <div className="text-xs text-neutral-300 font-semibold">{order.deviceName || "Mobile Device"}</div>
-                      </td>
+            <div className="space-y-3">
+              {pickups.map((order) => (
+                <div
+                  key={order.id}
+                  className="bg-neutral-900 border border-neutral-800 hover:border-neutral-700 rounded-2xl p-4 sm:p-5 transition shadow-md space-y-3"
+                >
+                  {/* TOP ROW: ID + SCHEDULE + STATUS */}
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono font-black text-yellow-400 text-sm">
+                        #{order.orderNumber}
+                      </span>
+                      <span className="text-[11px] text-neutral-400 font-semibold bg-neutral-800 px-2 py-0.5 rounded-md">
+                        {order.pickupDate} ({order.pickupTimeSlot})
+                      </span>
+                    </div>
 
-                      <td className="p-3">
-                        <div className="font-bold text-white">{order.customerName}</div>
-                        <div className="text-[11px] text-neutral-400">{order.customerPhone}</div>
-                        <div className="text-[10px] text-neutral-500 line-clamp-1">{order.addressSummary}</div>
-                      </td>
+                    <span
+                      className={`text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
+                        order.status === "PARTNER_ASSIGNED"
+                          ? "bg-blue-950 text-blue-400 border border-blue-700"
+                          : "bg-amber-950 text-yellow-400 border border-yellow-700"
+                      }`}
+                    >
+                      {order.status.replace(/_/g, " ")}
+                    </span>
+                  </div>
 
-                      <td className="p-3 text-neutral-300 font-medium">
-                        <div>{order.pickupDate}</div>
-                        <div className="text-[11px] text-neutral-400">{order.pickupTimeSlot}</div>
-                      </td>
+                  {/* DEVICE & VALUATION ROW */}
+                  <div className="flex items-center justify-between gap-2 bg-black/40 border border-neutral-800/80 rounded-xl p-3">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <Smartphone className="w-4 h-4 text-yellow-400 shrink-0" />
+                      <span className="font-bold text-white text-xs sm:text-sm truncate">
+                        {order.deviceName || "Mobile Device"}
+                      </span>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <span className="text-[10px] text-neutral-400 block font-semibold">Valuation</span>
+                      <span className="font-black text-green-400 font-price text-sm sm:text-base">
+                        ₹{(order.revisedPrice || order.estimatedPrice || 0).toLocaleString("en-IN")}
+                      </span>
+                    </div>
+                  </div>
 
-                      <td className="p-3">
-                        {order.assignedPartnerName ? (
-                          <div className="bg-blue-950/70 border border-blue-800 p-2.5 rounded-xl space-y-0.5">
-                            <div className="text-xs font-bold text-blue-300 flex items-center gap-1.5">
-                              <UserCheck className="w-3.5 h-3.5 text-blue-400" />
-                              <span>{order.assignedPartnerName}</span>
-                            </div>
-                            <div className="text-[10px] text-blue-200/70">Status: Agent Deployed</div>
-                          </div>
-                        ) : (
-                          <div className="text-xs text-neutral-500 italic">Unassigned (Pending)</div>
-                        )}
-                      </td>
-
-                      <td className="p-3">
-                        <span className={`text-[10px] font-black px-2.5 py-1 rounded-full uppercase ${
-                          order.status === "PARTNER_ASSIGNED"
-                            ? "bg-blue-950 text-blue-400 border border-blue-700"
-                            : "bg-amber-950 text-yellow-400 border border-yellow-700"
-                        }`}>
-                          {order.status.replace(/_/g, " ")}
-                        </span>
-                      </td>
-
-                      <td className="p-3 text-right">
-                        <button
-                          onClick={() => handleAssignInHouseAgent(order)}
-                          className="inline-flex items-center gap-1.5 text-xs font-bold text-black bg-yellow-400 hover:bg-yellow-300 px-3.5 py-1.5 rounded-xl transition shadow-md"
+                  {/* CUSTOMER & ADDRESS */}
+                  <div className="space-y-2 text-xs">
+                    <div className="flex items-center justify-between gap-2 flex-wrap">
+                      <div className="font-bold text-white text-sm">{order.customerName}</div>
+                      {order.customerPhone && (
+                        <a
+                          href={`tel:${order.customerPhone}`}
+                          className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-mono font-bold bg-emerald-950/60 border border-emerald-800/60 px-2.5 py-1 rounded-xl active:scale-95 transition"
                         >
-                          <UserCheck className="w-3.5 h-3.5" />
-                          <span>{order.assignedPartnerName ? "Edit Agent" : "Assign Agent"}</span>
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                          <Phone className="w-3.5 h-3.5" />
+                          <span>{order.customerPhone}</span>
+                        </a>
+                      )}
+                    </div>
+
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="text-[11px] text-neutral-400 flex items-start gap-1">
+                        <MapPin className="w-3.5 h-3.5 text-yellow-400 shrink-0 mt-0.5" />
+                        <span className="line-clamp-2">{order.addressSummary}</span>
+                      </div>
+                      {order.addressSummary && order.addressSummary !== "—" && (
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                            order.addressSummary + (order.pincode ? ` ${order.pincode}` : "")
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-[10px] font-black text-black bg-yellow-400 hover:bg-yellow-300 px-2.5 py-1 rounded-lg shrink-0 transition shadow-sm"
+                        >
+                          <Navigation className="w-3 h-3" />
+                          <span>Navigate</span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* ASSIGNED AGENT & ACTION */}
+                  <div className="pt-2 border-t border-neutral-800/80 flex items-center justify-between gap-2 flex-wrap">
+                    <div>
+                      {order.assignedPartnerName ? (
+                        <div className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-300 bg-blue-950/60 border border-blue-800/60 px-2.5 py-1 rounded-xl">
+                          <UserCheck className="w-3.5 h-3.5 text-blue-400" />
+                          <span>{order.assignedPartnerName}</span>
+                        </div>
+                      ) : (
+                        <span className="text-[11px] text-neutral-500 italic">Agent: Unassigned</span>
+                      )}
+                    </div>
+
+                    <button
+                      onClick={() => handleAssignInHouseAgent(order)}
+                      className="inline-flex items-center gap-1.5 text-xs font-black text-black bg-yellow-400 hover:bg-yellow-300 px-4 py-2 rounded-xl transition shadow-yellowGlow shrink-0"
+                    >
+                      <UserCheck className="w-3.5 h-3.5" />
+                      <span>{order.assignedPartnerName ? "Edit Agent" : "Assign Agent"}</span>
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
           )}
         </div>
