@@ -1,4 +1,4 @@
-import { FirebaseService } from "./firebase.service";
+import { PushNotificationService } from "./firebase.service";
 import { prisma } from "../db";
 import { logger } from "../utils/logger";
 
@@ -75,8 +75,8 @@ export class NotificationHelper {
         },
       });
 
-      // Deliver push
-      await FirebaseService.sendPushNotification(userId, title, body, {
+      // Deliver push via PushNotificationService
+      await PushNotificationService.sendPushNotification(userId, title, body, {
         orderId: order.id,
         orderNumber: order.orderNumber,
         milestone,

@@ -221,7 +221,7 @@ export function CustomerAuthModal({
             <div className="bg-green-50 p-3 rounded-xl border border-green-200 text-xs text-green-800 flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
               <span>
-                OTP sent to <strong>+91 {phoneNumber}</strong> via Firebase
+                OTP sent to <strong>+91 {phoneNumber}</strong> via SMS
               </span>
             </div>
 

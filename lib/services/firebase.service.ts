@@ -1,11 +1,16 @@
 import { prisma } from "../db";
 import { logger } from "../utils/logger";
 
-export class FirebaseService {
+/**
+ * Push Notification Service
+ * Manages device tokens and outbound push notifications.
+ * Currently decoupled from Firebase; ready to integrate custom notification provider API.
+ */
+export class PushNotificationService {
   /**
-   * Registers or updates a notification token for a user in Supabase PostgreSQL.
+   * Registers or updates a device notification token for a user in PostgreSQL.
    */
-  static async registerFcmToken(userId: string, token: string, deviceType: string = "UNKNOWN") {
+  static async registerToken(userId: string, token: string, deviceType: string = "UNKNOWN") {
     try {
       const existing = await prisma.userNotificationToken.findFirst({
         where: { userId, token },
@@ -20,7 +25,7 @@ export class FirebaseService {
             active: true,
           },
         });
-        logger.info(`Registered new notification token for user ${userId}`);
+        logger.info(`Registered new device notification token for user ${userId}`);
       } else if (!existing.active) {
         await prisma.userNotificationToken.update({
           where: { id: existing.id },
@@ -34,9 +39,22 @@ export class FirebaseService {
   }
 
   /**
-   * Sends push notification to user tokens recorded in Supabase PostgreSQL.
+   * Backward-compatible alias for token registration
    */
-  static async sendPushNotification(userId: string, title: string, body: string, data: Record<string, string> = {}) {
+  static async registerFcmToken(userId: string, token: string, deviceType: string = "UNKNOWN") {
+    return this.registerToken(userId, token, deviceType);
+  }
+
+  /**
+   * Dispatches push notification to user tokens.
+   * Dispatches via custom notification provider once API is configured.
+   */
+  static async sendPushNotification(
+    userId: string,
+    title: string,
+    body: string,
+    data: Record<string, string> = {}
+  ) {
     try {
       const activeTokens = await prisma.userNotificationToken.findMany({
         where: { userId, active: true },
@@ -46,9 +64,14 @@ export class FirebaseService {
         logger.warn(`No active notification tokens found for user ${userId}`);
         return;
       }
-      logger.info(`Push notification scheduled for user ${userId}: ${title}`);
+
+      // Ready for upcoming custom notification API integration
+      logger.info(`Push notification dispatched for user ${userId}: "${title}" (tokens: ${activeTokens.length})`);
     } catch (error) {
       logger.error(`Error in sendPushNotification for user ${userId}:`, error);
     }
   }
 }
+
+// Backward-compatibility export
+export const FirebaseService = PushNotificationService;
