@@ -30,6 +30,7 @@ model User {
 
   @@index([phone])
   @@index([email])
+  @@index([role])
 }
 
 model Address {
@@ -273,6 +274,10 @@ model Order {
   @@index([orderNumber])
   @@index([userId])
   @@index([quoteId])
+  @@index([agentId])
+  @@index([status])
+  @@index([createdAt])
+  @@index([deletedAt])
 }
 
 model Pickup {
